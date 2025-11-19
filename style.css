@@ -143,7 +143,8 @@ html {
     align-items: flex-end;
   }
 
-  .gallery {
+   .gallery,
+  .vtuber {
     grid-template-columns: 1fr;
   }
 
