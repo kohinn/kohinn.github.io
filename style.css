@@ -1,4 +1,22 @@
-/* ハンバーガーアイコン（中央配置） */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  background: #222;
+  color: #fff;
+  padding: 1rem;
+  position: relative;
+}
+
 .menu-toggle {
   display: none;
   font-size: 2rem;
@@ -11,12 +29,94 @@
   z-index: 1001;
 }
 
-/* SNSリンク（Rosuuri風＋ArtStation/Skeb対応） */
+#main-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+#main-nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+section {
+  padding: 2rem;
+}
+
+.gallery,
+.vtuber {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery img,
+.vtuber img {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close {
+  position: absolute;
+  top: 20px; right: 30px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #333;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* SNSリンク（Rosuuri風） */
 .sns-links {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .sns-links a {
@@ -36,7 +136,41 @@
 .sns-links a.artstation { background: #13AFF0; }
 .sns-links a.instagram { background: #E1306C; }
 .sns-links a.x { background: #1D9BF0; }
-.sns-links a.pixiv { background: #009
+.sns-links a.pixiv { background: #0096FA; }
+.sns-links a.skeb { background: #00C2A0; }
 
-  
+.sns-links a:hover {
+  opacity: 0.8;
 }
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  #main-nav {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 3rem;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  #main-nav.show {
+    display: flex;
+  }
+
+  .gallery,
+  .vtuber {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  .sns-links
