@@ -1,5 +1,4 @@
-/* ベース */
-html { scroll-behavior: smooth; }
+/* 全体の基本スタイル */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -8,96 +7,111 @@ body {
   color: #333;
 }
 
-/* ヘッダー（黒帯） */
+html {
+  scroll-behavior: smooth;
+}
+
 header {
-  position: relative;
   background: #222;
   color: #fff;
-  padding: 1rem 2.5rem; /* 右に余白を足してハンバーガーとバランス */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 1rem;
 }
 
-header .logo {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* ハンバーガー（中央配置） */
+/* ハンバーガーアイコン */
 .menu-toggle {
   display: none;
   font-size: 2rem;
-  color: #fff;
+  color: white;
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 1rem;
   right: 1rem;
-  transform: translateY(-50%);
-  z-index: 1001;
 }
 
-/* ナビ（PC） */
+/* ナビゲーション */
 #main-nav {
   display: flex;
+  justify-content: flex-end;
   gap: 1rem;
 }
+
 #main-nav a {
   color: #fff;
   text-decoration: none;
 }
 
-/* セクション */
-section { padding: 2rem; }
+/* セクション共通 */
+section {
+  padding: 2rem;
+}
 
-/* グリッド */
-.gallery, .vtuber {
+/* ギャラリーとVTuber画像レイアウト */
+.gallery,
+.vtuber {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
 }
 
-/* 画像 */
-.gallery img, .vtuber img {
+/* ギャラリー画像共通スタイル */
+.gallery img,
+.vtuber img {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
   width: 100%;
-  max-width: 420px;
+  max-width: 400px;
   height: auto;
   border-radius: 8px;
   cursor: pointer;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.9s ease forwards;
-  font-size: 0; /* altテキストを非表示に見せる保険 */
+  font-size: 0; /* altテキスト非表示 */
 }
-@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
-/* モーダル */
+/* アニメーション遅延 */
+.gallery img:nth-child(1),
+.vtuber img:nth-child(1) { animation-delay: 0.2s; }
+.gallery img:nth-child(2),
+.vtuber img:nth-child(2) { animation-delay: 0.4s; }
+.gallery img:nth-child(3),
+.vtuber img:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* モーダル拡大表示 */
 .modal {
   display: none;
   position: fixed;
   z-index: 999;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
 }
+
 .modal-content {
   margin: auto;
   display: block;
-  max-width: 92%;
-  max-height: 92%;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  max-width: 90%;
+  max-height: 90%;
 }
+
 .close {
   position: absolute;
-  top: 20px; right: 24px;
+  top: 20px; right: 30px;
   color: #fff;
   font-size: 2rem;
   cursor: pointer;
 }
 
-/* 上に戻る */
+/* 上に戻るボタン */
 .back-to-top {
   position: fixed;
-  bottom: 20px; right: 20px;
+  bottom: 20px;
+  right: 20px;
   background: #333;
   color: #fff;
   font-size: 1.5rem;
@@ -109,67 +123,80 @@ section { padding: 2rem; }
   z-index: 1000;
 }
 
-/* SNSリンク（色つきボタン） */
-footer {
-  background: #222;
-  color: #aaa;
-  text-align: center;
-  padding: 1.5rem 1rem;
-  font-size: 0.9rem;
-}
+/* SNSリンク（Rosuuri風） */
 .sns-links {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 0.75rem;
+  gap: 1rem;
+  margin-top: 1rem;
 }
+
 .sns-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   text-decoration: none;
-  color: #fff;
-  font-weight: 700;
+  color: white;
+  font-weight: bold;
   font-size: 0.9rem;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  white-space: nowrap;
+  transition: background 0.3s ease;
 }
-.sns-links a:hover { transform: translateY(-1px); opacity: 0.9; }
 
-/* ブランドカラー */
-.sns-links a.artstation { background: #13AFF0; }
-.sns-links a.instagram { background: #E1306C; }
-.sns-links a.x         { background: #1D9BF0; }
-.sns-links a.pixiv     { background: #0096FA; }
-.sns-links a.skeb      { background: #00C2A0; }
+.sns-links a[href*="twitter"] { background: #1d9bf0; }
+.sns-links a[href*="pixiv"] { background: #0096fa; }
+.sns-links a[href*="instagram"] { background: #e1306c; }
+.sns-links a[href*="youtube"] { background: #ff0000; }
 
-/* スマホ（ハンバーガー表示、ナビはトグル） */
+.sns-links a:hover {
+  opacity: 0.8;
+}
+
+/* 画像ホバー拡大 */
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+/* レスポンシブ対応（スマホ） */
 @media (max-width: 768px) {
-  .menu-toggle { display: block; }
+  .menu-toggle {
+    display: block;
+  }
 
   #main-nav {
     display: none;
     flex-direction: column;
     background: #222;
     position: absolute;
-    top: 100%;
+    top: 3rem;
     right: 1rem;
-    padding: 0.75rem;
+    padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
   }
-  #main-nav.show { display: flex; }
 
-  .gallery, .vtuber { grid-template-columns: 1fr; }
-  section { padding: 1.25rem; }
+  #main-nav.show {
+    display: flex;
+  }
+
+  .gallery,
+  .vtuber {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 1rem;
+  }
 }
 
-/* PC（ハンバーガー非表示） */
+/* PC表示時：ハンバーガー非表示、ナビ表示 */
 @media (min-width: 769px) {
-  .menu-toggle { display: none !important; }
-  #main-nav { display: flex !important; position: static; background: none; }
-}
+  .menu-toggle {
+    display: none !important;
+  }
 
+  #main-nav {
+    display: flex !important;
+    position: static;
+    background: none;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
