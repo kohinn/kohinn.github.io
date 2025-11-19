@@ -1,3 +1,5 @@
+/* ベース */
+html { scroll-behavior: smooth; }
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,21 +8,27 @@ body {
   color: #333;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* ヘッダー（黒帯） */
 header {
+  position: relative;
   background: #222;
   color: #fff;
-  padding: 1rem;
-  position: relative;
+  padding: 1rem 2.5rem; /* 右に余白を足してハンバーガーとバランス */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+header .logo {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ハンバーガー（中央配置） */
 .menu-toggle {
   display: none;
   font-size: 2rem;
-  color: white;
+  color: #fff;
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -29,76 +37,67 @@ header {
   z-index: 1001;
 }
 
+/* ナビ（PC） */
 #main-nav {
   display: flex;
-  justify-content: flex-end;
   gap: 1rem;
 }
-
 #main-nav a {
   color: #fff;
   text-decoration: none;
 }
 
-section {
-  padding: 2rem;
-}
+/* セクション */
+section { padding: 2rem; }
 
-.gallery,
-.vtuber {
+/* グリッド */
+.gallery, .vtuber {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
 }
 
-.gallery img,
-.vtuber img {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease forwards;
+/* 画像 */
+.gallery img, .vtuber img {
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
   height: auto;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.9s ease forwards;
+  font-size: 0; /* altテキストを非表示に見せる保険 */
 }
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* モーダル */
 .modal {
   display: none;
   position: fixed;
   z-index: 999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  inset: 0;
+  background: rgba(0,0,0,0.85);
 }
-
 .modal-content {
   margin: auto;
   display: block;
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 92%;
+  max-height: 92%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
-
 .close {
   position: absolute;
-  top: 20px; right: 30px;
+  top: 20px; right: 24px;
   color: #fff;
   font-size: 2rem;
   cursor: pointer;
 }
 
+/* 上に戻る */
 .back-to-top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 20px; right: 20px;
   background: #333;
   color: #fff;
   font-size: 1.5rem;
@@ -110,15 +109,21 @@ section {
   z-index: 1000;
 }
 
-/* SNSリンク（Rosuuri風） */
+/* SNSリンク（色つきボタン） */
+footer {
+  background: #222;
+  color: #aaa;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
 .sns-links {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
   flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
 }
-
 .sns-links a {
   display: inline-flex;
   align-items: center;
@@ -126,51 +131,44 @@ section {
   padding: 0.5rem 1rem;
   border-radius: 20px;
   text-decoration: none;
-  color: white;
-  font-weight: bold;
+  color: #fff;
+  font-weight: 700;
   font-size: 0.9rem;
-  transition: background 0.3s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
   white-space: nowrap;
 }
+.sns-links a:hover { transform: translateY(-1px); opacity: 0.9; }
 
+/* ブランドカラー */
 .sns-links a.artstation { background: #13AFF0; }
 .sns-links a.instagram { background: #E1306C; }
-.sns-links a.x { background: #1D9BF0; }
-.sns-links a.pixiv { background: #0096FA; }
-.sns-links a.skeb { background: #00C2A0; }
+.sns-links a.x         { background: #1D9BF0; }
+.sns-links a.pixiv     { background: #0096FA; }
+.sns-links a.skeb      { background: #00C2A0; }
 
-.sns-links a:hover {
-  opacity: 0.8;
-}
-
-/* レスポンシブ対応 */
+/* スマホ（ハンバーガー表示、ナビはトグル） */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
+  .menu-toggle { display: block; }
 
   #main-nav {
     display: none;
     flex-direction: column;
     background: #222;
     position: absolute;
-    top: 3rem;
+    top: 100%;
     right: 1rem;
-    padding: 1rem;
+    padding: 0.75rem;
     border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
   }
+  #main-nav.show { display: flex; }
 
-  #main-nav.show {
-    display: flex;
-  }
+  .gallery, .vtuber { grid-template-columns: 1fr; }
+  section { padding: 1.25rem; }
+}
 
-  .gallery,
-  .vtuber {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 1rem;
-  }
-
-  .sns-links
+/* PC（ハンバーガー非表示） */
+@media (min-width: 769px) {
+  .menu-toggle { display: none !important; }
+  #main-nav { display: flex !important; position: static; background: none; }
+}
