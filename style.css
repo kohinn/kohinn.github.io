@@ -1,3 +1,4 @@
+/* 全体の基本スタイル */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,66 +7,73 @@ body {
   color: #333;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 header {
   background: #222;
   color: #fff;
   padding: 1rem;
 }
 
-nav {
+/* ハンバーガーアイコン */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* ナビゲーション */
+#main-nav {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
 }
 
-nav a {
+#main-nav a {
   color: #fff;
   text-decoration: none;
 }
 
+/* セクション共通 */
 section {
   padding: 2rem;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
-.gallery img {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease forwards;
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* VTuberセクションの画像にも同じルールを適用 */
-.vtuber img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 8px;
-  cursor: pointer;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease forwards;
-}
-
-/* 画面幅に応じたレイアウト */
+/* ギャラリーとVTuber画像レイアウト */
+.gallery,
 .vtuber {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
 }
 
-.gallery img:nth-child(1) { animation-delay: 0.2s; }
-.gallery img:nth-child(2) { animation-delay: 0.4s; }
-.gallery img:nth-child(3) { animation-delay: 0.6s; }
+/* ギャラリー画像共通スタイル */
+.gallery img,
+.vtuber img {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0; /* altテキスト非表示 */
+}
+
+/* アニメーション遅延 */
+.gallery img:nth-child(1),
+.vtuber img:nth-child(1) { animation-delay: 0.2s; }
+.gallery img:nth-child(2),
+.vtuber img:nth-child(2) { animation-delay: 0.4s; }
+.gallery img:nth-child(3),
+.vtuber img:nth-child(3) { animation-delay: 0.6s; }
 
 @keyframes fadeIn {
   to {
@@ -112,146 +120,10 @@ section {
   text-align: center;
   text-decoration: none;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  z-index: 1000;
 }
 
-
-html {
-  scroll-behavior: smooth; /* なめらかスクロール */
-}
-
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #333;
-  color: #fff;
-  font-size: 1.5rem;
-  padding: 0.5rem 0.8rem;
-  border-radius: 50%;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  z-index: 1000; /* 前面に出す */
-}
-
-
-
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-  }
-
-  #main-nav {
-    display: none;
-    flex-direction: column;
-    background: #222;
-    position: absolute;
-    top: 3rem;
-    right: 1rem;
-    padding: 1rem;
-    border-radius: 8px;
-  }
-
-  #main-nav.show {
-    display: flex;
-  }
-}
-
-
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-   .gallery,
-  .vtuber {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 1rem;
-  }
-}
-
-.sns-links {
-  margin-top: 0.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.sns-links a {
-  color: #aaa;
-
-  
-  
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.thumbnail {
-  width: 100%;
-  max-width: 250px;
-  height: auto;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.gallery img {
-  font-size: 0; /* altテキストの表示を防ぐ */
-}
-
-/* PCでは表示、スマホでは非表示 */
-@media (min-width: 769px) {
-  #main-nav {
-    display: flex !important;
-  }
-  .menu-toggle {
-    display: none !important;
-  }
-}
-
-/* スマホではハンバーガー表示、ナビ非表示（開いたときだけ表示） */
-@media (max-width: 768px) {
-  #main-nav {
-    display: none;
-    flex-direction: column;
-    background: #222;
-    position: absolute;
-    top: 3rem;
-    right: 1rem;
-    padding: 1rem;
-    border-radius: 8px;
-  }
-
-  #main-nav.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-  }
-}
-
+/* SNSリンク（Rosuuri風） */
 .sns-links {
   display: flex;
   justify-content: center;
@@ -278,10 +150,53 @@ html {
   opacity: 0.8;
 }
 
-
-
-
-
+/* 画像ホバー拡大 */
 .thumbnail:hover {
   transform: scale(1.05);
+}
+
+/* レスポンシブ対応（スマホ） */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  #main-nav {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 3rem;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  #main-nav.show {
+    display: flex;
+  }
+
+  .gallery,
+  .vtuber {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 1rem;
+  }
+}
+
+/* PC表示時：ハンバーガー非表示、ナビ表示 */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+
+  #main-nav {
+    display: flex !important;
+    position: static;
+    background: none;
+    flex-direction: row;
+    gap: 1rem;
+  }
 }
