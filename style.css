@@ -210,6 +210,11 @@ html {
   transition: transform 0.3s ease;
 }
 
+.gallery img {
+  font-size: 0; /* altテキストの表示を防ぐ */
+}
+
+
 .thumbnail:hover {
   transform: scale(1.05);
 }
