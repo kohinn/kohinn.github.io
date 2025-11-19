@@ -152,6 +152,25 @@
   
 <a href="#" class="back-to-top">⬆</a>
 
+  
+<script>
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const closeBtn = document.querySelector(".close");
+
+document.querySelectorAll(".thumbnail").forEach(img => {
+  img.onclick = () => {
+    modal.style.display = "block";
+    modalImg.src = img.src;
+  };
+});
+
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+};
+</script>
+
+
 
   <script>
 function toggleMenu() {
