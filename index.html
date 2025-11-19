@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kohinn Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    .breadcrumb {
+      font-size: 0.9rem;
+      margin: 1rem;
+      color: #666;
+    }
+    section {
+      padding: 2rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      background: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kohinn</h1>
+    <nav>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="breadcrumb">Home > Gallery</div>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://placehold.co/400x300" alt="Sample 1">
+      <img src="https://placehold.co/400x300" alt="Sample 2">
+      <img src="https://placehold.co/400x300" alt="Sample 3">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>Illustrator based in Japan. Creating works for international and domestic audiences.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>For commissions, please use the form below:</p>
+    <!-- Googleフォーム埋め込み例 -->
+    <iframe src="https://docs.google.com/forms/d/e/XXXXXXXX/viewform?embedded=true" 
+            width="100%" height="600" frameborder="0">Loading…</iframe>
+  </section>
+
+  <footer>
+    © 2025 Kohinn
+  </footer>
+</body>
+</html>
