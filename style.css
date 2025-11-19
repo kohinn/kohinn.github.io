@@ -1,204 +1,5 @@
-/* 全体の基本スタイル */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #fafafa;
-  color: #333;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-header {
-  background: #222;
-  color: #fff;
-  padding: 1rem;
-}
-
-/* ハンバーガーアイコン */
+/* ハンバーガーアイコン（中央配置） */
 .menu-toggle {
-  display: none;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-/* ナビゲーション */
-#main-nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-}
-
-#main-nav a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* セクション共通 */
-section {
-  padding: 2rem;
-}
-
-/* ギャラリーとVTuber画像レイアウト */
-.gallery,
-.vtuber {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
-/* ギャラリー画像共通スタイル */
-.gallery img,
-.vtuber img {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease forwards;
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0; /* altテキスト非表示 */
-}
-
-/* アニメーション遅延 */
-.gallery img:nth-child(1),
-.vtuber img:nth-child(1) { animation-delay: 0.2s; }
-.gallery img:nth-child(2),
-.vtuber img:nth-child(2) { animation-delay: 0.4s; }
-.gallery img:nth-child(3),
-.vtuber img:nth-child(3) { animation-delay: 0.6s; }
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* モーダル拡大表示 */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.8);
-}
-
-.modal-content {
-  margin: auto;
-  display: block;
-  max-width: 90%;
-  max-height: 90%;
-}
-
-.close {
-  position: absolute;
-  top: 20px; right: 30px;
-  color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-/* 上に戻るボタン */
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #333;
-  color: #fff;
-  font-size: 1.5rem;
-  padding: 0.5rem 0.8rem;
-  border-radius: 50%;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  z-index: 1000;
-}
-
-/* SNSリンク（Rosuuri風） */
-.sns-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.sns-links a {
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: background 0.3s ease;
-}
-
-.sns-links a[href*="twitter"] { background: #1d9bf0; }
-.sns-links a[href*="pixiv"] { background: #0096fa; }
-.sns-links a[href*="instagram"] { background: #e1306c; }
-.sns-links a[href*="youtube"] { background: #ff0000; }
-
-.sns-links a:hover {
-  opacity: 0.8;
-}
-
-/* 画像ホバー拡大 */
-.thumbnail:hover {
-  transform: scale(1.05);
-}
-
-/* レスポンシブ対応（スマホ） */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  #main-nav {
-    display: none;
-    flex-direction: column;
-    background: #222;
-    position: absolute;
-    top: 3rem;
-    right: 1rem;
-    padding: 1rem;
-    border-radius: 8px;
-  }
-
-  #main-nav.show {
-    display: flex;
-  }
-
-  .gallery,
-  .vtuber {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 1rem;
-  }
-}
-
-/* PC表示時：ハンバーガー非表示、ナビ表示 */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
-
-  #main-nav {
-    display: flex !important;
-    position: static;
-    background: none;
-    flex-direction: row;
-
-    .menu-toggle {
   display: none;
   font-size: 2rem;
   color: white;
@@ -210,9 +11,15 @@ section {
   z-index: 1001;
 }
 
-    gap: 1rem;
-  }
-  .sns-links a {
+/* SNSリンク（Rosuuri風＋ArtStation/Skeb対応） */
+.sns-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sns-links a {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -229,22 +36,7 @@ section {
 .sns-links a.artstation { background: #13AFF0; }
 .sns-links a.instagram { background: #E1306C; }
 .sns-links a.x { background: #1D9BF0; }
-.sns-links a.pixiv { background: #0096FA; }
-.sns-links a.skeb { background: #00C2A0; }
-
-.sns-links a:hover {
-  opacity: 0.8;
-}
-
-/* スマホでも色が消えないように強制表示 */
-@media (max-width: 768px) {
-  .sns-links a {
-    display: inline-flex !important;
-    background-color: inherit !important;
-  }
-}
-
-
+.sns-links a.pixiv { background: #009
 
   
 }
