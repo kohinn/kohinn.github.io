@@ -197,6 +197,54 @@ section {
     position: static;
     background: none;
     flex-direction: row;
+
+    .menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
     gap: 1rem;
   }
+  .sns-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+.sns-links a.artstation { background: #13AFF0; }
+.sns-links a.instagram { background: #E1306C; }
+.sns-links a.x { background: #1D9BF0; }
+.sns-links a.pixiv { background: #0096FA; }
+.sns-links a.skeb { background: #00C2A0; }
+
+.sns-links a:hover {
+  opacity: 0.8;
+}
+
+/* スマホでも色が消えないように強制表示 */
+@media (max-width: 768px) {
+  .sns-links a {
+    display: inline-flex !important;
+    background-color: inherit !important;
+  }
+}
+
+
+
+  
 }
