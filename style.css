@@ -194,6 +194,22 @@ html {
 
 .sns-links a {
   color: #aaa;
+
+  
+  
   text-decoration: none;
   font-size: 0.9rem;
+}
+
+.thumbnail {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
 }
