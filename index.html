@@ -96,12 +96,6 @@
             width="100%" height="600" frameborder="0">Loading…</iframe>
   </section>
   
-  <div id="modal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="modal-img">
-</div>
-
-
  <footer>
   © 2025 Kohinn  
   <div class="sns-links">
@@ -112,26 +106,7 @@
   </div>
 </footer>
   
-  <script>
-  const modal = document.getElementById("modal");
-  const modalImg = document.getElementById("modal-img");
-  const closeBtn = document.querySelector(".close");
-
-  document.querySelectorAll(".gallery img").forEach(img => {
-    img.onclick = () => {
-      modal.style.display = "block";
-      modalImg.src = img.src;
-    };
-  });
-
-  closeBtn.onclick = () => {
-    modal.style.display = "none";
-  };
-</script>
-
-
  
-
 <!-- モーダル拡大表示 -->
 <div id="modal" class="modal">
   <span class="close">&times;</span>
