@@ -136,6 +136,38 @@ html {
 
 
 
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  #main-nav {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 3rem;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  #main-nav.show {
+    display: flex;
+  }
+}
+
+
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   nav {
