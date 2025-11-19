@@ -184,3 +184,16 @@ html {
     padding: 1rem;
   }
 }
+
+.sns-links {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.sns-links a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
