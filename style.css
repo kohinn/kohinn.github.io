@@ -252,6 +252,34 @@ html {
   }
 }
 
+.sns-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sns-links a {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.sns-links a[href*="twitter"] { background: #1d9bf0; }
+.sns-links a[href*="pixiv"] { background: #0096fa; }
+.sns-links a[href*="instagram"] { background: #e1306c; }
+.sns-links a[href*="youtube"] { background: #ff0000; }
+
+.sns-links a:hover {
+  opacity: 0.8;
+}
+
+
+
 
 
 .thumbnail:hover {
