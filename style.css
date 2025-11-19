@@ -44,6 +44,25 @@ section {
   cursor: pointer;
 }
 
+/* VTuberセクションの画像にも同じルールを適用 */
+.vtuber img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+}
+
+/* 画面幅に応じたレイアウト */
+.vtuber {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
 .gallery img:nth-child(1) { animation-delay: 0.2s; }
 .gallery img:nth-child(2) { animation-delay: 0.4s; }
 .gallery img:nth-child(3) { animation-delay: 0.6s; }
