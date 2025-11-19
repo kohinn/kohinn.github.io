@@ -214,6 +214,45 @@ html {
   font-size: 0; /* altテキストの表示を防ぐ */
 }
 
+/* PCでは表示、スマホでは非表示 */
+@media (min-width: 769px) {
+  #main-nav {
+    display: flex !important;
+  }
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
+/* スマホではハンバーガー表示、ナビ非表示（開いたときだけ表示） */
+@media (max-width: 768px) {
+  #main-nav {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 3rem;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  #main-nav.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+
 
 .thumbnail:hover {
   transform: scale(1.05);
