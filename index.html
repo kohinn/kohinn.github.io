@@ -2,71 +2,23 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" href="style.css">
-
   <meta charset="UTF-8">
   <title>Kohinn Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fafafa;
-      color: #333;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 1rem;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-    }
-    .breadcrumb {
-      font-size: 0.9rem;
-      margin: 1rem;
-      color: #666;
-    }
-    section {
-      padding: 2rem;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    footer {
-      background: #222;
-      color: #aaa;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.8rem;
-    }
-  </style>
 </head>
 <body>
   <header>
     <h1><a href="/illustration" style="color: white; text-decoration: none;">Kohinn / Illustration</a></h1>
-
-
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-<nav id="main-nav">
-  <a href="#vtuber">VTuber</a>
-  <a href="#fanart">Fanart</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-</nav>
-
+    <nav id="main-nav">
+      <a href="#vtuber">VTuber</a>
+      <a href="#fanart">Fanart</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
- <section id="vtuber">
+  <section id="vtuber">
     <h2>VTuber</h2>
     <div class="vtuber">
       <img src="https://github.com/kohinn/kohinn.github.io/blob/main/0f50e10c_original.jpg?raw=true" alt="Fanart 1">
@@ -75,13 +27,13 @@
     </div>
   </section>
 
-   <section id="fanart">
-  <h2>Fanart</h2>
-  <div class="gallery">
-    <img src="画像URL1" alt="Fanart 1">
-    <img src="画像URL2" alt="Fanart 2">
-  </div>
-</section>
+  <section id="fanart">
+    <h2>Fanart</h2>
+    <div class="gallery">
+      <img src="画像URL1" alt="Fanart 1">
+      <img src="画像URL2" alt="Fanart 2">
+    </div>
+  </section>
 
   <section id="about">
     <h2>About</h2>
@@ -91,67 +43,48 @@
   <section id="contact">
     <h2>Contact</h2>
     <p>For commissions, please use the form below:</p>
-    <!-- Googleフォーム埋め込み例 -->
-    <iframe src="https://docs.google.com/forms/d/e/XXXXXXXX/viewform?embedded=true" 
-            width="100%" height="600" frameborder="0">Loading…</iframe>
+    <iframe src="https://docs.google.com/forms/d/e/XXXXXXXX/viewform?embedded=true" width="100%" height="600" frameborder="0">Loading…</iframe>
   </section>
-  
- <footer>
-  © 2025 Kohinn  
-  <div class="sns-links">
-    <a href="https://twitter.com/yourname" target="_blank">X</a>
-    <a href="https://www.pixiv.net/users/yourid" target="_blank">Pixiv</a>
-    <a href="https://instagram.com/yourname" target="_blank">Instagram</a>
-    <a href="https://youtube.com/@yourchannel" target="_blank">YouTube</a>
+
+  <footer>
+    © 2025 Kohinn  
+    <div class="sns-links">
+      <a href="https://www.artstation.com/kohinn" class="artstation" target="_blank">ArtStation</a>
+      <a href="https://instagram.com/kohinn_illustration" class="instagram" target="_blank">Instagram</a>
+      <a href="https://twitter.com/kohinn_vt" class="x" target="_blank">X</a>
+      <a href="https://www.pixiv.net/users/12345678" class="pixiv" target="_blank">Pixiv</a>
+      <a href="https://skeb.jp/@kohinn" class="skeb" target="_blank">Skeb</a>
+    </div>
+  </footer>
+
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
   </div>
-</footer>
-  
- 
-<!-- モーダル拡大表示 -->
-<div id="modal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="modal-img">
-</div>
 
- 
-  
-<a href="#" class="back-to-top">⬆</a>
-
-  
-<div class="sns-links">
-  <a href="https://www.artstation.com/kohinn" class="artstation" target="_blank">ArtStation</a>
-  <a href="https://instagram.com/kohinn_illustration" class="instagram" target="_blank">Instagram</a>
-  <a href="https://twitter.com/kohinn_vt" class="x" target="_blank">X</a>
-  <a href="https://www.pixiv.net/users/12345678" class="pixiv" target="_blank">Pixiv</a>
-  <a href="https://skeb.jp/@kohinn" class="skeb" target="_blank">Skeb</a>
-</div>
-
-
-  
-<script>
-const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modal-img");
-const closeBtn = document.querySelector(".close");
-
-document.querySelectorAll(".thumbnail").forEach(img => {
-  img.onclick = () => {
-    modal.style.display = "block";
-    modalImg.src = img.src;
-  };
-});
-
-closeBtn.onclick = () => {
-  modal.style.display = "none";
-};
-</script>
-
-
+  <a href="#" class="back-to-top">⬆</a>
 
   <script>
-function toggleMenu() {
-  document.getElementById("main-nav").classList.toggle("show");
-}
-</script>
+    function toggleMenu() {
+      document.getElementById("main-nav").classList.toggle("show");
+    }
 
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.querySelector(".close");
+
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.onclick = () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      };
+    });
+
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+    };
+  </script>
 </body>
+</html>
+
 </html>
