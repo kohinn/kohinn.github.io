@@ -46,8 +46,8 @@ header {
   padding: 0;
 }
 
-/* ナビゲーション（PCデフォルト） */
 #main-nav {
+  display: flex;
   justify-content: flex-end;
   gap: 1rem;
 }
