@@ -308,9 +308,12 @@ section {
   padding: 2vw;
 }
 
-.modal.is-open {
-  display: flex;
+.modal.show {
+  display: flex; /* 表示時に中央寄せ */
 }
+
+
+
 
 .modal-content {
   max-width: 90vw;
