@@ -237,6 +237,13 @@ section {
   }
 }
 
+@media (min-width: 769px) {
+  header {
+    padding: 1.2rem 2rem; /* PCでは太めに */
+  }
+}
+
+
 /* お問い合わせ周り */
 .contact-intro {
   font-size: 1rem;
