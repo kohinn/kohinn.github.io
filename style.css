@@ -346,33 +346,41 @@ section h2 {
   display: inline-block;
 }
 
+/* モーダル全体：中央配置＋ヘッダー干渉回避 */
 .modal {
-  display: none; /* 初期状態は非表示 */
+  display: none;
   position: fixed;
   inset: 0;
   background-color: rgba(0,0,0,0.8);
   z-index: 999;
   justify-content: center;
   align-items: center;
+  padding-top: 4rem; /* ヘッダー分の余白を確保 */
 }
 
 .modal.show {
-  display: flex; /* 拡大時に表示 */
+  display: flex;
 }
 
+/* 拡大画像：中央寄せ */
 .modal-content {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 90vw;
+  max-height: 85vh;
+  margin: auto;
+  display: block;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
+/* ✕ボタン：ハンバーガーと重ならないように少し下げる */
 .modal-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: #fff;
+  position: fixed;
+  top: 4rem;      /* ヘッダーより少し下 */
+  right: 1rem;    /* ハンバーガーより内側に */
   font-size: 2rem;
+  color: #fff;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 1001;  /* ハンバーガーより前面に出す */
 }
