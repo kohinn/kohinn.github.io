@@ -132,46 +132,37 @@
 
 
 
-<!-- モーダル拡大表示 -->
+<!-- モーダル拡大表示（1つに統一） -->
 <div id="modal" class="modal" aria-hidden="true">
   <button id="modal-close" class="modal-close" aria-label="Close image">✕</button>
   <img class="modal-content" id="modal-img" alt="">
 </div>
 
-
-
- 
-  
-<a href="#" class="back-to-top">⬆</a>
-
-  
-
 <script>
+  function toggleMenu() {
+    const nav = document.getElementById('main-nav');
+    const btn = document.querySelector('.menu-toggle');
+    const isOpen = nav.classList.toggle('show');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modal-img");
   const closeBtn = document.getElementById("modal-close");
 
-  // 拡大表示
-  document.querySelectorAll(".gallery img, .thumbnail").forEach(img => {
+  document.querySelectorAll(".gallery img").forEach(img => {
     img.addEventListener("click", () => {
       modalImg.src = img.src;
       modal.classList.add("show");
     });
   });
 
-  // ✕で閉じる
   closeBtn.addEventListener("click", () => {
     modal.classList.remove("show");
-    modalImg.src = ""; // 画像をリセット
+    modalImg.src = "";
   });
 
-  // 背景クリックでも閉じる（オプション）
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("show");
-      modalImg.src = "";
-    }
-  });
+  // 背景クリックで閉じる処理は削除済み
 </script>
 
 
