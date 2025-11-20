@@ -1,136 +1,61 @@
+<!-- HTMLファイル（index.html） -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="style.css">
-
   <meta charset="UTF-8">
   <title>Kohinn Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fafafa;
-      color: #333;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 1rem;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-    }
-    .breadcrumb {
-      font-size: 0.9rem;
-      margin: 1rem;
-      color: #666;
-    }
-    section {
-      padding: 2rem;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    footer {
-      background: #222;
-      color: #aaa;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.8rem;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
   <h1 class="site-logo">Kohinn</h1>
-
-  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu()">
-    ☰
-  </button>
-
+  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu()">☰</button>
   <nav id="main-nav">
-    
     <a href="#fanart">Fanart</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById('main-nav');
-    const btn = document.querySelector('.menu-toggle');
-    const isOpen = nav.classList.toggle('show');
-    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  }
-</script>
-
-
-   <section id="fanart">
+<section id="fanart">
   <h2>Fanart</h2>
   <div class="gallery">
-       <img class="thumbnail" src="https://github.com/kohinn/kohinn.github.io/blob/main/0f50e10c_original.jpg?raw=true" alt="Fanart 1">
-      <img class="thumbnail" src="https://github.com/kohinn/kohinn.github.io/blob/main/cd350e62_original.jpg?raw=true" alt="Fanart 2">
+    <img class="thumbnail" src="https://github.com/kohinn/kohinn.github.io/blob/main/0f50e10c_original.jpg?raw=true" alt="Fanart 1">
+    <img class="thumbnail" src="https://github.com/kohinn/kohinn.github.io/blob/main/cd350e62_original.jpg?raw=true" alt="Fanart 2">
   </div>
 </section>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>Illustrator based in Japan. Creating works for international and domestic audiences.</p>
-  </section>
+<section id="about">
+  <h2>About</h2>
+  <p>Illustrator based in Japan. Creating works for international and domestic audiences.</p>
+</section>
 
-  <section id="contact">
+<section id="contact">
   <h2>Contact</h2>
   <p class="contact-intro">
     For illustration commissions, please fill out the form below. I will contact you via email or Twitter DM after reviewing your submission.<br>
     <span class="jp-note">※日本語でのご依頼も可能です。フォームに必要事項をご記入ください。内容確認後、メールまたはTwitter DMでご連絡いたします。</span>
   </p>
-
   <div class="form-embed">
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSfQAfD7MzV2rurPWNenGyygjBUIxhYmqPMzgMV95tGRldRuhg/viewform?embedded=true"
-      title="Illustration Commission Request Form"
-      loading="lazy"
-      allow="clipboard-write"
-      referrerpolicy="no-referrer"
-    ></iframe>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQAfD7MzV2rurPWNenGyygjBUIxhYmqPMzgMV95tGRldRuhg/viewform?embedded=true" title="Illustration Commission Request Form" loading="lazy" allow="clipboard-write" referrerpolicy="no-referrer"></iframe>
   </div>
-
   <p class="contact-fallback">
     If the form doesn’t load, you can open it directly:
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQAfD7MzV2rurPWNenGyygjBUIxhYmqPMzgMV95tGRldRuhg/viewform" target="_blank" rel="noopener">Open the commission form</a>
   </p>
 </section>
 
-  
- 
-
-
- <footer>
+<footer>
   © 2025 Kohinn  
   <div class="sns-links">
     <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
     <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
     <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
-    <a href="https://artstation.com/kohinn" target="_blank">artstation</a>
+    <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
   </div>
 </footer>
-  
-
-
-
-
 
 <!-- モーダル拡大表示 -->
 <div id="modal" class="modal" aria-hidden="true">
@@ -138,48 +63,9 @@
   <img class="modal-content" id="modal-img" alt="">
 </div>
 
-
-
- 
-  
 <a href="#" class="back-to-top">⬆</a>
 
-  
-
 <script>
-  const modal = document.getElementById("modal");
-  const modalImg = document.getElementById("modal-img");
-  const closeBtn = document.getElementById("modal-close");
-
-  // 拡大表示
-  document.querySelectorAll(".gallery img, .thumbnail").forEach(img => {
-    img.addEventListener("click", () => {
-      modalImg.src = img.src;
-      modal.classList.add("show");
-    });
-  });
-
-  // ✕で閉じる
-  closeBtn.addEventListener("click", () => {
-    modal.classList.remove("show");
-    modalImg.src = ""; // 画像をリセット
-  });
-
-  // 背景クリックでも閉じる（オプション）
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("show");
-      modalImg.src = "";
-    }
-  });
-</script>
-
-
-
-
-  <script>
-<script>
-  // メニュー開閉
   function toggleMenu() {
     const nav = document.getElementById('main-nav');
     const btn = document.querySelector('.menu-toggle');
@@ -187,12 +73,11 @@
     btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }
 
-  // モーダル処理
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modal-img");
   const closeBtn = document.getElementById("modal-close");
 
-  document.querySelectorAll(".gallery img").forEach(img => {
+  document.querySelectorAll(".gallery img, .thumbnail").forEach(img => {
     img.addEventListener("click", () => {
       modalImg.src = img.src;
       modal.classList.add("show");
@@ -211,13 +96,6 @@
     }
   });
 </script>
-
-
-<!-- モーダル拡大表示 -->
-<div id="modal" class="modal">
-  <span class="close" id="modal-close">✕</span>
-  <img class="modal-content" id="modal-img" alt="拡大画像">
-</div>
 
 </body>
 </html>
