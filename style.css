@@ -277,4 +277,32 @@ section {
   pointer-events: auto;
 }
 
+/* ヘッダーをスリムに＆中央揃え */
+header {
+  background: #222;
+  color: #fff;
+  padding: 0.5rem 1rem; /* ← 高さを抑える */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* ロゴ（Kohinn）を小さく＆プロっぽく */
+header h1 {
+  font-size: 1.2rem;     /* ← 小さくする */
+  font-weight: 500;      /* ← 少し細めで上品に */
+  margin: 0;
+}
+
+header h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ナビゲーションリンクの文字サイズ調整 */
+#main-nav a {
+  font-size: 0.9rem;     /* ← 少し小さくして落ち着いた印象に */
+  margin: 0 0.5rem;
+}
 
