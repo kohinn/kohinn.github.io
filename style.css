@@ -350,29 +350,25 @@ section h2 {
   display: none;
   position: fixed;
   inset: 0;
-  background-color: rgba(0,0,0,0.85);
+  background-color: rgba(0,0,0,0.8);
   z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: 0; /* 余白なしで完全中央 */
 }
 
 .modal.show {
   display: flex;
 }
 
-
 .modal-content {
-  width: auto;
-  max-width: 95vw;
-  max-height: 90vh;
-  height: auto;
+  max-width: 90vw;
+  max-height: 85vh;
   margin: auto;
   display: block;
   border-radius: 8px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
-  object-fit: contain;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
   position: relative;
 }
 
@@ -388,3 +384,4 @@ section h2 {
   cursor: pointer;
   z-index: 1001;
 }
+
