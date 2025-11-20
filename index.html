@@ -172,10 +172,15 @@ closeBtn.onclick = () => {
 
 
   <script>
-function toggleMenu() {
-  document.getElementById("main-nav").classList.toggle("show");
-}
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('main-nav');
+    const btn = document.querySelector('.menu-toggle');
+    const isOpen = nav.classList.toggle('show');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
 </script>
+
 
 </body>
 </html>
