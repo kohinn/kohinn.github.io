@@ -52,21 +52,30 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1><a href="/illustration" style="color: white; text-decoration: none;">Kohinn / Illustration</a></h1>
+ <header>
+  <h1 class="site-logo">Kohinn</h1>
 
+  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu()">
+    ☰
+  </button>
 
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-<nav id="main-nav">
-  <a href="#vtuber">VTuber</a>
-  <a href="#fanart">Fanart</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <nav id="main-nav">
+    <a href="#vtuber">VTuber</a>
+    <a href="#fanart">Fanart</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-    
-  
-  </header>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('main-nav');
+    const btn = document.querySelector('.menu-toggle');
+    const isOpen = nav.classList.toggle('show');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+</script>
+
 
  <section id="vtuber">
     <h2>VTuber</h2>
