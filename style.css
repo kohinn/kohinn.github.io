@@ -11,24 +11,42 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ヘッダー（コンパクト化＋固定オプション） */
 header {
   background: #222;
   color: #fff;
-  padding: 1rem;
+  padding: 0.6rem 1rem; /* 以前の 1rem より小さく */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky; /* 必要なら固定感を出す */
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.08); /* 薄いラインで締める */
+}
+
+/* ロゴ（Kohinn）を小さく上品に */
+.site-logo {
+  font-size: 1rem;          /* 以前より小さめ */
+  font-weight: 700;
+  letter-spacing: 0.02em;   /* ほんの少し詰める */
+  color: #fff;
+  margin: 0;
 }
 
 /* ハンバーガーアイコン */
 .menu-toggle {
   display: none;
-  font-size: 2rem;
+  font-size: 1.6rem; /* 少し控えめに */
   color: white;
   cursor: pointer;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  line-height: 1;
+  background: transparent;
+  border: 0;
+  padding: 0;
 }
 
-/* ナビゲーション */
+/* ナビゲーション（PCデフォルト） */
 #main-nav {
   display: flex;
   justify-content: flex-end;
@@ -38,6 +56,8 @@ header {
 #main-nav a {
   color: #fff;
   text-decoration: none;
+  font-size: 0.95rem; /* ほんの少し小さく */
+  padding: 0.25rem 0.4rem;
 }
 
 /* セクション共通 */
@@ -155,32 +175,37 @@ section {
   transform: scale(1.05);
 }
 
-/* レスポンシブ対応（スマホ） */
+/* スマホ（768px以下）：ハンバーガー＋ヌルッと表示 */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: inline-block;
   }
 
   #main-nav {
     position: absolute;
-    top: 3rem;
+    top: 2.6rem;          /* ヘッダーが小さくなった分調整 */
     right: 1rem;
     flex-direction: column;
     background: #222;
-    padding: 1rem;
+    padding: 0.75rem;
     border-radius: 8px;
-    gap: 1rem;
+    gap: 0.6rem;
 
-    /* アニメーション用 */
     opacity: 0;
     transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.28s ease, transform 0.28s ease;
     pointer-events: none;
   }
-   #main-nav.show {
+
+  #main-nav.show {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+  }
+
+  /* スマホのメニュー文字サイズも少し控えめに */
+  #main-nav a {
+    font-size: 0.95rem;
   }
 
   .gallery,
@@ -193,7 +218,7 @@ section {
   }
 }
 
-/* PC表示時：ハンバーガー非表示、ナビ表示 */
+/* PC（769px以上）：ハンバーガー非表示、ナビ常時表示 */
 @media (min-width: 769px) {
   .menu-toggle {
     display: none !important;
@@ -205,18 +230,14 @@ section {
     background: none;
     flex-direction: row;
     gap: 1rem;
-    
- /* ここが追加ポイント！ */
+
     opacity: 1 !important;
     transform: none !important;
     pointer-events: auto !important;
   }
 }
-  margin-top: 1rem;
-}
 
-
-
+/* お問い合わせ周り */
 .contact-intro {
   font-size: 1rem;
   line-height: 1.7;
@@ -262,18 +283,3 @@ section {
   color: #555;
   margin-top: 1rem;
 }
-
-/* ハンバーガーメニュー表示アニメーション */
-#main-nav {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-}
-
-#main-nav.show {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
