@@ -162,18 +162,25 @@ section {
   }
 
   #main-nav {
-    display: none;
-    flex-direction: column;
-    background: #222;
     position: absolute;
     top: 3rem;
     right: 1rem;
+    flex-direction: column;
+    background: #222;
     padding: 1rem;
     border-radius: 8px;
-  }
+    gap: 1rem;
 
-  #main-nav.show {
-    display: flex;
+    /* アニメーション用 */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+   #main-nav.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .gallery,
