@@ -134,9 +134,10 @@
 
 <!-- モーダル拡大表示 -->
 <div id="modal" class="modal" aria-hidden="true">
-  <button class="modal-close" aria-label="Close image">✕</button>
+  <button id="modal-close" class="modal-close" aria-label="Close image">✕</button>
   <img class="modal-content" id="modal-img" alt="">
 </div>
+
 
 
  
@@ -178,13 +179,39 @@
 
   <script>
 <script>
+  // メニュー開閉
   function toggleMenu() {
     const nav = document.getElementById('main-nav');
     const btn = document.querySelector('.menu-toggle');
     const isOpen = nav.classList.toggle('show');
     btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }
+
+  // モーダル処理
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  const closeBtn = document.getElementById("modal-close");
+
+  document.querySelectorAll(".gallery img").forEach(img => {
+    img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      modal.classList.add("show");
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+    modalImg.src = "";
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+      modalImg.src = "";
+    }
+  });
 </script>
+
 
 <!-- モーダル拡大表示 -->
 <div id="modal" class="modal">
