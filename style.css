@@ -205,6 +205,11 @@ section {
     background: none;
     flex-direction: row;
     gap: 1rem;
+    
+ /* ここが追加ポイント！ */
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
   }
 }
   margin-top: 1rem;
