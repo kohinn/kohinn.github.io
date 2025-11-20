@@ -362,15 +362,16 @@ section h2 {
   display: flex;
 }
 
-/* 拡大画像：中央寄せ */
 .modal-content {
   max-width: 90vw;
   max-height: 85vh;
-  margin: auto;
-  display: block;
+  margin: auto;         /* ← 中央寄せの決め手 */
+  display: block;       /* ← ブロック要素にすることで margin:auto が効く */
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
+
+
 
 /* ✕ボタン：ハンバーガーと重ならないように少し下げる */
 .modal-close {
