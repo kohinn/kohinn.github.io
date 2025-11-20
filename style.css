@@ -192,6 +192,7 @@ section {
     padding: 1rem;
   }
 }
+
 /* PC表示時：ハンバーガー非表示、ナビ表示 */
 @media (min-width: 769px) {
   .menu-toggle {
