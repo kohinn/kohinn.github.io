@@ -331,10 +331,6 @@ section {
   z-index: 1000;
 }
 
-
-
-
-
 section h2 {
   background: #222;
   color: #fff;
@@ -343,4 +339,36 @@ section h2 {
   border-radius: 4px;
   margin-bottom: 1rem;
   display: inline-block;
+}
+
+.modal {
+  display: none; /* 初期状態は非表示 */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.show {
+  display: flex; /* 拡大時に表示 */
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1000;
 }
