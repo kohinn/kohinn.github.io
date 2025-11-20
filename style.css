@@ -288,3 +288,33 @@ header {
   position: relative;
 }
 
+header h1 {
+  font-size: 1.2rem;       /* ← 小さめで上品に */
+  font-weight: 500;        /* ← 少し細めで洗練された印象 */
+  margin: 0;
+}
+
+header h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+#main-nav a {
+  font-size: 0.9rem;        /* ← 少し小さくして落ち着いた印象に */
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
