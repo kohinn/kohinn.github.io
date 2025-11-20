@@ -352,9 +352,10 @@ section h2 {
   inset: 0;
   background-color: rgba(0,0,0,0.8);
   z-index: 999;
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 4rem; /* ヘッダーとの重なりを防ぐ */
+  padding: 0; /* 余白なしで完全中央 */
 }
 
 .modal.show {
@@ -368,17 +369,18 @@ section h2 {
   display: block;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  position: relative;
 }
 
+/* ✕ボタンを画像の右上に近づける */
 .modal-close {
-  position: fixed;
-  top: 4rem;
-  right: 1rem;
-  font-size: 2rem;
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+  font-size: 1.8rem;
   color: #fff;
   background: transparent;
   border: none;
   cursor: pointer;
   z-index: 1001;
 }
-
