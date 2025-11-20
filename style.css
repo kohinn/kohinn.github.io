@@ -297,4 +297,37 @@ section {
   margin-top: 1rem;
 }
 
+.modal {
+  display: none; /* 初期状態は非表示 */
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  padding: 2vw;
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.modal-content {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.modal-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  font-size: 1.6rem;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
 
