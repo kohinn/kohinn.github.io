@@ -104,27 +104,33 @@ section {
 
 /* モーダル拡大表示 */
 .modal {
-  display: none;
+  display: flex; /* ← block ではなく flex にすることで中央配置が簡単に */
+  justify-content: center;
+  align-items: center;
   position: fixed;
   z-index: 999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0,0,0,0.8);
 }
 
 .modal-content {
-  margin: auto;
-  display: block;
   max-width: 90%;
   max-height: 90%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  border-radius: 8px;
 }
 
 .close {
   position: absolute;
-  top: 20px; right: 30px;
+  top: 20px;
+  right: 30px;
   color: #fff;
   font-size: 2rem;
   cursor: pointer;
+  z-index: 1000;
 }
 
 /* 上に戻るボタン */
