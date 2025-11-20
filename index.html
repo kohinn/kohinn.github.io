@@ -146,40 +146,31 @@
   
 
 <script>
-const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modal-img");
-const closeBtn = document.querySelector(".modal-close");
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  const closeBtn = document.getElementById("modal-close");
 
-// 拡大表示
-document.querySelectorAll(".thumbnail").forEach(img => {
-  img.addEventListener("click", () => {
-    modalImg.src = img.src;
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
+  // 拡大表示
+  document.querySelectorAll(".gallery img, .thumbnail").forEach(img => {
+    img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      modal.classList.add("show");
+    });
   });
-});
 
-// ✕で閉じる
-closeBtn.addEventListener("click", () => {
-  modal.classList.remove("is-open");
-  modal.setAttribute("aria-hidden", "true");
-});
+  // ✕で閉じる
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+    modalImg.src = ""; // 画像をリセット
+  });
 
-// 背景クリックで閉じる
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-  }
-});
-
-// Escキーで閉じる
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && modal.classList.contains("is-open")) {
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-  }
-});
+  // 背景クリックでも閉じる（オプション）
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+      modalImg.src = "";
+    }
+  });
 </script>
 
 
