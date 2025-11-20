@@ -251,4 +251,17 @@ section {
   margin-top: 1rem;
 }
 
+/* ハンバーガーメニュー表示アニメーション */
+#main-nav {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+#main-nav.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 
