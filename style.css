@@ -336,6 +336,16 @@ section {
   z-index: 1001;
 }
 
+footer {
+  background: #222;
+  color: #fff; /* ←灰色から白に戻す */
+  text-align: center;
+  padding: 1.2rem 2rem;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+
 
 section h2 {
   background: #222;
@@ -387,3 +397,17 @@ section h2 {
   z-index: 1001;
 }
 
+.sns-links a[href*="artstation"] {
+  background: #000; /* ←黒背景で見やすく */
+  color: #fff;
+}
+
+.sns-links a {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+  display: inline-block;
+}
