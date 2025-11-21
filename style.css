@@ -1,108 +1,413 @@
-//* ====== 全体の基本設定 ====== */
+/* 全体の基本スタイル */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
-  background-color: #fff;
-  color: #000;
+  padding: 0;
+  background: #fafafa;
+  color: #333;
 }
 
-/* ====== ヘッダー帯（途切れ修正済） ====== */
+html {
+  scroll-behavior: smooth;
+}
+
 header {
-  position: fixed;
+  background: #222;
+  color: #fff;
+  padding: 1.2rem 2rem; /* ←高さを戻す */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
   z-index: 1000;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-  padding: 1rem 2rem;
-  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* ====== フッター帯（統一感あり） ====== */
-footer {
-  background-color: #000;
+/* ロゴ（Kohinn）を小さく上品に */
+.site-logo {
+  font-size: 1rem;          /* 以前より小さめ */
+  font-weight: 700;
+  letter-spacing: 0.02em;   /* ほんの少し詰める */
   color: #fff;
-  padding: 1rem 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-  border-top: 1px solid #444;
+  margin: 0;
 }
 
-/* ====== セクション帯（白黒ブランド用） ====== */
-.section-band {
-  background-color: #000;
-  color: #fff;
-  padding: 2rem;
-  border-top: 1px solid #444;
-  border-bottom: 1px solid #444;
-}
-
-/* ====== モーダル画像表示 ====== */
-.modal {
+/* ハンバーガーアイコン */
+.menu-toggle {
   display: none;
+  font-size: 1.6rem; /* 少し控えめに */
+  color: white;
+  cursor: pointer;
+  line-height: 1;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+/* ナビゲーション（PCデフォルト） */
+#main-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+#main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem; /* ほんの少し小さく */
+  padding: 0.25rem 0.4rem;
+}
+
+/* セクション共通 */
+section {
+  padding: 2rem;
+}
+
+/* ギャラリーとVTuber画像レイアウト */
+.gallery,
+.vtuber {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* ギャラリー画像共通スタイル */
+.gallery img,
+.vtuber img {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0; /* altテキスト非表示 */
+}
+
+/* アニメーション遅延 */
+.gallery img:nth-child(1),
+.vtuber img:nth-child(1) { animation-delay: 0.2s; }
+.gallery img:nth-child(2),
+.vtuber img:nth-child(2) { animation-delay: 0.4s; }
+.gallery img:nth-child(3),
+.vtuber img:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* モーダル拡大表示 */
+.modal {
+  display: flex; /* ← block ではなく flex にすることで中央配置が簡単に */
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  z-index: 2000;
+  z-index: 999;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
   background-color: rgba(0,0,0,0.8);
 }
 
 .modal-content {
-  margin: auto;
-  display: block;
   max-width: 90%;
   max-height: 90%;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  animation: fadeIn 0.3s ease-in-out;
+  border-radius: 8px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* ====== ✕ボタン（右上に自然配置） ====== */
 .close {
   position: absolute;
   top: 20px;
   right: 30px;
   color: #fff;
   font-size: 2rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* 上に戻るボタン */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #333;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* SNSリンク（Rosuuri風） */
+.sns-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sns-links a {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
   font-weight: bold;
-  cursor: pointer;
-  transition: color 0.2s ease;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
 }
 
-.close:hover {
-  color: #ccc;
+.sns-links a[href*="twitter"] { background: #1d9bf0; }
+.sns-links a[href*="pixiv"] { background: #0096fa; }
+.sns-links a[href*="instagram"] { background: #e1306c; }
+.sns-links a[href*="youtube"] { background: #ff0000; }
+
+.sns-links a:hover {
+  opacity: 0.8;
 }
 
-/* ====== 画像ギャラリーの基本スタイル ====== */
-.gallery img {
-  max-width: 100%;
-  height: auto;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+/* 画像ホバー拡大 */
+.thumbnail:hover {
+  transform: scale(1.05);
 }
 
-.gallery img:hover {
-  transform: scale(1.02);
-}
+/* スマホ（768px以下）：ハンバーガー＋ヌルッと表示 */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: inline-block;
+  }
 
-/* ====== レスポンシブ対応 ====== */
-@media screen and (max-width: 768px) {
-  header, footer {
+  #main-nav {
+    position: absolute;
+    top: 2.6rem;          /* ヘッダーが小さくなった分調整 */
+    right: 1rem;
+    flex-direction: column;
+    background: #222;
+    padding: 0.75rem;
+    border-radius: 8px;
+    gap: 0.6rem;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.28s ease, transform 0.28s ease;
+    pointer-events: none;
+  }
+
+  #main-nav.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* スマホのメニュー文字サイズも少し控えめに */
+  #main-nav a {
+    font-size: 0.95rem;
+  }
+
+  .gallery,
+  .vtuber {
+    grid-template-columns: 1fr;
+  }
+
+  section {
     padding: 1rem;
-    font-size: 0.9rem;
+  }
+}
+
+/* PC（769px以上）：ハンバーガー非表示、ナビ常時表示 */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
   }
 
-  .close {
-    top: 10px;
-    right: 15px;
-    font-size: 1.5rem;
+  #main-nav {
+    display: flex !important;
+    position: static;
+    background: none;
+    flex-direction: row;
+    gap: 1rem;
+
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
   }
+}
+
+@media (min-width: 769px) {
+  header {
+    padding: 1.2rem 2rem; /* PCでは太めに */
+  }
+}
+
+
+/* お問い合わせ周り */
+.contact-intro {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.contact-intro .jp-note {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.form-embed {
+  max-width: 860px;
+  margin: 1rem auto;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.form-embed iframe {
+  display: block;
+  width: 100%;
+  height: 78vh;
+  min-height: 560px;
+  border: 0;
+  background: #fff;
+}
+
+@media (max-width: 640px) {
+  .form-embed iframe {
+    height: 84svh;
+    min-height: 520px;
+  }
+}
+
+.contact-fallback {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 1rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.85);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  width: auto;
+  height: auto;
+  max-width: 95vw;
+  max-height: 90vh;
+  margin: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  object-fit: contain;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 2rem;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+footer {
+  background: #222;
+  color: #fff; /* ←灰色から白に戻す */
+  text-align: center;
+  padding: 1.2rem 2rem;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+
+
+section h2 {
+  background: #222;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.85);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  width: auto;
+  height: auto;
+  max-width: 95vw;
+  max-height: 90vh;
+  margin: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  object-fit: contain;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 2rem;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.sns-links a[href*="artstation"] {
+  background: #000; /* ←黒背景で見やすく */
+  color: #fff;
+}
+
+.sns-links a {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+  display: inline-block;
 }
