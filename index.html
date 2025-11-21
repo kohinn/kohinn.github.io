@@ -157,7 +157,11 @@
     });
   });
 
-
+  // ✕ボタンで閉じる処理（これが抜けていた）
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+    modalImg.src = "";
+  });
 </script>
 
 
