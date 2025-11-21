@@ -134,7 +134,7 @@
 
 <!-- モーダル拡大表示（1つに統一） -->
 <div id="modal" class="modal" aria-hidden="true">
-  <button id="modal-close" class="modal-close" aria-label="Close image">✕</button>
+ <button class="modal-close" aria-label="Close image">✕</button>
   <img class="modal-content" id="modal-img" alt="">
 </div>
 
@@ -146,9 +146,10 @@
     btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }
 
+ <script>
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modal-img");
-  const closeBtn = document.getElementById("modal-close");
+  const closeBtn = document.querySelector(".modal-close"); // ← クラスで取得
 
   document.querySelectorAll(".gallery img").forEach(img => {
     img.addEventListener("click", () => {
@@ -157,7 +158,10 @@
     });
   });
 
-
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+    modalImg.src = "";
+  });
 </script>
 
 
