@@ -298,41 +298,43 @@ section {
 }
 
 .modal {
-  display: none; /* 初期状態は非表示 */
+  display: none;
   position: fixed;
   inset: 0;
-  background-color: rgba(0,0,0,0.8);
-  z-index: 999;
+  background-color: rgba(0,0,0,0.85);
+  z-index: 1000;
   justify-content: center;
   align-items: center;
-  padding: 2vw;
+  padding: 0;
 }
 
 .modal.show {
-  display: flex; /* 表示時に中央寄せ */
+  display: flex;
 }
-
-
-
 
 .modal-content {
-  max-width: 90vw;
-  max-height: 85vh;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  margin: 0 auto; /* ← これが中央寄せの決め手 */
+  width: auto;
+  height: auto;
+  max-width: 95vw;
+  max-height: 90vh;
+  margin: auto;
   display: block;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  object-fit: contain;
+  position: relative;
 }
-
 
 .modal-close {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  color: #fff;
+  top: 0.75rem;
+  right: 0.75rem;
   font-size: 2rem;
+  color: #fff;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 
