@@ -11,18 +11,17 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ヘッダー（コンパクト化＋固定オプション） */
 header {
   background: #222;
   color: #fff;
-  padding: 0.6rem 1rem; /* 以前の 1rem より小さく */
+  padding: 1.2rem 2rem; /* ←高さを戻す */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky; /* 必要なら固定感を出す */
+  position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255,255,255,0.08); /* 薄いラインで締める */
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 /* ロゴ（Kohinn）を小さく上品に */
