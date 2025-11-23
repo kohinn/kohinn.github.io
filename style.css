@@ -85,8 +85,8 @@ section h2 {
 /* ギャラリー（PC表示） */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* ← 少し大きめに */
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* ← Rosuuri風サイズ感 */
+  gap: 1rem;
   max-width: 960px;
   margin: 0 auto;
   justify-content: center;
@@ -107,27 +107,6 @@ section h2 {
   transform: translateY(20px);
   animation: fadeIn 1s ease forwards;
 }
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* スマホ表示（768px以下） */
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* ← 1〜2枚並ぶ */
-    gap: 1.2rem;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  .gallery img {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-}
-
 
 .gallery img:hover {
   transform: scale(1.05);
@@ -288,7 +267,7 @@ footer {
   margin-top: 1rem;
 }
 
-/* スマホ：ハンバーガー表示＋ナビ開閉＋ギャラリー2列 */
+/* スマホ：ハンバーガー表示＋ナビ開閉＋ギャラリー調整 */
 @media (max-width: 768px) {
   .menu-toggle {
     display: inline-block;
@@ -321,9 +300,8 @@ footer {
   }
 
   .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* ← 少し大きめに */
-    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* ← スマホでも2枚並ぶ余地 */
+    gap: 1rem;
     max-width: 100%;
     margin: 0 auto;
     padding: 0 1rem;
@@ -331,14 +309,7 @@ footer {
 
   .gallery img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    display: block;
     margin: 0 auto;
-    transition: transform 0.3s ease;
-  }
-
-  .gallery img:hover {
-    transform: scale(1.05);
+    display: block;
   }
 }
