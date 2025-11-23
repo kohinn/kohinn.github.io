@@ -299,8 +299,10 @@ footer {
     font-size: 0.95rem;
   }
 
+  @media (max-width: 768px) {
   .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* ← スマホでも2枚並ぶ余地 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* ← 2枚並ぶ余地を確保 */
     gap: 1rem;
     max-width: 100%;
     margin: 0 auto;
@@ -313,3 +315,4 @@ footer {
     display: block;
   }
 }
+
