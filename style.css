@@ -525,7 +525,7 @@ header {
   z-index: 1000;
 
   /* 黒帯をフル幅にするための確定指定 */
-  width: 100vw;          /* ← 100% ではなく 100vw にする */
+ width: 100%;          /* ← 100% ではなく 100vw にする */
   left: 0;
   right: 0;
   margin: 0;             /* 予期せぬ外側の余白を排除 */
@@ -538,14 +538,15 @@ header {
 
 /* ヘッダー内部の並びと余白はここで管理 */
 .header-inner {
-  max-width: 1200px;     /* 中身は中央に収める（好みで調整可） */
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 1.2rem 2rem;  /* 高さ・左右余白はここで */
+  padding: 1.2rem 2rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 1rem;
 }
+
 
 /* PCではナビ右端押し出し（保険） */
 @media (min-width: 769px) {
