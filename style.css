@@ -267,7 +267,6 @@ footer {
   margin-top: 1rem;
 }
 
-/* スマホ：ハンバーガー表示＋ナビ開閉＋ギャラリー調整 */
 @media (max-width: 768px) {
   .menu-toggle {
     display: inline-block;
@@ -299,10 +298,10 @@ footer {
     font-size: 0.95rem;
   }
 
-  @media (max-width: 768px) {
+  /* ✅ ギャラリーを2列に安定させる */
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* ← 2枚並ぶ余地を確保 */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1rem;
     max-width: 100%;
     margin: 0 auto;
@@ -315,4 +314,3 @@ footer {
     display: block;
   }
 }
-
