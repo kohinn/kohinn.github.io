@@ -360,7 +360,7 @@ section h2 {
   color: #fff;
   background-color: #222;
   border-radius: 6px;
-  text-align: center;
+  text-align: left; /* ← ここがポイント！文字だけ左寄せに */
 }
 
 
