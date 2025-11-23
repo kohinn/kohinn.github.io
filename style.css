@@ -348,14 +348,31 @@ footer {
 
 
 section h2 {
-  background: #222;
+  display: block;
+  width: fit-content;
+  padding: 0.4rem 1rem;
+  background: #222; /* 帯の色（黒） */
   color: #fff;
-  padding: 0.5rem 1rem;
   font-size: 1.2rem;
+  font-weight: bold;
   border-radius: 4px;
-  margin-bottom: 1rem;
-  display: inline-block;
+  margin: 0 auto 1rem auto; /* 中央寄せ＋下に余白 */
+  position: relative;
+  z-index: 1;
 }
+
+section h2::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -9999px;
+  right: -9999px;
+  height: 1.6rem; /* 帯の太さ */
+  background: #222; /* 帯の色（黒） */
+  z-index: -1;
+  transform: translateY(-50%);
+}
+
 
 .modal {
   display: none;
