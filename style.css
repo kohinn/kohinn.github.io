@@ -486,3 +486,10 @@ header {
     padding: 1.2rem 2rem;
     min-height: 64px;
   }
+section {
+  text-align: center; /* ← セクション内の本文を中央寄せ */
+}
+
+section h2 {
+  text-align: left; /* ← 帯の文字だけ左寄せに固定 */
+}
