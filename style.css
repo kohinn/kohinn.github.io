@@ -347,5 +347,29 @@ footer {
     margin: 0 auto;
   }
 }
+@media (max-width: 768px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* ← 2列対応 */
+    gap: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 0 1rem;
+  }
+
+  .gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+}
 
 
