@@ -5,40 +5,49 @@ body {
   padding: 0;
   background: #fafafa;
   color: #333;
+  overflow-x: hidden; /* 横スクロール防止 */
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* ヘッダー全体（黒帯） */
 header {
-  background: #222;
-  color: #fff;
-  padding: 1.2rem 2rem; /* ←高さを戻す */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;               /* ← 横いっぱいに広げる */
+  margin: 0;
+  background: #222;          /* 黒帯 */
   border-bottom: 1px solid rgba(255,255,255,0.08);
-   width: 100%;
-  box-sizing: border-box; /* ← padding込みで100%に収まるようにする */
+  box-sizing: border-box;
 }
 
-/* ロゴ（Kohinn）を小さく上品に */
+/* ヘッダー内部の並び */
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* ロゴ */
 .site-logo {
-  font-size: 1rem;          /* 以前より小さめ */
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.02em;   /* ほんの少し詰める */
+  letter-spacing: 0.02em;
   color: #fff;
   margin: 0;
 }
 
 /* ハンバーガーアイコン */
 .menu-toggle {
-  display: none;
-  font-size: 1.6rem; /* 少し控えめに */
+  display: none; /* PCでは非表示 */
+  font-size: 1.6rem;
   color: white;
   cursor: pointer;
   line-height: 1;
@@ -57,7 +66,7 @@ header {
 #main-nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 0.95rem; /* ほんの少し小さく */
+  font-size: 0.95rem;
   padding: 0.25rem 0.4rem;
 }
 
@@ -85,7 +94,7 @@ section {
   height: auto;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 0; /* altテキスト非表示 */
+  font-size: 0;
 }
 
 /* アニメーション遅延 */
@@ -103,498 +112,11 @@ section {
   }
 }
 
-/* モーダル拡大表示 */
-.modal {
-  display: flex; /* ← block ではなく flex にすることで中央配置が簡単に */
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.8);
-}
-
-.modal-content {
-  max-width: 90%;
-  max-height: 90%;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  border-radius: 8px;
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-/* 上に戻るボタン */
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #333;
-  color: #fff;
-  font-size: 1.5rem;
-  padding: 0.5rem 0.8rem;
-  border-radius: 50%;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  z-index: 1000;
-}
-
-/* SNSリンク（Rosuuri風） */
-.sns-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.sns-links a {
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: background 0.3s ease;
-}
-
-.sns-links a[href*="twitter"] { background: #1d9bf0; }
-.sns-links a[href*="pixiv"] { background: #0096fa; }
-.sns-links a[href*="instagram"] { background: #e1306c; }
-.sns-links a[href*="youtube"] { background: #ff0000; }
-
-.sns-links a:hover {
-  opacity: 0.8;
-}
-
-/* 画像ホバー拡大 */
-.thumbnail:hover {
-  transform: scale(1.05);
-}
-
-/* スマホ（768px以下）：ハンバーガー＋ヌルッと表示 */
+/* スマホ（768px以下）：ハンバーガー表示＋ナビドロップダウン */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: inline-block;
-  }
-
-  #main-nav {
-    position: absolute;
-    top: 2.6rem;          /* ヘッダーが小さくなった分調整 */
-    right: 1rem;
-    flex-direction: column;
-    background: #222;
-    padding: 0.75rem;
-    border-radius: 8px;
-    gap: 0.6rem;
-
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.28s ease, transform 0.28s ease;
-    pointer-events: none;
-  }
-
-  #main-nav.show {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-
-  /* スマホのメニュー文字サイズも少し控えめに */
-  #main-nav a {
-    font-size: 0.95rem;
-  }
-
-  .gallery,
-  .vtuber {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 1rem;
-  }
-}
-
-/* PC（769px以上）：ハンバーガー非表示、ナビ常時表示 */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
-
-  #main-nav {
-    display: flex !important;
-    position: static;
-    background: none;
-    flex-direction: row;
-    gap: 1rem;
-
-    opacity: 1 !important;
-    transform: none !important;
-    pointer-events: auto !important;
-  }
-}
-
-@media (min-width: 769px) {
-  header {
-    padding: 1.2rem 2rem; /* PCでは太めに */
-  }
-}
-
-
-/* お問い合わせ周り */
-.contact-intro {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #444;
-  margin-bottom: 1rem;
-}
-
-.contact-intro .jp-note {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-.form-embed {
-  max-width: 860px;
-  margin: 1rem auto;
-  background: #fff;
-  border: 1px solid #e6e6e6;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  overflow: hidden;
-}
-
-.form-embed iframe {
-  display: block;
-  width: 100%;
-  height: 78vh;
-  min-height: 560px;
-  border: 0;
-  background: #fff;
-}
-
-@media (max-width: 640px) {
-  .form-embed iframe {
-    height: 84svh;
-    min-height: 520px;
-  }
-}
-
-.contact-fallback {
-  font-size: 0.95rem;
-  color: #555;
-  margin-top: 1rem;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0,0,0,0.85);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-}
-
-.modal.show {
-  display: flex;
-}
-
-.modal-content {
-  width: auto;
-  height: auto;
-  max-width: 95vw;
-  max-height: 90vh;
-  margin: auto;
-  display: block;
-  border-radius: 8px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
-  object-fit: contain;
-  position: relative;
-}
-
-.modal-close {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  font-size: 2rem;
-  color: #fff;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-footer {
-  background: #222;
-  color: #fff; /* ←灰色から白に戻す */
-  text-align: center;
-  padding: 1.2rem 2rem;
-  font-size: 0.9rem;
-  width: 100%;
-}
-
-
-
-section h2 {
-  display: block;
-  width: 100%;
-  max-width: 860px;
-  margin: 0 auto 1.5rem auto;
-  padding: 0.6rem 1rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: #222;
-  border-radius: 6px;
-  text-align: left; /* ← ここがポイント！文字だけ左寄せに */
-}
-
-
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0,0,0,0.85);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-}
-
-.modal.show {
-  display: flex;
-}
-
-.modal-content {
-  width: auto;
-  height: auto;
-  max-width: 95vw;
-  max-height: 90vh;
-  margin: auto;
-  display: block;
-  border-radius: 8px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
-  object-fit: contain;
-  position: relative;
-}
-
-.modal-close {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  font-size: 2rem;
-  color: #fff;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.sns-links a[href*="artstation"] {
-  background: #000; /* ←黒背景で見やすく */
-  color: #fff;
-}
-
-.sns-links a {
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: background 0.3s ease;
-  display: inline-block;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-header, footer {
-  width: 100%;
-}
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-/* ヘッダーをフル幅にし、内側の並びを安定化 */
-header {
-  width: 100%;
-  box-sizing: border-box;      /* padding込みで100%に収まる */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* 左から: ロゴ → メニュー → ナビ(PC) */
-  gap: 1rem;
-}
-
-/* ロゴは左に固定 */
-.site-logo {
-  margin: 0;
-}
-
-/* PCではナビを右端に押し出す */
-@media (min-width: 769px) {
-  #main-nav {
-    margin-left: auto;         /* これでナビが右端へ */
-  }
-}
-
-/* スマホではハンバーガーを右端へ押し出す */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: inline-block;
-    margin-left: auto;         /* ハンバーガーが右端へ移動 */
-  }
-
-  #main-nav {
-    position: absolute;
-    top: calc(100% + 0.4rem);  /* ヘッダーの直下にドロップダウン */
-    right: 1rem;
-  }
-}
-@media (max-width: 768px) {
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .menu-toggle {
-    margin-left: auto; /* ← 右端に押し出す */
-  }
-}
-@media (max-width: 768px) {
-  header {
-    padding: 1.2rem 2rem;
-    min-height: 64px;
-  }
-section {
-  text-align: center; /* ← セクション内の本文を中央寄せ */
-}
-@media (min-width: 769px) {
-  section {
-    text-align: center;
-  }
-}
-@media (max-width: 768px) {
-  .gallery img,
-  .vtuber img {
-    width: 100%;
-    max-width: 280px;     /* ← Rosuuri風の自然なサイズ感 */
-    height: auto;
-    margin: 0 auto;
-    display: block;
-  }
-}
-header {
-  width: 100%;
-  background-color: #222;
-  box-sizing: border-box;
-}
-
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.2rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-/* ヘッダーの黒帯を画面いっぱいに広げ、内側は中央に揃える */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  /* 黒帯をフル幅にするための確定指定 */
- width: 100%;          /* ← 100% ではなく 100vw にする */
-  left: 0;
-  right: 0;
-  margin: 0;             /* 予期せぬ外側の余白を排除 */
-  padding: 0;            /* 内側の余白は header-inner に移す */
-  background: #222;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-
-  display: block;        /* flexはheader-innerに任せる */
-}
-
-/* ヘッダー内部の並びと余白はここで管理 */
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.2rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-
-
-/* PCではナビ右端押し出し（保険） */
-@media (min-width: 769px) {
-  #main-nav {
+    display: inline-block; /* ← スマホで表示 */
     margin-left: auto;
-  }
-}
-
-/* スマホでの高さ安定（潰れ対策） */
-@media (max-width: 768px) {
-  header {
-    /* 黒帯の高さが一定に見えるように */
-    min-height: 56px;
-  }
-}
-
-/* ヘッダー全体の黒帯を横に広げる */
-header {
-  width: 100%;
-  background-color: #222;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* 中身の並びと余白は header-inner に任せる */
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.2rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* スマホでハンバーガー表示 */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: inline-block;
-    margin-left: auto;
-    font-size: 1.6rem;
-    color: white;
-    background: transparent;
-    border: none;
-    cursor: pointer;
   }
 
   #main-nav {
@@ -617,9 +139,26 @@ header {
     transform: translateY(0);
     pointer-events: auto;
   }
+
+  .gallery,
+  .vtuber {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 1rem;
+    text-align: center; /* 本文は中央寄せ */
+  }
+
+  .gallery img,
+  .vtuber img {
+    max-width: 280px; /* スマホで自然なサイズ */
+    margin: 0 auto;
+    display: block;
+  }
 }
 
-/* PCではハンバーガー非表示、ナビは右寄せ */
+/* PC（769px以上）：ハンバーガー非表示、ナビ右寄せ */
 @media (min-width: 769px) {
   .menu-toggle {
     display: none !important;
@@ -636,5 +175,8 @@ header {
     transform: none !important;
     pointer-events: auto !important;
   }
-}
 
+  section {
+    text-align: center; /* 本文は中央寄せ */
+  }
+}
