@@ -442,8 +442,3 @@ section h2::before {
     font-size: 1.8rem; /* アイコンの存在感を少し強める */
   }
 }
-@media (max-width: 768px) {
-  header {
-    padding: 1.2rem 2rem !important;
-  }
-}
