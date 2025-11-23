@@ -324,10 +324,8 @@ footer {
   }
 
   footer .rights-note {
-    font-size: 0.65rem;
-    color: #999;
-    margin-top: 0.2rem;
-    line-height: 1.5;
+    font-size: 0.6rem;
+    letter-spacing: 0.03em;
   }
 }
 
@@ -337,4 +335,11 @@ footer {
     letter-spacing: 0.03em;
   }
 }
+
+@media (min-width: 769px) {
+  footer .copyright {
+    margin-top: 1.4rem;
+  }
+}
+
 
