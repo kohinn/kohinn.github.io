@@ -489,4 +489,9 @@ header {
 section {
   text-align: center; /* ← セクション内の本文を中央寄せ */
 }
+@media (min-width: 769px) {
+  section {
+    text-align: center;
+  }
+}
 
