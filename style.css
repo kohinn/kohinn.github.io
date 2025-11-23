@@ -82,12 +82,12 @@ section h2 {
   box-sizing: border-box;
 }
 
-/* ギャラリー（Rosuuri風） */
+/* ギャラリー（PC表示） */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  max-width: 860px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* ← 少し大きめに */
+  gap: 1.2rem;
+  max-width: 960px;
   margin: 0 auto;
   justify-content: center;
   padding: 0 1rem;
@@ -107,6 +107,27 @@ section h2 {
   transform: translateY(20px);
   animation: fadeIn 1s ease forwards;
 }
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* スマホ表示（768px以下） */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* ← 1〜2枚並ぶ */
+    gap: 1.2rem;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .gallery img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
 
 .gallery img:hover {
   transform: scale(1.05);
