@@ -324,8 +324,11 @@ footer {
   }
 
   footer .rights-note {
-    font-size: 0.6rem;
-    letter-spacing: 0.03em;
+   margin-top: 0; /* ← 余白を完全にゼロに */
+  font-size: 0.65rem;
+  color: #999;
+  line-height: 1.4;
+}
   }
 }
 
