@@ -300,31 +300,32 @@ footer {
   }
 
   .gallery {
-    grid-template-columns: repeat(2, 1fr); /* ← 2列表示に変更 */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     max-width: 90%;
     margin: 0 auto;
-    padding: 0
+    padding: 0;
+  }
 
-　.sns-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-}
-  
-footer .copyright {
-  margin-top: 1rem; /* ← SNSとの間隔を広げる */
-  font-size: 0.85rem;
-  color: #ccc;
-}
+  .sns-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
 
+  footer .copyright {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #ccc;
+  }
 
-footer .rights-note {
-  font-size: 0.65rem;
-  color: #999;
-  margin-top: 0.2rem;
-  line-height: 1.5;
+  footer .rights-note {
+    font-size: 0.65rem;
+    color: #999;
+    margin-top: 0.2rem;
+    line-height: 1.5;
+  }
 }
