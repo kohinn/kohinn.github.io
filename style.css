@@ -430,3 +430,38 @@ header, footer {
   align-items: center;
   justify-content: space-between;
 }
+/* ヘッダーをフル幅にし、内側の並びを安定化 */
+header {
+  width: 100%;
+  box-sizing: border-box;      /* padding込みで100%に収まる */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 左から: ロゴ → メニュー → ナビ(PC) */
+  gap: 1rem;
+}
+
+/* ロゴは左に固定 */
+.site-logo {
+  margin: 0;
+}
+
+/* PCではナビを右端に押し出す */
+@media (min-width: 769px) {
+  #main-nav {
+    margin-left: auto;         /* これでナビが右端へ */
+  }
+}
+
+/* スマホではハンバーガーを右端へ押し出す */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: inline-block;
+    margin-left: auto;         /* ハンバーガーが右端へ移動 */
+  }
+
+  #main-nav {
+    position: absolute;
+    top: calc(100% + 0.4rem);  /* ヘッダーの直下にドロップダウン */
+    right: 1rem;
+  }
+}
