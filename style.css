@@ -321,8 +321,24 @@ footer {
   }
 
   .gallery {
-    grid-template-columns: repeat(2, 1fr); /* ← 2列表示に変更 */
-    gap: 1rem;
-    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* ← 少し大きめに */
+    gap: 1.2rem;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 
+    padding: 0 1rem;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+}
