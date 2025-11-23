@@ -14,7 +14,7 @@ html {
 header {
   background: #222;
   color: #fff;
-  padding: 1.2rem 2rem; /* ← footerと同じ高さに統一 */
+  padding: 1.2rem 2rem; /* ←高さを戻す */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,9 +22,7 @@ header {
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  min-height: 64px; /* ← 高さの最低値を明示して安定させる */
 }
-
 
 /* ロゴ（Kohinn）を小さく上品に */
 .site-logo {
@@ -413,3 +411,4 @@ section h2 {
   transition: background 0.3s ease;
   display: inline-block;
 }
+
