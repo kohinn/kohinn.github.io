@@ -309,11 +309,12 @@ footer {
 
   .sns-links {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1rem;
     flex-wrap: nowrap;
     overflow-x: auto;
     padding-bottom: 0.5rem;
+    scroll-padding-left: 1rem;
   }
 
   footer .copyright {
