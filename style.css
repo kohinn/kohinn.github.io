@@ -413,7 +413,3 @@ section h2 {
   transition: background 0.3s ease;
   display: inline-block;
 }
-header, footer {
-  padding: 1.2rem 2rem; /* 上下の帯を統一 */
-  min-height: 64px;     /* 高さを明示して安定させる */
-}
