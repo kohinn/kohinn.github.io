@@ -330,3 +330,10 @@ footer {
     line-height: 1.5;
   }
 }
+
+@media (min-width: 769px) {
+  footer .rights-note {
+    font-size: 0.6rem;
+  }
+}
+
