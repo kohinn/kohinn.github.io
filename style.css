@@ -350,14 +350,19 @@ footer {
 
 
 section h2 {
-  background: #222;
-  color: #fff;
-  padding: 0.5rem 1rem;
+  display: block;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto 1.5rem auto;
+  padding: 0.6rem 1rem;
   font-size: 1.2rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  display: inline-block;
+  font-weight: bold;
+  color: #fff;
+  background-color: #222;
+  border-radius: 6px;
+  text-align: center;
 }
+
 
 .modal {
   display: none;
@@ -476,3 +481,8 @@ header {
     margin-left: auto; /* ← 右端に押し出す */
   }
 }
+@media (max-width: 768px) {
+  header {
+    padding: 1.2rem 2rem;
+    min-height: 64px;
+  }
