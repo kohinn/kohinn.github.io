@@ -334,6 +334,7 @@ footer {
 @media (min-width: 769px) {
   footer .rights-note {
     font-size: 0.6rem;
+    letter-spacing: 0.03em;
   }
 }
 
