@@ -305,4 +305,20 @@ footer {
     max-width: 90%;
     margin: 0 auto;
     padding: 0
+
+　.sns-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: nowrap; /* ← 折り返し禁止 */
+  overflow-x: auto;   /* ← スマホで入りきらない場合は横スクロール */
+}
+  
+footer .copyright {
+  margin-top: 1rem; /* ← SNSとの間隔を広げる */
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
     
