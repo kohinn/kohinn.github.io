@@ -85,7 +85,7 @@ section h2 {
 /* ギャラリー（PC表示） */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* ← Rosuuri風サイズ感 */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* ← PC用サイズ感 */
   gap: 1rem;
   max-width: 960px;
   margin: 0 auto;
@@ -267,6 +267,7 @@ footer {
   margin-top: 1rem;
 }
 
+/* スマホ：ハンバーガー表示＋ナビ開閉＋ギャラリー調整 */
 @media (max-width: 768px) {
   .menu-toggle {
     display: inline-block;
