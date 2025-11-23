@@ -267,7 +267,7 @@ footer {
   margin-top: 1rem;
 }
 
-/* スマホ：ハンバーガー表示＋ナビ開閉 */
+/* スマホ：ハンバーガー表示＋ナビ開閉＋ギャラリー2列 */
 @media (max-width: 768px) {
   .menu-toggle {
     display: inline-block;
@@ -298,16 +298,10 @@ footer {
   #main-nav a {
     font-size: 0.95rem;
   }
-}
 
-/* PC：ハンバーガー非表示、ナビ右寄せ */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
-
-  #main-nav {
-    display: flex !important;
-    margin-left: auto;
-    position:
-
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* ← 2列表示に変更 */
+    gap: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 
