@@ -1,4 +1,4 @@
-/* 全体の基本スタイル */
+/ 全体の基本スタイル /
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -12,7 +12,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ヘッダー */
+/ ヘッダー /
 header {
   background: #222;
   color: #fff;
@@ -26,7 +26,7 @@ header {
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* ロゴ */
+/ ロゴ /
 .site-logo {
   font-size: 1rem;
   font-weight: 700;
@@ -35,7 +35,7 @@ header {
   margin: 0;
 }
 
-/* ハンバーガーアイコン */
+/ ハンバーガーアイコン /
 .menu-toggle {
   display: none;
   font-size: 1.6rem;
@@ -46,27 +46,28 @@ header {
   padding: 0;
 }
 
-/* ナビゲーション */
-#main-nav {
+/ ナビゲーション /
+
+main-nav {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
 }
 
-#main-nav a {
+main-nav a {
   color: #fff;
   text-decoration: none;
   font-size: 0.95rem;
   padding: 0.25rem 0.4rem;
 }
 
-/* セクション共通 */
+/ セクション共通 /
 section {
   padding: 2rem;
   text-align: center;
 }
 
-/* セクションタイトル帯 */
+/ セクションタイトル帯 /
 section h2 {
   display: block;
   width: 100%;
@@ -82,10 +83,10 @@ section h2 {
   box-sizing: border-box;
 }
 
-/* ギャラリー（PC表示） */
+/ ギャラリー（PC表示） /
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); / ← Rosuuri風サイズ感 /
   gap: 1rem;
   max-width: 960px;
   margin: 0 auto;
@@ -95,9 +96,11 @@ section h2 {
 
 .gallery img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 0;
   display: block;
   margin: 0 auto;
   transition: transform 0.3s ease;
@@ -121,7 +124,7 @@ section h2 {
   }
 }
 
-/* モーダル拡大表示 */
+/ モーダル拡大表示 /
 .modal {
   display: none;
   position: fixed;
@@ -130,6 +133,7 @@ section h2 {
   z-index: 1000;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
 .modal.show {
@@ -137,12 +141,16 @@ section h2 {
 }
 
 .modal-content {
+  width: auto;
+  height: auto;
   max-width: 95vw;
   max-height: 90vh;
   margin: auto;
+  display: block;
   border-radius: 8px;
   box-shadow: 0 0 30px rgba(0,0,0,0.6);
   object-fit: contain;
+  position: relative;
 }
 
 .modal-close {
@@ -154,9 +162,10 @@ section h2 {
   background: transparent;
   border: none;
   cursor: pointer;
+  z-index: 1001;
 }
 
-/* 上に戻るボタン */
+/ 上に戻るボタン /
 .back-to-top {
   position: fixed;
   bottom: 20px;
@@ -169,9 +178,10 @@ section h2 {
   text-align: center;
   text-decoration: none;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  z-index: 1000;
 }
 
-/* フッター */
+/ フッター /
 footer {
   background: #222;
   color: #fff;
@@ -182,7 +192,7 @@ footer {
   box-sizing: border-box;
 }
 
-/* SNSリンク */
+/ SNSリンク /
 .sns-links {
   display: flex;
   justify-content: center;
@@ -199,6 +209,7 @@ footer {
   font-weight: bold;
   font-size: 0.9rem;
   transition: background 0.3s ease;
+  display: inline-block;
 }
 
 .sns-links a[href*="twitter"] { background: #1d9bf0; }
@@ -210,7 +221,7 @@ footer {
   opacity: 0.8;
 }
 
-/* お問い合わせ */
+/ お問い合わせ /
 .contact-intro {
   font-size: 1rem;
   line-height: 1.7;
@@ -232,13 +243,16 @@ footer {
   border: 1px solid #e6e6e6;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  overflow: hidden;
 }
 
 .form-embed iframe {
+  display: block;
   width: 100%;
   height: 78vh;
   min-height: 560px;
   border: 0;
+  background: #fff;
 }
 
 @media (max-width: 640px) {
@@ -254,14 +268,14 @@ footer {
   margin-top: 1rem;
 }
 
-/* スマホ：ハンバーガー表示＋ナビ開閉＋ギャラリー調整 */
+/ スマホ：ハンバーガー表示＋ナビ開閉＋ギャラリー調整 /
 @media (max-width: 768px) {
   .menu-toggle {
     display: inline-block;
     margin-left: auto;
   }
 
-  #main-nav {
+main-nav {
     position: absolute;
     top: 2.6rem;
     right: 1rem;
@@ -276,19 +290,20 @@ footer {
     pointer-events: none;
   }
 
-  #main-nav.show {
+main-nav.show {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
   }
 
-  #main-nav a {
+main-nav a {
     font-size: 0.95rem;
   }
 
+  @media (max-width: 768px) {
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); / ← 2枚並ぶ余地を確保 /
     gap: 1rem;
     max-width: 100%;
     margin: 0 auto;
@@ -301,4 +316,3 @@ footer {
     display: block;
   }
 }
-
