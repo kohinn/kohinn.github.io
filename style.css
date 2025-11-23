@@ -180,3 +180,29 @@ section {
     text-align: center; /* 本文は中央寄せ */
   }
 }
+/* セクションタイトル帯（Fanartなど）を復元 */
+section h2 {
+  display: block;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto 1.5rem auto;
+  padding: 0.6rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #222;   /* 黒帯 */
+  border-radius: 6px;
+  text-align: left;         /* 文字は左寄せ */
+  box-sizing: border-box;
+}
+
+/* フッターの黒帯を復元 */
+footer {
+  background: #222;         /* 黒帯 */
+  color: #fff;              /* 白文字 */
+  text-align: center;
+  padding: 1.2rem 2rem;
+  font-size: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+}
