@@ -465,3 +465,14 @@ header {
     right: 1rem;
   }
 }
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    margin-left: auto; /* ← 右端に押し出す */
+  }
+}
