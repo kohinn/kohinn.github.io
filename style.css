@@ -310,9 +310,9 @@ footer {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 1rem;
-  flex-wrap: nowrap; /* ← 折り返し禁止 */
-  overflow-x: auto;   /* ← スマホで入りきらない場合は横スクロール */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
 }
   
 footer .copyright {
