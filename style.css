@@ -411,3 +411,17 @@ section h2 {
   transition: background 0.3s ease;
   display: inline-block;
 }
+
+@media (max-width: 768px) {
+  header {
+    padding: 1.2rem 2rem; /* footerと同じ高さ感に統一 */
+  }
+
+  .site-logo {
+    font-size: 1.1rem; /* 少しだけ大きくして視認性UP */
+  }
+
+  .menu-toggle {
+    font-size: 1.8rem; /* アイコンの存在感を少し強める */
+  }
+}
