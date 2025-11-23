@@ -494,4 +494,15 @@ section {
     text-align: center;
   }
 }
+@media (max-width: 768px) {
+  .gallery img,
+  .vtuber img {
+    width: 100%;
+    max-width: 280px;     /* ← Rosuuri風の自然なサイズ感 */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}
+  
 
