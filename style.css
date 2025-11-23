@@ -518,5 +518,48 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-  
+/* ヘッダーの黒帯を画面いっぱいに広げ、内側は中央に揃える */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  /* 黒帯をフル幅にするための確定指定 */
+  width: 100vw;          /* ← 100% ではなく 100vw にする */
+  left: 0;
+  right: 0;
+  margin: 0;             /* 予期せぬ外側の余白を排除 */
+  padding: 0;            /* 内側の余白は header-inner に移す */
+  background: #222;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  display: block;        /* flexはheader-innerに任せる */
+}
+
+/* ヘッダー内部の並びと余白はここで管理 */
+.header-inner {
+  max-width: 1200px;     /* 中身は中央に収める（好みで調整可） */
+  margin: 0 auto;
+  padding: 1.2rem 2rem;  /* 高さ・左右余白はここで */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* PCではナビ右端押し出し（保険） */
+@media (min-width: 769px) {
+  #main-nav {
+    margin-left: auto;
+  }
+}
+
+/* スマホでの高さ安定（潰れ対策） */
+@media (max-width: 768px) {
+  header {
+    /* 黒帯の高さが一定に見えるように */
+    min-height: 56px;
+  }
+}
+
 
