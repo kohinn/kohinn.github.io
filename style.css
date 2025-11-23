@@ -22,6 +22,8 @@ header {
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid rgba(255,255,255,0.08);
+   width: 100%;
+  box-sizing: border-box; /* ← padding込みで100%に収まるようにする */
 }
 
 /* ロゴ（Kohinn）を小さく上品に */
@@ -412,3 +414,11 @@ section h2 {
   display: inline-block;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  width: 100%;
+}
