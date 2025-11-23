@@ -348,31 +348,14 @@ footer {
 
 
 section h2 {
-  display: block;
-  width: fit-content;
-  padding: 0.4rem 1rem;
-  background: #222; /* 帯の色（黒） */
+  background: #222;
   color: #fff;
+  padding: 0.5rem 1rem;
   font-size: 1.2rem;
-  font-weight: bold;
   border-radius: 4px;
-  margin: 0 auto 1rem auto; /* 中央寄せ＋下に余白 */
-  position: relative;
-  z-index: 1;
+  margin-bottom: 1rem;
+  display: inline-block;
 }
-
-section h2::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -9999px;
-  right: -9999px;
-  height: 1.6rem; /* 帯の太さ */
-  background: #222; /* 帯の色（黒） */
-  z-index: -1;
-  transform: translateY(-50%);
-}
-
 
 .modal {
   display: none;
@@ -428,147 +411,3 @@ section h2::before {
   transition: background 0.3s ease;
   display: inline-block;
 }
-
-@media (max-width: 768px) {
-  header {
-    padding: 1.2rem 2rem; /* footerと同じ高さ感に統一 */
-  }
-
-  .site-logo {
-    font-size: 1.1rem; /* 少しだけ大きくして視認性UP */
-  }
-
-  .menu-toggle {
-    font-size: 1.8rem; /* アイコンの存在感を少し強める */
-  }
-}
-/* 帯を文字の横にも通すスタイル */
-section h2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 2rem;
-  z-index: 1;
-}
-
-section h2::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 1.6rem;
-  background: #222;
-  transform: translateY(-50%);
-  z-index: -1;
-  border-radius: 4px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.2);
-}
-
-/* スマホ帯の高さを明示的に統一 */
-@media (max-width: 768px) {
-  header {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-  }
-
-  footer {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-  }
-
-  .site-logo {
-    font-size: 1.1rem;
-  }
-
-  .menu-toggle {
-    font-size: 1.8rem;
-  }
-}
-
-
-
-
-
-/* Rosuuri風のセクションタイトル帯 */
-section h2 {
-  position: relative;
-  display: inline-block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff;
-  padding: 0.4rem 1.2rem;
-  margin: 0 auto 2rem auto;
-  background: linear-gradient(to right, #6a00f4, #9d00ff); /* 紫グラデーション */
-  border-radius: 999px; /* 丸みでRosuuri風に */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  text-align: center;
-}
-
-/* スマホ帯の高さを明示的に統一 */
-@media (max-width: 768px) {
-  header {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-  }
-
-  footer {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-  }
-
-  .site-logo {
-    font-size: 1.1rem;
-  }
-
-  .menu-toggle {
-    font-size: 1.8rem;
-  }
-}
-
-/* 不要な重複CSSの削除（以下は削除してOK） */
-/* 削除対象：
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0,0,0,0.85);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-}
-
-.modal.show {
-  display: flex;
-}
-
-.modal-content {
-  width: auto;
-  height: auto;
-  max-width: 95vw;
-  max-height: 90vh;
-  margin: auto;
-  display: block;
-  border-radius: 8px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
-  object-fit: contain;
-  position: relative;
-}
-
-.modal-close {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  font-size: 2rem;
-  color: #fff;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-}
-*/
