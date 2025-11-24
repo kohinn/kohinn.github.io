@@ -28,12 +28,14 @@ header {
 
 /* ロゴ */
 .site-logo {
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-family: 'Playfair Display', serif; /* 上品で柔らかい印象 */
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   color: #fff;
   margin: 0;
 }
+
 
 /* ハンバーガーアイコン */
 .menu-toggle {
