@@ -346,23 +346,26 @@ footer {
 }
 
 .about-text {
-   max-width: 680px;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 1.2rem 1.4rem;
+  padding: 1rem 1.2rem;
   line-height: 1.8;
   font-size: 1rem;
   letter-spacing: 0.03em;
   white-space: pre-line;
   color: #eee;
-  background-color: #2a2a2a;     /* 背景を暗くして文字を見やすく */
-  border-radius: 12px;           /* 角丸で柔らかい印象に */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* ほんのり浮かせる */
-  text-align: left;              /* 左寄せで読みやすく */
+  background-color: transparent; /* ← これを追加して背景を親と揃える */
+}
 
+  
 @media (max-width: 640px) {
   .about-text {
     padding: 1rem 1rem;
     font-size: 0.95rem;
     line-height: 1.7;
   }
+}
+
+.about-text p {
+  margin-bottom: 1rem;
 }
