@@ -301,7 +301,20 @@ footer {
     font-size: 0.95rem;
   }
 
- 
+ .sns-links {
+  display: flex;
+  flex-wrap: nowrap;               /* 折り返し禁止で横並び */
+  overflow-x: auto;                /* 横スクロール許可 */
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  scroll-padding-left: 1rem;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: flex-start;     /* 左寄せで自然な並び */
+  white-space: nowrap;             /* 横並びを強制 */
+}
+
 
 .sns-links a {
   flex: 0 0 auto;                  /* 折り返さず横並びに */
@@ -313,6 +326,8 @@ footer {
   font-size: 0.9rem;
   transition: background 0.3s ease;
   display: inline-block;
+  flex: 0 0 auto; /* 折り返さず横並びに */
+
 }
 
 
