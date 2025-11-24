@@ -16,9 +16,9 @@ html {
 header {
   background: #222;
   color: #fff;
-  padding: 0.6rem 2rem; /* ← 0.8rem → 0.6rem に変更してさらにスリムに */
+  padding: 0.5rem 2rem; 
   display: flex;
-  align-items: flex-start; /* ← center → flex-start に変更して余白を抑える */
+  align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
@@ -29,13 +29,13 @@ header {
 
 /* ロゴ */
 .site-logo {
-  margin: 0;
-  line-height: 1.2;
-  text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-}
+  justify-content: center;
+  line-height: 1.1;               /* 1.2 → 1.1 に圧縮 */
+  gap: 0.1rem;                    /* 子要素の間隔を極小に（presentとKohinn間） */
+  margin: 0;
+  text-align: left;
 
 .site-subtitle {
   font-size: 0.75rem;
@@ -43,7 +43,7 @@ header {
   letter-spacing: 0.05em;
   color: #ccc;
   display: block;
-  margin-left: 0.5px; /* ← 少し左に寄せる */
+  margin-left:  -2px; /* ← 少し左に寄せる */
 }
 
 .site-main {
@@ -51,11 +51,18 @@ header {
   font-weight: 600;
   letter-spacing: 0.04em;
   color: #fff;
-  display: block;
   font-family: 'Playfair Display', serif;
+  margin-top: -1px;               /* 視覚的に間を詰める（ハンバーガー影響なし） */
+  line-height: 1;                 /* “帯”を薄く見せる */
 }
-
-
+  
+/* レイアウト安定化：ロゴとメニューのバランス確保（スマホで崩れない） */
+header h1.site-logo { 
+  flex-shrink: 0;                 /* ロゴが潰れないように */
+}
+#main-nav, .menu-toggle {
+  flex-shrink: 0;                 /* メニュー側も影響を受けない */
+}
 
 /* ハンバーガーアイコン */
 .menu-toggle {
