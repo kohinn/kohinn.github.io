@@ -27,14 +27,30 @@ header {
 }
 
 /* ロゴ */
+/* ロゴ */
 .site-logo {
-  font-family: 'Playfair Display', serif; /* 上品で柔らかい印象 */
+  margin: 0;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.site-subtitle {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #ccc;
+  display: block;
+}
+
+.site-main {
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.04em;
   color: #fff;
-  margin: 0;
+  display: block;
+  font-family: 'Playfair Display', serif;
 }
+
 
 
 /* ハンバーガーアイコン */
