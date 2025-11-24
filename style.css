@@ -346,16 +346,39 @@ footer {
 }
 
 .about-text {
+ .about-text {
   max-width: 680px;
   margin: 0 auto;
-  padding: 1rem 1.2rem;
+  padding: 1.2rem 1.4rem;
   line-height: 1.8;
   font-size: 1rem;
   letter-spacing: 0.03em;
-  white-space: pre-line;
-  color: #000;               /* ← ここを修正 */
-  background-color: transparent; /* ← 背景を親に合わせて違和感をなくす */
+  white-space: normal;
+  color: #222;
+  background-color: transparent;
+  text-align: left;
 }
+
+.about-text p {
+  margin-bottom: 1rem;
+}
+
+.about-text h3 {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.skills-list {
+  list-style: disc inside;
+  margin: 0.5rem 0 0 0;
+  padding-left: 1rem;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 
   
 @media (max-width: 640px) {
