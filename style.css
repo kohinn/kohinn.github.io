@@ -331,3 +331,9 @@ footer .copyright {
   }
 }
 
+@media (min-width: 769px) {
+  .sns-links {
+    justify-content: center;
+    overflow-x: visible;
+  }
+}
