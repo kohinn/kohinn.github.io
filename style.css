@@ -191,16 +191,23 @@ footer {
   box-sizing: border-box;
 }
 
-/* SNSリンク */
+/* SNSリンク（横スクロール対応） */
 .sns-links {
   display: flex;
-  justify-content: center;
+  flex-wrap: nowrap;               /* 折り返し禁止で横並び */
+  overflow-x: auto;                /* 横スクロール許可 */
   gap: 1rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
+  padding: 0.5rem 1rem;
+  scroll-padding-left: 1rem;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: flex-start;     /* 左寄せで自然な並び */
+  white-space: nowrap;             /* 横並びを強制 */
 }
 
 .sns-links a {
+  flex: 0 0 auto;                  /* 折り返さず横並び */
   padding: 0.5rem 1rem;
   border-radius: 20px;
   text-decoration: none;
@@ -220,7 +227,6 @@ footer {
 .sns-links a:hover {
   opacity: 0.8;
 }
-
 
 /* お問い合わせ */
 .contact-intro {
@@ -301,42 +307,19 @@ footer {
     font-size: 0.95rem;
   }
 
- .sns-links {
-  display: flex;
-  flex-wrap: nowrap;               /* 折り返し禁止で横並び */
-  overflow-x: auto;                /* 横スクロール許可 */
-  gap: 1rem;
-  padding: 0.5rem 1rem;
-  scroll-padding-left: 1rem;
-  -webkit-overflow-scrolling: touch;
-  width: 100%;
-  box-sizing: border-box;
-  justify-content: flex-start;     /* 左寄せで自然な並び */
-  white-space: nowrap;             /* 横並びを強制 */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2列表示 */
+    gap: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 
-
-.sns-links a {
-  flex: 0 0 auto;                  /* 折り返さず横並びに */
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: background 0.3s ease;
-  display: inline-block;
-  flex: 0 0 auto; /* 折り返さず横並びに */
-
-}
-
-
-
-  
+/* フッター内コピーライト調整 */
 footer .copyright {
-  margin-top: 1rem; /* ← SNSとの間隔を広げる */
+  margin-top: 1rem; /* SNSとの間隔 */
   font-size: 0.85rem;
   color: #ccc;
 }
 
-    
