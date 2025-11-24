@@ -310,18 +310,19 @@ footer {
 
 　.sns-links {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  flex-wrap: nowrap;               /* 折り返さず横並び */
+  overflow-x: auto;                /* 横スクロールを許可 */
   gap: 1rem;
   padding: 0.5rem 1rem;
   scroll-padding-left: 1rem;
   -webkit-overflow-scrolling: touch;
-  width: 100%;               /* ← 親要素いっぱいに広げる */
-  box-sizing: border-box;    /* ← padding込みで幅を計算 */
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: flex-start;     /* 左寄せにすることで自然なスクロール */
 }
 
 .sns-links a {
-  flex: 0 0 auto;             /* ← 折り返さず横並びに */
+  flex: 0 0 auto;                  /* 折り返さず横並びに */
   padding: 0.5rem 1rem;
   border-radius: 20px;
   text-decoration: none;
@@ -331,6 +332,7 @@ footer {
   transition: background 0.3s ease;
   display: inline-block;
 }
+
 
 
   
