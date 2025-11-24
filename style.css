@@ -353,7 +353,7 @@ footer {
   font-size: 1rem;
   letter-spacing: 0.03em;
   white-space: pre-line;
-  color: #222;               /* ← ここを修正 */
+  color: #000;               /* ← ここを修正 */
   background-color: transparent; /* ← 背景を親に合わせて違和感をなくす */
 }
 
