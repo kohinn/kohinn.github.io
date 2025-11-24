@@ -358,3 +358,11 @@ footer {
   border-radius: 12px;           /* 角丸で柔らかい印象に */
   box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* ほんのり浮かせる */
   text-align: left;              /* 左寄せで読みやすく */
+
+@media (max-width: 640px) {
+  .about-text {
+    padding: 1rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
