@@ -214,8 +214,8 @@ footer {
 .sns-links a[href*="twitter"] { background: #1d9bf0; }
 .sns-links a[href*="pixiv"] { background: #0096fa; }
 .sns-links a[href*="instagram"] { background: #e1306c; }
-.sns-links a[href*="artstation"] { background: #000; }
-.sns-links a[href*="bsky.app"] { background: #0066cc;}
+.sns-links a[href*="artstation"] { background: #13AFF0; }
+.sns-links a[href*="bsky.app"] { background: #0075FF;}
 
 .sns-links a:hover {
   opacity: 0.8;
