@@ -330,3 +330,44 @@ footer .copyright {
     overflow-x: visible;
   }
 }
+
+.about-text {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #444;
+}
+
+.about-text h3 {
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.4rem;
+}
+
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.2rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.skills-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #888;
+}
