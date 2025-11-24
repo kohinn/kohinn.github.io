@@ -37,7 +37,6 @@ header {
   justify-content: center;
 }
 
-
 .site-subtitle {
   font-size: 0.75rem;
   font-weight: 400;
@@ -46,7 +45,6 @@ header {
   display: block;
   margin-left: 2px; /* ← 少し左に寄せる */
 }
-
 
 .site-main {
   font-size: 1.4rem;
