@@ -259,8 +259,11 @@ footer {
     height: 84svh;
     min-height: 520px;
   }
-}
 
+  footer {
+    padding: 1rem;
+  }
+}
 .contact-fallback {
   font-size: 0.95rem;
   color: #555;
