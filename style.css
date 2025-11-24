@@ -346,13 +346,12 @@ footer {
 }
 
 .about-text {
- .about-text {
   max-width: 680px;
   margin: 0 auto;
-  padding: 1.2rem 1.4rem;
-  line-height: 1.8;
-  font-size: 1rem;
-  letter-spacing: 0.03em;
+  padding: 1rem 1.2rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
   white-space: normal;
   color: #222;
   background-color: transparent;
@@ -360,23 +359,23 @@ footer {
 }
 
 .about-text p {
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .about-text h3 {
-  margin-top: 2rem;
-  font-size: 1.1rem;
+  margin-top: 1.6rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #333;
 }
 
 .skills-list {
   list-style: disc inside;
-  margin: 0.5rem 0 0 0;
+  margin: 0.4rem 0 0 0;
   padding-left: 1rem;
   color: #444;
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 
