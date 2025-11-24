@@ -308,12 +308,26 @@ footer {
 
 　.sns-links {
   display: flex;
-  justify-content: center;
+  flex-wrap: nowrap;             /* 折り返さない */
+  overflow-x: auto;              /* 横スクロールを有効にする */
   gap: 1rem;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 1rem;          /* 左右に余白をつけると見やすい */
+  scroll-padding-left: 1rem;     /* スクロール開始位置を調整 */
+  -webkit-overflow-scrolling: touch; /* iOSでスムーズスクロール */
 }
+
+.sns-links a {
+  flex: 0 0 auto;                /* 各リンクを縮めずに横並びに */
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+  display: inline-block;
+}
+
   
 footer .copyright {
   margin-top: 1rem; /* ← SNSとの間隔を広げる */
