@@ -95,7 +95,7 @@ section h2 {
 
 .gallery img {
   width: 100%;
-  max-width: 100%;
+  max-width: 360px;
   height: auto;
   border-radius: 8px;
   cursor: pointer;
