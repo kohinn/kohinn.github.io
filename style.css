@@ -317,6 +317,10 @@ footer {
   }
 }
 
+ .gallery img {
+    max-width: 100%; /* スマホでは幅いっぱいに見せる */
+  }
+}
 /* フッター内コピーライト調整 */
 footer .copyright {
   margin-top: 1rem; /* SNSとの間隔 */
