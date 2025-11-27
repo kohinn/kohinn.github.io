@@ -95,7 +95,7 @@ section h2 {
 
 .gallery img {
   width: 100%;
-  max-width: 360px;
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
   cursor: pointer;
@@ -282,12 +282,6 @@ footer {
     margin-left: auto;
   }
 
-
-
-
-
-
-
   #main-nav {
     position: absolute;
     top: 3.6rem;
@@ -320,21 +314,6 @@ footer {
     max-width: 90%;
     margin: 0 auto;
     padding: 0;
-  }
-}
-
-
-
-  /* スマホ用画像調整 */
-  .thumbnail {
-    max-width: 100%; /* スマホでは画面幅いっぱいに表示 */
-    height: auto;
-  }
-}
-
-
- .gallery img {
-    max-width: 100%; /* スマホでは幅いっぱいに見せる */
   }
 }
 
