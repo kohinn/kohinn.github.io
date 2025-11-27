@@ -282,6 +282,15 @@ footer {
     margin-left: auto;
   }
 
+
+.thumbnail {
+    max-width: 100%; /* スマホでは画面幅いっぱいに表示 */あああああああ
+  }
+}
+
+
+
+
   #main-nav {
     position: absolute;
     top: 3.6rem;
@@ -321,6 +330,7 @@ footer {
     max-width: 100%; /* スマホでは幅いっぱいに見せる */
   }
 }
+
 /* フッター内コピーライト調整 */
 footer .copyright {
   margin-top: 1rem; /* SNSとの間隔 */
