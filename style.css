@@ -327,6 +327,14 @@ footer {
     margin: 0 auto;
     padding: 0;
   }
+
+  .gallery img {
+    width: 100%;
+    aspect-ratio: 3 / 4;   /* 縦横比を固定（例：3:4） */
+    object-fit: cover;     /* 均一に表示 */
+    height: auto;
+    display: block;
+  }
 }
 
 /* フッター内コピーライト調整 */
