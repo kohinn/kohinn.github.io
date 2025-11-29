@@ -448,6 +448,18 @@ footer .copyright {
 /* Aboutセクションの帯と文章の間隔調整 */
 #about h2 {
   margin-bottom: 1rem !important;
+  }
 }
+
+
+/* Aboutセクションの帯と文章の間隔調整（全デバイス共通） */
+#about h2 {
+  margin-bottom: 0.6rem !important;
+}
+
+.about-text {
+  padding-top: 0rem !important;
+}
+
 
 
