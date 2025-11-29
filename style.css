@@ -288,7 +288,7 @@ footer {
 }
 
 /* スマホ：ハンバーガー表示＋ナビ開閉＋ギャラリー2列 */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .menu-toggle {
     display: inline-block;
     margin-left: auto;
