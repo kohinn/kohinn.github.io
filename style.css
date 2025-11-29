@@ -1,4 +1,4 @@
- /* 全体の基本スタイル */
+/* 全体の基本スタイル */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -327,15 +327,8 @@ footer {
     margin: 0 auto;
     padding: 0;
   }
-  /* ← ここに入れるのが重要！ */
-  .gallery img {
-    width: 100%;
-    aspect-ratio: 3 / 4;   /* 縦横比を固定 */
-    object-fit: cover;     /* 均一に表示 */
-    height: auto;
-    display: block;
-  }
 }
+
 /* フッター内コピーライト調整 */
 footer .copyright {
   margin-top: 1rem; /* SNSとの間隔 */
