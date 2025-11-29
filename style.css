@@ -327,16 +327,15 @@ footer {
     margin: 0 auto;
     padding: 0;
   }
-}
-
-.gallery img {
-    width: 100% !important;        /* ← 強制上書き */
-    aspect-ratio: 3 / 4 !important;/* ← 縦横比を固定 */
-    object-fit: cover !important;  /* ← 均一に表示 */
-    height: auto !important;
+  /* ← ここに入れるのが重要！ */
+  .gallery img {
+    width: 100%;
+    aspect-ratio: 3 / 4;   /* 縦横比を固定 */
+    object-fit: cover;     /* 均一に表示 */
+    height: auto;
+    display: block;
   }
 }
-
 /* フッター内コピーライト調整 */
 footer .copyright {
   margin-top: 1rem; /* SNSとの間隔 */
