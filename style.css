@@ -434,4 +434,16 @@ footer .copyright {
   .menu-toggle {
     display: none !important;
   }
+
+    header {
+    padding: 1.2rem 2rem;
+    align-items: center;
+  }
+
+  #main-nav {
+    flex-direction: row !important;
+    align-items: center;
+    padding: 0 !important;
+  }
+
 }
