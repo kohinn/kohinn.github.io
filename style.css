@@ -320,6 +320,7 @@ footer {
     font-size: 0.95rem;
   }
 
+@media (max-width: 768px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* 2列表示 */
     gap: 1rem;
@@ -328,11 +329,10 @@ footer {
     padding: 0;
   }
 
-.gallery img {
-    width: 100% !important;
-    aspect-ratio: 3 / 4 !important;
-    object-fit: cover !important;
-    height: 100% !important;   /* ← autoではなく100%にする */
+  .gallery img {
+    width: 100%;
+    aspect-ratio: 3 / 4;   /* ← 縦横比を固定 */
+    object-fit: cover;     /* ← 枠に合わせてトリミング */
     display: block;
   }
 }
