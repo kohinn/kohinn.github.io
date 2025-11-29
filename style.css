@@ -328,11 +328,13 @@ footer {
     padding: 0;
   }
 
- .gallery img {
-  width: 100%;
-  height: 100%;          /* ← 高さを枠に合わせる */
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+.gallery img {
+    width: 100% !important;
+    aspect-ratio: 3 / 4 !important;
+    object-fit: cover !important;
+    height: 100% !important;   /* ← autoではなく100%にする */
+    display: block;
+  }
 }
 
 /* フッター内コピーライト調整 */
