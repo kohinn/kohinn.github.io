@@ -308,14 +308,19 @@ footer {
     font-size: 0.95rem;
   }
 
+ @media (max-width: 768px) {
   .gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2列表示 */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    max-width: 90%;
-    margin: 0 auto;
     padding: 0;
   }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+  }
 }
+
 
 /* フッター内コピーライト調整 */
 footer .copyright {
