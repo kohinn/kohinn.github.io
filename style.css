@@ -288,7 +288,7 @@ footer {
 }
 
 /* スマホ：ハンバーガー表示＋ナビ開閉＋ギャラリー2列 */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .menu-toggle {
     display: inline-block;
     margin-left: auto;
@@ -320,24 +320,23 @@ footer {
     font-size: 0.95rem;
   }
 
-   .gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2列表示 */
+ .gallery {
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
-    width: 100%;        /* ← 画面幅いっぱいに広げる */
-    max-width: none;    /* ← PC用の860px制限を解除 */
+    width: 100% !important;       /* ← 強制的に上書き */
+    max-width: none !important;   /* ← PC用の860px制限を完全解除 */
     margin: 0 auto;
     padding: 0 0.5rem;
   }
 
   .gallery img {
-    width: 100%;
-    height: auto;       /* ← 比率維持 */
+    width: 100% !important;
+    height: auto !important;
     object-fit: contain;
     display: block;
     margin: 0 auto;
   }
 }
-
 /* フッター内コピーライト調整 */
 footer .copyright {
   margin-top: 1rem; /* SNSとの間隔 */
