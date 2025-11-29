@@ -321,15 +321,11 @@ footer {
   }
 
   .gallery {
-    .gallery {
-    grid-template-columns: repeat(2, 1fr); /* ← 画面幅を2等分する */
-    gap: 1.2rem;
-    max-width: 100%;
-    padding: 0 0.5rem;
-  }
-   .gallery img {
-    width: 100%;
-    height: auto;
+    grid-template-columns: repeat(2, 1fr); /* 2列表示 */
+    gap: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0;
   }
 }
 
