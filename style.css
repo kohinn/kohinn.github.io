@@ -313,7 +313,6 @@ footer {
     grid-template-columns: repeat(2, 1fr); /* 2列固定 */
     gap: 1rem;
     padding: 0;
-    max-width: 100%; /* ← 枠を広げることで画像も大きくなる */
   }
 
   .gallery img {
