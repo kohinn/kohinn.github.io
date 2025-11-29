@@ -95,9 +95,8 @@ section h2 {
 
 .gallery img {
   width: 100%;
-  aspect-ratio: 3 / 4; /* ← 画像の縦横比を固定（例：3:4） */
-  object-fit: cover;   /* ← はみ出す部分をトリミングして均一表示 */
-  height: auto;        /* ← 高さは自動で調整 */
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
   cursor: pointer;
   font-size: 0;
