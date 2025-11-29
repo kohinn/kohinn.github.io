@@ -330,9 +330,9 @@ footer {
 
   .gallery img {
     width: 100%;
-    aspect-ratio: 3 / 4;   /* 縦横比を固定（例：3:4） */
-    object-fit: cover;     /* 均一に表示 */
-    height: auto;
+    height: auto;          /* ← これを消すか上書きする */
+    aspect-ratio: 3 / 4;   /* ← 縦横比を固定 */
+    object-fit: cover;     /* ← 枠に合わせてトリミング */
     display: block;
   }
 }
