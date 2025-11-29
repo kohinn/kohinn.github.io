@@ -447,7 +447,7 @@ footer .copyright {
   }
 /* Aboutセクションの帯と文章の間隔調整 */
 #about h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem !important;
 }
 
 
