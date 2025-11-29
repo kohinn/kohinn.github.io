@@ -321,17 +321,14 @@ footer {
   }
 
   .gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2列表示 */
+    grid-template-columns: repeat(2, minmax(180px, 1fr)); /* ← 最小幅を広げる */
     gap: 1.2rem;
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 0;
+    max-width: 100%; /* ← 90%をやめて全幅に */
+    padding: 0 0.5rem;
   }
    .gallery img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* ← Rosuuri風の立体感（任意） */
   }
 }
 
