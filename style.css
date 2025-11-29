@@ -293,7 +293,12 @@ footer {
     display: inline-block;
     margin-left: auto;
   }
-
+  
+/* Fanartセクションの左右余白を縮めて、画像領域を最大化 */
+  #fanart {
+    padding: 0 0 1.5rem; /* 上右左の左右余白を削減、下は少し余裕 */
+  }
+  
   #main-nav {
     position: absolute;
     top: 3.6rem;
@@ -320,13 +325,24 @@ footer {
     font-size: 0.95rem;
   }
 
+   /* 2列固定＋画面端まで広げる（PCには影響なし） */
   .gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2列表示 */
-    gap: 1rem;
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2列固定 */
+    gap: 0.75rem;                           /* 余白は最小限（好みで調整） */
+    max-width: 100vw;                       /* 画面幅いっぱい */
+    margin: 0;                              /* センター寄せを解除して全幅化 */
+    padding: 0;                             /* 余計な左右paddingを削除 */
   }
+
+  /* 枠いっぱいに表示（画像自体のピクセルは変えない） */
+  .gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;                     /* 既存の角丸維持 */
+  }
+}
 }
 
 /* フッター内コピーライト調整 */
