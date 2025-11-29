@@ -320,12 +320,20 @@ footer {
     font-size: 0.95rem;
   }
 
-  .gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2列表示 */
-    gap: 1rem;
-    max-width: 90%;
+   .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2列維持＋幅制限解除 */
+    gap: 0.75rem;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 0.5rem;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
   }
 }
 
