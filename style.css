@@ -322,14 +322,25 @@ footer {
 
   .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* ← ここを変更 */
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* ← 2列固定で均等に広げる */
   gap: 1.5rem;
   max-width: 860px;
   margin: 0 auto;
   justify-content: center;
   padding: 0 1rem;
 }
-
+.gallery img {
+  width: 100%;           /* グリッド枠に合わせて最大化 */
+  height: auto;          /* 縦横比を保つ */
+  display: block;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
 }
 
 /* フッター内コピーライト調整 */
