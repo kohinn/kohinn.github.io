@@ -363,7 +363,7 @@ footer .copyright {
 .about-text {
   max-width: 860px;
   margin: 0 auto;
-  padding-top: 0.8rem;
+  padding-top: 0.4rem;
   text-align: left;
   line-height: 1.8;
   font-size: 1rem;
@@ -445,5 +445,9 @@ footer .copyright {
     align-items: center;
     padding: 0 !important;
   }
+/* Aboutセクションの帯と文章の間隔調整 */
+#about h2 {
+  margin-bottom: 1rem;
+}
 
 }
