@@ -331,7 +331,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2列固定 */
     gap: 0.75rem;                           /* 余白は最小限（好みで調整） */
-    max-width: 90vw;                       /* 画面幅いっぱい */
+    max-width: 95vw;                       /* 画面幅いっぱい */
     margin: 0 auto;                              /* センター寄せを解除して全幅化 */
     padding: 0;                             /* 余計な左右paddingを削除 */
   }
