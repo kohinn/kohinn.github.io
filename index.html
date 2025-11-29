@@ -151,22 +151,27 @@
 <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
 
 
-   <script>
-  const backToTop = document.getElementById('backToTop');
-  let hideTimer;
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const backToTop = document.getElementById('backToTop');
+    let hideTimer;
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      backToTop.classList.add('show');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        backToTop.classList.add('show');
 
-      clearTimeout(hideTimer);
-      hideTimer = setTimeout(() => {
+        // スクロールが止まったら3秒後に消える
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(() => {
+          backToTop.classList.remove('show');
+        }, 3000);
+      } else {
         backToTop.classList.remove('show');
-      }, 5000); // ← 5秒後に非表示
-    } else {
-      backToTop.classList.remove('show');
-    }
+      }
+    });
   });
+</script>
+
 </script>
 </body>
 </html>
