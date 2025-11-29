@@ -84,7 +84,8 @@ section h2 {
 
 /* ギャラリー（Rosuuri風） */
 .gallery {
-  grid-template-columns: repeat(2, minmax(160px, 1fr)); /* ← 画像幅を少し広めに */
+ grid-template-columns: repeat(2, 1fr);
+
   gap: 1.5rem;                /* ← ゆったり感を出す */
   max-width: 100%;            /* ← 画面幅いっぱいに */
   margin: 0 auto;
