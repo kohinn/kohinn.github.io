@@ -143,6 +143,25 @@
   });
 </script>
 
+  <script>
+  const backToTop = document.getElementById('backToTop');
+  let hideTimer;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTop.classList.add('show');
+
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => {
+        backToTop.classList.remove('show');
+      }, 5000); // ← 5秒後に非表示
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+</script>
+
+
 
 
 <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
