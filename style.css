@@ -85,19 +85,19 @@ section h2 {
 /* ギャラリー（Rosuuri風） */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* ← PC向け */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
-  max-width: 860px;              /* ← コンパクトに */
+  max-width: 860px;
   margin: 0 auto;
+  justify-content: center;
   padding: 0 1rem;
 }
-
 
 .gallery img {
   width: 100%;
   max-width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 0;
   display: block;
@@ -320,21 +320,14 @@ footer {
     font-size: 0.95rem;
   }
 
- @media (max-width: 768px) {
   .gallery {
-    grid-template-columns: repeat(2, 1fr); /* ← スマホで2列 */
-    max-width: 100%;                        /* ← 画面いっぱいに */
-    padding: 0 1rem;
-    gap: 1.2rem;
-  }
-
-  .gallery img {
-    border-radius: 12px;
-     width: 100%; /* 列幅いっぱいに広げる */
-    height: auto;
+    grid-template-columns: repeat(2, 1fr); /* 2列表示 */
+    gap: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0;
   }
 }
-
 
 /* フッター内コピーライト調整 */
 footer .copyright {
