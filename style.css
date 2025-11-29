@@ -320,14 +320,12 @@ footer {
     font-size: 0.95rem;
   }
 
+ 
   .gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* ← 2列固定で均等に広げる */
-  gap: 1.5rem;
-  max-width: 860px;
-  margin: 0 auto;
-  justify-content: center;
-  padding: 0 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
 }
 .gallery img {
   width: 100%;           /* グリッド枠に合わせて最大化 */
