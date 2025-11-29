@@ -400,3 +400,38 @@ footer .copyright {
   left: 0;
   color: #888;
 }
+
+/* PC表示の調整（スマホには影響なし） */
+@media (min-width: 769px) {
+  /* ギャラリーを3列にしてコンパクトに */
+  .gallery {
+    grid-template-columns: repeat(3, 1fr); /* ← 2列でもOK。好みで調整可能 */
+    gap: 1.2rem;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+  /* ナビゲーションをPCで常時表示にする */
+  #main-nav {
+    display: flex !important;
+    position: static !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    background: none !important;
+    gap: 1rem;
+  }
+
+  /* ハンバーガーアイコンはPCでは非表示 */
+  .menu-toggle {
+    display: none !important;
+  }
+}
