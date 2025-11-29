@@ -178,19 +178,7 @@ section h2 {
   text-decoration: none;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   z-index: 1000;
-  opacity: 0;               /* ← 追加 */
-  pointer-events: none;     /* ← 追加 */
-  transition: opacity 0.4s ease; /* ← 追加 */
 }
-
-
-
-.back-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-
 
 /* フッター */
 footer {
@@ -321,15 +309,12 @@ footer {
   }
 
   .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* ← ここを変更 */
-  gap: 1.5rem;
-  max-width: 860px;
-  margin: 0 auto;
-  justify-content: center;
-  padding: 0 1rem;
-}
-
+    grid-template-columns: repeat(2, 1fr); /* 2列表示 */
+    gap: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 
 /* フッター内コピーライト調整 */
