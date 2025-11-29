@@ -330,6 +330,8 @@ footer {
 
   .gallery img {
     border-radius: 12px;
+     width: 100%; /* 列幅いっぱいに広げる */
+    height: auto;
   }
 }
 
