@@ -330,10 +330,12 @@ footer {
 }
 
 .gallery img {
-  aspect-ratio: 3 / 4;       /* ← 縦長比率（Rosuuri風） */
-  object-fit: cover;         /* ← 枠に合わせてトリミングして均一表示 */
+    width: 100% !important;        /* ← 強制上書き */
+    aspect-ratio: 3 / 4 !important;/* ← 縦横比を固定 */
+    object-fit: cover !important;  /* ← 均一に表示 */
+    height: auto !important;
+  }
 }
-
 
 /* フッター内コピーライト調整 */
 footer .copyright {
