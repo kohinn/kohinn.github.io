@@ -1,4 +1,4 @@
-/* 全体の基本スタイル */
+ /* 全体の基本スタイル */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -328,6 +328,12 @@ footer {
     padding: 0;
   }
 }
+
+.gallery img {
+  aspect-ratio: 3 / 4;       /* ← 縦長比率（Rosuuri風） */
+  object-fit: cover;         /* ← 枠に合わせてトリミングして均一表示 */
+}
+
 
 /* フッター内コピーライト調整 */
 footer .copyright {
