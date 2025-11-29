@@ -322,6 +322,8 @@ footer {
   }
 
   .gallery {
+    
+    display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2列表示 */
     gap: 1rem;
     max-width: 90%;
