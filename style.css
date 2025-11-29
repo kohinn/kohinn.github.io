@@ -82,7 +82,7 @@ section h2 {
   box-sizing: border-box;
 }
 
-/* ギャラリー（PC用） */
+/* ギャラリー（Rosuuri風） */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -96,7 +96,7 @@ section h2 {
 .gallery img {
   width: 100%;
   max-width: 100%;
-  height: auto;              /* ← PCでは元画像比率のまま */
+  height: auto;
   border-radius: 8px;
   cursor: pointer;
   font-size: 0;
@@ -178,15 +178,19 @@ section h2 {
   text-decoration: none;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   z-index: 1000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
+  opacity: 0;               /* ← 追加 */
+  pointer-events: none;     /* ← 追加 */
+  transition: opacity 0.4s ease; /* ← 追加 */
 }
+
+
 
 .back-to-top.show {
   opacity: 1;
   pointer-events: auto;
 }
+
+
 
 /* フッター */
 footer {
@@ -199,23 +203,23 @@ footer {
   box-sizing: border-box;
 }
 
-/* SNSリンク（PCは中央寄せ） */
+/* SNSリンク（横スクロール対応） */
 .sns-links {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  flex-wrap: nowrap;               /* 折り返し禁止で横並び */
+  overflow-x: auto;                /* 横スクロール許可 */
   gap: 1rem;
   padding: 0.5rem 1rem;
   scroll-padding-left: 1rem;
   -webkit-overflow-scrolling: touch;
   width: 100%;
   box-sizing: border-box;
-  justify-content: center;   /* ← PCで中央寄せに固定 */
-  white-space: nowrap;
+  justify-content: flex-start;     /* 左寄せで自然な並び */
+  white-space: nowrap;             /* 横並びを強制 */
 }
 
 .sns-links a {
-  flex: 0 0 auto;
+  flex: 0 0 auto;                  /* 折り返さず横並び */
   padding: 0.5rem 1rem;
   border-radius: 20px;
   text-decoration: none;
@@ -283,7 +287,7 @@ footer {
   margin-top: 1rem;
 }
 
-/* スマホ：ハンバーガー表示＋ナビ開閉＋ギャラリー2列＋画像サイズ固定 */
+/* スマホ：ハンバーガー表示＋ナビ開閉＋ギャラリー2列 */
 @media (max-width: 768px) {
   .menu-toggle {
     display: inline-block;
@@ -316,31 +320,22 @@ footer {
     font-size: 0.95rem;
   }
 
-  /* スマホは2列 */
   .gallery {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2列表示 */
     gap: 1rem;
     max-width: 90%;
     margin: 0 auto;
     padding: 0;
   }
-
-  /* スマホで画像タイルの高さを明示的に固定（幅は列幅に依存） */
-  .gallery img {
-    width: 100%;
-    height: 40vw;          /* ← ここが重要：画面幅に対する高さ（比率は見た目で均一化） */
-    object-fit: cover;     /* トリミングして均一表示 */
-    border-radius: 8px;
-    display: block;
-  }
-
-  /* スマホではSNSは左寄せ（横スクロール想定） */
-  .sns-links {
-    justify-content: flex-start;
-  }
 }
 
-/* PC幅でのSNS位置調整（保険） */
+/* フッター内コピーライト調整 */
+footer .copyright {
+  margin-top: 1rem; /* SNSとの間隔 */
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
 @media (min-width: 769px) {
   .sns-links {
     justify-content: center;
@@ -348,7 +343,6 @@ footer {
   }
 }
 
-/* About */
 .about-text {
   max-width: 860px;
   margin: 0 auto;
