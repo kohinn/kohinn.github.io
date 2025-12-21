@@ -506,15 +506,18 @@ header {
 
 .lang-switch a {
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 1rem;           /* ← 他のナビと同じサイズ感に調整 */
+  font-weight: 600;          /* ← 少し太めで視認性アップ */
   text-decoration: none;
-  opacity: 0.85;
-  font-weight: 600;
+  opacity: 0.9;
+  letter-spacing: 0.02em;    /* ← ナビと統一感を出すために微調整 */
+  transition: opacity 0.3s ease;
 }
 
 .lang-switch a:hover {
   opacity: 1;
 }
+
 
 
 
