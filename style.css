@@ -369,11 +369,15 @@ footer .copyright {
 .about-text {
   max-width: 860px;
   margin: 0 auto;
-  padding-top: 0.4rem;
+  padding: 0 1.5rem;         /* ← 左右に余白を追加して中央寄せ感を強化 */
   text-align: left;
-  line-height: 1.8;
+  line-height: 1.9;          /* ← 行間を広げて読みやすく */
   font-size: 1rem;
   color: #444;
+}
+
+#about h2 {
+  margin-bottom: 1.2rem !important; /* ← タイトルとの間隔を少し広げる */
 }
 
 .about-text h3 {
@@ -389,6 +393,7 @@ footer .copyright {
 .skills-list {
   list-style: none;
   padding-left: 0;
+  margin-top: 1rem;          /* ← 上の文章との距離を自然に調整 */
   margin: 0;
 }
 
