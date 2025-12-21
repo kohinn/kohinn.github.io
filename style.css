@@ -23,7 +23,6 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-   position: relative; /* ← 追加 */
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -34,7 +33,6 @@ header {
   letter-spacing: 0.02em;
   color: #fff;
   margin: 0;
-  pointer-events: none; /* ← ロゴがナビを邪魔しないように */
 }
 
 /* ハンバーガーアイコン */
@@ -463,5 +461,24 @@ footer .copyright {
   padding-top: 0rem !important;
 }
 
+
+/* ロゴを中央に固定配置 */
+.site-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: max-content;
+  margin: 0;
+  pointer-events: none; /* ← ロゴがナビを邪魔しないように */
+}
+
+/* ヘッダーを relative にして基準点を作る */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  position: relative; /* ← 追加 */
+}
 
 
