@@ -909,22 +909,25 @@ footer .copyright {
   }
 
   .about-text h3 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    color: #fff;
-    border-bottom: 1px solid #555;
-    padding-bottom: 0.4rem;
+   .skills-list {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    padding-left: 0;
+    text-align: left; /* ← 中央揃えを解除して自然な配置に */
   }
 
   .skills-list li {
-    font-size: 1rem;
-    margin-bottom: 0.6rem;
-    color: #ddd;
+     font-size: 1rem;
+    margin-bottom: 0.8rem;
+    padding-left: 1.2rem;
+    position: relative;
   }
 
-  .skills-list li::before {
-    color: #aaa;
+   .skills-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #888;
   }
 
   #about {
