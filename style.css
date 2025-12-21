@@ -366,51 +366,53 @@ footer .copyright {
   }
 }
 
-.about-text {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 1.5rem;         /* ← 左右に余白を追加して中央寄せ感を強化 */
-  text-align: left;
-  line-height: 1.9;          /* ← 行間を広げて読みやすく */
-  font-size: 1rem;
-  color: #444;
+/* Aboutセクションの文章ブロック調整（PCのみ） */
+@media (min-width: 769px) {
+  .about-text {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    font-size: 1.05rem;       /* ← 少し大きくして改行を減らす */
+    line-height: 1.65;        /* ← 行間を詰めて縦の伸びを抑える */
+    color: #eee;              /* ← 黒帯上で読みやすくする（好みで #ddd でもOK） */
+  }
+
+  .about-text p {
+    margin-bottom: 1rem;      /* ← 段落間の余白を均等に詰める */
+  }
+
+  .about-text h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #fff;
+    border-bottom: 1px solid #555;
+    padding-bottom: 0.4rem;
+  }
+
+  .skills-list li {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    color: #ddd;
+  }
+
+  .skills-list li::before {
+    color: #aaa;
+  }
+
+  #about {
+    background-color: #111;   /* ← 黒帯を少し深くして文章と馴染ませる */
+    padding: 3rem 0;          /* ← 黒帯の上下余白を広げて文章を包み込む */
+  }
+
+  #about h2 {
+    margin-bottom: 1.2rem !important;
+    font-size: 1.3rem;
+    background-color: transparent; /* ← 黒帯と馴染ませるなら透明もOK */
+    color: #fff;
+  }
 }
 
-#about h2 {
-  margin-bottom: 1.2rem !important; /* ← タイトルとの間隔を少し広げる */
-}
-
-.about-text h3 {
-  font-size: 1.1rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: #222;
-  font-weight: bold;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 0.4rem;
-}
-
-.skills-list {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 1rem;          /* ← 上の文章との距離を自然に調整 */
-  margin: 0;
-}
-
-.skills-list li {
-  margin-bottom: 0.8rem;
-  padding-left: 1.2rem;
-  position: relative;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.skills-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #888;
-}
 
 /* PC表示の調整（スマホには影響なし） */
 @media (min-width: 769px) {
