@@ -360,6 +360,12 @@ footer .copyright {
   }
 }
 
+  /* ▼ PCのとき、ナビを右端に寄せる */
+  #main-nav {
+    margin-left: auto;
+  }
+}
+
 .about-text {
   max-width: 860px;
   margin: 0 auto;
