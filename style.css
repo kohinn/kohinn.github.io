@@ -929,7 +929,7 @@ footer .copyright {
 
   #about {
     background-color: #111;   /* ← 黒帯を少し深くして文章と馴染ませる */
-    padding: 3rem 0;          /* ← 黒帯の上下余白を広げて文章を包み込む */
+    padding: 3.5rem 0 3rem; /* ← これがHIが探してるやつ */
   }
 
   #about h2 {
