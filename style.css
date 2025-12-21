@@ -486,5 +486,35 @@ header {
   z-index: 1000;
   position: relative; /* ← 追加 */
 }
+.lang-switch {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 0.6rem;
+  z-index: 1001;
+}
+
+.lang-switch {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 0.6rem;
+  z-index: 1001;
+}
+
+.lang-switch a {
+  color: #fff;
+  font-size: 0.85rem;
+  text-decoration: none;
+  opacity: 0.85;
+  font-weight: 600;
+}
+
+.lang-switch a:hover {
+  opacity: 1;
+}
+
 
 
