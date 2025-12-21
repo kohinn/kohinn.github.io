@@ -486,3 +486,30 @@ header {
   z-index: 1000;
   position: relative; /* ← 追加 */
 }
+
+/* 言語切り替えボタン（ヘッダー左上固定） */
+.language-switch {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 2000; /* ヘッダーより上に */
+  background: rgba(255, 255, 255, 0.85);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #333;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.language-switch a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 3px;
+}
+
+.language-switch a:hover {
+  color: #007bff;
+}
+
