@@ -895,6 +895,12 @@ footer .copyright {
 
 /* Aboutセクションの文章ブロック調整（PCのみ） */
 @media (min-width: 769px) {
+
+  #about {
+    background-color: #111;
+    padding: 4rem 0 3.5rem; /* ← 上下の余白を広げて文章を包み込む */
+  }
+  
   .about-text {
     max-width: 880px;
     margin: 0 auto;
@@ -905,15 +911,17 @@ footer .copyright {
   }
 
   .about-text p {
-    margin-bottom: 1rem;      /* ← 段落間の余白を均等に詰める */
+    margin-bottom: 1.2rem;      /* ← 段落間の余白を均等に詰める */
   }
 
   .about-text h3 {
-   .skills-list {
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
-    padding-left: 0;
-    text-align: left; /* ← 中央揃えを解除して自然な配置に */
+   .about-text h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #fff;
+    border-bottom: 1px solid #555;
+    padding-bottom: 0.4rem;
   }
 
   .skills-list li {
