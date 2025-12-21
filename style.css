@@ -23,6 +23,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+   position: relative; /* ← 追加 */
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -33,6 +34,7 @@ header {
   letter-spacing: 0.02em;
   color: #fff;
   margin: 0;
+  pointer-events: none; /* ← ロゴがナビを邪魔しないように */
 }
 
 /* ハンバーガーアイコン */
