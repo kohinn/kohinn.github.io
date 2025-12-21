@@ -512,4 +512,8 @@ header {
 .language-switch a:hover {
   color: #007bff;
 }
+.about-text p {
+  margin-bottom: 1.2rem; /* ← 段落の下に余白を追加 */
+  line-height: 1.8;       /* ← 行間も少し広めに */
+}
 
