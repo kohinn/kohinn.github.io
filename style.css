@@ -486,28 +486,3 @@ header {
   z-index: 1000;
   position: relative; /* ← 追加 */
 }
-
-/* 言語切り替え（EN / JP） */
-.lang-switch {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  display: flex;
-  gap: 0.6rem;
-  z-index: 1001;
-}
-
-.lang-switch a {
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  opacity: 0.9;
-  letter-spacing: 0.02em;
-  transition: opacity 0.3s ease;
-}
-
-.lang-switch a:hover {
-  opacity: 1;
-}
-
