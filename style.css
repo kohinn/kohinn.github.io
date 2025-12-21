@@ -506,8 +506,9 @@ header {
 
 .lang-switch a {
   color: #fff;
-  font-size: 1rem;           /* ← 他のナビと同じサイズ感に調整 */
+  font-size: 1.1rem;         /* ← 1rem → 1.1rem にアップ */
   font-weight: 600;          /* ← 少し太めで視認性アップ */
+  line-height: 1.4;          /* ← 高さを少し広げて見やすく */
   text-decoration: none;
   opacity: 0.9;
   letter-spacing: 0.02em;    /* ← ナビと統一感を出すために微調整 */
