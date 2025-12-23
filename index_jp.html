@@ -16,22 +16,29 @@
 <body>
 
 <header>
- <h1 class="site-logo">
-  <span class="site-subtitle">present by</span><br>
-  <span class="site-main">Kohinn</span>
-</h1>
+  <h1 class="site-logo">
+    <span class="site-subtitle">present by</span><br>
+    <span class="site-main">Kohinn</span>
+  </h1>
 
-  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu()">☰</button>
+  <!-- ハンバーガー（三本線） -->
+  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- 全画面メニュー -->
   <nav id="main-nav">
     <a href="#fanart">Fanart</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
-  <div class="language-switch">
-  <a href="/index.html">EN</a> / <a href="/index_jp.html">JP</a>
-</div>
 
+  <!-- 言語切り替え -->
+  <div class="language-switch">
+    <a href="/index.html">EN</a> / <a href="/index_jp.html">JP</a>
+  </div>
 </header>
+
 
 <section id="fanart">
   <h2>Fanart</h2>
