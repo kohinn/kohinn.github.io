@@ -3,40 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fanart | Kohinn</title>
+  <title>About | Kohinn</title>
   <link rel="stylesheet" href="style.css?v=20251129">
 </head>
 <body>
 
 <header>
   <h1 class="site-logo">
-    <span class="site-subtitle">present by</span><br>
-    <span class="site-main">Kohinn</span>
+    <a href="index.html">
+      <span class="site-subtitle">present by</span><br>
+      <span class="site-main">Kohinn</span>
+    </a>
   </h1>
+
   <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
     <span></span><span></span><span></span>
   </button>
- <nav id="main-nav">
-  <a href="fanart.html">Fanart</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</nav>
 
- <div class="language-switch">
-  <a href="/about.html">EN</a> / <a href="/jp/about.html">JP</a>
-</div>
+  <nav id="main-nav">
+    <a href="fanart.html">Fanart</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
+  <div class="language-switch">
+    <a href="/about.html">EN</a> / <a href="/jp/about.html">JP</a>
+  </div>
 </header>
 
-<section id="fanart">
-  <h2>Fanart</h2>
-  <div class="gallery">
-    <img class="thumbnail" src="hinaano_5.png" alt="Fanart 6">
-    <img class="thumbnail" src="0f50e10c_original.jpg" alt="Fanart 1">
-    <img class="thumbnail" src="cd350e62_original.jpg" alt="Fanart 2">
-    <img class="thumbnail" src="o9klpl.jpg" alt="Fanart 3">
-    <img class="thumbnail" src="イラスト98.jpg" alt="Fanart 4">
-    <img class="thumbnail" src="melody.jpg" alt="Fanart 5">
+<section id="about">
+  <h2>About</h2>
+  <div class="about-text">
+    <p>I’m an illustrator based in Japan, creating character-centered artwork with a focus on visual impact and atmosphere.</p>
+    <p>My work highlights expressive poses, thoughtful composition, and detailed costume design—often featuring VTubers, anime, and game characters from Japan and abroad.</p>
+    <p>For commissions, I welcome requests from VTubers and individuals with original avatars, including those active in VRChat or gaming communities. I’m also open to inquiries from companies.</p>
+    <p>Fanart of existing anime or game characters is created solely for non-commercial purposes.</p>
+
+    <h3>Skills</h3>
+    <ul class="skills-list">
+      <li>Illustration (character-focused, story-driven)</li>
+      <li>Site building (AI-assisted layout and CSS tuning)</li>
+    </ul>
   </div>
 </section>
 
@@ -52,12 +59,6 @@
   <p class="rights-note">Characters depicted belong to their respective owners.</p>
 </footer>
 
-<!-- モーダル拡大表示 -->
-<div id="modal" class="modal" aria-hidden="true">
-  <button class="modal-close" aria-label="Close image">✕</button>
-  <img class="modal-content" id="modal-img" alt="">
-</div>
-
 <script>
 function toggleMenu(btn) {
   const nav = document.getElementById('main-nav');
@@ -65,27 +66,6 @@ function toggleMenu(btn) {
   btn.classList.toggle('open', isOpen);
   btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 }
-
-// モーダル表示
-  document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    const closeBtn = document.querySelector('.modal-close');
-
-    document.querySelectorAll('.gallery img').forEach(img => {
-      img.addEventListener('click', () => {
-        modalImg.src = img.src;
-        modal.classList.add('show');
-        modal.setAttribute('aria-hidden', 'false');
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('show');
-      modalImg.src = '';
-      modal.setAttribute('aria-hidden', 'true');
-    });
-  });
 </script>
 
 </body>
