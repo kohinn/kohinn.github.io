@@ -115,12 +115,13 @@
 
 <!-- スクリプト（1つだけ） -->
 <script>
-  function toggleMenu() {
+  function toggleMenu(btn) {
     const nav = document.getElementById('main-nav');
-    const btn = document.querySelector('.menu-toggle');
     const isOpen = nav.classList.toggle('show');
+    btn.classList.toggle('open', isOpen);
     btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }
+
 
   document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('modal');
