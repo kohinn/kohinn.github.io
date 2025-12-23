@@ -519,6 +519,7 @@ header {
 
 
 /* ハンバーガー（三本線→バッテン） */
+
 .menu-toggle { width: 40px; height: 40px; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; background: transparent; border: none; cursor: pointer; z-index: 2001; }
 .menu-toggle span {
   display: block;
