@@ -521,10 +521,10 @@ header {
 /* ハンバーガー（三本線→バッテン） */
 
 .menu-toggle {
-  position: absolute;
+  position: fixed; /* ← これが重要！ */
   top: 1rem;
   right: 1rem;
-  z-index: 1000;
+  z-index: 3000; /* ← メニューより上に */
   width: 40px;
   height: 40px;
   background: none;
@@ -535,6 +535,7 @@ header {
   justify-content: center;
   align-items: center;
 }
+
 
 .menu-toggle span {
   display: block;
