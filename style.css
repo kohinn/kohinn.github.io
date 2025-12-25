@@ -560,3 +560,81 @@ header {
   text-decoration: none;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px; /* ← 高さを統一 */
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ロゴを中央に */
+  padding: 0 1.2rem;
+  z-index: 2000;
+  box-sizing: border-box;
+}
+
+.site-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  pointer-events: none;
+}
+
+.menu-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+}
+
+.language-switch {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 3000;
+  background: rgba(255,255,255,0.85);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 64px; /* ← スマホでも高さを統一 */
+    padding: 0 1rem;
+  }
+
+  .site-logo {
+    font-size: 0.95rem;
+  }
+
+  .menu-toggle {
+    top: 12px;
+    right: 12px;
+  }
+
+  .language-switch {
+    top: 12px;
+    left: 12px;
+  }
+}
+
+
