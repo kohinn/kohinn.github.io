@@ -447,4 +447,46 @@ footer {
 /* ここまでで header / menu-toggle / #main-nav の重複は完全に解消済み */
 /* position: sticky の古い定義も削除済み */
 /* スマホとPCの挙動が安定するように統合済み */
+.gallery img {
+  width: 100%;
+  max-width: 240px; /* ← これで1枚ずつ小さくなる */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+footer {
+  width: 100vw;        /* ← 画面幅いっぱい */
+  margin: 0;
+  padding: 1.2rem 0;   /* ← 左右の白余白をなくす */
+  background: #222;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+.menu-toggle {
+  top: 20px;
+  right: 16px;
+  width: 56px;
+  height: 60px;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+@media (min-width: 769px) {
+  #main-nav {
+    margin-left: auto; /* ← ロゴと被らないよう右寄せ */
+  }
+}
+@media (min-width: 769px) {
+  .sns-links {
+    justify-content: center;
+    overflow-x: visible;
+  }
+}
 
