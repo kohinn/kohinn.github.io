@@ -12,19 +12,22 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ヘッダー */
+/* ▼ ヘッダーをぶいすぽ風に固定＆高さ統一 */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px; /* ← 黒帯の高さを固定 */
   background: #222;
-  color: #fff;
-  padding: 1.2rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  justify-content: center; /* ロゴ中央寄せ */
+  padding: 0 1.2rem;
+  z-index: 2000;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
+
 
 /* ロゴ */
 .site-logo {
