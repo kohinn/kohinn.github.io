@@ -489,4 +489,13 @@ footer {
     overflow-x: visible;
   }
 }
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* ← スマホだけ2列に固定 */
+    gap: 1rem;
+    max-width: 95vw;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
 
