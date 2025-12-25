@@ -496,8 +496,8 @@ footer {
 }
 .menu-toggle {
   position: fixed;
-  top: 12px;
-  right: 12px;
+  top: 8px;
+  right: 15px;
   width: 48px;
   height: 48px;
   z-index: 3000;
