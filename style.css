@@ -534,6 +534,15 @@ footer {
 .modal-close {
   z-index: 9999 !important; /* ← 拡大時の✕も最前面に */
 }
+.modal,
+#main-nav {
+  transform: none !important;
+  overflow: visible !important;
+}
+
+
+
+
 
 
 
