@@ -298,9 +298,10 @@ footer {
   }
   header { padding: 1.6rem 1.2rem; }
 /* Fanartセクションの左右余白を縮めて、画像領域を最大化 */
-  #fanart {
-    padding: 2rem 1rem 1.5rem; /* ← 上:2rem, 左右:1rem, 下:1.5rem に調整 */
+ #fanart {
+  padding: 64px 1rem 1.5rem; /* ← 上を64pxにする（ヘッダーの高さ） */
 }
+
   }
 
 
