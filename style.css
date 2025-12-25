@@ -527,5 +527,13 @@ footer {
 .menu-toggle.open span:nth-child(3) {
   transform: rotate(-45deg) translate(4px, -4px);
 }
+.menu-toggle {
+  z-index: 9999 !important; /* ← 最前面に固定 */
+}
+
+.modal-close {
+  z-index: 9999 !important; /* ← 拡大時の✕も最前面に */
+}
+
 
 
