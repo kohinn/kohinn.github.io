@@ -641,4 +641,9 @@ header {
   }
 }
 
+#fanart,
+#about,
+#contact {
+  padding-top: 80px; /* ← 64pxより少し多めにして安心感を出す */
+}
 
