@@ -351,6 +351,26 @@ footer {
   left: 0;
   color: #888;
 }
+.career-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.career-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.2rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.career-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #888;
+}
 
 
 /* ============================
