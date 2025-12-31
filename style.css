@@ -319,6 +319,17 @@ footer {
   padding-bottom: 0.4rem;
 }
 
+
+.section-title {
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.4rem;
+}
+
 /* Skills リスト */
 .skills-list {
   list-style: none;
