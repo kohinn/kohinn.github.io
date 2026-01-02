@@ -576,6 +576,7 @@ footer {
   transform: none !important;
   overflow: visible !important;
 }
+
 #about {
   display: flex;
   flex-direction: column;
@@ -598,5 +599,3 @@ footer {
   color: #333;
   margin-top: 0.5em;
 }
-
-
