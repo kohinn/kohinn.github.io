@@ -602,3 +602,17 @@ footer {
   color: #333;
   margin-top: 0.5em;
 }
+
+.about-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: auto;
+  max-width: 280px;
+  height: auto;
+  border-radius: 8px;
+}
+
