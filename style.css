@@ -29,16 +29,16 @@ header {
 }
 
 .site-logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1rem;
-  font-weight: 700;
-  color: #fff;
-  margin: 0;
-  pointer-events: none;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #00bcd4; /* ← 鮮やかな水色系（ArtStation風） */
+  background: rgba(255,255,255,0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  pointer-events: auto;
 }
+
 
 /* ============================
    言語切り替え
