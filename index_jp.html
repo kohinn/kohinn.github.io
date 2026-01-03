@@ -129,15 +129,17 @@
   function toggleMenu(btn) {
     const nav = document.getElementById('main-nav');
     const isOpen = nav.classList.toggle('show');
-    btn.classList.toggle('open', isOpen);
-    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (btn) {
+      btn.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
   }
 
-
   document.addEventListener('DOMContentLoaded', () => {
+    // モーダル処理
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modal-img');
-    const closeBtn = document.querySelector('.modal-close');
+    const modalClose = document.querySelector('.modal-close');
 
     document.querySelectorAll('.gallery img').forEach(img => {
       img.addEventListener('click', () => {
@@ -147,13 +149,21 @@
       });
     });
 
-    closeBtn.addEventListener('click', () => {
+    modalClose.addEventListener('click', () => {
       modal.classList.remove('show');
       modalImg.src = '';
       modal.setAttribute('aria-hidden', 'true');
     });
+
+    // ✕ボタンでメニューを閉じる
+    const menuClose = document.querySelector('.menu-close');
+    menuClose.addEventListener('click', () => {
+      document.getElementById('main-nav').classList.remove('show');
+      document.querySelector('.menu-toggle')?.classList.remove('open');
+    });
   });
 </script>
+
   
 
 
