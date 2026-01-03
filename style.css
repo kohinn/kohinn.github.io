@@ -30,10 +30,14 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: linear-gradient(120deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 100px 100px;
+  background-image:
+    linear-gradient(60deg, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(-60deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 80px 80px;
   pointer-events: none;
+  z-index: 0;
 }
+
 
 
 
@@ -364,7 +368,7 @@ footer {
   text-align: left;
   line-height: 1.8;
   font-size: 1rem;
-  color: #444;
+  color: #fff;
 }
 
 .about-text p {
