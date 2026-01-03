@@ -48,10 +48,10 @@ header {
 @media (max-width: 768px) {
   .language-switch {
     font-size: 0.85rem;   /* ← スマホ用に小さく */
-    padding: 4px 8px;     /* ← 高さと横幅を縮める */
+    padding: 6px 12px;     /* ← 高さと横幅を縮める */
     height: auto;         /* ← 固定高さを解除 */
     line-height: normal;  /* ← テキストが潰れないように */
-    border-radius: 6px;   /* ← 角丸も控えめに */
+    border-radius: 9px;   /* ← 角丸も控えめに */
     top: 10px;            /* ← 黒帯からはみ出さないように */
     left: 10px;
   }
