@@ -10,7 +10,7 @@ body {
 }
 
 /* ============================
-   ヘッダー
+   ヘッダー（透過対応）
 ============================ */
 header {
   position: fixed;
@@ -26,53 +26,48 @@ header {
   z-index: 2000;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   box-sizing: border-box;
+  transition: background 0.3s ease;
 }
 
+header.scrolled {
+  background: rgba(34,34,34,0.8);
+  backdrop-filter: blur(4px);
+}
+
+/* ============================
+   ロゴ（中央・ペンアイコン付き）
+============================ */
 .site-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   font-size: 0.95rem;
   font-weight: bold;
-  color: #00bcd4; /* ← 鮮やかな水色系（ArtStation風） */
+  color: #00bcd4;
   background: rgba(255,255,255,0.08);
   padding: 4px 10px;
   border-radius: 6px;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
   pointer-events: auto;
 }
 
-
-/* ============================
-   言語切り替え
-============================ */
-.language-switch {
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  z-index: 3000;
-  background: rgba(255,255,255,0.9);
-  padding: 6px 11px;
-  border-radius: 6px;
-  font-size: 1.1rem;
-  font-weight: 900;
-  backdrop-filter: blur(6px);
-}
-
-@media (max-width: 768px) {
-  .language-switch {
-    font-size: 0.85rem;
-    padding: 6px 11px;
-    border-radius: 15px;
-    top: 10px;
-    left: 10px;
-  }
+.site-logo::before {
+  content: "✎";
+  font-size: 1rem;
+  color: #00bcd4;
 }
 
 /* ============================
-   ハンバーガー（ArtStation風）
+   ハンバーガー（左配置）
 ============================ */
 .menu-toggle {
   position: fixed;
   top: 10px;
-  right: 16px;
+  left: 12px;
   width: 40px;
   height: 40px;
   z-index: 3000;
@@ -88,7 +83,7 @@ header {
   width: 24px;
   height: 2px;
   background: white;
-  margin:4px 0;
+  margin: 4px 0;
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -101,6 +96,22 @@ header {
 }
 .menu-toggle.open span:nth-child(3) {
   transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* ============================
+   言語切り替え（右配置）
+============================ */
+.language-switch {
+  position: fixed;
+  top: 10px;
+  right: 12px;
+  z-index: 3000;
+  background: rgba(255,255,255,0.9);
+  padding: 6px 11px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 900;
+  backdrop-filter: blur(6px);
 }
 
 /* ============================
@@ -319,130 +330,4 @@ footer {
   white-space: nowrap;
 }
 
-.sns-links a {
-  flex: 0 0 auto;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: background 0.3s ease;
-}
-
-.sns-links a[href*="twitter"] { background: #1d9bf0; }
-.sns-links a[href*="pixiv"] { background: #0096fa; }
-.sns-links a[href*="instagram"] { background: #e1306c; }
-.sns-links a[href*="artstation"] { background: #0f4c81; }
-.sns-links a[href*="bsky.app"] { background: #0075FF; }
-
-@media (min-width: 769px) {
-  .sns-links {
-    justify-content: center;
-    overflow-x: visible;
-  }
-}
-
-/* ============================
-   About
-============================ */
-.about-text {
-  max-width: 860px;
-  margin: 0 auto;
-  padding-top: 0.4rem;
-  text-align: left;
-  line-height: 1.8;
-  font-size: 1rem;
-  color: #444;
-}
-
-.about-image {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.about-image img {
-  max-width: 280px;
-  width: auto;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* ============================
-   Skills / Career
-============================ */
-.section-title {
-  font-size: 1.1rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: #222;
-  font-weight: bold;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 0.4rem;
-}
-
-.skills-list,
-.career-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.skills-list li,
-.career-list li {
-  margin-bottom: 0.8rem;
-  padding-left: 1.2rem;
-  position: relative;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.skills-list li::before,
-.career-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #888;
-}
-
-/* ============================
-   Contact
-============================ */
-.contact-intro {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #444;
-  margin-bottom: 1rem;
-}
-
-.contact-intro .jp-note {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-.form-embed {
-  max-width: 860px;
-  margin: 1rem auto;
-  background: #fff;
-  border: 1px solid #e6e6e6;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  overflow: hidden;
-}
-
-.form-embed iframe {
-  width: 100%;
-  height: 78vh;
-  min-height: 560px;
-  border: 0;
-}
-
-@media (max-width: 640px) {
-  .form-embed iframe {
-    height: 84svh;
-    min-height: 520px;
-  }
-}
+.s
