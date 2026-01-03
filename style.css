@@ -17,12 +17,12 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 64px;
+  height: 48px;
   background: #222;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1.2rem;
+  padding: 0 1rem;
   z-index: 2000;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   box-sizing: border-box;
@@ -73,8 +73,8 @@ header {
   position: fixed;
   top: 10px;
   right: 16px;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   z-index: 3000;
   display: flex;
   flex-direction: column;
@@ -85,10 +85,10 @@ header {
 }
 
 .menu-toggle span {
-  width: 28px;
-  height: 3px;
+  width: 24px;
+  height: 2px;
   background: white;
-  margin: 5px 0;
+  margin:4px 0;
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
