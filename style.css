@@ -33,9 +33,6 @@ header {
   position: fixed;
   top: 12px;
   left: 12px;
-/* ▼ 黒帯の中で縦方向の中央に配置する ▼ */ top: 50%; transform: translateY(-50%);
-
-  
   z-index: 3000;
   background: rgba(255,255,255,0.9);
   padding: 6px 11px;
