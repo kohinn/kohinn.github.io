@@ -78,6 +78,7 @@ header {
   align-items: center;
   background: none;
   border: none;
+     outline: 2px solid red;
 }
 
 .menu-toggle span {
