@@ -35,10 +35,10 @@ header {
   left: 12px;
   z-index: 3000;
   background: rgba(255,255,255,0.9);
-  padding: 6px 12px;
+  padding: 6px 11px;
   border-radius: 6px;
-  font-size: 1.5rem;
-  font-weight: 1000;
+  font-size: 1.1rem;
+  font-weight: 900;
   backdrop-filter: blur(6px);
   line-height: normal; 
   height: auto;
