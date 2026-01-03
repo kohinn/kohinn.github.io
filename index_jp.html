@@ -46,8 +46,10 @@
   </button>
   
 <header>
-  <!-- 左上 ✕ボタン（赤丸） -->
-  <button class="menu-close" aria-label="Close menu">✕</button>
+  <!-- 左上：ハンバーガー -->
+  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
+    <span></span><span></span><span></span>
+  </button>
 
   <!-- 中央ロゴ -->
   <h1 class="site-logo">
@@ -57,11 +59,12 @@
     </a>
   </h1>
 
-  <!-- 右上 EN/JP切替 -->
+  <!-- 右上：言語切り替え -->
   <div class="language-switch">
     <a href="index.html">EN</a> / <a href="index_jp.html">JP</a>
   </div>
 </header>
+
 
   
 <section id="fanart">
