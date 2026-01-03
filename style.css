@@ -598,3 +598,16 @@ footer {
   border-radius: 8px;
 }
 
+/* ▼ スマホだけ言語切り替えボタンを小さくする ▼ */
+@media (max-width: 768px) {
+  .language-switch {
+    font-size: 0.9rem;      /* ← スマホ用に小さく */
+    padding: 6px 10px;      /* ← 高さと横幅を縮める */
+    height: auto;           /* ← 固定高さを解除 */
+    line-height: normal;    /* ← テキストが潰れないように */
+    border-radius: 6px;     /* ← 角丸も少し小さく */
+    top: 10px;              /* ← 黒帯からはみ出さないように微調整 */
+    left: 10px;
+  }
+}
+
