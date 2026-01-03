@@ -45,13 +45,13 @@ header {
 ============================ */
 .language-switch {
   position: fixed;
-  top: 12px;
-  left: 12px;
+  top: 10px;
+  right: 12px; /* ← 左→右に変更 */
   z-index: 3000;
   background: rgba(255,255,255,0.9);
   padding: 6px 11px;
-  border-radius: 6px;
-  font-size: 1.1rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
   font-weight: 900;
   backdrop-filter: blur(6px);
 }
@@ -138,12 +138,13 @@ header {
 .menu-close {
   position: absolute;
   top: 12px;
-  right: 12px;
+  left: 12px; /* ← 右→左に変更 */
   font-size: 2rem;
   color: white;
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 3001;
 }
 
 
@@ -236,14 +237,7 @@ section h2 {
 
 
 
-@media (min-width: 1024px) {
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-    max-width: 960px;
-    padding: 0 1rem;
-  }
-}
+@media (max-width: 768px) { .gallery { grid-template-columns: repeat(2, 1fr); /* ← 2列に固定 */ gap: 1rem; max-width: 95vw; padding: 0; } }
 
 /* ============================
    モーダル
