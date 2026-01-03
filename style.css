@@ -1,10 +1,11 @@
 
 /* ============================ 基本設定 ============================ */
 body {
-  background: linear-gradient(135deg, rgba(10,15,44,0.85), rgba(0,26,60,0.85));
+  background: linear-gradient(135deg, rgba(20,24,40,0.9), rgba(10,15,30,0.9));
   background-attachment: fixed;
   color: #fff;
 }
+
 
 
 /* ▼ 青を弱めて黒寄りにした魔法科グラデーション */ 
@@ -17,11 +18,12 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle, rgba(255,255,255,0.12) 2px, transparent 3px);
-  background-size: 160px 160px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 2px, transparent 3px);
+  background-size: 140px 140px;
   opacity: 0.2;
   pointer-events: none;
 }
+
 
 
 
@@ -361,6 +363,13 @@ footer {
 /* ============================
    About セクション
 ============================ */
+#about {
+  background: rgba(255,255,255,0.05);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+
 .about-text {
   max-width: 860px;
   margin: 0 auto;
