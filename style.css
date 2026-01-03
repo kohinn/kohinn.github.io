@@ -58,14 +58,14 @@ header {
 }
 
 
-@media (max-width: 768px) {
-  .language-switch {
-    font-size: 0.85rem;
-    padding: 6px 11px;
-    border-radius: 15px;
-    top: 10px;
-    left: 10px;
-  }
+@media (max-width: 768px) { 
+   .language-switch { 
+      top: 10px; 
+      right: 12px; /* ← left: 10px を削除して right に統一 */ 
+      font-size: 0.85rem; 
+      padding: 4px 8px; 
+      border-radius: 12px; 
+   } 
 }
 
 /* ============================
@@ -136,18 +136,6 @@ header {
   text-decoration: none;
 }
 
-/* ✕ボタン */
-.menu-close {
-  position: fixed;
-  top: 10px;
-  left: 12px;
-  font-size: 2rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 3001;
-}
 
 
 
