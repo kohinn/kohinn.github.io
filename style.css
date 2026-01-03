@@ -61,11 +61,11 @@ header {
 
 .menu-toggle {
   position: fixed;
-  top: 16px;
-  right: 16px;
+  top: 12;
+  right: 12px;
   width: 56px;
   height: 56px;
-  z-index: 3000;
+  z-index: 9999 !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
