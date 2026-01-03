@@ -5,153 +5,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kohinn Portfolio</title>
   <link rel="stylesheet" href="style.css?v=20251129">
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-
   <script>
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-  </script>
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+</script>
 </head>
-
 <body>
 
-  <!-- ハンバーガーメニュー（header の外に置くのは正しい） -->
-  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
+ <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
     <span></span><span></span><span></span>
   </button>
+  
+<header>
+  <h1 class="site-logo">
+    <a href="index_jp.html">
+      <span class="site-subtitle">present by</span><br>
+      <span class="site-main">Kohinn</span>
+    </a>
+  </h1>
 
-  <header>
-    <h1 class="site-logo">
-      <a href="index_jp.html">
-        <span class="site-subtitle">present by</span><br>
-        <span class="site-main">Kohinn</span>
-      </a>
-    </h1>
 
-    <nav id="main-nav">
-      <a href="fanart_jp.html">Illustration</a>
-      <a href="about_jp.html">About</a>
-      <a href="contact_jp.html">ご依頼・連絡</a>
-    </nav>
 
-    <div class="language-switch">
-      <a href="index.html">EN</a> / <a href="index_jp.html">JP</a>
-    </div>
-  </header>
 
-  <!-- Illustration -->
-  <section id="fanart">
-    <h2>Illustration</h2>
-    <div class="gallery">
-      <img class="thumbnail" src="img/fanart/yb2929.png" alt="Fanart 7">
-      <img class="thumbnail" src="img/fanart/hinaano.png" alt="Fanart 6">
-      <img class="thumbnail" src="img/fanart/0f50e10c_original.jpg" alt="Fanart 1">
-      <img class="thumbnail" src="img/fanart/cd350e62_original.jpg" alt="Fanart 2">
-      <img class="thumbnail" src="img/fanart/o9klpl.jpg" alt="Fanart 3">
-      <img class="thumbnail" src="img/fanart/mega.png" alt="Fanart 4">
-      <img class="thumbnail" src="img/fanart/melody.jpg" alt="Fanart 5">
-    </div>
-  </section>
+  
 
-  <!-- About -->
-  <section id="about">
-    <h2>About</h2>
+   <nav id="main-nav">
+    <a href="fanart_jp.html">Illustration</a>
+    <a href="about_jp.html">About</a>
+    <a href="contact_jp.html">ご依頼・連絡</a>
+  </nav>
 
-    <div class="about-image">
-      <img src="img/fanart/Screenshot_20260102_193842_Gallery (1).jpg" alt="Kohinn avatar">
-    </div>
-
-    <div class="about-text">
-      <p>Kohinn（コヒン）</p>
-      <p>独学でイラストを学び、現在はフルタイム勤務と並行してイラストレーターとして活動中。</p>
-      <p>見た人の目を引くイラストが得意。</p>
-
-      <h3 class="section-title">skills</h3>
-      <ul class="skills-list">
-        <li>キャラクターイラスト</li>
-        <li>サイト制作</li>
-      </ul>
-
-      <h4 class="section-title">経歴</h4>
-      <ul class="career-list">
-        <li>2025年4月 イラストレーターとして本格的に活動開始</li>
-        <li>2025年5月 有償依頼を受注</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="sns-links">
-      <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
-      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
-      <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
-      <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
-      <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
-    </div>
-
-    <p class="copyright">© 2025 Kohinn. All rights reserved.</p>
-    <p class="rights-note">Characters depicted belong to their respective owners.</p>
-  </footer>
-
-  <!-- Modal -->
-  <div id="modal" class="modal" aria-hidden="true">
-    <button class="modal-close" aria-label="Close image">✕</button>
-    <img class="modal-content" id="modal-img" alt="">
+  <div class="language-switch">
+    <a href="index.html">EN</a> / <a href="index_jp.html">JP</a>
   </div>
+</header>
+  
+<section id="fanart">
+  <h2>Illustration</h2>
+ <div class="gallery">
+   <img class="thumbnail" src="img/fanart/yb2929.png" alt="Fanart 7">
+     <img class="thumbnail" src="img/fanart/hinaano.png" alt="Fanart 6">
+    <img class="thumbnail" src="img/fanart/0f50e10c_original.jpg" alt="Fanart 1">
+    <img class="thumbnail" src="img/fanart/cd350e62_original.jpg" alt="Fanart 2">
+    <img class="thumbnail" src="img/fanart/o9klpl.jpg" alt="Fanart 3">
+    <img class="thumbnail" src="img/fanart/mega.png" alt="Fanart 4">
+    <img class="thumbnail" src="img/fanart/melody.jpg" alt="Fanart 5">
+   
 
-  <!-- Script -->
-  <script>
-    function toggleMenu(btn) {
-      const nav = document.getElementById('main-nav');
-      const isOpen = nav.classList.toggle('show');
-      btn.classList.toggle('open', isOpen);
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    }
+    
+  </div>
+</section>
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('modal');
-      const modalImg = document.getElementById('modal-img');
-      const closeBtn = document.querySelector('.modal-close');
+<section id="about">
+  <h2>About</h2>
+  <div class="about-image"> <img src="img/fanart/Screenshot_20260102_193842_Gallery (1).jpg" alt="Kohinn avatar"> </div>
+  <div class="about-text">
+    <p>Kohinn（コヒン）</p>
+       <p>独学でイラストを学び、現在はフルタイム勤務と並行してイラストレーターとして活動中。</p>
+       <p>見た人の目を引くイラストが得意。</p>
+    
+    <h3 class="section-title">skills</h3>
+    <ul class="skills-list">
+      <li>キャラクターイラスト</li>
+      <li>サイト制作</li>
+    </ul>
+    <h4 class="section-title">経歴</h4>
+<ul class="career-list">
+     <li>2025年4月 イラストレーターとして本格的に活動開始</li>
+     <li>2025年5月 有償依頼を受注</li>
+</ul>
+    
+  </div>
+</section>
 
-      document.querySelectorAll('.gallery img').forEach(img => {
-        img.addEventListener('click', () => {
-          modalImg.src = img.src;
-          modal.classList.add('show');
-          modal.setAttribute('aria-hidden', 'false');
-        });
-      });
 
-      closeBtn.addEventListener('click', () => {
-        modal.classList.remove('show');
-        modalImg.src = '';
-        modal.setAttribute('aria-hidden', 'true');
+
+
+<footer>
+  <div class="sns-links">
+    <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
+    <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
+    <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
+    <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
+    <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
+  </div>
+  <p class="copyright">© 2025 Kohinn. All rights reserved.</p>
+<p class="rights-note">Characters depicted belong to their respective owners.</p>
+</footer>
+
+
+<!-- モーダル拡大表示 -->
+<div id="modal" class="modal" aria-hidden="true">
+  <button class="modal-close" aria-label="Close image">✕</button>
+  <img class="modal-content" id="modal-img" alt="">
+</div>
+
+<!-- スクリプト（1つだけ） -->
+<script>
+  function toggleMenu(btn) {
+    const nav = document.getElementById('main-nav');
+    const isOpen = nav.classList.toggle('show');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeBtn = document.querySelector('.modal-close');
+
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden', 'false');
       });
     });
-  </script>
 
-  <!-- Back to top -->
-  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('show');
+      modalImg.src = '';
+      modal.setAttribute('aria-hidden', 'true');
+    });
+  });
+</script>
+  
+
+
+
+<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const backToTop = document.getElementById('backToTop');
-      let hideTimer;
+  document.addEventListener('DOMContentLoaded', () => {
+    const backToTop = document.getElementById('backToTop');
+    let hideTimer;
 
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 200) {
-          backToTop.classList.add('show');
-          clearTimeout(hideTimer);
-          hideTimer = setTimeout(() => {
-            backToTop.classList.remove('show');
-          }, 1500);
-        } else {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        backToTop.classList.add('show');
+
+        // スクロールが止まったら3秒後に消える
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(() => {
           backToTop.classList.remove('show');
-        }
-      });
+        }, 1500);
+      } else {
+        backToTop.classList.remove('show');
+      }
     });
+  });
   </script>
-
 </body>
 </html>
