@@ -309,12 +309,14 @@ footer {
   background: #222;
   color: #fff;
   text-align: center;
-  padding: 1.2rem 0;
+  padding: 2rem 1rem;
   font-size: 0.9rem;
   width: 100vw;
   box-sizing: border-box;
 }
-
+footer p {
+   margin-bottom: 1rem; /* ← 段落間を広げる */
+}
 /* ============================
    SNSリンク
 ============================ */
@@ -362,6 +364,10 @@ footer {
   line-height: 1.8;
   font-size: 1rem;
   color: #444;
+}
+
+.about-text p {
+  margin-bottom: 0.6rem; /* ← 元が1rem以上ならこれで自然に詰まる */
 }
 
 .about-image {
