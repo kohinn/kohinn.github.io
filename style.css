@@ -1,10 +1,18 @@
+/* ============================
+   1. 基本設定
+============================ */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #333;
+  overflow-x: hidden;
+}
 
-/* ============================ 基本設定 ============================ */
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fafafa; color: #333; 
-     /* overflow-x: hidden; ← 一度コメントアウトしてみる */ }
-
-
-
+/* ============================
+   2. Header（ロゴ中央固定 + 安定化）
+============================ */
 header {
   position: fixed;
   top: 0;
@@ -14,7 +22,7 @@ header {
   background: #222;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: space-between; /* ← 中央ロゴと干渉しない */
   padding: 0 1.2rem;
   z-index: 2000;
   box-sizing: border-box;
@@ -33,8 +41,9 @@ header {
   pointer-events: none;
 }
 
-
-
+/* ============================
+   3. 言語切替ボタン
+============================ */
 .language-switch {
   position: fixed;
   top: 12px;
@@ -46,30 +55,21 @@ header {
   font-size: 1.1rem;
   font-weight: 900;
   backdrop-filter: blur(6px);
-  line-height: normal; 
-  height: auto;
 }
 
-/* ▼ スマホだけ言語切り替えボタンを小さくする ▼ */
 @media (max-width: 768px) {
   .language-switch {
-    font-size: 0.85rem;   /* ← スマホ用に小さく */
-    padding: 6px 11px;     /* ← 高さと横幅を縮める */
-    height: auto;         /* ← 固定高さを解除 */
-    line-height: normal;  /* ← テキストが潰れないように */
-    border-radius: 15px;   /* ← 角丸も控えめに */
-    top: 10px;            /* ← 黒帯からはみ出さないように */
+    font-size: 0.85rem;
+    padding: 6px 11px;
+    border-radius: 15px;
+    top: 10px;
     left: 10px;
   }
 }
 
-
-
 /* ============================
-   ハンバーガーメニュー（完全整理版）
+   4. ハンバーガーメニュー（完全整理版）
 ============================ */
-
-/* 位置とサイズを1回だけ定義 */
 .menu-toggle {
   position: fixed;
   top: 12px;
@@ -86,7 +86,6 @@ header {
   padding: 0;
 }
 
-/* ハンバーガーの3本線 */
 .menu-toggle span {
   width: 30px;
   height: 3px;
@@ -96,7 +95,6 @@ header {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* 開いたときのアニメーション */
 .menu-toggle.open span:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
 }
@@ -107,7 +105,6 @@ header {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* スマホ用微調整 */
 @media (max-width: 768px) {
   .menu-toggle {
     top: 10px;
@@ -121,7 +118,6 @@ header {
   }
 }
 
-/* PCでは非表示 */
 @media (min-width: 769px) {
   .menu-toggle {
     display: none !important;
@@ -129,7 +125,7 @@ header {
 }
 
 /* ============================
-   全画面メニュー（ぶいすぽ風）
+   5. 全画面メニュー
 ============================ */
 #main-nav {
   position: fixed;
@@ -144,7 +140,7 @@ header {
   pointer-events: none;
   transform: scale(1.05);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 2500; /* ハンバーガーより下 */
+  z-index: 2500;
 }
 
 #main-nav.show {
@@ -160,23 +156,20 @@ header {
   text-decoration: none;
 }
 
-
 /* ============================
-   セクション（帯が隠れないように）
+   6. セクション共通
 ============================ */
 #fanart,
 #about,
 #contact {
-  padding-top: 80px; /* ヘッダー64px + 余裕16px */
+  padding-top: 80px;
 }
 
-/* セクション共通 */
 section {
   padding: 2rem;
   text-align: center;
 }
 
-/* セクションタイトル帯 */
 section h2 {
   display: block;
   width: 100%;
@@ -189,11 +182,10 @@ section h2 {
   background-color: #222;
   border-radius: 6px;
   text-align: left;
-  box-sizing: border-box;
 }
 
 /* ============================
-   ギャラリー（Rosuuri風）
+   7. ギャラリー
 ============================ */
 .gallery {
   display: grid;
@@ -201,13 +193,11 @@ section h2 {
   gap: 1.5rem;
   max-width: 860px;
   margin: 0 auto;
-  justify-content: center;
   padding: 0 1rem;
 }
 
 .gallery img {
   width: 100%;
-  height: auto;
   border-radius: 8px;
   cursor: pointer;
   display: block;
@@ -234,7 +224,7 @@ section h2 {
 }
 
 /* ============================
-   モーダル（イラスト拡大）
+   8. モーダル
 ============================ */
 .modal {
   display: none;
@@ -258,7 +248,6 @@ section h2 {
   box-shadow: 0 0 30px rgba(0,0,0,0.6);
 }
 
-/* ✕ボタン（常に見える完全版） */
 .modal-close {
   position: fixed;
   top: 16px;
@@ -274,7 +263,7 @@ section h2 {
 }
 
 /* ============================
-   上に戻るボタン
+   9. 上に戻るボタン
 ============================ */
 .back-to-top {
   position: fixed;
@@ -300,7 +289,7 @@ section h2 {
 }
 
 /* ============================
-   フッター
+   10. フッター
 ============================ */
 footer {
   background: #222;
@@ -312,7 +301,6 @@ footer {
   box-sizing: border-box;
 }
 
-/* SNSリンク（横スクロール対応） */
 .sns-links {
   display: flex;
   flex-wrap: nowrap;
@@ -320,7 +308,6 @@ footer {
   gap: 1rem;
   padding: 0.5rem 1rem;
   white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
 }
 
 .sns-links a {
@@ -344,9 +331,8 @@ footer {
   opacity: 0.8;
 }
 
-
 /* ============================
-   About セクション
+   11. About / Contact
 ============================ */
 .about-text {
   max-width: 860px;
@@ -357,284 +343,6 @@ footer {
   font-size: 1rem;
   color: #444;
 }
-
-.about-text p {
-  line-height: 1.5;
-  margin: 0.3em 0;
-}
-
-
-
-.about-image img {
-  max-width: 240px !important; /* ← 好きなサイズに調整できる */
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-}
-
-
-
-
-
-
-
-
-
-.section-title {
-  font-size: 1.1rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: #222;
-  font-weight: bold;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 0.4rem;
-}
-
-/* Skills リスト */
-.skills-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.skills-list li {
-  margin-bottom: 0.8rem;
-  padding-left: 1.2rem;
-  position: relative;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.skills-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #888;
-}
-.career-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.career-list li {
-  margin-bottom: 0.8rem;
-  padding-left: 1.2rem;
-  position: relative;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.career-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #888;
-}
-
-
-/* ============================
-   Contact セクション
-============================ */
-.contact-intro {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #444;
-  margin-bottom: 1rem;
-}
-
-.contact-intro .jp-note {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-/* Googleフォーム埋め込み */
-.form-embed {
-  max-width: 860px;
-  margin: 1rem auto;
-  background: #fff;
-  border: 1px solid #e6e6e6;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  overflow: hidden;
-}
-
-.form-embed iframe {
-  display: block;
-  width: 100%;
-  height: 78vh;
-  min-height: 560px;
-  border: 0;
-  background: #fff;
-}
-
-@media (max-width: 640px) {
-  .form-embed iframe {
-    height: 84svh;
-    min-height: 520px;
-  }
-}
-
-.contact-fallback {
-  font-size: 0.95rem;
-  color: #555;
-  margin-top: 1rem;
-}
-
-
-/* ============================
-   PC専用レイアウト調整
-============================ */
-@media (min-width: 769px) {
-
-  /* ギャラリーを3列に */
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  /* PCではハンバーガー非表示、ナビ常時表示 */
-  .menu-toggle {
-    display: none !important;
-  }
-
-  #main-nav {
-    display: flex !important;
-    position: static !important;
-    opacity: 1 !important;
-    transform: none !important;
-    pointer-events: auto !important;
-    background: none !important;
-    gap: 1rem;
-  }
-
-  header {
-    padding: 1.2rem 2rem;
-    align-items: center;
-  }
-
-  #main-nav {
-    flex-direction: row !important;
-    align-items: center;
-    padding: 0 !important;
-  }
-
-  /* About の帯と文章の間隔 */
-  #about h2 {
-    margin-bottom: 1rem !important;
-  }
-}
-
-
-/* ============================
-   最終クリーニング（不要CSS削除済）
-============================ */
-
-/* ここまでで header / menu-toggle / #main-nav の重複は完全に解消済み */
-/* position: sticky の古い定義も削除済み */
-/* スマホとPCの挙動が安定するように統合済み */
-.gallery img {
-  width: 100%;
-  max-width: 240px; /* ← これで1枚ずつ小さくなる */
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 8px;
-}
-footer {
-  width: 100vw;        /* ← 画面幅いっぱい */
-  margin: 0;
-  padding: 1.2rem 0;   /* ← 左右の白余白をなくす */
-  background: #222;
-  color: #fff;
-  text-align: center;
-  font-size: 0.9rem;
-  box-sizing: border-box;
-}
-
-
-.menu-toggle.open span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-}
-.menu-toggle.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-@media (min-width: 769px) {
-  #main-nav {
-    margin-left: auto; /* ← ロゴと被らないよう右寄せ */
-  }
-}
-@media (min-width: 769px) {
-  .sns-links {
-    justify-content: center;
-    overflow-x: visible;
-  }
-}
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr); /* ← スマホだけ2列に固定 */
-    gap: 1rem;
-    max-width: 95vw;
-    margin: 0 auto;
-    padding: 0;
-  }
-}
-.menu-toggle {
-  position: fixed;
-  top: 8px;
-  right: 15px;
-  width: 48px;
-  height: 48px;
-  z-index: 3000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: none;
-  border: none;
-}
-
-.menu-toggle span {
-  width: 28px;
-  height: 3px;
-  background: white;
-  margin: 5px 0;
-  border-radius: 2px;
-  transition: transform 0.3s ease;
-}
-
-.menu-toggle.open span:nth-child(1) {
-  transform: rotate(45deg) translate(4px, 4px);
-}
-.menu-toggle.open span:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(4px, -4px);
-}
-.menu-toggle {
-  z-index: 9999 !important; /* ← 最前面に固定 */
-}
-
-.modal-close {
-  z-index: 9999 !important; /* ← 拡大時の✕も最前面に */
-}
-.modal,
-#main-nav {
-  transform: none !important;
-  overflow: visible !important;
-}
-
-
 
 .about-image {
   width: 100%;
@@ -649,4 +357,76 @@ footer {
   border-radius: 8px;
 }
 
+.section-title {
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.4rem;
+}
 
+.skills-list,
+.career-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.skills-list li,
+.career-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.2rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.skills-list li::before,
+.career-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #888;
+}
+
+/* ============================
+   12. PC レイアウト
+============================ */
+@media (min-width: 769px) {
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  #main-nav {
+    display: flex !important;
+    position: static !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    background: none !important;
+    gap: 1rem;
+    margin-left: auto;
+  }
+
+  header {
+    padding: 1.2rem 2rem;
+  }
+
+  #main-nav {
+    flex-direction: row !important;
+    align-items: center;
+    padding: 0 !important;
+  }
+
+  .sns-links {
+    justify-content: center;
+    overflow-x: visible;
+  }
+}
