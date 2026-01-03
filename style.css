@@ -38,7 +38,7 @@ header {
 .language-switch {
   position: fixed;
   top: 12px;
-  left: 12px;
+  right: 12px;
   z-index: 3000;
   background: rgba(255,255,255,0.9);
   padding: 6px 11px;
@@ -59,7 +59,7 @@ header {
     line-height: normal;  /* ← テキストが潰れないように */
     border-radius: 15px;   /* ← 角丸も控えめに */
     top: 10px;            /* ← 黒帯からはみ出さないように */
-    left: 10px;
+    right: 10px;
   }
 }
 
