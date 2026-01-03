@@ -1,5 +1,73 @@
 /* ============================
-   ハンバーガー（ArtStation風サイズ・位置）
+   基本設定
+============================ */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #333;
+}
+
+/* ============================
+   ヘッダー
+============================ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.2rem;
+  z-index: 2000;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-sizing: border-box;
+}
+
+.site-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  pointer-events: none;
+}
+
+/* ============================
+   言語切り替え
+============================ */
+.language-switch {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 3000;
+  background: rgba(255,255,255,0.9);
+  padding: 6px 11px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  backdrop-filter: blur(6px);
+}
+
+@media (max-width: 768px) {
+  .language-switch {
+    font-size: 0.85rem;
+    padding: 6px 11px;
+    border-radius: 15px;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+/* ============================
+   ハンバーガー（ArtStation風）
 ============================ */
 .menu-toggle {
   position: fixed;
@@ -36,7 +104,7 @@
 }
 
 /* ============================
-   メニュー本体（右側にはみ出さないように）
+   全画面メニュー
 ============================ */
 #main-nav {
   position: fixed;
@@ -51,7 +119,6 @@
   pointer-events: none;
   transition: opacity 0.3s ease;
   z-index: 2500;
-  overflow: hidden;
 }
 
 #main-nav.show {
@@ -66,9 +133,7 @@
   text-decoration: none;
 }
 
-/* ============================
-   PCではハンバーガー非表示
-============================ */
+/* PCではハンバーガー非表示 */
 @media (min-width: 769px) {
   .menu-toggle {
     display: none !important;
@@ -78,13 +143,307 @@
     display: flex !important;
     position: static !important;
     opacity: 1 !important;
-    transform: none !important;
     pointer-events: auto !important;
     background: none !important;
     flex-direction: row !important;
-    align-items: center;
     gap: 1rem;
     margin-left: auto;
+  }
+}
+
+/* ============================
+   セクション
+============================ */
+#fanart,
+#about,
+#contact {
+  padding-top: 80px;
+}
+
+section {
+  padding: 2rem;
+  text-align: center;
+}
+
+section h2 {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto 1.5rem;
+  padding: 0.6rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #222;
+  border-radius: 6px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* ============================
+   ギャラリー
+============================ */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.gallery img:nth-child(1) { animation-delay: 0.2s; }
+.gallery img:nth-child(2) { animation-delay: 0.4s; }
+.gallery img:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 95vw;
+    padding: 0;
+  }
+}
+
+/* ============================
+   モーダル
+============================ */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.85);
+  z-index: 3000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  max-width: 95vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+}
+
+.modal-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  font-size: 2.2rem;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  border: none;
+  cursor: pointer;
+  z-index: 4000;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+}
+
+/* ============================
+   上に戻るボタン
+============================ */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #333;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ============================
+   フッター
+============================ */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: 0.9rem;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+/* ============================
+   SNSリンク
+============================ */
+.sns-links {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+.sns-links a {
+  flex: 0 0 auto;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.sns-links a[href*="twitter"] { background: #1d9bf0; }
+.sns-links a[href*="pixiv"] { background: #0096fa; }
+.sns-links a[href*="instagram"] { background: #e1306c; }
+.sns-links a[href*="artstation"] { background: #0f4c81; }
+.sns-links a[href*="bsky.app"] { background: #0075FF; }
+
+@media (min-width: 769px) {
+  .sns-links {
+    justify-content: center;
+    overflow-x: visible;
+  }
+}
+
+/* ============================
+   About
+============================ */
+.about-text {
+  max-width: 860px;
+  margin: 0 auto;
+  padding-top: 0.4rem;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #444;
+}
+
+.about-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  max-width: 280px;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ============================
+   Skills / Career
+============================ */
+.section-title {
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.4rem;
+}
+
+.skills-list,
+.career-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.skills-list li,
+.career-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.2rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.skills-list li::before,
+.career-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #888;
+}
+
+/* ============================
+   Contact
+============================ */
+.contact-intro {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.contact-intro .jp-note {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.form-embed {
+  max-width: 860px;
+  margin: 1rem auto;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.form-embed iframe {
+  width: 100%;
+  height: 78vh;
+  min-height: 560px;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .form-embed iframe {
+    height: 84svh;
+    min-height: 520px;
   }
 }
 
