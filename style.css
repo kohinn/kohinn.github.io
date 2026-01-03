@@ -51,7 +51,7 @@ header {
     padding: 2px 12px;     /* ← 高さと横幅を縮める */
     height: auto;         /* ← 固定高さを解除 */
     line-height: normal;  /* ← テキストが潰れないように */
-    border-radius: 9px;   /* ← 角丸も控えめに */
+    border-radius: 15px;   /* ← 角丸も控えめに */
     top: 10px;            /* ← 黒帯からはみ出さないように */
     left: 10px;
   }
