@@ -3,8 +3,12 @@
 body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fafafa; color: #333; 
      /* overflow-x: hidden; ← 一度コメントアウトしてみる */ 
      /* ▼ 魔法科風の背景グラデーション */ 
-      background: linear-gradient(135deg, #0a0f2c, #001a3c, #0a0f2c); 
-      background-attachment: fixed;
+      body {
+  background: linear-gradient(135deg, #0a0f2c, #001a3c 40%, #0a0f2c);
+  background-attachment: fixed;
+  color: #fff;
+}
+
      }
 
 body::before {
@@ -16,6 +20,7 @@ body::before {
   opacity: 0.25;
   pointer-events: none;
 }
+
 body::after {
   content: "";
   position: fixed;
@@ -26,6 +31,7 @@ body::after {
   background-size: 80px 80px;
   pointer-events: none;
 }
+
 
 
 
