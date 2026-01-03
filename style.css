@@ -64,7 +64,7 @@ header {
 .menu-toggle {
   position: fixed;
   top: 12;
-  right: 15px;
+  right: 20px;
   width: 56px;
   height: 50px;
   z-index: 9999 !important;
