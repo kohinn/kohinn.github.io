@@ -56,7 +56,13 @@ header {
   backdrop-filter: blur(6px);
   white-space: nowrap;
 }
-
+/* PC時のみ左寄せに変更 */
+@media (min-width: 769px){ 
+   .language-switch {
+      left: 12px; 
+      right: auto; 
+   } 
+}
 
 @media (max-width: 768px) { 
    .language-switch { 
@@ -106,14 +112,14 @@ header {
 }
 .menu-close {
   position: fixed;
-  top: 10px;
+  top: 12px;
   left: 12px;
   font-size: 2rem;
   color: white;
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 3001;
+  z-index: 4000;
 }
 
 /* ============================
