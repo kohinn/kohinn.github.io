@@ -1,6 +1,10 @@
 
 /* ============================ 基本設定 ============================ */
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fafafa; color: #333; overflow-x: hidden; }
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fafafa; color: #333; 
+     /* overflow-x: hidden; ← 一度コメントアウトしてみる */ }
+
+
+
 header {
   position: fixed;
   top: 0;
