@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,34 +28,27 @@
     <span></span><span></span><span></span>
   </button>
 
-  
-<header>
-  <!-- 左上：ハンバーガー -->
-  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
-    <span></span><span></span><span></span>
-  </button>
+  <nav id="main-nav">
+    <a href="fanart.html">Illustration</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">ご依頼・連絡</a>
+  </nav>
 
-  <!-- 中央ロゴ -->
-  <h1 class="site-logo">
-    <a href="index_jp.html">
-      <span class="site-subtitle">present by</span><br>
-      <span class="site-main">Kohinn</span>
-    </a>
-  </h1>
-
-  <!-- 右上：言語切り替え -->
   <div class="language-switch">
-    <a href="index.html">EN</a> / <a href="index_jp.html">JP</a>
+  <a href="index.html">EN</a> / <a href="index_jp.html">JP</a>
   </div>
+  
+</div>
+  
 </header>
 
 
-  
+
 <section id="fanart">
   <h2>Illustration</h2>
- <div class="gallery">
-   <img class="thumbnail" src="img/fanart/yb2929.png" alt="Fanart 7">
-     <img class="thumbnail" src="img/fanart/hinaano.png" alt="Fanart 6">
+  <div class="gallery">
+    <img class="thumbnail" src="img/fanart/yb2929.png" alt="Fanart 7">
+    <img class="thumbnail" src="img/fanart/hinaano.png" alt="Fanart 6">
     <img class="thumbnail" src="img/fanart/0f50e10c_original.jpg" alt="Fanart 1">
     <img class="thumbnail" src="img/fanart/cd350e62_original.jpg" alt="Fanart 2">
     <img class="thumbnail" src="img/fanart/o9klpl.jpg" alt="Fanart 3">
@@ -68,26 +61,29 @@
 </section>
 
 <section id="about">
-  <h2>About</h2>
+   <h2>About</h2>
   <div class="about-image"> <img src="img/fanart/Screenshot_20260103_033124_Gallery.jpg" alt="Kohinn avatar"> </div>
   <div class="about-text">
     <p>Kohinn（コヒン）</p>
        <p>独学でイラストを学び、現在はフルタイム勤務と並行してイラストレーターとして活動中。</p>
        <p>見た人の目を引くイラストが得意。</p>
-    
-    <h3 class="section-title">skills</h3>
+
+
+    <h3 class="section-title">Skills</h3>
     <ul class="skills-list">
       <li>キャラクターイラスト</li>
       <li>サイト制作</li>
     </ul>
-    <h4 class="section-title">経歴</h4>
-<ul class="career-list">
-     <li>2025年4月 イラストレーターとして本格的に活動開始</li>
-     <li>2025年5月 有償依頼を受注</li>
-</ul>
+    
+ <h4 class="section-title">経歴</h4>
+     <ul class="career-list">
+      <li>2025年4月 イラストレーターとして本格的に活動開始</li>
+      <li>2025年5月 有償依頼を受注</li>
+　　 </ul>
     
   </div>
 </section>
+
 
 
 
@@ -116,17 +112,15 @@
   function toggleMenu(btn) {
     const nav = document.getElementById('main-nav');
     const isOpen = nav.classList.toggle('show');
-    if (btn) {
-      btn.classList.toggle('open', isOpen);
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    }
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }
 
+
   document.addEventListener('DOMContentLoaded', () => {
-    // モーダル処理
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modal-img');
-    const modalClose = document.querySelector('.modal-close');
+    const closeBtn = document.querySelector('.modal-close');
 
     document.querySelectorAll('.gallery img').forEach(img => {
       img.addEventListener('click', () => {
@@ -136,21 +130,13 @@
       });
     });
 
-    modalClose.addEventListener('click', () => {
+    closeBtn.addEventListener('click', () => {
       modal.classList.remove('show');
       modalImg.src = '';
       modal.setAttribute('aria-hidden', 'true');
     });
-
-    // ✕ボタンでメニューを閉じる
-    const menuClose = document.querySelector('.menu-close');
-    menuClose.addEventListener('click', () => {
-      document.getElementById('main-nav').classList.remove('show');
-      document.querySelector('.menu-toggle')?.classList.remove('open');
-    });
   });
 </script>
-
   
 
 
