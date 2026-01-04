@@ -356,6 +356,54 @@ footer p {
 /* ============================
    About
 ============================ */
+
+/* About セクションの横並びレイアウト */
+.about-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.5rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* スマホでも横並び維持（文章 → イラスト） */
+@media (max-width: 768px) {
+  .about-wrapper {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .about-text {
+    flex: 1;
+    text-align: left;
+  }
+
+  .about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* PCでは文章左・イラスト右をより安定させる */
+@media (min-width: 769px) {
+  .about-wrapper {
+    flex-direction: row;
+  }
+
+  .about-text {
+    flex: 1;
+    text-align: left;
+  }
+
+  .about-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
 .about-text {
   max-width: 860px;
   margin: 0 auto;
