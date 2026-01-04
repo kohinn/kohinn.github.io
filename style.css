@@ -509,4 +509,32 @@ footer p {
   }
 }
 
+/* About セクション横並びレイアウト */
+.about-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* 文章側 */
+.about-text {
+  flex: 1;
+  text-align: left;
+}
+
+/* 画像側 */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+}
 
