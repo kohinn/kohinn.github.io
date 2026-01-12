@@ -387,11 +387,12 @@ footer p {
 }
 
 .about-image {
-  flex: flex;
+  flex: 1;
   width: 100%;
   display: flex;
   justify-content: flex-start;
 }
+
 
 .about-image img {
   max-width: 280px;
