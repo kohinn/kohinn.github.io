@@ -47,12 +47,25 @@ header {
   white-space: nowrap;
 }
 /* PC時のみ左寄せに変更 */
-@media (min-width: 769px){ 
-   .language-switch {
-      left: 12px; 
-      right: auto; 
-   } 
+/* PCではハンバーガー非表示＋transform無効化 */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+
+  #main-nav {
+    display: flex !important;
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    background: none !important;
+    flex-direction: row !important;
+    gap: 1rem;
+    margin-left: auto;
+  }
 }
+
 
 @media (max-width: 768px) { 
    .language-switch { 
