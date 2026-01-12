@@ -46,10 +46,23 @@ header {
   backdrop-filter: blur(6px);
   white-space: nowrap;
 }
-/* PC時のみ左寄せに変更 */
+
+/* PCではハンバーガー非表示＋transform無効化 */
 @media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+
   #main-nav {
-    transform: none !important; /* ← これで完全復活 */
+    display: flex !important;
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    background: none !important;
+    flex-direction: row !important;
+    gap: 1rem;
+    margin-left: auto;
   }
 }
 
