@@ -1,72 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Kohinn</title>
+
   <link rel="stylesheet" href="style.css?v=20251129">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
- 
-
+<header class="site-header">
   <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
     <span></span><span></span><span></span>
   </button>
 
-  <nav id="main-nav">
+  <nav id="main-nav" class="main-nav">
     <a href="fanart_jp.html">Illustration</a>
     <a href="about_jp.html">About</a>
     <a href="contact_jp.html">ご依頼・連絡</a>
   </nav>
 
   <div class="language-switch">
-    <a href="index.html">EN</a> / <a href="index_jp.html">JP</a>
+    <a href="contact.html" lang="en">EN</a> / <a href="contact_jp.html" lang="ja">JP</a>
   </div>
 </header>
 
+<main>
 
-<section id="contact">
-  <h2>ご依頼・連絡</h2>
-  <p class="contact-intro">
-    イラスト制作のご依頼は下記フォームよりお願いいたします。<br>
-  </p>
+  <section id="contact">
+    <h2>Contact</h2>
 
-  <div class="form-embed">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQAfD7MzV2rurPWNenGyygjBUIxhYmqPMzgMV95tGRldRuhg/viewform?embedded=true"
-      title="Illustration Commission Request Form"
-      loading="lazy"
-      allow="clipboard-write"
-      referrerpolicy="no-referrer">
-    </iframe>
+    <p class="contact-intro">
+      お仕事のご依頼・ご相談はこちらのフォームよりご連絡ください。  
+      内容を確認後、順次返信いたします。
+      <span class="jp-note">※返信には数日いただく場合があります。</span>
+    </p>
+
+    <div class="form-embed">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdXXXXXXXXXXXXXXX/viewform?embedded=true">
+      読み込んでいます…
+      </iframe>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="footer-refined">
+  <div class="footer-inner">
+    <p class="footer-copy">
+      © 2025 Kohinn — All rights reserved.<br>
+      Characters depicted belong to their respective owners.
+    </p>
+
+    <div class="footer-sns">
+      <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
+      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
+      <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
+      <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
+      <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
+    </div>
   </div>
-
-  <p class="contact-fallback">
-    If the form doesn’t load, you can open it directly:
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQAfD7MzV2rurPWNenGyygjBUIxhYmqPMzgMV95tGRldRuhg/viewform" target="_blank" rel="noopener">Open the commission form</a>
-  </p>
-</section>
-
-<footer>
-  <div class="sns-links">
-    <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
-    <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
-    <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
-    <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
-    <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
-  </div>
-  <p class="copyright">© 2025 Kohinn. All rights reserved.</p>
-  <p class="rights-note">Characters depicted belong to their respective owners.</p>
 </footer>
 
 <script>
-function toggleMenu(btn) {
-  const nav = document.getElementById('main-nav');
-  const isOpen = nav.classList.toggle('show');
-  btn.classList.toggle('open', isOpen);
-  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-}
+  function toggleMenu(btn) {
+    const nav = document.getElementById('main-nav');
+    const isOpen = nav.classList.toggle('show');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
 </script>
 
 </body>
