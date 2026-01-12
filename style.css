@@ -103,25 +103,14 @@ header {
   width: 24px;
   height: 2px;
   background: white;
-  margin: 4px 0;
+  margin: 3px 0;
   border-radius: 2px;
   transition: transform 0.35s ease, opacity 0.25s ease;
   transform-origin: center;
 }
 
 /* ✕に変形（左右対称・ズレない安定版） */
-.menu-toggle.open span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.menu-toggle.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.open span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
+.menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); } .menu-toggle.open span:nth-child(2) { opacity: 0; } .menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .menu-close {
   position: fixed;
   top: 12px;
