@@ -387,7 +387,7 @@ footer p {
 }
 
 .about-image {
-  flex: 1;
+  flex: flex;
   width: 100%;
   display: flex;
   justify-content: flex-start;
