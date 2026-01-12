@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commission – Kohinn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <button class="menu-toggle" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav id="main-nav" class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="fanart.html">Illustration</a>
+    <a href="about.html">About</a>
+    <a href="commission.html">Commission</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="language-switch">
+    <a href="commission_jp.html">JP</a>
+  </div>
+</header>
+
+<section id="commission">
+  <h2>Commission</h2>
+
+  <p class="contact-intro">
+    Thank you for your interest in commissioning Kohinn.<br>
+    Below is the current pricing and available options.
+  </p>
+
+  <h3 class="section-title">Base Menu</h3>
+  <ul class="career-list">
+    <li><strong>Bust-up</strong> — ¥5,000〜</li>
+    <li><strong>Full-body</strong> — ¥8,000〜</li>
+    <li><strong>Original Avatar</strong> — ¥10,000〜</li>
+  </ul>
+
+  <h3 class="section-title">Options</h3>
+  <ul class="career-list">
+    <li><strong>Background</strong> — +¥3,000〜</li>
+    <li><strong>Additional character</strong> — +¥3,000〜</li>
+    <li><strong>Key visual style illustration</strong> — +¥5,000〜</li>
+    <li><strong>Commercial use</strong> — +¥3,000〜</li>
+  </ul>
+
+  <h3 class="section-title">Delivery Time</h3>
+  <ul class="career-list">
+    <li>Standard: 1–2 weeks</li>
+    <li>With options: +1–2 weeks depending on complexity</li>
+  </ul>
+
+  <h3 class="section-title">Notes</h3>
+  <ul class="career-list">
+    <li>Personal use only unless commercial option is selected.</li>
+    <li>No NFTs or AI training.</li>
+    <li>Revisions are limited depending on the request.</li>
+  </ul>
+
+  <div class="more-button">
+    <a href="contact.html" class="button-link">Request a commission →</a>
+  </div>
+</section>
+
+<footer class="footer-refined">
+  <div class="footer-inner">
+
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="fanart.html">Illustration</a>
+      <a href="about.html">About</a>
+      <a href="commission.html">Commission</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="footer-sns">
+      <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
+      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
+      <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
+      <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
+      <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
+    </div>
+
+    <div class="footer-meta">
+      <a href="#">Copyright</a>
+      <a href="#">Privacy</a>
+    </div>
+
+    <p class="footer-copy">
+      © 2025 Kohinn. All rights reserved.<br>
+      All artworks and characters belong to their respective owners.
+    </p>
+
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("main-nav").classList.toggle("show");
+  document.querySelector(".menu-toggle").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
