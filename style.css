@@ -584,4 +584,7 @@ section h2 {
   }
 }
 
+#commission {
+  padding-top: 100px; /* ← 80px → 100px に変更 */
+}
 
