@@ -3,75 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fanart | Kohinn</title>
+  <title>Illustration | Kohinn</title>
+
   <link rel="stylesheet" href="style.css?v=20251129">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-
-
+<header class="site-header">
   <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
     <span></span><span></span><span></span>
   </button>
 
-  <nav id="main-nav">
+  <nav id="main-nav" class="main-nav">
     <a href="fanart.html">Illustration</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
 
   <div class="language-switch">
-    <a href="index.html">EN</a> / <a href="index_jp.html">JP</a>
+    <a href="fanart.html" lang="en">EN</a> / <a href="fanart_jp.html" lang="ja">JP</a>
   </div>
 </header>
 
+<main>
 
+  <section id="fanart">
+    <h2>Illustration</h2>
 
-<section id="fanart">
-  <h2>Illustration</h2>
-  <div class="gallery">
-    <img class="thumbnail" src="img/fanart/yb2929.png" alt="Fanart 7">
-     <img class="thumbnail" src="img/fanart/hinaano.png" alt="Fanart 6">
-    <img class="thumbnail" src="img/fanart/0f50e10c_original.jpg" alt="Fanart 1">
-    <img class="thumbnail" src="img/fanart/cd350e62_original.jpg" alt="Fanart 2">
-    <img class="thumbnail" src="img/fanart/o9klpl.jpg" alt="Fanart 3">
-    <img class="thumbnail" src="img/fanart/mega.png" alt="Fanart 4">
-    <img class="thumbnail" src="img/fanart/melody.jpg" alt="Fanart 5">
+    <div class="gallery">
+      <img class="thumbnail" src="img/fanart/yb2929.png" alt="Fanart illustration 1">
+      <img class="thumbnail" src="img/fanart/hinaano.png" alt="Fanart illustration 2">
+      <img class="thumbnail" src="img/fanart/0f50e10c_original.jpg" alt="Fanart illustration 3">
+      <img class="thumbnail" src="img/fanart/cd350e62_original.jpg" alt="Fanart illustration 4">
+      <img class="thumbnail" src="img/fanart/o9klpl.jpg" alt="Fanart illustration 5">
+      <img class="thumbnail" src="img/fanart/mega.png" alt="Fanart illustration 6">
+      <img class="thumbnail" src="img/fanart/melody.jpg" alt="Fanart illustration 7">
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="footer-refined">
+  <div class="footer-inner">
+    <p class="footer-copy">
+      © 2025 Kohinn — All rights reserved.<br>
+      Characters depicted belong to their respective owners.
+    </p>
+
+    <div class="footer-sns">
+      <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
+      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
+      <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
+      <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
+      <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
+    </div>
   </div>
-</section>
-
-<footer>
-  <div class="sns-links">
-    <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
-    <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
-    <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
-    <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
-    <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
-  </div>
-  <p class="copyright">© 2025 Kohinn. All rights reserved.</p>
-  <p class="rights-note">Characters depicted belong to their respective owners.</p>
 </footer>
 
-<!-- モーダル拡大表示 -->
+<!-- Modal -->
 <div id="modal" class="modal" aria-hidden="true">
   <button class="modal-close" aria-label="Close image">✕</button>
   <img class="modal-content" id="modal-img" alt="">
 </div>
 
-<script>
-function toggleMenu(btn) {
-  const nav = document.getElementById('main-nav');
-  const isOpen = nav.classList.toggle('show');
-  btn.classList.toggle('open', isOpen);
-  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-}
+<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
 
-// モーダル表示
+<script>
+  function toggleMenu(btn) {
+    const nav = document.getElementById('main-nav');
+    const isOpen = nav.classList.toggle('show');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modal-img');
     const closeBtn = document.querySelector('.modal-close');
+    const backToTop = document.getElementById('backToTop');
+    let hideTimer;
 
     document.querySelectorAll('.gallery img').forEach(img => {
       img.addEventListener('click', () => {
@@ -85,6 +97,18 @@ function toggleMenu(btn) {
       modal.classList.remove('show');
       modalImg.src = '';
       modal.setAttribute('aria-hidden', 'true');
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        backToTop.classList.add('show');
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(() => {
+          backToTop.classList.remove('show');
+        }, 1500);
+      } else {
+        backToTop.classList.remove('show');
+      }
     });
   });
 </script>
