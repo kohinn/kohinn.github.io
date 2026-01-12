@@ -1,75 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Kohinn</title>
+
   <link rel="stylesheet" href="style.css?v=20251129">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
- 
-
+<header class="site-header">
   <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
     <span></span><span></span><span></span>
   </button>
 
-  <nav id="main-nav">
+  <nav id="main-nav" class="main-nav">
     <a href="fanart_jp.html">Illustration</a>
     <a href="about_jp.html">About</a>
     <a href="contact_jp.html">ご依頼・連絡</a>
   </nav>
 
   <div class="language-switch">
-    <a href="index.html">EN</a> / <a href="index_jp.html">JP</a>
+    <a href="about.html" lang="en">EN</a> / <a href="about_jp.html" lang="ja">JP</a>
   </div>
 </header>
 
+<main>
 
+  <section id="about">
+    <h2>About</h2>
 
-<section id="about">
-  <h2>About</h2>
-  <div class="about-image"> <img src="img/fanart/jibunn__3_kohinn.png" alt="Kohinn avatar"> </div>
-  <div class="about-text">
-    <p>Kohinn（コヒン）</p>
-       <p>独学でイラストを学び、現在はフルタイム勤務と並行してイラストレーターとして活動中。</p>
-       <p>見た人の目を引くイラストが得意。</p>
-    
-    <h3 class="section-title">skills</h3>
-    <ul class="skills-list">
-      <li>キャラクターイラスト</li>
-      <li>サイト制作</li>
-    </ul>
-    <h4 class="section-title">経歴</h4>
-<ul class="career-list">
-     <li>2025年4月 イラストレーターとして本格的に活動開始</li>
-     <li>2025年5月 有償依頼を受注</li>
-</ul>
-    
-  </div>
-</section>
-  
-<footer>
-  <div class="sns-links">
-    <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
-    <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
-    <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
-    <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
-    <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
-  </div>
-  <p class="copyright">© 2025 Kohinn. All rights reserved.</p>
-  <p class="rights-note">Characters depicted belong to their respective owners.</p>
-</footer>
+    <div class="about-wrapper">
+      <div class="about-text">
+        <p class="about-name">Kohinn（コヒン）</p>
+        <p>独学でイラストを学び、現在はフルタイム勤務と並行してイラストレーターとして活動中。</p>
+        <p>見た人の目を引くキャラクターイラストを得意としています。</p>
 
-<script>
-function toggleMenu(btn) {
-  const nav = document.getElementById('main-nav');
-  const isOpen = nav.classList.toggle('show');
-  btn.classList.toggle('open', isOpen);
-  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-}
-</script>
+        <h3 class="section-title">Skills</h3>
+        <ul class="skills-list">
+          <li>キャラクターイラスト</li>
+          <li>サイト制作</li>
+        </ul>
 
-</body>
-</html>
+        <h3 class="section-title">経歴</h3>
+        <ul class="career-list">
+          <li>2025年4月　イラストレーターとして本格的に活動開始</li>
+          <li>2025年5月　有償依頼を受注</li>
+        </ul>
+      </div>
+
+      <div class="about-image">
+        <img src="img/fanart/jibunn__3_kohinn.png" alt="Kohinn アバター">
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer-refined">
+  <div class="footer-inner">
+    <p class="footer-copy">
+      © 2025 Kohinn — All rights reserved.<br>
+      Characters depicted belong to their respective owners.
+    </p>
+
+    <div class="footer-sns">
+      <a href="https://twitter.com/V_Kohinn" target="_blank">
