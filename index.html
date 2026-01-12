@@ -4,101 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kohinn Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=20251129">
 
+  <link rel="stylesheet" href="style.css?v=20251129">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
   <script>
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-</script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  </script>
 </head>
 <body>
 
-<header>
- 
-
+<header class="site-header">
   <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
     <span></span><span></span><span></span>
   </button>
 
-  <nav id="main-nav">
+  <nav id="main-nav" class="main-nav">
     <a href="fanart.html">Illustration</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
 
   <div class="language-switch">
-  <a href="index.html">EN</a> / <a href="index_jp.html">JP</a>
-  　</div>
-  </header>
-
-
-
-<section id="fanart">
-  <h2>Illustration</h2>
-  <div class="gallery">
-    <img class="thumbnail" src="img/fanart/yb2929.png" alt="Fanart 7">
-    <img class="thumbnail" src="img/fanart/hinaano.png" alt="Fanart 6">
-    <img class="thumbnail" src="img/fanart/0f50e10c_original.jpg" alt="Fanart 1">
-    <img class="thumbnail" src="img/fanart/cd350e62_original.jpg" alt="Fanart 2">
-    <img class="thumbnail" src="img/fanart/o9klpl.jpg" alt="Fanart 3">
-    <img class="thumbnail" src="img/fanart/mega.png" alt="Fanart 4">
-    <img class="thumbnail" src="img/fanart/melody.jpg" alt="Fanart 5">
-   
-
-    
+    <a href="index.html" lang="en">EN</a> / <a href="index_jp.html" lang="ja">JP</a>
   </div>
-</section>
+</header>
 
-<section id="about">
-   <h2>About</h2>
-  <div class="about-image"> <img src="img/fanart/jibunn__3_kohinn.png" alt="Kohinn avatar"> </div>
-  <div class="about-text">
-    <p>Kohinn</p>
-       <p>Self-taught, currently working as an illustrator while balancing a full-time job.</p>
-       <p>Specializes in creating eye-catching illustrations.</p>
+<main>
+  <section id="fanart">
+    <h2>Illustration</h2>
+    <div class="gallery">
+      <img class="thumbnail" src="img/fanart/yb2929.png" alt="Fanart illustration 1">
+      <img class="thumbnail" src="img/fanart/hinaano.png" alt="Fanart illustration 2">
+      <img class="thumbnail" src="img/fanart/0f50e10c_original.jpg" alt="Fanart illustration 3">
+      <img class="thumbnail" src="img/fanart/cd350e62_original.jpg" alt="Fanart illustration 4">
+      <img class="thumbnail" src="img/fanart/o9klpl.jpg" alt="Fanart illustration 5">
+      <img class="thumbnail" src="img/fanart/mega.png" alt="Fanart illustration 6">
+      <img class="thumbnail" src="img/fanart/melody.jpg" alt="Fanart illustration 7">
+    </div>
+  </section>
 
+  <section id="about">
+    <h2>About</h2>
+    <div class="about-wrapper">
+      <div class="about-text">
+        <p class="about-name">Kohinn</p>
+        <p>Self-taught illustrator, currently working while balancing a full-time job.</p>
+        <p>Specializes in creating eye-catching character illustrations.</p>
 
-    <h3 class="section-title">Skills</h3>
-    <ul class="skills-list">
-      <li>Illustration (character-focused)</li>
-      <li>Site building</li>
-    </ul>
-    
- <h4 class="section-title">Career</h4>
-     <ul class="career-list">
-      <li>April 2025 — Started full-time work as an illustrator</li>
-      <li>May 2025 — Completed my first paid commission.</li>
-　　 </ul>
-    
-  </div>
-</section>
+        <h3 class="section-title">Skills</h3>
+        <ul class="skills-list">
+          <li>Character illustration</li>
+          <li>Website creation</li>
+        </ul>
 
+        <h4 class="section-title">Career</h4>
+        <ul class="career-list">
+          <li>April 2025 — Started working as an illustrator in earnest</li>
+          <li>May 2025 — Completed first paid commission</li>
+        </ul>
+      </div>
 
-
-
+      <div class="about-image">
+        <img src="img/fanart/jibunn__3_kohinn.png" alt="Kohinn avatar illustration">
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
   <div class="sns-links">
-    <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
-    <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
-    <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
-    <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
-    <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
+    <a href="https://twitter.com/V_Kohinn" target="_blank" rel="noopener noreferrer">X</a>
+    <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a>
+    <a href="https://artstation.com/kohinn" target="_blank" rel="noopener noreferrer">ArtStation</a>
+    <a href="https://www.pixiv.net/users/92080067" target="_blank" rel="noopener noreferrer">Pixiv</a>
+    <a href="https://instagram.com/kohinn.ver2" target="_blank" rel="noopener noreferrer">Instagram</a>
   </div>
   <p class="copyright">© 2025 Kohinn. All rights reserved.</p>
-<p class="rights-note">Characters depicted belong to their respective owners.</p>
+  <p class="rights-note">Characters depicted belong to their respective owners.</p>
 </footer>
 
-
-<!-- モーダル拡大表示 -->
 <div id="modal" class="modal" aria-hidden="true">
   <button class="modal-close" aria-label="Close image">✕</button>
   <img class="modal-content" id="modal-img" alt="">
 </div>
 
-<!-- スクリプト（1つだけ） -->
+<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
 <script>
   function toggleMenu(btn) {
     const nav = document.getElementById('main-nav');
@@ -107,11 +101,12 @@
     btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }
 
-
   document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modal-img');
     const closeBtn = document.querySelector('.modal-close');
+    const backToTop = document.getElementById('backToTop');
+    let hideTimer;
 
     document.querySelectorAll('.gallery img').forEach(img => {
       img.addEventListener('click', () => {
@@ -126,25 +121,10 @@
       modalImg.src = '';
       modal.setAttribute('aria-hidden', 'true');
     });
-  });
-</script>
-  
-
-
-
-<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
-
-
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const backToTop = document.getElementById('backToTop');
-    let hideTimer;
 
     window.addEventListener('scroll', () => {
       if (window.scrollY > 200) {
         backToTop.classList.add('show');
-
-        // スクロールが止まったら3秒後に消える
         clearTimeout(hideTimer);
         hideTimer = setTimeout(() => {
           backToTop.classList.remove('show');
@@ -154,6 +134,7 @@
       }
     });
   });
-  </script>
+</script>
+
 </body>
 </html>
