@@ -1,5 +1,5 @@
 /* ============================
-   基本設定
+   Base
 ============================ */
 body {
   font-family: Arial, sans-serif;
@@ -10,71 +10,83 @@ body {
 }
 
 /* ============================
-   ヘッダー
+   Header
 ============================ */
-header {
+.site-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height:40px;
+  height: 40px;
   background: #222;
   display: flex;
   align-items: center;
- justify-content: space-between; /* ← ここがポイント！ */
-  padding:0 1rem;
+  justify-content: center;
+  padding: 0 1rem;
   z-index: 2000;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   box-sizing: border-box;
 }
 
+.main-nav {
+  display: none;
+}
 
+.main-nav a {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (min-width: 769px) {
+  .main-nav {
+    display: flex !important;
+    position: static !important;
+    background: none !important;
+    flex-direction: row !important;
+    gap: 1.2rem;
+    margin-left: auto;
+  }
+}
 
 /* ============================
-   言語切り替え
+   Language switch
 ============================ */
 .language-switch {
   position: fixed;
-  top:9px;
+  top: 9px;
   right: 15px;
   z-index: 3000;
   background: rgba(255,255,255,0.9);
-  padding: 4px 8px;
+  padding: 4px 10px;
   border-radius: 12px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 900;
   backdrop-filter: blur(6px);
   white-space: nowrap;
 }
-/* PC時のみ左寄せに変更 */
-@media (min-width: 769px){ 
-   .language-switch {
-      left: 12px; 
-      right: auto; 
-   } 
+
+.language-switch a {
+  color: #222;
+  text-decoration: none;
 }
 
-@media (max-width: 768px) { 
-   .language-switch { 
-      top: 10px; 
-      right: 12px; /* ← left: 10px を削除して right に統一 */ 
-      font-size: 0.85rem; 
-      padding: 4px 8px; 
-      border-radius: 12px; 
-   } 
+@media (min-width: 769px) {
+  .language-switch {
+    left: 12px;
+    right: auto;
+  }
 }
 
 /* ============================
-   ハンバーガー（ArtStation風）
-============================ */
-/* ============================
-   ハンバーガー（最適化版）
+   Hamburger
 ============================ */
 .menu-toggle {
   position: fixed;
   top: 8px;
-  left: 16px; /* ← 12px だと✕が潰れるので調整 */
-  width: 40px; /* ← ✕が綺麗に収まる最適値 */
+  left: 16px;
+  width: 40px;
   height: 32px;
   z-index: 3000;
   display: flex;
@@ -96,7 +108,6 @@ header {
   transform-origin: center;
 }
 
-/* ✕に変形（左右対称・ズレない安定版） */
 .menu-toggle.open span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -109,23 +120,14 @@ header {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-.menu-close {
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  font-size: 2rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 4000;
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
 }
 
 /* ============================
-   全画面メニュー
-============================ */
-/* ============================
-   全画面メニュー（GPU最適化）
+   Full-screen nav (SP)
 ============================ */
 #main-nav {
   position: fixed;
@@ -140,7 +142,6 @@ header {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-
   transform: translateX(-100%);
   transition: transform 0.35s cubic-bezier(.25,.8,.25,1);
   will-change: transform;
@@ -153,35 +154,13 @@ header {
 
 #main-nav a {
   color: white;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: bold;
   text-decoration: none;
 }
 
-
-
-
-
-/* PCではハンバーガー非表示 */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
-
-  #main-nav {
-    display: flex !important;
-    position: static !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    background: none !important;
-    flex-direction: row !important;
-    gap: 1rem;
-    margin-left: auto;
-  }
-}
-
 /* ============================
-   セクション
+   Sections
 ============================ */
 #fanart,
 #about,
@@ -190,7 +169,7 @@ header {
 }
 
 section {
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   text-align: center;
 }
 
@@ -200,16 +179,18 @@ section h2 {
   margin: 0 auto 1.5rem;
   padding: 0.6rem 1rem;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 700;
   color: #fff;
   background-color: #222;
   border-radius: 6px;
   text-align: left;
   box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.03em;
 }
 
 /* ============================
-   ギャラリー
+   Gallery
 ============================ */
 .gallery {
   display: grid;
@@ -235,7 +216,7 @@ section h2 {
 }
 
 .gallery img:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .gallery img:nth-child(1) { animation-delay: 0.2s; }
@@ -249,12 +230,17 @@ section h2 {
   }
 }
 
-
-
-@media (max-width: 768px) { .gallery { grid-template-columns: repeat(2, 1fr); /* ← 2列に固定 */ gap: 1rem; max-width: 95vw; padding: 0; } }
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 95vw;
+    padding: 0;
+  }
+}
 
 /* ============================
-   モーダル
+   Modal
 ============================ */
 .modal {
   display: none;
@@ -293,7 +279,7 @@ section h2 {
 }
 
 /* ============================
-   上に戻るボタン
+   Back to top
 ============================ */
 .back-to-top {
   position: fixed;
@@ -301,7 +287,7 @@ section h2 {
   right: 20px;
   background: #333;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   padding: 0.5rem 0.8rem;
   border-radius: 50%;
   text-align: center;
@@ -319,22 +305,24 @@ section h2 {
 }
 
 /* ============================
-   フッター
+   Footer
 ============================ */
 footer {
   background: #222;
   color: #fff;
   text-align: center;
   padding: 2rem 1rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   width: 100vw;
   box-sizing: border-box;
 }
+
 footer p {
-   margin-bottom: 1rem; /* ← 段落間を広げる */
+  margin-bottom: 0.8rem;
 }
+
 /* ============================
-   SNSリンク
+   SNS links
 ============================ */
 .sns-links {
   display: flex;
@@ -372,69 +360,34 @@ footer p {
 /* ============================
    About
 ============================ */
-
-/* About セクションの横並びレイアウト */
 .about-wrapper {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
   gap: 1.5rem;
   max-width: 860px;
   margin: 0 auto;
-}
-
-/* スマホでも横並び維持（文章 → イラスト） */
-@media (max-width: 768px) {
-  .about-wrapper {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .about-text {
-    flex: 1;
-    text-align: left;
-  }
-
-  .about-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-}
-
-/* PCでは文章左・イラスト右をより安定させる */
-@media (min-width: 769px) {
-  .about-wrapper {
-    flex-direction: row;
-  }
-
-  .about-text {
-    flex: 1;
-    text-align: left;
-  }
-
-  .about-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
+  align-items: flex-start;
 }
 
 .about-text {
-  max-width: 860px;
-  margin: 0 auto;
-  padding-top: 0.4rem;
+  flex: 1;
   text-align: left;
   line-height: 1.8;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #444;
 }
 
+.about-name {
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
 .about-text p {
-  margin-bottom: 0.6rem; /* ← 元が1rem以上ならこれで自然に詰まる */
+  margin-bottom: 0.6rem;
 }
 
 .about-image {
+  flex: 1;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -442,22 +395,36 @@ footer p {
 
 .about-image img {
   max-width: 280px;
-  width: auto;
+  width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+@media (min-width: 769px) {
+  .about-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .about-image {
+    justify-content: flex-end;
+  }
 }
 
 /* ============================
    Skills / Career
 ============================ */
 .section-title {
-  font-size: 1.1rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
   color: #222;
   font-weight: bold;
   border-bottom: 1px solid #ccc;
   padding-bottom: 0.4rem;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.03em;
 }
 
 .skills-list,
@@ -469,10 +436,10 @@ footer p {
 
 .skills-list li,
 .career-list li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
   padding-left: 1.2rem;
   position: relative;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #333;
 }
 
@@ -485,10 +452,10 @@ footer p {
 }
 
 /* ============================
-   Contact
+   Contact (for other pages)
 ============================ */
 .contact-intro {
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   color: #444;
   margin-bottom: 1rem;
@@ -497,7 +464,7 @@ footer p {
 .contact-intro .jp-note {
   display: block;
   margin-top: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #666;
 }
 
@@ -525,31 +492,3 @@ footer p {
   }
 }
 
-/* About セクション横並びレイアウト */
-.about-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 2rem;
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-/* 文章側 */
-.about-text {
-  flex: 1;
-  text-align: left;
-}
-
-/* 画像側 */
-.about-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.about-image img {
-  max-width: 280px;
-  width: 100%;
-  height: auto;
-}
