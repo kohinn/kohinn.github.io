@@ -390,7 +390,7 @@ footer p {
   flex: 1;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .about-image img {
