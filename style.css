@@ -86,8 +86,8 @@ header {
 .menu-toggle {
   position: fixed;
   top: 8px;
-  left: 16px; /* ← 12px だと✕が潰れるので調整 */
-  width: 40px; /* ← ✕が綺麗に収まる最適値 */
+  left: 16px;
+  width: 40px;
   height: 32px;
   z-index: 3000;
   display: flex;
@@ -105,13 +105,17 @@ header {
   background: white;
   margin: 4px 0;
   border-radius: 2px;
-  transition: transform 0.35s ease, opacity 0.25s ease;
   transform-origin: center;
+  transition:
+    transform 0.45s cubic-bezier(.55, .06, .68, .19),
+    opacity 0.3s ease,
+    background-color 0.4s ease;
 }
 
-/* ✕に変形（左右対称・ズレない安定版） */
+/* ✕（魔法科風） */
 .menu-toggle.open span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
+  box-shadow: 0 0 8px rgba(255,255,255,0.6);
 }
 
 .menu-toggle.open span:nth-child(2) {
@@ -120,7 +124,9 @@ header {
 
 .menu-toggle.open span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
+  box-shadow: 0 0 8px rgba(255,255,255,0.6);
 }
+
 
 
 .menu-close {
