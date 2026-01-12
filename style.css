@@ -67,11 +67,14 @@ header {
 /* ============================
    ハンバーガー（ArtStation風）
 ============================ */
+/* ============================
+   ハンバーガー（最適化版）
+============================ */
 .menu-toggle {
   position: fixed;
   top: 8px;
-  left: 16px;
-  width: 40px;
+  left: 16px; /* ← 12px だと✕が潰れるので調整 */
+  width: 40px; /* ← ✕が綺麗に収まる最適値 */
   height: 32px;
   z-index: 3000;
   display: flex;
@@ -80,15 +83,22 @@ header {
   align-items: center;
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.25s ease;
   transform-origin: center;
-  margin: 3px 0;
 }
 
+/* ✕に変形（左右対称・ズレない安定版） */
 .menu-toggle.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .menu-toggle.open span:nth-child(2) {
@@ -96,7 +106,7 @@ header {
 }
 
 .menu-toggle.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 
