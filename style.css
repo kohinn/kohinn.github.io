@@ -36,7 +36,7 @@ header {
 .language-switch {
   position: fixed;
   top:9px;
-  right: 12px;
+  right: 15px;
   z-index: 3000;
   background: rgba(255,255,255,0.9);
   padding: 4px 8px;
@@ -47,31 +47,17 @@ header {
   white-space: nowrap;
 }
 /* PC時のみ左寄せに変更 */
-/* PCではハンバーガー非表示＋transform無効化 */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
-
-  #main-nav {
-    display: flex !important;
-    position: static !important;
-    transform: none !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    background: none !important;
-    flex-direction: row !important;
-    gap: 1rem;
-    margin-left: auto;
-  }
+@media (min-width: 769px){ 
+   .language-switch {
+      left: 12px; 
+      right: auto; 
+   } 
 }
-
 
 @media (max-width: 768px) { 
    .language-switch { 
-      top: 10px;
-      left: 12px;
-      right: auto;
+      top: 10px; 
+      right: 12px; /* ← left: 10px を削除して right に統一 */ 
       font-size: 0.85rem; 
       padding: 4px 8px; 
       border-radius: 12px; 
@@ -81,15 +67,12 @@ header {
 /* ============================
    ハンバーガー（ArtStation風）
 ============================ */
-/* ============================
-   ハンバーガー（最適化版）
-============================ */
 .menu-toggle {
   position: fixed;
   top: 8px;
-  left: 16px; /* ← 12px だと✕が潰れるので調整 */
-  width: 40px; /* ← ✕が綺麗に収まる最適値 */
-  height: 32px;
+  left: 12px;
+  width: 36px;
+  height: 29px;
   z-index: 3000;
   display: flex;
   flex-direction: column;
@@ -97,21 +80,26 @@ header {
   align-items: center;
   background: none;
   border: none;
-  cursor: pointer;
 }
 
 .menu-toggle span {
-  width: 24px;
+  width: 22px;
   height: 2px;
   background: white;
-  margin: 3px 0;
+  margin:4px 0;
   border-radius: 2px;
-  transition: transform 0.35s ease, opacity 0.25s ease;
-  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* ✕に変形（左右対称・ズレない安定版） */
-.menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); } .menu-toggle.open span:nth-child(2) { opacity: 0; } .menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
 .menu-close {
   position: fixed;
   top: 12px;
@@ -126,9 +114,6 @@ header {
 
 /* ============================
    全画面メニュー
-============================ */
-/* ============================
-   全画面メニュー（GPU最適化）
 ============================ */
 #main-nav {
   position: fixed;
@@ -145,14 +130,14 @@ header {
   gap: 2rem;
 
   transform: translateX(-100%);
-  transition: transform 0.35s cubic-bezier(.25,.8,.25,1);
+  transition: transform 0.3s ease-out;
   will-change: transform;
-  z-index: 2500;
 }
 
 #main-nav.show {
   transform: translateX(0);
 }
+
 
 #main-nav a {
   color: white;
@@ -160,7 +145,6 @@ header {
   font-weight: bold;
   text-decoration: none;
 }
-
 
 
 
