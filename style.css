@@ -92,7 +92,7 @@ header {
 }
 
 .menu-toggle.open span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
+  transform: rotate(45deg) translate(2px, 2px);
 }
 
 .menu-toggle.open span:nth-child(2) {
@@ -100,7 +100,7 @@ header {
 }
 
 .menu-toggle.open span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
+  transform: rotate(-45deg) translate(2px, -2px);
 }
 
 .menu-close {
