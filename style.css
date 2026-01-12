@@ -46,26 +46,13 @@ header {
   backdrop-filter: blur(6px);
   white-space: nowrap;
 }
-
-/* PCではハンバーガー非表示＋transform無効化 */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
-
-  #main-nav {
-    display: flex !important;
-    position: static !important;
-    transform: none !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    background: none !important;
-    flex-direction: row !important;
-    gap: 1rem;
-    margin-left: auto;
-  }
+/* PC時のみ左寄せに変更 */
+@media (min-width: 769px){ 
+   .language-switch {
+      left: 12px; 
+      right: auto; 
+   } 
 }
-
 
 @media (max-width: 768px) { 
    .language-switch { 
@@ -86,8 +73,8 @@ header {
 .menu-toggle {
   position: fixed;
   top: 8px;
-  left: 16px;
-  width: 40px;
+  left: 16px; /* ← 12px だと✕が潰れるので調整 */
+  width: 40px; /* ← ✕が綺麗に収まる最適値 */
   height: 32px;
   z-index: 3000;
   display: flex;
@@ -105,17 +92,13 @@ header {
   background: white;
   margin: 4px 0;
   border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.25s ease;
   transform-origin: center;
-  transition:
-    transform 0.45s cubic-bezier(.55, .06, .68, .19),
-    opacity 0.3s ease,
-    background-color 0.4s ease;
 }
 
-/* ✕（魔法科風） */
+/* ✕に変形（左右対称・ズレない安定版） */
 .menu-toggle.open span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
-  box-shadow: 0 0 8px rgba(255,255,255,0.6);
 }
 
 .menu-toggle.open span:nth-child(2) {
@@ -124,10 +107,7 @@ header {
 
 .menu-toggle.open span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
-  box-shadow: 0 0 8px rgba(255,255,255,0.6);
 }
-
-
 
 .menu-close {
   position: fixed;
@@ -147,7 +127,19 @@ header {
 /* ============================
    全画面メニュー（GPU最適化）
 ============================ */
-#main-nav { background: rgba(0,0,0,0.0); backdrop-filter: blur(0px); transition: transform 0.35s cubic-bezier(.25,.8,.25,1), background 0.6s ease, backdrop-filter 0.6s ease; }
+#main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  max-width: 320px;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 
   transform: translateX(-100%);
   transition: transform 0.35s cubic-bezier(.25,.8,.25,1);
@@ -155,7 +147,9 @@ header {
   z-index: 2500;
 }
 
-#main-nav.show { background: rgba(0,0,0,0.85); /* 黒い霧 */ backdrop-filter: blur(6px); /* 霧の奥行き */ }
+#main-nav.show {
+  transform: translateX(0);
+}
 
 #main-nav a {
   color: white;
@@ -163,6 +157,7 @@ header {
   font-weight: bold;
   text-decoration: none;
 }
+
 
 
 
@@ -558,4 +553,3 @@ footer p {
   width: 100%;
   height: auto;
 }
-
