@@ -47,12 +47,12 @@ header {
   white-space: nowrap;
 }
 /* PC時のみ左寄せに変更 */
-@media (min-width: 769px){ 
-   .language-switch {
-      left: 12px; 
-      right: auto; 
-   } 
+@media (min-width: 769px) {
+  #main-nav {
+    transform: none !important; /* ← これで完全復活 */
+  }
 }
+
 
 @media (max-width: 768px) { 
    .language-switch { 
