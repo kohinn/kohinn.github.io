@@ -76,3 +76,15 @@
     </div>
   </div>
 </footer>
+
+  <script>
+  function toggleMenu(btn) {
+    const nav = document.getElementById('main-nav');
+    const isOpen = nav.classList.toggle('show');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+</script>
+
+</body>
+</html>
