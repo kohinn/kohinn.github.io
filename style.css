@@ -473,6 +473,7 @@ section h2 {
 
 .more-button {
   margin-top: 2rem;
+  margin-bottom: 80px; /* ← 追加または数値を増やす */
   text-align: center;
 }
 
