@@ -203,8 +203,9 @@ section h2 {
 
 .gallery img {
   width: 100%;
-  max-width: 280px;
+  max-width: 360px; /* ← 280pxから拡張 */
   height: auto;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 0 12px rgba(0,0,0,0.1);
   cursor: pointer;
@@ -215,6 +216,7 @@ section h2 {
   transform: translateY(20px);
   animation: fadeIn 1.8s ease forwards;
 }
+
 
 .gallery img:hover {
   transform: scale(1.03);
