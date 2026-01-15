@@ -217,7 +217,6 @@ section h2 {
   animation: fadeIn 1.8s ease forwards;
 }
 
-
 .gallery img:hover {
   transform: scale(1.03);
 }
