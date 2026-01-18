@@ -169,9 +169,14 @@ body {
 }
 
 section {
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 20px rgba(0,255,255,0.05);
+  background: rgba(20,20,20,0.6);
+  border-radius: 12px;
   padding: 2rem 1.5rem;
-  text-align: center;
+  margin-bottom: 2rem;
 }
+
 
 /* 魔法科ライン見出し */
 section h2 {
