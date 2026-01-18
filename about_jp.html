@@ -3,11 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Kohinn</title>
+  <title>アバウト | Kohinn</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Kohinn（コヒン）は独学でイラストを学び、キャラクターイラスト、VTuber風イラスト、オリジナルアバター制作を中心に活動するイラストレーターです。">
+  <meta name="keywords" content="Kohinn, イラストレーター, キャラクター, VTuber, アニメ風, ポートフォリオ">
+
+  <!-- OGP -->
+  <meta property="og:title" content="アバウト | Kohinn">
+  <meta property="og:description" content="Kohinn（コヒン）のプロフィール、スキル、経歴を紹介します。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kohinn.github.io/about_jp.html">
+  <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
 
   <link rel="stylesheet" href="style.css?v=20251129">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <header class="site-header">
@@ -15,16 +27,14 @@
     <span></span><span></span><span></span>
   </button>
 
+  <nav id="main-nav" class="main-nav">
+    <a href="index_jp.html">Home</a>
+    <a href="fanart_jp.html">Illustration</a>
+    <a href="about_jp.html">About</a>
+    <a href="commission_jp.html">Commission</a>
+    <a href="contact_jp.html">Contact</a>
+  </nav>
 
-<nav id="main-nav" class="main-nav">
-  <a href="index_jp.html">Home</a>
-  <a href="fanart_jp.html">Illustration</a>
-  <a href="about_jp.html">About</a>
-  <a href="commission_jp.html">Commission</a>
-  <a href="contact_jp.html">Contact</a>
-</nav>
-
-  
   <div class="language-switch">
     <a href="about.html" lang="en">EN</a> / <a href="about_jp.html" lang="ja">JP</a>
   </div>
@@ -41,7 +51,7 @@
         <p>独学でイラストを学び、現在はフルタイム勤務と並行してイラストレーターとして活動中。</p>
         <p>見た人の目を引くキャラクターイラストを得意としています。</p>
 
-        <h3 class="section-title">Skills</h3>
+        <h3 class="section-title">スキル</h3>
         <ul class="skills-list">
           <li>キャラクターイラスト</li>
           <li>サイト制作</li>
@@ -49,13 +59,13 @@
 
         <h3 class="section-title">経歴</h3>
         <ul class="career-list">
-          <li>2025年4月　イラストレーターとして本格的に活動開始</li>
-          <li>2025年5月　有償依頼を受注</li>
+          <li>2025年4月 — イラストレーターとして本格的に活動開始</li>
+          <li>2025年5月 — 初の有償依頼を受注</li>
         </ul>
       </div>
 
       <div class="about-image">
-        <img src="img/fanart/jibunn__3_kohinn.png" alt="Kohinn アバター">
+        <img src="img/fanart/jibunn__3_kohinn.png" alt="Kohinn アバターイラスト">
       </div>
     </div>
   </section>
@@ -65,17 +75,14 @@
 <footer class="footer-refined">
   <div class="footer-inner">
 
-    <!-- サイト内ナビゲーション -->
-<nav class="footer-nav">
-  <a href="index_jp.html">Home</a>
-  <a href="fanart_jp.html">Illustration</a>
-  <a href="about_jp.html">About</a>
-  <a href="commission_jp.html">Commission</a>
-  <a href="contact_jp.html">Contact</a>
-</nav>
+    <nav class="footer-nav">
+      <a href="index_jp.html">Home</a>
+      <a href="fanart_jp.html">Illustration</a>
+      <a href="about_jp.html">About</a>
+      <a href="commission_jp.html">Commission</a>
+      <a href="contact_jp.html">Contact</a>
+    </nav>
 
-
-    <!-- SNSリンク -->
     <div class="footer-sns">
       <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
       <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
@@ -84,25 +91,21 @@
       <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
     </div>
 
-    <!-- 著作権・ポリシー -->
     <div class="footer-meta">
       <a href="#">Copyright</a>
       <a href="#">Privacy</a>
     </div>
 
-   <p class="footer-copy">
-  © 2025 Kohinn. All rights reserved.<br>
-  All artworks and characters belong to their respective owners.<br>
-  Personal information submitted through the contact form will be used only for replies.
-</p>
-
+    <p class="footer-copy">
+      © 2025 Kohinn. All rights reserved.<br>
+      All artworks and characters belong to their respective owners.<br>
+      お問い合わせフォームで送信された個人情報は返信のみに使用されます。
+    </p>
 
   </div>
 </footer>
 
-
-
-  <script>
+<script>
   function toggleMenu(btn) {
     const nav = document.getElementById('main-nav');
     const isOpen = nav.classList.toggle('show');
@@ -113,3 +116,4 @@
 
 </body>
 </html>
+
