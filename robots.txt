@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kohinn.github.io/sitemap.xml
