@@ -3,14 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commission – Kohinn</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Commission | Kohinn</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Commission character illustrations, VTuber-style artwork, and original avatars from Kohinn. View pricing, options, and delivery details.">
+  <meta name="keywords" content="Kohinn, commission, illustration, VTuber art, character art, pricing">
+
+  <!-- OGP -->
+  <meta property="og:title" content="Commission | Kohinn">
+  <meta property="og:description" content="Commission character illustrations, VTuber-style artwork, and original avatars from Kohinn.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kohinn.github.io/commission.html">
+  <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
+
+  <link rel="stylesheet" href="style.css?v=20251129">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header class="site-header">
-  <button class="menu-toggle" onclick="toggleMenu()">
+  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
     <span></span><span></span><span></span>
   </button>
 
@@ -23,51 +36,58 @@
   </nav>
 
   <div class="language-switch">
-         <a href="commission.html">EN</a> / 
-         <a href="commission_jp.html">JP</a>
+    <a href="commission.html" lang="en">EN</a> / <a href="commission_jp.html" lang="ja">JP</a>
   </div>
 </header>
 
-<section id="commission">
-  <h2>Commission</h2>
+<main>
 
-  <p class="contact-intro">
-    Thank you for your interest in commissioning Kohinn.<br>
-    Below is the current pricing and available options.
-  </p>
+  <section id="commission">
+    <h2>Commission</h2>
 
-  <h3 class="section-title">Base Menu</h3>
-  <ul class="career-list">
-    <li><strong>Bust-up</strong> — ¥5,000〜</li>
-    <li><strong>Full-body</strong> — ¥8,000〜</li>
-    <li><strong>Original Avatar</strong> — ¥10,000〜</li>
-  </ul>
+    <p class="contact-intro">
+      Thank you for your interest in commissioning Kohinn.<br>
+      Below is the current pricing and available options.
+    </p>
 
-  <h3 class="section-title">Options</h3>
-  <ul class="career-list">
-    <li><strong>Background</strong> — +¥3,000〜</li>
-    <li><strong>Additional character</strong> — +¥3,000〜</li>
-    <li><strong>Key visual style illustration</strong> — +¥5,000〜</li>
-    <li><strong>Commercial use</strong> — +¥3,000〜</li>
-  </ul>
+    <!-- Base Menu -->
+    <h3 class="section-title">Base Menu</h3>
+    <ul class="career-list">
+      <li><strong>Bust-up</strong> — ¥5,000〜</li>
+      <li><strong>Full-body</strong> — ¥8,000〜</li>
+      <li><strong>Original Avatar</strong> — ¥10,000〜</li>
+    </ul>
 
-  <h3 class="section-title">Delivery Time</h3>
-  <ul class="career-list">
-    <li>Standard: 1–2 weeks</li>
-    <li>With options: +1–2 weeks depending on complexity</li>
-  </ul>
+    <!-- Options -->
+    <h3 class="section-title">Options</h3>
+    <ul class="career-list">
+      <li><strong>Background</strong> — +¥3,000〜</li>
+      <li><strong>Additional character</strong> — +¥3,000〜</li>
+      <li><strong>Key visual style illustration</strong> — +¥5,000〜</li>
+      <li><strong>Commercial use</strong> — +¥3,000〜</li>
+    </ul>
 
-  <h3 class="section-title">Notes</h3>
-  <ul class="career-list">
-    <li>Personal use only unless commercial option is selected.</li>
-    <li>No NFTs or AI training.</li>
-    <li>Revisions are limited depending on the request.</li>
-  </ul>
+    <!-- Delivery -->
+    <h3 class="section-title">Delivery Time</h3>
+    <ul class="career-list">
+      <li>Standard: 1–2 weeks</li>
+      <li>With options: +1–2 weeks depending on complexity</li>
+    </ul>
 
-  <div class="more-button">
-    <a href="contact.html" class="button-link">Request a commission →</a>
-  </div>
-</section>
+    <!-- Notes -->
+    <h3 class="section-title">Notes</h3>
+    <ul class="career-list">
+      <li>Personal use only unless commercial option is selected.</li>
+      <li>No NFTs or AI training.</li>
+      <li>Revisions are limited depending on the request.</li>
+    </ul>
+
+    <div class="more-button">
+      <a href="contact.html" class="button-link">Request a commission →</a>
+    </div>
+  </section>
+
+</main>
 
 <footer class="footer-refined">
   <div class="footer-inner">
@@ -93,22 +113,24 @@
       <a href="#">Privacy</a>
     </div>
 
-   <p class="footer-copy">
-  © 2025 Kohinn. All rights reserved.<br>
-  All artworks and characters belong to their respective owners.<br>
-  Personal information submitted through the contact form will be used only for replies.
-</p>
-
+    <p class="footer-copy">
+      © 2025 Kohinn. All rights reserved.<br>
+      All artworks and characters belong to their respective owners.<br>
+      Personal information submitted through the contact form will be used only for replies.
+    </p>
 
   </div>
 </footer>
 
 <script>
-function toggleMenu() {
-  document.getElementById("main-nav").classList.toggle("show");
-  document.querySelector(".menu-toggle").classList.toggle("open");
-}
+  function toggleMenu(btn) {
+    const nav = document.getElementById('main-nav');
+    const isOpen = nav.classList.toggle('show');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
 </script>
 
 </body>
 </html>
+
