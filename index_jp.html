@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kohinn Portfolio</title>
+  <title>Kohinn | イラストレーション & ポートフォリオ</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Kohinn（コヒン）はキャラクターイラスト、VTuber風イラスト、オリジナルアバター制作を中心に活動するイラストレーターです。">
+  <meta name="keywords" content="Kohinn, イラスト, キャラクター, VTuber, アニメ風, コミッション, ポートフォリオ">
+
+  <!-- OGP（後で og:image だけ差し替えればOK） -->
+  <meta property="og:title" content="Kohinn | イラストレーション & ポートフォリオ">
+  <meta property="og:description" content="キャラクターイラスト、VTuber風イラスト、オリジナルアバター制作を中心に活動するイラストレーターKohinnのポートフォリオサイト。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kohinn.github.io/">
+  <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
 
   <link rel="stylesheet" href="style.css?v=20251129">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
@@ -21,17 +32,13 @@
     <span></span><span></span><span></span>
   </button>
 
-<nav id="main-nav" class="main-nav">
-  <a href="index_jp.html">Home</a>
-  <a href="fanart_jp.html">Illustration</a>
-  <a href="about_jp.html">About</a>
-  <a href="commission_jp.html">Commission</a>
-  <a href="contact_jp.html">Contact</a>
-</nav>
-
-
-
-
+  <nav id="main-nav" class="main-nav">
+    <a href="index_jp.html">Home</a>
+    <a href="fanart_jp.html">Illustration</a>
+    <a href="about_jp.html">About</a>
+    <a href="commission_jp.html">Commission</a>
+    <a href="contact_jp.html">Contact</a>
+  </nav>
 
   <div class="language-switch">
     <a href="index.html" lang="en">EN</a> / <a href="index_jp.html" lang="ja">JP</a>
@@ -69,7 +76,7 @@
         <p>独学でイラストを学び、現在はフルタイム勤務と並行してイラストレーターとして活動中。</p>
         <p>見た人の目を引くキャラクターイラストを得意としています。</p>
 
-        <h3 class="section-title">Skills</h3>
+        <h3 class="section-title">スキル</h3>
         <ul class="skills-list">
           <li>キャラクターイラスト</li>
           <li>サイト制作</li>
@@ -77,109 +84,34 @@
 
         <h3 class="section-title">経歴</h3>
         <ul class="career-list">
-          <li>2025年4月　イラストレーターとして本格的に活動開始</li>
-          <li>2025年5月　有償依頼を受注</li>
+          <li>2025年4月 — イラストレーターとして本格的に活動開始</li>
+          <li>2025年5月 — 初の有償依頼を受注</li>
         </ul>
       </div>
 
       <div class="about-image">
-        <img src="img/fanart/jibunn__3_kohinn.png" alt="Kohinn アバター">
+        <img src="img/fanart/jibunn__3_kohinn.png" alt="Kohinn アバターイラスト">
       </div>
     </div>
   </section>
-<div class="more-button"> <a href="commission_jp.html" class="button-link">Commissionはこちら →</a> </div>
+
+  <div class="more-button">
+    <a href="commission_jp.html" class="button-link">コミッションを依頼する →</a>
+  </div>
+
 </main>
 
-<!-- Footer -->
 <footer class="footer-refined">
   <div class="footer-inner">
 
-    <!-- サイト内ナビゲーション -->
-   <nav class="footer-nav">
-  <a href="index.html">Home</a>
-  <a href="fanart.html">Illustration</a>
-  <a href="about.html">About</a>
-  <a href="commission.html">Commission</a>
-  <a href="contact.html">Contact</a>
-</nav>
+    <nav class="footer-nav">
+      <a href="index_jp.html">Home</a>
+      <a href="fanart_jp.html">Illustration</a>
+      <a href="about_jp.html">About</a>
+      <a href="commission_jp.html">Commission</a>
+      <a href="contact_jp.html">Contact</a>
+    </nav>
 
-
-    <!-- SNSリンク -->
     <div class="footer-sns">
       <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
-      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
-      <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
-      <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
-      <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
-    </div>
-
-    <!-- 著作権・ポリシー -->
-    <div class="footer-meta">
-      <a href="#">Copyright</a>
-      <a href="#">Privacy</a>
-    </div>
-
-   <p class="footer-copy">
-  © 2025 Kohinn. All rights reserved.<br>
-  All artworks and characters belong to their respective owners.<br>
-  Personal information submitted through the contact form will be used only for replies.
-</p>
-
-  </div>
-</footer>
-
-
-
-<!-- Modal -->
-<div id="modal" class="modal" aria-hidden="true">
-  <button class="modal-close" aria-label="Close image">✕</button>
-  <img class="modal-content" id="modal-img" alt="">
-</div>
-
-<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
-
-<script>
-  function toggleMenu(btn) {
-    const nav = document.getElementById('main-nav');
-    const isOpen = nav.classList.toggle('show');
-    btn.classList.toggle('open', isOpen);
-    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    const closeBtn = document.querySelector('.modal-close');
-    const backToTop = document.getElementById('backToTop');
-    let hideTimer;
-
-    document.querySelectorAll('.gallery img').forEach(img => {
-      img.addEventListener('click', () => {
-        modalImg.src = img.src;
-        modal.classList.add('show');
-        modal.setAttribute('aria-hidden', 'false');
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('show');
-      modalImg.src = '';
-      modal.setAttribute('aria-hidden', 'true');
-    });
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 200) {
-        backToTop.classList.add('show');
-        clearTimeout(hideTimer);
-        hideTimer = setTimeout(() => {
-          backToTop.classList.remove('show');
-        }, 1500);
-      } else {
-        backToTop.classList.remove('show');
-      }
-    });
-  });
-</script>
-
-</body>
-</html>
+      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">
