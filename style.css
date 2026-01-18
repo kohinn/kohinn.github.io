@@ -542,20 +542,15 @@ section h2 {
 }
 
 .button-link {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  background: #222;
+  background: #0075FF;
   color: #fff;
-  font-size: 0.95rem;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,117,255,0.4);
 }
 
 .button-link:hover {
-  background: #444;
+  background: #0055cc;
 }
+
 
 @media (min-width: 769px) {
   .about-wrapper {
