@@ -2,7 +2,7 @@
    Base
 ============================ */
 body {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: #fafafa;
@@ -169,14 +169,9 @@ body {
 }
 
 section {
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 0 20px rgba(0,255,255,0.05);
-  background: rgba(20,20,20,0.6);
-  border-radius: 12px;
   padding: 2rem 1.5rem;
-  margin-bottom: 2rem;
+  text-align: center;
 }
-
 
 /* 魔法科ライン見出し */
 section h2 {
@@ -542,15 +537,20 @@ section h2 {
 }
 
 .button-link {
-  background: #0075FF;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #222;
   color: #fff;
-  box-shadow: 0 0 10px rgba(0,117,255,0.4);
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
 }
 
 .button-link:hover {
-  background: #0055cc;
+  background: #444;
 }
-
 
 @media (min-width: 769px) {
   .about-wrapper {
@@ -648,4 +648,3 @@ section h2 {
    padding-top: 120px; /* ← 80pxや100pxだと足りない場合がある */
    padding-bottom: 120px; /* ← 追加するだけ！ */
 }
-
