@@ -5,19 +5,9 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
-  color: #eee;
+  background: #fafafa;
+  color: #333;
 }
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
-  z-index: -1;
-}
-
 
 /* ============================
    Header
