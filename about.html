@@ -51,3 +51,96 @@
 
 <main>
 
+  <section id="about" class="fade-in">
+    <h2>About</h2>
+
+    <div class="about-wrapper">
+      <div class="about-text">
+        <p class="about-name">Kohinn</p>
+        <p>Self-taught illustrator, currently working while balancing a full-time job.</p>
+        <p>Specializes in creating eye-catching character illustrations.</p>
+
+        <h3 class="section-title">Skills</h3>
+        <ul class="skills-list">
+          <li>Character illustration</li>
+          <li>Website creation</li>
+        </ul>
+
+        <h3 class="section-title">Career</h3>
+        <ul class="career-list">
+          <li>April 2025 — Started working as an illustrator in earnest</li>
+          <li>May 2025 — Completed first paid commission</li>
+        </ul>
+      </div>
+
+      <div class="about-image">
+        <img src="img/fanart/jibunn__3_kohinn.png" alt="Kohinn avatar illustration">
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer-refined">
+  <div class="footer-inner">
+
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="fanart.html">Illustration</a>
+      <a href="about.html">About</a>
+      <a href="commission.html">Commission</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="footer-sns">
+      <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
+      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
+      <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
+      <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
+      <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
+    </div>
+
+    <div class="footer-meta">
+      <a href="#">Copyright</a>
+      <a href="#">Privacy</a>
+      <a href="https://kohinn.github.io/?debug_mode=true"
+         style="opacity:0.05; font-size:10px; float:right; margin-right:10px;">
+        Debug
+      </a>
+    </div>
+
+    <p class="footer-copy">
+      © 2025 Kohinn. All rights reserved.<br>
+      All artworks and characters belong to their respective owners.<br>
+      Personal information submitted through the contact form will be used only for replies.
+    </p>
+
+  </div>
+</footer>
+
+<script>
+  function toggleMenu(btn) {
+    const nav = document.getElementById('main-nav');
+    const isOpen = nav.classList.toggle('show');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  /* Fade-in animation */
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeEls.forEach(el => observer.observe(el));
+  });
+</script>
+
+</body>
+</html>
+
