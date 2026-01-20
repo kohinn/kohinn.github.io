@@ -6,20 +6,19 @@
   <title>Kohinn | Character Illustration & Portfolio</title>
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-V286NXLCKF');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V286NXLCKF');
+  </script>
 
   <!-- SEO -->
   <meta name="description" content="Kohinn is a self-taught illustrator specializing in eye-catching character illustrations and original avatars.">
   <meta name="keywords" content="Kohinn, illustration, character art, VTuber art, anime style, commission, portfolio">
 
-  <!-- OGP (後で og:image だけ差し替えればOK) -->
+  <!-- OGP -->
   <meta property="og:title" content="Kohinn | Character Illustration & Portfolio">
   <meta property="og:description" content="Character-focused illustrations, VTuber-style art, and original avatars by Kohinn.">
   <meta property="og:type" content="website">
@@ -28,7 +27,6 @@
 
   <link rel="stylesheet" href="style.css?v=20251129">
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
-
 
   <script>
     if ('scrollRestoration' in history) {
@@ -57,43 +55,29 @@
 </header>
 
 <main>
-<!-- Info Section --> 
- <section class="updates-section">
-  <h2>Updates</h2>
-
-  <div class="update-card">
-    <div class="update-header">
-      <span class="update-label">[Site Updates]</span>
-      <span class="update-date">Jan 18, 2026</span>
-    </div>
-    <p>The site structure is currently being reorganized. Updates are published regularly.</p>
-  </div>
-
-  <div class="update-card">
-    <div class="update-header">
-      <span class="update-label">[Commission Status]</span>
-      <span class="update-date">Jan 18, 2026</span>
-    </div>
-    <p>Commissions are open. I am available to begin new projects immediately.</p>
-  </div>
-</section>
-
+  <!-- Updates Section -->
   <section class="updates-section fade-in">
-  ...
-</section>
+    <h2>Updates</h2>
 
-<section id="fanart" class="fade-in">
-  ...
-</section>
+    <div class="update-card">
+      <div class="update-header">
+        <span class="update-label">[Site Updates]</span>
+        <span class="update-date">Jan 18, 2026</span>
+      </div>
+      <p>The site structure is currently being reorganized. Updates are published regularly.</p>
+    </div>
 
-<section id="about" class="fade-in">
-  ...
-</section>
+    <div class="update-card">
+      <div class="update-header">
+        <span class="update-label">[Commission Status]</span>
+        <span class="update-date">Jan 18, 2026</span>
+      </div>
+      <p>Commissions are open. I am available to begin new projects immediately.</p>
+    </div>
+  </section>
 
-
-  
   <!-- Illustration Section -->
-  <section id="fanart">
+  <section id="fanart" class="fade-in">
     <h2>Illustration</h2>
 
     <div class="gallery">
@@ -112,7 +96,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about">
+  <section id="about" class="fade-in">
     <h2>About</h2>
 
     <div class="about-wrapper">
@@ -140,7 +124,7 @@
     </div>
   </section>
 
-  <div class="more-button">
+  <div class="more-button fade-in">
     <a href="commission.html" class="button-link">Start your commission →</a>
   </div>
 
@@ -172,10 +156,9 @@
       <a href="#">Copyright</a>
       <a href="#">Privacy</a>
       <a href="https://kohinn.github.io/?debug_mode=true"
-   　　　style="opacity:0.05; font-size:10px; float:right; margin-right:10px;">
- 　　　 Debug
-　　　</a>
-
+         style="opacity:0.05; font-size:10px; float:right; margin-right:10px;">
+        Debug
+      </a>
     </div>
 
     <p class="footer-copy">
@@ -235,12 +218,8 @@
         backToTop.classList.remove('show');
       }
     });
-  });
-</script>
 
-</body>
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
+    // フェードイン
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -248,9 +227,12 @@
           entry.target.classList.add('visible');
         }
       });
-    });
+    }, { threshold: 0.1 });
+
     fadeEls.forEach(el => observer.observe(el));
   });
 </script>
 
+</body>
 </html>
+
