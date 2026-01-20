@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>アバウト | Kohinn</title>
+  <title>About | Kohinn</title>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V286NXLCKF');
+  </script>
 
-  gtag('config', 'G-V286NXLCKF');
-</script>
-  
   <!-- SEO -->
-  <meta name="description" content="Kohinn（コヒン）は独学でイラストを学び、キャラクターイラスト、VTuber風イラスト、オリジナルアバター制作を中心に活動するイラストレーターです。">
+  <meta name="description" content="Kohinn（コヒン）のプロフィール、スキル、経歴を紹介します。キャラクターイラスト、VTuber風イラスト、オリジナルアバター制作を中心に活動中。">
   <meta name="keywords" content="Kohinn, イラストレーター, キャラクター, VTuber, アニメ風, ポートフォリオ">
 
   <!-- OGP -->
-  <meta property="og:title" content="アバウト | Kohinn">
+  <meta property="og:title" content="About | Kohinn">
   <meta property="og:description" content="Kohinn（コヒン）のプロフィール、スキル、経歴を紹介します。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kohinn.github.io/about_jp.html">
@@ -52,7 +51,7 @@
 
 <main>
 
-  <section id="about">
+  <section id="about" class="fade-in">
     <h2>About</h2>
 
     <div class="about-wrapper">
@@ -105,10 +104,9 @@
       <a href="#">Copyright</a>
       <a href="#">Privacy</a>
       <a href="https://kohinn.github.io/?debug_mode=true"
-　　   style="opacity:0.05; font-size:10px; float:right; margin-right:10px;">
-　　　 Debug
-　　　</a>
-
+         style="opacity:0.05; font-size:10px; float:right; margin-right:10px;">
+        Debug
+      </a>
     </div>
 
     <p class="footer-copy">
@@ -127,6 +125,20 @@
     btn.classList.toggle('open', isOpen);
     btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }
+
+  /* フェードイン */
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeEls.forEach(el => observer.observe(el));
+  });
 </script>
 
 </body>
