@@ -648,3 +648,53 @@ section h2 {
    padding-top: 120px; /* ← 80pxや100pxだと足りない場合がある */
    padding-bottom: 120px; /* ← 追加するだけ！ */
 }
+/* 魔法科風フェードイン */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 魔法陣風の背景粒子 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+}
+
+/* セクションの浮き上がり感 */
+section {
+  background: rgba(20,20,20,0.6);
+  box-shadow: 0 0 20px rgba(0,255,255,0.05);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ボタンの光演出 */
+.button-link {
+  background: #0075FF;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0,117,255,0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-link:hover {
+  background: #0055cc;
+  box-shadow: 0 0 14px rgba(0,117,255,0.6);
+}
+
+/* フォントと背景の微調整（魔法科風） */
+body {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+  color: #eee;
+}
