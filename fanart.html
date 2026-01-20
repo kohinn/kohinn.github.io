@@ -5,15 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Illustration Gallery | Kohinn</title>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-V286NXLCKF');
-</script>
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V286NXLCKF');
+  </script>
 
   <!-- SEO -->
   <meta name="description" content="Explore Kohinn's illustration gallery, including VTuber-style art, original avatars, and anime-style works.">
@@ -53,13 +52,13 @@
 <main>
 
   <!-- Main Illustration Section -->
-  <section id="fanart">
+  <section id="fanart" class="fade-in">
     <h2>Illustration</h2>
     <p>Here are some of my recent works.</p>
   </section>
 
   <!-- Original Avatar Section -->
-  <section id="avatar">
+  <section id="avatar" class="fade-in">
     <h2>Original Avatars</h2>
     <div class="gallery">
       <img class="thumbnail" src="img/fanart/jibunn__3_kohimm.png" alt="Original avatar illustration">
@@ -67,7 +66,7 @@
   </section>
 
   <!-- VTuber Style Section -->
-  <section id="vtuber">
+  <section id="vtuber" class="fade-in">
     <h2>VTuber Style</h2>
     <div class="gallery">
       <img class="thumbnail" src="img/fanart/yb2929.png" alt="VTuber-style illustration 1">
@@ -81,14 +80,14 @@
   </section>
 
   <!-- Anime Style Section -->
-  <section id="anime">
+  <section id="anime" class="fade-in">
     <h2>Anime Style</h2>
     <div class="gallery">
       <p class="coming-soon">Coming soon.</p>
     </div>
   </section>
 
-  <div class="more-button">
+  <div class="more-button fade-in">
     <a href="commission.html" class="button-link">View Commission Page →</a>
   </div>
 
@@ -117,10 +116,9 @@
       <a href="#">Copyright</a>
       <a href="#">Privacy</a>
       <a href="https://kohinn.github.io/?debug_mode=true"
-  　　　 style="opacity:0.05; font-size:10px; float:right; margin-right:10px;">
- 　　　 Debug
-　　　</a>
-
+         style="opacity:0.05; font-size:10px; float:right; margin-right:10px;">
+        Debug
+      </a>
     </div>
 
     <p class="footer-copy">
@@ -180,9 +178,22 @@
         backToTop.classList.remove('show');
       }
     });
+
+    /* Fade-in animation */
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeEls.forEach(el => observer.observe(el));
   });
 </script>
 
 </body>
 </html>
+
 
