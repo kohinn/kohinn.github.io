@@ -663,9 +663,11 @@ section {
 }
 
 #commission {
-  padding-top: 120px;
+  padding-top: 160px; /* ← これに統一 */
   padding-bottom: 120px;
 }
+
+
 
 /* ============================
    Fade-in animation
