@@ -20,6 +20,7 @@ body::before {
   z-index: -1;
 }
 
+
 /* ============================
    Header
 ============================ */
@@ -61,9 +62,7 @@ body::before {
   }
 }
 
-/* ============================
-   Language switch
-============================ */
+
 .language-switch {
   position: fixed;
   top: 9px;
@@ -90,9 +89,7 @@ body::before {
   }
 }
 
-/* ============================
-   Hamburger
-============================ */
+
 .menu-toggle {
   position: fixed;
   top: 8px;
@@ -137,9 +134,7 @@ body::before {
   }
 }
 
-/* ============================
-   Full-screen nav (SP)
-============================ */
+
 #main-nav {
   position: fixed;
   top: 0;
@@ -173,29 +168,25 @@ body::before {
 /* ============================
    Sections
 ============================ */
-#fanart,
-#about,
-#contact {
-  padding-top: 80px;
-}
-
-section {
-  padding: 2rem 1.5rem;
-  text-align: center;
-}
-
-/* 共通カード風セクション（Updates以外にも効く） */
 section {
   max-width: 960px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.2rem; /* ← 余白を詰めた */
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
 }
 
-/* 見出し（魔法科ライン風・明るめ） */
+/* コミッション見出しがヘッダーに重ならないように */
+#commission {
+  padding-top: 160px; /* ← 修正済み */
+  padding-bottom: 120px;
+}
+
+/* 見出し */
 section h2 {
-  background: none;
-  color: #222;
-  padding: 0;
-  margin: 0 auto 1.2rem;
+  margin-bottom: 0.6rem; /* ← 詰めた */
   font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
   font-weight: 700;
@@ -204,6 +195,8 @@ section h2 {
   padding-bottom: 0.4rem;
   text-align: left;
   max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ============================
@@ -602,8 +595,8 @@ section h2 {
 
 .skills-list li,
 .career-list li {
-  margin-bottom: 0.6rem;
-  padding-left: 1rem; /* ← 少し詰めた */
+  margin-bottom: 0.55rem;
+  padding-left: 1rem;
   position: relative;
   font-size: 0.9rem;
   color: #333;
@@ -613,10 +606,11 @@ section h2 {
 .career-list li::before {
   content: "•";
   position: absolute;
-  left: 0.2rem; /* ← 中黒を少し右寄せ */
+  left: 0.2rem; /* ← 自然な位置 */
   color: #888;
   font-size: 0.85rem;
 }
+
 
 /* ============================
    Section spacing
