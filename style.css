@@ -165,18 +165,16 @@ body::before {
   text-decoration: none;
 }
 
-/* ============================
-   Sections
-============================ */
 section {
   max-width: 960px;
-  margin: 0 auto 1.2rem; /* ← 余白を詰めた */
+  margin: 0 auto 1.2rem;
   padding: 2rem 1.5rem;
   text-align: center;
   background: #ffffff;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
 }
+
 
 /* コミッション見出しがヘッダーに重ならないように */
 #commission {
