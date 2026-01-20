@@ -15,8 +15,8 @@
   </script>
 
   <!-- SEO -->
-  <meta name="description" content="Kohinn（コヒン）によるキャラクターイラスト、VTuber風イラスト、オリジナルアバター制作のコミッション案内。料金、オプション、納期などを掲載。">
-  <meta name="keywords" content="Kohinn, コミッション, イラスト, VTuber, キャラクター, 料金">
+  <meta name="description" content="Kohinn（コヒン）によるキャラクターイラスト、VTuber風イラスト、オリジナルアバター制作のコミッション案内。料金、オプション、納期、支払い方法、依頼の流れ、利用規約などを掲載。">
+  <meta name="keywords" content="Kohinn, コミッション, イラスト, VTuber, キャラクター, 料金, 銀行振込, PayPal">
 
   <!-- OGP -->
   <meta property="og:title" content="コミッション | Kohinn">
@@ -51,8 +51,8 @@
 
 <main>
 
-  <!-- Intro -->
-  <section class="fade-in">
+  <!-- コミッション概要 -->
+  <section id="commission" class="fade-in">
     <h2>コミッション</h2>
     <div class="about-wrapper">
       <p class="contact-intro">
@@ -110,85 +110,12 @@
     </div>
   </section>
 
-  <!-- 注意事項 -->
+  <!-- 銀行振込の注意事項 -->
   <section class="fade-in">
-    <h2>注意事項</h2>
+    <h2>銀行振込の注意事項</h2>
     <div class="about-wrapper">
       <ul class="career-list">
-        <li>個人利用のみ（商用利用オプション選択時を除く）</li>
-        <li>NFT・AI学習目的での使用は禁止</li>
-        <li>修正回数は内容により変動します</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Button -->
-  <div class="more-button fade-in">
-    <a href="contact_jp.html" class="button-link">依頼する →</a>
-  </div>
-
-</main>
-
-<footer class="footer-refined">
-  <div class="footer-inner">
-
-    <nav class="footer-nav">
-      <a href="index_jp.html">Home</a>
-      <a href="fanart_jp.html">Illustration</a>
-      <a href="about_jp.html">About</a>
-      <a href="commission_jp.html">Commission</a>
-      <a href="contact_jp.html">Contact</a>
-    </nav>
-
-    <div class="footer-sns">
-      <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
-      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
-      <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
-      <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
-      <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
-    </div>
-
-    <div class="footer-meta">
-      <a href="#">Copyright</a>
-      <a href="#">Privacy</a>
-      <a href="https://kohinn.github.io/?debug_mode=true"
-         style="opacity:0.05; font-size:10px; float:right; margin-right:10px;">
-        Debug
-      </a>
-    </div>
-
-    <p class="footer-copy">
-      © 2025 Kohinn. All rights reserved.<br>
-      All artworks and characters belong to their respective owners.<br>
-      お問い合わせフォームで送信された個人情報は返信のみに使用されます。
-    </p>
-
-  </div>
-</footer>
-
-<script>
-  function toggleMenu(btn) {
-    const nav = document.getElementById('main-nav');
-    const isOpen = nav.classList.toggle('show');
-    btn.classList.toggle('open', isOpen);
-    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  }
-
-  /* フェードイン */
-  document.addEventListener('DOMContentLoaded', () => {
-    const fadeEls = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    fadeEls.forEach(el => observer.observe(el));
-  });
-</script>
-
-</body>
-</html>
+        <li>振込手数料はご依頼者様のご負担となります。</li>
+        <li>入金確認後に制作を開始いたします。</li>
+        <li>
 
