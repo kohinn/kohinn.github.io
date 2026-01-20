@@ -110,12 +110,52 @@
     </div>
   </section>
 
-  <!-- 銀行振込の注意事項 -->
-  <section class="fade-in">
-    <h2>銀行振込の注意事項</h2>
-    <div class="about-wrapper">
-      <ul class="career-list">
-        <li>振込手数料はご依頼者様のご負担となります。</li>
-        <li>入金確認後に制作を開始いたします。</li>
-        <li>
+ <!-- 銀行振込の注意事項 -->
+<section class="fade-in">
+  <h2>銀行振込の注意事項</h2>
+  <div class="about-wrapper">
+    <ul class="career-list">
+      <li>振込手数料はご依頼者様のご負担となります。</li>
+      <li>入金確認後に制作を開始いたします。</li>
+      <li>着手前のキャンセルには柔軟に対応いたします。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ボタン -->
+<div class="more-button fade-in">
+  <a href="contact_jp.html" class="button-link">依頼する →</a>
+</div>
+
+</main>
+
+<footer class="footer-refined">
+  <!-- ここにフッター内容が入る（省略） -->
+</footer>
+
+<script>
+  function toggleMenu(btn) {
+    const nav = document.getElementById('main-nav');
+    const isOpen = nav.classList.toggle('show');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeEls.forEach(el => observer.observe(el));
+  });
+</script>
+
+</body>
+</html>
+
 
