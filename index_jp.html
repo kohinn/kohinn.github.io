@@ -5,21 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kohinn | イラストレーション & ポートフォリオ</title>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-V286NXLCKF');
-</script>
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V286NXLCKF');
+  </script>
 
   <!-- SEO -->
   <meta name="description" content="Kohinn（コヒン）はキャラクターイラスト、VTuber風イラスト、オリジナルアバター制作を中心に活動するイラストレーターです。">
   <meta name="keywords" content="Kohinn, イラスト, キャラクター, VTuber, アニメ風, コミッション, ポートフォリオ">
 
-  <!-- OGP（後で og:image だけ差し替えればOK） -->
+  <!-- OGP -->
   <meta property="og:title" content="Kohinn | イラストレーション & ポートフォリオ">
   <meta property="og:description" content="キャラクターイラスト、VTuber風イラスト、オリジナルアバター制作を中心に活動するイラストレーターKohinnのポートフォリオサイト。">
   <meta property="og:type" content="website">
@@ -56,30 +55,30 @@
 </header>
 
 <main>
-<!-- Info Section --> 
-  <section class="updates-section">
-  <h2>Updates</h2>
 
-  <div class="update-card">
-    <div class="update-header">
-      <span class="update-label">【サイト更新について】</span>
-      <span class="update-date">2026.01.18</span>
+  <!-- Updates Section -->
+  <section class="updates-section fade-in">
+    <h2>Updates</h2>
+
+    <div class="update-card">
+      <div class="update-header">
+        <span class="update-label">【サイト更新について】</span>
+        <span class="update-date">2026.01.18</span>
+      </div>
+      <p>現在、サイト内構成を整理中です。随時アップデートしています。</p>
     </div>
-    <p>現在、サイト内構成を整理中です。随時アップデートしています。</p>
-  </div>
 
-  <div class="update-card">
-    <div class="update-header">
-      <span class="update-label">【受付状況】</span>
-      <span class="update-date">2026.01.18</span>
+    <div class="update-card">
+      <div class="update-header">
+        <span class="update-label">【受付状況】</span>
+        <span class="update-date">2026.01.18</span>
+      </div>
+      <p>現在、依頼受付中です。すぐに着手可能です。</p>
     </div>
-    <p>現在、依頼受付中です。すぐに着手可能です。</p>
-  </div>
-</section>
+  </section>
 
-  
   <!-- Illustration Section -->
-  <section id="fanart">
+  <section id="fanart" class="fade-in">
     <h2>Illustration</h2>
 
     <div class="gallery">
@@ -98,7 +97,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about">
+  <section id="about" class="fade-in">
     <h2>About</h2>
 
     <div class="about-wrapper">
@@ -126,7 +125,7 @@
     </div>
   </section>
 
-  <div class="more-button">
+  <div class="more-button fade-in">
     <a href="commission_jp.html" class="button-link">コミッションを依頼する →</a>
   </div>
 
@@ -155,10 +154,9 @@
       <a href="#">Copyright</a>
       <a href="#">Privacy</a>
       <a href="https://kohinn.github.io/?debug_mode=true"
-   　　　style="opacity:0.05; font-size:10px; float:right; margin-right:10px;">
- 　　　 Debug
-　　　</a>
-
+         style="opacity:0.05; font-size:10px; float:right; margin-right:10px;">
+        Debug
+      </a>
     </div>
 
     <p class="footer-copy">
@@ -218,9 +216,20 @@
         backToTop.classList.remove('show');
       }
     });
+
+    /* フェードイン */
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeEls.forEach(el => observer.observe(el));
   });
 </script>
 
 </body>
 </html>
-
