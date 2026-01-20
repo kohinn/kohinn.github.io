@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>イラストギャラリー | Kohinn</title>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V286NXLCKF');
+  </script>
 
-  gtag('config', 'G-V286NXLCKF');
-</script>
-  
   <!-- SEO -->
   <meta name="description" content="Kohinn（コヒン）のイラストギャラリー。VTuber風イラスト、オリジナルアバター、アニメ風イラストなどを掲載。">
   <meta name="keywords" content="Kohinn, イラスト, ギャラリー, VTuber, アニメ風, キャラクター, ポートフォリオ">
@@ -53,13 +52,13 @@
 <main>
 
   <!-- メインセクション -->
-  <section id="fanart">
+  <section id="fanart" class="fade-in">
     <h2>Illustration</h2>
     <p>最近制作したイラストを掲載しています。</p>
   </section>
 
   <!-- オリジナルアバター -->
-  <section id="avatar">
+  <section id="avatar" class="fade-in">
     <h2>オリジナルアバター</h2>
     <div class="gallery">
       <img class="thumbnail" src="img/fanart/jibunn__3_kohimm.png" alt="オリジナルアバターイラスト">
@@ -67,7 +66,7 @@
   </section>
 
   <!-- VTuber風 -->
-  <section id="vtuber">
+  <section id="vtuber" class="fade-in">
     <h2>VTuber風イラスト</h2>
     <div class="gallery">
       <img class="thumbnail" src="img/fanart/yb2929.png" alt="VTuber風イラスト 1">
@@ -81,14 +80,14 @@
   </section>
 
   <!-- アニメ風 -->
-  <section id="anime">
+  <section id="anime" class="fade-in">
     <h2>アニメ風イラスト</h2>
     <div class="gallery">
       <p class="coming-soon">Coming soon.</p>
     </div>
   </section>
 
-  <div class="more-button">
+  <div class="more-button fade-in">
     <a href="commission_jp.html" class="button-link">コミッションページを見る →</a>
   </div>
 
@@ -117,10 +116,9 @@
       <a href="#">Copyright</a>
       <a href="#">Privacy</a>
       <a href="https://kohinn.github.io/?debug_mode=true"
-  　　　 style="opacity:0.05; font-size:10px; float:right; margin-right:10px;">
- 　　　 Debug
-　　　</a>
-
+         style="opacity:0.05; font-size:10px; float:right; margin-right:10px;">
+        Debug
+      </a>
     </div>
 
     <p class="footer-copy">
@@ -180,9 +178,22 @@
         backToTop.classList.remove('show');
       }
     });
+
+    /* フェードイン */
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeEls.forEach(el => observer.observe(el));
   });
 </script>
 
 </body>
 </html>
+
 
