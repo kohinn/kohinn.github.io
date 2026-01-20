@@ -602,8 +602,8 @@ section h2 {
 
 .skills-list li,
 .career-list li {
-  margin-bottom: 0.7rem;
-  padding-left: 1.2rem;
+  margin-bottom: 0.6rem;
+  padding-left: 1rem; /* ← 少し詰めた */
   position: relative;
   font-size: 0.9rem;
   color: #333;
@@ -613,10 +613,20 @@ section h2 {
 .career-list li::before {
   content: "•";
   position: absolute;
-  left: 0;
+  left: 0.2rem; /* ← 中黒を少し右寄せ */
   color: #888;
+  font-size: 0.85rem;
 }
 
+/* ============================
+   Section spacing
+============================ */
+section {
+  max-width: 960px;
+  margin: 0 auto 1.5rem; /* ← 2rem → 1.5rem に調整 */
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background: #
 /* ============================
    Contact / Commission 共通
 ============================ */
