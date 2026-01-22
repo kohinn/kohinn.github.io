@@ -1,26 +1,35 @@
-/* === Base Reset === */
+/* =========================================================
+   0. Reset / Base
+========================================================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   background: #f8f9fc;
   color: #222;
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 16px;
 }
 
-/* === Layout === */
+/* =========================================================
+   1. Layout / Typography / Colors
+========================================================= */
+
 main {
   max-width: 960px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
+
 section {
   background: #fff;
   border-radius: 14px;
@@ -28,33 +37,33 @@ section {
   padding: 2rem;
   margin-bottom: 2rem;
 }
+
 h2 {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #003366;
 }
+
 h3.section-title {
   margin-top: 1.5rem;
   font-size: 1.2rem;
   color: #0055aa;
 }
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-li {
-  margin-bottom: 0.5rem;
-}
+
 a {
   color: #0055aa;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
 
-/* === Header === */
+/* =========================================================
+   2. Header / Navigation / Hamburger
+========================================================= */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -69,35 +78,30 @@ a:hover {
   align-items: center;
 }
 
-/* === Navigation (PC) === */
+/* PC Navigation */
 .main-nav {
   display: flex;
   gap: 1.5rem;
 }
+
 .main-nav a {
   font-size: 0.95rem;
   font-weight: 600;
   color: #003366;
   transition: opacity 0.2s ease;
 }
+
 .main-nav a:hover {
   opacity: 0.6;
 }
 
-/* === Language Switch === */
+/* Language Switch */
 .language-switch {
   font-size: 0.9rem;
   color: #003366;
 }
-.language-switch a {
-  color: #0055aa;
-  font-weight: 600;
-}
-.language-switch a:hover {
-  opacity: 0.6;
-}
 
-/* === Hamburger Menu (Mobile) === */
+/* Hamburger Button */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -106,6 +110,7 @@ a:hover {
   border: none;
   cursor: pointer;
 }
+
 .menu-toggle span {
   width: 24px;
   height: 3px;
@@ -125,32 +130,98 @@ a:hover {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* === Mobile Navigation === */
+/* === 魔法科UI：スライドメニュー + ブラー背景 === */
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 900;
+}
+
+.nav-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @media (max-width: 820px) {
+
   .menu-toggle {
     display: flex;
   }
 
   .main-nav {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0, 117, 255, 0.15);
-    border-radius: 10px 0 0 10px;
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 240px;
+    height: 100vh;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: -4px 0 20px rgba(0,117,255,0.15);
+    padding: 2rem 1.5rem;
     flex-direction: column;
-    gap: 1rem;
-    padding: 1.2rem 1.5rem;
-    display: none;
+    gap: 1.2rem;
+    transition: right 0.35s cubic-bezier(.25,.8,.25,1);
+    z-index: 1000;
   }
 
   .main-nav.show {
-    display: flex;
+    right: 0;
   }
+
+  /* 順番にフェードイン */
+  .main-nav a {
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .main-nav.show a {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .main-nav.show a:nth-child(1) { transition-delay: 0.05s; }
+  .main-nav.show a:nth-child(2) { transition-delay: 0.10s; }
+  .main-nav.show a:nth-child(3) { transition-delay: 0.15s; }
+  .main-nav.show a:nth-child(4) { transition-delay: 0.20s; }
+  .main-nav.show a:nth-child(5) { transition-delay: 0.25s; }
 }
 
-/* === Gallery (Illustration Grid) === */
+/* =========================================================
+   3. Sections / Cards / About / Updates
+========================================================= */
+
+.about-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.about-image img {
+  width: 320px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
+}
+
+.update-card {
+  background: #f7faff;
+  border-left: 4px solid #0055aa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* =========================================================
+   4. Gallery / Modal / Back-to-top
+========================================================= */
+
 .gallery {
   max-width: 960px;
   margin: 1.5rem auto 0;
@@ -163,40 +234,17 @@ a:hover {
   box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
 }
 
-/* Thumbnail images */
 .thumbnail {
   width: 100%;
-  height: auto;
   border-radius: 12px;
-  cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Hover effect (PC only) */
-@media (min-width: 821px) {
-  .thumbnail:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0, 117, 255, 0.15);
-  }
-}
-
-/* Coming soon text */
-.coming-soon {
-  text-align: center;
-  padding: 2rem 0;
-  font-size: 1.1rem;
-  color: #666;
-}
-
-/* === Modal (Image Viewer) === */
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0,0,0,0.65);
   backdrop-filter: blur(6px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
@@ -208,65 +256,21 @@ a:hover {
   pointer-events: auto;
 }
 
-.modal-content {
-  max-width: 90%;
-  max-height: 85vh;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 117, 255, 0.25);
-  animation: modalFade 0.25s ease;
+/* =========================================================
+   5. Footer
+========================================================= */
+
+.footer-refined {
+  background: #f0f4fa;
+  padding: 2.5rem 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(0, 117, 255, 0.1);
 }
 
-@keyframes modalFade {
-  from { transform: scale(0.96); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
-}
+/* =========================================================
+   6. Animations
+========================================================= */
 
-/* Close button */
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  background: rgba(255, 255, 255, 0.85);
-  border: none;
-  font-size: 1.4rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.modal-close:hover {
-  background: rgba(255, 255, 255, 1);
-}
-
-/* === Back to Top Button === */
-.back-to-top {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background: #0055aa;
-  color: #fff;
-  padding: 0.6rem 0.8rem;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  text-align: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  z-index: 1500;
-}
-
-.back-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(-4px);
-}
-
-.back-to-top:hover {
-  background: #003f88;
-}
-
-/* === Fade-in Animation (Magic High School style) === */
 .fade-in {
   opacity: 0;
   transform: translateY(18px);
@@ -277,274 +281,34 @@ a:hover {
   opacity: 1;
   transform: translateY(0);
 }
+/* =========================================================
+   7. Responsive
+========================================================= */
 
-/* Slight delay for smoother flow */
-.fade-in:nth-child(1) { transition-delay: 0.05s; }
-.fade-in:nth-child(2) { transition-delay: 0.10s; }
-.fade-in:nth-child(3) { transition-delay: 0.15s; }
-.fade-in:nth-child(4) { transition-delay: 0.20s; }
-
-/* === Responsive Design (スマホ優先 + PC最適化) === */
-
-/* --- Mobile (〜820px) --- */
 @media (max-width: 820px) {
 
   body {
-    font-size: 15px;
-  }
-
-  main {
-    padding: 1.5rem 1rem;
+    line-height: 1.75;
   }
 
   section {
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
+    padding: 2rem 1.4rem;
   }
 
   .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    padding: 0.8rem;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1.4rem;
   }
 
-  .thumbnail {
-    border-radius: 10px;
-  }
-
-  .about-wrapper {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .about-image img {
-    width: 100%;
-  }
-
-  .back-to-top {
-    bottom: 18px;
-    right: 18px;
-  }
-}
-
-/* --- Tablet (821px〜1100px) --- */
-@media (min-width: 821px) and (max-width: 1100px) {
-
-  main {
-    padding: 2rem 1.5rem;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  }
-
-  .about-wrapper {
-    gap: 2rem;
-  }
-}
-
-/* --- Desktop (1101px〜) --- */
-@media (min-width: 1101px) {
-
-  main {
-    padding: 2.5rem 1rem;
-  }
-
-  section {
-    padding: 2.2rem;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  }
-
-  .about-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2.5rem;
-  }
-
-  .about-image img {
-    width: 360px;
-    border-radius: 14px;
-  }
-}
-
-/* === Footer === */
-.footer-refined {
-  background: #f0f4fa;
-  padding: 2.5rem 1rem;
-  margin-top: 3rem;
-  border-top: 1px solid rgba(0, 117, 255, 0.1);
-}
-
-.footer-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer-nav {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1.2rem;
-}
-
-.footer-nav a {
-  color: #003366;
-  font-weight: 600;
-  transition: opacity 0.2s ease;
-}
-.footer-nav a:hover {
-  opacity: 0.6;
-}
-
-.footer-sns {
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-  margin-bottom: 1.2rem;
-}
-
-.footer-sns a {
-  color: #0055aa;
-  font-weight: 600;
-}
-.footer-sns a:hover {
-  opacity: 0.6;
-}
-
-.footer-meta {
-  font-size: 0.85rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.footer-copy {
-  font-size: 0.8rem;
-  color: #777;
-  line-height: 1.5;
-}
-
-/* === Google Form Embed === */
-.form-embed {
-  width: 100%;
-  background: #ffffff;
-  padding: 1rem;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
-}
-
-/* === About Page Layout === */
-.about-wrapper {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  align-items: flex-start;
-}
-
-.about-text {
-  flex: 1.2;
-}
-
-.about-image img {
-  width: 320px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
-}
-
-/* === Buttons === */
-.more-button {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.button-link {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  background: #0055aa;
-  color: #fff;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background 0.25s ease, transform 0.25s ease;
-}
-
-.button-link:hover {
-  background: #003f88;
-  transform: translateY(-3px);
-}
-
-/* === Update Cards (Home) === */
-.updates-section {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
-}
-
-.update-card {
-  background: #f7faff;
-  border-left: 4px solid #0055aa;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.update-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.4rem;
-}
-
-.update-label {
-  font-weight: 700;
-  color: #003366;
-}
-
-.update-date {
-  font-size: 0.85rem;
-  color: #666;
-}
-
-/* === Small Utility Fixes === */
-.contact-intro {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  color: #444;
-}
-
-.career-list li {
-  margin-bottom: 0.6rem;
-}
-
-.skills-list li {
-  margin-bottom: 0.4rem;
-}
-
-/* === Mobile Footer Adjustments === */
-@media (max-width: 820px) {
-  .footer-nav {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .footer-sns {
-    gap: 1rem;
-  }
   .about-wrapper {
     flex-direction: column;
     text-align: center;
   }
+
   .about-image img {
     width: 100%;
     max-width: 320px;
     margin: 0 auto;
   }
 }
-
-
 
