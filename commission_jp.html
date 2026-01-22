@@ -3,14 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>コミッション – Kohinn</title>
+  <title>コミッション | Kohinn</title>
+
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V286NXLCKF');
+  </script>
+
+  <!-- SEO -->
+  <meta name="description" content="Kohinn（コヒン）によるキャラクターイラスト、VTuber風イラスト、オリジナルアバター制作のコミッション案内。料金、オプション、納期、支払い方法、依頼の流れ、利用規約などを掲載。">
+  <meta name="keywords" content="Kohinn, コミッション, イラスト, VTuber, キャラクター, 料金, 銀行振込, PayPal">
+
+  <!-- OGP -->
+  <meta property="og:title" content="コミッション | Kohinn">
+  <meta property="og:description" content="Kohinn（コヒン）のイラストコミッション案内。キャラクターイラスト、VTuber風、アバター制作など。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kohinn.github.io/commission_jp.html">
+  <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
+
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header class="site-header">
-  <button class="menu-toggle" onclick="toggleMenu()">
+  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
     <span></span><span></span><span></span>
   </button>
 
@@ -22,53 +44,117 @@
     <a href="contact_jp.html">Contact</a>
   </nav>
 
- <div class="language-switch">
-     <a href="commission.html">EN</a> / 
-     <a href="commission_jp.html">JP</a>
-</div>
-
+  <div class="language-switch">
+    <a href="commission.html" lang="en">EN</a> / <a href="commission_jp.html" lang="ja">JP</a>
+  </div>
 </header>
 
-<section id="commission">
-  <h2>コミッション</h2>
+<main>
 
-  <p class="contact-intro">
-    ご依頼をご検討いただきありがとうございます。<br>
-    現在の料金表とオプション内容は以下の通りです。
-  </p>
+  <!-- コミッション概要 -->
+  <section id="commission" class="fade-in">
+    <h2>コミッション</h2>
+    <div class="about-wrapper">
+      <p class="contact-intro">
+        ご依頼をご検討いただきありがとうございます。<br>
+        現在の料金表とオプション内容は以下の通りです。
+      </p>
+    </div>
+  </section>
 
-  <h3 class="section-title">基本メニュー</h3>
-  <ul class="career-list">
-    <li><strong>バストアップ</strong> — ¥5,000〜</li>
-    <li><strong>全身イラスト</strong> — ¥8,000〜</li>
-    <li><strong>オリジナルアバター</strong> — ¥10,000〜</li>
-  </ul>
+  <!-- 基本メニュー -->
+  <section class="fade-in">
+    <h2>基本メニュー</h2>
+    <div class="about-wrapper">
+      <ul class="career-list">
+        <li><strong>バストアップ</strong> — ¥5,000〜</li>
+        <li><strong>全身イラスト</strong> — ¥8,000〜</li>
+        <li><strong>オリジナルアバター</strong> — ¥10,000〜</li>
+      </ul>
+    </div>
+  </section>
 
-  <h3 class="section-title">オプション</h3>
-  <ul class="career-list">
-    <li><strong>背景</strong> — +¥3,000〜</li>
-    <li><strong>キャラクター追加</strong> — +¥3,000〜</li>
-    <li><strong>キービジュアル風イラスト</strong> — +¥5,000〜</li>
-    <li><strong>商用利用</strong> — +¥3,000〜</li>
-  </ul>
+  <!-- オプション -->
+  <section class="fade-in">
+    <h2>オプション</h2>
+    <div class="about-wrapper">
+      <ul class="career-list">
+        <li><strong>背景</strong> — +¥3,000〜</li>
+        <li><strong>キャラクター追加</strong> — +¥3,000〜</li>
+        <li><strong>キービジュアル風イラスト</strong> — +¥5,000〜</li>
+        <li><strong>商用利用</strong> — +¥3,000〜</li>
+      </ul>
+    </div>
+  </section>
 
-  <h3 class="section-title">納期の目安</h3>
-  <ul class="career-list">
-    <li>通常：1〜2週間</li>
-    <li>オプション追加時：内容により +1〜2週間</li>
-  </ul>
+  <!-- 納期 -->
+  <section class="fade-in">
+    <h2>納期の目安</h2>
+    <div class="about-wrapper">
+      <ul class="career-list">
+        <li>通常：1〜2週間</li>
+        <li>オプション追加時：内容により +1〜2週間</li>
+      </ul>
+    </div>
+  </section>
 
-  <h3 class="section-title">注意事項</h3>
-  <ul class="career-list">
-    <li>個人利用のみ（商用利用オプション選択時を除く）</li>
-    <li>NFT・AI学習目的での使用は禁止</li>
-    <li>修正回数は内容により変動します</li>
-  </ul>
+  <!-- お支払い方法 -->
+  <section class="fade-in">
+    <h2>お支払い方法</h2>
+    <div class="about-wrapper">
+      <ul class="career-list">
+        <li><strong>銀行振込（円）</strong></li>
+        <li><strong>PayPal（円）</strong> ※ご希望の方のみ</li>
+        <li>ご依頼確定後、振込先情報をお送りします。</li>
+      </ul>
+    </div>
+  </section>
 
-  <div class="more-button">
+  <!-- 銀行振込の注意事項 -->
+  <section class="fade-in">
+    <h2>銀行振込の注意事項</h2>
+    <div class="about-wrapper">
+      <ul class="career-list">
+        <li>振込手数料はご依頼者様のご負担となります。</li>
+        <li>入金確認後に制作を開始いたします。</li>
+        <li>着手前のキャンセルには柔軟に対応いたします。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 依頼の流れ -->
+  <section class="fade-in">
+    <h2>依頼の流れ</h2>
+    <div class="about-wrapper">
+      <ul class="career-list">
+        <li>① お問い合わせフォームからご連絡</li>
+        <li>② メールなどで内容確認・お見積もり</li>
+        <li>③ ご依頼確定・お支払い</li>
+        <li>④ ラフ提出・確認</li>
+        <li>⑤ 清書・納品</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 利用規約 -->
+  <section class="fade-in">
+    <h2>利用規約</h2>
+    <div class="about-wrapper">
+      <ul class="career-list">
+        <li>著作権はKohinnに帰属します（商用利用時も原則同様）。</li>
+        <li>無断転載・二次配布は禁止です。</li>
+        <li>納品物の公開タイミングは事前にご相談ください。</li>
+        <li>内容によりお断りする場合があります。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ボタン -->
+  <div class="more-button fade-in">
     <a href="contact_jp.html" class="button-link">依頼する →</a>
   </div>
-</section>
+
+</main>
 
 <footer class="footer-refined">
   <div class="footer-inner">
@@ -92,27 +178,46 @@
     <div class="footer-meta">
       <a href="#">Copyright</a>
       <a href="#">Privacy</a>
+      <a href="https://kohinn.github.io/?debug_mode=true"
+         style="opacity:0.05; font-size:10px; float:right; margin-right:10px;">
+        Debug
+      </a>
     </div>
 
     <p class="footer-copy">
-  © 2025 Kohinn. All rights reserved.<br>
-  All artworks and characters belong to their respective owners.<br>
-  Personal information submitted through the contact form will be used only for replies.
-</p>
-
+      © 2025 Kohinn. All rights reserved.<br>
+      All artworks and characters belong to their respective owners.<br>
+      お問い合わせフォームで送信された個人情報は返信のみに使用されます。
+    </p>
 
   </div>
 </footer>
 
 <script>
-function toggleMenu() {
-  document.getElementById("main-nav").classList.toggle("show");
-  document.querySelector(".menu-toggle").classList.toggle("open");
-}
+  function toggleMenu(btn) {
+    const nav = document.getElementById('main-nav');
+    const isOpen = nav.classList.toggle('show');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeEls.forEach(el => observer.observe(el));
+  });
 </script>
 
 </body>
 </html>
+
 
 
 
