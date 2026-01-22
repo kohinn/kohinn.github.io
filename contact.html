@@ -15,17 +15,17 @@
   </script>
 
   <!-- SEO -->
-  <meta name="description" content="Contact Kohinn for illustration commissions, inquiries, or collaboration requests.">
+  <meta name="description" content="Contact Kohinn for illustration commissions, inquiries, and project requests.">
   <meta name="keywords" content="Kohinn, contact, commission, illustration, inquiry">
 
   <!-- OGP -->
   <meta property="og:title" content="Contact | Kohinn">
-  <meta property="og:description" content="Get in touch with Kohinn for commissions or inquiries.">
+  <meta property="og:description" content="Contact Kohinn for illustration commissions and inquiries.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kohinn.github.io/contact.html">
   <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
 
-  <link rel="stylesheet" href="style.css?v=20251129">
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 
@@ -52,31 +52,38 @@
 <main>
 
   <!-- Contact Intro -->
-  <section id="contact" class="fade-in">
+  <section id="commission" class="fade-in">
     <h2>Contact</h2>
-
     <div class="about-wrapper">
       <p class="contact-intro">
-        Thank you for your interest in contacting me.<br>
-        Please use the form below for commissions, inquiries, or collaboration requests.
+        Thank you for your interest in contacting Kohinn.<br>
+        Please fill out the form below for commission inquiries or questions.
       </p>
     </div>
   </section>
 
-  <!-- Contact Form -->
+  <!-- Google Form -->
   <section class="fade-in">
-    <h2>Contact Form</h2>
-
+    <h2>Commission / Inquiry Form</h2>
     <div class="form-embed">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd8x0YpY8xQ0x0x0x0x0x0x0x0x0x0x0/viewform?embedded=true">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQAfD7MzV2rurPWNenGyygjBUIxhYmqPMzgMV95tGRldRuhg/viewform?embedded=true"
+              width="100%" height="1717" frameborder="0" marginheight="0" marginwidth="0">
+        Loading…
       </iframe>
     </div>
   </section>
 
-  <!-- Button -->
-  <div class="more-button fade-in">
-    <a href="commission.html" class="button-link">View Commission Page →</a>
-  </div>
+  <!-- Notes -->
+  <section class="fade-in">
+    <h2>Notes</h2>
+    <div class="about-wrapper">
+      <ul class="career-list">
+        <li>Please allow 1–3 days for a reply.</li>
+        <li>Personal information will be used only for communication.</li>
+        <li>If you do not receive a reply, please check your spam folder.</li>
+      </ul>
+    </div>
+  </section>
 
 </main>
 
@@ -125,7 +132,6 @@
     btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }
 
-  /* Fade-in animation */
   document.addEventListener('DOMContentLoaded', () => {
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
