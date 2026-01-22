@@ -20,7 +20,6 @@ body::before {
   z-index: -1;
 }
 
-
 /* ============================
    Header
 ============================ */
@@ -62,7 +61,9 @@ body::before {
   }
 }
 
-
+/* ============================
+   Language Switch
+============================ */
 .language-switch {
   position: fixed;
   top: 9px;
@@ -89,7 +90,9 @@ body::before {
   }
 }
 
-
+/* ============================
+   Hamburger
+============================ */
 .menu-toggle {
   position: fixed;
   top: 8px;
@@ -134,7 +137,9 @@ body::before {
   }
 }
 
-
+/* ============================
+   Mobile Nav
+============================ */
 #main-nav {
   position: fixed;
   top: 0;
@@ -165,6 +170,9 @@ body::before {
   text-decoration: none;
 }
 
+/* ============================
+   Section (Card)
+============================ */
 section {
   max-width: 960px;
   margin: 0 auto 1.2rem;
@@ -175,16 +183,15 @@ section {
   box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
 }
 
-
 /* コミッション見出しがヘッダーに重ならないように */
 #commission {
-  padding-top: 160px; /* ← 修正済み */
+  padding-top: 160px;
   padding-bottom: 120px;
 }
 
 /* 見出し */
 section h2 {
-  margin-bottom: 0.6rem; /* ← 詰めた */
+  margin-bottom: 0.6rem;
   font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
   font-weight: 700;
@@ -198,392 +205,8 @@ section h2 {
 }
 
 /* ============================
-   Updates Section
+   Lists
 ============================ */
-.updates-section {
-  padding: 2rem 1.5rem;
-  max-width: 860px;
-  margin: 80px auto 2rem;
-  text-align: left;
-  background: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
-}
-
-.updates-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  border-bottom: 1px solid #d0d7e6;
-  padding-bottom: 0.4rem;
-  margin-bottom: 1.5rem;
-  color: #222;
-}
-
-.update-card {
-  background: #fff;
-  padding: 1.2rem 1.4rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
-  margin-bottom: 1.2rem;
-}
-
-.update-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.6rem;
-}
-
-.update-label {
-  font-weight: 700;
-  color: #444;
-}
-
-.update-date {
-  font-size: 0.8rem;
-  color: #888;
-}
-
-.update-card p {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: #444;
-}
-
-/* ============================
-   Gallery
-============================ */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  background: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
-}
-
-.gallery img {
-  width: 100%;
-  max-width: 360px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
-  cursor: pointer;
-  display: block;
-  margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 18px rgba(0,117,255,0.35);
-}
-
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    max-width: 95vw;
-    padding: 1.2rem 0.5rem;
-  }
-}
-
-/* ============================
-   Modal
-============================ */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0,0,0,0.85);
-  z-index: 3000;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal.show {
-  display: flex;
-}
-
-.modal-content {
-  max-width: 95vw;
-  max-height: 90vh;
-  border-radius: 8px;
-  object-fit: contain;
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
-}
-
-.modal-close {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  font-size: 2.2rem;
-  color: #fff;
-  background: rgba(0,0,0,0.6);
-  border: none;
-  cursor: pointer;
-  z-index: 4000;
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-}
-
-/* ============================
-   Back to top
-============================ */
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #333;
-  color: #fff;
-  font-size: 1.4rem;
-  padding: 0.5rem 0.8rem;
-  border-radius: 50%;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  z-index: 2000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-}
-
-.back-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* ============================
-   Footer
-============================ */
-.footer-refined {
-  background: #111;
-  color: #ccc;
-  font-size: 0.8rem;
-  padding: 2.5rem 1rem;
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.footer-inner {
-  max-width: 860px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  align-items: center;
-}
-
-/* サイト内ナビゲーション */
-.footer-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.footer-nav a {
-  color: #ccc;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.85rem;
-  transition: color 0.3s ease;
-}
-
-.footer-nav a:hover {
-  color: #fff;
-}
-
-/* SNSリンク */
-.footer-sns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.footer-sns a {
-  color: #aaa;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.footer-sns a:hover {
-  color: #fff;
-}
-
-/* 著作権・ポリシーリンク */
-.footer-meta {
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-  font-size: 0.75rem;
-}
-
-.footer-meta a {
-  color: #888;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.footer-meta a:hover {
-  color: #fff;
-}
-
-/* 著作権表記 */
-.footer-copy {
-  font-size: 0.75rem;
-  color: #888;
-  line-height: 1.6;
-}
-
-/* ============================
-   SNS links
-============================ */
-.sns-links {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 1rem;
-  padding: 0.5rem 1rem;
-  white-space: nowrap;
-}
-
-.sns-links a {
-  flex: 0 0 auto;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: background 0.3s ease;
-}
-
-.sns-links a[href*="twitter"] { background: #1d9bf0; }
-.sns-links a[href*="pixiv"] { background: #0096fa; }
-.sns-links a[href*="instagram"] { background: #e1306c; }
-.sns-links a[href*="artstation"] { background: #0f4c81; }
-.sns-links a[href*="bsky.app"] { background: #0075FF; }
-
-@media (min-width: 769px) {
-  .sns-links {
-    justify-content: center;
-    overflow-x: visible;
-  }
-}
-
-/* ============================
-   About
-============================ */
-.about-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  max-width: 860px;
-  margin: 0 auto;
-  align-items: flex-start;
-  background: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
-  padding: 1.8rem 1.5rem 2rem;
-}
-
-.about-text {
-  flex: 1;
-  text-align: left;
-  line-height: 1.8;
-  font-size: 0.95rem;
-  color: #444;
-}
-
-.about-name {
-  font-weight: 700;
-  margin-bottom: 0.4rem;
-}
-
-.about-text p {
-  margin-bottom: 0.6rem;
-}
-
-.about-image {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.about-image img {
-  max-width: 280px;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.more-button {
-  margin-top: 2rem;
-  margin-bottom: 80px;
-  text-align: center;
-}
-
-/* ============================
-   Button
-============================ */
-.button-link {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  background: #0075FF;
-  color: #fff;
-  font-size: 0.95rem;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0,117,255,0.35);
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-}
-
-.button-link:hover {
-  background: #0055cc;
-  box-shadow: 0 0 16px rgba(0,117,255,0.55);
-  transform: translateY(-1px);
-}
-
-@media (min-width: 769px) {
-  .about-wrapper {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 2rem;
-  }
-
-  .about-image {
-    justify-content: flex-end;
-  }
-}
-
-/* ============================
-   Skills / Career
-============================ */
-.section-title {
-  font-size: 1rem;
-  margin-top: 1.8rem;
-  margin-bottom: 0.8rem;
-  color: #222;
-  font-weight: bold;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 0.4rem;
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 0.03em;
-}
-
 .skills-list,
 .career-list {
   list-style: none;
@@ -604,29 +227,14 @@ section h2 {
 .career-list li::before {
   content: "•";
   position: absolute;
-  left: 0.2rem; /* ← 自然な位置 */
+  left: 0.2rem;
   color: #888;
   font-size: 0.85rem;
 }
 
-
 /* ============================
-   Contact / Commission 共通
+   Form Embed
 ============================ */
-.contact-intro {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #444;
-  margin-bottom: 1rem;
-}
-
-.contact-intro .jp-note {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #666;
-}
-
 .form-embed {
   max-width: 860px;
   margin: 1rem auto;
@@ -651,15 +259,8 @@ section h2 {
   }
 }
 
-#commission {
-  padding-top: 160px; /* ← これに統一 */
-  padding-bottom: 120px;
-}
-
-
-
 /* ============================
-   Fade-in animation
+   Fade-in
 ============================ */
 .fade-in {
   opacity: 0;
@@ -670,5 +271,88 @@ section h2 {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ============================
+   Footer
+============================ */
+.footer-refined {
+  background: #111;
+  color: #ccc;
+  font-size: 0.8rem;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.footer-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+}
+
+.footer-sns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-sns a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-sns a:hover {
+  color: #fff;
+}
+
+.footer-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  font-size: 0.75rem;
+}
+
+.footer-meta a {
+  color: #888;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-meta a:hover {
+  color: #fff;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: #888;
+  line-height: 1.6;
 }
 
