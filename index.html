@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kohinn | Character Illustration & Portfolio</title>
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -25,13 +25,16 @@
   <meta property="og:url" content="https://kohinn.github.io/">
   <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
 
-  <link rel="stylesheet" href="style.css?v=20251129">
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- ▼ Hamburger menu (same structure as JP) -->
+<!-- ▼ Hamburger menu -->
 <nav id="main-nav" class="main-nav">
   <a href="index.html">Home</a>
   <a href="fanart.html">Illustration</a>
@@ -54,6 +57,7 @@
 </header>
 
 <main>
+
   <!-- Updates Section -->
   <section class="updates-section fade-in">
     <h2>Updates</h2>
@@ -80,13 +84,13 @@
     <h2>Illustration</h2>
 
     <div class="gallery">
-      <img class="thumbnail" src="img/fanart/yb2929.png" alt="Fanart illustration 1">
-      <img class="thumbnail" src="img/fanart/hinaano.png" alt="Fanart illustration 2">
-      <img class="thumbnail" src="img/fanart/0f50e10c_original.jpg" alt="Fanart illustration 3">
-      <img class="thumbnail" src="img/fanart/cd350e62_original.jpg" alt="Fanart illustration 4">
-      <img class="thumbnail" src="img/fanart/o9klpl.jpg" alt="Fanart illustration 5">
-      <img class="thumbnail" src="img/fanart/mega.png" alt="Fanart illustration 6">
-      <img class="thumbnail" src="img/fanart/melody.jpg" alt="Fanart illustration 7">
+      <img class="thumbnail" src="img/fanart/yb2929.png" alt="">
+      <img class="thumbnail" src="img/fanart/hinaano.png" alt="">
+      <img class="thumbnail" src="img/fanart/0f50e10c_original.jpg" alt="">
+      <img class="thumbnail" src="img/fanart/cd350e62_original.jpg" alt="">
+      <img class="thumbnail" src="img/fanart/o9klpl.jpg" alt="">
+      <img class="thumbnail" src="img/fanart/mega.png" alt="">
+      <img class="thumbnail" src="img/fanart/melody.jpg" alt="">
     </div>
 
     <div class="more-button">
@@ -118,7 +122,7 @@
       </div>
 
       <div class="about-image">
-        <img src="img/fanart/jibunn__3_kohinn.png" alt="Kohinn avatar illustration">
+        <img src="img/fanart/jibunn__3_kohinn.png" alt="">
       </div>
     </div>
   </section>
@@ -148,15 +152,8 @@
       <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
     </div>
 
-    <div class="footer-meta">
-      <a href="#">Copyright</a>
-      <a href="#">Privacy</a>
-    </div>
-
     <p class="footer-copy">
-      © 2025–2026 Kohinn. All rights reserved.<br>
-      All artworks and characters belong to their respective owners.<br>
-      Personal information submitted through the contact form will be used only for replies.
+      © 2025–2026 Kohinn. All rights reserved.
     </p>
 
   </div>
@@ -176,7 +173,6 @@ function toggleMenu(btn) {
   const overlay = document.getElementById('navOverlay');
   const isOpen = nav.classList.toggle('show');
   btn.classList.toggle('open', isOpen);
-  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   overlay.classList.toggle('show', isOpen);
   document.body.classList.toggle('menu-open', isOpen);
 }
@@ -186,40 +182,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalImg = document.getElementById('modal-img');
   const closeBtn = document.querySelector('.modal-close');
   const backToTop = document.getElementById('backToTop');
-  let hideTimer;
 
   document.querySelectorAll('.gallery img').forEach(img => {
     img.addEventListener('click', () => {
       modalImg.src = img.src;
       modal.classList.add('show');
-      modal.setAttribute('aria-hidden', 'false');
     });
   });
 
   closeBtn.addEventListener('click', () => {
     modal.classList.remove('show');
     modalImg.src = '';
-    modal.setAttribute('aria-hidden', 'true');
   });
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      backToTop.classList.add('show');
-      clearTimeout(hideTimer);
-      hideTimer = setTimeout(() => {
-        backToTop.classList.remove('show');
-      }, 1500);
-    } else {
-      backToTop.classList.remove('show');
-    }
+    if (window.scrollY > 200) backToTop.classList.add('show');
+    else backToTop.classList.remove('show');
   });
 
   const fadeEls = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.1 });
 
