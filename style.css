@@ -156,8 +156,7 @@ a:hover {
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(12px);
     box-shadow: -4px 0 20px rgba(0,117,255,0.15);
-    padding: 2rem 1.5rem;
-    padding-top: 5rem;
+    padding: 5rem 1.5rem 2rem; /* ← ハンバーガーが隠れないように修正 */
     flex-direction: column;
     gap: 1.2rem;
     transition: right 0.45s cubic-bezier(.25,.8,.25,1);
@@ -357,6 +356,14 @@ a:hover {
    8. Responsive Fixes
 ========================================================= */
 @media (max-width: 720px) {
+  section {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
   .about-wrapper {
     flex-direction: column;
     align-items: center;
@@ -365,6 +372,17 @@ a:hover {
 
   .about-image img {
     width: 260px;
+    margin: 0 auto;
+  }
+
+  ul {
+    margin-left: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  li {
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
   }
 }
 
