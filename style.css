@@ -13,8 +13,8 @@ html {
 
 body {
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  background: linear-gradient(135deg, #e8f0ff 0%, #f8fbff 100%);
-  color: #1a1f2b;
+  background: #f8f9fc;
+  color: #222;
   line-height: 1.7;
   font-size: 16px;
   overflow-x: hidden;
@@ -26,38 +26,32 @@ body {
 main {
   max-width: 960px;
   margin: 0 auto;
-  padding: 2.5rem 1rem;
+  padding: 2rem 1rem;
 }
 
 section {
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 18px;
-  padding: 2.2rem;
-  margin-bottom: 2.5rem;
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(0, 120, 255, 0.15);
-  box-shadow:
-    0 0 20px rgba(0, 120, 255, 0.08),
-    0 0 40px rgba(0, 120, 255, 0.05);
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 1.2rem;
-  color: #003a88;
-  text-shadow: 0 0 8px rgba(0, 120, 255, 0.25);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #003366;
 }
 
 a {
-  color: #0066dd;
+  color: #0055aa;
   text-decoration: none;
   transition: 0.25s ease;
 }
 
 a:hover {
   opacity: 0.7;
-  text-shadow: 0 0 6px rgba(0, 120, 255, 0.4);
 }
 
 /* =========================================================
@@ -67,77 +61,76 @@ a:hover {
   position: sticky;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 4px 25px rgba(0, 120, 255, 0.12);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 117, 255, 0.08);
   z-index: 1000;
-  padding: 0.7rem 1rem;
+  padding: 0.6rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(0, 120, 255, 0.15);
 }
 
 .main-nav {
   display: flex;
-  gap: 1rem;
-  font-size: 1rem;
+  gap: 0.8rem;
+  font-size: 0.95rem;
 }
 
 .main-nav a {
   font-weight: 600;
-  color: #003a88;
+  color: #003366;
   position: relative;
 }
 
 .main-nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: rgba(0, 120, 255, 0.7);
-  transition: width 0.3s ease;
+  content: "|";
+  margin: 0 0.8rem;
+  color: #999;
 }
 
-.main-nav a:hover::after {
-  width: 100%;
+.main-nav a:last-child::after {
+  content: "";
+}
+
+.main-nav a:hover {
+  opacity: 0.6;
 }
 
 .menu-toggle {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
   background: none;
   border: none;
   cursor: pointer;
 }
 
 .menu-toggle span {
-  width: 26px;
+  width: 24px;
   height: 3px;
-  background: #003a88;
+  background: #003366;
   border-radius: 3px;
-  transition: 0.35s ease;
-  box-shadow: 0 0 6px rgba(0, 120, 255, 0.4);
+  transition: 0.3s ease;
 }
 
 .menu-toggle.open span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
+
 .menu-toggle.open span:nth-child(2) {
   opacity: 0;
 }
+
 .menu-toggle.open span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .nav-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 40, 90, 0.35);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease;
@@ -160,15 +153,14 @@ a:hover {
     right: -260px;
     width: 240px;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(18px);
-    box-shadow: -4px 0 25px rgba(0, 120, 255, 0.25);
-    padding: 2.5rem 1.5rem;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: -4px 0 20px rgba(0,117,255,0.15);
+    padding: 2rem 1.5rem;
     flex-direction: column;
-    gap: 1.4rem;
+    gap: 1.2rem;
     transition: right 0.45s cubic-bezier(.25,.8,.25,1);
     z-index: 1000;
-    border-left: 1px solid rgba(0, 120, 255, 0.2);
   }
 
   .main-nav.show {
@@ -177,7 +169,7 @@ a:hover {
 
   .main-nav a {
     opacity: 0;
-    transform: translateX(12px);
+    transform: translateX(10px);
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
@@ -199,25 +191,22 @@ a:hover {
 .about-wrapper {
   display: flex;
   justify-content: space-between;
-  gap: 2.5rem;
+  gap: 2rem;
   align-items: flex-start;
 }
 
 .about-image img {
   width: 320px;
-  border-radius: 16px;
-  box-shadow:
-    0 0 20px rgba(0, 120, 255, 0.25),
-    0 0 40px rgba(0, 120, 255, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
 }
 
 .update-card {
-  background: rgba(240, 248, 255, 0.7);
-  border-left: 4px solid #0077ff;
-  padding: 1.2rem;
-  border-radius: 10px;
-  margin-bottom: 1.2rem;
-  backdrop-filter: blur(8px);
+  background: #f7faff;
+  border-left: 4px solid #0055aa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
 /* =========================================================
@@ -228,34 +217,29 @@ a:hover {
   margin: 1.5rem auto 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.4rem;
-  padding: 1.2rem;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  box-shadow:
-    0 0 20px rgba(0, 120, 255, 0.1),
-    0 0 40px rgba(0, 120, 255, 0.05);
+  gap: 1.2rem;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
 }
 
 .thumbnail {
   width: 100%;
-  border-radius: 14px;
+  border-radius: 12px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .thumbnail:hover {
   transform: translateY(-4px);
-  box-shadow:
-    0 0 20px rgba(0, 120, 255, 0.25),
-    0 0 40px rgba(0, 120, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.15);
 }
 
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 20, 60, 0.65);
-  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
@@ -271,16 +255,15 @@ a:hover {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: #0077ff;
+  background: #0055aa;
   color: #fff;
-  padding: 0.7rem 0.9rem;
+  padding: 0.6rem 0.8rem;
   border-radius: 50%;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s ease;
   z-index: 1500;
-  box-shadow: 0 0 12px rgba(0, 120, 255, 0.4);
 }
 
 .back-to-top.show {
@@ -293,11 +276,10 @@ a:hover {
    5. Footer
 ========================================================= */
 .footer-refined {
-  background: rgba(230, 240, 255, 0.7);
+  background: #f0f4fa;
   padding: 2.5rem 1rem;
   margin-top: 3rem;
-  border-top: 1px solid rgba(0, 120, 255, 0.15);
-  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 117, 255, 0.1);
 }
 
 .footer-inner {
@@ -357,17 +339,17 @@ a:hover {
 .button-link {
   display: inline-block;
   padding: 0.8rem 1.4rem;
-  background: linear-gradient(135deg, #0077ff, #00aaff);
+  background: #0055aa;
   color: #fff;
   border-radius: 10px;
   font-weight: 600;
-  box-shadow: 0 0 12px rgba(0, 120, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 117, 255, 0.25);
   transition: 0.3s ease;
 }
 
 .button-link:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 18px rgba(0, 120, 255, 0.6);
+  box-shadow: 0 8px 24px rgba(0, 117, 255, 0.35);
 }
 
 /* =========================================================
