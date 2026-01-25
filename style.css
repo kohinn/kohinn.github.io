@@ -157,6 +157,7 @@ a:hover {
     backdrop-filter: blur(12px);
     box-shadow: -4px 0 20px rgba(0,117,255,0.15);
     padding: 2rem 1.5rem;
+    padding-top: 5rem;
     flex-direction: column;
     gap: 1.2rem;
     transition: right 0.45s cubic-bezier(.25,.8,.25,1);
