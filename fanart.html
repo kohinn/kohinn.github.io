@@ -31,18 +31,22 @@
 
 <body>
 
+<!-- ▼ Hamburger menu (moved outside header) -->
+<nav id="main-nav" class="main-nav">
+  <a href="index.html">Home</a>
+  <a href="fanart.html">Illustration</a>
+  <a href="about.html">About</a>
+  <a href="commission.html">Commission</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<!-- ▲ -->
+
 <header class="site-header">
   <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
     <span></span><span></span><span></span>
   </button>
-
-  <nav id="main-nav" class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="fanart.html">Illustration</a>
-    <a href="about.html">About</a>
-    <a href="commission.html">Commission</a>
-    <a href="contact.html">Contact</a>
-  </nav>
 
   <div class="language-switch">
     <a href="fanart.html" lang="en">EN</a> / <a href="fanart_jp.html" lang="ja">JP</a>
@@ -135,61 +139,61 @@
 <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
 
 <script>
-  function toggleMenu(btn) {
-    const nav = document.getElementById('main-nav');
-    const isOpen = nav.classList.toggle('show');
-    btn.classList.toggle('open', isOpen);
-    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  }
+function toggleMenu(btn) {
+  const nav = document.getElementById('main-nav');
+  const overlay = document.getElementById('navOverlay');
+  const isOpen = nav.classList.toggle('show');
+  btn.classList.toggle('open', isOpen);
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  overlay.classList.toggle('show', isOpen);
+  document.body.classList.toggle('menu-open', isOpen);
+}
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    const closeBtn = document.querySelector('.modal-close');
-    const backToTop = document.getElementById('backToTop');
-    let hideTimer;
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const closeBtn = document.querySelector('.modal-close');
+  const backToTop = document.getElementById('backToTop');
+  let hideTimer;
 
-    document.querySelectorAll('.gallery img').forEach(img => {
-      img.addEventListener('click', () => {
-        modalImg.src = img.src;
-        modal.classList.add('show');
-        modal.setAttribute('aria-hidden', 'false');
-      });
+  document.querySelectorAll('.gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      modalImg.src = img.src;
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
     });
+  });
 
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('show');
-      modalImg.src = '';
-      modal.setAttribute('aria-hidden', 'true');
-    });
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('show');
+    modalImg.src = '';
+    modal.setAttribute('aria-hidden', 'true');
+  });
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 200) {
-        backToTop.classList.add('show');
-        clearTimeout(hideTimer);
-        hideTimer = setTimeout(() => {
-          backToTop.classList.remove('show');
-        }, 1500);
-      } else {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTop.classList.add('show');
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => {
         backToTop.classList.remove('show');
+      }, 1500);
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
       }
     });
+  }, { threshold: 0.1 });
 
-    /* Fade-in animation */
-    const fadeEls = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    fadeEls.forEach(el => observer.observe(el));
-  });
+  fadeEls.forEach(el => observer.observe(el));
+});
 </script>
 
 </body>
 </html>
-
-
