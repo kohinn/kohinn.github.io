@@ -12,7 +12,8 @@ html {
 }
 
 body {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+  font-weight: 400;
   background: #f8f9fc;
   color: #222;
   line-height: 1.7;
@@ -21,7 +22,7 @@ body {
 }
 
 /* =========================================================
-   1. Layout / Typography / Colors
+   1. Layout / Typography
 ========================================================= */
 main {
   max-width: 960px;
@@ -55,7 +56,24 @@ a:hover {
 }
 
 /* =========================================================
-   2. Header / Navigation / Hamburger
+   2. Hero Visual (魔法科風)
+========================================================= */
+.hero-section {
+  margin-bottom: 2rem;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
+}
+
+.hero-visual {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* =========================================================
+   3. Header / Navigation / Hamburger
 ========================================================= */
 .site-header {
   position: sticky;
@@ -80,7 +98,6 @@ a:hover {
 .main-nav a {
   font-weight: 600;
   color: #003366;
-  position: relative;
 }
 
 .main-nav a::after {
@@ -91,10 +108,6 @@ a:hover {
 
 .main-nav a:last-child::after {
   content: "";
-}
-
-.main-nav a:hover {
-  opacity: 0.6;
 }
 
 .menu-toggle {
@@ -156,7 +169,7 @@ a:hover {
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(12px);
     box-shadow: -4px 0 20px rgba(0,117,255,0.15);
-    padding: 5rem 1.5rem 2rem; /* ← ハンバーガーが隠れないように修正 */
+    padding: 5rem 1.5rem 2rem;
     flex-direction: column;
     gap: 1.2rem;
     transition: right 0.45s cubic-bezier(.25,.8,.25,1);
@@ -177,16 +190,10 @@ a:hover {
     opacity: 1;
     transform: translateX(0);
   }
-
-  .main-nav.show a:nth-child(1) { transition-delay: 0.05s; }
-  .main-nav.show a:nth-child(2) { transition-delay: 0.10s; }
-  .main-nav.show a:nth-child(3) { transition-delay: 0.15s; }
-  .main-nav.show a:nth-child(4) { transition-delay: 0.20s; }
-  .main-nav.show a:nth-child(5) { transition-delay: 0.25s; }
 }
 
 /* =========================================================
-   3. About / Cards / Updates
+   4. About Page Fixes
 ========================================================= */
 .about-wrapper {
   display: flex;
@@ -201,25 +208,15 @@ a:hover {
   box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
 }
 
-.update-card {
-  background: #f7faff;
-  border-left: 4px solid #0055aa;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
 /* =========================================================
-   4. Gallery / Modal / Back-to-top
+   5. Gallery (fanart)
 ========================================================= */
 .gallery {
-  max-width: 960px;
-  margin: 1.5rem auto 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
   padding: 1rem;
-  background: #ffffff;
+  background: #fff;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
 }
@@ -227,96 +224,13 @@ a:hover {
 .thumbnail {
   width: 100%;
   border-radius: 12px;
+  object-fit: cover;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .thumbnail:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(0, 117, 255, 0.15);
-}
-
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  backdrop-filter: blur(6px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-  z-index: 2000;
-}
-
-.modal.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.back-to-top {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background: #0055aa;
-  color: #fff;
-  padding: 0.6rem 0.8rem;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  z-index: 1500;
-}
-
-.back-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(-4px);
-}
-
-/* =========================================================
-   5. Footer
-========================================================= */
-.footer-refined {
-  background: #f0f4fa;
-  padding: 2.5rem 1rem;
-  margin-top: 3rem;
-  border-top: 1px solid rgba(0, 117, 255, 0.1);
-}
-
-.footer-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer-nav,
-.footer-sns,
-.footer-meta {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.footer-nav a::after,
-.footer-sns a::after,
-.footer-meta a::after {
-  content: "|";
-  margin: 0 0.6rem;
-  color: #999;
-}
-
-.footer-nav a:last-child::after,
-.footer-sns a:last-child::after,
-.footer-meta a:last-child::after {
-  content: "";
-}
-
-.footer-copy {
-  font-size: 0.85rem;
-  color: #334;
-  opacity: 0.8;
 }
 
 /* =========================================================
@@ -364,6 +278,16 @@ a:hover {
     font-size: 1.5rem;
   }
 
+  ul {
+    margin-left: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  li {
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+  }
+
   .about-wrapper {
     flex-direction: column;
     align-items: center;
@@ -373,16 +297,6 @@ a:hover {
   .about-image img {
     width: 260px;
     margin: 0 auto;
-  }
-
-  ul {
-    margin-left: 1.2rem;
-    margin-bottom: 1rem;
-  }
-
-  li {
-    margin-bottom: 0.6rem;
-    line-height: 1.6;
   }
 }
 
