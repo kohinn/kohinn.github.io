@@ -408,4 +408,74 @@ a:hover {
     margin: 0 auto;
   }
 }
+/* ===== About Section Refinement (Improved Readability) ===== */
+
+#about {
+  padding: 3rem 2rem;
+}
+
+.about-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 3rem;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 520px;
+  line-height: 1.85; /* 行間を広げる */
+  font-size: 1rem;
+}
+
+.about-text p {
+  margin-bottom: 1rem; /* 段落の余白 */
+}
+
+.about-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.section-title {
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #003366;
+}
+
+.skills-list li,
+.career-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+}
+
+.about-image img {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 720px) {
+  #about {
+    padding: 2rem 1.2rem;
+  }
+
+  .about-text {
+    max-width: 100%;
+    text-align: left; /* スマホでも読みやすく */
+    line-height: 1.8;
+  }
+
+  .about-text p {
+    margin-bottom: 0.9rem;
+  }
+
+  .about-image img {
+    width: 260px;
+    margin: 0 auto;
+  }
+}
 
