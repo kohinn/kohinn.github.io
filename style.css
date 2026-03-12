@@ -508,11 +508,20 @@ a:hover {
 }
 
 /* =========================================================
-   Commission Page Styling
+   Commission Page Styling (Override)
 ========================================================= */
 
-#commission h2,
-section h2 {
+/* Commission ページ専用のセクション装飾 */
+body.commission-page section {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* 見出し（commission 専用） */
+body.commission-page section h2 {
   font-size: 1.6rem;
   margin-bottom: 1rem;
   color: #003366;
@@ -520,13 +529,14 @@ section h2 {
   padding-left: 10px;
 }
 
-.career-list {
+/* リスト（commission 専用） */
+body.commission-page .career-list {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
 
-.career-list li {
+body.commission-page .career-list li {
   background: #f7faff;
   border-left: 4px solid #0055aa;
   padding: 0.8rem 1rem;
@@ -536,12 +546,13 @@ section h2 {
   box-shadow: 0 4px 12px rgba(0, 117, 255, 0.08);
 }
 
-.career-list strong {
+body.commission-page .career-list strong {
   color: #003366;
   font-weight: 600;
 }
 
-.more-button {
+/* ボタン位置調整 */
+body.commission-page .more-button {
   text-align: center;
   margin-top: 2rem;
 }
