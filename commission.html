@@ -30,7 +30,7 @@
 
 </head>
 
-<body>
+<body class="commission-page">
 
 <!-- ▼ Hamburger menu -->
 <nav id="main-nav" class="main-nav">
@@ -72,9 +72,9 @@
     <h2>Base Menu</h2>
     <div class="about-wrapper">
       <ul class="career-list">
-        <li><strong>Bust-up</strong> — $40+</li>
-        <li><strong>Full-body</strong> — $65+</li>
-        <li><strong>Original Avatar</strong> — $80+</li>
+        <li><strong>Bust-up</strong> — $50–$70</li>
+        <li><strong>Full-body</strong> — $80–$120</li>
+        <li><strong>Original Avatar</strong> — $100–$150</li>
       </ul>
     </div>
   </section>
@@ -84,10 +84,9 @@
     <h2>Options</h2>
     <div class="about-wrapper">
       <ul class="career-list">
-        <li><strong>Background</strong> — +$20+</li>
-        <li><strong>Additional character</strong> — +$20+</li>
-        <li><strong>Key visual style illustration</strong> — +$35+</li>
-        <li><strong>Commercial use</strong> — +$20+</li>
+        <li><strong>Background</strong> — +$35–$55</li>
+        <li><strong>Additional Character</strong> — +$40–$60</li>
+        <li><strong>Commercial Use</strong> — +$60–$100</li>
       </ul>
     </div>
   </section>
@@ -97,7 +96,8 @@
     <h2>Delivery Time</h2>
     <div class="about-wrapper">
       <ul class="career-list">
-        <li>Standard: 1–2 weeks</li>
+        <li>Fastest: <strong>1 week (sketch)</strong></li>
+        <li>Standard: <strong>2–3 weeks</strong></li>
         <li>With options: +1–2 weeks depending on complexity</li>
       </ul>
     </div>
@@ -133,7 +133,7 @@
     <h2>Terms of Use</h2>
     <div class="about-wrapper">
       <ul class="career-list">
-        <li>Copyright remains with Kohinn (even for commercial use).</li>
+        <li>Copyright remains with Kohinn.</li>
         <li>Reposting or redistribution is prohibited.</li>
         <li>Please consult before publishing the final work.</li>
         <li>Requests may be declined depending on content.</li>
@@ -167,15 +167,8 @@
       <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
     </div>
 
-    <div class="footer-meta">
-      <a href="#">Copyright</a>
-      <a href="#">Privacy</a>
-    </div>
-
     <p class="footer-copy">
-      © 2025–2026 Kohinn. All rights reserved.<br>
-      All artworks and characters belong to their respective owners.<br>
-      Personal information submitted through the contact form will be used only for replies.
+      © 2025–2026 Kohinn. All rights reserved.
     </p>
 
   </div>
@@ -187,7 +180,6 @@ function toggleMenu(btn) {
   const overlay = document.getElementById('navOverlay');
   const isOpen = nav.classList.toggle('show');
   btn.classList.toggle('open', isOpen);
-  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   overlay.classList.toggle('show', isOpen);
   document.body.classList.toggle('menu-open', isOpen);
 }
@@ -208,3 +200,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
