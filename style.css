@@ -72,6 +72,7 @@ a:hover {
   align-items: center;
 }
 
+/* ▼ PC nav */
 .main-nav {
   display: flex;
   gap: 0.8rem;
@@ -93,6 +94,7 @@ a:hover {
   content: "";
 }
 
+/* ▼ Hamburger button */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -107,7 +109,7 @@ a:hover {
   height: 3px;
   background: #003366;
   border-radius: 3px;
-  transition: 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .menu-toggle.open span:nth-child(1) {
@@ -122,22 +124,25 @@ a:hover {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* ▼ Overlay */
 .nav-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0);
   backdrop-filter: blur(4px);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.35s ease, background 0.35s ease;
   z-index: 900;
 }
 
 .nav-overlay.show {
   opacity: 1;
+  background: rgba(0,0,0,0.35);
   pointer-events: auto;
 }
 
+/* ▼ Mobile nav (ぬるぬるスライド式に変更) */
 @media (max-width: 820px) {
   .menu-toggle {
     display: flex;
@@ -146,21 +151,25 @@ a:hover {
   .main-nav {
     position: fixed;
     top: 0;
-    right: -260px;
+    left: 0;
     width: 240px;
     height: 100vh;
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(12px);
-    box-shadow: -4px 0 20px rgba(0,117,255,0.15);
+    box-shadow: 4px 0 20px rgba(0,117,255,0.15);
     padding: 5rem 1.5rem 2rem;
     flex-direction: column;
     gap: 1.2rem;
-    transition: right 0.45s cubic-bezier(.25,.8,.25,1);
+
+    /* ▼ transform スライド方式（魔法科風） */
+    transform: translateX(-100%);
+    transition: transform 0.45s cubic-bezier(.25,.8,.25,1);
+
     z-index: 1000;
   }
 
   .main-nav.show {
-    right: 0;
+    transform: translateX(0);
   }
 
   .main-nav a {
@@ -207,7 +216,7 @@ a:hover {
 ========================================================= */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
   padding: 1rem;
   background: #fff;
@@ -225,6 +234,20 @@ a:hover {
 .thumbnail:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(0, 117, 255, 0.15);
+}
+
+/* ▼ スマホで ixy 先生風 2列グリッド */
+@media (max-width: 720px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0.5rem;
+  }
+
+  .thumbnail {
+    border-radius: 10px;
+    object-fit: cover;
+  }
 }
 
 /* =========================================================
@@ -408,8 +431,8 @@ a:hover {
     margin: 0 auto;
   }
 }
-/* ===== About Section Refinement (Improved Readability) ===== */
 
+/* ===== About Section Refinement ===== */
 #about {
   padding: 3rem 2rem;
 }
@@ -423,12 +446,12 @@ a:hover {
 .about-text {
   flex: 1;
   max-width: 520px;
-  line-height: 1.85; /* 行間を広げる */
+  line-height: 1.85;
   font-size: 1rem;
 }
 
 .about-text p {
-  margin-bottom: 1rem; /* 段落の余白 */
+  margin-bottom: 1rem;
 }
 
 .about-name {
@@ -465,7 +488,7 @@ a:hover {
 
   .about-text {
     max-width: 100%;
-    text-align: left; /* スマホでも読みやすく */
+    text-align: left;
     line-height: 1.8;
   }
 
@@ -478,4 +501,3 @@ a:hover {
     margin: 0 auto;
   }
 }
-
