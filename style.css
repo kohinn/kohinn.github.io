@@ -506,3 +506,42 @@ a:hover {
   color: #fff;
   border-color: #0055aa;
 }
+
+/* =========================================================
+   Commission Page Styling
+========================================================= */
+
+#commission h2,
+section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #003366;
+  border-left: 4px solid #0055aa;
+  padding-left: 10px;
+}
+
+.career-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.career-list li {
+  background: #f7faff;
+  border-left: 4px solid #0055aa;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+  box-shadow: 0 4px 12px rgba(0, 117, 255, 0.08);
+}
+
+.career-list strong {
+  color: #003366;
+  font-weight: 600;
+}
+
+.more-button {
+  text-align: center;
+  margin-top: 2rem;
+}
