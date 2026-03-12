@@ -32,7 +32,7 @@
 
 <body>
 
-<!-- ▼ Hamburger menu (moved outside header) -->
+<!-- ▼ Hamburger menu -->
 <nav id="main-nav" class="main-nav">
   <a href="index.html">Home</a>
   <a href="fanart.html">Illustration</a>
@@ -56,41 +56,38 @@
 
 <main>
 
-  <!-- Main Illustration Section -->
+  <!-- Unified Illustration Section -->
   <section id="fanart" class="fade-in">
     <h2>Illustration</h2>
-    <p>Here are some of my recent works.</p>
-  </section>
 
-  <!-- VTuber Style Section -->
-  <section id="vtuber" class="fade-in">
-    <h2>VTuber Style</h2>
-    <div class="gallery">
-      <img class="thumbnail" src="img/fanart/イラスト1_8dslll.png" alt="VTuber-style illustration 8">
-      <img class="thumbnail" src="img/fanart/yb2929.png" alt="VTuber-style illustration 1">
-      <img class="thumbnail" src="img/fanart/hinaano.png" alt="VTuber-style illustration 2">
-      <img class="thumbnail" src="img/fanart/0f50e10c_original.jpg" alt="VTuber-style illustration 3">
-      <img class="thumbnail" src="img/fanart/cd350e62_original.jpg" alt="VTuber-style illustration 4">
-      <img class="thumbnail" src="img/fanart/o9klpl.jpg" alt="VTuber-style illustration 5">
-      <img class="thumbnail" src="img/fanart/mega.png" alt="VTuber-style illustration 6">
-      <img class="thumbnail" src="img/fanart/melody.jpg" alt="VTuber-style illustration 7">
+    <!-- ▼ Category Filter Buttons -->
+    <div class="filter-buttons">
+      <button data-filter="all" class="active">#All</button>
+      <button data-filter="anime">#Anime</button>
+      <button data-filter="vtuber">#VTuber</button>
+      <button data-filter="original">#Original</button>
     </div>
-  </section>
 
-  <!-- Anime Style Section -->
-  <section id="anime" class="fade-in">
-    <h2>Anime Style</h2>
+    <!-- ▼ Unified Gallery -->
     <div class="gallery">
-      <img class="thumbnail" src="img/fanart/miyuki29.jpg " alt="VTuber-style illustration 9">
-      <img class="thumbnail" src="img/fanart/siba_brlkj.png " alt="VTuber-style illustration 10">
-    </div>
-  </section>
 
-    <!-- Original Avatar Section -->
-  <section id="avatar" class="fade-in">
-    <h2>Original Avatars</h2>
-    <div class="gallery">
-      <img class="thumbnail" src="img/fanart/jibunn__kl.png" alt="Original avatar illustration">
+      <!-- VTuber -->
+      <img class="thumbnail" src="img/fanart/イラスト1_8dslll.png" data-category="vtuber">
+      <img class="thumbnail" src="img/fanart/yb2929.png" data-category="vtuber">
+      <img class="thumbnail" src="img/fanart/hinaano.png" data-category="vtuber">
+      <img class="thumbnail" src="img/fanart/0f50e10c_original.jpg" data-category="vtuber">
+      <img class="thumbnail" src="img/fanart/cd350e62_original.jpg" data-category="vtuber">
+      <img class="thumbnail" src="img/fanart/o9klpl.jpg" data-category="vtuber">
+      <img class="thumbnail" src="img/fanart/mega.png" data-category="vtuber">
+      <img class="thumbnail" src="img/fanart/melody.jpg" data-category="vtuber">
+
+      <!-- Anime -->
+      <img class="thumbnail" src="img/fanart/miyuki29.jpg" data-category="anime">
+      <img class="thumbnail" src="img/fanart/siba_brlkj.png" data-category="anime">
+
+      <!-- Original -->
+      <img class="thumbnail" src="img/fanart/jibunn__kl.png" data-category="original">
+
     </div>
   </section>
 
@@ -119,15 +116,8 @@
       <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
     </div>
 
-    <div class="footer-meta">
-      <a href="#">Copyright</a>
-      <a href="#">Privacy</a>
-    </div>
-
     <p class="footer-copy">
-      © 2025–2026 Kohinn. All rights reserved.<br>
-      All artworks and characters belong to their respective owners.<br>
-      Personal information submitted through the contact form will be used only for replies.
+      © 2025–2026 Kohinn. All rights reserved.
     </p>
 
   </div>
@@ -157,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalImg = document.getElementById('modal-img');
   const closeBtn = document.querySelector('.modal-close');
   const backToTop = document.getElementById('backToTop');
-  let hideTimer;
 
   document.querySelectorAll('.gallery img').forEach(img => {
     img.addEventListener('click', () => {
@@ -173,30 +162,27 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.setAttribute('aria-hidden', 'true');
   });
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      backToTop.classList.add('show');
-      clearTimeout(hideTimer);
-      hideTimer = setTimeout(() => {
-        backToTop.classList.remove('show');
-      }, 1500);
-    } else {
-      backToTop.classList.remove('show');
-    }
+  // ===== Gallery Filter =====
+  document.querySelectorAll('.filter-buttons button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+
+      document.querySelectorAll('.filter-buttons button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('.thumbnail').forEach(img => {
+        const category = img.dataset.category;
+        img.style.display =
+          filter === 'all' || category === filter
+            ? 'block'
+            : 'none';
+      });
+    });
   });
 
-  const fadeEls = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  fadeEls.forEach(el => observer.observe(el));
 });
 </script>
 
 </body>
 </html>
+
