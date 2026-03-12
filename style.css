@@ -25,7 +25,7 @@ body {
    1. Layout / Typography
 ========================================================= */
 main {
-  max-width: 960px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
@@ -193,23 +193,21 @@ a:hover {
 }
 
 /* =========================================================
-   4. Gallery (fanart) — PC4枚 / スマホ2枚（縦長）
+   4. Gallery (fanart) — PC4枚 / スマホ2枚（できるだけ大きく）
 ========================================================= */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* ← PCは4枚固定 */
-  gap: 24px;
-  padding: 1.5rem 2rem;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* ← PCは4枚固定 */
+  gap: 28px; /* ← 間隔少し広め */
+  padding: 1.5rem 0; /* ← 左右の余白は section に任せて、画像を広く */
+  background: transparent; /* ← section が白背景なのでここは透明でOK */
 }
 
 .thumbnail {
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
-  aspect-ratio: 3 / 4; /* ← 縦長で見やすい（Ixy先生に近い） */
+  aspect-ratio: 3 / 4; /* ← 縦長で“でかく見える”比率 */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -218,19 +216,20 @@ a:hover {
   box-shadow: 0 10px 30px rgba(0, 117, 255, 0.15);
 }
 
-/* スマホ版（横2枚・縦長） */
+/* ▼ スマホ版：横2枚・できるだけ大きく見せる */
 @media (max-width: 720px) {
   .gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 1.2rem 1.6rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2列固定 */
+    gap: 16px; /* 間隔は少しだけ */
+    padding: 0.8rem 0; /* 左右の余白を削って画像に幅を渡す */
   }
 
   .thumbnail {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 3 / 4; /* 縦長で“カード感”を出す */
     border-radius: 12px;
   }
 }
+
 
 /* =========================================================
    5. About Section
