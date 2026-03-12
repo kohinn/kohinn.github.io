@@ -511,7 +511,6 @@ a:hover {
    Commission Page Styling (Override)
 ========================================================= */
 
-/* Commission ページ専用のセクション装飾 */
 body.commission-page section {
   background: #fff;
   border-radius: 14px;
@@ -520,7 +519,6 @@ body.commission-page section {
   margin-bottom: 2rem;
 }
 
-/* 見出し（commission 専用） */
 body.commission-page section h2 {
   font-size: 1.6rem;
   margin-bottom: 1rem;
@@ -529,7 +527,6 @@ body.commission-page section h2 {
   padding-left: 10px;
 }
 
-/* リスト（commission 専用） */
 body.commission-page .career-list {
   list-style: none;
   padding-left: 0;
@@ -551,7 +548,6 @@ body.commission-page .career-list strong {
   font-weight: 600;
 }
 
-/* ボタン位置調整 */
 body.commission-page .more-button {
   text-align: center;
   margin-top: 2rem;
