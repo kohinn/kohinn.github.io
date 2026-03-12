@@ -193,13 +193,13 @@ a:hover {
 }
 
 /* =========================================================
-   4. Gallery (fanart) — Ixy先生風に最適化
+   4. Gallery (fanart) — PC4枚 / スマホ2枚（縦長）
 ========================================================= */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* ← 画像を大きくする */
-  gap: 24px; /* ← 間隔を広げる */
-  padding: 1.5rem 2rem; /* ← 左右余白を広げる */
+  grid-template-columns: repeat(4, 1fr); /* ← PCは4枚固定 */
+  gap: 24px;
+  padding: 1.5rem 2rem;
   background: #fff;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
@@ -209,7 +209,7 @@ a:hover {
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
-  aspect-ratio: 1 / 1.25; /* ← Ixy先生と同じ比率 */
+  aspect-ratio: 3 / 4; /* ← 縦長で見やすい（Ixy先生に近い） */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -218,7 +218,7 @@ a:hover {
   box-shadow: 0 10px 30px rgba(0, 117, 255, 0.15);
 }
 
-/* スマホ版（Ixy先生風） */
+/* スマホ版（横2枚・縦長） */
 @media (max-width: 720px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -227,8 +227,8 @@ a:hover {
   }
 
   .thumbnail {
+    aspect-ratio: 3 / 4;
     border-radius: 12px;
-    aspect-ratio: 1 / 1.25;
   }
 }
 
