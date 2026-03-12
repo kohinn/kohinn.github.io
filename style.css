@@ -501,3 +501,29 @@ a:hover {
     margin: 0 auto;
   }
 }
+
+/* ===== Category Filter Buttons ===== */
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+
+.filter-buttons button {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccd5e0;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #003366;
+  transition: 0.25s ease;
+}
+
+.filter-buttons button.active {
+  background: #0055aa;
+  color: #fff;
+  border-color: #0055aa;
+}
+
