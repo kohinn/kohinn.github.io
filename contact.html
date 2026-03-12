@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>お問い合わせ | Kohinn</title>
+  <title>Contact | Kohinn</title>
 
   <!-- Google tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
@@ -15,14 +15,14 @@
   </script>
 
   <!-- SEO -->
-  <meta name="description" content="Kohinn（コヒン）へのお問い合わせページ。コミッション依頼、質問、相談はこちらから。">
-  <meta name="keywords" content="Kohinn, コミッション, お問い合わせ, イラスト依頼, フォーム">
+  <meta name="description" content="Contact Kohinn for illustration commissions, inquiries, and project requests.">
+  <meta name="keywords" content="Kohinn, contact, commission, illustration, inquiry">
 
   <!-- OGP -->
-  <meta property="og:title" content="お問い合わせ | Kohinn">
-  <meta property="og:description" content="Kohinn（コヒン）へのコミッション依頼・お問い合わせはこちら。">
+  <meta property="og:title" content="Contact | Kohinn">
+  <meta property="og:description" content="Contact Kohinn for illustration commissions and inquiries.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kohinn.github.io/contact_jp.html">
+  <meta property="og:url" content="https://kohinn.github.io/contact.html">
   <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
 
   <link rel="stylesheet" href="style.css?v=20251129">
@@ -32,13 +32,13 @@
 
 <body>
 
-<!-- ▼ ハンバーガーメニュー（headerの外へ移動） -->
+<!-- ▼ Hamburger menu -->
 <nav id="main-nav" class="main-nav">
-  <a href="index_jp.html">Home</a>
-  <a href="fanart_jp.html">Illustration</a>
-  <a href="about_jp.html">About</a>
-  <a href="commission_jp.html">Commission</a>
-  <a href="contact_jp.html">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="fanart.html">Illustration</a>
+  <a href="about.html">About</a>
+  <a href="commission.html">Commission</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
 <div class="nav-overlay" id="navOverlay"></div>
@@ -57,35 +57,35 @@
 <main>
 
   <!-- Intro -->
-  <section id="commission" class="fade-in">
-    <h2>お問い合わせ</h2>
+  <section id="contact" class="fade-in">
+    <h2>Contact</h2>
     <div class="about-wrapper">
       <p class="contact-intro">
-        コミッションのご依頼、質問、相談などは<br>
-        下記フォームよりお気軽にご連絡ください。
+        For commission inquiries, questions, or project requests,<br>
+        please feel free to contact me using the form below.
       </p>
     </div>
   </section>
 
   <!-- Google Form -->
   <section class="fade-in">
-    <h2>お問い合わせフォーム</h2>
+    <h2>Commission / Inquiry Form</h2>
     <div class="form-embed">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQ0Fs0j9THjt8jAUCnos_mY86-V036Ye3A1SkIiVkhAm8bTA/viewform?embedded=true"
-              width="100%" height="1536" frameborder="0" marginheight="0" marginwidth="0">
-        読み込んでいます…
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQAfD7MzV2rurPWNenGyygjBUIxhYmqPMzgMV95tGRldRuhg/viewform?embedded=true"
+              width="100%" height="1718" frameborder="0" marginheight="0" marginwidth="0">
+        Loading…
       </iframe>
     </div>
   </section>
 
   <!-- Notes -->
   <section class="fade-in">
-    <h2>注意事項</h2>
+    <h2>Notes</h2>
     <div class="about-wrapper">
       <ul class="career-list">
-        <li>返信には通常 1〜3 日ほどいただきます。</li>
-        <li>迷惑メールフォルダに入る場合があります。</li>
-        <li>送信された個人情報は返信のみに使用します。</li>
+        <li>Replies usually take 1–3 days.</li>
+        <li>Please check your spam folder if you do not receive a reply.</li>
+        <li>Your personal information will only be used for communication.</li>
       </ul>
     </div>
   </section>
@@ -96,11 +96,11 @@
   <div class="footer-inner">
 
     <nav class="footer-nav">
-      <a href="index_jp.html">Home</a>
-      <a href="fanart_jp.html">Illustration</a>
-      <a href="about_jp.html">About</a>
-      <a href="commission_jp.html">Commission</a>
-      <a href="contact_jp.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="fanart.html">Illustration</a>
+      <a href="about.html">About</a>
+      <a href="commission.html">Commission</a>
+      <a href="contact.html">Contact</a>
     </nav>
 
     <div class="footer-sns">
@@ -111,15 +111,8 @@
       <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
     </div>
 
-    <div class="footer-meta">
-      <a href="#">Copyright</a>
-      <a href="#">Privacy</a>
-    </div>
-
     <p class="footer-copy">
-      © 2025–2026 Kohinn. All rights reserved.<br>
-      All artworks and characters belong to their respective owners.<br>
-      Personal information submitted through the contact form will be used only for replies.
+      © 2025–2026 Kohinn. All rights reserved.
     </p>
 
   </div>
@@ -131,7 +124,6 @@ function toggleMenu(btn) {
   const overlay = document.getElementById('navOverlay');
   const isOpen = nav.classList.toggle('show');
   btn.classList.toggle('open', isOpen);
-  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   overlay.classList.toggle('show', isOpen);
   document.body.classList.toggle('menu-open', isOpen);
 }
