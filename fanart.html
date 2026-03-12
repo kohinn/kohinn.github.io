@@ -57,10 +57,17 @@
 <main>
 
   <!-- Main Illustration Section -->
-  <section id="fanart" class="fade-in">
-    <h2>Illustration</h2>
-    <p>Here are some of my recent works.</p>
-  </section>
+<section id="fanart" class="fade-in">
+  <h2>Illustration</h2>
+
+  <!-- ▼ Category Filter Buttons -->
+  <div class="filter-buttons">
+    <button data-filter="all" class="active">#All</button>
+    <button data-filter="vtuber">#VTuber</button>
+    <button data-filter="anime">#Anime</button>
+    <button data-filter="original">#Original</button>
+  </div>
+</section>
 
   <!-- VTuber Style Section -->
   <section id="vtuber" class="fade-in">
@@ -196,4 +203,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeEls.forEach(el => observer.observe(el));
 });
+  
+  // ===== Section Filter =====
+document.querySelectorAll('.filter-buttons button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.filter;
+
+    // active 切り替え
+    document.querySelectorAll('.filter-buttons button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // セクション切り替え
+    const sections = {
+      vtuber: document.getElementById('vtuber'),
+      anime: document.getElementById('anime'),
+      original: document.getElementById('avatar')
+    };
+
+    if (filter === 'all') {
+      Object.values(sections).forEach(sec => sec.style.display = 'block');
+    } else {
+      Object.entries(sections).forEach(([key, sec]) => {
+        sec.style.display = (key === filter) ? 'block' : 'none';
+      });
+    }
+  });
+});
+
 </script>
