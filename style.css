@@ -212,13 +212,13 @@ a:hover {
 }
 
 /* =========================================================
-   4. Gallery (fanart)
+   4. Gallery (fanart) — Ixy先生風に最適化
 ========================================================= */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); /* PC：1行4枚 */
+  gap: 24px; /* 画像間隔を広く */
+  padding: 1.5rem 2rem; /* 左右余白を広く */
   background: #fff;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
@@ -228,8 +228,29 @@ a:hover {
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
+  aspect-ratio: 1 / 1.25; /* 比率を揃えて一覧を綺麗に */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
+.thumbnail:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.15);
+}
+
+/* ▼ スマホ版（Ixy先生風） */
+@media (max-width: 720px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2列 */
+    gap: 20px; /* 間隔広め */
+    padding: 1.2rem 1.6rem; /* 左右余白広め */
+  }
+
+  .thumbnail {
+    border-radius: 12px;
+    aspect-ratio: 1 / 1.25;
+  }
+}
+
 
 .thumbnail:hover {
   transform: translateY(-4px);
