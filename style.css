@@ -14,10 +14,10 @@ html {
 body {
   font-family: 'Noto Sans JP', 'Roboto', sans-serif;
   font-weight: 400;
-  background: #f8f9fc;
-  color: #222;
-  line-height: 1.6;      /* ← 読みやすく少し詰めた */
-  font-size: 15px;       /* ← 全体を少しだけ締める */
+  background: #f5f8fc; /* 魔法科風の透明感 */
+  color: #1a1a1a;
+  line-height: 1.6;
+  font-size: 15px;
   overflow-x: hidden;
 }
 
@@ -25,24 +25,39 @@ body {
    1. Layout / Typography
 ========================================================= */
 main {
-  max-width: 1040px;     /* ← 横幅を少し狭めて読みやすく */
+  max-width: 1040px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
+/* --- セクションをカード型 → フラットに変更 --- */
 section {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
-  padding: 1.8rem;       /* ← 少しだけ圧縮 */
-  margin-bottom: 1.8rem;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(0, 80, 160, 0.15);
+  padding: 2.4rem 0;
+  margin-bottom: 2.4rem;
 }
 
+/* --- h2 を公式サイト風に強化 --- */
 h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
   color: #003366;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #0055aa, transparent);
+  margin-top: 6px;
+  border-radius: 2px;
 }
 
 a {
@@ -72,7 +87,6 @@ a:hover {
   align-items: center;
 }
 
-/* PC nav */
 .main-nav {
   display: flex;
   gap: 0.8rem;
@@ -200,20 +214,18 @@ a:hover {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 28px;
   padding: 1.5rem 0;
-  background: transparent;
 }
 
 .thumbnail {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 10px;
   object-fit: cover;
   aspect-ratio: 3 / 4;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
 .thumbnail:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.15);
+  transform: translateY(-3px);
 }
 
 @media (max-width: 720px) {
@@ -221,10 +233,6 @@ a:hover {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
     padding: 0.8rem 0;
-  }
-
-  .thumbnail {
-    aspect-ratio: 3 / 4;
   }
 }
 
@@ -238,10 +246,22 @@ a:hover {
   align-items: flex-start;
 }
 
+.about-text {
+  flex: 1;
+  max-width: 520px;
+  line-height: 1.65;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.about-text p {
+  margin-bottom: 0.7rem;
+}
+
 .about-image img {
   width: 320px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: none;
 }
 
 /* =========================================================
@@ -271,7 +291,6 @@ a:hover {
   max-height: 90%;
   border-radius: 12px;
   object-fit: contain;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .modal-close {
@@ -284,7 +303,6 @@ a:hover {
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
   cursor: pointer;
-  z-index: 2100;
 }
 
 /* =========================================================
@@ -302,7 +320,6 @@ a:hover {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s ease;
-  z-index: 1500;
 }
 
 .back-to-top.show {
@@ -314,10 +331,10 @@ a:hover {
    8. Footer
 ========================================================= */
 .footer-refined {
-  background: #f0f4fa;
+  background: #eef3f8;
   padding: 2.5rem 1rem;
   margin-top: 3rem;
-  border-top: 1px solid rgba(0, 117, 255, 0.1);
+  border-top: 1px solid rgba(0, 80, 160, 0.15);
 }
 
 .footer-inner {
@@ -366,13 +383,11 @@ a:hover {
   color: #fff;
   border-radius: 10px;
   font-weight: 600;
-  box-shadow: 0 6px 20px rgba(0, 117, 255, 0.25);
   transition: 0.3s ease;
 }
 
 .button-link:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 117, 255, 0.35);
 }
 
 /* =========================================================
@@ -380,8 +395,8 @@ a:hover {
 ========================================================= */
 @media (max-width: 720px) {
   body {
-    font-size: 14px;      /* ← スマホは少しだけ小さく */
-    line-height: 1.65;    /* ← 読みやすさキープ */
+    font-size: 14px;
+    line-height: 1.65;
   }
 
   section {
@@ -389,22 +404,11 @@ a:hover {
   }
 
   h2 {
-    font-size: 1.5rem;
-  }
-
-  ul {
-    margin-left: 1.2rem;
-    margin-bottom: 1rem;
-  }
-
-  li {
-    margin-bottom: 0.6rem;
-    line-height: 1.6;
+    font-size: 1.6rem;
   }
 
   .about-wrapper {
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
 
@@ -414,125 +418,17 @@ a:hover {
   }
 }
 
-/* ===== About Section Refinement ===== */
-#about {
-  padding: 3rem 2rem;
-}
-
-.about-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  gap: 3rem;
-}
-
-.about-text {
-  flex: 1;
-  max-width: 520px;
-  line-height: 1.7;      /* ← 1.85 → 1.7 */
-  font-size: 0.95rem;    /* ← 少しだけ締める */
-}
-
-.about-text p {
-  margin-bottom: 0.8rem; /* ← 詰めて読みやすく */
-}
-
-.about-name {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-}
-
-.section-title {
-  margin-top: 2rem;
-  margin-bottom: 0.6rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #003366;
-}
-
-.skills-list li,
-.career-list li {
-  margin-bottom: 0.5rem;
-  line-height: 1.75;
-}
-
-.about-image img {
-  width: 320px;
-  max-width: 100%;
-  border-radius: 12px;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 720px) {
-  #about {
-    padding: 2rem 1.2rem;
-  }
-
-  .about-text {
-    max-width: 100%;
-    text-align: left;
-    line-height: 1.8;
-  }
-
-  .about-text p {
-    margin-bottom: 0.9rem;
-  }
-
-  .about-image img {
-    width: 260px;
-    margin: 0 auto;
-  }
-}
-
-/* ===== Category Filter Buttons ===== */
-.filter-buttons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 1.2rem;
-}
-
-.filter-buttons button {
-  padding: 6px 14px;
-  border-radius: 8px;
-  border: 1px solid #ccd5e0;
-  background: #fff;
-  cursor: pointer;
-  font-size: 0.9rem;
-  color: #003366;
-  transition: 0.25s ease;
-}
-
-.filter-buttons button.active {
-  background: #0055aa;
-  color: #fff;
-  border-color: #0055aa;
-}
-
 /* =========================================================
    Commission Page Styling (Override)
 ========================================================= */
 
 body.commission-page section {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 117, 255, 0.08);
-  padding: 2rem;
-  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 80, 160, 0.15);
+  padding: 2rem 0;
 }
 
 body.commission-page section h2 {
   font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: #003366;
-  border-left: 4px solid #0055aa;
-  padding-left: 10px;
-}
-
-body.commission-page .career-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
 }
 
 body.commission-page .career-list li {
@@ -542,16 +438,4 @@ body.commission-page .career-list li {
   border-radius: 8px;
   margin-bottom: 0.8rem;
   line-height: 1.7;
-  box-shadow: 0 4px 12px rgba(0, 117, 255, 0.08);
 }
-
-body.commission-page .career-list strong {
-  color: #003366;
-  font-weight: 600;
-}
-
-body.commission-page .more-button {
-  text-align: center;
-  margin-top: 2rem;
-}
-
