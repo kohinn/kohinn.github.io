@@ -30,7 +30,7 @@ main {
   padding: 2rem 1rem;
 }
 
-/* --- セクションをカード型 → フラットに変更 --- */
+/* --- セクションをフラット化（企業向け） --- */
 section {
   background: transparent;
   border-radius: 0;
@@ -40,7 +40,7 @@ section {
   margin-bottom: 2.4rem;
 }
 
-/* --- h2 を公式サイト風に強化 --- */
+/* --- h2 を魔法科公式サイト風に --- */
 h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
@@ -79,7 +79,7 @@ a:hover {
   width: 100%;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 117, 255, 0.08);
+  border-bottom: 1px solid rgba(0, 80, 160, 0.15);
   z-index: 1000;
   padding: 0.6rem 1rem;
   display: flex;
@@ -87,9 +87,10 @@ a:hover {
   align-items: center;
 }
 
+/* PC nav */
 .main-nav {
   display: flex;
-  gap: 0.8rem;
+  gap: 1rem;
   font-size: 0.95rem;
 }
 
@@ -98,14 +99,28 @@ a:hover {
   color: #003366;
 }
 
-.main-nav a::after {
-  content: "|";
-  margin: 0 0.8rem;
-  color: #999;
-}
+/* --- サイドバーに縦線追加（魔法科風） --- */
+@media (max-width: 820px) {
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-right: 1px solid rgba(0, 80, 160, 0.2); /* ← 追加：縦線 */
+    padding: 5rem 1.5rem 2rem;
+    flex-direction: column;
+    gap: 1.2rem;
+    transform: translateX(-100%);
+    transition: transform 0.45s cubic-bezier(.25,.8,.25,1);
+    z-index: 1000;
+  }
 
-.main-nav a:last-child::after {
-  content: "";
+  .main-nav.show {
+    transform: translateX(0);
+  }
 }
 
 /* Hamburger */
@@ -156,45 +171,6 @@ a:hover {
   pointer-events: auto;
 }
 
-/* Mobile nav */
-@media (max-width: 820px) {
-  .menu-toggle {
-    display: flex;
-  }
-
-  .main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 240px;
-    height: 100vh;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(12px);
-    box-shadow: 4px 0 20px rgba(0,117,255,0.15);
-    padding: 5rem 1.5rem 2rem;
-    flex-direction: column;
-    gap: 1.2rem;
-    transform: translateX(-100%);
-    transition: transform 0.45s cubic-bezier(.25,.8,.25,1);
-    z-index: 1000;
-  }
-
-  .main-nav.show {
-    transform: translateX(0);
-  }
-
-  .main-nav a {
-    opacity: 0;
-    transform: translateX(10px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-
-  .main-nav.show a {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 /* =========================================================
    3. Updates Section
 ========================================================= */
@@ -202,23 +178,23 @@ a:hover {
   background: #f7faff;
   border-left: 4px solid #0055aa;
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 6px;
   margin-bottom: 1rem;
 }
 
 /* =========================================================
-   4. Gallery
+   4. Gallery（フラットで軽く） 
 ========================================================= */
 .gallery {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 28px;
+  gap: 24px;
   padding: 1.5rem 0;
 }
 
 .thumbnail {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
   object-fit: cover;
   aspect-ratio: 3 / 4;
   transition: transform 0.25s ease;
@@ -231,13 +207,12 @@ a:hover {
 @media (max-width: 720px) {
   .gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-    padding: 0.8rem 0;
+    gap: 14px;
   }
 }
 
 /* =========================================================
-   5. About Section
+   5. About Section（企業向けに読みやすく）
 ========================================================= */
 .about-wrapper {
   display: flex;
@@ -259,9 +234,8 @@ a:hover {
 }
 
 .about-image img {
-  width: 320px;
-  border-radius: 12px;
-  box-shadow: none;
+  width: 300px;
+  border-radius: 8px;
 }
 
 /* =========================================================
@@ -289,20 +263,8 @@ a:hover {
 .modal-content {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 12px;
+  border-radius: 10px;
   object-fit: contain;
-}
-
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(255,255,255,0.85);
-  border: none;
-  font-size: 1.4rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  cursor: pointer;
 }
 
 /* =========================================================
@@ -328,7 +290,7 @@ a:hover {
 }
 
 /* =========================================================
-   8. Footer
+   8. Footer（魔法科風に薄く）
 ========================================================= */
 .footer-refined {
   background: #eef3f8;
@@ -381,7 +343,7 @@ a:hover {
   padding: 0.8rem 1.4rem;
   background: #0055aa;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 8px;
   font-weight: 600;
   transition: 0.3s ease;
 }
@@ -413,29 +375,8 @@ a:hover {
   }
 
   .about-image img {
-    width: 260px;
+    width: 240px;
     margin: 0 auto;
   }
 }
 
-/* =========================================================
-   Commission Page Styling (Override)
-========================================================= */
-
-body.commission-page section {
-  border-bottom: 1px solid rgba(0, 80, 160, 0.15);
-  padding: 2rem 0;
-}
-
-body.commission-page section h2 {
-  font-size: 1.6rem;
-}
-
-body.commission-page .career-list li {
-  background: #f7faff;
-  border-left: 4px solid #0055aa;
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
-  margin-bottom: 0.8rem;
-  line-height: 1.7;
-}
