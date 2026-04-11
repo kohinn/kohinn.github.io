@@ -154,49 +154,37 @@ h2::after {
 }
 
 /* =========================================================
-   4. 横スクロールギャラリー（無限ループ風）
+   4. Gallery（Illustrationページ用：元のまま）
 ========================================================= */
-
-.scroll-gallery {
-  overflow: hidden;
-  border-bottom: none !important;
-  padding-bottom: 0 !important;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
 }
 
-.scroll-row {
-  display: flex;
-  gap: 14px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 10px 0;
-  white-space: nowrap;
-}
-
-.scroll-row::-webkit-scrollbar {
-  display: none;
-}
-
-.scroll-img {
-  height: 180px;
+.thumbnail {
+  width: 100%;
   border-radius: 10px;
-  flex-shrink: 0;
-  cursor: pointer;
   object-fit: cover;
-  transition: transform 0.25s ease;
+  aspect-ratio: 3 / 4;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.scroll-img:hover {
+.thumbnail:hover {
   transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
 @media (max-width: 720px) {
-  .scroll-img {
-    height: 150px;
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 }
 
 /* =========================================================
-   5. Modal（モーダル最適化）
+   5. Modal（拡大表示）
 ========================================================= */
 .modal {
   position: fixed;
@@ -307,64 +295,65 @@ h2::after {
 }
 
 /* =========================================================
-   8. HOME 専用余白調整
+   8. HOME 専用：横スクロールギャラリー（1段・無限ループ風）
 ========================================================= */
-.updates-section {
-  margin-bottom: 1rem !important;
-  padding-bottom: 1rem !important;
-  border-bottom: 1px solid rgba(0, 80, 160, 0.08);
+
+.scroll-gallery {
+  overflow: hidden;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
 }
 
-#fanart {
-  padding-top: 1rem !important;
+.scroll-gallery .scroll-row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  white-space: nowrap;
+}
+
+.scroll-gallery .scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-gallery .scroll-img {
+  width: 160px;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  flex-shrink: 0;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.scroll-gallery .scroll-img:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 720px) {
+  .scroll-gallery .scroll-img {
+    width: 120px;
+  }
 }
 
 /* =========================================================
-   9. スマホ最適化（〜720px）
+   9. Responsive Fixes
 ========================================================= */
 @media (max-width: 720px) {
-
-  section {
-    padding: 1.4rem 0 !important;
-    margin-bottom: 1.4rem !important;
-  }
-
-  .updates-section {
-    margin-bottom: 0.8rem !important;
-    padding-bottom: 0.8rem !important;
-  }
-
-  #fanart {
-    padding-top: 0.8rem !important;
+  body {
+    font-size: 14px;
+    line-height: 1.65;
   }
 
   .about-wrapper {
-    flex-direction: column !important;
-    gap: 1.4rem !important;
+    flex-direction: column;
     text-align: center;
   }
 
   .about-image img {
-    width: 200px !important;
+    width: 220px;
     margin: 0 auto;
-  }
-
-  h2 {
-    font-size: 1.6rem !important;
-    margin-bottom: 0.8rem !important;
-  }
-
-  .update-card {
-    padding: 0.8rem 1rem !important;
-    margin-bottom: 0.8rem !important;
-  }
-
-  .more-button {
-    margin-top: 0.8rem !important;
-    margin-bottom: 1.6rem !important;
-  }
-
-  .footer-refined {
-    padding: 1.4rem 1rem !important;
   }
 }
