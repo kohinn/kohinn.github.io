@@ -340,3 +340,15 @@ h2::after {
   }
 }
 
+/* HOME の Updates と Illustration の間隔を詰める */
+.updates-section {
+  margin-bottom: 1.2rem !important; /* デフォルトの 2.4rem を半分に */
+  padding-bottom: 1.2rem !important;
+  border-bottom: 1px solid rgba(0, 80, 160, 0.08); /* 線も少し薄く */
+}
+
+/* Illustration セクションの上の余白も少しだけ詰める */
+#fanart {
+  padding-top: 1.2rem !important;
+}
+
