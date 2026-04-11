@@ -154,26 +154,45 @@ h2::after {
 }
 
 /* =========================================================
-   4. Gallery（整列安定＋透明感）
+   4. 横スクロールギャラリー（無限ループ風）
 ========================================================= */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 20px;
+
+.scroll-gallery {
+  overflow: hidden;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
 }
 
-.thumbnail {
-  width: 100%;
+.scroll-row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  white-space: nowrap;
+}
+
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-img {
+  height: 180px;
   border-radius: 10px;
-  object-fit: cover;
-  aspect-ratio: 3 / 4;
+  flex-shrink: 0;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  object-fit: cover;
+  transition: transform 0.25s ease;
 }
 
-.thumbnail:hover {
+.scroll-img:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 720px) {
+  .scroll-img {
+    height: 150px;
+  }
 }
 
 /* =========================================================
@@ -288,7 +307,7 @@ h2::after {
 }
 
 /* =========================================================
-   8. HOME 専用余白調整（英語版・日本語版共通）
+   8. HOME 専用余白調整
 ========================================================= */
 .updates-section {
   margin-bottom: 1rem !important;
@@ -317,15 +336,6 @@ h2::after {
 
   #fanart {
     padding-top: 0.8rem !important;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-  }
-
-  .thumbnail {
-    border-radius: 8px;
   }
 
   .about-wrapper {
