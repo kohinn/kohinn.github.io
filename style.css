@@ -342,13 +342,29 @@ h2::after {
 
 /* HOME の Updates と Illustration の間隔を詰める */
 .updates-section {
-  margin-bottom: 1.2rem !important; /* デフォルトの 2.4rem を半分に */
-  padding-bottom: 1.2rem !important;
+  margin-bottom: 0.8rem !important; /* デフォルトの 2.4rem を半分に */
+  padding-bottom: 0.8rem !important;
   border-bottom: 1px solid rgba(0, 80, 160, 0.08); /* 線も少し薄く */
 }
 
 /* Illustration セクションの上の余白も少しだけ詰める */
 #fanart {
-  padding-top: 1.2rem !important;
+  padding-top: 0.8rem !important;
+}
+/* ================================
+   HOME（日本語版）余白調整
+   Updates → Illustration の間隔を詰める
+================================ */
+
+/* Updates セクションの下余白を軽くする */
+.updates-section {
+  margin-bottom: 0.8rem !important;
+  padding-bottom: 0.8rem !important;
+  border-bottom: 1px solid rgba(0, 80, 160, 0.08);
+}
+
+/* Illustration セクションの上余白も少し詰める */
+#fanart {
+  padding-top: 0.8rem !important;
 }
 
