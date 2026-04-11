@@ -35,7 +35,7 @@ section {
   border-bottom: 1px solid rgba(0, 80, 160, 0.12);
 }
 
-/* --- h2：魔法科風の青ライン（透明感UP） --- */
+/* --- h2：青ライン（透明感UP） --- */
 h2 {
   font-family: 'Playfair Display', serif;
   font-size: 1.9rem;
@@ -176,52 +176,6 @@ h2::after {
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
-@media (max-width: 720px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-}
-
-/* --- モーダル --- */
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  backdrop-filter: blur(6px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.25s ease;
-  z-index: 2000;
-}
-
-.modal.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.modal-content {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  object-fit: contain;
-}
-
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(255,255,255,0.85);
-  border: none;
-  font-size: 1.4rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
 /* =========================================================
    5. About Section（読みやすさUP）
 ========================================================= */
@@ -240,7 +194,6 @@ h2::after {
   margin-bottom: 0.8rem;
 }
 
-/* --- リストを上品に --- */
 .about-text ul {
   list-style: none;
   padding-left: 0;
@@ -270,34 +223,7 @@ h2::after {
 }
 
 /* =========================================================
-   6. Illustration タグ（洗練UI）
-========================================================= */
-.filter-tags a {
-  display: inline-block;
-  padding: 6px 14px;
-  margin: 0 6px 10px 0;
-  border: 1px solid #ccd5e0;
-  border-radius: 20px;
-  font-size: 14px;
-  color: #003366;
-  text-decoration: none;
-  background: #ffffff;
-  transition: all 0.2s ease;
-}
-
-.filter-tags a:hover {
-  background: #e9f0f8;
-  border-color: #99b4d6;
-}
-
-.filter-tags a.active {
-  background: #003366;
-  color: #ffffff;
-  border-color: #003366;
-}
-
-/* =========================================================
-   7. Footer
+   6. Footer
 ========================================================= */
 .footer-refined {
   background: #eef3f8;
@@ -321,50 +247,74 @@ h2::after {
 }
 
 /* =========================================================
-   8. Responsive Fixes
+   7. HOME 専用余白調整（英語版・日本語版共通）
+========================================================= */
+.updates-section {
+  margin-bottom: 1rem !important;
+  padding-bottom: 1rem !important;
+  border-bottom: 1px solid rgba(0, 80, 160, 0.08);
+}
+
+#fanart {
+  padding-top: 1rem !important;
+}
+
+/* =========================================================
+   8. スマホ最適化（〜720px）
 ========================================================= */
 @media (max-width: 720px) {
-  body {
-    font-size: 14px;
-    line-height: 1.65;
+
+  section {
+    padding: 1.4rem 0 !important;
+    margin-bottom: 1.4rem !important;
+  }
+
+  .updates-section {
+    margin-bottom: 0.8rem !important;
+    padding-bottom: 0.8rem !important;
+  }
+
+  #fanart {
+    padding-top: 0.8rem !important;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .thumbnail {
+    border-radius: 8px;
   }
 
   .about-wrapper {
-    flex-direction: column;
+    flex-direction: column !important;
+    gap: 1.4rem !important;
     text-align: center;
   }
 
   .about-image img {
-    width: 220px;
+    width: 200px !important;
     margin: 0 auto;
   }
-}
 
-/* HOME の Updates と Illustration の間隔を詰める */
-.updates-section {
-  margin-bottom: 0.8rem !important; /* デフォルトの 2.4rem を半分に */
-  padding-bottom: 0.8rem !important;
-  border-bottom: 1px solid rgba(0, 80, 160, 0.08); /* 線も少し薄く */
-}
+  h2 {
+    font-size: 1.6rem !important;
+    margin-bottom: 0.8rem !important;
+  }
 
-/* Illustration セクションの上の余白も少しだけ詰める */
-#fanart {
-  padding-top: 0.8rem !important;
-}
-/* ================================
-   HOME（日本語版）余白調整
-   Updates → Illustration の間隔を詰める
-================================ */
+  .update-card {
+    padding: 0.8rem 1rem !important;
+    margin-bottom: 0.8rem !important;
+  }
 
-/* Updates セクションの下余白を軽くする */
-.updates-section {
-  margin-bottom: 0.8rem !important;
-  padding-bottom: 0.8rem !important;
-  border-bottom: 1px solid rgba(0, 80, 160, 0.08);
-}
+  .more-button {
+    margin-top: 0.8rem !important;
+    margin-bottom: 1.6rem !important;
+  }
 
-/* Illustration セクションの上余白も少し詰める */
-#fanart {
-  padding-top: 0.8rem !important;
+  .footer-refined {
+    padding: 1.4rem 1rem !important;
+  }
 }
 
