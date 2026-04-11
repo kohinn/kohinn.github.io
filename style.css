@@ -177,7 +177,48 @@ h2::after {
 }
 
 /* =========================================================
-   5. About Section（読みやすさUP）
+   5. Modal（モーダル最適化）
+========================================================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 2000;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.85);
+  border: none;
+  font-size: 1.4rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* =========================================================
+   6. About Section
 ========================================================= */
 .about-wrapper {
   display: flex;
@@ -223,7 +264,7 @@ h2::after {
 }
 
 /* =========================================================
-   6. Footer
+   7. Footer
 ========================================================= */
 .footer-refined {
   background: #eef3f8;
@@ -247,7 +288,7 @@ h2::after {
 }
 
 /* =========================================================
-   7. HOME 専用余白調整（英語版・日本語版共通）
+   8. HOME 専用余白調整（英語版・日本語版共通）
 ========================================================= */
 .updates-section {
   margin-bottom: 1rem !important;
@@ -260,7 +301,7 @@ h2::after {
 }
 
 /* =========================================================
-   8. スマホ最適化（〜720px）
+   9. スマホ最適化（〜720px）
 ========================================================= */
 @media (max-width: 720px) {
 
@@ -317,4 +358,5 @@ h2::after {
     padding: 1.4rem 1rem !important;
   }
 }
+
 
