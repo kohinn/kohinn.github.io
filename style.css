@@ -485,3 +485,35 @@ h2::after {
   padding-top: 1.2rem !important;   /* ← 上の余白を半分に */
   margin-top: 0 !important;         /* ← Updates との間を詰める */
 }
+
+/* ===== Illustration Filter Buttons（サイト統一デザイン） ===== */
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 1.2rem 0 2rem;
+}
+
+.filter-buttons button {
+  padding: 8px 18px;
+  border: 1.8px solid #003366;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  color: #003366;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-buttons button:hover {
+  background: #003366;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.filter-buttons button.active {
+  background: #003366;
+  color: #fff;
+}
