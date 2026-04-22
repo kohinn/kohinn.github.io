@@ -36,10 +36,10 @@
 
 <!-- ▼ ハンバーガーメニュー -->
 <nav id="main-nav" class="main-nav">
-  <a href="index.html">Home</a>
-  <a href="fanart.html">Illustration</a>
-  <a href="about.html">About</a>
-  <a href="commission.html">Commission</a>
+  <a href="index_jp.html">ホーム</a>
+  <a href="fanart_jp.html">イラスト</a>
+  <a href="about_jp.html">プロフィール</a>
+  <a href="commission_jp.html">コミッション</a>
 </nav>
 
 <div class="nav-overlay" id="navOverlay"></div>
@@ -135,10 +135,10 @@
   <div class="footer-inner">
 
     <nav class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="fanart.html">Illustration</a>
-      <a href="about.html">About</a>
-      <a href="commission.html">Commission</a>
+      <a href="index_jp.html">ホーム</a>
+      <a href="fanart_jp.html">イラスト</a>
+      <a href="about_jp.html">プロフィール</a>
+      <a href="commission_jp.html">コミッション</a>
     </nav>
 
     <div class="footer-sns">
@@ -165,8 +165,63 @@
 <a href="#" class="back-to-top" id="backToTop" aria-label="トップへ戻る">↑</a>
 
 <script>
-/* ここは英語版と同じでOK（動作は共通） */
+function toggleMenu(btn) {
+  const nav = document.getElementById('main-nav');
+  const overlay = document.getElementById('navOverlay');
+  const isOpen = nav.classList.toggle('show');
+  btn.classList.toggle('open', isOpen);
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  overlay.classList.toggle('show', isOpen);
+  document.body.classList.toggle('menu-open', isOpen);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const closeBtn = document.querySelector('.modal-close');
+  const backToTop = document.getElementById('backToTop');
+
+  /* ★ scroll-img + hero-img の両方で拡大表示 ★ */
+  document.querySelectorAll('.scroll-img, .hero-img').forEach(img => {
+    img.addEventListener('click', () => {
+      modalImg.src = img.src;
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('show');
+    modalImg.src = '';
+    modal.setAttribute('aria-hidden', 'true');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('show');
+      modalImg.src = '';
+      modal.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  /* Back to top */
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) backToTop.classList.add('show');
+    else backToTop.classList.remove('show');
+  });
+
+  /* Fade-in */
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  fadeEls.forEach(el => observer.observe(el));
+});
 </script>
 
 </body>
 </html>
+
