@@ -421,21 +421,26 @@ h2::after {
 }
 
 
-/* ===== Back to Top ボタン ===== */
+/* ===== Back to Top ボタン（改善版） ===== */
 .back-to-top {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background: #003366;
+  right: 22px;          /* ← 右下に固定 */
+  bottom: 22px;
+  background: #003366;  /* 濃い青で視認性UP */
   color: #fff;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 18px;
+  width: 52px;          /* ← 大きくして押しやすく */
+  height: 52px;
+  border-radius: 50%;   /* 丸ボタンで直感的 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;      /* 矢印を大きく */
   text-decoration: none;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.2s ease;
   z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
 }
 
 .back-to-top.show {
@@ -443,4 +448,6 @@ h2::after {
   pointer-events: auto;
 }
 
-
+.back-to-top:hover {
+  transform: translateY(-4px);
+}
