@@ -56,7 +56,7 @@
 <section id="fanart" class="fade-in">
   <h2>イラスト</h2>
 
-  <!-- ▼ Category Filter Buttons（英語版と同じ動作に統一） -->
+  <!-- ▼ Category Filter Buttons -->
   <div class="filter-buttons">
     <button data-filter="all" class="active">#すべて</button>
     <button data-filter="vtuber">#VTuber</button>
@@ -129,6 +129,7 @@
   <img class="modal-content" id="modal-img">
 </div>
 
+<!-- ▼ Back to Top（追加） -->
 <a href="#" class="back-to-top" id="backToTop">↑</a>
 
 <script>
@@ -180,9 +181,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  /* ▼ Back to top（追加） */
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
 });
 </script>
 
 </body>
 </html>
+
 
