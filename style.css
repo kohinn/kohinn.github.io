@@ -479,3 +479,9 @@ h2::after {
   text-align: center;
   margin: 20px 0 40px;
 }
+
+/* About セクションの余白を最適化 */
+#about {
+  padding-top: 1.2rem !important;   /* ← 上の余白を半分に */
+  margin-top: 0 !important;         /* ← Updates との間を詰める */
+}
