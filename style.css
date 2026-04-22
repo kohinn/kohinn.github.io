@@ -421,3 +421,26 @@ h2::after {
 }
 
 
+/* ===== Back to Top ボタン ===== */
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #003366;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 18px;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
