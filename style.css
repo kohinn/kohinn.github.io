@@ -400,7 +400,7 @@ h2::after {
 
 @media (max-width: 720px) {
   .hero-scroll-row .hero-img {
-    height: 350px; /* スマホ最適化 */
+    height: 400px; /* スマホ最適化 */
   }
 }
 
