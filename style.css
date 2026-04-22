@@ -357,3 +357,32 @@ h2::after {
     margin: 0 auto;
   }
 }
+
+/* ===== Hero Scroll (HOME only) ===== */
+.hero-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto 40px auto;
+}
+
+.hero-scroll-inner {
+  display: flex;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+.hero-scroll-inner img {
+  height: 380px; /* ← 大きさ調整ポイント */
+  width: auto;
+  border-radius: 12px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+
+/* ===== HOME の Illustration タイトルだけ非表示 ===== */
+.home-page .illustration-title {
+  display: none;
+}
+
