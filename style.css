@@ -358,3 +358,58 @@ h2::after {
   }
 }
 
+/* =========================================================
+   10. HOME 専用：ヒーロー横スクロール（Rosuuri風）
+========================================================= */
+
+.hero-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto 40px auto;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.hero-scroll-row {
+  display: flex;
+  gap: 18px;
+  padding: 0 6px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.hero-scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-scroll-row .hero-img {
+  height: 420px; /* ← Rosuuri みたいに大きく表示 */
+  width: auto;
+  border-radius: 12px;
+  flex-shrink: 0;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.hero-scroll-row .hero-img:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 720px) {
+  .hero-scroll-row .hero-img {
+    height: 300px; /* スマホ最適化 */
+  }
+}
+
+/* =========================================================
+   11. HOME の Illustration タイトルだけ非表示
+========================================================= */
+
+.home-page #fanart > h2 {
+  display: none;
+}
+
+
