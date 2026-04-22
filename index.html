@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -32,7 +32,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- ★★★ ① HOME 専用クラスを追加 ★★★ -->
 <body class="home-page">
 
 <!-- ▼ Hamburger menu -->
@@ -58,7 +57,7 @@
 
 <main>
 
-  <!-- ★★★ ② Rosuuri 風：トップ横スクロールを追加 ★★★ -->
+  <!-- ★★★ トップ横スクロール（Rosuuri風） ★★★ -->
   <section class="hero-scroll fade-in">
     <div class="hero-scroll-row scroll-row">
       <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" class="hero-img">
@@ -69,6 +68,10 @@
     </div>
   </section>
 
+  <!-- ★★★ View more をトップ直下へ移動 ★★★ -->
+  <div class="more-button fade-in" style="margin-top: -10px;">
+    <a href="fanart.html" class="button-link">View more →</a>
+  </div>
 
   <!-- Updates Section -->
   <section class="updates-section fade-in">
@@ -90,36 +93,10 @@
     </div>
   </section>
 
-  <!-- Illustration Section（横スクロール・無限ループ風） -->
+  <!-- ★★★ Illustration セクションはタイトルだけ残して中身削除 ★★★ -->
   <section id="fanart" class="fade-in scroll-gallery">
-
-    <!-- ★★★ ③ HOME だけ非表示になる（CSSで制御） ★★★ -->
     <h2>Illustration</h2>
-
-    <div class="scroll-row loop-row">
-      <!-- 1周目 -->
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/melody.webp" class="scroll-img">
-
-      <!-- 2周目 -->
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/melody.webp" class="scroll-img">
-    </div>
   </section>
-
-  <div class="more-button fade-in">
-    <a href="fanart.html" class="button-link">View more →</a>
-  </div>
 
   <!-- About Section -->
   <section id="about" class="fade-in">
@@ -192,9 +169,16 @@
 <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
 
 <script>
-  /* （あなたの元の JS はそのまま） */
+function toggleMenu(btn) {
+  const nav = document.getElementById('main-nav');
+  const overlay = document.getElementById('navOverlay');
+  const isOpen = nav.classList.toggle('show');
+  btn.classList.toggle('open', isOpen);
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  overlay.classList.toggle('show', isOpen);
+  document.body.classList.toggle('menu-open', isOpen);
+}
 </script>
 
 </body>
 </html>
-
