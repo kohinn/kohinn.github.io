@@ -214,6 +214,9 @@
   </div>
 </footer>
 
+<!-- ▼ Back to Top（追加） -->
+<a href="#" class="back-to-top" id="backToTop" aria-label="トップへ戻る">↑</a>
+
 <script>
 function toggleMenu(btn) {
   const nav = document.getElementById('main-nav');
@@ -226,16 +229,25 @@ function toggleMenu(btn) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* Fade-in */
   const fadeEls = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.1 });
-
   fadeEls.forEach(el => observer.observe(el));
+
+  /* Back to top（追加） */
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
 });
 </script>
 
