@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kohinn | イラストレーション & ポートフォリオ</title>
+  <title>Kohinn | キャラクターイラスト & ポートフォリオ</title>
 
   <!-- Google tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
@@ -15,32 +15,35 @@
   </script>
 
   <!-- SEO -->
-  <meta name="description" content="Kohinn（コヒン）はキャラクターイラスト、VTuber風イラスト、オリジナルアバター制作を中心に活動するイラストレーターです。">
-  <meta name="keywords" content="Kohinn, イラスト, キャラクター, VTuber, アニメ風, コミッション, ポートフォリオ">
+  <meta name="description" content="Kohinn は、キャラクターイラストやオリジナルアバターを中心に制作する独学イラストレーターです。">
+  <meta name="keywords" content="Kohinn, イラスト, キャラクター, VTuber, アニメ, コミッション, ポートフォリオ">
 
   <!-- OGP -->
-  <meta property="og:title" content="Kohinn | イラストレーション & ポートフォリオ">
-  <meta property="og:description" content="キャラクターイラスト、VTuber風イラスト、オリジナルアバター制作を中心に活動するイラストレーターKohinnのポートフォリオサイト。">
+  <meta property="og:title" content="Kohinn | キャラクターイラスト & ポートフォリオ">
+  <meta property="og:description" content="キャラクターイラスト、VTuber 風イラスト、オリジナルアバターなどを制作しています。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kohinn.github.io/">
   <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
 
-  <link rel="stylesheet" href="style.css?v=20251129">
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<!-- ▼ ハンバーガーメニュー（body直下に移動） -->
+<body class="home-page">
+
+<!-- ▼ ハンバーガーメニュー -->
 <nav id="main-nav" class="main-nav">
-  <a href="index.html">Home</a>
-  <a href="fanart.html">Illustration</a>
-  <a href="about.html">About</a>
-  <a href="commission.html">Commission</a>
+  <a href="index_jp.html">ホーム</a>
+  <a href="fanart_jp.html">イラスト</a>
+  <a href="about_jp.html">プロフィール</a>
+  <a href="commission_jp.html">コミッション</a>
 </nav>
 
 <div class="nav-overlay" id="navOverlay"></div>
-<!-- ▲ ここまで -->
+<!-- ▲ -->
 
 <header class="site-header">
   <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
@@ -53,90 +56,71 @@
 </header>
 
 <main>
+
+  <!-- ★★★ トップ横スクロール（Rosuuri風） ★★★ -->
+  <section class="hero-scroll fade-in">
+    <div class="hero-scroll-row">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" class="hero-img">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp" class="hero-img">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp" class="hero-img">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp" class="hero-img">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp" class="hero-img">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp" class="hero-img">
+    </div>
+  </section>
+
+  <!-- ★★★ View more（日本語版） ★★★ -->
+  <div class="more-button fade-in" style="margin-top: -10px;">
+    <a href="fanart_jp.html" class="button-link">もっと見る →</a>
+  </div>
+
   <!-- Updates Section -->
   <section class="updates-section fade-in">
-    <h2>Updates</h2>
+    <h2>お知らせ</h2>
+
     <div class="update-card">
       <div class="update-header">
-        <span class="update-label">【受付状況】</span>
-        <span class="update-date">2026.03.11</span>
+        <span class="update-label">【コミッション状況】</span>
+        <span class="update-date">2026年3月11日</span>
       </div>
-      <p>現在、依頼受付中です。すぐに着手可能です。</p>
+      <p>コミッション受付中です。すぐに制作を開始できます。</p>
     </div>
-  
+
     <div class="update-card">
       <div class="update-header">
-        <span class="update-label">【サイト更新について】</span>
-        <span class="update-date">2026.03.11</span>
+        <span class="update-label">【サイト更新】</span>
+        <span class="update-date">2026年3月11日</span>
       </div>
-      <p>Illustration欄に、アニメイラスト追加しました。</p>
-    </div>
-  
- </section>
-  <!-- Illustration Section -->
-  <section id="fanart" class="fade-in">
-    <h2>Illustration</h2>
-
-   <div class="gallery"> 
-                   <img class="thumbnail" loading="lazy"
-     src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp"
-    alt="VTuber-style illustration">
-
-        <img class="thumbnail" loading="lazy"
-     src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp"
-     alt="VTuber-style illustration">
-
-        <img class="thumbnail" loading="lazy"
-     src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp"
-     alt="VTuber-style illustration">
-    
-       <img class="thumbnail" loading="lazy"
-     src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp"
-     alt="VTuber-style illustration">
-      
-      <img class="thumbnail" loading="lazy"
-     src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp"
-     alt="VTuber-style illustration">
-      
-        <img class="thumbnail" loading="lazy"
-     src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp"
-     alt="VTuber-style illustration">
-      
-       <img class="thumbnail" loading="lazy"
-     src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/melody.webp"
-     alt="VTuber-style illustration">
-      
+      <p>イラストページにアニメ系イラストを追加しました。</p>
     </div>
   </section>
 
-    <div class="more-button">
-      <a href="fanart_jp.html" class="button-link">もっと見る →</a>
-    </div>
+  <!-- Illustration Section（タイトルのみ） -->
+  <section id="fanart" class="fade-in scroll-gallery">
+    <h2>イラスト</h2>
   </section>
 
-  
   <!-- About Section -->
   <section id="about" class="fade-in">
-    <h2>About</h2>
+    <h2>プロフィール</h2>
 
     <div class="about-wrapper">
       <div class="about-text">
-        <p class="about-name">Kohinn（コヒン）</p>
-        <p>独学でイラストを学び、現在はフルタイム勤務と並行してイラストレーターとして活動中。</p>
-        <p>見た人の目を引くキャラクターイラストを得意としています。</p>
+        <p class="about-name">Kohinn</p>
+        <p>独学でイラストを学び、現在はフルタイムの仕事と両立しながら活動しています。</p>
+        <p>キャラクターを中心とした、目を引くイラスト制作を得意としています。</p>
 
         <h3 class="section-title">スキル</h3>
         <ul class="skills-list">
           <li>キャラクターイラスト</li>
-          <li>サイト制作</li>
+          <li>Webサイト制作</li>
         </ul>
       </div>
 
       <div class="about-image">
         <img class="thumbnail" loading="lazy"
-     src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/jibunn__kl (1).webp"
-     alt="VTuber-style illustration">
-        
+        src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/jibunn__kl (1).webp"
+        alt="VTuber風イラスト">
       </div>
     </div>
   </section>
@@ -151,10 +135,10 @@
   <div class="footer-inner">
 
     <nav class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="fanart.html">Illustration</a>
-      <a href="about.html">About</a>
-      <a href="commission.html">Commission</a>
+      <a href="index_jp.html">ホーム</a>
+      <a href="fanart_jp.html">イラスト</a>
+      <a href="about_jp.html">プロフィール</a>
+      <a href="commission_jp.html">コミッション</a>
     </nav>
 
     <div class="footer-sns">
@@ -166,7 +150,7 @@
     </div>
 
     <p class="footer-copy">
-      © 2025–2026 Kohinn. All rights reserved.<br>
+      © 2025–2026 Kohinn. All rights reserved.
     </p>
 
   </div>
@@ -174,67 +158,14 @@
 
 <!-- Modal -->
 <div id="modal" class="modal" aria-hidden="true">
-  <button class="modal-close" aria-label="Close image">✕</button>
+  <button class="modal-close" aria-label="閉じる">✕</button>
   <img class="modal-content" id="modal-img" alt="">
 </div>
 
-<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+<a href="#" class="back-to-top" id="backToTop" aria-label="トップへ戻る">↑</a>
 
 <script>
-function toggleMenu(btn) {
-  const nav = document.getElementById('main-nav');
-  const overlay = document.getElementById('navOverlay');
-  const isOpen = nav.classList.toggle('show');
-  btn.classList.toggle('open', isOpen);
-  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  overlay.classList.toggle('show', isOpen);
-  document.body.classList.toggle('menu-open', isOpen);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('modal');
-  const modalImg = document.getElementById('modal-img');
-  const closeBtn = document.querySelector('.modal-close');
-  const backToTop = document.getElementById('backToTop');
-  let hideTimer;
-
-  document.querySelectorAll('.gallery img').forEach(img => {
-    img.addEventListener('click', () => {
-      modalImg.src = img.src;
-      modal.classList.add('show');
-      modal.setAttribute('aria-hidden', 'false');
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    modal.classList.remove('show');
-    modalImg.src = '';
-    modal.setAttribute('aria-hidden', 'true');
-  });
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      backToTop.classList.add('show');
-      clearTimeout(hideTimer);
-      hideTimer = setTimeout(() => {
-        backToTop.classList.remove('show');
-      }, 1500);
-    } else {
-      backToTop.classList.remove('show');
-    }
-  });
-
-  const fadeEls = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  fadeEls.forEach(el => observer.observe(el));
-});
+/* ここは英語版と同じでOK（動作は共通） */
 </script>
 
 </body>
