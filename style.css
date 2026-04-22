@@ -451,3 +451,31 @@ h2::after {
 .back-to-top:hover {
   transform: translateY(-4px);
 }
+
+
+/* ===== 洗練されたボタン（サイト全体に統一） ===== */
+.button-link {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1.8px solid #003366;
+  color: #003366;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+}
+
+.button-link:hover {
+  background: #003366;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* ボタンを中央寄せ */
+.more-button {
+  text-align: center;
+  margin: 20px 0 40px;
+}
