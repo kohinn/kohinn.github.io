@@ -411,5 +411,13 @@ h2::after {
 .home-page #fanart > h2 {
   display: none;
 }
+.hamburger {
+  position: relative;
+  z-index: 9999;
+}
+.nav {
+  position: relative;
+  z-index: 9998;
+}
 
 
