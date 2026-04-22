@@ -3,274 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kohinn | Character Illustration & Portfolio</title>
-
-  <!-- Google tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-V286NXLCKF');
-  </script>
-
-  <!-- SEO -->
-  <meta name="description" content="Kohinn is a self-taught illustrator specializing in eye-catching character illustrations and original avatars.">
-  <meta name="keywords" content="Kohinn, illustration, character art, VTuber art, anime style, commission, portfolio">
-
-  <!-- OGP -->
-  <meta property="og:title" content="Kohinn | Character Illustration & Portfolio">
-  <meta property="og:description" content="Character-focused illustrations, VTuber-style art, and original avatars by Kohinn.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kohinn.github.io/">
-  <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
+  <title>HI Illustration</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="home-page">
 
-<!-- ▼ Hamburger menu -->
-<nav id="main-nav" class="main-nav">
-  <a href="index.html">Home</a>
-  <a href="fanart.html">Illustration</a>
-  <a href="about.html">About</a>
-  <a href="commission.html">Commission</a>
-</nav>
-
-<div class="nav-overlay" id="navOverlay"></div>
-<!-- ▲ -->
-
-<header class="site-header">
-  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
-    <span></span><span></span><span></span>
-  </button>
-
-  <div class="language-switch">
-    <a href="index.html" lang="en">EN</a> / <a href="index_jp.html" lang="ja">JP</a>
-  </div>
-</header>
-
-<main>
-
-  <!-- Updates Section -->
-  <section class="updates-section fade-in">
-    <h2>Updates</h2>
-    <div class="update-card">
-      <div class="update-header">
-        <span class="update-label">[Commission Status]</span>
-        <span class="update-date">March 11, 2026</span>
-      </div>
-      <p>Commissions are open. I am available to begin new projects immediately.</p>
-    </div>
-
-    <div class="update-card">
-      <div class="update-header">
-        <span class="update-label">[Site Updates]</span>
-        <span class="update-date">March 11, 2026</span>
-      </div>
-      <p>Anime illustrations have been added to the illustration section.</p>
-    </div>
-  </section>
-
-  <!-- Illustration Section（横スクロール・無限ループ風） -->
-  <section id="fanart" class="fade-in scroll-gallery">
-    <h2>Illustration</h2>
-
-    <div class="scroll-row loop-row">
-      <!-- 1周目 -->
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/melody.webp" class="scroll-img">
-
-      <!-- 2周目（ループ用） -->
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp" class="scroll-img">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/melody.webp" class="scroll-img">
-    </div>
-  </section>
-
-  <div class="more-button fade-in">
-    <a href="fanart.html" class="button-link">View more →</a>
-  </div>
-
-  <!-- About Section -->
-  <section id="about" class="fade-in">
-    <h2>About</h2>
-
-    <div class="about-wrapper">
-      <div class="about-text">
-        <p class="about-name">Kohinn</p>
-        <p>Self-taught illustrator, currently working while balancing a full-time job.</p>
-        <p>Specializes in creating eye-catching character illustrations.</p>
-
-        <h3 class="section-title">Skills</h3>
-        <ul class="skills-list">
-          <li>Character illustration</li>
-          <li>Website creation</li>
-        </ul>
-
-        <h3 class="section-title">Career</h3>
-        <ul class="career-list">
-          <li>April 2025 — Started working as an illustrator in earnest</li>
-          <li>May 2025 — Completed first paid commission</li>
-        </ul>
-      </div>
-
-      <div class="about-image">
-        <img class="thumbnail" loading="lazy"
-        src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/jibunn__kl (1).webp"
-        alt="VTuber-style illustration">
-      </div>
-    </div>
-  </section>
-
-  <div class="more-button fade-in">
-    <a href="commission.html" class="button-link">Start your commission →</a>
-  </div>
-
-</main>
-
-<footer class="footer-refined">
-  <div class="footer-inner">
-
-    <nav class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="fanart.html">Illustration</a>
-      <a href="about.html">About</a>
-      <a href="commission.html">Commission</a>
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="logo">HI</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="illustration.html">Illustration</a></li>
+        <li><a href="commission.html">Commission</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
     </nav>
+    <div class="hamburger">☰</div>
+  </header>
 
-    <div class="footer-sns">
-      <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
-      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
-      <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
-      <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
-      <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
+
+  <!-- ========================================================= -->
+  <!-- ① Rosuuri 風：トップに大きい横スクロールギャラリーを追加 -->
+  <!-- ========================================================= -->
+  <section class="hero-scroll">
+    <div class="hero-scroll-inner">
+      <!-- ここにトップに置きたいイラストを入れる -->
+      <img src="img/top1.jpg" alt="">
+      <img src="img/top2.jpg" alt="">
+      <img src="img/top3.jpg" alt="">
+    </div>
+  </section>
+
+
+  <!-- ===== Site Update ===== -->
+  <section class="updates">
+    <h2 class="section-title">Site Updates</h2>
+    <p>[March 11, 2026] Anime illustrations have been added to the illustration section.</p>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- ② Illustration セクション（HOME のタイトルだけ非表示になる） -->
+  <!-- ========================================================= -->
+  <section class="illustration-section">
+    <h2 class="section-title illustration-title">Illustration</h2>
+
+    <div class="illustration-grid">
+      <img src="img/illust1.jpg" alt="">
+      <img src="img/illust2.jpg" alt="">
+      <img src="img/illust3.jpg" alt="">
     </div>
 
-    <p class="footer-copy">
-      © 2025–2026 Kohinn. All rights reserved.
-    </p>
+    <a href="illustration.html" class="view-more">View more →</a>
+  </section>
 
-  </div>
-</footer>
 
-<!-- Modal -->
-<div id="modal" class="modal" aria-hidden="true">
-  <button class="modal-close" aria-label="Close image">✕</button>
-  <img class="modal-content" id="modal-img" alt="">
-</div>
+  <!-- ===== About ===== -->
+  <section class="about-section">
+    <h2 class="section-title">About</h2>
+    <p>HI is an illustrator based in Japan...</p>
+    <a href="about.html" class="view-more">Read more →</a>
+  </section>
 
-<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
 
-<script>
-function toggleMenu(btn) {
-  const nav = document.getElementById('main-nav');
-  const overlay = document.getElementById('navOverlay');
-  const isOpen = nav.classList.toggle('show');
-  btn.classList.toggle('open', isOpen);
-  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  overlay.classList.toggle('show', isOpen);
-  document.body.classList.toggle('menu-open', isOpen);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('modal');
-  const modalImg = document.getElementById('modal-img');
-  const closeBtn = document.querySelector('.modal-close');
-  const backToTop = document.getElementById('backToTop');
-
-  /* モーダル表示 */
-  document.querySelectorAll('.scroll-img').forEach(img => {
-    img.addEventListener('click', () => {
-      modalImg.src = img.src;
-      modal.classList.add('show');
-      modal.setAttribute('aria-hidden', 'false');
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    modal.classList.remove('show');
-    modalImg.src = '';
-    modal.setAttribute('aria-hidden', 'true');
-  });
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('show');
-      modalImg.src = '';
-      modal.setAttribute('aria-hidden', 'true');
-    }
-  });
-
-  /* 横スクロール（ドラッグ対応 + 無限ループ風） */
-  document.querySelectorAll('.scroll-row').forEach(row => {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    row.addEventListener('mousedown', e => {
-      isDown = true;
-      startX = e.pageX - row.offsetLeft;
-      scrollLeft = row.scrollLeft;
-    });
-
-    row.addEventListener('mouseleave', () => {
-      isDown = false;
-    });
-
-    row.addEventListener('mouseup', () => {
-      isDown = false;
-    });
-
-    row.addEventListener('mousemove', e => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - row.offsetLeft;
-      const walk = (x - startX) * 1.2;
-      row.scrollLeft = scrollLeft - walk;
-
-      if (row.scrollLeft <= 0) row.scrollLeft = row.scrollWidth / 2;
-      if (row.scrollLeft >= row.scrollWidth / 2) row.scrollLeft = 1;
-    });
-
-    row.addEventListener('touchmove', () => {
-      if (row.scrollLeft <= 0) row.scrollLeft = row.scrollWidth / 2;
-      if (row.scrollLeft >= row.scrollWidth / 2) row.scrollLeft = 1;
-    });
-  });
-
-  /* Back to top */
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) backToTop.classList.add('show');
-    else backToTop.classList.remove('show');
-  });
-
-  /* Fade-in */
-  const fadeEls = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.1 });
-
-  fadeEls.forEach(el => observer.observe(el));
-});
-</script>
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>© 2026 HI</p>
+  </footer>
 
 </body>
 </html>
-
