@@ -408,7 +408,7 @@ h2::after {
    11. HOME の Illustration タイトルだけ非表示
 ========================================================= */
 
-.home-page #fanart > h2 {
+.home-page #works > h2 {
   display: none;
 }
 .hamburger {
