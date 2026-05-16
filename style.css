@@ -652,4 +652,79 @@ body {
     gap: 0.6rem;
   }
 }
+/* =========================================================
+   ★ 全体を上に寄せる最適化（レイアウト崩れなし）
+========================================================= */
+
+/* ページ全体の上余白を最小化 */
+body {
+  padding-top: 0.3rem !important;
+}
+
+/* main の上余白を詰める（最も効果が大きい） */
+main {
+  padding-top: 1rem !important; /* 2rem → 1rem に */
+  margin-top: 0 !important;
+}
+
+/* section の上下余白をさらに最適化 */
+section {
+  padding: 1.2rem 0 !important;   /* 1.8rem → 1.2rem */
+  margin-bottom: 1.2rem !important;
+}
+
+/* h2（制作一覧・VTuberなど）の余白を詰める */
+h2 {
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.6rem !important;
+}
+
+/* 制作一覧セクション */
+#works {
+  padding-top: 0.6rem !important;
+  margin-top: 0 !important;
+}
+
+/* タグボタン群（重複定義を統合し、最適値に） */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px !important;
+  margin: 0.4rem 0 1rem !important;
+}
+
+.filter-buttons button {
+  padding: 6px 14px !important;
+  font-size: 0.9rem !important;
+  border-radius: 5px !important;
+}
+
+/* ギャラリーとの距離を自然に */
+.gallery {
+  margin-top: 0.6rem !important;
+}
+
+/* カテゴリ見出し（VTuberなど） */
+.category-title {
+  margin-top: 0.6rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+/* スマホ最適化：上方向の詰まりすぎを防ぐ */
+@media (max-width: 720px) {
+  main {
+    padding-top: 0.8rem !important;
+  }
+  section {
+    padding: 1rem 0 !important;
+    margin-bottom: 1rem !important;
+  }
+  h2 {
+    margin-bottom: 0.5rem !important;
+  }
+  .filter-buttons {
+    gap: 5px !important;
+    margin-bottom: 0.8rem !important;
+  }
+}
 
