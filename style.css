@@ -814,4 +814,37 @@ main, .container, .main-wrapper {
     gap: 0.55rem;
   }
 }
+/* ====== セクション間の余白を詰める ====== */
+section {
+  margin-top: 0.3rem !important; /* 上余白を最小限に */
+  padding-top: 0.3rem !important; /* 内側の余白も詰める */
+  margin-bottom: 0.3rem !important; /* 下余白も軽く詰める */
+}
+
+/* ====== 制作一覧と次の見出しの間隔を調整 ====== */
+.portfolio-section {
+  padding-bottom: 0.4rem !important; /* 下の余白を減らす */
+}
+
+/* ====== 見出し（VTuber・二次創作など）を上に寄せる ====== */
+.category-title {
+  margin-top: 0.4rem !important; /* 上余白をさらに詰める */
+  margin-bottom: 0.3rem !important;
+}
+
+/* ====== タグボタン群の下余白を軽く詰める ====== */
+.filter-buttons {
+  margin-bottom: 0.4rem !important;
+}
+
+/* ====== スマホ表示時の調整 ====== */
+@media (max-width: 768px) {
+  section {
+    margin-top: 0.25rem !important;
+    padding-top: 0.25rem !important;
+  }
+  .category-title {
+    margin-top: 0.3rem !important;
+  }
+}
 
