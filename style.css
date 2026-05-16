@@ -571,3 +571,85 @@ h2::after {
 .gallery {
   margin-top: 0.8rem;
 }
+/* ====== 全体レイアウト調整 ====== */
+body {
+  margin: 0;
+  padding-top: 0.5rem; /* ページ上部の余白を最小限に */
+}
+
+/* ====== セクションタイトル（制作一覧） ====== */
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem; /* タイトル下の余白を詰める */
+  color: #1a2a44;
+}
+
+/* ====== タグボタン群 ====== */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem; /* ボタン間隔をコンパクトに */
+  margin-bottom: 0.6rem; /* 下の余白を減らす */
+}
+
+.filter-buttons button {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #1a2a44;
+  background-color: #fff;
+  color: #1a2a44;
+  transition: all 0.2s ease;
+}
+
+.filter-buttons button.active {
+  background-color: #1a2a44;
+  color: #fff;
+}
+
+/* ====== セクション全体の余白 ====== */
+.portfolio-section {
+  padding: 0.8rem 0 1rem 0; /* 上下の余白を軽く詰める */
+}
+
+/* ====== 作品グリッド ====== */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.8rem;
+}
+
+.works-grid img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* ====== 見出し（VTuberなど） ====== */
+.category-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+  color: #1a2a44;
+  border-bottom: 2px solid #1a2a44;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+/* ====== スマホ対応 ====== */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.1rem;
+  }
+  .filter-buttons button {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+  }
+  .works-grid {
+    gap: 0.6rem;
+  }
+}
+
