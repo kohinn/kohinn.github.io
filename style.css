@@ -26,12 +26,12 @@ body {
 main {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 2.4rem 1rem;
+  padding: 2rem 1rem; /* 少しだけ詰める */
 }
 
 section {
-  padding: 2.4rem 0;
-  margin-bottom: 2.4rem;
+  padding: 1.8rem 0;          /* 2.4rem → 1.8rem に */
+  margin-bottom: 1.8rem;      /* 2.4rem → 1.8rem に */
   border-bottom: 1px solid rgba(0, 80, 160, 0.12);
 }
 
@@ -41,7 +41,7 @@ h2 {
   font-size: 1.9rem;
   font-weight: 600;
   color: #003366;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.9rem;  /* 1.2rem → 0.9rem に */
   position: relative;
 }
 
@@ -51,7 +51,7 @@ h2::after {
   width: 52px;
   height: 2px;
   background: #3a7bd5;
-  margin-top: 8px;
+  margin-top: 6px;  /* 8px → 6px にして少し詰める */
   border-radius: 2px;
 }
 
@@ -64,7 +64,7 @@ h2::after {
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(0, 80, 160, 0.12);
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 1rem; /* 0.8rem → 0.6rem に */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,7 +73,7 @@ h2::after {
 
 .main-nav {
   display: flex;
-  gap: 1.2rem;
+  gap: 1.1rem;
 }
 
 .main-nav a {
@@ -131,7 +131,7 @@ h2::after {
     border-right: 1px solid rgba(0, 80, 160, 0.18);
     padding: 5rem 1.5rem;
     flex-direction: column;
-    gap: 1.4rem;
+    gap: 1.2rem; /* 1.4rem → 1.2rem に */
     transform: translateX(-100%);
     transition: 0.35s ease;
     z-index: 1000;
@@ -148,9 +148,9 @@ h2::after {
 .update-card {
   background: #f0f5fb;
   border-left: 3px solid #3a7bd5;
-  padding: 1rem 1.1rem;
+  padding: 0.9rem 1rem; /* 少し詰める */
   border-radius: 6px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 }
 
 /* =========================================================
@@ -159,7 +159,7 @@ h2::after {
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 20px;
+  gap: 18px; /* 20px → 18px に */
 }
 
 .thumbnail {
@@ -179,7 +179,7 @@ h2::after {
 @media (max-width: 720px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 10px; /* 12px → 10px に */
   }
 }
 
@@ -214,8 +214,8 @@ h2::after {
 
 .modal-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 18px;   /* 20px → 18px */
+  right: 18px; /* 20px → 18px */
   background: rgba(255,255,255,0.85);
   border: none;
   font-size: 1.4rem;
@@ -229,17 +229,17 @@ h2::after {
 ========================================================= */
 .about-wrapper {
   display: flex;
-  gap: 2rem;
+  gap: 1.8rem; /* 2rem → 1.8rem */
 }
 
 .about-text {
   flex: 1;
   font-size: 0.95rem;
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
 .about-text p {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
 }
 
 .about-text ul {
@@ -251,7 +251,7 @@ h2::after {
 .about-text li {
   position: relative;
   padding-left: 14px;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 }
 
 .about-text li::before {
@@ -275,7 +275,7 @@ h2::after {
 ========================================================= */
 .footer-refined {
   background: #eef3f8;
-  padding: 2rem 1rem;
+  padding: 1.6rem 1rem; /* 2rem → 1.6rem */
   border-top: 1px solid rgba(0, 80, 160, 0.12);
   text-align: center;
 }
@@ -284,9 +284,9 @@ h2::after {
 .footer-sns {
   display: flex;
   justify-content: center;
-  gap: 0.8rem;
+  gap: 0.7rem;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 }
 
 .footer-copy {
@@ -347,9 +347,23 @@ h2::after {
     line-height: 1.65;
   }
 
+  main {
+    padding: 1.6rem 0.9rem;
+  }
+
+  section {
+    padding: 1.4rem 0;
+    margin-bottom: 1.4rem;
+  }
+
+  h2 {
+    margin-bottom: 0.7rem;
+  }
+
   .about-wrapper {
     flex-direction: column;
     text-align: center;
+    gap: 1.4rem;
   }
 
   .about-image img {
@@ -366,14 +380,14 @@ h2::after {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 32px auto; /* 40px → 32px */
   padding-bottom: 0;
   border-bottom: none;
 }
 
 .hero-scroll-row {
   display: flex;
-  gap: 18px;
+  gap: 16px; /* 18px → 16px */
   padding: 0 6px;
   overflow-x: auto;
   white-space: nowrap;
@@ -385,7 +399,7 @@ h2::after {
 }
 
 .hero-scroll-row .hero-img {
-  height: 420px; /* ← Rosuuri みたいに大きく表示 */
+  height: 420px;
   width: auto;
   border-radius: 12px;
   flex-shrink: 0;
@@ -400,7 +414,7 @@ h2::after {
 
 @media (max-width: 720px) {
   .hero-scroll-row .hero-img {
-    height: 400px; /* スマホ最適化 */
+    height: 380px; /* 400px → 380px */
   }
 }
 
@@ -411,6 +425,7 @@ h2::after {
 .home-page #works > h2 {
   display: none;
 }
+
 .hamburger {
   position: relative;
   z-index: 9999;
@@ -424,17 +439,17 @@ h2::after {
 /* ===== Back to Top ボタン（改善版） ===== */
 .back-to-top {
   position: fixed;
-  right: 22px;          /* ← 右下に固定 */
-  bottom: 22px;
-  background: #003366;  /* 濃い青で視認性UP */
+  right: 18px;          /* 22px → 18px */
+  bottom: 18px;         /* 22px → 18px */
+  background: #003366;
   color: #fff;
-  width: 52px;          /* ← 大きくして押しやすく */
-  height: 52px;
-  border-radius: 50%;   /* 丸ボタンで直感的 */
+  width: 50px;          /* 52px → 50px */
+  height: 50px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 26px;      /* 矢印を大きく */
+  font-size: 24px;      /* 26px → 24px */
   text-decoration: none;
   opacity: 0;
   pointer-events: none;
@@ -456,7 +471,7 @@ h2::after {
 /* ===== 洗練されたボタン（サイト全体に統一） ===== */
 .button-link {
   display: inline-block;
-  padding: 10px 22px;
+  padding: 9px 20px; /* 少しだけコンパクトに */
   border: 1.8px solid #003366;
   color: #003366;
   text-decoration: none;
@@ -477,25 +492,25 @@ h2::after {
 /* ボタンを中央寄せ */
 .more-button {
   text-align: center;
-  margin: 20px 0 40px;
+  margin: 16px 0 32px; /* 20px 0 40px → 少し詰める */
 }
 
 /* About セクションの余白を最適化 */
 #about {
-  padding-top: 1.2rem !important;   /* ← 上の余白を半分に */
-  margin-top: 0 !important;         /* ← Updates との間を詰める */
+  padding-top: 1.1rem !important;
+  margin-top: 0 !important;
 }
 
 /* ===== Illustration Filter Buttons（サイト統一デザイン） ===== */
 .filter-buttons {
   display: flex;
-  gap: 10px;
+  gap: 9px;
   flex-wrap: wrap;
-  margin: 1.2rem 0 2rem;
+  margin: 1rem 0 1.6rem; /* 1.2rem 0 2rem → 少し詰める */
 }
 
 .filter-buttons button {
-  padding: 8px 18px;
+  padding: 7px 16px;
   border: 1.8px solid #003366;
   background: rgba(255,255,255,0.6);
   backdrop-filter: blur(6px);
@@ -516,36 +531,5 @@ h2::after {
 .filter-buttons button.active {
   background: #003366;
   color: #fff;
-}
-
-/* worksページの余白を詰める */
-#works {
-  padding-top: 0.8rem !important;
-  margin-top: 0 !important;
-}
-
-/* 見出しの下余白を詰める */
-#works h2 {
-  margin-bottom: 0.6rem;
-}
-
-/* フィルターボタンの余白を詰める */
-#works .filter-buttons {
-  margin: 0.6rem 0 1.2rem;
-}
-
-@media (max-width: 720px) {
-  section {
-    padding: 1.2rem 0;
-    margin-bottom: 1.2rem;
-  }
-
-  h2 {
-    margin-bottom: 0.6rem;
-  }
-
-  .about-text, .commission-text {
-    line-height: 1.55;
-  }
 }
 
