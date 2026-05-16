@@ -1,5 +1,5 @@
 /* =========================================================
-   0. Reset / Base
+   Reset / Base
 ========================================================= */
 * {
   margin: 0;
@@ -16,32 +16,31 @@ body {
   background: #f7f9fc;
   color: #1a1a1a;
   font-size: 15px;
-  line-height: 1.65; /* 少し詰める */
+  line-height: 1.65;
   overflow-x: hidden;
 }
 
 /* =========================================================
-   1. Layout / Typography
+   Layout / Typography
 ========================================================= */
 main {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 1.6rem 1rem; /* さらに詰める */
+  padding: 1.6rem 1rem;
 }
 
 section {
-  padding: 1.4rem 0;      /* 1.8rem → 1.4rem */
-  margin-bottom: 1.4rem;  /* 1.8rem → 1.4rem */
+  padding: 1.4rem 0;
+  margin-bottom: 1.4rem;
   border-bottom: 1px solid rgba(0, 80, 160, 0.10);
 }
 
-/* --- h2：青ライン（透明感UP） --- */
 h2 {
   font-family: 'Playfair Display', serif;
   font-size: 1.85rem;
   font-weight: 600;
   color: #003366;
-  margin-bottom: 0.6rem; /* さらに詰める */
+  margin-bottom: 0.6rem;
   position: relative;
 }
 
@@ -51,95 +50,71 @@ h2::after {
   width: 48px;
   height: 2px;
   background: #3a7bd5;
-  margin-top: 4px; /* さらに詰める */
+  margin-top: 4px;
   border-radius: 2px;
 }
 
 /* =========================================================
-   2. Header / Navigation
-========================================================= */
-.site-header {
-  position: sticky;
-  top: 0;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(0, 80, 160, 0.12);
-  padding: 0.5rem 1rem; /* さらに詰める */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
-
-.main-nav {
-  display: flex;
-  gap: 1rem; /* 少し詰める */
-}
-
-/* =========================================================
-   3. Updates Section
-========================================================= */
-.update-card {
-  background: #f0f5fb;
-  border-left: 3px solid #3a7bd5;
-  padding: 0.8rem 1rem; /* さらに詰める */
-  border-radius: 6px;
-  margin-bottom: 0.8rem;
-}
-
-/* =========================================================
-   4. Gallery
+   Gallery（画像サイズ正常化）
 ========================================================= */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 16px; /* さらに詰める */
+  gap: 16px;
 }
 
+/* ★ 画像巨大化を防ぐための決定版 ★ */
+.thumbnail {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.thumbnail:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* PCで画像が巨大化しないように最大幅を制限 */
+@media (min-width: 1024px) {
+  .thumbnail {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
+
+/* スマホでは2列固定 */
 @media (max-width: 720px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px; /* さらに詰める */
+    gap: 8px;
   }
 }
 
 /* =========================================================
-   5. About Section
+   Hero Scroll（トップの横スクロール画像）
 ========================================================= */
-.about-wrapper {
-  display: flex;
-  gap: 1.4rem; /* さらに詰める */
+.hero-img {
+  height: 420px;
+  max-height: 420px;
+  width: auto;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
-.about-text p {
-  margin-bottom: 0.6rem; /* さらに詰める */
+@media (max-width: 720px) {
+  .hero-img {
+    height: 360px;
+    max-height: 360px;
+  }
 }
 
 /* =========================================================
-   6. Buttons
-========================================================= */
-.more-button {
-  text-align: center;
-  margin: 12px 0 24px; /* さらに詰める */
-}
-
-.button-link {
-  padding: 8px 18px; /* さらにコンパクト */
-}
-
-/* =========================================================
-   7. Back to Top
-========================================================= */
-.back-to-top {
-  right: 16px;
-  bottom: 16px;
-  width: 46px;
-  height: 46px;
-  font-size: 22px;
-}
-
-/* =========================================================
-   8. works ページ専用の余白最適化
+   works ページ専用の余白最適化
 ========================================================= */
 #works {
   padding-top: 0.6rem !important;
@@ -155,7 +130,62 @@ h2::after {
 }
 
 /* =========================================================
-   9. スマホ最適化（さらに詰める）
+   Buttons
+========================================================= */
+.more-button {
+  text-align: center;
+  margin: 12px 0 24px;
+}
+
+.button-link {
+  padding: 8px 18px;
+  border: 1.8px solid #003366;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  color: #003366;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.button-link:hover {
+  background: #003366;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   About Section
+========================================================= */
+.about-wrapper {
+  display: flex;
+  gap: 1.4rem;
+}
+
+.about-text p {
+  margin-bottom: 0.6rem;
+}
+
+@media (max-width: 720px) {
+  .about-wrapper {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
+
+/* =========================================================
+   Back to Top
+========================================================= */
+.back-to-top {
+  right: 16px;
+  bottom: 16px;
+  width: 46px;
+  height: 46px;
+  font-size: 22px;
+}
+
+/* =========================================================
+   Responsive（スマホ最適化）
 ========================================================= */
 @media (max-width: 720px) {
   main {
@@ -170,10 +200,4 @@ h2::after {
   h2 {
     margin-bottom: 0.5rem;
   }
-
-  .about-wrapper {
-    flex-direction: column;
-    gap: 1.2rem;
-  }
 }
-
