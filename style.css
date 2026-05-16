@@ -727,4 +727,91 @@ h2 {
     margin-bottom: 0.8rem !important;
   }
 }
+/* ====== 全体レイアウト（最上部まで寄せる） ====== */
+body {
+  margin: 0;
+  padding-top: 0.2rem; /* ほぼ最小限の余白 */
+}
+
+/* メインコンテンツをさらに上へ寄せる */
+main, .container, .main-wrapper {
+  margin-top: 0 !important;
+  padding-top: 0.2rem !important;
+}
+
+/* ====== セクションタイトル（制作一覧） ====== */
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 0.3rem;   /* さらに上へ詰める */
+  margin-bottom: 0.25rem;
+  color: #1a2a44;
+}
+
+/* ====== タグボタン群 ====== */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem; /* さらにコンパクトに */
+  margin-bottom: 0.5rem;
+}
+
+.filter-buttons button {
+  font-size: 0.9rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #1a2a44;
+  background-color: #fff;
+  color: #1a2a44;
+  transition: all 0.2s ease;
+}
+
+.filter-buttons button.active {
+  background-color: #1a2a44;
+  color: #fff;
+}
+
+/* ====== セクション全体の余白 ====== */
+.portfolio-section {
+  padding: 0.6rem 0 0.8rem 0; /* 全体をさらに上へ */
+}
+
+/* ====== 作品グリッド ====== */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+.works-grid img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* ====== 見出し（VTuberなど） ====== */
+.category-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 0.6rem; /* ここも詰める */
+  margin-bottom: 0.35rem;
+  color: #1a2a44;
+  border-bottom: 2px solid #1a2a44;
+  display: inline-block;
+  padding-bottom: 0.15rem;
+}
+
+/* ====== スマホ対応 ====== */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.1rem;
+  }
+  .filter-buttons button {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.65rem;
+  }
+  .works-grid {
+    gap: 0.55rem;
+  }
+}
 
