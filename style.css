@@ -16,7 +16,7 @@ body {
   background: #f7f9fc;
   color: #1a1a1a;
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.7;
   overflow-x: hidden;
 }
 
@@ -26,47 +26,45 @@ body {
 main {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 1.6rem 1rem;
+  padding: 2rem 1rem; /* 元の挙動に戻す */
 }
 
 section {
-  padding: 1.4rem 0;
-  margin-bottom: 1.4rem;
-  border-bottom: 1px solid rgba(0, 80, 160, 0.10);
+  padding: 2rem 0;        /* 元の挙動に近いが少し詰める */
+  margin-bottom: 2rem;    /* 元より少し詰める */
+  border-bottom: 1px solid rgba(0, 80, 160, 0.12);
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.85rem;
+  font-size: 1.9rem;
   font-weight: 600;
   color: #003366;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem; /* 元より少し詰める */
   position: relative;
 }
 
 h2::after {
   content: "";
   display: block;
-  width: 48px;
+  width: 52px;
   height: 2px;
   background: #3a7bd5;
-  margin-top: 4px;
+  margin-top: 6px; /* 少し詰める */
   border-radius: 2px;
 }
 
 /* =========================================================
-   Gallery（画像サイズ正常化）
+   Gallery（画像サイズを元に戻す）
 ========================================================= */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 16px;
+  gap: 20px; /* 元の値に戻す */
 }
 
-/* ★ 画像巨大化を防ぐための決定版 ★ */
 .thumbnail {
   width: 100%;
-  max-width: 100%;
   border-radius: 10px;
   object-fit: cover;
   aspect-ratio: 3 / 4;
@@ -74,33 +72,26 @@ h2::after {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.thumbnail:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-}
-
-/* PCで画像が巨大化しないように最大幅を制限 */
+/* PCで巨大化しないように max-width を設定 */
 @media (min-width: 1024px) {
   .thumbnail {
-    max-width: 260px;
-    margin: 0 auto;
+    max-width: 100%; /* 元の挙動に戻す */
   }
 }
 
-/* スマホでは2列固定 */
+/* スマホは2列 */
 @media (max-width: 720px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    gap: 12px; /* 元の値 */
   }
 }
 
 /* =========================================================
-   Hero Scroll（トップの横スクロール画像）
+   Hero Scroll（トップ画像）
 ========================================================= */
 .hero-img {
-  height: 420px;
-  max-height: 420px;
+  height: 420px; /* 元の値 */
   width: auto;
   border-radius: 12px;
   object-fit: cover;
@@ -108,8 +99,7 @@ h2::after {
 
 @media (max-width: 720px) {
   .hero-img {
-    height: 360px;
-    max-height: 360px;
+    height: 400px; /* 元の値 */
   }
 }
 
@@ -117,16 +107,16 @@ h2::after {
    works ページ専用の余白最適化
 ========================================================= */
 #works {
-  padding-top: 0.6rem !important;
+  padding-top: 1rem !important;
   margin-top: 0 !important;
 }
 
 #works h2 {
-  margin-bottom: 0.4rem !important;
+  margin-bottom: 0.8rem !important;
 }
 
 #works .filter-buttons {
-  margin: 0.4rem 0 1rem !important;
+  margin: 0.8rem 0 1.6rem !important;
 }
 
 /* =========================================================
@@ -134,11 +124,11 @@ h2::after {
 ========================================================= */
 .more-button {
   text-align: center;
-  margin: 12px 0 24px;
+  margin: 20px 0 32px;
 }
 
 .button-link {
-  padding: 8px 18px;
+  padding: 10px 22px;
   border: 1.8px solid #003366;
   background: rgba(255,255,255,0.6);
   backdrop-filter: blur(6px);
@@ -159,17 +149,17 @@ h2::after {
 ========================================================= */
 .about-wrapper {
   display: flex;
-  gap: 1.4rem;
+  gap: 2rem; /* 元の値 */
 }
 
 .about-text p {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem; /* 元の値 */
 }
 
 @media (max-width: 720px) {
   .about-wrapper {
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.4rem;
   }
 }
 
@@ -177,11 +167,11 @@ h2::after {
    Back to Top
 ========================================================= */
 .back-to-top {
-  right: 16px;
-  bottom: 16px;
-  width: 46px;
-  height: 46px;
-  font-size: 22px;
+  right: 22px;
+  bottom: 22px;
+  width: 52px;
+  height: 52px;
+  font-size: 26px;
 }
 
 /* =========================================================
@@ -189,15 +179,16 @@ h2::after {
 ========================================================= */
 @media (max-width: 720px) {
   main {
-    padding: 1.2rem 0.8rem;
+    padding: 1.6rem 1rem;
   }
 
   section {
-    padding: 1.1rem 0;
-    margin-bottom: 1.1rem;
+    padding: 1.6rem 0;
+    margin-bottom: 1.6rem;
   }
 
   h2 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
   }
 }
+
