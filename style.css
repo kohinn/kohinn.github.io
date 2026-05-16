@@ -532,3 +532,42 @@ h2::after {
   background: #003366;
   color: #fff;
 }
+
+/* ===== 制作一覧セクションの余白・文字サイズ調整 ===== */
+#works {
+  padding-top: 1.2rem; /* タイトル上の余白を少し詰める */
+  margin-bottom: 1.2rem; /* 下の余白も軽く詰める */
+}
+
+/* タイトル（制作一覧） */
+#works h2 {
+  font-size: 1.6rem; /* 少しコンパクトに */
+  margin-bottom: 0.6rem; /* タイトルとボタンの距離を詰める */
+}
+
+/* タグボタン群 */
+.filter-buttons {
+  display: flex;
+  gap: 8px; /* ボタン間隔を少し狭める */
+  flex-wrap: wrap;
+  margin: 0.6rem 0 1.2rem; /* 上下の余白を詰める */
+  justify-content: flex-start;
+}
+
+/* 各ボタン */
+.filter-buttons button {
+  padding: 6px 14px; /* 高さを少し低く */
+  font-size: 0.9rem; /* 読みやすくコンパクトに */
+  border-radius: 5px;
+}
+
+/* ボタンのホバー・アクティブは既存デザインを維持 */
+.filter-buttons button:hover,
+.filter-buttons button.active {
+  transform: translateY(-1px);
+}
+
+/* 下のギャラリーとの距離を自然に */
+.gallery {
+  margin-top: 0.8rem;
+}
