@@ -534,3 +534,18 @@ h2::after {
   margin: 0.6rem 0 1.2rem;
 }
 
+@media (max-width: 720px) {
+  section {
+    padding: 1.2rem 0;
+    margin-bottom: 1.2rem;
+  }
+
+  h2 {
+    margin-bottom: 0.6rem;
+  }
+
+  .about-text, .commission-text {
+    line-height: 1.55;
+  }
+}
+
