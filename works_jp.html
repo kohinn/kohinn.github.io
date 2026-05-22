@@ -5,18 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Works | Kohinn</title>
   <link rel="stylesheet" href="style.css">
+
   <style>
-    /* メニュー固定 */
+    /* ヘッダー固定 */
     .site-header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 9999;
-      background: #fff;
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.7);
     }
+
     body {
-      padding-top: 70px; /* ヘッダー分の余白 */
+      padding-top: 70px;
+    }
+
+    /* ハンバーガー（HOME と同じ） */
+    .hamburger {
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 10px;
+      z-index: 10000;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 28px;
+      height: 3px;
+      margin: 6px;
+      background: #333;
+      transition: 0.3s;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* メニュー（HOME と同じ透明背景） */
+    .main-nav {
+      position: fixed;
+      top: 70px;
+      right: -100%;
+      width: 100%;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(8px);
+      transition: 0.3s;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .main-nav.show {
+      right: 0;
     }
   </style>
 </head>
@@ -26,7 +74,8 @@
 <header class="site-header">
   <div class="logo"><a href="index_jp.html">Kohinn</a></div>
 
-  <button class="menu-toggle" id="menuToggle" aria-controls="main-nav" aria-expanded="false">
+  <!-- ★ HOME と同じクラス名に変更 -->
+  <button class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </button>
 
@@ -37,9 +86,8 @@
     <a href="commission_jp.html">Commission</a>
   </nav>
 
-  <!-- 言語切り替えボタン -->
   <div class="language-switch">
-    <a href="works_jp.html" lang="ja">JP</a> / <a href="works.html" lang="en">EN</a>
+    <a href="works_jp.html">JP</a> / <a href="works.html">EN</a>
   </div>
 </header>
 
@@ -49,47 +97,27 @@
     <h2>制作一覧</h2>
 
     <div class="works-grid" id="worksGrid">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp" loading="lazy" alt="オリジナルキャラクター">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp" loading="lazy" alt="キャラクターイラスト">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" loading="lazy" alt="キャラクターイラスト">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp" loading="lazy" alt="キャラクターイラスト">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp" loading="lazy" alt="VTuberイラスト">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp" loading="lazy" alt="キャラクターイラスト">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki3 (1).webp" loading="lazy" alt="魔法科高校の劣等生 ファンアート">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/siba_brlkj.webp" loading="lazy" alt="魔法科高校の劣等生 ファンアート">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp" loading="lazy">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp" loading="lazy">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" loading="lazy">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp" loading="lazy">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp" loading="lazy">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp" loading="lazy">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki3 (1).webp" loading="lazy">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/siba_brlkj.webp" loading="lazy">
     </div>
   </section>
 
 </main>
 
-<div id="modal" class="modal" aria-hidden="true">
-  <button class="modal-close" aria-label="閉じる">✕</button>
-  <img id="modal-img" class="modal-content" alt="">
-</div>
-
 <script>
-/* ハンバーガー開閉（HOMEと同じ動作） */
-const menuToggle = document.getElementById('menuToggle');
-const mainNav = document.getElementById('main-nav');
+/* ★ HOME と同じハンバーガー動作 */
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('main-nav');
 
-menuToggle.addEventListener('click', () => {
-  const isOpen = mainNav.classList.toggle('show');
-  menuToggle.classList.toggle('open', isOpen);
-  menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-});
-
-/* モーダル拡大 */
-document.querySelectorAll('.works-grid img').forEach(img => {
-  img.addEventListener('click', () => {
-    document.getElementById('modal-img').src = img.src;
-    document.getElementById('modal').classList.add('show');
-    document.getElementById('modal').setAttribute('aria-hidden', 'false');
-  });
-});
-
-document.querySelector('.modal-close').addEventListener('click', () => {
-  document.getElementById('modal').classList.remove('show');
-  document.getElementById('modal').setAttribute('aria-hidden', 'true');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  nav.classList.toggle('show');
 });
 
 /* ランダム表示 */
