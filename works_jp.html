@@ -3,198 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>制作一覧 | Kohinn</title>
-
-  <!-- Google tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-V286NXLCKF');
-  </script>
-
-  <!-- SEO -->
-  <meta name="description" content="Kohinn のイラストギャラリー。VTuber 風イラスト、アニメ風イラスト、オリジナルアバターなどを掲載。">
-  <meta name="keywords" content="Kohinn, イラスト, ギャラリー, VTuber, アニメ, キャラクター">
-
-  <!-- OGP -->
-  <meta property="og:title" content="イラストギャラリー | Kohinn">
-  <meta property="og:description" content="キャラクターイラスト、VTuber 風作品、オリジナルアバターなどを掲載。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kohinn.github.io/fanart_jp.html">
-  <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
-
-  <link rel="stylesheet" href="style.css?v=20251129">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <title>Works | Kohinn</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ▼ Hamburger menu -->
-<nav id="main-nav" class="main-nav">
-  <a href="index.html">Home</a>
-  <a href="works.html">works</a>
-  <a href="about.html">About</a>
-  <a href="commission.html">Commission</a>
-</nav>
-
-<div class="nav-overlay" id="navOverlay"></div>
-
 <header class="site-header">
-  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
+  <div class="logo"><a href="index_jp.html">Kohinn</a></div>
+
+  <button class="menu-toggle" onclick="toggleMenu(this)">
     <span></span><span></span><span></span>
   </button>
 
-  <div class="language-switch">
-    <a href="works.html" lang="en">EN</a> / <a href="works_jp.html" lang="ja">JP</a>
-  </div>
+  <nav id="main-nav" class="main-nav">
+    <a href="index_jp.html">Home</a>
+    <a href="works_jp.html">Works</a>
+    <a href="about_jp.html">About</a>
+    <a href="commission_jp.html">Commission</a>
+  </nav>
 </header>
 
 <main>
 
-<section id="works" class="fade-in">
-  <h2>制作一覧</h2>
+  <section id="works" class="portfolio-section fade-in">
+    <h2>制作一覧</h2>
 
-  <!-- ▼ Category Filter Buttons -->
-  <div class="filter-buttons">
-    <button data-filter="all" class="active">#すべて</button>
-    <button data-filter="vtuber">#VTuber</button>
-    <button data-filter="anime">#二次創作</button>
-    <button data-filter="original">#オリジナル</button>
-  </div>
-</section>
-
-<!-- VTuber Section -->
-<section id="vtuber" class="fade-in">
-  <h2>VTuber</h2>
-  <div class="gallery">
-    <img class="thumbnail" loading="lazy" src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp">
-    <img class="thumbnail" loading="lazy" src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp">
-    <img class="thumbnail" loading="lazy" src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp">
-    <img class="thumbnail" loading="lazy" src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp">
-     <img class="thumbnail" loading="lazy" src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp">
-    <img class="thumbnail" loading="lazy" src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp">
-    <img class="thumbnail" loading="lazy" src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/melody.webp">
-  </div>
-</section>
-
-<!-- Anime Section -->
-<section id="anime" class="fade-in">
-  <h2>二次創作</h2>
-  <div class="gallery">
-    <img class="thumbnail" loading="lazy" src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki3 (1).webp">
-    <img class="thumbnail" loading="lazy" src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/siba_brlkj.webp">
-  </div>
-</section>
-
-<!-- Original Section -->
-<section id="avatar" class="fade-in">
-  <h2>オリジナル</h2>
-  <div class="gallery">
-    <img class="thumbnail" loading="lazy" src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/jibunn__kl (1).webp">
-  </div>
-</section>
-
-<div class="more-button fade-in">
-  <a href="commission_jp.html" class="button-link">コミッションページを見る →</a>
-</div>
-
-</main>
-
-<footer class="footer-refined">
-  <div class="footer-inner">
-    <nav class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="works.html">works</a>
-      <a href="about.html">About</a>
-      <a href="commission.html">Commission</a>
-    </nav>
-
-    <div class="footer-sns">
-      <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
-      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
-      <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
-      <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
-      <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
+    <!-- フィルターボタン -->
+    <div class="filter-buttons">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="illustration">Character Illustration</button>
+      <button data-filter="design">Character Design</button>
+      <button data-filter="fan">Fan Works</button>
+      <button data-filter="vtuber">VTuber / Avatar</button>
     </div>
 
-    <p class="footer-copy">© 2025–2026 Kohinn. All rights reserved.</p>
-  </div>
-</footer>
+    <!-- 作品グリッド -->
+    <div class="works-grid">
+
+      <!-- Character Illustration -->
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp"
+           class="illustration"
+           loading="lazy" alt="キャラクターイラスト">
+
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp"
+           class="illustration"
+           loading="lazy" alt="キャラクターイラスト">
+
+      <!-- Character Design -->
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp"
+           class="design"
+           loading="lazy" alt="キャラクターデザイン">
+
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp"
+           class="design"
+           loading="lazy" alt="立ち絵">
+
+      <!-- Fan Works -->
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp"
+           class="fan"
+           loading="lazy" alt="二次創作 / ファンアート">
+
+      <!-- VTuber -->
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp"
+           class="vtuber"
+           loading="lazy" alt="VTuberイラスト">
+
+    </div>
+  </section>
+
+</main>
 
 <!-- Modal -->
 <div id="modal" class="modal" aria-hidden="true">
   <button class="modal-close">✕</button>
-  <img class="modal-content" id="modal-img">
+  <img id="modal-img" class="modal-content" alt="">
 </div>
 
-<!-- ▼ Back to Top（追加） -->
-<a href="#" class="back-to-top" id="backToTop">↑</a>
-
 <script>
+/* ハンバーガー */
 function toggleMenu(btn) {
   const nav = document.getElementById('main-nav');
-  const overlay = document.getElementById('navOverlay');
   const isOpen = nav.classList.toggle('show');
   btn.classList.toggle('open', isOpen);
-  overlay.classList.toggle('show', isOpen);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('modal');
-  const modalImg = document.getElementById('modal-img');
-  const closeBtn = document.querySelector('.modal-close');
-
-  document.querySelectorAll('.gallery img').forEach(img => {
-    img.addEventListener('click', () => {
-      modalImg.src = img.src;
-      modal.classList.add('show');
-    });
+/* モーダル */
+document.querySelectorAll('.works-grid img').forEach(img => {
+  img.addEventListener('click', () => {
+    document.getElementById('modal-img').src = img.src;
+    document.getElementById('modal').classList.add('show');
   });
+});
 
-  closeBtn.addEventListener('click', () => {
-    modal.classList.remove('show');
-    modalImg.src = '';
-  });
+document.querySelector('.modal-close').addEventListener('click', () => {
+  document.getElementById('modal').classList.remove('show');
+});
 
-  // ===== Filter =====
-  document.querySelectorAll('.filter-buttons button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
+/* フィルタ */
+const buttons = document.querySelectorAll('.filter-buttons button');
+const images = document.querySelectorAll('.works-grid img');
 
-      document.querySelectorAll('.filter-buttons button').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-      const sections = {
-        vtuber: document.getElementById('vtuber'),
-        anime: document.getElementById('anime'),
-        original: document.getElementById('avatar')
-      };
+    const filter = btn.dataset.filter;
 
-      if (filter === 'all') {
-        Object.values(sections).forEach(sec => sec.style.display = 'block');
+    images.forEach(img => {
+      if (filter === 'all' || img.classList.contains(filter)) {
+        img.style.display = 'block';
       } else {
-        Object.entries(sections).forEach(([key, sec]) => {
-          sec.style.display = (key === filter) ? 'block' : 'none';
-        });
+        img.style.display = 'none';
       }
     });
-  });
-
-  /* ▼ Back to top（追加） */
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      backToTop.classList.add('show');
-    } else {
-      backToTop.classList.remove('show');
-    }
   });
 });
 </script>
 
 </body>
 </html>
-
 
