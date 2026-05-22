@@ -22,6 +22,11 @@
     <a href="about_jp.html">About</a>
     <a href="commission_jp.html">Commission</a>
   </nav>
+
+  <!-- ★ 言語切り替えボタン（HOME と同じ配置） -->
+  <div class="language-switch">
+    <a href="works_jp.html" lang="ja">JP</a> / <a href="works.html" lang="en">EN</a>
+  </div>
 </header>
 
 <main>
@@ -97,13 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('worksGrid');
   const items = Array.from(grid.children);
 
-  // フィッシャー–イェーツのシャッフル
   for (let i = items.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [items[i], items[j]] = [items[j], items[i]];
   }
 
-  // 並び替えた順に再配置
   items.forEach(item => grid.appendChild(item));
 });
 </script>
