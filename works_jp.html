@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Works | Kohinn</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* メニュー固定 */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+      background: #fff;
+    }
+    body {
+      padding-top: 70px; /* ヘッダー分の余白 */
+    }
+  </style>
 </head>
 
 <body>
@@ -12,7 +26,7 @@
 <header class="site-header">
   <div class="logo"><a href="index_jp.html">Kohinn</a></div>
 
-  <button class="menu-toggle" onclick="toggleMenu(this)">
+  <button class="menu-toggle" id="menuToggle" aria-controls="main-nav" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 
@@ -23,7 +37,7 @@
     <a href="commission_jp.html">Commission</a>
   </nav>
 
-  <!-- ★ 言語切り替えボタン（HOME と同じ配置） -->
+  <!-- 言語切り替えボタン -->
   <div class="language-switch">
     <a href="works_jp.html" lang="ja">JP</a> / <a href="works.html" lang="en">EN</a>
   </div>
@@ -34,54 +48,35 @@
   <section id="works" class="portfolio-section fade-in">
     <h2>制作一覧</h2>
 
-    <!-- 単一ギャラリー（全作品） -->
     <div class="works-grid" id="worksGrid">
-
-      <!-- 旧アバター（オリジナル） -->
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp"
-           loading="lazy" alt="オリジナルキャラクター">
-
-      <!-- 海外VTuber / ファンアートなど -->
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp"
-           loading="lazy" alt="キャラクターイラスト">
-
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp"
-           loading="lazy" alt="キャラクターイラスト">
-
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp"
-           loading="lazy" alt="キャラクターイラスト">
-
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp"
-           loading="lazy" alt="VTuberイラスト">
-
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp"
-           loading="lazy" alt="キャラクターイラスト">
-
-      <!-- 魔法科高校の劣等生 ファンアート -->
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki3 (1).webp"
-           loading="lazy" alt="魔法科高校の劣等生 ファンアート">
-
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/siba_brlkj.webp"
-           loading="lazy" alt="魔法科高校の劣等生 ファンアート">
-
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp" loading="lazy" alt="オリジナルキャラクター">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp" loading="lazy" alt="キャラクターイラスト">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" loading="lazy" alt="キャラクターイラスト">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp" loading="lazy" alt="キャラクターイラスト">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp" loading="lazy" alt="VTuberイラスト">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp" loading="lazy" alt="キャラクターイラスト">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki3 (1).webp" loading="lazy" alt="魔法科高校の劣等生 ファンアート">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/siba_brlkj.webp" loading="lazy" alt="魔法科高校の劣等生 ファンアート">
     </div>
   </section>
 
 </main>
 
-<!-- Modal -->
 <div id="modal" class="modal" aria-hidden="true">
   <button class="modal-close" aria-label="閉じる">✕</button>
   <img id="modal-img" class="modal-content" alt="">
 </div>
 
 <script>
-/* ハンバーガー */
-function toggleMenu(btn) {
-  const nav = document.getElementById('main-nav');
-  const isOpen = nav.classList.toggle('show');
-  btn.classList.toggle('open', isOpen);
-}
+/* ハンバーガー開閉（HOMEと同じ動作） */
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('main-nav');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = mainNav.classList.toggle('show');
+  menuToggle.classList.toggle('open', isOpen);
+  menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
 
 /* モーダル拡大 */
 document.querySelectorAll('.works-grid img').forEach(img => {
@@ -97,16 +92,14 @@ document.querySelector('.modal-close').addEventListener('click', () => {
   document.getElementById('modal').setAttribute('aria-hidden', 'true');
 });
 
-/* ランダム表示：ページ読み込み時に並び替え */
+/* ランダム表示 */
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('worksGrid');
   const items = Array.from(grid.children);
-
   for (let i = items.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [items[i], items[j]] = [items[j], items[i]];
   }
-
   items.forEach(item => grid.appendChild(item));
 });
 </script>
