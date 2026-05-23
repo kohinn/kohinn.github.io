@@ -79,6 +79,9 @@ h2::after {
   font-size: 18px;
 }
 
+/* =========================================================
+   HAMBURGER（滑らかアニメーション）
+========================================================= */
 .hamburger {
   justify-self: center;
   cursor: pointer;
@@ -94,19 +97,21 @@ h2::after {
   height: 3px;
   margin: 6px;
   background: #333;
-  transition: 0.3s;
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.18s ease;
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
 .hamburger.active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
+/* 右：言語切替 */
 .language-switch {
   justify-self: end;
   font-weight: 600;
@@ -124,7 +129,7 @@ h2::after {
   backdrop-filter: blur(8px);
   padding: 20px;
   text-align: center;
-  transition: 0.3s ease;
+  transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 9998;
 }
 
@@ -167,12 +172,13 @@ h2::after {
 }
 
 /* =========================================================
-   HOME（横スクロール画像の最適化）
+   HOME（横スクロール画像の巨大化防止）
 ========================================================= */
 .scroll-gallery .scroll-img {
-  width: 160px;
+  width: 150px;
+  max-width: 150px;
   height: auto;
-  max-height: 240px; /* ← 画像巨大化を防止 */
+  max-height: 220px;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: 10px;
@@ -211,18 +217,6 @@ h2::after {
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
-}
-
-.modal-close {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  background: rgba(255,255,255,0.85);
-  border: none;
-  font-size: 1.4rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  cursor: pointer;
 }
 
 /* =========================================================
@@ -302,10 +296,9 @@ h2::after {
 
   .scroll-gallery .scroll-img {
     width: 120px;
-    max-height: 200px;
+    max-height: 180px;
   }
 }
-
 
 
 
