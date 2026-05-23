@@ -25,32 +25,46 @@
   <meta property="og:url" content="https://kohinn.github.io/commission_jp.html">
   <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
 
-  <link rel="stylesheet" href="style.css?v=20251129">
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-
 </head>
 
 <body class="commission-page">
 
-<!-- ▼ ハンバーガーメニュー -->
-<nav id="main-nav" class="main-nav">
-  <a href="index_jp.html">Home</a>
-  <a href="works_jp.html">works</a>
-  <a href="about_jp.html">About</a>
-  <a href="commission_jp.html">Commission</a>
-</nav>
-
-<div class="nav-overlay" id="navOverlay"></div>
-
 <header class="site-header">
-  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
+  <div class="logo">
+    <a href="index_jp.html">Kohinn</a>
+  </div>
+
+  <!-- ★ Work と同じハンバーガー構造 -->
+  <button class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </button>
 
+  <!-- ★ Work と同じナビゲーション構造 -->
+  <nav id="main-nav" class="main-nav">
+    <a href="index_jp.html">Home</a>
+    <a href="works_jp.html">Works</a>
+    <a href="about_jp.html">About</a>
+    <a href="commission_jp.html">Commission</a>
+  </nav>
+
+  <!-- 言語切り替え -->
   <div class="language-switch">
     <a href="commission.html" lang="en">EN</a> / <a href="commission_jp.html" lang="ja">JP</a>
   </div>
 </header>
+
+<script>
+/* ★ Work と同じハンバーガー動作 */
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('main-nav');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  nav.classList.toggle('show');
+});
+</script>
 
 <main>
 
@@ -153,8 +167,7 @@
     </div>
   </section>
 
-  <!-- ▼▼▼ Contact 統合 ▼▼▼ -->
-
+  <!-- お問い合わせ -->
   <section id="contact" class="fade-in">
     <h2>お問い合わせ</h2>
     <div class="about-wrapper">
@@ -185,8 +198,6 @@
     </div>
   </section>
 
-  <!-- ▲▲▲ Contact 統合完了 ▲▲▲ -->
-
 </main>
 
 <footer class="footer-refined">
@@ -194,7 +205,7 @@
 
     <nav class="footer-nav">
       <a href="index_jp.html">Home</a>
-      <a href="works_jp.html">works</a>
+      <a href="works_jp.html">Works</a>
       <a href="about_jp.html">About</a>
       <a href="commission_jp.html">Commission</a>
     </nav>
@@ -214,20 +225,10 @@
   </div>
 </footer>
 
-<!-- ▼ Back to Top（追加） -->
+<!-- Back to Top -->
 <a href="#" class="back-to-top" id="backToTop" aria-label="トップへ戻る">↑</a>
 
 <script>
-function toggleMenu(btn) {
-  const nav = document.getElementById('main-nav');
-  const overlay = document.getElementById('navOverlay');
-  const isOpen = nav.classList.toggle('show');
-  btn.classList.toggle('open', isOpen);
-  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  overlay.classList.toggle('show', isOpen);
-  document.body.classList.toggle('menu-open', isOpen);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
 
   /* Fade-in */
@@ -239,14 +240,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1 });
   fadeEls.forEach(el => observer.observe(el));
 
-  /* Back to top（追加） */
+  /* Back to top */
   const backToTop = document.getElementById('backToTop');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      backToTop.classList.add('show');
-    } else {
-      backToTop.classList.remove('show');
-    }
+    if (window.scrollY > 200) backToTop.classList.add('show');
+    else backToTop.classList.remove('show');
   });
 });
 </script>
@@ -254,5 +252,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 </html>
 
-</body>
-</html>
