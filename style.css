@@ -848,3 +848,50 @@ section {
   }
 }
 
+/* Work と同じハンバーガーに統一 */
+.hamburger {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 10px;
+  z-index: 10000;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 6px;
+  background: #333;
+  transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Work と同じ右スライドメニュー */
+.main-nav {
+  position: fixed;
+  top: 70px;
+  right: -100%;
+  width: 100%;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+  padding: 20px;
+  text-align: center;
+  z-index: 9999;
+}
+
+.main-nav.show {
+  right: 0;
+}
+
+
