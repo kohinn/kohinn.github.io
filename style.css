@@ -20,6 +20,12 @@ body {
   overflow-x: hidden;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* =========================================================
    GLOBAL LAYOUT
 ========================================================= */
@@ -80,7 +86,7 @@ h2::after {
 }
 
 /* =========================================================
-   HAMBURGER（滑らかアニメーション）
+   HAMBURGER（より滑らか・キビキビ）
 ========================================================= */
 .hamburger {
   justify-self: center;
@@ -97,18 +103,19 @@ h2::after {
   height: 3px;
   margin: 6px;
   background: #333;
-  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.18s ease;
+  transition:
+    transform 0.18s cubic-bezier(0.25, 0.8, 0.25, 1),
+    opacity 0.15s ease-out;
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
 .hamburger.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* 右：言語切替 */
@@ -118,23 +125,24 @@ h2::after {
 }
 
 /* =========================================================
-   NAVIGATION（左スライド）
+   NAVIGATION（左スライド・滑らか）
 ========================================================= */
 .main-nav {
   position: fixed;
   top: 70px;
-  left: -100%;
+  left: 0;
   width: 100%;
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(8px);
   padding: 20px;
   text-align: center;
-  transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-100%);
+  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
   z-index: 9998;
 }
 
 .main-nav.show {
-  left: 0;
+  transform: translateX(0);
 }
 
 .main-nav a {
@@ -158,7 +166,6 @@ h2::after {
 .works-grid img {
   width: 100%;
   max-width: 260px;
-  height: auto;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: 10px;
@@ -188,6 +195,23 @@ h2::after {
 }
 
 .scroll-gallery .scroll-img:hover {
+  transform: translateY(-4px);
+}
+
+/* ★ ヒーロー画像（ここが巨大化の原因だった） */
+.hero-scroll-row .hero-img {
+  height: 320px;
+  max-height: 320px;
+  width: auto;
+  max-width: 220px; /* ← これで巨大化を完全に防止 */
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.hero-scroll-row .hero-img:hover {
   transform: translateY(-4px);
 }
 
@@ -298,8 +322,11 @@ h2::after {
     width: 120px;
     max-height: 180px;
   }
+
+  .hero-scroll-row .hero-img {
+    height: 260px;
+    max-height: 260px;
+    max-width: 180px;
+  }
 }
-
-
-
 
