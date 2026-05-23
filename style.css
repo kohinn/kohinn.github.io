@@ -73,14 +73,12 @@ h2::after {
   align-items: center;
 }
 
-/* 左：ロゴ */
 .logo {
   justify-self: start;
   font-weight: 700;
   font-size: 18px;
 }
 
-/* 中央：ハンバーガー */
 .hamburger {
   justify-self: center;
   cursor: pointer;
@@ -109,7 +107,6 @@ h2::after {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* 右：言語切替 */
 .language-switch {
   justify-self: end;
   font-weight: 600;
@@ -155,7 +152,7 @@ h2::after {
 
 .works-grid img {
   width: 100%;
-  max-width: 260px;   /* ← 画像の最大幅を制限 */
+  max-width: 260px;
   height: auto;
   aspect-ratio: 3 / 4;
   object-fit: cover;
@@ -167,6 +164,25 @@ h2::after {
 .works-grid img:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* =========================================================
+   HOME（横スクロール画像の最適化）
+========================================================= */
+.scroll-gallery .scroll-img {
+  width: 160px;
+  height: auto;
+  max-height: 240px; /* ← 画像巨大化を防止 */
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.scroll-gallery .scroll-img:hover {
+  transform: translateY(-4px);
 }
 
 /* =========================================================
@@ -260,6 +276,14 @@ h2::after {
 }
 
 /* =========================================================
+   制作一覧タイトルを非表示
+========================================================= */
+#works > h2,
+.section-title {
+  display: none !important;
+}
+
+/* =========================================================
    RESPONSIVE
 ========================================================= */
 @media (max-width: 720px) {
@@ -275,7 +299,13 @@ h2::after {
   .works-grid img {
     max-width: 200px;
   }
+
+  .scroll-gallery .scroll-img {
+    width: 120px;
+    max-height: 200px;
+  }
 }
+
 
 
 
