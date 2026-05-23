@@ -48,14 +48,36 @@
     <a href="index_jp.html">Kohinn</a>
   </div>
 
-  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
+  <!-- ★ Work と同じハンバーガー構造に統一 -->
+  <button class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </button>
 
+  <!-- ★ Work と同じナビゲーション構造に統一 -->
+  <nav id="main-nav" class="main-nav">
+    <a href="index_jp.html">Home</a>
+    <a href="works_jp.html">Works</a>
+    <a href="about_jp.html">About</a>
+    <a href="commission_jp.html">Commission</a>
+  </nav>
+
+  <!-- 言語切り替え -->
   <div class="language-switch">
-    <a href="index_jp.html" lang="ja">JP</a> / <a href="index.html" lang="en">EN</a>
+    <a href="index_jp.html">JP</a> / <a href="index.html">EN</a>
   </div>
 </header>
+
+<script>
+/* ★ Work と同じハンバーガー動作に統一 */
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('main-nav');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  nav.classList.toggle('show');
+});
+</script>
+
 
 <main>
 
