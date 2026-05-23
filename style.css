@@ -900,6 +900,71 @@ section {
   pointer-events: auto !important;
 }
 
+/* ================================
+   AboutページのヘッダーをWorkと統一
+================================ */
+
+/* ヘッダー全体を Work と同じ配置に */
+.site-header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center; /* ← 中央寄せにするポイント */
+  align-items: center;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  border-bottom: 1px solid rgba(0, 80, 160, 0.12);
+}
+
+/* ロゴを左側に固定 */
+.logo {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ハンバーガーを右上に固定（Work と同じ） */
+.hamburger {
+  position: absolute !important;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* 言語切り替えをハンバーガーの左に配置 */
+.language-switch {
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 600;
+}
+
+/* ナビゲーション（右スライド） */
+.main-nav {
+  position: fixed !important;
+  top: 70px;
+  right: -100%;
+  width: 100%;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s ease;
+  z-index: 9998;
+}
+
+.main-nav.show {
+  right: 0;
+}
+
 
 
 
