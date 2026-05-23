@@ -55,8 +55,7 @@ h2::after {
 }
 
 /* =========================================================
-   HEADER（あなたの理想レイアウト）
-   左：ロゴ / 中央：ハンバーガー / 右：言語切替
+   HEADER（左：ロゴ / 中央：ハンバーガー / 右：言語切替）
 ========================================================= */
 .site-header {
   position: fixed;
@@ -117,7 +116,7 @@ h2::after {
 }
 
 /* =========================================================
-   NAVIGATION（左スライドに統一）
+   NAVIGATION（左スライド）
 ========================================================= */
 .main-nav {
   position: fixed;
@@ -142,6 +141,32 @@ h2::after {
   color: #003366;
   font-weight: 600;
   text-decoration: none;
+}
+
+/* =========================================================
+   WORKS（画像サイズ最適化）
+========================================================= */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 18px;
+  justify-items: center;
+}
+
+.works-grid img {
+  width: 100%;
+  max-width: 260px;   /* ← 画像の最大幅を制限 */
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.works-grid img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
 /* =========================================================
@@ -185,7 +210,7 @@ h2::after {
 }
 
 /* =========================================================
-   ABOUT / WORKS / COMMISSION 共通
+   ABOUT / COMMISSION 共通
 ========================================================= */
 .about-wrapper {
   display: flex;
@@ -241,6 +266,14 @@ h2::after {
   .about-wrapper {
     flex-direction: column;
     text-align: center;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .works-grid img {
+    max-width: 200px;
   }
 }
 
