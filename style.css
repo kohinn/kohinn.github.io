@@ -1,5 +1,5 @@
 /* =========================================================
-   RESET / BASE
+   0. Reset / Base
 ========================================================= */
 * {
   margin: 0;
@@ -20,33 +20,28 @@ body {
   overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
 /* =========================================================
-   GLOBAL LAYOUT
+   1. Layout / Typography
 ========================================================= */
 main {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem; /* 少しだけ詰める */
 }
 
 section {
-  padding: 1.8rem 0;
-  margin-bottom: 1.8rem;
+  padding: 1.8rem 0;          /* 2.4rem → 1.8rem に */
+  margin-bottom: 1.8rem;      /* 2.4rem → 1.8rem に */
   border-bottom: 1px solid rgba(0, 80, 160, 0.12);
 }
 
+/* --- h2：青ライン（透明感UP） --- */
 h2 {
   font-family: 'Playfair Display', serif;
   font-size: 1.9rem;
   font-weight: 600;
   color: #003366;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.9rem;  /* 1.2rem → 0.9rem に */
   position: relative;
 }
 
@@ -56,292 +51,140 @@ h2::after {
   width: 52px;
   height: 2px;
   background: #3a7bd5;
-  margin-top: 6px;
+  margin-top: 6px;  /* 8px → 6px にして少し詰める */
   border-radius: 2px;
 }
 
 /* =========================================================
-   HEADER（左：ロゴ / 中央：ハンバーガー / 右：言語切替）
+   2. Header / Navigation
 ========================================================= */
 .site-header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  padding: 12px 20px;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(0, 80, 160, 0.12);
-  z-index: 9999;
-
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  padding: 0.6rem 1rem; /* 0.8rem → 0.6rem に */
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  z-index: 1000;
 }
 
-.logo {
-  justify-self: start;
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.logo a {
-  color: #003366;
-  text-decoration: none;
-}
-
-/* =========================================================
-   HAMBURGER（軽くて滑らかなアニメーション）
-========================================================= */
-.hamburger {
-  justify-self: center;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 8px;
-  z-index: 10000;
-}
-
-.hamburger span {
-  display: block;
-  width: 26px;
-  height: 3px;
-  margin: 5px;
-  background: #333;
-  transition:
-    transform 0.18s cubic-bezier(0.25, 0.8, 0.25, 1),
-    opacity 0.15s ease-out;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-}
-
-/* 右：言語切替 */
-.language-switch {
-  justify-self: end;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.language-switch a {
-  color: #003366;
-  text-decoration: none;
-}
-
-/* =========================================================
-   NAVIGATION（左スライド）
-========================================================= */
 .main-nav {
-  position: fixed;
-  top: 64px;
-  left: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(8px);
-  padding: 20px;
-  text-align: center;
-  transform: translateX(-100%);
-  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-  z-index: 9998;
-}
-
-.main-nav.show {
-  transform: translateX(0);
+  display: flex;
+  gap: 1.1rem;
 }
 
 .main-nav a {
-  display: block;
-  padding: 10px 0;
   color: #003366;
   font-weight: 600;
   text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
-/* =========================================================
-   HERO（横スクロール・画像サイズ調整）
-========================================================= */
-.hero-scroll {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin: 88px auto 32px auto; /* ヘッダー分 + 余白 */
-  padding-bottom: 4px;
-  border-bottom: none;
+.main-nav a:hover {
+  opacity: 0.7;
 }
 
-.hero-scroll-row {
-  display: flex;
-  gap: 16px;
-  padding: 0 6px;
-  overflow-x: auto;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-}
-
-.hero-scroll-row::-webkit-scrollbar {
+/* --- モバイル：ハンバーガー＋サイドバー --- */
+.menu-toggle {
   display: none;
-}
-
-.hero-img {
-  height: 320px;
-  max-height: 320px;
-  width: auto;
-  max-width: 220px;
-  border-radius: 12px;
-  flex-shrink: 0;
-  object-fit: cover;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.hero-img:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-
-/* =========================================================
-   MORE BUTTON / BUTTON STYLE
-========================================================= */
-.more-button {
-  text-align: center;
-  margin: 16px 0 32px;
-}
-
-.button-link {
-  display: inline-block;
-  padding: 9px 20px;
-  border: 1.8px solid #003366;
-  color: #003366;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 6px;
-  transition: all 0.25s ease;
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(6px);
-}
-
-.button-link:hover {
+.menu-toggle span {
+  width: 24px;
+  height: 3px;
   background: #003366;
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 820px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(14px);
+    border-right: 1px solid rgba(0, 80, 160, 0.18);
+    padding: 5rem 1.5rem;
+    flex-direction: column;
+    gap: 1.2rem; /* 1.4rem → 1.2rem に */
+    transform: translateX(-100%);
+    transition: 0.35s ease;
+    z-index: 1000;
+  }
+
+  .main-nav.show {
+    transform: translateX(0);
+  }
 }
 
 /* =========================================================
-   UPDATES
+   3. Updates Section
 ========================================================= */
 .update-card {
   background: #f0f5fb;
   border-left: 3px solid #3a7bd5;
-  padding: 0.9rem 1rem;
+  padding: 0.9rem 1rem; /* 少し詰める */
   border-radius: 6px;
   margin-bottom: 0.9rem;
 }
 
-.update-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 4px;
-  font-size: 0.9rem;
-}
-
-.update-label {
-  font-weight: 600;
-  color: #003366;
-}
-
-.update-date {
-  opacity: 0.7;
-  font-size: 0.85rem;
-}
-
 /* =========================================================
-   ABOUT
+   4. Gallery（Illustrationページ用：元のまま）
 ========================================================= */
-.about-wrapper {
-  display: flex;
-  gap: 1.8rem;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 18px; /* 20px → 18px に */
 }
 
-.about-text p {
-  margin-bottom: 0.7rem;
-}
-
-.skills-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0 0 0.6rem 0;
-}
-
-.skills-list li {
-  position: relative;
-  padding-left: 14px;
-  margin-bottom: 4px;
-  font-size: 0.95rem;
-}
-
-.skills-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 9px;
-  width: 6px;
-  height: 1.5px;
-  background-color: #999;
-  border-radius: 2px;
-}
-
-.about-image img {
-  width: 260px;
-  max-width: 260px;
+.thumbnail {
+  width: 100%;
   border-radius: 10px;
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* 制作一覧タイトルは非表示にしておく（他ページ用） */
-.section-title {
-  display: none;
+.thumbnail:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
-.footer-refined {
-  background: #eef3f8;
-  padding: 1.6rem 1rem;
-  border-top: 1px solid rgba(0, 80, 160, 0.12);
-  text-align: center;
-}
-
-.footer-nav,
-.footer-sns {
-  display: flex;
-  justify-content: center;
-  gap: 0.7rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.9rem;
-}
-
-.footer-nav a,
-.footer-sns a {
-  color: #003366;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.footer-copy {
-  font-size: 0.85rem;
-  opacity: 0.7;
+@media (max-width: 720px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; /* 12px → 10px に */
+  }
 }
 
 /* =========================================================
-   MODAL（画像拡大）
+   5. Modal（拡大表示）
 ========================================================= */
 .modal {
   position: fixed;
@@ -366,12 +209,13 @@ h2::after {
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
+  object-fit: contain;
 }
 
 .modal-close {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: 18px;   /* 20px → 18px */
+  right: 18px; /* 20px → 18px */
   background: rgba(255,255,255,0.85);
   border: none;
   font-size: 1.4rem;
@@ -381,25 +225,237 @@ h2::after {
 }
 
 /* =========================================================
-   BACK TO TOP
+   6. About Section
 ========================================================= */
+.about-wrapper {
+  display: flex;
+  gap: 1.8rem; /* 2rem → 1.8rem */
+}
+
+.about-text {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.about-text p {
+  margin-bottom: 0.7rem;
+}
+
+.about-text ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.about-text li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 7px;
+}
+
+.about-text li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 1.5px;
+  background-color: #999;
+  border-radius: 2px;
+}
+
+.about-image img {
+  width: 260px;
+  border-radius: 10px;
+}
+
+/* =========================================================
+   7. Footer
+========================================================= */
+.footer-refined {
+  background: #eef3f8;
+  padding: 1.6rem 1rem; /* 2rem → 1.6rem */
+  border-top: 1px solid rgba(0, 80, 160, 0.12);
+  text-align: center;
+}
+
+.footer-nav,
+.footer-sns {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* =========================================================
+   8. HOME 専用：横スクロールギャラリー（1段・無限ループ風）
+========================================================= */
+
+.scroll-gallery {
+  overflow: hidden;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+.scroll-gallery .scroll-row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  white-space: nowrap;
+}
+
+.scroll-gallery .scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-gallery .scroll-img {
+  width: 160px;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  flex-shrink: 0;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.scroll-gallery .scroll-img:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 720px) {
+  .scroll-gallery .scroll-img {
+    width: 120px;
+  }
+}
+
+/* =========================================================
+   9. Responsive Fixes
+========================================================= */
+@media (max-width: 720px) {
+  body {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  main {
+    padding: 1.6rem 0.9rem;
+  }
+
+  section {
+    padding: 1.4rem 0;
+    margin-bottom: 1.4rem;
+  }
+
+  h2 {
+    margin-bottom: 0.7rem;
+  }
+
+  .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.4rem;
+  }
+
+  .about-image img {
+    width: 220px;
+    margin: 0 auto;
+  }
+}
+
+/* =========================================================
+   10. HOME 専用：ヒーロー横スクロール（Rosuuri風）
+========================================================= */
+
+.hero-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto 32px auto; /* 40px → 32px */
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.hero-scroll-row {
+  display: flex;
+  gap: 16px; /* 18px → 16px */
+  padding: 0 6px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.hero-scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-scroll-row .hero-img {
+  height: 420px;
+  width: auto;
+  border-radius: 12px;
+  flex-shrink: 0;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.hero-scroll-row .hero-img:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 720px) {
+  .hero-scroll-row .hero-img {
+    height: 380px; /* 400px → 380px */
+  }
+}
+
+/* =========================================================
+   11. HOME の Illustration タイトルだけ非表示
+========================================================= */
+
+.home-page #works > h2 {
+  display: none;
+}
+
+.hamburger {
+  position: relative;
+  z-index: 9999;
+}
+.nav {
+  position: relative;
+  z-index: 9998;
+}
+
+
+/* ===== Back to Top ボタン（改善版） ===== */
 .back-to-top {
   position: fixed;
-  right: 18px;
-  bottom: 18px;
+  right: 18px;          /* 22px → 18px */
+  bottom: 18px;         /* 22px → 18px */
   background: #003366;
   color: #fff;
-  width: 50px;
+  width: 50px;          /* 52px → 50px */
   height: 50px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 24px;      /* 26px → 24px */
+  text-decoration: none;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.2s ease;
   z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
 }
 
 .back-to-top.show {
@@ -411,32 +467,383 @@ h2::after {
   transform: translateY(-4px);
 }
 
+
+/* ===== 洗練されたボタン（サイト全体に統一） ===== */
+.button-link {
+  display: inline-block;
+  padding: 9px 20px; /* 少しだけコンパクトに */
+  border: 1.8px solid #003366;
+  color: #003366;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+}
+
+.button-link:hover {
+  background: #003366;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* ボタンを中央寄せ */
+.more-button {
+  text-align: center;
+  margin: 16px 0 32px; /* 20px 0 40px → 少し詰める */
+}
+
+/* About セクションの余白を最適化 */
+#about {
+  padding-top: 1.1rem !important;
+  margin-top: 0 !important;
+}
+
+/* ===== Illustration Filter Buttons（サイト統一デザイン） ===== */
+.filter-buttons {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin: 1rem 0 1.6rem; /* 1.2rem 0 2rem → 少し詰める */
+}
+
+.filter-buttons button {
+  padding: 7px 16px;
+  border: 1.8px solid #003366;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  color: #003366;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-buttons button:hover {
+  background: #003366;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.filter-buttons button.active {
+  background: #003366;
+  color: #fff;
+}
+
+/* ===== 制作一覧セクションの余白・文字サイズ調整 ===== */
+#works {
+  padding-top: 1.2rem; /* タイトル上の余白を少し詰める */
+  margin-bottom: 1.2rem; /* 下の余白も軽く詰める */
+}
+
+/* タイトル（制作一覧） */
+#works h2 {
+  font-size: 1.6rem; /* 少しコンパクトに */
+  margin-bottom: 0.6rem; /* タイトルとボタンの距離を詰める */
+}
+
+/* タグボタン群 */
+.filter-buttons {
+  display: flex;
+  gap: 8px; /* ボタン間隔を少し狭める */
+  flex-wrap: wrap;
+  margin: 0.6rem 0 1.2rem; /* 上下の余白を詰める */
+  justify-content: flex-start;
+}
+
+/* 各ボタン */
+.filter-buttons button {
+  padding: 6px 14px; /* 高さを少し低く */
+  font-size: 0.9rem; /* 読みやすくコンパクトに */
+  border-radius: 5px;
+}
+
+/* ボタンのホバー・アクティブは既存デザインを維持 */
+.filter-buttons button:hover,
+.filter-buttons button.active {
+  transform: translateY(-1px);
+}
+
+/* 下のギャラリーとの距離を自然に */
+.gallery {
+  margin-top: 0.8rem;
+}
+/* ====== 全体レイアウト調整 ====== */
+body {
+  margin: 0;
+  padding-top: 0.5rem; /* ページ上部の余白を最小限に */
+}
+
+/* ====== セクションタイトル（制作一覧） ====== */
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem; /* タイトル下の余白を詰める */
+  color: #1a2a44;
+}
+
+/* ====== タグボタン群 ====== */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem; /* ボタン間隔をコンパクトに */
+  margin-bottom: 0.6rem; /* 下の余白を減らす */
+}
+
+.filter-buttons button {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #1a2a44;
+  background-color: #fff;
+  color: #1a2a44;
+  transition: all 0.2s ease;
+}
+
+.filter-buttons button.active {
+  background-color: #1a2a44;
+  color: #fff;
+}
+
+/* ====== セクション全体の余白 ====== */
+.portfolio-section {
+  padding: 0.8rem 0 1rem 0; /* 上下の余白を軽く詰める */
+}
+
+/* ====== 作品グリッド ====== */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.8rem;
+}
+
+.works-grid img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* ====== 見出し（VTuberなど） ====== */
+.category-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+  color: #1a2a44;
+  border-bottom: 2px solid #1a2a44;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+/* ====== スマホ対応 ====== */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.1rem;
+  }
+  .filter-buttons button {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+  }
+  .works-grid {
+    gap: 0.6rem;
+  }
+}
 /* =========================================================
-   RESPONSIVE
+   ★ 全体を上に寄せる最適化（レイアウト崩れなし）
 ========================================================= */
+
+/* ページ全体の上余白を最小化 */
+body {
+  padding-top: 0.3rem !important;
+}
+
+/* main の上余白を詰める（最も効果が大きい） */
+main {
+  padding-top: 1rem !important; /* 2rem → 1rem に */
+  margin-top: 0 !important;
+}
+
+/* section の上下余白をさらに最適化 */
+section {
+  padding: 1.2rem 0 !important;   /* 1.8rem → 1.2rem */
+  margin-bottom: 1.2rem !important;
+}
+
+/* h2（制作一覧・VTuberなど）の余白を詰める */
+h2 {
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.6rem !important;
+}
+
+/* 制作一覧セクション */
+#works {
+  padding-top: 0.6rem !important;
+  margin-top: 0 !important;
+}
+
+/* タグボタン群（重複定義を統合し、最適値に） */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px !important;
+  margin: 0.4rem 0 1rem !important;
+}
+
+.filter-buttons button {
+  padding: 6px 14px !important;
+  font-size: 0.9rem !important;
+  border-radius: 5px !important;
+}
+
+/* ギャラリーとの距離を自然に */
+.gallery {
+  margin-top: 0.6rem !important;
+}
+
+/* カテゴリ見出し（VTuberなど） */
+.category-title {
+  margin-top: 0.6rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+/* スマホ最適化：上方向の詰まりすぎを防ぐ */
 @media (max-width: 720px) {
   main {
-    padding: 1.6rem 0.9rem;
+    padding-top: 0.8rem !important;
   }
-
-  .about-wrapper {
-    flex-direction: column;
-    text-align: center;
+  section {
+    padding: 1rem 0 !important;
+    margin-bottom: 1rem !important;
   }
-
-  .about-image img {
-    margin: 0 auto;
-    width: 220px;
-    max-width: 220px;
+  h2 {
+    margin-bottom: 0.5rem !important;
   }
-
-  .hero-scroll {
-    margin-top: 80px;
+  .filter-buttons {
+    gap: 5px !important;
+    margin-bottom: 0.8rem !important;
   }
+}
+/* ====== 全体レイアウト（最上部まで寄せる） ====== */
+body {
+  margin: 0;
+  padding-top: 0.2rem; /* ほぼ最小限の余白 */
+}
 
-  .hero-img {
-    height: 260px;
-    max-height: 260px;
-    max-width: 180px;
+/* メインコンテンツをさらに上へ寄せる */
+main, .container, .main-wrapper {
+  margin-top: 0 !important;
+  padding-top: 0.2rem !important;
+}
+
+/* ====== セクションタイトル（制作一覧） ====== */
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 0.3rem;   /* さらに上へ詰める */
+  margin-bottom: 0.25rem;
+  color: #1a2a44;
+}
+
+/* ====== タグボタン群 ====== */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem; /* さらにコンパクトに */
+  margin-bottom: 0.5rem;
+}
+
+.filter-buttons button {
+  font-size: 0.9rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #1a2a44;
+  background-color: #fff;
+  color: #1a2a44;
+  transition: all 0.2s ease;
+}
+
+.filter-buttons button.active {
+  background-color: #1a2a44;
+  color: #fff;
+}
+
+/* ====== セクション全体の余白 ====== */
+.portfolio-section {
+  padding: 0.6rem 0 0.8rem 0; /* 全体をさらに上へ */
+}
+
+/* ====== 作品グリッド ====== */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+.works-grid img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* ====== 見出し（VTuberなど） ====== */
+.category-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 0.6rem; /* ここも詰める */
+  margin-bottom: 0.35rem;
+  color: #1a2a44;
+  border-bottom: 2px solid #1a2a44;
+  display: inline-block;
+  padding-bottom: 0.15rem;
+}
+
+/* ====== スマホ対応 ====== */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.1rem;
+  }
+  .filter-buttons button {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.65rem;
+  }
+  .works-grid {
+    gap: 0.55rem;
+  }
+}
+/* ====== セクション間の余白を詰める ====== */
+section {
+  margin-top: 0.3rem !important; /* 上余白を最小限に */
+  padding-top: 0.3rem !important; /* 内側の余白も詰める */
+  margin-bottom: 0.3rem !important; /* 下余白も軽く詰める */
+}
+
+/* ====== 制作一覧と次の見出しの間隔を調整 ====== */
+.portfolio-section {
+  padding-bottom: 0.4rem !important; /* 下の余白を減らす */
+}
+
+/* ====== 見出し（VTuber・二次創作など）を上に寄せる ====== */
+.category-title {
+  margin-top: 0.4rem !important; /* 上余白をさらに詰める */
+  margin-bottom: 0.3rem !important;
+}
+
+/* ====== タグボタン群の下余白を軽く詰める ====== */
+.filter-buttons {
+  margin-bottom: 0.4rem !important;
+}
+
+/* ====== スマホ表示時の調整 ====== */
+@media (max-width: 768px) {
+  section {
+    margin-top: 0.25rem !important;
+    padding-top: 0.25rem !important;
+  }
+  .category-title {
+    margin-top: 0.3rem !important;
   }
 }
