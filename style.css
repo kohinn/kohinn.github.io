@@ -1,5 +1,5 @@
 /* =========================================================
-   RESET / BASE
+   0. Reset / Base
 ========================================================= */
 * {
   margin: 0;
@@ -18,17 +18,11 @@ body {
   font-size: 15px;
   line-height: 1.7;
   overflow-x: hidden;
-  padding-top: 70px; /* Work 基準 */
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  padding-top: 70px; /* 固定ヘッダー分 */
 }
 
 /* =========================================================
-   HEADER（Work 基準）
+   1. Header（以前のデザイン × Work 挙動）
 ========================================================= */
 .site-header {
   position: fixed;
@@ -36,8 +30,8 @@ img {
   left: 0;
   width: 100%;
   padding: 12px 20px;
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 80, 160, 0.12);
   z-index: 9999;
 
@@ -58,7 +52,7 @@ img {
 }
 
 /* =========================================================
-   HAMBURGER（Work 基準）
+   2. Hamburger（×変形）
 ========================================================= */
 .hamburger {
   justify-self: center;
@@ -89,23 +83,23 @@ img {
 }
 
 /* =========================================================
-   NAVIGATION（Work 基準：右スライド）
+   3. Navigation（左スライド）
 ========================================================= */
 .main-nav {
   position: fixed;
   top: 70px;
-  right: -100%;
+  left: -100%;
   width: 100%;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(8px);
-  transition: 0.3s;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
   padding: 20px;
   text-align: center;
+  transition: 0.3s ease;
   z-index: 9998;
 }
 
 .main-nav.show {
-  right: 0;
+  left: 0;
 }
 
 .main-nav a {
@@ -117,7 +111,87 @@ img {
 }
 
 /* =========================================================
-   WORKS GRID（Work 基準）
+   4. HOME：Hero Scroll（以前の見た目を維持）
+========================================================= */
+.hero-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto 32px auto;
+}
+
+.hero-scroll-row {
+  display: flex;
+  gap: 16px;
+  padding: 0 6px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.hero-scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-img {
+  height: 420px;
+  width: auto;
+  border-radius: 12px;
+  flex-shrink: 0;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.hero-img:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 720px) {
+  .hero-img {
+    height: 360px;
+  }
+}
+
+/* =========================================================
+   5. Scroll Gallery（以前の見た目）
+========================================================= */
+.scroll-gallery .scroll-row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 10px 0;
+  white-space: nowrap;
+}
+
+.scroll-gallery .scroll-img {
+  width: 160px;
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.scroll-gallery .scroll-img:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================================================
+   6. About（以前の見た目）
+========================================================= */
+.about-wrapper {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.about-image img {
+  width: 260px;
+  border-radius: 10px;
+}
+
+/* =========================================================
+   7. Works Grid（以前の見た目）
 ========================================================= */
 .works-grid {
   display: grid;
@@ -140,98 +214,7 @@ img {
 }
 
 /* =========================================================
-   HOME：HERO SCROLL（Work 基準に最適化）
-========================================================= */
-.hero-scroll {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 32px;
-}
-
-.hero-scroll-row {
-  display: flex;
-  gap: 16px;
-  padding: 0 6px;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-.hero-scroll-row::-webkit-scrollbar {
-  display: none;
-}
-
-.hero-img {
-  height: 320px;
-  max-height: 320px;
-  width: auto;
-  max-width: 220px;
-  border-radius: 12px;
-  object-fit: cover;
-  flex-shrink: 0;
-  cursor: pointer;
-  transition: transform 0.25s ease;
-}
-
-.hero-img:hover {
-  transform: translateY(-4px);
-}
-
-/* =========================================================
-   ABOUT（Work 基準に統一）
-========================================================= */
-.about-wrapper {
-  display: flex;
-  gap: 1.8rem;
-}
-
-.about-image img {
-  width: 260px;
-  border-radius: 10px;
-}
-
-/* =========================================================
-   COMMISSION（Work 基準に統一）
-========================================================= */
-.career-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.career-list li {
-  margin-bottom: 6px;
-}
-
-/* =========================================================
-   MODAL（共通）
-========================================================= */
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  backdrop-filter: blur(6px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-  z-index: 2000;
-}
-
-.modal.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.modal-content {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-}
-
-/* =========================================================
-   FOOTER（共通）
+   8. Footer（以前の見た目）
 ========================================================= */
 .footer-refined {
   background: #eef3f8;
@@ -241,7 +224,7 @@ img {
 }
 
 /* =========================================================
-   BACK TO TOP（共通）
+   9. Back to Top（以前の見た目）
 ========================================================= */
 .back-to-top {
   position: fixed;
@@ -272,17 +255,11 @@ img {
 }
 
 /* =========================================================
-   RESPONSIVE
+   10. Responsive
 ========================================================= */
 @media (max-width: 720px) {
   .about-wrapper {
     flex-direction: column;
     text-align: center;
-  }
-
-  .hero-img {
-    height: 260px;
-    max-height: 260px;
-    max-width: 180px;
   }
 }
