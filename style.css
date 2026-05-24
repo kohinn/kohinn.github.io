@@ -432,3 +432,29 @@ h2::after {
   }
 }
 
+/* =========================================================
+   Works Page Responsive Layout Fix
+========================================================= */
+
+/* PC・タブレット：現状維持 */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+/* スマホ版（幅720px以下）：2列グリッドに変更 */
+@media (max-width: 720px) {
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .works-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
