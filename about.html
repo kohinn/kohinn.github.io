@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Kohinn</title>
+  <title>Kohinn | キャラクターイラスト & ポートフォリオ</title>
 
   <!-- Google tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
@@ -15,132 +15,57 @@
   </script>
 
   <!-- SEO -->
-  <meta name="description" content="Learn more about Kohinn, a self-taught illustrator specializing in character-focused artwork, VTuber-style illustrations, and original avatars.">
-  <meta name="keywords" content="Kohinn, illustrator, character art, VTuber art, anime style, portfolio">
+  <meta name="description" content="Kohinn は、キャラクターイラスト・キャラクターデザインを中心に活動するイラストレーターです。">
+  <meta name="keywords" content="Kohinn, イラスト, キャラクターデザイン, アニメ, 二次創作, ファンアート, VTuber">
 
   <!-- OGP -->
-  <meta property="og:title" content="About | Kohinn">
-  <meta property="og:description" content="Self-taught illustrator creating character illustrations, VTuber-style art, and original avatars.">
+  <meta property="og:title" content="Kohinn | キャラクターイラスト & ポートフォリオ">
+  <meta property="og:description" content="キャラクターイラスト・キャラクターデザインを中心に活動しています。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kohinn.github.io/about.html">
+  <meta property="og:url" content="https://kohinn.github.io/">
   <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
 
-  <link rel="stylesheet" href="style.css?v=20251129">
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-
-<!-- ▼ Hamburger menu -->
-<nav id="main-nav" class="main-nav">
-  <a href="index.html">Home</a>
-  <a href="works.html">works</a>
-  <a href="about.html">About</a>
-  <a href="commission.html">Commission</a>
-</nav>
-
-<div class="nav-overlay" id="navOverlay"></div>
+<body class="home-page">
 
 <header class="site-header">
-  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" onclick="toggleMenu(this)">
+  <div class="logo">
+    <a href="index_jp.html">Kohinn</a>
+  </div>
+
+  <button class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </button>
 
+  <nav id="main-nav" class="main-nav">
+    <a href="index_jp.html">Home</a>
+    <a href="works_jp.html">Works</a>
+    <a href="about_jp.html">About</a>
+    <a href="commission_jp.html">Commission</a>
+  </nav>
+
   <div class="language-switch">
-    <a href="about.html" lang="en">EN</a> / <a href="about_jp.html" lang="ja">JP</a>
+    <a href="index_jp.html">JP</a> / <a href="index.html">EN</a>
   </div>
 </header>
 
-<main>
-
-  <section id="about" class="fade-in">
-    <h2>About</h2>
-
-    <div class="about-wrapper">
-      <div class="about-text">
-        <p class="about-name">Kohinn</p>
-        <p>Self-taught illustrator, currently working while balancing a full-time job.</p>
-        <p>Specializes in creating eye-catching character illustrations.</p>
-
-        <h3 class="section-title">Skills</h3>
-        <ul class="skills-list">
-          <li>Character illustration</li>
-          <li>Website creation</li>
-        </ul>
-      </div>
-
-      <div class="about-image">
-        <img class="thumbnail" loading="lazy" src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト5ddsds (1).webp">
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer-refined">
-  <div class="footer-inner">
-
-    <nav class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="works.html">works</a>
-      <a href="about.html">About</a>
-      <a href="commission.html">Commission</a>
-    </nav>
-
-    <div class="footer-sns">
-      <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
-      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
-      <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
-      <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
-      <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
-    </div>
-
-    <p class="footer-copy">
-      © 2025–2026 Kohinn. All rights reserved.<br>
-    </p>
-
-  </div>
-</footer>
-
-<!-- ▼ Back to Top（追加） -->
-<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
-
 <script>
-function toggleMenu(btn) {
-  const nav = document.getElementById('main-nav');
-  const overlay = document.getElementById('navOverlay');
-  const isOpen = nav.classList.toggle('show');
-  btn.classList.toggle('open', isOpen);
-  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  overlay.classList.toggle('show', isOpen);
-  document.body.classList.toggle('menu-open', isOpen);
-}
+/* ハンバーガー動作（統一版） */
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('main-nav');
 
-document.addEventListener('DOMContentLoaded', () => {
-  const fadeEls = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  fadeEls.forEach(el => observer.observe(el));
-
-  /* ▼ Back to top（追加） */
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      backToTop.classList.add('show');
-    } else {
-      backToTop.classList.remove('show');
-    }
-  });
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  nav.classList.toggle('show');
 });
 </script>
 
-</body>
-</html>
+<!-- ★ ここから下はあなたの元の HOME コンテンツをそのまま貼り戻してください -->
+
 
