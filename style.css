@@ -16,7 +16,7 @@ body {
   background: #f7f9fc;
   color: #1a1a1a;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.8;
   overflow-x: hidden;
   padding-top: 70px;
 }
@@ -24,6 +24,9 @@ body {
 /* 画像の描画最適化（軽量化） */
 img {
   content-visibility: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* =========================================================
@@ -36,8 +39,8 @@ main {
 }
 
 section {
-  padding: 1.8rem 0;
-  margin-bottom: 1.8rem;
+  padding: 2.2rem 0;
+  margin-bottom: 2rem;
   border-bottom: 1px solid rgba(0, 80, 160, 0.12);
 }
 
@@ -46,7 +49,7 @@ h2 {
   font-size: 1.9rem;
   font-weight: 600;
   color: #003366;
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
   position: relative;
 }
 
@@ -61,7 +64,7 @@ h2::after {
 }
 
 /* =========================================================
-   2. Header / Navigation（安定版）
+   2. Header / Navigation（安定＋滑らか）
 ========================================================= */
 .site-header {
   position: fixed;
@@ -78,7 +81,14 @@ h2::after {
   align-items: center;
 }
 
-/* ハンバーガー（GPU化はここだけ） */
+.logo a {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #003366;
+  text-decoration: none;
+}
+
+/* ハンバーガー */
 .hamburger {
   cursor: pointer;
   background: none;
@@ -94,8 +104,6 @@ h2::after {
   margin: 6px;
   background: #003366;
   border-radius: 3px;
-
-  /* 滑らかアニメーション */
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
               opacity 0.2s ease;
 }
@@ -110,7 +118,7 @@ h2::after {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* スライドメニュー（transformで高速化） */
+/* スライドメニュー */
 .main-nav {
   position: fixed;
   top: 70px;
@@ -124,13 +132,22 @@ h2::after {
   flex-direction: column;
   gap: 1.2rem;
   border-left: 1px solid rgba(0, 80, 160, 0.12);
-
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-nav.show {
   transform: translateX(0);
+}
+
+.main-nav a {
+  color: #003366;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
 }
 
 /* PC版 */
@@ -169,74 +186,23 @@ h2::after {
 @media (max-width: 720px) {
   .works-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 14px;
   }
 }
 
 /* =========================================================
-   4. Gallery
-========================================================= */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 18px;
-}
-
-.thumbnail {
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-  aspect-ratio: 3 / 4;
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.thumbnail:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-}
-
-/* =========================================================
-   5. Modal
-========================================================= */
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  backdrop-filter: blur(6px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-  z-index: 2000;
-}
-
-.modal.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.modal-content {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  object-fit: contain;
-}
-
-/* =========================================================
-   6. About
+   4. About
 ========================================================= */
 .about-wrapper {
   display: flex;
   gap: 1.8rem;
+  align-items: flex-start;
 }
 
 .about-text {
   flex: 1;
   font-size: 0.95rem;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .about-image img {
@@ -244,18 +210,43 @@ h2::after {
   border-radius: 10px;
 }
 
-/* =========================================================
-   7. Footer
-========================================================= */
-.footer-refined {
-  background: #eef3f8;
-  padding: 1.6rem 1rem;
-  border-top: 1px solid rgba(0, 80, 160, 0.12);
-  text-align: center;
+/* スマホ版About */
+@media (max-width: 720px) {
+  .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 220px;
+    margin: 0 auto;
+  }
 }
 
 /* =========================================================
-   8. Hero Scroll
+   5. Footer（安定配置）
+========================================================= */
+.footer-refined {
+  background: #eef3f8;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(0, 80, 160, 0.12);
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-refined a {
+  color: #3a007d;
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+.footer-refined a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   6. Hero Scroll
 ========================================================= */
 .hero-scroll-row {
   display: flex;
@@ -278,24 +269,8 @@ h2::after {
   transform: translateY(-4px);
 }
 
-/* =========================================================
-   9. Responsive Fixes
-========================================================= */
+/* スマホ版Hero */
 @media (max-width: 720px) {
-  body {
-    font-size: 14px;
-  }
-
-  .about-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-image img {
-    width: 220px;
-    margin: 0 auto;
-  }
-
   .hero-img {
     height: 360px;
   }
