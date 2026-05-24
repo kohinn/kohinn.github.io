@@ -5,78 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Works | Kohinn</title>
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    /* ★ JP版と同じ固定ヘッダー */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 9999;
-      backdrop-filter: blur(8px);
-      background: rgba(255,255,255,0.7);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.6rem 1rem;
-      border-bottom: 1px solid rgba(0, 80, 160, 0.12);
-    }
-
-    body {
-      padding-top: 70px;
-    }
-
-    /* ★ JP版と同じハンバーガー */
-    .hamburger {
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 10px;
-      z-index: 10000;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 28px;
-      height: 3px;
-      margin: 6px;
-      background: #003366;
-      transition: 0.3s;
-      border-radius: 3px;
-    }
-
-    .hamburger.active span:nth-child(1) {
-      transform: translateY(9px) rotate(45deg);
-    }
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.active span:nth-child(3) {
-      transform: translateY(-9px) rotate(-45deg);
-    }
-
-    /* ★ JP版と同じスライドメニュー */
-    .main-nav {
-      position: fixed;
-      top: 70px;
-      right: -100%;
-      width: 100%;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(10px);
-      transition: 0.35s ease;
-      padding: 20px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      border-left: 1px solid rgba(0, 80, 160, 0.12);
-    }
-
-    .main-nav.show {
-      right: 0;
-    }
-  </style>
 </head>
 
 <body>
@@ -84,7 +12,6 @@
 <header class="site-header">
   <div class="logo"><a href="index.html">Kohinn</a></div>
 
-  <!-- ★ JP版と同じクラス名に統一 -->
   <button class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </button>
@@ -127,7 +54,7 @@
 </div>
 
 <script>
-/* ★ JP版と同じハンバーガー動作 */
+/* ハンバーガー */
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('main-nav');
 
@@ -150,14 +77,14 @@ document.querySelector('.modal-close').addEventListener('click', () => {
   document.getElementById('modal').setAttribute('aria-hidden', 'true');
 });
 
-/* Random shuffle */
+/* Random shuffle（修正版） */
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('worksGrid');
   const items = Array.from(grid.children);
 
   for (let i = items.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [items[i], items[j]] = [items[j]], items[i]];
+    [items[i], items[j]] = [items[j], items[i]];
   }
 
   items.forEach(item => grid.appendChild(item));
