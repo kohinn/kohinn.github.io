@@ -30,78 +30,6 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    /* ★ Works と完全統一したヘッダー */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 9999;
-      backdrop-filter: blur(8px);
-      background: rgba(255,255,255,0.7);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.6rem 1rem;
-      border-bottom: 1px solid rgba(0, 80, 160, 0.12);
-    }
-
-    body {
-      padding-top: 70px;
-    }
-
-    /* ★ Works と同じハンバーガー */
-    .hamburger {
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 10px;
-      z-index: 10000;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 28px;
-      height: 3px;
-      margin: 6px;
-      background: #003366;
-      transition: 0.3s;
-      border-radius: 3px;
-    }
-
-    .hamburger.active span:nth-child(1) {
-      transform: translateY(9px) rotate(45deg);
-    }
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.active span:nth-child(3) {
-      transform: translateY(-9px) rotate(-45deg);
-    }
-
-    /* ★ Works と同じ右スライドメニュー */
-    .main-nav {
-      position: fixed;
-      top: 70px;
-      right: -100%;
-      width: 100%;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(10px);
-      transition: 0.35s ease;
-      padding: 20px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      border-left: 1px solid rgba(0, 80, 160, 0.12);
-    }
-
-    .main-nav.show {
-      right: 0;
-    }
-  </style>
 </head>
 
 <body class="home-page">
@@ -128,7 +56,7 @@
 </header>
 
 <script>
-/* ★ Works と同じハンバーガー動作 */
+/* ハンバーガー動作（統一版） */
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('main-nav');
 
@@ -137,4 +65,5 @@ hamburger.addEventListener('click', () => {
   nav.classList.toggle('show');
 });
 </script>
+
 
