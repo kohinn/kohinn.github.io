@@ -15,12 +15,12 @@
   </script>
 
   <!-- SEO -->
-  <meta name="description" content="Kohinn（コヒン）のプロフィール、スキル、経歴を紹介します。キャラクターイラスト、VTuber風イラスト、オリジナルアバター制作を中心に活動中。">
-  <meta name="keywords" content="Kohinn, イラストレーター, キャラクター, VTuber, アニメ風, ポートフォリオ">
+  <meta name="description" content="Kohinn（コヒン）のプロフィール。キャラクターイラスト・キャラクターデザインを中心に活動するイラストレーターです。">
+  <meta name="keywords" content="Kohinn, イラストレーター, キャラクターデザイン, アニメ, VTuber, ポートフォリオ">
 
   <!-- OGP -->
   <meta property="og:title" content="About | Kohinn">
-  <meta property="og:description" content="Kohinn（コヒン）のプロフィール、スキル、経歴を紹介します。">
+  <meta property="og:description" content="Kohinn（コヒン）のプロフィール、スキル、制作領域を紹介します。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kohinn.github.io/about_jp.html">
   <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
@@ -36,12 +36,10 @@
     <a href="index_jp.html">Kohinn</a>
   </div>
 
-  <!-- ★ Work と同じハンバーガー構造 -->
   <button class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </button>
 
-  <!-- ★ Work と同じナビゲーション構造 -->
   <nav id="main-nav" class="main-nav">
     <a href="index_jp.html">Home</a>
     <a href="works_jp.html">Works</a>
@@ -49,17 +47,14 @@
     <a href="commission_jp.html">Commission</a>
   </nav>
 
-  <!-- 言語切り替え -->
   <div class="language-switch">
-    <a href="about.html" lang="en">EN</a> / <a href="about_jp.html" lang="ja">JP</a>
+    <a href="about_jp.html">JP</a> / <a href="about.html">EN</a>
   </div>
 </header>
 
 <script>
-/* ★ Work と同じハンバーガー動作 */
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('main-nav');
-
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   nav.classList.toggle('show');
@@ -69,18 +64,23 @@ hamburger.addEventListener('click', () => {
 <main>
 
   <section id="about" class="fade-in">
-    <h2>About</h2>
+    <h2>プロフィール</h2>
 
     <div class="about-wrapper">
       <div class="about-text">
-        <p class="about-name">Kohinn（コヒン）</p>
-        <p>独学でイラストを学び、現在はフルタイム勤務と並行してイラストレーターとして活動中。</p>
-        <p>見た人の目を引くキャラクターイラストを得意としています。</p>
+        <p>独学でイラストを学び、現在はフルタイムの仕事と両立しながら活動しているイラストレーターです。</p>
+        <p>キャラクターイラスト、キャラクターデザインを中心に制作しています。個人依頼・企業様からのご依頼に対応しています。</p>
 
-        <h3 class="section-title">スキル</h3>
-        <ul class="skills-list">
-          <li>キャラクターイラスト</li>
-          <li>サイト制作</li>
+        <h3 class="section-title">対応領域</h3>
+        <ul>
+          <li>キャラクターデザイン</li>
+          <li>キャラクターイラスト（立ち絵 / キービジュアル）</li>
+          <li>二次創作 / ファンアート</li>
+        </ul>
+
+        <h3 class="section-title">使用ソフト</h3>
+        <ul>
+          <li>CLIP STUDIO PAINT</li>
         </ul>
       </div>
 
@@ -119,29 +119,17 @@ hamburger.addEventListener('click', () => {
   </div>
 </footer>
 
-<!-- Back to Top -->
 <a href="#" class="back-to-top" id="backToTop" aria-label="トップへ戻る">↑</a>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* Fade-in */
-  const fadeEls = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.1 });
-  fadeEls.forEach(el => observer.observe(el));
-
-  /* Back to top */
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) backToTop.classList.add('show');
-    else backToTop.classList.remove('show');
-  });
+/* Back to top */
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('backToTop');
+  if (window.scrollY > 200) btn.classList.add('show');
+  else btn.classList.remove('show');
 });
 </script>
 
 </body>
 </html>
+
