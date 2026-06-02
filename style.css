@@ -155,13 +155,13 @@ h2::after {
   left: -100%;
   width: 80%;
   height: calc(100% - 70px);
-  background: rgba(0, 0, 0, 0.6); /* ← 黒背景を追加 */
+  background: rgba(0, 0, 0, 0.75); /* ← 背景を濃くする */
   backdrop-filter: blur(10px);
-  padding: 20px;
+  padding: 30px 20px; /* ← 余白を広げてタップしやすく */
   text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.6rem; /* ← 項目間隔を広げる */
   border-right: 1px solid rgba(255,255,255,0.15);
   transition: left var(--transition-mid);
   z-index: 9500;
@@ -172,16 +172,18 @@ h2::after {
 }
 
 .main-nav.left-slide a {
-  color: #ffffff; /* ← 白文字に変更 */
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4); /* ← 文字にシャドウ追加 */
   transition: color var(--transition-fast);
 }
 
 .main-nav.left-slide a:hover {
-  color: var(--color-accent); /* ← ホバー時に青系アクセント */
+  color: var(--color-accent);
 }
+
 
 /* PC版 */
 @media (min-width: 821px) {
