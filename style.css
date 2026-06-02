@@ -299,4 +299,33 @@ section {
   }
 }
 
+/* ============================
+   Header：言語切り替え位置調整
+============================ */
+.language-switch {
+  position: relative;
+  right: 0;
+  margin-right: 1.2rem; /* ← 右端に余白追加 */
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* ============================
+   Heroセクション：間隔調整
+============================ */
+.hero-scroll {
+  margin-top: 1.2rem;   /* ヘッダー下との余白 */
+  margin-bottom: 2.2rem; /* ボタンとの間隔を広げる */
+}
+
+.hero-scroll-row {
+  gap: 24px; /* イラスト間の余白を少し広げる */
+}
+
+/* ============================
+   ボタンと次セクションの間隔
+============================ */
+.more-button {
+  margin-bottom: 2.6rem; /* 「お知らせ」との間隔を確保 */
+}
 
