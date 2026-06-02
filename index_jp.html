@@ -90,6 +90,27 @@ overlay.addEventListener('click', () => {
 });
 </script>
 
+
+  <script>
+/* モーダル修正版 */
+document.querySelectorAll('.hero-img').forEach(img => {
+  img.addEventListener('click', () => {
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    modalImg.src = img.src;
+    modal.classList.add('show');
+    modal.style.display = 'flex'; // ← これを追加して位置を固定
+    modal.setAttribute('aria-hidden', 'false');
+  });
+});
+
+document.querySelector('.modal-close').addEventListener('click', () => {
+  const modal = document.getElementById('modal');
+  modal.classList.remove('show');
+  modal.style.display = 'none'; // ← 閉じたら非表示に戻す
+  modal.setAttribute('aria-hidden', 'true');
+});
+</script>
 <main>
 
   <!-- ヒーロー：横スクロール -->
