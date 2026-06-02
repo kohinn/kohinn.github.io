@@ -361,3 +361,71 @@ h2::after {
   background: var(--color-accent);
 }
 
+/* =========================================================
+   文字間隔・余白の完全最適化
+========================================================= */
+
+/* 全体の行間を少し広げて読みやすく */
+body {
+  line-height: 1.9;
+  letter-spacing: 0.03em; /* 字間をほんの少し広げる */
+}
+
+/* 段落間の余白を統一 */
+p + p {
+  margin-top: 1.1rem;
+}
+
+/* セクションタイトル（h2）をより見やすく */
+h2 {
+  margin-bottom: 1.4rem;
+  letter-spacing: 0.02em;
+}
+
+h2::after {
+  margin-top: 10px;
+}
+
+/* セクション全体の余白を調整 */
+section {
+  padding: 2.6rem 0;
+  margin-bottom: 2.6rem;
+}
+
+/* h3 の余白を最適化 */
+h3.section-title {
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+/* リストの行間を広げて読みやすく */
+ul li {
+  margin-bottom: 0.6rem;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+}
+
+/* About の文章を読みやすく */
+.about-text p {
+  margin-bottom: 1.2rem;
+  line-height: 1.9;
+}
+
+/* お知らせカードの文章も最適化 */
+.update-card p {
+  line-height: 1.9;
+  margin-top: 0.6rem;
+}
+
+/* ボタン周りの余白を統一 */
+.more-button {
+  margin: 2.4rem 0;
+}
+
+/* フッターの文字間隔 */
+.footer-refined {
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
