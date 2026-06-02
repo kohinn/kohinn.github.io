@@ -33,36 +33,77 @@
 </head>
 
 <body class="home-page">
+<div class="overlay" id="overlay"></div>
 
 <header class="site-header">
-  <div class="logo">
-    <a href="index.html">Kohinn</a>
-  </div>
 
+  <!-- Left: Hamburger -->
   <button class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </button>
 
-  <nav id="main-nav" class="main-nav">
+  <!-- Center Logo -->
+  <div class="logo center-logo">
+    <a href="index.html">Kohinn</a>
+  </div>
+
+  <!-- Right: Language Switch -->
+  <div class="language-switch">
+    <a href="index_jp.html">JP</a> / <a href="index.html">EN</a>
+  </div>
+
+  <!-- Left Slide Menu -->
+  <nav id="main-nav" class="main-nav left-slide">
     <a href="index.html">Home</a>
     <a href="works.html">Works</a>
     <a href="about.html">About</a>
     <a href="commission.html">Commission</a>
   </nav>
 
-  <div class="language-switch">
-    <a href="index_jp.html">JP</a> / <a href="index.html">EN</a>
-  </div>
 </header>
 
 <script>
-/* Hamburger menu */
+/* Hamburger Menu */
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('main-nav');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   nav.classList.toggle('show');
+});
+
+/* Overlay */
+const overlay = document.getElementById('overlay');
+
+hamburger.addEventListener('click', () => {
+  overlay.classList.toggle('active');
+});
+
+overlay.addEventListener('click', () => {
+  nav.classList.remove('show');
+  hamburger.classList.remove('active');
+  overlay.classList.remove('active');
+});
+</script>
+
+<script>
+/* Modal Fix */
+document.querySelectorAll('.hero-img').forEach(img => {
+  img.addEventListener('click', () => {
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    modalImg.src = img.src;
+    modal.classList.add('show');
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+  });
+});
+
+document.querySelector('.modal-close').addEventListener('click', () => {
+  const modal = document.getElementById('modal');
+  modal.classList.remove('show');
+  modal.style.display = 'none';
+  modal.setAttribute('aria-hidden', 'true');
 });
 </script>
 
@@ -92,7 +133,7 @@ hamburger.addEventListener('click', () => {
     <div class="update-card">
       <div class="update-header">
         <span class="update-label">[Commission Status]</span>
-        <span class="update-date">May 2026</span>
+        <span class="update-date">June 2026</span>
       </div>
       <p>Currently accepting new commissions. Available for personal and commercial projects.</p>
     </div>
@@ -201,4 +242,3 @@ window.addEventListener('scroll', () => {
 
 </body>
 </html>
-
