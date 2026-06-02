@@ -1,48 +1,30 @@
 /* =========================================================
-   0. Root Variables / Base
+   Kohinn Portfolio Site - Complete Style
 ========================================================= */
+
+/* ===== Root Variables ===== */
 :root {
-  /* ===== Color ===== */
   --color-bg: #f7f9fc;
   --color-surface: #ffffff;
   --color-main: #003366;
   --color-accent: #3a7bd5;
   --color-border: rgba(0, 80, 160, 0.12);
   --color-text: #1a1a1a;
-
-  /* ===== Typography ===== */
   --font-base: 'Noto Sans JP', 'Roboto', sans-serif;
   --font-title: 'Playfair Display', serif;
-
-  /* ===== Layout ===== */
   --max-width: 1040px;
   --radius: 10px;
   --radius-small: 6px;
-  --space-section: 2.2rem;
-
-  /* ===== Shadow ===== */
   --shadow-soft: 0 4px 12px rgba(0,0,0,0.06);
   --shadow-hover: 0 6px 18px rgba(0,0,0,0.10);
-
-  /* ===== Animation ===== */
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: 0.25s var(--ease-smooth);
   --transition-mid: 0.35s var(--ease-smooth);
 }
 
-/* =========================================================
-   1. Reset / Base
-========================================================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+/* ===== Reset ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-base);
   background: var(--color-bg);
@@ -53,54 +35,12 @@ body {
   padding-top: 70px;
 }
 
-img {
-  content-visibility: auto;
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 /* =========================================================
-   2. Layout / Typography
-========================================================= */
-main {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-section {
-  padding: var(--space-section) 0;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid var(--color-border);
-}
-
-h2 {
-  font-family: var(--font-title);
-  font-size: 1.9rem;
-  font-weight: 600;
-  color: var(--color-main);
-  margin-bottom: 1rem;
-}
-
-h2::after {
-  content: "";
-  display: block;
-  width: 52px;
-  height: 2px;
-  background: var(--color-accent);
-  margin-top: 6px;
-  border-radius: 2px;
-}
-
-/* =========================================================
-   3. Header / Navigation
+   Header
 ========================================================= */
 .site-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 0; left: 0; width: 100%;
   z-index: 9999;
   backdrop-filter: blur(10px);
   background: rgba(255,255,255,0.75);
@@ -111,14 +51,13 @@ h2::after {
   align-items: center;
 }
 
-/* ロゴを中央に固定 */
 .center-logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* ハンバーガー（左） */
+/* ハンバーガー */
 .hamburger {
   cursor: pointer;
   background: none;
@@ -127,65 +66,46 @@ h2::after {
   z-index: 10000;
   margin-right: auto;
 }
-
 .hamburger span {
   display: block;
-  width: 28px;
-  height: 3px;
+  width: 28px; height: 3px;
   margin: 6px;
   background: var(--color-main);
   border-radius: 3px;
   transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
+.hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-.hamburger.active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
-/* 左スライドメニュー */
+/* メニュー */
 .main-nav.left-slide {
   position: fixed;
   top: 70px;
   left: -100%;
   width: 80%;
   height: calc(100% - 70px);
-  background: rgba(0, 0, 0, 0.75); /* ← 背景を濃くする */
-  backdrop-filter: blur(10px);
-  padding: 30px 20px; /* ← 余白を広げてタップしやすく */
-  text-align: left;
+  background: rgba(0, 0, 0, 0.7); /* ← 最適化された黒背景 */
+  backdrop-filter: blur(12px);
+  padding: 30px 20px;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem; /* ← 項目間隔を広げる */
+  gap: 1.6rem;
   border-right: 1px solid rgba(255,255,255,0.15);
   transition: left var(--transition-mid);
   z-index: 9500;
 }
-
-.main-nav.left-slide.show {
-  left: 0;
-}
-
+.main-nav.left-slide.show { left: 0; }
 .main-nav.left-slide a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
   font-size: 1.2rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.4); /* ← 文字にシャドウ追加 */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
   transition: color var(--transition-fast);
 }
+.main-nav.left-slide a:hover { color: var(--color-accent); }
 
-.main-nav.left-slide a:hover {
-  color: var(--color-accent);
-}
-
-
-/* PC版 */
 @media (min-width: 821px) {
   .main-nav.left-slide {
     position: static;
@@ -197,20 +117,14 @@ h2::after {
     height: auto;
     left: 0;
   }
-  .hamburger {
-    display: none;
-  }
+  .hamburger { display: none; }
 }
 
-/* =========================================================
-   Overlay（背景暗くする）
-========================================================= */
+/* Overlay */
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(4px);
   opacity: 0;
@@ -218,70 +132,46 @@ h2::after {
   transition: opacity 0.35s ease;
   z-index: 9000;
 }
-
-.overlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
+.overlay.active { opacity: 1; pointer-events: auto; }
 
 /* =========================================================
-   4. Works
+   Profile Section
 ========================================================= */
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-
-.works-grid img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: var(--radius-small);
-  box-shadow: var(--shadow-soft);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.works-grid img:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: var(--shadow-hover);
-}
-
-/* =========================================================
-   5. About
-========================================================= */
-.about-wrapper {
-  display: flex;
-  gap: 1.8rem;
-  align-items: flex-start;
-}
-
-.about-text {
-  flex: 1;
-  font-size: 0.95rem;
-  line-height: 1.8;
-}
-
+.about-wrapper { display: flex; gap: 1.8rem; align-items: flex-start; }
+.about-text { flex: 1; font-size: 0.95rem; line-height: 1.8; }
+.about-text ul { list-style: none; } /* ← 「・」削除 */
+.about-text li { margin-bottom: 0.4rem; }
 .about-image img {
   width: 260px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
 }
-
 @media (max-width: 720px) {
-  .about-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-image img {
-    width: 220px;
-    margin: 0 auto;
-  }
+  .about-wrapper { flex-direction: column; text-align: center; }
+  .about-image img { width: 220px; margin: 0 auto; }
 }
 
 /* =========================================================
-   6. Footer
+   Buttons (統一デザイン)
+========================================================= */
+.button-link {
+  display: inline-block;
+  background: var(--color-main);
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-small);
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+.button-link:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   Footer
 ========================================================= */
 .footer-refined {
   background: #eef3f8;
@@ -291,19 +181,15 @@ h2::after {
   font-size: 0.9rem;
   line-height: 1.6;
 }
-
 .footer-refined a {
   color: #3a007d;
   text-decoration: none;
   margin: 0 0.3rem;
 }
-
-.footer-refined a:hover {
-  text-decoration: underline;
-}
+.footer-refined a:hover { text-decoration: underline; }
 
 /* =========================================================
-   7. Hero Scroll
+   Hero Scroll
 ========================================================= */
 .hero-scroll-row {
   display: flex;
@@ -313,7 +199,6 @@ h2::after {
   white-space: nowrap;
   scroll-behavior: smooth;
 }
-
 .hero-img {
   height: 420px;
   border-radius: var(--radius);
@@ -321,175 +206,9 @@ h2::after {
   object-fit: cover;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
-
 .hero-img:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: var(--shadow-hover);
-}
-
-/* ============================
-   Back to Top（上に戻るボタン）
-============================ */
-.back-to-top {
-  position: fixed;
-  right: 22px;
-  bottom: 22px;
-  width: 52px;
-  height: 52px;
-  background: var(--color-main);
-  color: #fff;
-  font-size: 26px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.2s ease;
-  z-index: 9999;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-}
-
-.back-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.back-to-top:hover {
-  transform: translateY(-4px);
-  background: var(--color-accent);
-}
-
-/* =========================================================
-   文字間隔・余白の完全最適化
-========================================================= */
-
-/* 全体の行間を少し広げて読みやすく */
-body {
-  line-height: 1.9;
-  letter-spacing: 0.03em; /* 字間をほんの少し広げる */
-}
-
-/* 段落間の余白を統一 */
-p + p {
-  margin-top: 1.1rem;
-}
-
-/* セクションタイトル（h2）をより見やすく */
-h2 {
-  margin-bottom: 1.4rem;
-  letter-spacing: 0.02em;
-}
-
-h2::after {
-  margin-top: 10px;
-}
-
-/* セクション全体の余白を調整 */
-section {
-  padding: 2.6rem 0;
-  margin-bottom: 2.6rem;
-}
-
-/* h3 の余白を最適化 */
-h3.section-title {
-  margin-top: 1.8rem;
-  margin-bottom: 0.8rem;
-  letter-spacing: 0.02em;
-}
-
-/* リストの行間を広げて読みやすく */
-ul li {
-  margin-bottom: 0.6rem;
-  line-height: 1.9;
-  letter-spacing: 0.02em;
-}
-
-/* About の文章を読みやすく */
-.about-text p {
-  margin-bottom: 1.2rem;
-  line-height: 1.9;
-}
-
-/* お知らせカードの文章も最適化 */
-.update-card p {
-  line-height: 1.9;
-  margin-top: 0.6rem;
-}
-
-/* ボタン周りの余白を統一 */
-.more-button {
-  margin: 2.4rem 0;
-}
-
-/* フッターの文字間隔 */
-.footer-refined {
-  line-height: 1.8;
-  letter-spacing: 0.02em;
-}
-
-/* =========================================================
-   お知らせカード（Updates Section）完全最適化
-========================================================= */
-
-.updates-section {
-  margin-top: 2rem;
-}
-
-.update-card {
-  background: rgba(0, 0, 0, 0.35); /* 半透明の黒背景 */
-  backdrop-filter: blur(6px);      /* 魔法科っぽい透明感 */
-  border: 1px solid rgba(255,255,255,0.25); /* 白の薄い枠 */
-  border-radius: 12px;
-  padding: 1.4rem 1.6rem;
-  margin-bottom: 1.4rem;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  color: #fff; /* 白文字で視認性UP */
-}
-
-/* タイトルと日付を横並びに */
-.update-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.6rem;
-}
-
-.update-label {
-  font-weight: 600;
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
-}
-
-.update-date {
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-/* 本文の読みやすさを最適化 */
-.update-card p {
-  line-height: 1.9;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  margin-top: 0.4rem;
-}
-
-/* スマホ最適化 */
-@media (max-width: 720px) {
-  .update-card {
-    padding: 1.2rem 1.3rem;
-  }
-
-  .update-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.2rem;
-  }
-
-  .update-date {
-    font-size: 0.85rem;
-  }
 }
 
 
