@@ -199,6 +199,25 @@ h2::after {
   }
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* ← 薄い黒背景 */
+  backdrop-filter: blur(4px);       /* ← 魔法科っぽい透明感 */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 900; /* メニューより下、ヘッダーより上 */
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
 /* =========================================================
    4. Works
