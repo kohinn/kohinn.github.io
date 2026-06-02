@@ -78,24 +78,30 @@ body {
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-/* メニュー */
+/* ============================
+   ハンバーガーメニュー
+============================ */
 .main-nav.left-slide {
   position: fixed;
   top: 70px;
   left: -100%;
   width: 80%;
   height: calc(100% - 70px);
-  background: rgba(0, 0, 0, 0.6); /* ← 柔らかい黒背景 */
-  backdrop-filter: blur(14px); /* ← ブラー強化 */
+  background: rgba(255, 255, 255, 0.15); /* ← 黒帯削除・透明感追加 */
+  backdrop-filter: blur(18px); /* ← ブラー強化で柔らかく */
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  border-right: 1px solid rgba(255,255,255,0.15);
+  border-right: 1px solid rgba(255,255,255,0.25);
   transition: left var(--transition-mid);
   z-index: 9500;
 }
-.main-nav.left-slide.show { left: 0; }
+
+.main-nav.left-slide.show {
+  left: 0;
+}
+
 .main-nav.left-slide a {
   color: #fff;
   text-decoration: none;
@@ -104,21 +110,105 @@ body {
   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
   transition: color var(--transition-fast);
 }
-.main-nav.left-slide a:hover { color: var(--color-accent); }
 
-@media (min-width: 821px) {
-  .main-nav.left-slide {
-    position: static;
-    flex-direction: row;
-    background: none;
-    backdrop-filter: none;
-    padding: 0;
-    width: auto;
-    height: auto;
-    left: 0;
-  }
-  .hamburger { display: none; }
+.main-nav.left-slide a:hover {
+  color: var(--color-accent);
 }
+
+/* ============================
+   背景オーバーレイ（ブラー復活）
+============================ */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* ← 背景を薄暗く戻す */
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 9000;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ============================
+   上に戻るボタン
+============================ */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--color-main);
+  color: #fff;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  z-index: 9998; /* ← モーダルより下、メニューより上 */
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-4px);
+}
+
+/* ============================
+   モーダル（イラスト拡大）
+============================ */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-mid);
+  z-index: 9999;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hover);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
 
 /* Overlay */
 .overlay {
