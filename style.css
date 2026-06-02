@@ -374,3 +374,51 @@ section {
   }
 }
 
+
+/* ============================
+   全体の文字・余白調整
+============================ */
+body {
+  font-size: 15px;
+  line-height: 1.9; /* ← 少し詰めて読みやすく */
+  letter-spacing: 0.03em;
+}
+
+/* セクション間隔を調整 */
+section {
+  padding: 2rem 0; /* ← 以前より少し狭く */
+  margin-bottom: 2.4rem;
+}
+
+/* ============================
+   Hero画像サイズアップ
+============================ */
+.hero-img {
+  height: 340px; /* ← 大きくして印象強化 */
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero-img {
+    height: 280px; /* ← スマホでも自然なサイズ */
+  }
+}
+
+/* ============================
+   ボタン間隔調整
+============================ */
+.more-button {
+  margin-bottom: 2rem; /* ← お知らせとの距離を詰める */
+}
+
+/* ============================
+   言語切り替え位置調整
+============================ */
+.language-switch {
+  position: relative;
+  margin-right: 1.6rem; /* ← 右端に余白追加 */
+  z-index: 10001; /* ← モーダルより前に表示 */
+}
+
