@@ -221,6 +221,30 @@ window.addEventListener('scroll', () => {
   if (window.scrollY > 200) btn.classList.add('show');
   else btn.classList.remove('show');
 });
+
+  /* ============================
+   Back to Top（上に戻るボタン）
+============================ */
+const backToTop = document.getElementById('backToTop');
+
+// スクロールで表示・非表示
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
+  }
+});
+
+// スムーズスクロールでトップへ戻る
+backToTop.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
 </script>
 
 </body>
