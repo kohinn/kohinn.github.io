@@ -1,89 +1,26 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Works | Kohinn</title>
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    /* ヘッダー固定 */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 9999;
-      backdrop-filter: blur(8px);
-      background: rgba(255,255,255,0.7);
-    }
-
-    body {
-      padding-top: 70px;
-    }
-
-    /* ハンバーガー（HOME と同じ） */
-    .hamburger {
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 10px;
-      z-index: 10000;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 28px;
-      height: 3px;
-      margin: 6px;
-      background: #333;
-      transition: 0.3s;
-    }
-
-    .hamburger.active span:nth-child(1) {
-      transform: translateY(9px) rotate(45deg);
-    }
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.active span:nth-child(3) {
-      transform: translateY(-9px) rotate(-45deg);
-    }
-
-    /* メニュー（HOME と同じ透明背景） */
-    .main-nav {
-      position: fixed;
-      top: 70px;
-      right: -100%;
-      width: 100%;
-      background: rgba(255,255,255,0.8);
-      backdrop-filter: blur(8px);
-      transition: 0.3s;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .main-nav.show {
-      right: 0;
-    }
-  </style>
 </head>
 
 <body>
 
 <header class="site-header">
-  <div class="logo"><a href="index_jp.html">Kohinn</a></div>
+  <div class="logo"><a href="index.html">Kohinn</a></div>
 
-  <!-- ★ HOME と同じクラス名に変更 -->
   <button class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </button>
 
   <nav id="main-nav" class="main-nav">
-    <a href="index_jp.html">Home</a>
-    <a href="works_jp.html">Works</a>
-    <a href="about_jp.html">About</a>
-    <a href="commission_jp.html">Commission</a>
+    <a href="index.html">Home</a>
+    <a href="works.html">Works</a>
+    <a href="about.html">About</a>
+    <a href="commission.html">Commission</a>
   </nav>
 
   <div class="language-switch">
@@ -94,7 +31,7 @@
 <main>
 
   <section id="works" class="portfolio-section fade-in">
-    <h2>制作一覧</h2>
+    <h2>Works</h2>
 
     <div class="works-grid" id="worksGrid">
       <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp" loading="lazy">
@@ -110,8 +47,14 @@
 
 </main>
 
+<!-- Modal -->
+<div id="modal" class="modal" aria-hidden="true">
+  <button class="modal-close" aria-label="Close">✕</button>
+  <img id="modal-img" class="modal-content" alt="">
+</div>
+
 <script>
-/* ★ HOME と同じハンバーガー動作 */
+/* ハンバーガー */
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('main-nav');
 
@@ -120,14 +63,30 @@ hamburger.addEventListener('click', () => {
   nav.classList.toggle('show');
 });
 
-/* ランダム表示 */
+/* Modal */
+document.querySelectorAll('.works-grid img').forEach(img => {
+  img.addEventListener('click', () => {
+    document.getElementById('modal-img').src = img.src;
+    document.getElementById('modal').classList.add('show');
+    document.getElementById('modal').setAttribute('aria-hidden', 'false');
+  });
+});
+
+document.querySelector('.modal-close').addEventListener('click', () => {
+  document.getElementById('modal').classList.remove('show');
+  document.getElementById('modal').setAttribute('aria-hidden', 'true');
+});
+
+/* Random shuffle（修正版） */
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('worksGrid');
   const items = Array.from(grid.children);
+
   for (let i = items.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [items[i], items[j]] = [items[j], items[i]];
   }
+
   items.forEach(item => grid.appendChild(item));
 });
 </script>
