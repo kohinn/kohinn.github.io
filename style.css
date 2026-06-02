@@ -1,48 +1,16 @@
 /* =========================================================
-   Kohinn Portfolio Site - Stable Full Version
+   Kohinn Portfolio Site - Fully Stable Version
 ========================================================= */
 
-/* ===== Root Variables ===== */
-:root {
-  --color-bg: #f7f9fc;
-  --color-surface: #ffffff;
-  --color-main: #003366;
-  --color-accent: #3a7bd5;
-  --color-border: rgba(0, 80, 160, 0.12);
-  --color-text: #1a1a1a;
-  --font-base: 'Noto Sans JP', 'Roboto', sans-serif;
-  --font-title: 'Playfair Display', serif;
-  --max-width: 1040px;
-  --radius: 10px;
-  --radius-small: 6px;
-  --shadow-soft: 0 4px 12px rgba(0,0,0,0.06);
-  --shadow-hover: 0 6px 18px rgba(0,0,0,0.10);
-  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: 0.25s var(--ease-smooth);
-  --transition-mid: 0.35s var(--ease-smooth);
-}
-
-/* =========================================================
-   Base / Reset
-========================================================= */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* ===== Base ===== */
 body {
-  font-family: var(--font-base);
-  background: var(--color-bg);
-  color: var(--color-text);
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 15px;
-  line-height: 2.0; /* ← 行間広め */
-  letter-spacing: 0.03em; /* ← 字間広め */
-  overflow-x: hidden;
+  line-height: 2.0; /* ← 読みやすい行間 */
+  letter-spacing: 0.03em;
   padding-top: 70px;
-}
-
-img {
-  content-visibility: auto;
-  display: block;
-  max-width: 100%;
-  height: auto;
+  background: #f7f9fc;
+  color: #1a1a1a;
 }
 
 /* =========================================================
@@ -50,35 +18,35 @@ img {
 ========================================================= */
 .site-header {
   position: fixed;
-  top: 0; left: 0; width: 100%;
+  top: 0; left: 0;
+  width: 100%;
   z-index: 9999;
-  backdrop-filter: blur(10px);
   background: rgba(255,255,255,0.75);
-  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   padding: 0.6rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* ロゴ中央配置＋デザイン復元 */
+/* ロゴ中央配置（完全固定） */
 .center-logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 .center-logo a {
-  font-family: var(--font-title);
+  font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
   font-weight: 600;
   color: #3a007d;
   text-decoration: none;
-  letter-spacing: 0.05em;
-  transition: color var(--transition-fast);
 }
-.center-logo a:hover { color: var(--color-accent); }
 
-/* ハンバーガー */
+/* =========================================================
+   Hamburger Menu
+========================================================= */
 .hamburger {
   cursor: pointer;
   background: none;
@@ -87,119 +55,103 @@ img {
   z-index: 10000;
   margin-right: auto;
 }
+
 .hamburger span {
   display: block;
   width: 28px; height: 3px;
   margin: 6px;
-  background: var(--color-main);
+  background: #003366;
   border-radius: 3px;
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
-.hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-/* メニュー（不要な帯削除） */
+/* ← ここが今回の重要ポイント：不要な帯を完全削除 */
 .main-nav.left-slide {
   position: fixed;
   top: 70px;
   left: -100%;
   width: 80%;
   height: calc(100% - 70px);
-  background: transparent;
+  background: transparent !important; /* ← 完全透明 */
   backdrop-filter: blur(14px);
-  padding: 30px 20px;
+  padding: 20px 20px 40px 20px;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  border-right: none;
-  transition: left var(--transition-mid);
+  border-right: none !important;
+  transition: left 0.35s ease;
   z-index: 9500;
 }
+
 .main-nav.left-slide.show { left: 0; }
+
 .main-nav.left-slide a {
   color: #fff;
-  text-decoration: none;
-  font-weight: 500;
   font-size: 1.2rem;
   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
-  transition: color var(--transition-fast);
-}
-.main-nav.left-slide a:hover { color: var(--color-accent); }
-
-@media (min-width: 821px) {
-  .main-nav.left-slide {
-    position: static;
-    flex-direction: row;
-    background: none;
-    backdrop-filter: none;
-    padding: 0;
-    width: auto;
-    height: auto;
-    left: 0;
-  }
-  .hamburger { display: none; }
 }
 
-/* 背景オーバーレイ */
+/* =========================================================
+   Overlay
+========================================================= */
 .overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0,0,0,0.45);
   backdrop-filter: blur(6px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease;
   z-index: 9000;
 }
-.overlay.active { opacity: 1; pointer-events: auto; }
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* =========================================================
-   Layout / Typography
+   Sections / Spacing
 ========================================================= */
-main {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
 section {
   padding: 2.6rem 0;
-  margin-bottom: 2.6rem;
-  border-bottom: 1px solid var(--color-border);
-}
-h2 {
-  font-family: var(--font-title);
-  font-size: 1.9rem;
-  font-weight: 600;
-  color: var(--color-main);
-  margin-bottom: 1.4rem;
-}
-h2::after {
-  content: "";
-  display: block;
-  width: 52px;
-  height: 2px;
-  background: var(--color-accent);
-  margin-top: 10px;
-  border-radius: 2px;
+  margin-bottom: 3rem; /* ← イラストとの距離を広げる */
 }
 
 /* =========================================================
-   Works / About Images
+   お知らせカード（黒背景復活）
 ========================================================= */
-.works-grid img,
-.about-image img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+.update-card {
+  background: rgba(0,0,0,0.35) !important;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.4rem;
+  color: #fff;
 }
-.works-grid img:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: var(--shadow-hover);
+
+/* =========================================================
+   Back to Top Button
+========================================================= */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #003366;
+  color: #fff;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9998;
+}
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* =========================================================
@@ -208,23 +160,11 @@ h2::after {
 .footer-refined {
   background: #eef3f8;
   padding: 2rem 1rem;
-  border-top: 1px solid var(--color-border);
-  text-align: center; /* ← SNSリンク中央寄せ */
+  text-align: center; /* ← SNS中央寄せ */
   font-size: 0.9rem;
   line-height: 1.8;
 }
 .footer-refined a {
+  margin: 0 0.4rem;
   color: #3a007d;
-  text-decoration: none;
-  margin: 0 0.3rem;
-}
-.footer-refined a:hover { text-decoration: underline; }
-
-/* =========================================================
-   Responsive Adjustments
-========================================================= */
-@media (max-width: 720px) {
-  body { font-size: 14px; line-height: 2.1; }
-  h2 { font-size: 1.7rem; }
-  .footer-refined { font-size: 0.85rem; }
 }
