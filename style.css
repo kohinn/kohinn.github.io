@@ -1,5 +1,5 @@
 /* =========================================================
-   Kohinn Portfolio Site - Layout Stabilized Version
+   Kohinn Portfolio Site - Full Integrated Version
 ========================================================= */
 
 /* ===== Root Variables ===== */
@@ -22,7 +22,9 @@
   --transition-mid: 0.35s var(--ease-smooth);
 }
 
-/* ===== Base ===== */
+/* =========================================================
+   Base / Reset
+========================================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -30,9 +32,16 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.9;
   overflow-x: hidden;
   padding-top: 70px;
+}
+
+img {
+  content-visibility: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* =========================================================
@@ -51,11 +60,17 @@ body {
   align-items: center;
 }
 
-.center-logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+/* ロゴデザイン復元 */
+.center-logo a {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #3a007d;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color var(--transition-fast);
 }
+.center-logo a:hover { color: var(--color-accent); }
 
 /* ハンバーガー */
 .hamburger {
@@ -78,30 +93,24 @@ body {
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-/* ============================
-   ハンバーガーメニュー
-============================ */
+/* メニュー（不要な帯削除） */
 .main-nav.left-slide {
   position: fixed;
   top: 70px;
   left: -100%;
   width: 80%;
   height: calc(100% - 70px);
-  background: rgba(255, 255, 255, 0.15); /* ← 黒帯削除・透明感追加 */
-  backdrop-filter: blur(18px); /* ← ブラー強化で柔らかく */
+  background: transparent; /* ← 完全透明 */
+  backdrop-filter: blur(14px); /* ← 背景ブラーのみ */
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  border-right: 1px solid rgba(255,255,255,0.25);
+  border-right: none;
   transition: left var(--transition-mid);
   z-index: 9500;
 }
-
-.main-nav.left-slide.show {
-  left: 0;
-}
-
+.main-nav.left-slide.show { left: 0; }
 .main-nav.left-slide a {
   color: #fff;
   text-decoration: none;
@@ -110,113 +119,29 @@ body {
   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
   transition: color var(--transition-fast);
 }
+.main-nav.left-slide a:hover { color: var(--color-accent); }
 
-.main-nav.left-slide a:hover {
-  color: var(--color-accent);
+@media (min-width: 821px) {
+  .main-nav.left-slide {
+    position: static;
+    flex-direction: row;
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+    width: auto;
+    height: auto;
+    left: 0;
+  }
+  .hamburger { display: none; }
 }
 
-/* ============================
-   背景オーバーレイ（ブラー復活）
-============================ */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45); /* ← 背景を薄暗く戻す */
-  backdrop-filter: blur(6px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease;
-  z-index: 9000;
-}
-
-.overlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* ============================
-   上に戻るボタン
-============================ */
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--color-main);
-  color: #fff;
-  font-size: 1.4rem;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-soft);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition-fast), transform var(--transition-fast);
-  z-index: 9998; /* ← モーダルより下、メニューより上 */
-}
-
-.back-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(-4px);
-}
-
-/* ============================
-   モーダル（イラスト拡大）
-============================ */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition-mid);
-  z-index: 9999;
-}
-
-.modal.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.modal-content {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-hover);
-}
-
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-
-/* Overlay */
+/* 背景オーバーレイ（ブラー＋暗さ復元） */
 .overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
   background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease;
@@ -225,7 +150,7 @@ body {
 .overlay.active { opacity: 1; pointer-events: auto; }
 
 /* =========================================================
-   Layout / Sections
+   Layout / Typography
 ========================================================= */
 main {
   max-width: var(--max-width);
@@ -233,13 +158,29 @@ main {
   padding: 2rem 1rem;
 }
 section {
-  padding: 2rem 0;
-  margin-bottom: 2rem;
+  padding: 2.4rem 0;
+  margin-bottom: 2.4rem;
   border-bottom: 1px solid var(--color-border);
+}
+h2 {
+  font-family: var(--font-title);
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--color-main);
+  margin-bottom: 1rem;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 2px;
+  background: var(--color-accent);
+  margin-top: 6px;
+  border-radius: 2px;
 }
 
 /* =========================================================
-   Buttons (統一デザイン)
+   Buttons
 ========================================================= */
 .more-button {
   text-align: center;
@@ -265,8 +206,8 @@ section {
    Profile Section
 ========================================================= */
 .about-wrapper { display: flex; gap: 1.8rem; align-items: flex-start; }
-.about-text { flex: 1; font-size: 0.95rem; line-height: 1.8; }
-.about-text ul { list-style: none; } /* ← 「・」削除 */
+.about-text { flex: 1; font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.02em; }
+.about-text ul { list-style: none; }
 .about-text li { margin-bottom: 0.4rem; }
 .about-image img {
   width: 260px;
@@ -279,108 +220,46 @@ section {
 }
 
 /* =========================================================
-   Footer
+   Back to Top Button
 ========================================================= */
-.footer-refined {
-  background: #eef3f8;
-  padding: 2rem 1rem;
-  border-top: 1px solid var(--color-border);
-  text-align: center;
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-.footer-refined a {
-  color: #3a007d;
-  text-decoration: none;
-  margin: 0 0.3rem;
-}
-.footer-refined a:hover { text-decoration: underline; }
-
-/* =========================================================
-   Hero Scroll
-========================================================= */
-.hero-scroll-row {
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--color-main);
+  color: #fff;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
   display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding: 0 6px;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-}
-.hero-img {
-  height: 420px;
-  border-radius: var(--radius);
-  flex-shrink: 0;
-  object-fit: cover;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-.hero-img:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: var(--shadow-hover);
-}
-
-/* =========================================================
-   お知らせカード（Updates Section）完全最適化
-========================================================= */
-
-.updates-section {
-  margin-top: 2rem;
-}
-
-.update-card {
-  background: rgba(0, 0, 0, 0.35); /* 半透明の黒背景 */
-  backdrop-filter: blur(6px);      /* 魔法科っぽい透明感 */
-  border: 1px solid rgba(255,255,255,0.25); /* 白の薄い枠 */
-  border-radius: 12px;
-  padding: 1.4rem 1.6rem;
-  margin-bottom: 1.4rem;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  color: #fff; /* 白文字で視認性UP */
-}
-
-/* タイトルと日付を横並びに */
-.update-header {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.6rem;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  z-index: 9998;
+}
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-4px);
 }
 
-.update-label {
-  font-weight: 600;
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
-}
-
-.update-date {
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-/* 本文の読みやすさを最適化 */
-.update-card p {
-  line-height: 1.9;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  margin-top: 0.4rem;
-}
-
-/* スマホ最適化 */
-@media (max-width: 720px) {
-  .update-card {
-    padding: 1.2rem 1.3rem;
-  }
-
-  .update-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.2rem;
-  }
-
-  .update-date {
-    font-size: 0.85rem;
-  }
-}
+/* =========================================================
+   Modal (イラスト拡大)
+========================================================= */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
 
 
 
