@@ -444,3 +444,43 @@ section {
 .more-button {
   margin-bottom: 1.6rem; /* ← 無駄な空白を減らす */
 }
+
+/* ============================
+   モーダル ×ボタン修正
+============================ */
+.modal-close {
+  display: none !important; /* ← 初期状態で非表示 */
+}
+
+.modal.show .modal-close {
+  display: block !important; /* ← モーダルが開いた時だけ表示 */
+  z-index: 99999 !important;
+}
+
+/* ============================
+   ボタンサイズ調整
+============================ */
+.button-link {
+  display: inline-block;
+  background: #003366 !important;
+  color: #fff !important;
+  padding: 1rem 2.4rem; /* ← 横幅を広げる */
+  min-width: 260px;     /* ← 長文でも自然に収まる */
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.button-link:hover {
+  background: #3a7bd5 !important;
+  transform: translateY(-2px);
+}
+
+/* ============================
+   プロフィール欄の余白調整
+============================ */
+#about {
+  margin-top: 1.4rem; /* ← 上の余白を詰める */
+}
+
