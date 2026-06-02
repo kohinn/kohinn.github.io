@@ -155,14 +155,14 @@ h2::after {
   left: -100%;
   width: 80%;
   height: calc(100% - 70px);
-  background: rgba(255,255,255,0.9);
+  background: rgba(0, 0, 0, 0.6); /* ← 黒背景を追加 */
   backdrop-filter: blur(10px);
   padding: 20px;
   text-align: left;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  border-right: 1px solid var(--color-border);
+  border-right: 1px solid rgba(255,255,255,0.15);
   transition: left var(--transition-mid);
   z-index: 9500;
 }
@@ -172,10 +172,15 @@ h2::after {
 }
 
 .main-nav.left-slide a {
-  color: var(--color-main);
+  color: #ffffff; /* ← 白文字に変更 */
   text-decoration: none;
   font-weight: 500;
   font-size: 1.1rem;
+  transition: color var(--transition-fast);
+}
+
+.main-nav.left-slide a:hover {
+  color: var(--color-accent); /* ← ホバー時に青系アクセント */
 }
 
 /* PC版 */
