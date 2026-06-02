@@ -30,7 +30,6 @@ body {
   align-items: center;
 }
 
-/* ロゴ中央配置 */
 .center-logo {
   position: absolute;
   left: 50%;
@@ -115,25 +114,50 @@ section {
 }
 
 /* =========================================================
-   Worksページの画像サイズ（PC・スマホ両対応）
+   Worksページ：横スライドギャラリー + 画像サイズ安定
 ========================================================= */
+.works-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  animation: slide-horizontal 18s linear infinite;
+}
+
+.works-grid:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide-horizontal {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-20%); }
+  50% { transform: translateX(-40%); }
+  75% { transform: translateX(-60%); }
+  100% { transform: translateX(0); }
+}
+
 .works-grid img {
-  display: block;
-  margin: 0 auto;
+  flex: 0 0 auto;
   width: auto !important;
-  max-width: 100% !important;
+  max-width: 90% !important;
   height: auto !important;
-  max-height: 420px !important;
+  max-height: 360px !important;
   object-fit: contain !important;
   border-radius: 10px;
+  scroll-snap-align: center;
 }
+
 @media (max-width: 768px) {
   .works-grid img {
-    max-height: 320px !important;
+    max-height: 260px !important;
+    max-width: 95% !important;
   }
 }
 
-/* Aboutページの画像 */
+/* =========================================================
+   Aboutページ画像
+========================================================= */
 .about-image img {
   width: 260px;
   height: auto;
@@ -142,7 +166,7 @@ section {
 }
 
 /* =========================================================
-   お知らせカード（黒背景復活）
+   お知らせカード
 ========================================================= */
 .update-card {
   background: rgba(0,0,0,0.35) !important;
@@ -155,7 +179,7 @@ section {
 }
 
 /* =========================================================
-   コミッション・お仕事ボタン（視認性強化）
+   コミッションボタン
 ========================================================= */
 .button-link {
   display: inline-block;
@@ -222,7 +246,7 @@ section {
 }
 
 /* =========================================================
-   Footer（SNS中央寄せ）
+   Footer
 ========================================================= */
 .footer-refined {
   background: #eef3f8;
@@ -240,9 +264,10 @@ section {
 }
 
 /* =========================================================
-   Responsive Adjustments
+   Responsive
 ========================================================= */
 @media (max-width: 720px) {
   body { font-size: 14px; line-height: 2.1; }
   .footer-refined { font-size: 0.85rem; }
 }
+
