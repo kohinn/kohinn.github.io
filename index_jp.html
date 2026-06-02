@@ -73,6 +73,22 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   nav.classList.toggle('show');
 });
+
+  /* ============================
+   オーバーレイ（背景暗くする）
+============================ */
+const overlay = document.getElementById('overlay');
+
+hamburger.addEventListener('click', () => {
+  overlay.classList.toggle('active');
+});
+
+// オーバーレイをクリックしたら閉じる
+overlay.addEventListener('click', () => {
+  nav.classList.remove('show');
+  hamburger.classList.remove('active');
+  overlay.classList.remove('active');
+});
 </script>
 
 <main>
