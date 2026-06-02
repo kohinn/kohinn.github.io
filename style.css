@@ -1,5 +1,5 @@
 /* =========================================================
-   Kohinn Portfolio Site - Full Integrated Version
+   Kohinn Portfolio Site - Stable Full Version
 ========================================================= */
 
 /* ===== Root Variables ===== */
@@ -203,20 +203,23 @@ h2::after {
 }
 
 /* =========================================================
-   Profile Section
+   お知らせカード（視認性強化）
 ========================================================= */
-.about-wrapper { display: flex; gap: 1.8rem; align-items: flex-start; }
-.about-text { flex: 1; font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.02em; }
-.about-text ul { list-style: none; }
-.about-text li { margin-bottom: 0.4rem; }
-.about-image img {
-  width: 260px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
+.update-card {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.4rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  color: #fff;
 }
-@media (max-width: 720px) {
-  .about-wrapper { flex-direction: column; text-align: center; }
-  .about-image img { width: 220px; margin: 0 auto; }
+.update-card p {
+  line-height: 1.9;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  margin-top: 0.4rem;
 }
 
 /* =========================================================
@@ -248,18 +251,6 @@ h2::after {
 }
 
 /* =========================================================
-   Modal (イラスト拡大)
+   Footer
 ========================================================= */
-.modal {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-
-
-
+.footer-refined {
