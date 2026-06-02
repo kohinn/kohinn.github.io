@@ -271,3 +271,32 @@ section {
   .footer-refined { font-size: 0.85rem; }
 }
 
+
+/* ============================
+   HOME：ヒーロー画像のサイズ調整
+============================ */
+.hero-scroll-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.hero-img {
+  height: 260px;        /* ← 高さ基準で統一（見やすい） */
+  width: auto;
+  flex: 0 0 auto;
+  object-fit: contain;
+  border-radius: 10px;
+  scroll-snap-align: center;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hero-img {
+    height: 200px;      /* ← スマホではさらに見やすく */
+  }
+}
+
+
