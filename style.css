@@ -30,6 +30,7 @@ body {
   align-items: center;
 }
 
+/* ロゴ中央配置 */
 .center-logo {
   position: absolute;
   left: 50%;
@@ -54,7 +55,6 @@ body {
   z-index: 10000;
   margin-right: auto;
 }
-
 .hamburger span {
   display: block;
   width: 28px; height: 3px;
@@ -63,6 +63,7 @@ body {
   border-radius: 3px;
 }
 
+/* 不要な帯削除 */
 .main-nav.left-slide {
   position: fixed;
   top: 70px;
@@ -79,9 +80,7 @@ body {
   transition: left 0.35s ease;
   z-index: 9500;
 }
-
 .main-nav.left-slide.show { left: 0; }
-
 .main-nav.left-slide a {
   color: #fff;
   font-size: 1.2rem;
@@ -112,11 +111,38 @@ body {
 ========================================================= */
 section {
   padding: 2.6rem 0;
-  margin-bottom: 3.2rem !important;
+  margin-bottom: 3.4rem;
 }
 
 /* =========================================================
-   お知らせカード
+   Worksページの画像サイズ（PC・スマホ両対応）
+========================================================= */
+.works-grid img {
+  display: block;
+  margin: 0 auto;
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 420px !important;
+  object-fit: contain !important;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .works-grid img {
+    max-height: 320px !important;
+  }
+}
+
+/* Aboutページの画像 */
+.about-image img {
+  width: 260px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* =========================================================
+   お知らせカード（黒背景復活）
 ========================================================= */
 .update-card {
   background: rgba(0,0,0,0.35) !important;
@@ -126,6 +152,25 @@ section {
   padding: 1.4rem 1.6rem;
   margin-bottom: 1.4rem;
   color: #fff;
+}
+
+/* =========================================================
+   コミッション・お仕事ボタン（視認性強化）
+========================================================= */
+.button-link {
+  display: inline-block;
+  background: #003366 !important;
+  color: #fff !important;
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.button-link:hover {
+  background: #3a7bd5 !important;
+  transform: translateY(-2px);
 }
 
 /* =========================================================
@@ -153,61 +198,17 @@ section {
 }
 
 /* =========================================================
-   Footer
+   モーダル（画像拡大）
 ========================================================= */
-.footer-refined {
-  background: #eef3f8;
-  padding: 2rem 1rem;
-  text-align: center !important;
-  font-size: 0.9rem;
-  line-height: 1.8;
+.modal {
+  z-index: 99998 !important;
 }
-.footer-refined a {
-  margin: 0 0.4rem;
-  color: #3a007d;
-}
-
-/* =========================================================
-   Worksページ画像（巨大化防止）
-========================================================= */
-.works-grid img {
-  width: 100%;
-  height: auto !important;
-  max-height: 320px !important; /* ← PC・スマホ両方で適正サイズ */
+.modal-content {
+  max-width: 90% !important;
+  max-height: 80% !important;
   object-fit: contain !important;
   border-radius: 10px;
 }
-
-/* Aboutページ画像 */
-.about-image img {
-  width: 260px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* =========================================================
-   コミッションボタン（視認性復元）
-========================================================= */
-.button-link {
-  display: inline-block;
-  background: #003366 !important;
-  color: #fff !important;
-  padding: 0.9rem 1.8rem;
-  border-radius: 6px;
-  font-weight: 500;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  transition: background 0.25s ease, transform 0.25s ease;
-}
-.button-link:hover {
-  background: #3a7bd5 !important;
-  transform: translateY(-2px);
-}
-
-/* =========================================================
-   モーダル × ボタン修正
-========================================================= */
 .modal-close {
   position: absolute !important;
   top: 20px !important;
@@ -220,3 +221,28 @@ section {
   cursor: pointer !important;
 }
 
+/* =========================================================
+   Footer（SNS中央寄せ）
+========================================================= */
+.footer-refined {
+  background: #eef3f8;
+  padding: 2rem 1rem;
+  text-align: center !important;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+.footer-refined a {
+  margin: 0 0.4rem;
+  color: #3a007d;
+}
+.footer-refined a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   Responsive Adjustments
+========================================================= */
+@media (max-width: 720px) {
+  body { font-size: 14px; line-height: 2.1; }
+  .footer-refined { font-size: 0.85rem; }
+}
