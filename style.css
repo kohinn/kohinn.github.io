@@ -32,7 +32,8 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   font-size: 15px;
-  line-height: 1.9;
+  line-height: 2.0; /* ← 行間広め */
+  letter-spacing: 0.03em; /* ← 字間広め */
   overflow-x: hidden;
   padding-top: 70px;
 }
@@ -60,7 +61,12 @@ img {
   align-items: center;
 }
 
-/* ロゴデザイン復元 */
+/* ロゴ中央配置＋デザイン復元 */
+.center-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .center-logo a {
   font-family: var(--font-title);
   font-size: 1.4rem;
@@ -100,8 +106,8 @@ img {
   left: -100%;
   width: 80%;
   height: calc(100% - 70px);
-  background: transparent; /* ← 完全透明 */
-  backdrop-filter: blur(14px); /* ← 背景ブラーのみ */
+  background: transparent;
+  backdrop-filter: blur(14px);
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
@@ -135,7 +141,7 @@ img {
   .hamburger { display: none; }
 }
 
-/* 背景オーバーレイ（ブラー＋暗さ復元） */
+/* 背景オーバーレイ */
 .overlay {
   position: fixed;
   top: 0; left: 0;
@@ -158,8 +164,8 @@ main {
   padding: 2rem 1rem;
 }
 section {
-  padding: 2.4rem 0;
-  margin-bottom: 2.4rem;
+  padding: 2.6rem 0;
+  margin-bottom: 2.6rem;
   border-bottom: 1px solid var(--color-border);
 }
 h2 {
@@ -167,7 +173,7 @@ h2 {
   font-size: 1.9rem;
   font-weight: 600;
   color: var(--color-main);
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
 }
 h2::after {
   content: "";
@@ -175,82 +181,50 @@ h2::after {
   width: 52px;
   height: 2px;
   background: var(--color-accent);
-  margin-top: 6px;
+  margin-top: 10px;
   border-radius: 2px;
 }
 
 /* =========================================================
-   Buttons
+   Works / About Images
 ========================================================= */
-.more-button {
-  text-align: center;
-  margin: 2rem 0;
-}
-.button-link {
-  display: inline-block;
-  background: var(--color-main);
-  color: #fff;
-  padding: 0.9rem 1.8rem;
-  border-radius: var(--radius-small);
-  font-weight: 500;
-  text-decoration: none;
+.works-grid img,
+.about-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
-  transition: background var(--transition-fast), transform var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
-.button-link:hover {
-  background: var(--color-accent);
-  transform: translateY(-2px);
-}
-
-/* =========================================================
-   お知らせカード（視認性強化）
-========================================================= */
-.update-card {
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 12px;
-  padding: 1.4rem 1.6rem;
-  margin-bottom: 1.4rem;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  color: #fff;
-}
-.update-card p {
-  line-height: 1.9;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  margin-top: 0.4rem;
-}
-
-/* =========================================================
-   Back to Top Button
-========================================================= */
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--color-main);
-  color: #fff;
-  font-size: 1.4rem;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-soft);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition-fast), transform var(--transition-fast);
-  z-index: 9998;
-}
-.back-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(-4px);
+.works-grid img:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-hover);
 }
 
 /* =========================================================
    Footer
 ========================================================= */
 .footer-refined {
+  background: #eef3f8;
+  padding: 2rem 1rem;
+  border-top: 1px solid var(--color-border);
+  text-align: center; /* ← SNSリンク中央寄せ */
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+.footer-refined a {
+  color: #3a007d;
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+.footer-refined a:hover { text-decoration: underline; }
+
+/* =========================================================
+   Responsive Adjustments
+========================================================= */
+@media (max-width: 720px) {
+  body { font-size: 14px; line-height: 2.1; }
+  h2 { font-size: 1.7rem; }
+  .footer-refined { font-size: 0.85rem; }
+}
