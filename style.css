@@ -6,7 +6,7 @@
 body {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 15px;
-  line-height: 2.0; /* ← 読みやすい行間 */
+  line-height: 2.0;
   letter-spacing: 0.03em;
   padding-top: 70px;
   background: #f7f9fc;
@@ -30,7 +30,6 @@ body {
   align-items: center;
 }
 
-/* ロゴ中央配置（完全固定） */
 .center-logo {
   position: absolute;
   left: 50%;
@@ -64,14 +63,13 @@ body {
   border-radius: 3px;
 }
 
-/* ← ここが今回の重要ポイント：不要な帯を完全削除 */
 .main-nav.left-slide {
   position: fixed;
   top: 70px;
   left: -100%;
   width: 80%;
   height: calc(100% - 70px);
-  background: transparent !important; /* ← 完全透明 */
+  background: transparent !important;
   backdrop-filter: blur(14px);
   padding: 20px 20px 40px 20px;
   display: flex;
@@ -114,11 +112,11 @@ body {
 ========================================================= */
 section {
   padding: 2.6rem 0;
-  margin-bottom: 3rem; /* ← イラストとの距離を広げる */
+  margin-bottom: 3.2rem !important;
 }
 
 /* =========================================================
-   お知らせカード（黒背景復活）
+   お知らせカード
 ========================================================= */
 .update-card {
   background: rgba(0,0,0,0.35) !important;
@@ -160,7 +158,7 @@ section {
 .footer-refined {
   background: #eef3f8;
   padding: 2rem 1rem;
-  text-align: center; /* ← SNS中央寄せ */
+  text-align: center !important;
   font-size: 0.9rem;
   line-height: 1.8;
 }
@@ -170,33 +168,31 @@ section {
 }
 
 /* =========================================================
-   ① イラストが巨大化する問題の修正
+   Worksページ画像（巨大化防止）
 ========================================================= */
-
-/* Worksページの画像だけ元のサイズに戻す */
 .works-grid img {
   width: 100%;
-  height: auto;
-  object-fit: contain !important; /* ← cover ではなく contain に戻す */
-  max-height: 420px; /* ← 元の高さに戻す */
+  height: auto !important;
+  max-height: 320px !important; /* ← PC・スマホ両方で適正サイズ */
+  object-fit: contain !important;
+  border-radius: 10px;
 }
 
-/* Aboutページの画像も自然なサイズに */
+/* Aboutページ画像 */
 .about-image img {
   width: 260px;
   height: auto;
   object-fit: cover;
+  border-radius: 10px;
 }
 
-
 /* =========================================================
-   ② コミッション・お仕事のご相談ボタンのデザイン復元
+   コミッションボタン（視認性復元）
 ========================================================= */
-
 .button-link {
   display: inline-block;
-  background: var(--color-main);
-  color: #fff;
+  background: #003366 !important;
+  color: #fff !important;
   padding: 0.9rem 1.8rem;
   border-radius: 6px;
   font-weight: 500;
@@ -204,47 +200,23 @@ section {
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   transition: background 0.25s ease, transform 0.25s ease;
 }
-
 .button-link:hover {
-  background: var(--color-accent);
+  background: #3a7bd5 !important;
   transform: translateY(-2px);
 }
 
-
 /* =========================================================
-   ③ 画像拡大モーダルの × ボタン位置修正
+   モーダル × ボタン修正
 ========================================================= */
-
 .modal-close {
-  position: absolute;
+  position: absolute !important;
   top: 20px !important;
   right: 20px !important;
   z-index: 99999 !important;
-  font-size: 2rem;
-  color: #fff;
-  background: none;
-  border: none;
-  cursor: pointer;
+  font-size: 2rem !important;
+  color: #fff !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
 }
 
-
-/* =========================================================
-   ④ セクション間の余白を広げてイラストと文章が近すぎる問題を修正
-========================================================= */
-
-section {
-  margin-bottom: 3.2rem !important; /* ← 余白を広げる */
-}
-
-
-/* =========================================================
-   ⑤ フッターのSNSリンクを中央揃えに戻す
-========================================================= */
-
-.footer-refined {
-  text-align: center !important;
-}
-
-.footer-refined a {
-  margin: 0 0.4rem;
-}
