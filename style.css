@@ -21,6 +21,7 @@ section {
 /* =========================
    魔法科風ヘッダー（完全版）
 ========================= */
+/* ===== 魔法科風ヘッダー ===== */
 .mh-header {
   position: fixed;
   top: 0;
@@ -51,7 +52,6 @@ section {
   font-size: 1.4rem;
   font-weight: 600;
   text-decoration: none;
-  letter-spacing: 1px;
 }
 
 /* PCナビ */
@@ -64,18 +64,15 @@ section {
   color: #fff;
   text-decoration: none;
   font-size: 1rem;
-  transition: 0.3s;
-}
-
-.mh-nav a:hover {
-  color: #1e90ff;
 }
 
 /* ハンバーガー */
 .mh-burger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
@@ -83,8 +80,47 @@ section {
   width: 28px;
   height: 3px;
   background: #fff;
-  transition: 0.3s;
+  border-radius: 3px;
 }
+
+/* ===== スマホ（左スライド） ===== */
+@media (max-width: 768px) {
+
+  .mh-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;   /* ← ここだけで制御 */
+    width: 70%;
+    height: 100vh;
+    background: rgba(10, 15, 26, 0.95);
+    backdrop-filter: blur(6px);
+    padding-top: 80px;
+    transition: left 0.35s ease;
+    z-index: 9998;
+  }
+
+  .mh-nav.active {
+    left: 0;       /* ← 開く */
+  }
+
+  .mh-nav ul {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .mh-burger {
+    display: flex;
+  }
+}
+
+/* ===== 旧ヘッダーの競合を完全無効化 ===== */
+.site-header,
+.main-nav,
+.main-nav.show {
+  display: none !important;
+}
+
 
 /* =========================
    スマホ（左側スライド）
