@@ -194,10 +194,13 @@ section {
 }
 
 /* =========================
-   Home Hero
+   Home Hero（安定版）
 ========================= */
 .home-hero {
   text-align: center;
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 2rem 1rem;
 }
 
 .home-hero-title {
@@ -214,23 +217,27 @@ section {
   margin-bottom: 1.8rem;
 }
 
-/* 魔法科風：グリッド展示 */
+/* グリッド安定化 */
 .home-hero-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  align-items: start;
   margin-bottom: 2rem;
 }
 
 .home-hero-item {
   background: radial-gradient(circle at top, #1a1f3b, #050712);
   border-radius: 12px;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  width: 100%;
+  max-width: 340px;
 }
 
 .home-hero-item:hover {
@@ -239,15 +246,24 @@ section {
 }
 
 .home-hero-img {
-  height: 260px;
   width: 100%;
-  object-fit: contain;
+  height: auto;
+  aspect-ratio: 4 / 5; /* ← 高さを安定化 */
+  object-fit: cover;
   border-radius: 8px;
 }
 
+/* スマホ対応 */
 @media (max-width: 768px) {
+  .home-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .home-hero-item {
+    max-width: 95%;
+  }
   .home-hero-img {
-    height: 220px;
+    aspect-ratio: 3 / 4;
   }
 }
 
@@ -262,7 +278,7 @@ section {
   display: inline-block;
   background: #003366;
   color: #fff;
-  padding: 0.9rem 2.4rem;
+  padding: 1rem 2.4rem;
   min-width: 260px;
   border-radius: 6px;
   font-weight: 500;
@@ -274,6 +290,7 @@ section {
   background: #3a7bd5;
   transform: translateY(-2px);
 }
+
 
 /* =========================
    News / お知らせ
