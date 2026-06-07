@@ -6,7 +6,7 @@ body {
   font-size: 15px;
   line-height: 2.0;
   letter-spacing: 0.03em;
-  padding-top: 70px; /* 固定値で安定 */
+  padding-top: 70px;
   background: linear-gradient(180deg, #0b0c1a 0%, #000 100%);
   color: #eaeaea;
   overflow-x: hidden;
@@ -31,9 +31,70 @@ section {
   z-index: 9999;
 }
 
-.mh-container 
+.mh-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
 
-/* PCナビ */
+/* 左：ハンバーガー */
+.mh-burger {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10000; /* ← メニューより上に配置 */
+}
+
+.mh-burger span {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+}
+
+/* 中央：ロゴ */
+.mh-logo {
+  order: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mh-logo a {
+  color: #1e90ff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* 右：言語切り替え */
+.language-switch {
+  order: 3;
+  margin-left: auto;
+  color: #9fcfff;
+  font-size: 0.9rem;
+  z-index: 10000;
+}
+
+.language-switch a {
+  color: #9fcfff;
+  text-decoration: none;
+  margin: 0 0.2rem;
+}
+
+.language-switch a:hover {
+  color: #1e90ff;
+}
+
+/* PCナビ（PCでは表示しない） */
 .mh-nav ul {
   display: flex;
   gap: 24px;
@@ -50,29 +111,11 @@ section {
   color: #1e90ff;
 }
 
-/* ハンバーガー */
-.mh-burger {
-  position: relative;
-  z-index: 10000; /* ← メニューより上に配置 */
-}
-
-/* メニューのレイヤーを少し下げる */
-.mh-nav {
-  z-index: 9998;
-}
-
-
-.mh-burger span {
-  width: 28px;
-  height: 3px;
-  background: #fff;
-  border-radius: 3px;
-}
-
 /* =========================
    スマホ（左スライド）
 ========================= */
 @media (max-width: 768px) {
+
   .mh-nav {
     position: fixed;
     top: 0;
@@ -94,10 +137,6 @@ section {
     flex-direction: column;
     gap: 30px;
     text-align: center;
-  }
-
-  .mh-burger {
-    display: flex;
   }
 }
 
