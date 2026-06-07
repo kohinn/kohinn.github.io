@@ -219,6 +219,58 @@ section {
 }
 
 /* =========================
+   Works（制作一覧）完全分離
+========================= */
+
+/* 横スクロール全体 */
+.works-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+
+  /* 自動スクロールアニメーション（元の動作を維持） */
+  animation: works-slide-horizontal 18s linear infinite;
+}
+
+/* ホバーでアニメーション停止 */
+.works-grid:hover {
+  animation-play-state: paused;
+}
+
+/* アニメーション定義 */
+@keyframes works-slide-horizontal {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-20%); }
+  50% { transform: translateX(-40%); }
+  75% { transform: translateX(-60%); }
+  100% { transform: translateX(0); }
+}
+
+/* 画像の安定化 */
+.works-grid img {
+  flex: 0 0 auto;
+  width: auto !important;
+  max-width: 90% !important;
+  height: auto !important;
+  max-height: 360px !important;
+  object-fit: contain !important;
+  border-radius: 10px;
+  scroll-snap-align: center;
+  cursor: pointer;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .works-grid img {
+    max-height: 260px !important;
+    max-width: 95% !important;
+  }
+}
+
+
+/* =========================
    Hero（横スクロール安定版）
 ========================= */
 
