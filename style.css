@@ -314,56 +314,70 @@ section {
 }
 
 /* =========================
-   Works（制作一覧）完全分離
+   Works（黒系統カード風）
 ========================= */
 
-/* 横スクロール全体 */
+body {
+  background: #0a0a0a;
+  color: #fff;
+}
+
+/* セクション全体 */
+#works {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* タイトル */
+#works h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.6rem;
+  padding-left: 0.6rem;
+  border-left: 4px solid #3a7bd5;
+  color: #e0e0e0;
+}
+
+/* グリッドレイアウト */
 .works-grid {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 10px;
-
-  /* 自動スクロールアニメーション（元の動作を維持） */
-  animation: works-slide-horizontal 18s linear infinite;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  align-items: start;
 }
 
-/* ホバーでアニメーション停止 */
-.works-grid:hover {
-  animation-play-state: paused;
-}
-
-/* アニメーション定義 */
-@keyframes works-slide-horizontal {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-20%); }
-  50% { transform: translateX(-40%); }
-  75% { transform: translateX(-60%); }
-  100% { transform: translateX(0); }
-}
-
-/* 画像の安定化 */
+/* カード枠 */
 .works-grid img {
-  flex: 0 0 auto;
-  width: auto !important;
-  max-width: 90% !important;
-  height: auto !important;
-  max-height: 360px !important;
-  object-fit: contain !important;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
   border-radius: 10px;
-  scroll-snap-align: center;
-  cursor: pointer;
+  background: #111;
+  box-shadow: 0 0 12px rgba(255,255,255,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* スマホ対応 */
-@media (max-width: 768px) {
-  .works-grid img {
-    max-height: 260px !important;
-    max-width: 95% !important;
+/* ホバー（PCのみ） */
+@media (hover: hover) {
+  .works-grid img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.15);
   }
 }
 
+/* スマホ最適化 */
+@media (max-width: 768px) {
+  .works-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .works-grid img {
+    aspect-ratio: 3 / 4;
+  }
+}
 
 /* =========================
    Hero（横スクロール）完全分離
