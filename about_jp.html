@@ -137,6 +137,13 @@ window.addEventListener('scroll', () => {
   if (window.scrollY > 200) btn.classList.add('show');
   else btn.classList.remove('show');
 });
+
+   const burger = document.getElementById("burger");
+  const nav = document.querySelector(".mh-nav");
+
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
 </script>
 
 </body>
