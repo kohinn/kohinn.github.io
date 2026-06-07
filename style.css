@@ -607,3 +607,15 @@ section {
   font-size: 0.85rem;
   margin-top: 0.6rem;
 }
+
+.profile-img {
+  width: 180px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.profile-panel img {
+  width: auto;
+}
