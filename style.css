@@ -19,9 +19,8 @@ section {
 }
 
 /* =========================
-   魔法科風ヘッダー（完全版）
+   魔法科風ヘッダー
 ========================= */
-/* ===== 魔法科風ヘッダー ===== */
 .mh-header {
   position: fixed;
   top: 0;
@@ -83,13 +82,15 @@ section {
   border-radius: 3px;
 }
 
-/* ===== スマホ（左スライド） ===== */
+/* =========================
+   スマホ（左スライド）
+========================= */
 @media (max-width: 768px) {
 
   .mh-nav {
     position: fixed;
     top: 0;
-    left: -100%;   /* ← ここだけで制御 */
+    left: -100%;
     width: 70%;
     height: 100vh;
     background: rgba(10, 15, 26, 0.95);
@@ -100,53 +101,13 @@ section {
   }
 
   .mh-nav.active {
-    left: 0;       /* ← 開く */
-  }
-
-  .mh-nav ul {
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-  }
-
-  .mh-burger {
-    display: flex;
-  }
-}
-
-/* ===== 旧ヘッダーの競合を完全無効化 ===== */
-.site-header,
-.main-nav,
-.main-nav.show {
-  display: none !important;
-}
-
-
-/* =========================
-   スマホ（左側スライド）
-========================= */
-@media (max-width: 768px) {
-  .mh-nav {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 70%;
-    height: 100vh;
-    background: rgba(10, 15, 26, 0.95);
-    backdrop-filter: blur(6px);
-    padding-top: 80px;
-    transition: left 0.4s ease;
-    z-index: 9998;
-  }
-
-  .mh-nav ul {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-  }
-
-  .mh-nav.active {
     left: 0;
+  }
+
+  .mh-nav ul {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
   }
 
   .mh-burger {
@@ -179,14 +140,32 @@ section {
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 1.4rem;
+  box-shadow: 0 0 22px rgba(0, 80, 255, 0.15);
+}
+
+.about-panel p,
+.about-panel li {
+  color: #e8f0ff;
+  font-size: 0.95rem;
+  line-height: 1.9;
+}
+
+.about-panel .section-title {
+  color: #9fcfff;
+  font-size: 1.05rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
 }
 
 .about-image .thumbnail {
   width: 160px;
-  display: block;
-  margin: 0 auto;
+  height: auto;
   border-radius: 12px;
   object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
 }
 
 /* =========================
@@ -195,209 +174,6 @@ section {
 .footer-refined {
   background: #0b0c1a;
   border-top: 2px solid #1e90ff;
-  padding: 1.6rem 1rem;
-  text-align: center;
-}
-
-
-/* =========================
-   About（魔法科風透明パネル）
-========================= */
-#about {
-  max-width: 900px;
-  margin: 0 auto 1.6rem;
-  padding: 1.2rem 0.8rem;
-  position: relative;
-}
-
-#about > h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1.2rem;
-  padding-left: 0.8rem;
-  border-left: 4px solid #3a7bd5;
-  color: #cfe6ff;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-}
-
-/* 透明パネル */
-.about-panel {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.18);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 1.4rem;
-  box-shadow: 0 0 22px rgba(0, 80, 255, 0.15);
-}
-
-/* テキスト */
-.about-panel p,
-.about-panel li {
-  color: #e8f0ff;
-  font-size: 0.95rem;
-  line-height: 1.9;
-}
-
-/* 小見出し */
-.about-panel .section-title {
-  color: #9fcfff;
-  font-size: 1.05rem;
-  margin-top: 1.2rem;
-  margin-bottom: 0.4rem;
-  font-weight: 600;
-}
-
-/* 画像サイズ修正（巨大化防止） */
-.about-image .thumbnail {
-  width: 160px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
-  display: block;
-  margin: 0 auto;
-}
-
-/* スマホ対応 */
-@media (max-width: 768px) {
-  .about-image .thumbnail {
-    width: 140px;
-  }
-}
-
-/* 光ライン演出 */
-.about-light-line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #00e5ff, transparent);
-  animation: aboutLine 4s linear infinite;
-}
-
-@keyframes aboutLine {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-/* =========================
-   Footer（魔法科風）
-========================= */
-.footer-refined {
-  background: #0b0c1a;
-  border-top: 2px solid #1e90ff;
-  padding: 1.6rem 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-  line-height: 1.8;
-  margin-top: 2rem;
-}
-
-.footer-nav a,
-.footer-sns a {
-  color: #9fcfff;
-  text-decoration: none;
-  margin: 0 0.4rem;
-  transition: 0.3s;
-}
-
-.footer-nav a:hover,
-.footer-sns a:hover {
-  color: #1e90ff;
-}
-
-.footer-copy {
-  color: #aaa;
-  font-size: 0.85rem;
-  margin-top: 0.6rem;
-}
-
-
-/* =========================
-   About（魔法科風透明パネル）
-========================= */
-#about {
-  max-width: 900px;
-  margin: 0 auto 1.6rem;
-  padding: 1.2rem 0.8rem;
-  position: relative;
-}
-
-#about > h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1.2rem;
-  padding-left: 0.8rem;
-  border-left: 4px solid #3a7bd5;
-  color: #cfe6ff;
-  font-weight: 600;
-}
-
-/* 透明パネル */
-.about-panel {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.18);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 1.4rem;
-}
-
-/* テキスト */
-.about-panel p,
-.about-panel li {
-  color: #e8f0ff;
-  font-size: 0.95rem;
-  line-height: 1.9;
-}
-
-/* 小見出し */
-.about-panel .section-title {
-  color: #9fcfff;
-  font-size: 1.05rem;
-  margin-top: 1.2rem;
-  margin-bottom: 0.4rem;
-  font-weight: 600;
-}
-
-/* 画像サイズ修正（巨大化防止） */
-.about-image .thumbnail {
-  width: 180px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
-}
-
-@media (max-width: 768px) {
-  .about-image .thumbnail {
-    width: 150px;
-  }
-}
-
-/* 光ライン演出 */
-.about-light-line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #00e5ff, transparent);
-  animation: aboutLine 4s linear infinite;
-}
-
-@keyframes aboutLine {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-/* =========================
-   Footer（魔法科風）
-========================= */
-.footer-refined {
-  background: #0b0c1a;
-  border-top: 2px solid #1e90ff;
   padding: 2rem 1rem;
   text-align: center;
   font-size: 0.9rem;
@@ -424,115 +200,3 @@ section {
   margin-top: 0.6rem;
 }
 
-/* =========================
-   About（魔法科風透明パネル）
-========================= */
-#about {
-  max-width: 900px;
-  margin: 0 auto 2rem;
-  padding: 1.6rem 1rem;
-  position: relative;
-}
-
-#about > h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1.6rem;
-  padding-left: 0.8rem;
-  border-left: 4px solid #3a7bd5;
-  color: #cfe6ff;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-}
-
-/* 透明パネル */
-.about-panel {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.18);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 0 22px rgba(0, 80, 255, 0.15);
-}
-
-/* テキスト */
-.about-panel p,
-.about-panel li {
-  color: #e8f0ff;
-  font-size: 0.95rem;
-  line-height: 1.9;
-}
-
-/* 小見出し */
-.about-panel .section-title {
-  color: #9fcfff;
-  font-size: 1.05rem;
-  margin-top: 1.6rem;
-  margin-bottom: 0.4rem;
-  font-weight: 600;
-}
-
-/* 画像サイズ修正（巨大化防止） */
-.about-image .thumbnail {
-  width: 180px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
-  display: block;
-  margin: 0 auto;
-}
-
-/* スマホ対応 */
-@media (max-width: 768px) {
-  .about-image .thumbnail {
-    width: 160px;
-  }
-}
-
-/* 光ライン演出 */
-.about-light-line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #00e5ff, transparent);
-  animation: aboutLine 4s linear infinite;
-}
-
-@keyframes aboutLine {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-/* =========================
-   Footer（魔法科風）
-========================= */
-.footer-refined {
-  background: #0b0c1a;
-  border-top: 2px solid #1e90ff;
-  padding: 2rem 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-  line-height: 1.8;
-  margin-top: 3rem;
-}
-
-.footer-nav a,
-.footer-sns a {
-  color: #9fcfff;
-  text-decoration: none;
-  margin: 0 0.4rem;
-  transition: 0.3s;
-}
-
-.footer-nav a:hover,
-.footer-sns a:hover {
-  color: #1e90ff;
-}
-
-.footer-copy {
-  color: #aaa;
-  font-size: 0.85rem;
-  margin-top: 0.6rem;
-}
