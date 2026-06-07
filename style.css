@@ -606,63 +606,63 @@ section {
 
 
 /* =========================
-   Modal（画像拡大）完全分離
+   Works（制作一覧）最適化版
 ========================= */
 
-/* モーダルの背景 */
-.modal {
-  position: fixed;
-  inset: 0;
-  display: none; /* ← 初期状態は非表示 */
-  justify-content: center;
-  align-items: center;
-  background: rgba(0,0,0,0.8);
-  z-index: 99998;
-  padding: 20px;
+/* セクション全体 */
+#works {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
-/* 表示状態 */
-.modal.show {
-  display: flex;
+#works h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.6rem;
+  padding-left: 0.6rem;
+  border-left: 4px solid #3a7bd5;
+  color: #1a2340;
 }
 
-/* 拡大画像 */
-.modal-content {
-  max-width: 90%;
-  max-height: 80%;
-  object-fit: contain;
+/* グリッドレイアウト（PC） */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  align-items: start;
+}
+
+/* 画像 */
+.works-grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-}
-
-/* ✕ボタン */
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 2rem;
-  color: #fff;
-  background: none;
-  border: none;
   cursor: pointer;
-  z-index: 99999;
-  padding: 4px 8px;
-  line-height: 1;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* スマホ対応 */
+/* ホバー（PCのみ） */
+@media (hover: hover) {
+  .works-grid img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+  }
+}
+
+/* スマホ最適化 */
 @media (max-width: 768px) {
-  .modal-content {
-    max-width: 95%;
-    max-height: 75%;
+  .works-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
-  .modal-close {
-    font-size: 1.8rem;
-    top: 16px;
-    right: 16px;
+
+  .works-grid img {
+    aspect-ratio: 3 / 4;
   }
 }
-
 
 /* =========================
    Footer（完全分離）
