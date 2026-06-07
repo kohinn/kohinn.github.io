@@ -1,5 +1,5 @@
 /* =========================
-   Base（魔法科風トーン）
+   Base
 ========================= */
 body {
   font-family: 'Noto Sans JP', sans-serif;
@@ -19,7 +19,7 @@ section {
 }
 
 /* =========================
-   魔法科風ヘッダー
+   魔法科風ヘッダー（完全版）
 ========================= */
 .mh-header {
   position: fixed;
@@ -54,7 +54,7 @@ section {
   letter-spacing: 1px;
 }
 
-/* ナビゲーション */
+/* PCナビ */
 .mh-nav ul {
   display: flex;
   gap: 24px;
@@ -86,7 +86,9 @@ section {
   transition: 0.3s;
 }
 
-/* スマホ対応（左側スライド） */
+/* =========================
+   スマホ（左側スライド）
+========================= */
 @media (max-width: 768px) {
   .mh-nav {
     position: fixed;
@@ -115,6 +117,52 @@ section {
     display: flex;
   }
 }
+
+/* =========================
+   About（透明パネル）
+========================= */
+#about {
+  max-width: 900px;
+  margin: 0 auto 1.6rem;
+  padding: 1.2rem 0.8rem;
+  position: relative;
+}
+
+#about > h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  padding-left: 0.8rem;
+  border-left: 4px solid #3a7bd5;
+  color: #cfe6ff;
+  font-weight: 600;
+}
+
+.about-panel {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.4rem;
+}
+
+.about-image .thumbnail {
+  width: 160px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* =========================
+   Footer
+========================= */
+.footer-refined {
+  background: #0b0c1a;
+  border-top: 2px solid #1e90ff;
+  padding: 1.6rem 1rem;
+  text-align: center;
+}
+
 
 /* =========================
    About（魔法科風透明パネル）
