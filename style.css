@@ -40,6 +40,7 @@ section {
    Header（完全分離）
 ========================= */
 
+/* ヘッダー全体 */
 .site-header {
   position: fixed;
   top: 0; left: 0;
@@ -54,6 +55,7 @@ section {
   align-items: center;
 }
 
+/* 中央ロゴ */
 .center-logo {
   position: absolute;
   left: 50%;
@@ -68,7 +70,7 @@ section {
   text-decoration: none;
 }
 
-/* Hamburger */
+/* ハンバーガー */
 .hamburger {
   cursor: pointer;
   background: none;
@@ -77,6 +79,7 @@ section {
   z-index: 10000;
   margin-right: auto;
 }
+
 .hamburger span {
   display: block;
   width: 28px;
@@ -86,7 +89,7 @@ section {
   border-radius: 3px;
 }
 
-/* Slide Menu */
+/* スライドメニュー */
 .main-nav.left-slide {
   position: fixed;
   top: 70px;
@@ -102,22 +105,58 @@ section {
   transition: left 0.35s ease;
   z-index: 9500;
 }
+
 .main-nav.left-slide.show {
   left: 0;
 }
+
 .main-nav.left-slide a {
   color: #fff;
   font-size: 1.2rem;
   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 
-/* Language */
+/* 言語切替 */
 .language-switch {
   position: relative;
   margin-right: 1.6rem;
   font-size: 0.95rem;
   white-space: nowrap;
   z-index: 10001;
+}
+
+.language-switch a {
+  color: #003366;
+  text-decoration: none;
+}
+
+.language-switch a:hover {
+  text-decoration: underline;
+}
+
+/* PC表示時のメニュー */
+@media (min-width: 900px) {
+  .hamburger {
+    display: none;
+  }
+
+  .main-nav.left-slide {
+    position: static;
+    height: auto;
+    width: auto;
+    background: transparent;
+    backdrop-filter: none;
+    flex-direction: row;
+    gap: 1.4rem;
+    padding: 0;
+    left: 0;
+  }
+
+  .main-nav.left-slide a {
+    color: #003366;
+    text-shadow: none;
+    font-size: 1rem;
+  }
 }
 
 /* =========================
