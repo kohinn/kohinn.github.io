@@ -101,7 +101,7 @@ section {
 }
 
 /* =========================
-   Header（完全分離）
+   Header（統一版）
 ========================= */
 
 .site-header {
@@ -132,6 +132,7 @@ section {
   text-decoration: none;
 }
 
+/* ハンバーガー */
 .hamburger {
   cursor: pointer;
   background: none;
@@ -150,6 +151,7 @@ section {
   border-radius: 3px;
 }
 
+/* スライドメニュー */
 .main-nav.left-slide {
   position: fixed;
   top: 70px;
@@ -176,6 +178,7 @@ section {
   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 
+/* 言語切替 */
 .language-switch {
   position: relative;
   margin-right: 1.6rem;
@@ -192,6 +195,7 @@ section {
   text-decoration: underline;
 }
 
+/* PC表示時のメニュー */
 @media (min-width: 900px) {
   .hamburger {
     display: none;
@@ -215,7 +219,6 @@ section {
     font-size: 1rem;
   }
 }
-
 
 /* =========================
    Home Hero（安定版）
