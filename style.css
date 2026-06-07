@@ -619,3 +619,91 @@ section {
 .profile-panel img {
   width: auto;
 }
+
+/* ===== 魔法科風ヘッダー ===== */
+.mh-header {
+  background: #0a0f1a;
+  border-bottom: 2px solid #1e90ff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.mh-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mh-logo a {
+  color: #1e90ff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.mh-nav ul {
+  display: flex;
+  gap: 24px;
+}
+
+.mh-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.mh-nav a:hover {
+  color: #1e90ff;
+}
+
+/* ===== ハンバーガー ===== */
+.mh-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.mh-burger span {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+/* ===== スマホ対応 ===== */
+@media (max-width: 768px) {
+  .mh-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(10, 15, 26, 0.95);
+    backdrop-filter: blur(6px);
+    padding-top: 80px;
+    transition: 0.4s;
+  }
+
+  .mh-nav ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .mh-burger {
+    display: flex;
+  }
+
+  .mh-nav.active {
+    right: 0;
+  }
+}
+
