@@ -52,13 +52,15 @@ section {
 
 /* ハンバーガー */
 .mh-burger {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  background: none;
-  border: none;
-  cursor: pointer;
+  position: relative;
+  z-index: 10000; /* ← メニューより上に配置 */
 }
+
+/* メニューのレイヤーを少し下げる */
+.mh-nav {
+  z-index: 9998;
+}
+
 
 .mh-burger span {
   width: 28px;
