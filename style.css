@@ -436,29 +436,36 @@ section {
 
 
 /* =========================
-   Modal
+   Modal（画像拡大）完全分離
 ========================= */
+
+/* モーダルの背景 */
 .modal {
   position: fixed;
   inset: 0;
-  display: none;
+  display: none; /* ← 初期状態は非表示 */
   justify-content: center;
   align-items: center;
   background: rgba(0,0,0,0.8);
-  z-index: 9998;
+  z-index: 99998;
+  padding: 20px;
 }
 
+/* 表示状態 */
 .modal.show {
   display: flex;
 }
 
+/* 拡大画像 */
 .modal-content {
   max-width: 90%;
   max-height: 80%;
   object-fit: contain;
   border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
 
+/* ✕ボタン */
 .modal-close {
   position: absolute;
   top: 20px;
@@ -468,8 +475,24 @@ section {
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 9999;
+  z-index: 99999;
+  padding: 4px 8px;
+  line-height: 1;
 }
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 95%;
+    max-height: 75%;
+  }
+  .modal-close {
+    font-size: 1.8rem;
+    top: 16px;
+    right: 16px;
+  }
+}
+
 
 /* =========================
    Footer（完全分離）
