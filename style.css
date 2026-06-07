@@ -420,14 +420,16 @@ section {
 }
 
 /* =========================
-   Footer
+   Footer（完全分離）
 ========================= */
+
 .footer-refined {
   background: #eef3f8;
   padding: 2rem 1rem;
   text-align: center;
   font-size: 0.9rem;
   line-height: 1.8;
+  margin-top: 3rem;
 }
 
 .footer-inner {
@@ -435,34 +437,41 @@ section {
   margin: 0 auto;
 }
 
+/* ナビゲーション */
 .footer-nav {
   margin-bottom: 0.8rem;
 }
+
 .footer-nav a {
   margin: 0 0.4rem;
   color: #3a007d;
+  font-weight: 500;
+  text-decoration: none;
 }
+
 .footer-nav a:hover {
   text-decoration: underline;
 }
 
+/* SNSリンク */
 .footer-sns {
   margin-bottom: 0.6rem;
 }
+
 .footer-sns a {
   margin: 0 0.4rem;
   color: #003366;
+  font-weight: 500;
+  text-decoration: none;
 }
+
 .footer-sns a:hover {
   text-decoration: underline;
 }
 
+/* コピーライト */
 .footer-copy {
   color: #666;
   font-size: 0.85rem;
+  margin-top: 0.6rem;
 }
-
-
-
-
-
