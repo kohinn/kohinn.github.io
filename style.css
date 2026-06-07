@@ -31,44 +31,7 @@ section {
   z-index: 9999;
 }
 
-.mh-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 12px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* ロゴ中央配置 */
-.mh-logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.mh-logo a {
-  color: #1e90ff;
-  font-size: 1.4rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-/* 言語切り替え */
-.language-switch {
-  color: #9fcfff;
-  font-size: 0.9rem;
-}
-
-.language-switch a {
-  color: #9fcfff;
-  text-decoration: none;
-  margin: 0 0.2rem;
-}
-
-.language-switch a:hover {
-  color: #1e90ff;
-}
+.mh-container 
 
 /* PCナビ */
 .mh-nav ul {
