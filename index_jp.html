@@ -26,21 +26,27 @@
   <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- CSS（分割版） -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/news.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body class="home-page">
 <div class="overlay" id="overlay"></div>
+
 <header class="site-header">
 
   <!-- 左：ハンバーガー -->
-  <button class="hamburger" id="hamburger">
+  <button class="hamburger" id="hamburger" aria-label="メニューを開く">
     <span></span><span></span><span></span>
   </button>
-
 
   <!-- 中央：ロゴ -->
   <div class="logo center-logo">
@@ -62,129 +68,105 @@
 
 </header>
 
-
-<script>
-/* ハンバーガー動作（統一版） */
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('main-nav');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  nav.classList.toggle('show');
-});
-
-  /* ============================
-   オーバーレイ（背景暗くする）
-============================ */
-const overlay = document.getElementById('overlay');
-
-hamburger.addEventListener('click', () => {
-  overlay.classList.toggle('active');
-});
-
-// オーバーレイをクリックしたら閉じる
-overlay.addEventListener('click', () => {
-  nav.classList.remove('show');
-  hamburger.classList.remove('active');
-  overlay.classList.remove('active');
-});
-</script>
-
-
-  <script>
-/* モーダル修正版 */
-document.querySelectorAll('.hero-img').forEach(img => {
-  img.addEventListener('click', () => {
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    modalImg.src = img.src;
-    modal.classList.add('show');
-    modal.style.display = 'flex'; // ← これを追加して位置を固定
-    modal.setAttribute('aria-hidden', 'false');
-  });
-});
-
-document.querySelector('.modal-close').addEventListener('click', () => {
-  const modal = document.getElementById('modal');
-  modal.classList.remove('show');
-  modal.style.display = 'none'; // ← 閉じたら非表示に戻す
-  modal.setAttribute('aria-hidden', 'true');
-});
-</script>
 <main>
 
-  <!-- ヒーロー：横スクロール -->
-  <section class="hero-scroll" aria-label="メインイラストギャラリー">
-    <div class="hero-scroll-row">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp" class="hero-img" loading="lazy" alt="">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" class="hero-img" loading="lazy" alt="">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp" class="hero-img" loading="lazy" alt="">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp" class="hero-img" loading="lazy" alt="">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp" class="hero-img" loading="lazy" alt="">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp" class="hero-img" loading="lazy" alt="">
+  <!-- ヒーロー：イラストグリッド（魔法科風） -->
+  <section class="home-hero" aria-label="メインイラストギャラリー">
+    <h1 class="home-hero-title">Character Illustration & Design</h1>
+    <p class="home-hero-lead">
+      キャラクターイラスト・キャラクターデザインを中心に活動しているイラストレーター Kohinn のポートフォリオサイトです。
+    </p>
+
+    <div class="home-hero-grid">
+      <div class="home-hero-item">
+        <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp"
+             class="home-hero-img" loading="lazy" alt="">
+      </div>
+      <div class="home-hero-item">
+        <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp"
+             class="home-hero-img" loading="lazy" alt="">
+      </div>
+      <div class="home-hero-item">
+        <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp"
+             class="home-hero-img" loading="lazy" alt="">
+      </div>
+      <div class="home-hero-item">
+        <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp"
+             class="home-hero-img" loading="lazy" alt="">
+      </div>
+      <div class="home-hero-item">
+        <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp"
+             class="home-hero-img" loading="lazy" alt="">
+      </div>
+      <div class="home-hero-item">
+        <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp"
+             class="home-hero-img" loading="lazy" alt="">
+      </div>
+    </div>
+
+    <div class="home-hero-button-wrap">
+      <a href="works_jp.html" class="home-main-button">制作一覧を見る →</a>
     </div>
   </section>
 
-  <!-- Works への導線 -->
-  <div class="more-button">
-    <a href="works_jp.html" class="button-link">制作一覧を見る →</a>
-  </div>
-
   <!-- お知らせ -->
   <section class="updates-section">
-    <h2>お知らせ</h2>
+    <h2 class="news-title">お知らせ</h2>
 
-    <div class="update-card">
-      <div class="update-header">
-        <span class="update-label">【コミッション状況】</span>
-        <span class="update-date">2026年6月</span>
+    <div class="news-card">
+      <div class="news-header">
+        <span class="news-label">【コミッション状況】</span>
+        <span class="news-date">2026年6月</span>
       </div>
-      <p>現在、新規のお仕事・ご依頼を受付中です。個人依頼・企業様からのご依頼に対応しています。</p>
+      <p class="news-text">
+        現在、新規のお仕事・ご依頼を受付中です。個人依頼・企業様からのご依頼に対応しています。
+      </p>
     </div>
 
-    <div class="update-card">
-      <div class="update-header">
-        <span class="update-label">【サイト更新】</span>
-        <span class="update-date">2026年3月</span>
+    <div class="news-card">
+      <div class="news-header">
+        <span class="news-label">【サイト更新】</span>
+        <span class="news-date">2026年3月</span>
       </div>
-      <p>制作一覧ページに新しいイラストを追加しました。</p>
+      <p class="news-text">
+        制作一覧ページに新しいイラストを追加しました。
+      </p>
     </div>
   </section>
 
   <!-- プロフィール -->
   <section id="about">
-    <h2>プロフィール</h2>
+    <h2 class="about-title">プロフィール</h2>
 
     <div class="about-wrapper">
       <div class="about-text">
         <p>独学でイラストを学び、現在はフルタイムの仕事と両立しながら活動しているイラストレーターです。</p>
         <p>キャラクターイラスト、キャラクターデザインを中心に制作しています。個人依頼・企業様からのご依頼に対応しています。</p>
 
-        <h3 class="section-title">対応領域</h3>
+        <h3 class="about-subtitle">対応領域</h3>
         <ul>
           <li>キャラクターデザイン</li>
           <li>キャラクターイラスト（立ち絵 / キービジュアル）</li>
           <li>二次創作 / ファンアート</li>
         </ul>
 
-        <h3 class="section-title">使用ソフト</h3>
+        <h3 class="about-subtitle">使用ソフト</h3>
         <ul>
           <li>CLIP STUDIO PAINT</li>
         </ul>
       </div>
 
       <div class="about-image">
-        <img class="thumbnail" loading="lazy"
+        <img class="about-thumbnail" loading="lazy"
           src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト5ddsds (1).webp"
           alt="キャラクターイラスト">
       </div>
     </div>
-  </section>
 
-  <!-- コミッション導線 -->
-  <div class="more-button">
-    <a href="commission_jp.html" class="button-link">コミッション・お仕事の相談はこちら →</a>
-  </div>
+    <div class="about-cta">
+      <a href="commission_jp.html" class="home-main-button">コミッション・お仕事の相談はこちら →</a>
+    </div>
+  </section>
 
 </main>
 
@@ -213,7 +195,7 @@ document.querySelector('.modal-close').addEventListener('click', () => {
   </div>
 </footer>
 
-<!-- Modal（HOME の画像拡大用） -->
+<!-- Modal（画像拡大） -->
 <div id="modal" class="modal" aria-hidden="true">
   <button class="modal-close" aria-label="閉じる">✕</button>
   <img class="modal-content" id="modal-img" alt="">
@@ -222,33 +204,43 @@ document.querySelector('.modal-close').addEventListener('click', () => {
 <a href="#" class="back-to-top" id="backToTop" aria-label="トップへ戻る">↑</a>
 
 <script>
-/* モーダル */
-document.querySelectorAll('.hero-img').forEach(img => {
+/* ハンバーガーメニュー＋オーバーレイ */
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('main-nav');
+const overlay = document.getElementById('overlay');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  nav.classList.toggle('show');
+  overlay.classList.toggle('active');
+});
+
+overlay.addEventListener('click', () => {
+  nav.classList.remove('show');
+  hamburger.classList.remove('active');
+  overlay.classList.remove('active');
+});
+
+/* モーダル（HOMEヒーロー画像） */
+document.querySelectorAll('.home-hero-img').forEach(img => {
   img.addEventListener('click', () => {
-    document.getElementById('modal-img').src = img.src;
-    document.getElementById('modal').classList.add('show');
-    document.getElementById('modal').setAttribute('aria-hidden', 'false');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    modalImg.src = img.src;
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
   });
 });
 
 document.querySelector('.modal-close').addEventListener('click', () => {
-  document.getElementById('modal').classList.remove('show');
-  document.getElementById('modal').setAttribute('aria-hidden', 'true');
+  const modal = document.getElementById('modal');
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden', 'true');
 });
 
 /* Back to top */
-window.addEventListener('scroll', () => {
-  const btn = document.getElementById('backToTop');
-  if (window.scrollY > 200) btn.classList.add('show');
-  else btn.classList.remove('show');
-});
-
-  /* ============================
-   Back to Top（上に戻るボタン）
-============================ */
 const backToTop = document.getElementById('backToTop');
 
-// スクロールで表示・非表示
 window.addEventListener('scroll', () => {
   if (window.scrollY > 200) {
     backToTop.classList.add('show');
@@ -257,7 +249,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// スムーズスクロールでトップへ戻る
 backToTop.addEventListener('click', (e) => {
   e.preventDefault();
   window.scrollTo({
@@ -265,11 +256,7 @@ backToTop.addEventListener('click', (e) => {
     behavior: 'smooth'
   });
 });
-
 </script>
 
 </body>
 </html>
-
-
-
