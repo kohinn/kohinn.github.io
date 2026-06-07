@@ -477,6 +477,62 @@ section {
 }
 
 /* =========================
+   Modal（画像拡大）中央表示版
+========================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.85);
+  z-index: 99999; /* ← 最前面に */
+  padding: 20px;
+}
+
+/* 表示状態 */
+.modal.show {
+  display: flex;
+}
+
+/* 拡大画像 */
+.modal-content {
+  max-width: 90%;
+  max-height: 85%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+/* ✕ボタン */
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100000;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 95%;
+    max-height: 75%;
+  }
+  .modal-close {
+    font-size: 1.8rem;
+    top: 16px;
+    right: 16px;
+  }
+}
+
+
+/* =========================
    About（プロフィール）完全分離
 ========================= */
 
