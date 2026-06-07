@@ -101,7 +101,7 @@ section {
 }
 
 /* =========================
-   Header（統一版）
+   Header（魔法科風）
 ========================= */
 
 .site-header {
@@ -109,15 +109,16 @@ section {
   top: 0; left: 0;
   width: 100%;
   z-index: 9999;
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding: 0.6rem 1rem;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 0.8rem 1.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* ロゴ中央配置 */
 .center-logo {
   position: absolute;
   left: 50%;
@@ -127,8 +128,8 @@ section {
 .center-logo a {
   font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
-  font-weight: 600;
-  color: #3a007d;
+  font-weight: 500;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -141,41 +142,39 @@ section {
   z-index: 10000;
   margin-right: auto;
 }
-
 .hamburger span {
   display: block;
   width: 28px;
-  height: 3px;
+  height: 2px;
   margin: 6px;
-  background: #003366;
+  background: #fff;
   border-radius: 3px;
 }
 
-/* スライドメニュー */
+/* スライドメニュー（左側から） */
 .main-nav.left-slide {
   position: fixed;
-  top: 70px;
+  top: 0;
   left: -100%;
   width: 80%;
-  height: calc(100% - 70px);
-  background: rgba(10,16,32,0.9);
-  backdrop-filter: blur(14px);
-  padding: 20px 20px 40px 20px;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  backdrop-filter: blur(10px);
+  padding: 80px 20px 40px 20px;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
   transition: left 0.35s ease;
   z-index: 9500;
 }
-
 .main-nav.left-slide.show {
   left: 0;
 }
-
 .main-nav.left-slide a {
   color: #fff;
   font-size: 1.2rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  font-weight: 400;
+  letter-spacing: 0.05em;
 }
 
 /* 言語切替 */
@@ -186,21 +185,18 @@ section {
   white-space: nowrap;
   z-index: 10001;
 }
-
 .language-switch a {
-  color: #003366;
+  color: #fff;
 }
-
 .language-switch a:hover {
   text-decoration: underline;
 }
 
-/* PC表示時のメニュー */
+/* PC表示時 */
 @media (min-width: 900px) {
   .hamburger {
     display: none;
   }
-
   .main-nav.left-slide {
     position: static;
     height: auto;
@@ -212,10 +208,8 @@ section {
     padding: 0;
     left: 0;
   }
-
   .main-nav.left-slide a {
-    color: #003366;
-    text-shadow: none;
+    color: #fff;
     font-size: 1rem;
   }
 }
