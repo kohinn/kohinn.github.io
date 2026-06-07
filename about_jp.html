@@ -9,47 +9,30 @@
 </head>
 
 <body>
+
   <!-- 魔法科風ヘッダー -->
-<header class="mh-header">
-  <div class="mh-container">
+  <header class="mh-header">
+    <div class="mh-container">
 
-    <div class="mh-logo">
-      <a href="index_jp.html">HI Portfolio</a>
+      <div class="mh-logo">
+        <a href="index_jp.html">HI Portfolio</a>
+      </div>
+
+      <nav class="mh-nav" id="navMenu">
+        <ul>
+          <li><a href="index_jp.html">Home</a></li>
+          <li><a href="works_jp.html">Works</a></li>
+          <li><a href="about_jp.html">About</a></li>
+          <li><a href="commission_jp.html">Commission</a></li>
+        </ul>
+      </nav>
+
+      <button class="mh-burger" id="burgerBtn">
+        <span></span><span></span><span></span>
+      </button>
+
     </div>
-
-    <nav class="mh-nav" id="navMenu">
-      <ul>
-        <li><a href="index_jp.html">Home</a></li>
-        <li><a href="works_jp.html">Works</a></li>
-        <li><a href="about_jp.html">About</a></li>
-        <li><a href="commission_jp.html">Commission</a></li>
-      </ul>
-    </nav>
-
-    <button class="mh-burger" id="burgerBtn">
-      <span></span><span></span><span></span>
-    </button>
-
-  </div>
-</header>
-
-
-<script>
-  const burger = document.getElementById("burgerBtn");
-  const nav = document.getElementById("navMenu");
-
-  burger.addEventListener("click", () => {
-    nav.classList.toggle("active");
-  });
-
-  // メニュー内のリンクを押したら閉じる
-  nav.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("active");
-    });
-  });
-</script>
-　
+  </header>
 
   <main>
     <section id="about">
@@ -58,6 +41,7 @@
 
       <div class="about-panel">
         <div class="about-wrapper">
+
           <div class="about-text">
             <p>独学でイラストを学び、現在はフルタイムの仕事と両立しながら活動しているイラストレーターです。</p>
             <p>キャラクターイラスト、キャラクターデザインを中心に制作しています。個人依頼・企業様からのご依頼に対応しています。</p>
@@ -69,4 +53,57 @@
               <li>二次創作 / ファンアート</li>
             </ul>
 
+            <h3 class="section-title">使用ソフト</h3>
+            <ul>
+              <li>CLIP STUDIO PAINT</li>
+            </ul>
+          </div>
 
+          <div class="about-image">
+            <img class="thumbnail" src="img/profile.webp" alt="プロフィール画像">
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-refined">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index_jp.html">Home</a>
+        <a href="works_jp.html">Works</a>
+        <a href="about_jp.html">About</a>
+        <a href="commission_jp.html">Commission</a>
+      </nav>
+
+      <div class="footer-sns">
+        <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
+        <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
+        <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
+        <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
+        <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
+      </div>
+
+      <p class="footer-copy">© 2025–2026 HI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ハンバーガー動作 -->
+  <script>
+    const burger = document.getElementById("burgerBtn");
+    const nav = document.getElementById("navMenu");
+
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
