@@ -418,76 +418,76 @@ section {
 
 
 /* =========================
-   About（プロフィール）完全分離
+   About（魔法科風透明パネル）
 ========================= */
 
-/* セクション全体 */
 #about {
   max-width: 900px;
-  margin: 0 auto 2.4rem;
-  padding: 0 1rem;
+  margin: 0 auto 3rem;
+  padding: 2rem 1.4rem;
+  position: relative;
 }
 
-/* タイトル */
+/* タイトル（青い魔法科ライン） */
 #about > h2 {
-  font-size: 1.4rem;
-  margin-bottom: 1.2rem;
-  padding-left: 0.6rem;
-  border-left: 4px solid #8b6ad8;
-  color: #1a2340;
+  font-size: 1.6rem;
+  margin-bottom: 1.6rem;
+  padding-left: 0.8rem;
+  border-left: 4px solid #3a7bd5;
+  color: #cfe6ff;
   font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
-/* レイアウト（テキスト＋画像） */
-.about-wrapper {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  flex-wrap: wrap;
+/* 透明パネル本体 */
+.about-panel {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 0 22px rgba(0, 80, 255, 0.15);
 }
 
-/* テキスト部分 */
-.about-text {
-  flex: 1 1 260px;
+/* テキスト */
+.about-panel p,
+.about-panel li {
+  color: #e8f0ff;
   font-size: 0.95rem;
   line-height: 1.9;
 }
 
 /* 小見出し */
-.about-text .section-title,
-.about-subtitle {
-  font-size: 1rem;
-  margin-top: 1.2rem;
+.about-panel .section-title {
+  color: #9fcfff;
+  font-size: 1.05rem;
+  margin-top: 1.6rem;
   margin-bottom: 0.4rem;
   font-weight: 600;
-  color: #333;
 }
 
-/* 画像部分 */
-.about-image {
-  flex: 0 0 220px;
-  text-align: center;
-}
-
-/* サムネイル画像 */
+/* 画像 */
 .about-image .thumbnail {
-  width: 200px;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 0 18px rgba(0,0,0,0.35);
 }
 
-/* スマホ対応 */
-@media (max-width: 768px) {
-  .about-wrapper {
-    flex-direction: column-reverse;
-  }
-  .about-image {
-    margin-bottom: 1rem;
-  }
+/* 光のライン（魔法科演出） */
+.about-light-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00e5ff, transparent);
+  animation: aboutLine 4s linear infinite;
 }
 
+@keyframes aboutLine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
 
 /* =========================
    Works（制作一覧）静止・中央揃え版
