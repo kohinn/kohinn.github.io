@@ -2,7 +2,6 @@
    Base（全体の安定化）
 ========================= */
 
-/* リセット */
 *,
 *::before,
 *::after {
@@ -14,39 +13,34 @@ html, body {
   padding: 0;
 }
 
-/* 全体の文字・背景・余白 */
 body {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 15px;
   line-height: 2.0;
   letter-spacing: 0.03em;
-  padding-top: 70px; /* 固定ヘッダー分の余白 */
+  padding-top: 70px;
   background: #f7f9fc;
   color: #1a1a1a;
-  overflow-x: hidden; /* 横スクロール防止 */
+  overflow-x: hidden;
 }
 
-/* リンクの基本 */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* 画像の基本 */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* セクションの基本レイアウト */
 section {
   padding: 2.6rem 1.4rem;
   margin: 0 auto 3rem;
   max-width: 1080px;
 }
 
-/* スクロールバー（横スクロールの見た目改善） */
 ::-webkit-scrollbar {
   height: 8px;
 }
@@ -58,7 +52,6 @@ section {
   background: rgba(0,0,0,0.05);
 }
 
-/* Back to top（共通） */
 .back-to-top {
   position: fixed;
   bottom: 20px;
@@ -81,7 +74,6 @@ section {
   pointer-events: auto;
 }
 
-/* Overlay（共通） */
 .overlay {
   position: fixed;
   top: 0; left: 0;
@@ -98,7 +90,6 @@ section {
   pointer-events: auto;
 }
 
-/* スマホ最適化 */
 @media (max-width: 720px) {
   body {
     font-size: 14px;
@@ -107,12 +98,12 @@ section {
   section {
     padding: 2rem 1.2rem;
   }
+}
 
 /* =========================
    Header（完全分離）
 ========================= */
 
-/* ヘッダー全体 */
 .site-header {
   position: fixed;
   top: 0; left: 0;
@@ -127,7 +118,6 @@ section {
   align-items: center;
 }
 
-/* 中央ロゴ */
 .center-logo {
   position: absolute;
   left: 50%;
@@ -142,7 +132,6 @@ section {
   text-decoration: none;
 }
 
-/* ハンバーガー */
 .hamburger {
   cursor: pointer;
   background: none;
@@ -161,7 +150,6 @@ section {
   border-radius: 3px;
 }
 
-/* スライドメニュー */
 .main-nav.left-slide {
   position: fixed;
   top: 70px;
@@ -188,7 +176,6 @@ section {
   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 
-/* 言語切替 */
 .language-switch {
   position: relative;
   margin-right: 1.6rem;
@@ -199,14 +186,12 @@ section {
 
 .language-switch a {
   color: #003366;
-  text-decoration: none;
 }
 
 .language-switch a:hover {
   text-decoration: underline;
 }
 
-/* PC表示時のメニュー */
 @media (min-width: 900px) {
   .hamburger {
     display: none;
@@ -230,6 +215,7 @@ section {
     font-size: 1rem;
   }
 }
+
 
 /* =========================
    Home Hero（安定版）
