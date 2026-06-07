@@ -10,26 +10,37 @@
 
 <body>
   <!-- 魔法科風ヘッダー -->
-  <header class="mh-header">
-    <div class="mh-container">
-      <div class="mh-logo">
-        <a href="index.html">About</a>
-      </div>
+ <header class="mh-header">
+  <div class="mh-container">
 
-      <nav class="mh-nav" id="mainNav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="works.html">Works</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="commission.html">Commission</a></li>
-        </ul>
-      </nav>
-
-      <div class="mh-burger" id="burger">
-        <span></span><span></span><span></span>
-      </div>
+    <div class="mh-logo">
+      <a href="index_jp.html">HI Portfolio</a>
     </div>
-  </header>
+
+    <nav class="mh-nav" id="mainNav">
+      <ul>
+        <li><a href="index_jp.html">Home</a></li>
+        <li><a href="works_jp.html">Works</a></li>
+        <li><a href="about_jp.html">About</a></li>
+        <li><a href="commission_jp.html">Commission</a></li>
+      </ul>
+    </nav>
+
+    <div class="mh-burger" id="burger">
+      <span></span><span></span><span></span>
+    </div>
+
+  </div>
+</header>
+
+<script>
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('mainNav');
+
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
 
   <main>
     <section id="about">
