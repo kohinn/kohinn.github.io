@@ -1,6 +1,7 @@
 /* =========================
-   Base
+   Base（全体の安定化）
 ========================= */
+
 *,
 *::before,
 *::after {
@@ -15,7 +16,7 @@ html, body {
 body {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 15px;
-  line-height: 1.9;
+  line-height: 2.0;
   letter-spacing: 0.03em;
   padding-top: 70px;
   background: #f7f9fc;
@@ -23,87 +24,30 @@ body {
   overflow-x: hidden; /* ← 横スクロール防止 */
 }
 
-section {
-  padding: 2.4rem 1.4rem;
-  margin: 0 auto 2.8rem;
-  max-width: 1080px;
-}
-
-/* 画像のはみ出し防止 */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-
 section {
-  padding: 2.4rem 1.4rem;
-  margin: 0 auto 2.8rem;
+  padding: 2.6rem 1.4rem;
+  margin: 0 auto 3rem;
   max-width: 1080px;
 }
 
-/* Back to top */
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #003366;
-  color: #fff;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 9998;
-}
-.back-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Overlay */
-.overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.45);
-  backdrop-filter: blur(6px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease;
-  z-index: 9000;
-}
-.overlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-@media (max-width: 720px) {
-  body {
-    font-size: 14px;
-    line-height: 2.0;
-  }
-  section {
-    padding: 2rem 1.2rem;
-  }
-}
-
 /* =========================
-   Header
+   Header（完全分離）
 ========================= */
+
 .site-header {
   position: fixed;
   top: 0; left: 0;
   width: 100%;
   z-index: 9999;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.75);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   padding: 0.6rem 1rem;
   display: flex;
   justify-content: space-between;
@@ -121,6 +65,7 @@ section {
   font-size: 1.4rem;
   font-weight: 600;
   color: #3a007d;
+  text-decoration: none;
 }
 
 /* Hamburger */
@@ -141,7 +86,7 @@ section {
   border-radius: 3px;
 }
 
-/* Nav */
+/* Slide Menu */
 .main-nav.left-slide {
   position: fixed;
   top: 70px;
@@ -162,40 +107,17 @@ section {
 }
 .main-nav.left-slide a {
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 
-/* Language switch */
+/* Language */
 .language-switch {
   position: relative;
   margin-right: 1.6rem;
   font-size: 0.95rem;
   white-space: nowrap;
   z-index: 10001;
-}
-.language-switch a {
-  color: #003366;
-}
-.language-switch a:hover {
-  text-decoration: underline;
-}
-
-@media (min-width: 900px) {
-  .hamburger {
-    display: none;
-  }
-  .main-nav.left-slide {
-    position: static;
-    height: auto;
-    width: auto;
-    background: transparent;
-    backdrop-filter: none;
-    flex-direction: row;
-    gap: 1.4rem;
-    padding: 0;
-    left: 0;
-  }
 }
 
 /* =========================
