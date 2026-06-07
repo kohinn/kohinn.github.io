@@ -13,8 +13,8 @@ body {
 }
 
 section {
-  padding: 2.6rem 1.4rem;
-  margin: 0 auto 3rem;
+  padding: 1.8rem 1rem;
+  margin: 0 auto 2rem;
   max-width: 1080px;
 }
 
@@ -119,8 +119,8 @@ section {
 ========================= */
 #about {
   max-width: 900px;
-  margin: 0 auto 3rem;
-  padding: 2rem 1.4rem;
+  margin: 0 auto 2rem;
+  padding: 1.6rem 1rem;
   position: relative;
 }
 
@@ -196,44 +196,6 @@ section {
 }
 
 /* =========================
-   Works（魔法科風カード）
-========================= */
-#works h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1.6rem;
-  padding-left: 0.6rem;
-  border-left: 4px solid #3a7bd5;
-  color: #e0e0e0;
-}
-
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  justify-items: center;
-  align-items: start;
-}
-
-.works-grid img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: 10px;
-  background: #0f111d;
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 0 12px rgba(255,255,255,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-@media (hover: hover) {
-  .works-grid img:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 20px rgba(255,255,255,0.15);
-  }
-}
-
-/* =========================
    Footer（魔法科風）
 ========================= */
 .footer-refined {
@@ -264,4 +226,3 @@ section {
   font-size: 0.85rem;
   margin-top: 0.6rem;
 }
-
