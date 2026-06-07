@@ -549,7 +549,7 @@ section {
 
 
 /* =========================
-   Works（制作一覧）静止版
+   Works（制作一覧）静止・中央揃え版
 ========================= */
 
 /* セクション全体 */
@@ -575,6 +575,8 @@ section {
   gap: 24px;
   justify-items: center;
   align-items: start;
+  overflow: visible; /* ← 横スクロールを完全無効化 */
+  animation: none;   /* ← 自動スライド削除 */
 }
 
 /* 画像 */
@@ -607,7 +609,6 @@ section {
     aspect-ratio: 3 / 4;
   }
 }
-
 
 /* =========================
    Footer（完全分離）
