@@ -233,22 +233,15 @@ section {
 }
 
 /* =========================
-   Works（黒系統カード風）
+   Works（魔法科風カード）
 ========================= */
 
-body {
-  background: #0a0a0a;
-  color: #fff;
-}
-
-/* セクション全体 */
 #works {
   max-width: 1080px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-/* タイトル */
 #works h2 {
   font-size: 1.6rem;
   margin-bottom: 1.6rem;
@@ -273,7 +266,8 @@ body {
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 10px;
-  background: #111;
+  background: #0f111d;
+  border: 1px solid rgba(255,255,255,0.15);
   box-shadow: 0 0 12px rgba(255,255,255,0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
