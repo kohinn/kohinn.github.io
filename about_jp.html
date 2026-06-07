@@ -34,13 +34,21 @@
 </header>
 
 <script>
-  const burger = document.getElementById('burger');
-  const nav = document.getElementById('mainNav');
+  const burger = document.getElementById("burgerBtn");
+  const nav = document.getElementById("navMenu");
 
-  burger.addEventListener('click', () => {
-    nav.classList.toggle('active');
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+
+  // メニュー内のリンクを押したら閉じる
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+    });
   });
 </script>
+
 
   <main>
     <section id="about">
