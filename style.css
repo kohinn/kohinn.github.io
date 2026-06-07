@@ -253,48 +253,60 @@ section {
 
 
 /* =========================
-   News / お知らせ
+   News（お知らせ）完全分離
 ========================= */
+
+/* セクション全体 */
 .updates-section {
   max-width: 900px;
+  margin: 0 auto 2.4rem;
+  padding: 0 1rem;
 }
 
-.news-title {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  border-left: 4px solid #3a7bd5;
+/* タイトル */
+.updates-section > h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
   padding-left: 0.6rem;
+  border-left: 4px solid #3a7bd5;
   color: #1a2340;
+  font-weight: 600;
 }
 
-.news-card {
-  background: linear-gradient(135deg, rgba(10,16,40,0.9), rgba(30,60,110,0.9));
-  color: #fff;
+/* カード本体 */
+.update-card {
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.25);
   border-radius: 12px;
   padding: 1.4rem 1.6rem;
-  margin-bottom: 1.2rem;
-  border: 1px solid rgba(255,255,255,0.18);
-  backdrop-filter: blur(6px);
+  margin-bottom: 1.4rem;
+  color: #fff;
 }
 
-.news-header {
+/* ヘッダー部分（ラベル＋日付） */
+.update-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 0.4rem;
 }
 
-.news-label {
+/* ラベル */
+.update-label {
   font-weight: 600;
   color: #9fcfff;
 }
 
-.news-date {
+/* 日付 */
+.update-date {
   font-size: 0.85rem;
   opacity: 0.85;
 }
 
-.news-text {
+/* 本文 */
+.update-card p {
+  margin: 0.4rem 0 0;
   font-size: 0.95rem;
   line-height: 1.8;
 }
