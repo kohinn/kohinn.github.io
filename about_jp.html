@@ -14,10 +14,22 @@
 <header class="mh-header">
   <div class="mh-container">
 
+    <!-- ハンバーガーを左側に移動 -->
+    <button class="mh-burger" id="burgerBtn">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- ロゴ中央 -->
     <div class="mh-logo">
       <a href="index_jp.html">kohinn</a>
     </div>
 
+    <!-- 言語切り替えを右側に配置 -->
+    <div class="language-switch">
+      <a href="about_jp.html">JP</a> / <a href="about.html">EN</a>
+    </div>
+
+    <!-- ナビゲーション -->
     <nav class="mh-nav" id="navMenu">
       <ul>
         <li><a href="index_jp.html">Home</a></li>
@@ -27,16 +39,9 @@
       </ul>
     </nav>
 
-    <div class="language-switch">
-      <a href="about_jp.html">JP</a> / <a href="about.html">EN</a>
-    </div>
-
-    <button class="mh-burger" id="burgerBtn">
-      <span></span><span></span><span></span>
-    </button>
-
   </div>
 </header>
+
 
 <script>
   const burger = document.getElementById("burgerBtn");
