@@ -271,38 +271,51 @@ section {
 
 
 /* =========================
-   Hero（横スクロール安定版）
+   Hero（横スクロール）完全分離
 ========================= */
 
+/* セクション全体 */
 .hero-scroll {
-  margin-top: 1.2rem;
-  margin-bottom: 2.2rem;
+  margin-top: 1.2rem;      /* ヘッダー下との余白 */
+  margin-bottom: 2.2rem;   /* ボタンとの間隔 */
+  padding: 0 1rem;
 }
 
+/* 横スクロール行 */
 .hero-scroll-row {
   display: flex;
-  gap: 20px;
+  gap: 24px;               /* 画像間の余白 */
   overflow-x: auto;
   padding: 10px 0;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* スマホで滑らかに */
 }
 
+/* 画像 */
 .hero-img {
-  height: 300px;
+  height: 300px;           /* PCでの高さ */
   width: auto;
   flex: 0 0 auto;
   object-fit: contain;
   border-radius: 10px;
   scroll-snap-align: center;
   cursor: pointer;
+  transition: transform 0.25s ease;
 }
 
-@media (max-width: 768px) {
-  .hero-img {
-    height: 240px;
+/* ホバー演出（PCのみ） */
+@media (hover: hover) {
+  .hero-img:hover {
+    transform: scale(1.03);
   }
 }
 
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .hero-img {
+    height: 240px;         /* スマホで自然なサイズ */
+  }
+}
 
 /* =========================
    News（お知らせ）完全分離
