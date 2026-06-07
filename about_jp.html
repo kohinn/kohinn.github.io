@@ -11,28 +11,54 @@
 <body>
 
   <!-- 魔法科風ヘッダー -->
-  <header class="mh-header">
-    <div class="mh-container">
+<header class="mh-header">
+  <div class="mh-container">
 
-      <div class="mh-logo">
-        <a href="index_jp.html">Kohinn</a>
-      </div>
-
-      <nav class="mh-nav" id="navMenu">
-        <ul>
-          <li><a href="index_jp.html">Home</a></li>
-          <li><a href="works_jp.html">Works</a></li>
-          <li><a href="about_jp.html">About</a></li>
-          <li><a href="commission_jp.html">Commission</a></li>
-        </ul>
-      </nav>
-
-      <button class="mh-burger" id="burgerBtn">
-        <span></span><span></span><span></span>
-      </button>
-
+    <div class="mh-logo">
+      <a href="index_jp.html">HI Portfolio</a>
     </div>
-  </header>
+
+    <nav class="mh-nav" id="navMenu">
+      <ul>
+        <li><a href="index_jp.html">Home</a></li>
+        <li><a href="works_jp.html">Works</a></li>
+        <li><a href="about_jp.html">About</a></li>
+        <li><a href="commission_jp.html">Commission</a></li>
+      </ul>
+    </nav>
+
+    <div class="language-switch">
+      <a href="about_jp.html">JP</a> / <a href="about.html">EN</a>
+    </div>
+
+    <button class="mh-burger" id="burgerBtn">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<script>
+  const burger = document.getElementById("burgerBtn");
+  const nav = document.getElementById("navMenu");
+
+  // 開閉トグル
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+
+  // メニュー内リンククリックで閉じる
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+    });
+  });
+
+  // スクロール時に余白再計算を防ぐ
+  window.addEventListener("scroll", () => {
+    document.body.style.paddingTop = "70px";
+  });
+</script>
 
   <main>
     <section id="about">
