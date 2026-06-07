@@ -9,35 +9,41 @@
 </head>
 
 <body>
+
   <!-- 魔法科風ヘッダー -->
   <header class="mh-header">
     <div class="mh-container">
+
       <div class="mh-logo">
-        <a href="index.html">HI Portfolio</a>
+        <a href="index_jp.html">HI Portfolio</a>
       </div>
 
-      <nav class="mh-nav">
+      <nav class="mh-nav" id="mainNav">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="works.html">Works</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="commission.html">Commission</a></li>
+          <li><a href="index_jp.html">Home</a></li>
+          <li><a href="works_jp.html">Works</a></li>
+          <li><a href="about_jp.html">About</a></li>
+          <li><a href="commission_jp.html">Commission</a></li>
         </ul>
       </nav>
 
       <div class="mh-burger" id="burger">
         <span></span><span></span><span></span>
       </div>
+
     </div>
   </header>
 
   <main>
+
     <section id="about" class="fade-in">
       <div class="about-light-line"></div>
       <h2>プロフィール</h2>
 
       <div class="about-panel">
+
         <div class="about-wrapper">
+
           <div class="about-text">
             <p>独学でイラストを学び、現在はフルタイムの仕事と両立しながら活動しているイラストレーターです。</p>
             <p>キャラクターイラスト、キャラクターデザインを中心に制作しています。個人依頼・企業様からのご依頼に対応しています。</p>
@@ -55,4 +61,54 @@
             </ul>
           </div>
 
-          <
+          <!-- ★ 画像が表示されない原因はここが途中で切れていたため -->
+          <div class="about-image">
+            <img class="thumbnail"
+              src="img/profile.webp"
+              alt="プロフィール画像">
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer-refined">
+    <div class="footer-inner">
+
+      <nav class="footer-nav">
+        <a href="index_jp.html">Home</a>
+        <a href="works_jp.html">Works</a>
+        <a href="about_jp.html">About</a>
+        <a href="commission_jp.html">Commission</a>
+      </nav>
+
+      <div class="footer-sns">
+        <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
+        <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
+        <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
+        <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
+        <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
+      </div>
+
+      <p class="footer-copy">
+        © 2025–2026 HI. All rights reserved.
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- ハンバーガー動作 -->
+  <script>
+    const burger = document.getElementById("burger");
+    const nav = document.getElementById("mainNav");
+
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
