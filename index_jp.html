@@ -194,7 +194,9 @@
 <a href="#" class="back-to-top" id="backToTop" aria-label="トップへ戻る">↑</a>
 
 <script>
-/* モーダル */
+/* =========================
+   モーダル
+========================= */
 document.querySelectorAll('.hero-img').forEach(img => {
   img.addEventListener('click', () => {
     document.getElementById('modal-img').src = img.src;
@@ -208,7 +210,9 @@ document.querySelector('.modal-close').addEventListener('click', () => {
   document.getElementById('modal').setAttribute('aria-hidden', 'true');
 });
 
-/* Back to top */
+/* =========================
+   Back to top
+========================= */
 window.addEventListener('scroll', () => {
   const btn = document.getElementById('backToTop');
   if (window.scrollY > 200) btn.classList.add('show');
@@ -223,27 +227,30 @@ backToTop.addEventListener('click', (e) => {
   });
 });
 
-  // 魔法科公式サイト風ハンバーガー開閉アニメーション
-  document.addEventListener("DOMContentLoaded", () => {
-    const burger = document.getElementById("burgerBtn");
-    const nav = document.getElementById("navMenu");
+/* =========================
+   魔法科公式サイト風ハンバーガー開閉アニメーション（Home 専用）
+========================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.getElementById("burgerBtn");
+  const nav = document.getElementById("navMenu");
 
-    if (burger && nav) {
-      burger.addEventListener("click", () => {
-        burger.classList.toggle("active");
-        nav.classList.toggle("active");
-      });
+  // 要素が存在するページだけ動作（他ページへの影響ゼロ）
+  if (!burger || !nav) return;
 
-      nav.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          burger.classList.remove("active");
-          nav.classList.remove("active");
-        });
-      });
-    }
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
   });
 
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      burger.classList.remove("active");
+      nav.classList.remove("active");
+    });
+  });
+});
 </script>
+
 
 </body>
 </html>
