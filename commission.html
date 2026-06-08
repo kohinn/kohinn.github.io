@@ -15,15 +15,7 @@
   </script>
 
   <!-- SEO -->
-  <meta name="description" content="Commission character illustrations, VTuber-style artwork, and original avatars from Kohinn. Pricing, options, delivery time, payment methods, and terms.">
-  <meta name="keywords" content="Kohinn, commission, illustration, VTuber art, character art, pricing">
-
-  <!-- OGP -->
-  <meta property="og:title" content="Commission | Kohinn">
-  <meta property="og:description" content="Commission character illustrations, VTuber-style artwork, and original avatars from Kohinn.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kohinn.github.io/commission.html">
-  <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
+  <meta name="description" content="Commission information for character illustrations, VTuber-style artwork, and original avatar design by Kohinn. Includes pricing, options, delivery time, payment methods, workflow, and terms.">
 
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
@@ -31,134 +23,225 @@
 
 <body class="commission-page">
 
-<header class="site-header">
-  <div class="logo">
-    <a href="index.html">Kohinn</a>
-  </div>
+<!-- =========================
+     魔法科風ヘッダー
+========================= -->
+<header class="mh-header">
+  <div class="mh-container">
 
-  <button class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </button>
+    <button class="mh-burger" id="burgerBtn">
+      <span></span><span></span><span></span>
+    </button>
 
-  <nav id="main-nav" class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="illustration.html">illustration</a>
-    <a href="about.html">About</a>
-    <a href="commission.html">Commission</a>
-  </nav>
+    <div class="mh-logo">
+      <a href="index.html">Kohinn</a>
+    </div>
 
-  <div class="language-switch">
-    <a href="commission_jp.html">JP</a> / <a href="commission.html">EN</a>
+    <div class="language-switch">
+      <a href="commission_jp.html">JP</a> / <a href="commission.html">EN</a>
+    </div>
+
+    <nav class="mh-nav" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="illustration.html">Illustration</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="commission.html">Commission</a></li>
+      </ul>
+    </nav>
+
   </div>
 </header>
 
 <script>
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('main-nav');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  nav.classList.toggle('show');
-});
+  const burger = document.getElementById("burgerBtn");
+  const nav = document.getElementById("navMenu");
+
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+    });
+  });
 </script>
 
 <main>
 
-  <!-- Commission Intro -->
-  <section id="commission" class="fade-in">
+  <!-- Commission Overview -->
+  <section id="commission" class="mh-panel">
     <h2>Commission</h2>
     <p class="contact-intro">
-      Thank you for your interest in commissioning Kohinn.<br>
+      Thank you for your interest in commissioning my work.<br>
       Below is the current pricing and available options.
     </p>
   </section>
 
-  <!-- Base Menu -->
-  <section class="fade-in">
-    <h2>What I Offer</h2>
-    <ul class="career-list">
-      <li><strong>Bust-up Illustration</strong> — $60–$90</li>
-      <li><strong>Full-body Illustration</strong> — $120–$180</li>
-      <li><strong>Original Avatar (Design Included)</strong> — $150–$220</li>
-    </ul>
+  <!-- Pricing -->
+  <section class="mh-panel">
+    <h2>Base Menu</h2>
+
+    <table class="price-table">
+      <tr>
+        <th>Bust-up</th>
+        <td>¥9,500 – ¥14,400</td>
+      </tr>
+      <tr>
+        <th>Full-body Illustration</th>
+        <td>¥18,000 – ¥28,000</td>
+      </tr>
+      <tr>
+        <th>Original Avatar (with design)</th>
+        <td>¥22,000 – ¥32,000</td>
+      </tr>
+    </table>
   </section>
 
   <!-- Options -->
-  <section class="fade-in">
+  <section class="mh-panel">
     <h2>Options</h2>
-    <ul class="career-list">
-      <li><strong>Background</strong> — +$50–$80</li>
-      <li><strong>Additional Character</strong> — +$60–$90</li>
-      <li><strong>Commercial Use</strong> — +$80–$150</li>
-    </ul>
+
+    <table class="price-table">
+      <tr>
+        <th>Background</th>
+        <td>+¥7,950 – ¥12,800</td>
+      </tr>
+      <tr>
+        <th>Additional Character</th>
+        <td>+¥9,500 – ¥14,400</td>
+      </tr>
+      <tr>
+        <th>Commercial Use</th>
+        <td>+¥10,000 – ¥20,000</td>
+      </tr>
+    </table>
   </section>
 
   <!-- Delivery Time -->
-  <section class="fade-in">
-    <h2>Delivery Time</h2>
-    <ul class="career-list">
-      <li>Fastest: <strong>1 week (sketch)</strong></li>
+  <section class="mh-panel">
+    <h2>Estimated Delivery</h2>
+    <ul class="mh-list">
+      <li>Fastest: <strong>1 week (rough sketch)</strong></li>
       <li>Standard: <strong>2–3 weeks</strong></li>
-      <li>With options: +1–2 weeks depending on complexity</li>
+      <li>With options: +1–2 weeks depending on content</li>
     </ul>
   </section>
 
-  <!-- Payment Methods -->
-  <section class="fade-in">
+  <!-- Payment -->
+  <section class="mh-panel">
     <h2>Payment Methods</h2>
-    <ul class="career-list">
-      <li><strong>PayPal (USD)</strong></li>
-      <li>Full payment is required before starting the commission.</li>
+    <ul class="mh-list">
+      <li><strong>Bank Transfer (JPY)</strong></li>
+      <li><strong>PayPal (JPY)</strong> — upon request</li>
+      <li>Payment details will be provided after confirmation.</li>
     </ul>
   </section>
 
-  <!-- How to Order -->
-  <section class="fade-in">
-    <h2>How to Order</h2>
-    <ul class="career-list">
-      <li>1. Contact via the inquiry form</li>
-      <li>2. Confirm details and receive a quote</li>
-      <li>3. Confirm the commission & make payment</li>
-      <li>4. Receive sketch and provide feedback</li>
-      <li>5. Final illustration & delivery</li>
+  <!-- Bank Notes -->
+  <section class="mh-panel">
+    <h2>Bank Transfer Notes</h2>
+    <ul class="mh-list">
+      <li>Transfer fees are the client's responsibility.</li>
+      <li>Work begins after payment is confirmed.</li>
+      <li>Cancellations before work begins are accepted.</li>
     </ul>
+  </section>
+
+  <!-- Workflow -->
+  <section class="mh-panel">
+    <h2>Workflow</h2>
+
+    <div class="step-box">
+      <div class="step-title">STEP 1 — Contact</div>
+      <p class="step-desc">Send your request via the contact form.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-title">STEP 2 — Confirmation & Quote</div>
+      <p class="step-desc">I will review your request and provide pricing and delivery time.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-title">STEP 3 — Payment</div>
+      <p class="step-desc">Work begins after payment is confirmed.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-title">STEP 4 — Rough Sketch</div>
+      <p class="step-desc">Revisions are accepted at this stage.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-title">STEP 5 — Final Illustration</div>
+      <p class="step-desc">The completed illustration will be delivered.</p>
+    </div>
   </section>
 
   <!-- Terms -->
-  <section class="fade-in">
+  <section class="mh-panel">
     <h2>Terms of Use</h2>
-    <ul class="career-list">
-      <li>Copyright remains with Kohinn.</li>
-      <li>Reposting is allowed with credit (@V_Kohinn).</li>
+    <ul class="mh-list">
+      <li>Copyright belongs to Kohinn.</li>
+      <li>Credit (@V_Kohinn) is appreciated when posting.</li>
+      <li>Please consult me regarding the timing of public release.</li>
       <li>Commercial use requires an additional fee.</li>
-      <li>Requests may be declined depending on content.</li>
+      <li>Some requests may be declined.</li>
     </ul>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="fade-in">
+  <section id="contact" class="mh-panel">
     <h2>Contact</h2>
     <p class="contact-intro">
-      For commission inquiries, questions, or project requests,<br>
-      please feel free to contact me using the form below.
+      For commission inquiries or questions, feel free to contact me using the form below.
     </p>
   </section>
 
-  <section class="fade-in">
-    <h2>Commission / Inquiry Form</h2>
+  <section class="mh-panel">
+    <h2>Contact Form</h2>
     <div class="form-embed">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQAfD7MzV2rurPWNenGyygjBUIxhYmqPMzgMV95tGRldRuhg/viewform?embedded=true"
-              width="100%" height="1718" frameborder="0" marginheight="0" marginwidth="0">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQ0Fs0j9THjt8jAUCnos_mY86-V036Ye3A1SkIiVkhAm8bTA/viewform?embedded=true"
+              width="100%" height="1536" frameborder="0" marginheight="0" marginwidth="0">
         Loading…
       </iframe>
     </div>
   </section>
 
-  <section class="fade-in">
+  <!-- FAQ -->
+  <section class="mh-panel">
+    <h2>FAQ</h2>
+
+    <div class="step-box">
+      <div class="step-title">Q. Can I request multiple characters?</div>
+      <p class="step-desc">Yes. Additional character fees apply.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-title">Q. Do you accept urgent commissions?</div>
+      <p class="step-desc">Depending on the schedule, rush fees may apply.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-title">Q. Can I use the illustration for streaming or thumbnails?</div>
+      <p class="step-desc">Yes. Commercial-use fees may apply depending on usage.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-title">Q. Do you provide PSD files?</div>
+      <p class="step-desc">PSD delivery is available for an additional fee.</p>
+    </div>
+
+  </section>
+
+  <!-- Notes -->
+  <section class="mh-panel">
     <h2>Notes</h2>
-    <ul class="career-list">
+    <ul class="notice-box">
       <li>Replies usually take 1–3 days.</li>
-      <li>Please check your spam folder if you do not receive a reply.</li>
-      <li>Your personal information will only be used for communication.</li>
+      <li>Please check your spam folder.</li>
+      <li>Your personal information will only be used for replies.</li>
     </ul>
   </section>
 
@@ -192,7 +275,6 @@ hamburger.addEventListener('click', () => {
 <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
 
 <script>
-/* Back to top */
 window.addEventListener('scroll', () => {
   const btn = document.getElementById('backToTop');
   if (window.scrollY > 200) btn.classList.add('show');
