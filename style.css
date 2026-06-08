@@ -183,3 +183,29 @@ section {
   font-size: 0.85rem;
   margin-top: 0.6rem;
 }
+
+/* =========================
+   Works 専用（画像サイズ調整）
+========================= */
+
+#works .works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+#works .works-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+#works .works-grid img:hover {
+  transform: scale(1.03);
+}
+
