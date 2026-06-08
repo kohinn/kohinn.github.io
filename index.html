@@ -15,12 +15,12 @@
   </script>
 
   <!-- SEO -->
-  <meta name="description" content="Kohinn is an illustrator specializing in character illustrations and character design. Available for personal and commercial commissions.">
+  <meta name="description" content="Kohinn is an illustrator specializing in character illustrations and character design. Available for personal, corporate, and overseas commissions.">
   <meta name="keywords" content="Kohinn, illustration, character design, anime, fanart, VTuber, commission, portfolio">
 
   <!-- OGP -->
   <meta property="og:title" content="Kohinn | Character Illustration & Portfolio">
-  <meta property="og:description" content="Character illustration, character design, personal commissions, and commercial projects.">
+  <meta property="og:description" content="Character illustration, character design, and commission work for individuals and companies.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kohinn.github.io/">
   <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
@@ -33,84 +33,60 @@
 </head>
 
 <body class="home-page">
-<div class="overlay" id="overlay"></div>
 
-<header class="site-header">
+<!-- =========================
+     魔法科風ヘッダー
+========================= -->
+<header class="mh-header">
+  <div class="mh-container">
 
-  <!-- Left: Hamburger -->
-  <button class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </button>
+    <!-- Hamburger -->
+    <button class="mh-burger" id="burgerBtn">
+      <span></span><span></span><span></span>
+    </button>
 
-  <!-- Center Logo -->
-  <div class="logo center-logo">
-    <a href="index.html">Kohinn</a>
+    <!-- Logo -->
+    <div class="mh-logo">
+      <a href="index.html">Kohinn</a>
+    </div>
+
+    <!-- Language Switch -->
+    <div class="language-switch">
+      <a href="index_jp.html">JP</a> / <a href="index.html">EN</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="mh-nav" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="illustration.html">Illustration</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="commission.html">Commission</a></li>
+      </ul>
+    </nav>
+
   </div>
-
-  <!-- Right: Language Switch -->
-  <div class="language-switch">
-    <a href="index_jp.html">JP</a> / <a href="index.html">EN</a>
-  </div>
-
-  <!-- Left Slide Menu -->
-  <nav id="main-nav" class="main-nav left-slide">
-    <a href="index.html">Home</a>
-    <a href="illustration.html".html">illustration</a>
-    <a href="about.html">About</a>
-    <a href="commission.html">Commission</a>
-  </nav>
-
 </header>
 
 <script>
-/* Hamburger Menu */
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('main-nav');
+  const burger = document.getElementById("burgerBtn");
+  const nav = document.getElementById("navMenu");
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  nav.classList.toggle('show');
-});
-
-/* Overlay */
-const overlay = document.getElementById('overlay');
-
-hamburger.addEventListener('click', () => {
-  overlay.classList.toggle('active');
-});
-
-overlay.addEventListener('click', () => {
-  nav.classList.remove('show');
-  hamburger.classList.remove('active');
-  overlay.classList.remove('active');
-});
-</script>
-
-<script>
-/* Modal Fix */
-document.querySelectorAll('.hero-img').forEach(img => {
-  img.addEventListener('click', () => {
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    modalImg.src = img.src;
-    modal.classList.add('show');
-    modal.style.display = 'flex';
-    modal.setAttribute('aria-hidden', 'false');
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
   });
-});
 
-document.querySelector('.modal-close').addEventListener('click', () => {
-  const modal = document.getElementById('modal');
-  modal.classList.remove('show');
-  modal.style.display = 'none';
-  modal.setAttribute('aria-hidden', 'true');
-});
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+    });
+  });
 </script>
 
 <main>
 
   <!-- Hero Scroll -->
-  <section class="hero-scroll" aria-label="Main illustration gallery">
+  <section class="hero-scroll" aria-label="Main Illustration Gallery">
     <div class="hero-scroll-row">
       <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp" class="hero-img" loading="lazy" alt="">
       <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" class="hero-img" loading="lazy" alt="">
@@ -121,9 +97,9 @@ document.querySelector('.modal-close').addEventListener('click', () => {
     </div>
   </section>
 
-  <!-- Works Button -->
+  <!-- Illustration Link -->
   <div class="more-button">
-    <a href="works.html" class="button-link">View Works →</a>
+    <a href="illustration.html" class="button-link">View All Works →</a>
   </div>
 
   <!-- Updates -->
@@ -135,7 +111,7 @@ document.querySelector('.modal-close').addEventListener('click', () => {
         <span class="update-label">[Commission Status]</span>
         <span class="update-date">June 2026</span>
       </div>
-      <p>Currently accepting new commissions. Available for personal and commercial projects.</p>
+      <p>Currently accepting new commissions. Available for personal, corporate, and overseas projects.</p>
     </div>
 
     <div class="update-card">
@@ -147,20 +123,20 @@ document.querySelector('.modal-close').addEventListener('click', () => {
     </div>
   </section>
 
-  <!-- About -->
+  <!-- Profile -->
   <section id="about">
-    <h2>About</h2>
+    <h2>Profile</h2>
 
     <div class="about-wrapper">
       <div class="about-text">
-        <p>I am a self-taught illustrator working while balancing a full-time job. I mainly create character illustrations and character designs.</p>
-        <p>I accept both personal and commercial commissions.</p>
+        <p>I am a self-taught illustrator balancing full-time work while creating character illustrations.</p>
+        <p>I specialize in character illustration and character design, and I accept commissions from individuals and companies.</p>
 
         <h3 class="section-title">Specialties</h3>
         <ul>
           <li>Character Design</li>
-          <li>Character Illustrations (Full-body / Key Visuals)</li>
-          <li>Fanart / Derivative Works</li>
+          <li>Character Illustration (Full-body / Key Visual)</li>
+          <li>Fan Art / Derivative Works</li>
         </ul>
 
         <h3 class="section-title">Software</h3>
@@ -172,14 +148,14 @@ document.querySelector('.modal-close').addEventListener('click', () => {
       <div class="about-image">
         <img class="thumbnail" loading="lazy"
           src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト5ddsds (1).webp"
-          alt="Character illustration">
+          alt="Character Illustration">
       </div>
     </div>
   </section>
 
-  <!-- Commission Button -->
+  <!-- Commission Link -->
   <div class="more-button">
-    <a href="commission.html" class="button-link">Commission / Work Inquiry →</a>
+    <a href="commission.html" class="button-link">Contact for Commissions →</a>
   </div>
 
 </main>
@@ -189,7 +165,7 @@ document.querySelector('.modal-close').addEventListener('click', () => {
 
     <nav class="footer-nav">
       <a href="index.html">Home</a>
-      <a href="works.html">Works</a>
+      <a href="illustration.html">Illustration</a>
       <a href="about.html">About</a>
       <a href="commission.html">Commission</a>
     </nav>
@@ -237,6 +213,14 @@ window.addEventListener('scroll', () => {
   const btn = document.getElementById('backToTop');
   if (window.scrollY > 200) btn.classList.add('show');
   else btn.classList.remove('show');
+});
+
+backToTop.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 });
 </script>
 
