@@ -328,4 +328,25 @@ section {
     height: 180px;
   }
 }
+/* =========================
+   HOME 専用：プロフィール画像サイズ調整
+========================= */
+
+.home-page .about-image img.thumbnail {
+  max-width: 320px;   /* ← ちょうど良い大きさ */
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+
+  border: 1px solid rgba(255, 255, 255, 0.25); /* 魔法科風の薄い枠線 */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.12);
+}
+
+/* スマホ用（少し小さめ） */
+@media (max-width: 768px) {
+  .home-page .about-image img.thumbnail {
+    max-width: 240px;
+  }
+}
 
