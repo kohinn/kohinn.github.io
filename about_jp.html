@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="about-page">
 
   <!-- 魔法科風ヘッダー -->
 <header class="mh-header">
@@ -29,11 +29,11 @@
       <a href="about_jp.html">JP</a> / <a href="about.html">EN</a>
     </div>
 
-    <!-- ナビゲーション（スマホ用） -->
+    <!-- ナビゲーション -->
     <nav class="mh-nav" id="navMenu">
       <ul>
         <li><a href="index_jp.html">Home</a></li>
-        <li><a href="illustration_jp.html">illustration</a></li>
+        <li><a href="illustration_jp.html">Illustration</a></li>
         <li><a href="about_jp.html">About</a></li>
         <li><a href="commission_jp.html">Commission</a></li>
       </ul>
@@ -42,102 +42,74 @@
   </div>
 </header>
 
-
-
-
 <script>
   const burger = document.getElementById("burgerBtn");
   const nav = document.getElementById("navMenu");
 
-  // 開閉トグル
   burger.addEventListener("click", () => {
     nav.classList.toggle("active");
   });
 
-  // メニュー内リンククリックで閉じる
   nav.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       nav.classList.remove("active");
     });
   });
-
-  // スクロール時に余白再計算を防ぐ
-  window.addEventListener("scroll", () => {
-    document.body.style.paddingTop = "70px";
-  });
 </script>
 
-  <main>
-    <section id="about">
-      <div class="about-light-line"></div>
-      <h2>プロフィール</h2>
+<main>
+  <section id="about">
+    <h2>プロフィール</h2>
 
-      <div class="about-panel">
-        <div class="about-wrapper">
+    <div class="about-wrapper">
 
-          <div class="about-text">
-            <p>独学でイラストを学び、現在はフルタイムの仕事と両立しながら活動しているイラストレーターです。</p>
-            <p>キャラクターイラスト、キャラクターデザインを中心に制作しています。個人依頼・企業様からのご依頼に対応しています。</p>
+      <div class="about-text">
+        <p>独学でイラストを学び、現在はフルタイムの仕事と両立しながら活動しているイラストレーターです。</p>
+        <p>キャラクターイラスト、キャラクターデザインを中心に制作しています。個人依頼・企業様からのご依頼に対応しています。</p>
 
-            <h3 class="section-title">対応領域</h3>
-            <ul>
-              <li>キャラクターデザイン</li>
-              <li>キャラクターイラスト（立ち絵 / キービジュアル）</li>
-              <li>二次創作 / ファンアート</li>
-            </ul>
+        <h3 class="section-title">対応領域</h3>
+        <ul>
+          <li>キャラクターデザイン</li>
+          <li>キャラクターイラスト（立ち絵 / キービジュアル）</li>
+          <li>二次創作 / ファンアート</li>
+        </ul>
 
-            <h3 class="section-title">使用ソフト</h3>
-            <ul>
-              <li>CLIP STUDIO PAINT</li>
-            </ul>
-          </div>
-
-          <div class="about-image">
-            <img class="thumbnail" src="img/profile.webp" alt="プロフィール画像">
-          </div>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer-refined">
-    <div class="footer-inner">
-      <nav class="footer-nav">
-        <a href="index_jp.html">Home</a>
-        <a href="works_jp.html">Works</a>
-        <a href="about_jp.html">About</a>
-        <a href="commission_jp.html">Commission</a>
-      </nav>
-
-      <div class="footer-sns">
-        <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
-        <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
-        <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
-        <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
-        <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
+        <h3 class="section-title">使用ソフト</h3>
+        <ul>
+          <li>CLIP STUDIO PAINT</li>
+        </ul>
       </div>
 
-      <p class="footer-copy">© 2025–2026 Kohinn All rights reserved.</p>
+      <div class="about-image">
+        <img class="thumbnail" src="img/profile.webp" alt="プロフィール画像">
+      </div>
+
     </div>
-  </footer>
+  </section>
+</main>
 
-  <!-- ハンバーガー動作 -->
-  <script>
-    const burger = document.getElementById("burgerBtn");
-    const nav = document.getElementById("navMenu");
+<footer class="footer-refined">
+  <div class="footer-inner">
+    <nav class="footer-nav">
+      <a href="index_jp.html">Home</a>
+      <a href="works_jp.html">Works</a>
+      <a href="about_jp.html">About</a>
+      <a href="commission_jp.html">Commission</a>
+    </nav>
 
-    burger.addEventListener("click", () => {
-      nav.classList.toggle("active");
-    });
+    <div class="footer-sns">
+      <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
+      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
+      <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
+      <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
+      <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
+    </div>
 
-    nav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("active");
-      });
-    });
-  </script>
+    <p class="footer-copy">© 2025–2026 Kohinn All rights reserved.</p>
+  </div>
+</footer>
 
 </body>
 </html>
+
 
