@@ -1203,4 +1203,8 @@ section {
   color: #dcdcdc;
   line-height: 1.9;
 }
+/* Commission ページのハンバーガーメニューの ◆ を消す */
+.commission-page .mh-nav ul li {
+  list-style: none !important;
+}
 
