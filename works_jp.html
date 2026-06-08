@@ -1,41 +1,57 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Works | Kohinn</title>
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/works.css">
-<link rel="stylesheet" href="css/modal.css">
-<link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header class="site-header">
-  <button class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </button>
+<!-- 魔法科風ヘッダー（About と完全一致） -->
+<header class="mh-header">
+  <div class="mh-container">
 
-  <div class="logo center-logo">
-    <a href="index.html">Kohinn</a>
+    <button class="mh-burger" id="burgerBtn">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="mh-logo">
+      <a href="index_jp.html">kohinn</a>
+    </div>
+
+    <div class="language-switch">
+      <a href="works_jp.html">JP</a> / <a href="works.html">EN</a>
+    </div>
+
+    <nav class="mh-nav" id="navMenu">
+      <ul>
+        <li><a href="index_jp.html">Home</a></li>
+        <li><a href="works_jp.html">Works</a></li>
+        <li><a href="about_jp.html">About</a></li>
+        <li><a href="commission_jp.html">Commission</a></li>
+      </ul>
+    </nav>
+
   </div>
-
-  <div class="language-switch">
-    <a href="works_jp.html">JP</a> / <a href="works.html">EN</a>
-  </div>
-
-  <nav id="main-nav" class="main-nav left-slide">
-    <a href="index.html">Home</a>
-    <a href="works.html">Works</a>
-    <a href="about.html">About</a>
-    <a href="commission.html">Commission</a>
-  </nav>
 </header>
 
+<script>
+  const burger = document.getElementById("burgerBtn");
+  const nav = document.getElementById("navMenu");
+
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+    });
+  });
+</script>
 
 <main>
 
@@ -62,16 +78,28 @@
   <img id="modal-img" class="modal-content" alt="">
 </div>
 
+<footer class="footer-refined">
+  <div class="footer-inner">
+    <nav class="footer-nav">
+      <a href="index_jp.html">Home</a>
+      <a href="works_jp.html">Works</a>
+      <a href="about_jp.html">About</a>
+      <a href="commission_jp.html">Commission</a>
+    </nav>
+
+    <div class="footer-sns">
+      <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
+      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
+      <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
+      <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
+      <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
+    </div>
+
+    <p class="footer-copy">© 2025–2026 Kohinn All rights reserved.</p>
+  </div>
+</footer>
+
 <script>
-/* ハンバーガー */
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('main-nav');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  nav.classList.toggle('show');
-});
-
 /* Modal */
 document.querySelectorAll('.works-grid img').forEach(img => {
   img.addEventListener('click', () => {
@@ -81,24 +109,4 @@ document.querySelectorAll('.works-grid img').forEach(img => {
   });
 });
 
-document.querySelector('.modal-close').addEventListener('click', () => {
-  document.getElementById('modal').classList.remove('show');
-  document.getElementById('modal').setAttribute('aria-hidden', 'true');
-});
-
-/* Random shuffle（修正版） */
-document.addEventListener('DOMContentLoaded', () => {
-  const grid = document.getElementById('worksGrid');
-  const items = Array.from(grid.children);
-
-  for (let i = items.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [items[i], items[j]] = [items[j], items[i]];
-  }
-
-  items.forEach(item => grid.appendChild(item));
-});
-</script>
-
-</body>
-</html>
+document.querySelector('.modal-close').addEventListener('click',
