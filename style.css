@@ -630,5 +630,81 @@ section {
   font-size: 0.85rem;
   margin-top: 0.8rem;
 }
+/* =========================
+   HOME 専用：ヒーロー演出（魔法科風）
+========================= */
+
+/* スクロールを滑らかに */
+.home-page .hero-scroll-row {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+/* スクロールバー非表示（魔法科公式サイト風） */
+.home-page .hero-scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* GPU アクセラレーションでヌルヌルに */
+.home-page .hero-img {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* スクロール時にふわっと浮く */
+.home-page .hero-img {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.home-page .hero-img:hover {
+  transform: scale(1.05) translateZ(0);
+  box-shadow: 0 0 20px rgba(30, 144, 255, 0.35);
+}
+
+/* =========================
+   HOME 専用：プロフィールテキスト（魔法科風）
+========================= */
+
+/* 見出し */
+.home-page #about h2 {
+  font-size: 1.8rem;
+  letter-spacing: 0.1em;
+  color: #9fcfff;
+  border-bottom: 2px solid #1e90ff;
+  padding-bottom: 6px;
+  display: inline-block;
+}
+
+/* テキスト本体 */
+.home-page .about-text p {
+  color: #e6e6e6;
+  line-height: 1.9;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* 小見出し（セクションタイトル） */
+.home-page .section-title {
+  font-size: 1.2rem;
+  color: #9fcfff;
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+  border-left: 3px solid #1e90ff;
+  padding-left: 8px;
+}
+
+/* リスト */
+.home-page .about-text ul {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.home-page .about-text li {
+  color: #dcdcdc;
+  margin-bottom: 0.4rem;
+  list-style: "◆ ";
+}
+
 
 
