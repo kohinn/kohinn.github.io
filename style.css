@@ -363,4 +363,65 @@ section {
 #works {
   background: linear-gradient(180deg, #0b0c1a 0%, #000 100%);
 }
+/* =========================
+   魔法科風カード枠（画像を囲う）
+========================= */
+
+#works .works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* カード全体（画像の外側の枠） */
+#works .card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(30, 144, 255, 0.35);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 0 12px rgba(30, 144, 255, 0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+/* ホバー時の光エフェクト */
+#works .card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: rgba(30, 144, 255, 0.7);
+  box-shadow: 0 0 20px rgba(30, 144, 255, 0.45);
+}
+
+/* 画像本体 */
+#works .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  #works .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  #works .card {
+    padding: 8px;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 768px) {
+  #works .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  #works .card {
+    padding: 8px;
+    border-radius: 10px;
+  }
+}
+
 
