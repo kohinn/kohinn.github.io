@@ -41,8 +41,41 @@ section {
   position: relative;
 }
 
+.mh-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mh-logo a {
+  color: #1e90ff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.language-switch {
+  margin-left: auto;
+  color: #9fcfff;
+  font-size: 0.9rem;
+}
+
+.language-switch a {
+  color: #9fcfff;
+  text-decoration: none;
+  margin: 0 0.2rem;
+}
+
+.language-switch a:hover {
+  color: #1e90ff;
+}
+
+/* =========================
+   ハンバーガー（最終仕様）
+========================= */
+
+/* アイコン */
 .mh-burger {
-  order: 1;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -57,70 +90,59 @@ section {
   height: 3px;
   background: #fff;
   border-radius: 3px;
+  transition: all 0.4s ease;
 }
 
-.mh-logo {
-  order: 2;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+/* × アニメーション */
+.mh-burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.mh-burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.mh-burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.mh-logo a {
-  color: #1e90ff;
-  font-size: 1.4rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.language-switch {
-  order: 3;
-  margin-left: auto;
-  color: #9fcfff;
-  font-size: 0.9rem;
-  z-index: 10000;
-}
-
-.language-switch a {
-  color: #9fcfff;
-  text-decoration: none;
-  margin: 0 0.2rem;
-}
-
-.language-switch a:hover {
-  color: #1e90ff;
-}
-
-/* =========================
-   ハンバーガーメニュー
-========================= */
+/* メニュー本体（最終形） */
 .mh-nav {
   position: fixed;
   top: 0;
-  left: -100%;
-  width: 70%;
+  left: 0;
+  width: 80%;
+  max-width: 360px;
   height: 100vh;
-  background: rgba(10, 15, 26, 0.98);
+  background: rgba(10, 15, 26, 0.96);
   backdrop-filter: blur(10px);
-  padding-top: 100px;
-  transition: left 0.4s ease;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.45s ease, opacity 0.45s ease;
   z-index: 9998;
+  padding-top: 100px;
 }
 
 .mh-nav.active {
-  left: 0;
+  transform: translateX(0);
+  opacity: 1;
 }
 
+/* メニューリスト */
 .mh-nav ul {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 32px;
   list-style: none;
-  margin-left: 40px;
+  padding: 0;
+  margin: 0 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.mh-nav ul li {
+  list-style: none;
+  margin: 0;
   padding: 0;
 }
 
-.mh-nav a {
+.mh-nav ul li a {
   color: #fff;
   font-size: 1.7rem;
   text-transform: uppercase;
@@ -131,11 +153,12 @@ section {
   transition: 0.3s;
 }
 
-.mh-nav a:hover {
+.mh-nav ul li a:hover {
   color: #1e90ff;
   border-bottom: 1px solid #1e90ff;
 }
 
+/* スマホ */
 @media (max-width: 768px) {
   .mh-nav {
     width: 80%;
@@ -143,7 +166,7 @@ section {
 }
 
 /* =========================
-   Footer
+   Footer（共通）
 ========================= */
 .footer-refined {
   background: #0b0c1a;
@@ -175,9 +198,8 @@ section {
 }
 
 /* =========================
-   Illustration グリッド（魔法科公式サイト風）
+   Illustration（魔法科公式サイト風）
 ========================= */
-
 #illustration {
   max-width: 1080px;
   margin: 0 auto;
@@ -195,51 +217,38 @@ section {
   padding-bottom: 6px;
 }
 
-/* =========================
-   魔法科公式サイト風：連続した灰色枠線
-========================= */
-
 #illustration .illustration-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 0; /* ← 隙間ゼロで枠線が繋がる */
-  border: 1px solid rgba(255, 255, 255, 0.25); /* 全体の外枠 */
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 8px;
-  overflow: hidden; /* 枠内に画像を収める */
+  overflow: hidden;
 }
 
-/* 各画像セル（魔法科公式サイトと同じ構造） */
 #illustration .illustration-grid img {
   width: 100%;
-  height: auto;
   display: block;
-
-  /* 画像同士の区切り線（魔法科公式サイトと同じ薄い白グレー） */
   border-right: 1px solid rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-
   object-fit: cover;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* ホバー時：ふわっと明るく */
 #illustration .illustration-grid img:hover {
   transform: scale(1.02);
   filter: brightness(1.1);
 }
 
-/* スマホ2列 */
 @media (max-width: 768px) {
   #illustration .illustration-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-
 /* =========================
-   魔法科公式サイト風モーダル枠線
+   Modal（魔法科公式サイト風）
 ========================= */
-
 .modal {
   display: none;
   position: fixed;
@@ -248,7 +257,7 @@ section {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(10, 15, 26, 0.92); /* 魔法科の暗背景 */
+  background: rgba(10, 15, 26, 0.92);
   backdrop-filter: blur(10px);
   justify-content: center;
   align-items: center;
@@ -259,28 +268,21 @@ section {
   display: flex;
 }
 
-/* ★ 魔法科公式サイトと同じ「白グレーの枠線」 */
 .modal-content {
   max-width: 90%;
   max-height: 80%;
   border-radius: 10px;
-
-  /* ← 魔法科公式サイトの枠線に最も近い色 */
   border: 1px solid rgba(255, 255, 255, 0.18);
-
-  /* ← ほんのり白く光る */
   box-shadow: 0 0 14px rgba(255, 255, 255, 0.18);
-
-  background: rgba(0, 0, 0, 0.4); /* 画像の下に薄い黒を敷く */
+  background: rgba(0, 0, 0, 0.4);
 }
 
-/* 閉じるボタン */
 .modal-close {
   position: absolute;
   top: 20px;
   right: 30px;
   font-size: 2rem;
-  color: #dcdcdc; /* 白グレー */
+  color: #dcdcdc;
   background: none;
   border: none;
   cursor: pointer;
@@ -292,10 +294,8 @@ section {
 }
 
 /* =========================
-   HOME 専用（他ページに影響しない）
-   ヒーロー画像サイズ改善
+   HOME：Hero（前半）
 ========================= */
-
 .home-page .hero-scroll-row {
   display: flex;
   gap: 12px;
@@ -305,14 +305,13 @@ section {
 }
 
 .home-page .hero-img {
-  height: 260px; /* ← ホーム専用の画像サイズ */
+  height: 260px;
   width: auto;
   object-fit: cover;
   border-radius: 10px;
   flex-shrink: 0;
   scroll-snap-align: start;
-
-  border: 1px solid rgba(255, 255, 255, 0.25); /* 魔法科風の薄い枠線 */
+  border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.12);
   transition: 0.3s ease;
 }
@@ -322,28 +321,25 @@ section {
   box-shadow: 0 0 16px rgba(255, 255, 255, 0.25);
 }
 
-/* スマホ用（さらに小さく） */
 @media (max-width: 768px) {
   .home-page .hero-img {
     height: 180px;
   }
 }
-/* =========================
-   HOME 専用：プロフィール画像サイズ調整
-========================= */
 
+/* =========================
+   HOME：プロフィール画像
+========================= */
 .home-page .about-image img.thumbnail {
-  max-width: 320px;   /* ← ちょうど良い大きさ */
+  max-width: 320px;
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
   object-fit: cover;
-
-  border: 1px solid rgba(255, 255, 255, 0.25); /* 魔法科風の薄い枠線 */
+  border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.12);
 }
 
-/* スマホ用（少し小さめ） */
 @media (max-width: 768px) {
   .home-page .about-image img.thumbnail {
     max-width: 240px;
@@ -351,50 +347,47 @@ section {
 }
 
 /* =========================
-   HOME 専用：お知らせ（魔法科風）
+   HOME：お知らせ（統合版）
 ========================= */
-
 .home-page .updates-section {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 12px;
-  padding: 1.6rem 1.2rem;
-  margin: 2rem auto;
-  max-width: 900px;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+  padding: 2rem 1.6rem;
+  margin: 2.4rem auto;
+  max-width: 1080px;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
 }
 
 .home-page .updates-section h2 {
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   letter-spacing: 0.1em;
   color: #9fcfff;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.8rem;
   border-bottom: 2px solid #1e90ff;
   display: inline-block;
   padding-bottom: 4px;
 }
 
-/* カード本体 */
 .home-page .update-card {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
-  padding: 1rem 1.2rem;
-  margin-bottom: 1.2rem;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.4rem;
   transition: 0.3s ease;
 }
 
 .home-page .update-card:hover {
   border-color: rgba(255, 255, 255, 0.28);
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.18);
 }
 
-/* ラベルと日付 */
 .home-page .update-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
 }
 
 .home-page .update-label {
@@ -408,9 +401,8 @@ section {
 }
 
 /* =========================
-   HOME 専用：魔法科風ボタン
+   HOME：ボタン
 ========================= */
-
 .home-page .more-button .button-link {
   display: inline-block;
   padding: 12px 24px;
@@ -419,11 +411,9 @@ section {
   color: #9fcfff;
   font-size: 1rem;
   letter-spacing: 0.05em;
-
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 0 10px rgba(30, 144, 255, 0.15);
-
   transition: 0.3s ease;
 }
 
@@ -435,9 +425,8 @@ section {
 }
 
 /* =========================
-   HOME 専用：ヒーロー（魔法科風）
+   HOME：ヒーロー（後半）
 ========================= */
-
 .home-page .hero-scroll {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -454,36 +443,44 @@ section {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding-bottom: 6px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 
+.home-page .hero-scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* 最終仕様：大きいヒーロー画像 */
 .home-page .hero-img {
-  height: 240px; /* ← 魔法科公式サイトの帯サイズに近い */
+  height: 340px;
   width: auto;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
   flex-shrink: 0;
   scroll-snap-align: start;
-
   border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.12);
-  transition: 0.3s ease;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .home-page .hero-img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.25);
+  transform: scale(1.05) translateZ(0);
+  box-shadow: 0 0 22px rgba(30, 144, 255, 0.45);
 }
 
-/* スマホ */
 @media (max-width: 768px) {
   .home-page .hero-img {
-    height: 160px;
+    height: 220px;
   }
 }
-/* =========================
-   HOME 専用：プロフィール（魔法科風）
-========================= */
 
+/* =========================
+   HOME：プロフィール（統合版）
+========================= */
 .home-page #about {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -518,235 +515,16 @@ section {
   line-height: 1.9;
 }
 
-.home-page .about-image img.thumbnail {
-  max-width: 320px;
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
-}
-
-/* スマホ */
 @media (max-width: 768px) {
   .home-page .about-wrapper {
     flex-direction: column;
     text-align: center;
   }
-
-  .home-page .about-image img.thumbnail {
-    max-width: 240px;
-  }
 }
 
 /* =========================
-   HOME 専用：お知らせ（魔法科公式サイト風）
+   ABOUT：プロフィール（完全統合）
 ========================= */
-
-.home-page .updates-section {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
-  padding: 2rem 1.6rem;
-  margin: 2.4rem auto;
-  max-width: 1080px;
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
-}
-
-.home-page .updates-section h2 {
-  text-align: center;
-  font-size: 1.7rem;
-  letter-spacing: 0.1em;
-  color: #9fcfff;
-  margin-bottom: 1.8rem;
-  border-bottom: 2px solid #1e90ff;
-  display: inline-block;
-  padding-bottom: 4px;
-}
-
-/* カード本体 */
-.home-page .update-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  padding: 1.2rem 1.4rem;
-  margin-bottom: 1.4rem;
-  transition: 0.3s ease;
-}
-
-.home-page .update-card:hover {
-  border-color: rgba(255, 255, 255, 0.28);
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.18);
-}
-
-/* ラベルと日付 */
-.home-page .update-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.6rem;
-}
-
-.home-page .update-label {
-  color: #9fcfff;
-  font-weight: 500;
-}
-
-.home-page .update-date {
-  color: #ccc;
-  font-size: 0.9rem;
-}
-
-/* =========================
-   HOME 専用：フッター（魔法科公式サイト風）
-========================= */
-
-.home-page .footer-refined {
-  background: #0b0c1a;
-  border-top: 2px solid #1e90ff;
-  padding: 2rem 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-  line-height: 1.8;
-  margin-top: 3rem;
-  box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.05);
-}
-
-.home-page .footer-nav a,
-.home-page .footer-sns a {
-  color: #9fcfff;
-  text-decoration: none;
-  margin: 0 0.5rem;
-  transition: 0.3s ease;
-}
-
-.home-page .footer-nav a:hover,
-.home-page .footer-sns a:hover {
-  color: #1e90ff;
-}
-
-.home-page .footer-copy {
-  color: #aaa;
-  font-size: 0.85rem;
-  margin-top: 0.8rem;
-}
-/* =========================
-   HOME 専用：ヒーロー演出（魔法科風）
-========================= */
-
-/* スクロールを滑らかに */
-.home-page .hero-scroll-row {
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-x: contain;
-}
-
-/* スクロールバー非表示（魔法科公式サイト風） */
-.home-page .hero-scroll-row::-webkit-scrollbar {
-  display: none;
-}
-
-/* GPU アクセラレーションでヌルヌルに */
-.home-page .hero-img {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-/* スクロール時にふわっと浮く */
-.home-page .hero-img {
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.home-page .hero-img:hover {
-  transform: scale(1.05) translateZ(0);
-  box-shadow: 0 0 20px rgba(30, 144, 255, 0.35);
-}
-
-/* =========================
-   HOME 専用：プロフィールテキスト（魔法科風）
-========================= */
-
-/* 見出し */
-.home-page #about h2 {
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  color: #9fcfff;
-  border-bottom: 2px solid #1e90ff;
-  padding-bottom: 6px;
-  display: inline-block;
-}
-
-/* テキスト本体 */
-.home-page .about-text p {
-  color: #e6e6e6;
-  line-height: 1.9;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-/* 小見出し（セクションタイトル） */
-.home-page .section-title {
-  font-size: 1.2rem;
-  color: #9fcfff;
-  margin-top: 1.4rem;
-  margin-bottom: 0.6rem;
-  border-left: 3px solid #1e90ff;
-  padding-left: 8px;
-}
-
-/* リスト */
-.home-page .about-text ul {
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-}
-
-.home-page .about-text li {
-  color: #dcdcdc;
-  margin-bottom: 0.4rem;
-  list-style: "◆ ";
-}
-/* =========================
-   HOME 専用：ヒーロー画像を大きく（魔法科風）
-========================= */
-
-.home-page .hero-img {
-  height: 340px; /* ← 魔法科公式サイトに近い大きさ */
-  width: auto;
-  object-fit: cover;
-  border-radius: 12px;
-
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.15);
-  transition: 0.35s ease;
-}
-
-.home-page .hero-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 22px rgba(30, 144, 255, 0.45);
-}
-
-/* スマホは少し小さめ */
-@media (max-width: 768px) {
-  .home-page .hero-img {
-    height: 220px;
-  }
-}
-/* =========================
-   HOME 専用：プロフィール画像を小さく
-========================= */
-
-.home-page .about-image img.thumbnail {
-  max-width: 240px; /* ← 小さめに調整 */
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.12);/* =========================
-   ABOUT 専用：魔法科風プロフィール
-========================= */
-
 .about-page #about {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -775,9 +553,13 @@ section {
   justify-content: space-between;
 }
 
-.about-page .about-text p {
-  color: #e6e6e6;
+.about-page .about-text {
+  flex: 1;
+  color: #eaeaea;
   line-height: 1.9;
+}
+
+.about-page .about-text p {
   margin-bottom: 1rem;
   font-size: 1rem;
 }
@@ -797,21 +579,23 @@ section {
 }
 
 .about-page .about-text li {
+  list-style: "◆ ";
   color: #dcdcdc;
   margin-bottom: 0.4rem;
-  list-style: "◆ ";
 }
 
+/* 画像（完全統合） */
 .about-page .about-image img.thumbnail {
-  max-width: 300px;
+  display: block;
+  max-width: 320px;
   width: 100%;
+  height: auto;
   border-radius: 12px;
   object-fit: cover;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
 }
 
-/* スマホ */
 @media (max-width: 768px) {
   .about-page .about-wrapper {
     flex-direction: column;
@@ -819,14 +603,13 @@ section {
   }
 
   .about-page .about-image img.thumbnail {
-    max-width: 220px;
+    max-width: 240px;
   }
 }
 
 /* =========================
-   ABOUT 専用：パネル（経歴・実績）
+   ABOUT：パネル（経歴・実績）
 ========================= */
-
 .about-page .about-panel {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -853,160 +636,15 @@ section {
 }
 
 .about-page .panel-box li {
+  list-style: "◆ ";
   color: #dcdcdc;
   margin-bottom: 0.6rem;
-  list-style: "◆ ";
 }
 
-}
-
-/* スマホはさらに小さく */
-@media (max-width: 768px) {
-  .home-page .about-image img.thumbnail {
-    max-width: 180px;
-  }
-}
 
 /* =========================
-   ABOUT 専用：魔法科風プロフィール
+   COMMISSION：メインパネル
 ========================= */
-
-.about-page #about {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
-  padding: 2rem 1.4rem;
-  margin: 2rem auto;
-  max-width: 1080px;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
-}
-
-.about-page #about h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  color: #9fcfff;
-  margin-bottom: 1.6rem;
-  border-bottom: 2px solid #1e90ff;
-  display: inline-block;
-  padding-bottom: 4px;
-}
-
-.about-page .about-wrapper {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.about-page .about-text {
-  flex: 1;
-  color: #eaeaea;
-  line-height: 1.9;
-}
-
-.about-page .about-image img.thumbnail {
-  max-width: 320px;
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
-}
-
-/* スマホ */
-@media (max-width: 768px) {
-  .about-page .about-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-page .about-image img.thumbnail {
-    max-width: 240px;
-  }
-}
-/* =========================
-   ABOUT 専用：プロフィール（魔法科風）
-========================= */
-
-.about-page #about {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
-  padding: 2rem 1.4rem;
-  margin: 2rem auto;
-  max-width: 1080px;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
-}
-
-.about-page #about h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  color: #9fcfff;
-  margin-bottom: 1.6rem;
-  border-bottom: 2px solid #1e90ff;
-  display: inline-block;
-  padding-bottom: 4px;
-}
-
-.about-page .about-wrapper {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.about-page .about-text {
-  flex: 1;
-  color: #eaeaea;
-  line-height: 1.9;
-}
-
-/* ★ 画像が表示されない問題を確実に解決する */
-.about-page .about-image img.thumbnail {
-  display: block;          /* ← 画像が消えるのを防ぐ */
-  max-width: 320px;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
-}
-
-/* スマホ */
-@media (max-width: 768px) {
-  .about-page .about-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-page .about-image img.thumbnail {
-    max-width: 240px;
-  }
-}
-/* =========================
-   ABOUT 専用：リスト記号を◆に統一
-========================= */
-
-.about-page .about-text ul {
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-}
-
-.about-page .about-text li {
-  list-style: "◆ ";
-  color: #dcdcdc;
-  margin-bottom: 0.4rem;
-}
-
-/* =========================
-   COMMISSION 専用：魔法科公式サイト風レイアウト
-========================= */
-
 .commission-page #commission {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -1017,7 +655,6 @@ section {
   box-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
 }
 
-/* 見出し（魔法科風） */
 .commission-page #commission h2 {
   text-align: center;
   font-size: 1.8rem;
@@ -1029,7 +666,9 @@ section {
   padding-bottom: 6px;
 }
 
-/* セクションタイトル */
+/* =========================
+   COMMISSION：セクションタイトル
+========================= */
 .commission-page .section-title {
   font-size: 1.3rem;
   color: #9fcfff;
@@ -1039,7 +678,9 @@ section {
   padding-left: 10px;
 }
 
-/* テキスト（読みやすく） */
+/* =========================
+   COMMISSION：テキスト
+========================= */
 .commission-page p {
   color: #e6e6e6;
   line-height: 1.9;
@@ -1047,7 +688,9 @@ section {
   font-size: 1rem;
 }
 
-/* リスト（◆に統一） */
+/* =========================
+   COMMISSION：リスト（◆ 統一）
+========================= */
 .commission-page ul {
   margin-left: 1rem;
   margin-bottom: 1.2rem;
@@ -1059,7 +702,9 @@ section {
   margin-bottom: 0.4rem;
 }
 
-/* 料金表（魔法科風パネル） */
+/* =========================
+   COMMISSION：料金パネル
+========================= */
 .commission-page .price-box {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1075,56 +720,9 @@ section {
   box-shadow: 0 0 18px rgba(255, 255, 255, 0.18);
 }
 
-/* スマホ対応 */
-@media (max-width: 768px) {
-  .commission-page #commission {
-    padding: 1.6rem 1.2rem;
-  }
-}
-
 /* =========================
-   COMMISSION 専用：魔法科公式サイト風パネル
+   COMMISSION：料金表（表デザイン）
 ========================= */
-
-.commission-page .mh-panel {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
-  padding: 2rem 1.6rem;
-  margin: 2rem auto;
-  max-width: 1080px;
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
-}
-
-/* 見出し */
-.commission-page .mh-panel h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  color: #9fcfff;
-  margin-bottom: 1.8rem;
-  border-bottom: 2px solid #1e90ff;
-  display: inline-block;
-  padding-bottom: 6px;
-}
-
-/* ◆ リスト統一 */
-.commission-page .mh-list {
-  margin-left: 1rem;
-  margin-bottom: 1.2rem;
-}
-
-.commission-page .mh-list li {
-  list-style: "◆ ";
-  color: #dcdcdc;
-  margin-bottom: 0.5rem;
-  line-height: 1.9;
-}
-
-/* =========================
-   魔法科風：料金表（表デザイン）
-========================= */
-
 .commission-page .price-table {
   width: 100%;
   border-collapse: collapse;
@@ -1154,9 +752,8 @@ section {
 }
 
 /* =========================
-   魔法科風：STEP（依頼の流れ）
+   COMMISSION：STEP（依頼の流れ）
 ========================= */
-
 .commission-page .step-box {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1185,9 +782,8 @@ section {
 }
 
 /* =========================
-   魔法科風：注意事項
+   COMMISSION：注意事項
 ========================= */
-
 .commission-page .notice-box {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1203,328 +799,21 @@ section {
   color: #dcdcdc;
   line-height: 1.9;
 }
-/* Commission ページのハンバーガーメニューの ◆ を消す */
+
+/* =========================
+   COMMISSION：ハンバーガーの ◆ を消す
+========================= */
 .commission-page .mh-nav ul li {
   list-style: none !important;
 }
-/* =========================
-   全ページ共通：ハンバーガーメニューを Commission 基準に統一
-========================= */
-
-/* メニュー全体の縦並び・間隔 */
-.mh-nav ul {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem; /* Commission と同じ */
-}
-
-/* 各項目のリスト記号を消す */
-.mh-nav ul li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* リンクの見た目を統一 */
-.mh-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 400;
-  display: block;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  letter-spacing: 0.08em;
-  line-height: 1.6;
-}
-
-/* 最後の項目だけ下線を消す */
-.mh-nav ul li:last-child a {
-  border-bottom: none;
-}
 
 /* =========================
-   魔法科公式サイト風ハンバーガー統一
+   スマホ対応
 ========================= */
-
-/* メニュー全体の配置と行間 */
-.mh-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 10, 20, 0.96);
-  backdrop-filter: blur(6px);
-  transform: translateX(-100%);
-  opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  z-index: 999;
-}
-
-.mh-nav.active {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-/* メニューリスト */
-.mh-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 8rem 0 0 2.4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.8rem; /* 魔法科風の広めの行間 */
-}
-
-/* 各項目のスタイル */
-.mh-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.4rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  line-height: 1.8;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  padding-bottom: 0.4rem;
-  transition: color 0.3s ease;
-}
-
-.mh-nav ul li a:hover {
-  color: #9fcfff;
-}
-
-/* 最後の項目の下線を消す */
-.mh-nav ul li:last-child a {
-  border-bottom: none;
-}
-
-/* ハンバーガーアイコンのアニメーション */
-.mh-burger {
-  cursor: pointer;
-  background: none;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  z-index: 1000;
-}
-
-.mh-burger span {
-  display: block;
-  height: 2px;
-  width: 100%;
-  background: #fff;
-  border-radius: 2px;
-  transition: all 0.4s ease;
-}
-
-/* 開いたときの × アニメーション */
-.mh-burger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.mh-burger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.mh-burger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* =========================
-   魔法科公式サイト風ハンバーガー（完全統一版）
-========================= */
-
-/* 初期状態：左に隠す */
-.mh-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 80%;
-  max-width: 360px;
-  height: 100vh;
-  background: rgba(10, 15, 26, 0.96);
-  backdrop-filter: blur(10px);
-  transform: translateX(-100%);
-  opacity: 0;
-  transition: transform 0.45s ease, opacity 0.45s ease;
-  z-index: 9998;
-  padding-top: 100px;
-}
-
-/* 開いた状態 */
-.mh-nav.active {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-/* メニューリスト */
-.mh-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 0 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-/* 各項目 */
-.mh-nav ul li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* リンク */
-.mh-nav ul li a {
-  color: #fff;
-  font-size: 1.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  padding-bottom: 6px;
-  transition: 0.3s;
-}
-
-.mh-nav ul li a:hover {
-  color: #1e90ff;
-  border-bottom: 1px solid #1e90ff;
-}
-
-/* ハンバーガーアイコン */
-.mh-burger {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 10000;
-}
-
-.mh-burger span {
-  width: 28px;
-  height: 3px;
-  background: #fff;
-  border-radius: 3px;
-  transition: all 0.4s ease;
-}
-
-/* 開いたときの × アニメーション */
-.mh-burger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.mh-burger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.mh-burger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-/* =========================
-   魔法科公式サイト風ハンバーガー（完全統一・安全版）
-========================= */
-
-/* 初期状態：左に隠す */
-.mh-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 80%;
-  max-width: 360px;
-  height: 100vh;
-  background: rgba(10, 15, 26, 0.96);
-  backdrop-filter: blur(10px);
-  transform: translateX(-100%);
-  opacity: 0;
-  transition: transform 0.45s ease, opacity 0.45s ease;
-  z-index: 9998;
-  padding-top: 100px;
-}
-
-/* 開いた状態 */
-.mh-nav.active {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-/* メニューリスト */
-.mh-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 0 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-/* 各項目 */
-.mh-nav ul li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* リンク */
-.mh-nav ul li a {
-  color: #fff;
-  font-size: 1.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  padding-bottom: 6px;
-  transition: 0.3s;
-}
-
-.mh-nav ul li a:hover {
-  color: #1e90ff;
-  border-bottom: 1px solid #1e90ff;
-}
-
-/* ハンバーガーアイコン */
-.mh-burger {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 10000;
-}
-
-.mh-burger span {
-  width: 28px;
-  height: 3px;
-  background: #fff;
-  border-radius: 3px;
-  transition: all 0.4s ease;
-}
-
-/* 開いたときの × アニメーション */
-.mh-burger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.mh-burger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.mh-burger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* スマホ対応 */
 @media (max-width: 768px) {
-  .mh-nav {
-    width: 80%;
+  .commission-page #commission {
+    padding: 1.6rem 1.2rem;
   }
 }
+
 
