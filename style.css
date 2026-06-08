@@ -360,4 +360,7 @@ section {
     border-radius: 8px;
   }
 }
+#works {
+  background: linear-gradient(180deg, #0b0c1a 0%, #000 100%);
+}
 
