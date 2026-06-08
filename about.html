@@ -8,32 +8,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="about-page">
 
-  <!-- Mahouka-style Header -->
 <header class="mh-header">
   <div class="mh-container">
 
-    <!-- Left: Hamburger -->
     <button class="mh-burger" id="burgerBtn">
       <span></span><span></span><span></span>
     </button>
 
-    <!-- Center: Logo -->
     <div class="mh-logo">
-      <a href="index.html">kohinn</a>
+      <a href="index.html">Kohinn</a>
     </div>
 
-    <!-- Right: Language Switch -->
     <div class="language-switch">
       <a href="about_jp.html">JP</a> / <a href="about.html">EN</a>
     </div>
 
-    <!-- Navigation (Mobile) -->
     <nav class="mh-nav" id="navMenu">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="illustration.html">illustration</a></li>
+        <li><a href="illustration.html">Illustration</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="commission.html">Commission</a></li>
       </ul>
@@ -46,78 +41,71 @@
   const burger = document.getElementById("burgerBtn");
   const nav = document.getElementById("navMenu");
 
-  // Toggle open/close
   burger.addEventListener("click", () => {
     nav.classList.toggle("active");
   });
 
-  // Close when clicking menu links
   nav.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       nav.classList.remove("active");
     });
   });
-
-  // Prevent layout shift on scroll
-  window.addEventListener("scroll", () => {
-    document.body.style.paddingTop = "70px";
-  });
 </script>
 
-  <main>
-    <section id="about">
-      <div class="about-light-line"></div>
-      <h2>Profile</h2>
+<main>
 
-      <div class="about-panel">
-        <div class="about-wrapper">
+  <!-- Profile -->
+  <section id="about">
+    <h2>Profile</h2>
 
-          <div class="about-text">
-            <p>I am a self-taught illustrator currently balancing full-time work with my creative activities.</p>
-            <p>I mainly create character illustrations and character designs. I accept both individual and corporate commissions.</p>
+    <div class="about-wrapper">
 
-            <h3 class="section-title">Specialties</h3>
-            <ul>
-              <li>Character Design</li>
-              <li>Character Illustration (Full-body / Key Visual)</li>
-              <li>Fan Art</li>
-            </ul>
+      <div class="about-text">
+        <p>I am a self-taught illustrator balancing full-time work while creating character illustrations.</p>
+        <p>I specialize in character illustration and character design, and I accept commissions from individuals and companies.</p>
 
-            <h3 class="section-title">Software</h3>
-            <ul>
-              <li>CLIP STUDIO PAINT</li>
-            </ul>
-          </div>
+        <h3 class="section-title">Specialties</h3>
+        <ul>
+          <li>Character Design</li>
+          <li>Character Illustration (Full-body / Key Visual)</li>
+          <li>Fan Art / Derivative Works</li>
+        </ul>
 
-          <div class="about-image">
-            <img class="thumbnail" src="img/profile.webp" alt="Profile Image">
-          </div>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer-refined">
-    <div class="footer-inner">
-      <nav class="footer-nav">
-        <a href="index.html">Home</a>
-        <a href="works.html">Works</a>
-        <a href="about.html">About</a>
-        <a href="commission.html">Commission</a>
-      </nav>
-
-      <div class="footer-sns">
-        <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
-        <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
-        <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
-        <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
-        <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
+        <h3 class="section-title">Software</h3>
+        <ul>
+          <li>CLIP STUDIO PAINT</li>
+        </ul>
       </div>
 
-      <p class="footer-copy">© 2025–2026 Kohinn All rights reserved.</p>
+      <div class="about-image">
+        <img class="thumbnail" src="img/profile.webp" alt="Profile Image">
+      </div>
+
     </div>
-  </footer>
+  </section>
+
+</main>
+
+<footer class="footer-refined">
+  <div class="footer-inner">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="works.html">Works</a>
+      <a href="about.html">About</a>
+      <a href="commission.html">Commission</a>
+    </nav>
+
+    <div class="footer-sns">
+      <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
+      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
+      <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
+      <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
+      <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
+    </div>
+
+    <p class="footer-copy">© 2025–2026 Kohinn All rights reserved.</p>
+  </div>
+</footer>
 
 </body>
 </html>
