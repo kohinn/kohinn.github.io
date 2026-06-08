@@ -705,6 +705,53 @@ section {
   margin-bottom: 0.4rem;
   list-style: "◆ ";
 }
+/* =========================
+   HOME 専用：ヒーロー画像を大きく（魔法科風）
+========================= */
+
+.home-page .hero-img {
+  height: 340px; /* ← 魔法科公式サイトに近い大きさ */
+  width: auto;
+  object-fit: cover;
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.15);
+  transition: 0.35s ease;
+}
+
+.home-page .hero-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 22px rgba(30, 144, 255, 0.45);
+}
+
+/* スマホは少し小さめ */
+@media (max-width: 768px) {
+  .home-page .hero-img {
+    height: 220px;
+  }
+}
+/* =========================
+   HOME 専用：プロフィール画像を小さく
+========================= */
+
+.home-page .about-image img.thumbnail {
+  max-width: 240px; /* ← 小さめに調整 */
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.12);
+}
+
+/* スマホはさらに小さく */
+@media (max-width: 768px) {
+  .home-page .about-image img.thumbnail {
+    max-width: 180px;
+  }
+}
 
 
 
