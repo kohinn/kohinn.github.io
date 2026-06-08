@@ -334,4 +334,30 @@ section {
 .modal-close:hover {
   color: #1e90ff;
 }
+/* =========================
+   Works グリッド（スマホ2列対応）
+========================= */
+
+/* PC・タブレット */
+#works .works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* スマホ（2列表示） */
+@media (max-width: 768px) {
+  #works .works-grid {
+    grid-template-columns: repeat(2, 1fr); /* ← ここがポイント */
+    gap: 16px;
+    padding: 1.2rem 0.8rem;
+  }
+
+  #works .works-grid img {
+    border-radius: 8px;
+  }
+}
 
