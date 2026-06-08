@@ -195,56 +195,46 @@ section {
   padding-bottom: 6px;
 }
 
-/* グリッド本体 */
+/* =========================
+   魔法科公式サイト風：連続した灰色枠線
+========================= */
+
 #illustration .illustration-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
-  margin-top: 1.5rem;
+  gap: 0; /* ← 隙間ゼロで枠線が繋がる */
+  border: 1px solid rgba(255, 255, 255, 0.25); /* 全体の外枠 */
+  border-radius: 8px;
+  overflow: hidden; /* 枠内に画像を収める */
 }
 
-/* =========================
-   魔法科公式サイト風：灰色の枠線
-========================= */
-
-#illustration .card {
-  background: rgba(255, 255, 255, 0.03); /* 透明ガラス風 */
-  border: 1px solid rgba(255, 255, 255, 0.25); /* ← 魔法科と同じ薄い白グレー */
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.08); /* ほんのり光る */
-  transition: 0.35s ease;
-}
-
-/* ホバー時：光が強くなる */
-#illustration .card:hover {
-  transform: translateY(-4px) scale(1.02);
-  border-color: rgba(255, 255, 255, 0.18); /* 少し明るく */
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.25);
-}
-
-/* 画像 */
-#illustration .card img {
+/* 各画像セル（魔法科公式サイトと同じ構造） */
+#illustration .illustration-grid img {
   width: 100%;
   height: auto;
-  border-radius: 6px;
   display: block;
+
+  /* 画像同士の区切り線（魔法科公式サイトと同じ薄い白グレー） */
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
   object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+/* ホバー時：ふわっと明るく */
+#illustration .illustration-grid img:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
 
 /* スマホ2列 */
 @media (max-width: 768px) {
   #illustration .illustration-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  #illustration .card {
-    padding: 8px;
-    border-radius: 10px;
   }
 }
+
 
 /* =========================
    魔法科公式サイト風モーダル枠線
