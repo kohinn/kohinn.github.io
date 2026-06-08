@@ -926,5 +926,81 @@ section {
     max-width: 240px;
   }
 }
+/* =========================
+   ABOUT 専用：プロフィール（魔法科風）
+========================= */
+
+.about-page #about {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 2rem 1.4rem;
+  margin: 2rem auto;
+  max-width: 1080px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+}
+
+.about-page #about h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 0.1em;
+  color: #9fcfff;
+  margin-bottom: 1.6rem;
+  border-bottom: 2px solid #1e90ff;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.about-page .about-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-page .about-text {
+  flex: 1;
+  color: #eaeaea;
+  line-height: 1.9;
+}
+
+/* ★ 画像が表示されない問題を確実に解決する */
+.about-page .about-image img.thumbnail {
+  display: block;          /* ← 画像が消えるのを防ぐ */
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
+}
+
+/* スマホ */
+@media (max-width: 768px) {
+  .about-page .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-page .about-image img.thumbnail {
+    max-width: 240px;
+  }
+}
+/* =========================
+   ABOUT 専用：リスト記号を◆に統一
+========================= */
+
+.about-page .about-text ul {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.about-page .about-text li {
+  list-style: "◆ ";
+  color: #dcdcdc;
+  margin-bottom: 0.4rem;
+}
 
 
