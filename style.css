@@ -203,31 +203,35 @@ section {
   margin-top: 1.5rem;
 }
 
-/* カード枠 */
+/* =========================
+   魔法科公式サイト風：灰色の枠線
+========================= */
+
 #illustration .card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(30, 144, 255, 0.35);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03); /* 透明ガラス風 */
+  border: 1px solid rgba(255, 255, 255, 0.25); /* ← 魔法科と同じ薄い白グレー */
+  border-radius: 10px;
   padding: 10px;
-  box-shadow: 0 0 12px rgba(30, 144, 255, 0.15);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.08); /* ほんのり光る */
   transition: 0.35s ease;
 }
 
-/* ホバー時 */
+/* ホバー時：光が強くなる */
 #illustration .card:hover {
-  transform: translateY(-6px) scale(1.03);
-  border-color: rgba(30, 144, 255, 0.7);
-  box-shadow: 0 0 20px rgba(30, 144, 255, 0.45);
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.45); /* 少し明るく */
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.25);
 }
 
 /* 画像 */
 #illustration .card img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 6px;
   display: block;
   object-fit: cover;
 }
+
 
 /* スマホ2列 */
 @media (max-width: 768px) {
