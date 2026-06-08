@@ -109,4 +109,25 @@ document.querySelectorAll('.works-grid img').forEach(img => {
   });
 });
 
-document.querySelector('.modal-close').addEventListener('click',
+document.querySelector('.modal-close').addEventListener('click', () => {
+  document.getElementById('modal').classList.remove('show');
+  document.getElementById('modal').setAttribute('aria-hidden', 'true');
+});
+
+/* Random shuffle */
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('worksGrid');
+  const items = Array.from(grid.children);
+
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+
+  items.forEach(item => grid.appendChild(item));
+});
+</script>
+
+</body>
+</html>
+
