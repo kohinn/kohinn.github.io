@@ -35,6 +35,29 @@
   </div>
 </header>
 
+<!-- ★ ハンバーガー開閉スクリプト（追加） -->
+<script>
+  const burger = document.getElementById("burgerBtn");
+  const nav = document.getElementById("navMenu");
+
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+    });
+  });
+</script>
+
+<!-- ★ ハンバーガー内の ◆ を消す CSS（追加） -->
+<style>
+  .commission-page .mh-nav ul li {
+    list-style: none !important;
+  }
+</style>
+
 <main>
 
 <section id="commission" class="mh-panel">
@@ -45,7 +68,6 @@
   </p>
 </section>
 
-<!-- USD 価格に変更済み -->
 <section class="mh-panel">
   <h2>Base Menu</h2>
   <table class="price-table">
@@ -139,8 +161,6 @@
   </div>
 </section>
 
-
-<!-- ★ FAQ（英語版） -->
 <section class="mh-panel">
   <h2>FAQ</h2>
 
@@ -200,4 +220,3 @@
 
 </body>
 </html>
-
