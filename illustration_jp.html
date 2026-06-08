@@ -10,7 +10,6 @@
 
 <body>
 
-<!-- 魔法科風ヘッダー（About と完全一致） -->
 <header class="mh-header">
   <div class="mh-container">
 
@@ -74,7 +73,6 @@
 
 </main>
 
-<!-- 魔法科風モーダル -->
 <div id="modal" class="modal" aria-hidden="true">
   <button class="modal-close" aria-label="Close">✕</button>
   <img id="modal-img" class="modal-content" alt="">
@@ -102,7 +100,6 @@
 </footer>
 
 <script>
-/* Modal */
 document.querySelectorAll('.card img').forEach(img => {
   img.addEventListener('click', () => {
     document.getElementById('modal-img').src = img.src;
@@ -116,7 +113,6 @@ document.querySelector('.modal-close').addEventListener('click', () => {
   document.getElementById('modal').setAttribute('aria-hidden', 'true');
 });
 
-/* Random shuffle */
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('illustrationGrid');
   const items = Array.from(grid.children);
@@ -132,3 +128,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
