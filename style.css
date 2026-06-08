@@ -290,3 +290,42 @@ section {
 .modal-close:hover {
   color: #ffffff;
 }
+
+/* =========================
+   HOME 専用（他ページに影響しない）
+   ヒーロー画像サイズ改善
+========================= */
+
+.home-page .hero-scroll-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.home-page .hero-img {
+  height: 260px; /* ← ホーム専用の画像サイズ */
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+
+  border: 1px solid rgba(255, 255, 255, 0.25); /* 魔法科風の薄い枠線 */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.12);
+  transition: 0.3s ease;
+}
+
+.home-page .hero-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.25);
+}
+
+/* スマホ用（さらに小さく） */
+@media (max-width: 768px) {
+  .home-page .hero-img {
+    height: 180px;
+  }
+}
+
