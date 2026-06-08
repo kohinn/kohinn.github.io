@@ -1207,4 +1207,41 @@ section {
 .commission-page .mh-nav ul li {
   list-style: none !important;
 }
+/* =========================
+   全ページ共通：ハンバーガーメニューを Commission 基準に統一
+========================= */
+
+/* メニュー全体の縦並び・間隔 */
+.mh-nav ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Commission と同じ */
+}
+
+/* 各項目のリスト記号を消す */
+.mh-nav ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* リンクの見た目を統一 */
+.mh-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  display: block;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+}
+
+/* 最後の項目だけ下線を消す */
+.mh-nav ul li:last-child a {
+  border-bottom: none;
+}
 
