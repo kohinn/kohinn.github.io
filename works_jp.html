@@ -59,20 +59,22 @@
     <h2>Works</h2>
 
     <div class="works-grid" id="worksGrid">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp" loading="lazy">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp" loading="lazy">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" loading="lazy">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp" loading="lazy">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp" loading="lazy">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp" loading="lazy">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki3 (1).webp" loading="lazy">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/siba_brlkj.webp" loading="lazy">
+
+      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp" loading="lazy"></div>
+      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp" loading="lazy"></div>
+      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" loading="lazy"></div>
+      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp" loading="lazy"></div>
+      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp" loading="lazy"></div>
+      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp" loading="lazy"></div>
+      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki3 (1).webp" loading="lazy"></div>
+      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/siba_brlkj.webp" loading="lazy"></div>
+
     </div>
   </section>
 
 </main>
 
-<!-- Modal -->
+<!-- 魔法科風モーダル -->
 <div id="modal" class="modal" aria-hidden="true">
   <button class="modal-close" aria-label="Close">✕</button>
   <img id="modal-img" class="modal-content" alt="">
@@ -101,7 +103,7 @@
 
 <script>
 /* Modal */
-document.querySelectorAll('.works-grid img').forEach(img => {
+document.querySelectorAll('.card img').forEach(img => {
   img.addEventListener('click', () => {
     document.getElementById('modal-img').src = img.src;
     document.getElementById('modal').classList.add('show');
@@ -130,5 +132,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
-
-
