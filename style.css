@@ -1428,4 +1428,103 @@ section {
 .mh-burger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
+/* =========================
+   魔法科公式サイト風ハンバーガー（完全統一・安全版）
+========================= */
+
+/* 初期状態：左に隠す */
+.mh-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  max-width: 360px;
+  height: 100vh;
+  background: rgba(10, 15, 26, 0.96);
+  backdrop-filter: blur(10px);
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+  z-index: 9998;
+  padding-top: 100px;
+}
+
+/* 開いた状態 */
+.mh-nav.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* メニューリスト */
+.mh-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* 各項目 */
+.mh-nav ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* リンク */
+.mh-nav ul li a {
+  color: #fff;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 6px;
+  transition: 0.3s;
+}
+
+.mh-nav ul li a:hover {
+  color: #1e90ff;
+  border-bottom: 1px solid #1e90ff;
+}
+
+/* ハンバーガーアイコン */
+.mh-burger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.mh-burger span {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.4s ease;
+}
+
+/* 開いたときの × アニメーション */
+.mh-burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mh-burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mh-burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .mh-nav {
+    width: 80%;
+  }
+}
 
