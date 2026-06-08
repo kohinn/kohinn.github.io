@@ -19,7 +19,7 @@ section {
 }
 
 /* =========================
-   魔法科風ヘッダー（PC＋スマホ統一）
+   魔法科風ヘッダー
 ========================= */
 .mh-header {
   position: fixed;
@@ -41,7 +41,6 @@ section {
   position: relative;
 }
 
-/* 左：ハンバーガー */
 .mh-burger {
   order: 1;
   display: flex;
@@ -60,7 +59,6 @@ section {
   border-radius: 3px;
 }
 
-/* 中央：ロゴ */
 .mh-logo {
   order: 2;
   position: absolute;
@@ -75,7 +73,6 @@ section {
   text-decoration: none;
 }
 
-/* 右：言語切り替え */
 .language-switch {
   order: 3;
   margin-left: auto;
@@ -95,7 +92,7 @@ section {
 }
 
 /* =========================
-   PC もスマホもハンバーガー開閉式に統一
+   ハンバーガーメニュー
 ========================= */
 .mh-nav {
   position: fixed;
@@ -125,7 +122,7 @@ section {
 
 .mh-nav a {
   color: #fff;
-  font-size: 1.7rem; /* ← PC もスマホも大きめ */
+  font-size: 1.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-decoration: none;
@@ -139,21 +136,14 @@ section {
   border-bottom: 1px solid #1e90ff;
 }
 
-/* =========================
-   スマホ専用（さらに文字大きく）
-========================= */
 @media (max-width: 768px) {
   .mh-nav {
     width: 80%;
   }
-
-  .mh-nav a {
-    font-size: 1.7rem; /* ← スマホはさらに大きく */
-  }
 }
 
 /* =========================
-   Footer（魔法科風）
+   Footer
 ========================= */
 .footer-refined {
   background: #0b0c1a;
@@ -185,40 +175,16 @@ section {
 }
 
 /* =========================
-   Works 専用（画像サイズ調整）
+   Illustration グリッド（魔法科公式サイト風）
 ========================= */
 
-#works .works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-#works .works-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-#works .works-grid img:hover {
-  transform: scale(1.03);
-}
-/* =========================
-   Works グリッド（魔法科公式サイト風）
-========================= */
-
-#works {
+#illustration {
   max-width: 1080px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-#works h2 {
+#illustration h2 {
   text-align: center;
   font-size: 2rem;
   letter-spacing: 0.1em;
@@ -230,67 +196,54 @@ section {
 }
 
 /* グリッド本体 */
-#works .works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 22px;
-  margin-top: 1.5rem;
-}
-
-/* カード（画像） */
-#works .works-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  display: block;
-
-  /* 魔法科風ガラス感 */
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(30, 144, 255, 0.25);
-  box-shadow: 0 0 12px rgba(30, 144, 255, 0.15);
-
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-}
-
-/* ホバー時の光エフェクト */
-#works .works-grid img:hover {
-  transform: translateY(-6px) scale(1.03);
-  border-color: rgba(30, 144, 255, 0.6);
-  box-shadow: 0 0 18px rgba(30, 144, 255, 0.45);
-}
-/* =========================
-   魔法科風 Works グリッド
-========================= */
-#works .works-grid {
+#illustration .illustration-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 24px;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  margin-top: 1.5rem;
 }
 
-#works .works-grid img {
+/* カード枠 */
+#illustration .card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(30, 144, 255, 0.35);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 0 12px rgba(30, 144, 255, 0.15);
+  transition: 0.35s ease;
+}
+
+/* ホバー時 */
+#illustration .card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: rgba(30, 144, 255, 0.7);
+  box-shadow: 0 0 20px rgba(30, 144, 255, 0.45);
+}
+
+/* 画像 */
+#illustration .card img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
-  object-fit: cover;
+  border-radius: 8px;
   display: block;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(30, 144, 255, 0.25);
-  box-shadow: 0 0 12px rgba(30, 144, 255, 0.15);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  object-fit: cover;
 }
 
-#works .works-grid img:hover {
-  transform: translateY(-6px) scale(1.03);
-  border-color: rgba(30, 144, 255, 0.6);
-  box-shadow: 0 0 18px rgba(30, 144, 255, 0.45);
+/* スマホ2列 */
+@media (max-width: 768px) {
+  #illustration .illustration-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  #illustration .card {
+    padding: 8px;
+    border-radius: 10px;
+  }
 }
 
 /* =========================
-   魔法科風モーダル
+   モーダル（魔法科風）
 ========================= */
 .modal {
   display: none;
@@ -304,7 +257,6 @@ section {
   backdrop-filter: blur(10px);
   justify-content: center;
   align-items: center;
-  transition: opacity 0.3s ease;
 }
 
 .modal.show {
@@ -328,146 +280,4 @@ section {
   background: none;
   border: none;
   cursor: pointer;
-  transition: color 0.3s ease;
 }
-
-.modal-close:hover {
-  color: #1e90ff;
-}
-/* =========================
-   Works グリッド（スマホ2列対応）
-========================= */
-
-/* PC・タブレット */
-#works .works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-/* スマホ（2列表示） */
-@media (max-width: 768px) {
-  #works .works-grid {
-    grid-template-columns: repeat(2, 1fr); /* ← ここがポイント */
-    gap: 16px;
-    padding: 1.2rem 0.8rem;
-  }
-
-  #works .works-grid img {
-    border-radius: 8px;
-  }
-}
-#works {
-  background: linear-gradient(180deg, #0b0c1a 0%, #000 100%);
-}
-/* =========================
-   魔法科風カード枠（画像を囲う）
-========================= */
-
-#works .works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-/* カード全体（画像の外側の枠） */
-#works .card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(30, 144, 255, 0.35);
-  border-radius: 12px;
-  padding: 10px;
-  box-shadow: 0 0 12px rgba(30, 144, 255, 0.15);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-}
-
-/* ホバー時の光エフェクト */
-#works .card:hover {
-  transform: translateY(-6px) scale(1.03);
-  border-color: rgba(30, 144, 255, 0.7);
-  box-shadow: 0 0 20px rgba(30, 144, 255, 0.45);
-}
-
-/* 画像本体 */
-#works .card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  display: block;
-  object-fit: cover;
-}
-@media (max-width: 768px) {
-  #works .works-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  #works .card {
-    padding: 8px;
-    border-radius: 10px;
-  }
-}
-@media (max-width: 768px) {
-  #works .works-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  #works .card {
-    padding: 8px;
-    border-radius: 10px;
-  }
-}
-
-/* =========================
-   魔法科公式サイト風カード枠
-========================= */
-
-#illustration .works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-/* カード枠（魔法科公式サイトと同じ構造） */
-#illustration .card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(30, 144, 255, 0.35);
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 0 12px rgba(30, 144, 255, 0.15);
-  transition: 0.35s ease;
-}
-
-/* ホバー時の光 */
-#illustration .card:hover {
-  transform: translateY(-6px) scale(1.03);
-  border-color: rgba(30, 144, 255, 0.7);
-  box-shadow: 0 0 20px rgba(30, 144, 255, 0.45);
-}
-
-/* 画像本体 */
-#illustration .card img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  display: block;
-  object-fit: cover;
-}
-
-/* スマホ2列 */
-@media (max-width: 768px) {
-  #illustration .works-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-}
-
