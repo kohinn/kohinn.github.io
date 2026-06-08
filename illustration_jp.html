@@ -92,6 +92,9 @@
 </footer>
 
 <script>
+/* =========================
+   モーダル
+========================= */
 document.querySelectorAll('.card img').forEach(img => {
   img.addEventListener('click', () => {
     document.getElementById('modal-img').src = img.src;
@@ -101,6 +104,10 @@ document.querySelectorAll('.card img').forEach(img => {
 document.querySelector('.modal-close').addEventListener('click', () => {
   document.getElementById('modal').classList.remove('show');
 });
+
+/* =========================
+   画像シャッフル
+========================= */
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('illustrationGrid');
   const items = Array.from(grid.children);
@@ -111,26 +118,30 @@ document.addEventListener('DOMContentLoaded', () => {
   items.forEach(item => grid.appendChild(item));
 });
 
-    // 魔法科公式サイト風ハンバーガー開閉アニメーション
-  document.addEventListener("DOMContentLoaded", () => {
-    const burger = document.getElementById("burgerBtn");
-    const nav = document.getElementById("navMenu");
+/* =========================
+   魔法科公式サイト風ハンバーガー開閉アニメーション（Illustration 専用）
+========================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.getElementById("burgerBtn");
+  const nav = document.getElementById("navMenu");
 
-    if (burger && nav) {
-      burger.addEventListener("click", () => {
-        burger.classList.toggle("active");
-        nav.classList.toggle("active");
-      });
+  // 要素が存在するページだけ動作（他ページへの影響ゼロ）
+  if (!burger || !nav) return;
 
-      nav.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          burger.classList.remove("active");
-          nav.classList.remove("active");
-        });
-      });
-    }
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
   });
+
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      burger.classList.remove("active");
+      nav.classList.remove("active");
+    });
+  });
+});
 </script>
+
 
 </body>
 </html>
