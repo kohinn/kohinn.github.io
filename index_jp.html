@@ -33,84 +33,56 @@
 </head>
 
 <body class="home-page">
-<div class="overlay" id="overlay"></div>
-<header class="site-header">
 
-  <!-- 左：ハンバーガー -->
-  <button class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </button>
+<!-- =========================
+     魔法科風ヘッダー（About と統一）
+========================= -->
+<header class="mh-header">
+  <div class="mh-container">
 
+    <!-- ハンバーガー -->
+    <button class="mh-burger" id="burgerBtn">
+      <span></span><span></span><span></span>
+    </button>
 
-  <!-- 中央：ロゴ -->
-  <div class="logo center-logo">
-    <a href="index_jp.html">Kohinn</a>
+    <!-- ロゴ -->
+    <div class="mh-logo">
+      <a href="index_jp.html">Kohinn</a>
+    </div>
+
+    <!-- 言語切り替え -->
+    <div class="language-switch">
+      <a href="index_jp.html">JP</a> / <a href="index.html">EN</a>
+    </div>
+
+    <!-- ナビゲーション -->
+    <nav class="mh-nav" id="navMenu">
+      <ul>
+        <li><a href="index_jp.html">Home</a></li>
+        <li><a href="illustration_jp.html">Illustration</a></li>
+        <li><a href="about_jp.html">About</a></li>
+        <li><a href="commission_jp.html">Commission</a></li>
+      </ul>
+    </nav>
+
   </div>
-
-  <!-- 右：言語切り替え -->
-  <div class="language-switch">
-    <a href="index_jp.html">JP</a> / <a href="index.html">EN</a>
-  </div>
-
-  <!-- 左スライドメニュー -->
-  <nav id="main-nav" class="main-nav left-slide">
-    <a href="index_jp.html">Home</a>
-    <a href="illustration_jp.html">illustration</a>
-    <a href="about_jp.html">About</a>
-    <a href="commission_jp.html">Commission</a>
-  </nav>
-
 </header>
 
-
 <script>
-/* ハンバーガー動作（統一版） */
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('main-nav');
+  const burger = document.getElementById("burgerBtn");
+  const nav = document.getElementById("navMenu");
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  nav.classList.toggle('show');
-});
-
-  /* ============================
-   オーバーレイ（背景暗くする）
-============================ */
-const overlay = document.getElementById('overlay');
-
-hamburger.addEventListener('click', () => {
-  overlay.classList.toggle('active');
-});
-
-// オーバーレイをクリックしたら閉じる
-overlay.addEventListener('click', () => {
-  nav.classList.remove('show');
-  hamburger.classList.remove('active');
-  overlay.classList.remove('active');
-});
-</script>
-
-
-  <script>
-/* モーダル修正版 */
-document.querySelectorAll('.hero-img').forEach(img => {
-  img.addEventListener('click', () => {
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    modalImg.src = img.src;
-    modal.classList.add('show');
-    modal.style.display = 'flex'; // ← これを追加して位置を固定
-    modal.setAttribute('aria-hidden', 'false');
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
   });
-});
 
-document.querySelector('.modal-close').addEventListener('click', () => {
-  const modal = document.getElementById('modal');
-  modal.classList.remove('show');
-  modal.style.display = 'none'; // ← 閉じたら非表示に戻す
-  modal.setAttribute('aria-hidden', 'true');
-});
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+    });
+  });
 </script>
+
 <main>
 
   <!-- ヒーロー：横スクロール -->
@@ -125,9 +97,9 @@ document.querySelector('.modal-close').addEventListener('click', () => {
     </div>
   </section>
 
-  <!-- Works への導線 -->
+  <!-- Illustration への導線 -->
   <div class="more-button">
-    <a href="works_jp.html" class="button-link">制作一覧を見る →</a>
+    <a href="illustration_jp.html" class="button-link">制作一覧を見る →</a>
   </div>
 
   <!-- お知らせ -->
@@ -193,7 +165,7 @@ document.querySelector('.modal-close').addEventListener('click', () => {
 
     <nav class="footer-nav">
       <a href="index_jp.html">Home</a>
-      <a href="works_jp.html">Works</a>
+      <a href="illustration_jp.html">Illustration</a>
       <a href="about_jp.html">About</a>
       <a href="commission_jp.html">Commission</a>
     </nav>
@@ -213,7 +185,7 @@ document.querySelector('.modal-close').addEventListener('click', () => {
   </div>
 </footer>
 
-<!-- Modal（HOME の画像拡大用） -->
+<!-- Modal -->
 <div id="modal" class="modal" aria-hidden="true">
   <button class="modal-close" aria-label="閉じる">✕</button>
   <img class="modal-content" id="modal-img" alt="">
@@ -243,21 +215,6 @@ window.addEventListener('scroll', () => {
   else btn.classList.remove('show');
 });
 
-  /* ============================
-   Back to Top（上に戻るボタン）
-============================ */
-const backToTop = document.getElementById('backToTop');
-
-// スクロールで表示・非表示
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) {
-    backToTop.classList.add('show');
-  } else {
-    backToTop.classList.remove('show');
-  }
-});
-
-// スムーズスクロールでトップへ戻る
 backToTop.addEventListener('click', (e) => {
   e.preventDefault();
   window.scrollTo({
@@ -265,9 +222,7 @@ backToTop.addEventListener('click', (e) => {
     behavior: 'smooth'
   });
 });
-
 </script>
 
 </body>
 </html>
-
