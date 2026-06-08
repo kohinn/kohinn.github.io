@@ -19,7 +19,7 @@ section {
 }
 
 /* =========================
-   魔法科風ヘッダー（安定版）
+   魔法科風ヘッダー（PC＋スマホ安定版）
 ========================= */
 .mh-header {
   position: fixed;
@@ -50,7 +50,7 @@ section {
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 10000; /* ← メニューより上に配置 */
+  z-index: 10000;
 }
 
 .mh-burger span {
@@ -94,38 +94,52 @@ section {
   color: #1e90ff;
 }
 
-/* PCナビ（PCでは表示しない） */
-.mh-nav ul {
-  display: flex;
-  gap: 24px;
-}
+/* =========================
+   PCナビ（常時表示）
+========================= */
+@media (min-width: 769px) {
+  .mh-nav {
+    position: static;
+    background: none;
+    height: auto;
+    padding-top: 0;
+  }
 
-.mh-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: 0.3s;
-}
+  .mh-nav ul {
+    display: flex;
+    gap: 32px;
+    list-style: none; /* ← ドット削除 */
+    margin: 0;
+    padding: 0;
+  }
 
-.mh-nav a:hover {
-  color: #1e90ff;
+  .mh-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    transition: 0.3s;
+  }
+
+  .mh-nav a:hover {
+    color: #1e90ff;
+  }
 }
 
 /* =========================
-   スマホ（左スライド）
+   スマホ（左スライド・魔法科風）
 ========================= */
 @media (max-width: 768px) {
-
   .mh-nav {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 70%;
+    width: 80%;
     height: 100vh;
-    background: rgba(10, 15, 26, 0.95);
-    backdrop-filter: blur(6px);
-    padding-top: 80px;
-    transition: left 0.35s ease;
+    background: rgba(10, 15, 26, 0.98);
+    backdrop-filter: blur(10px);
+    padding-top: 100px;
+    transition: left 0.4s ease;
     z-index: 9998;
   }
 
@@ -135,8 +149,26 @@ section {
 
   .mh-nav ul {
     flex-direction: column;
-    gap: 30px;
-    text-align: center;
+    align-items: flex-start;
+    gap: 28px;
+    list-style: none; /* ← ドット削除 */
+    margin-left: 40px;
+  }
+
+  .mh-nav a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase; /* ← 魔法科風 */
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 4px;
+    transition: 0.3s;
+  }
+
+  .mh-nav a:hover {
+    color: #1e90ff;
+    border-bottom: 1px solid #1e90ff;
   }
 }
 
