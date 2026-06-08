@@ -424,4 +424,50 @@ section {
   }
 }
 
+/* =========================
+   魔法科公式サイト風カード枠
+========================= */
+
+#illustration .works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* カード枠（魔法科公式サイトと同じ構造） */
+#illustration .card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(30, 144, 255, 0.35);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 12px rgba(30, 144, 255, 0.15);
+  transition: 0.35s ease;
+}
+
+/* ホバー時の光 */
+#illustration .card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: rgba(30, 144, 255, 0.7);
+  box-shadow: 0 0 20px rgba(30, 144, 255, 0.45);
+}
+
+/* 画像本体 */
+#illustration .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  object-fit: cover;
+}
+
+/* スマホ2列 */
+@media (max-width: 768px) {
+  #illustration .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
 
