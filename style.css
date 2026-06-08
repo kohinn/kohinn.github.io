@@ -125,7 +125,7 @@ section {
 
 .mh-nav a {
   color: #fff;
-  font-size: 1.4rem; /* ← PC もスマホも大きめ */
+  font-size: 1.7rem; /* ← PC もスマホも大きめ */
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-decoration: none;
