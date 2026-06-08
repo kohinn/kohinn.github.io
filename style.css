@@ -276,7 +276,7 @@ section {
   border-radius: 10px;
 
   /* ← 魔法科公式サイトの枠線に最も近い色 */
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 
   /* ← ほんのり白く光る */
   box-shadow: 0 0 14px rgba(255, 255, 255, 0.18);
