@@ -31,40 +31,55 @@
 
 <body class="commission-page">
 
-<header class="site-header">
-  <div class="logo">
-    <a href="index_jp.html">Kohinn</a>
-  </div>
+<!-- =========================
+     魔法科風ヘッダー（Home / About と統一）
+========================= -->
+<header class="mh-header">
+  <div class="mh-container">
 
-  <button class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </button>
+    <button class="mh-burger" id="burgerBtn">
+      <span></span><span></span><span></span>
+    </button>
 
-  <nav id="main-nav" class="main-nav">
-    <a href="index_jp.html">Home</a>
-    <a href="illustration_jp.html">illustration</a>
-    <a href="about_jp.html">About</a>
-    <a href="commission_jp.html">Commission</a>
-  </nav>
+    <div class="mh-logo">
+      <a href="index_jp.html">Kohinn</a>
+    </div>
 
-  <div class="language-switch">
-    <a href="commission.html">EN</a> / <a href="commission_jp.html">JP</a>
+    <div class="language-switch">
+      <a href="commission_jp.html">JP</a> / <a href="commission.html">EN</a>
+    </div>
+
+    <nav class="mh-nav" id="navMenu">
+      <ul>
+        <li><a href="index_jp.html">Home</a></li>
+        <li><a href="illustration_jp.html">Illustration</a></li>
+        <li><a href="about_jp.html">About</a></li>
+        <li><a href="commission_jp.html">Commission</a></li>
+      </ul>
+    </nav>
+
   </div>
 </header>
 
 <script>
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('main-nav');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  nav.classList.toggle('show');
-});
+  const burger = document.getElementById("burgerBtn");
+  const nav = document.getElementById("navMenu");
+
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+    });
+  });
 </script>
 
 <main>
 
   <!-- コミッション概要 -->
-  <section id="commission" class="fade-in">
+  <section id="commission" class="mh-panel">
     <h2>コミッション</h2>
     <p class="contact-intro">
       ご依頼をご検討いただきありがとうございます。<br>
@@ -73,9 +88,9 @@ hamburger.addEventListener('click', () => {
   </section>
 
   <!-- 基本メニュー -->
-  <section class="fade-in">
+  <section class="mh-panel">
     <h2>基本メニュー</h2>
-    <ul class="career-list">
+    <ul class="mh-list">
       <li><strong>バストアップ</strong> — ¥9,500〜¥14,400</li>
       <li><strong>全身イラスト</strong> — ¥18,000〜¥28,000</li>
       <li><strong>オリジナルアバター（デザイン込み）</strong> — ¥22,000〜¥32,000</li>
@@ -83,9 +98,9 @@ hamburger.addEventListener('click', () => {
   </section>
 
   <!-- オプション -->
-  <section class="fade-in">
+  <section class="mh-panel">
     <h2>オプション</h2>
-    <ul class="career-list">
+    <ul class="mh-list">
       <li><strong>背景</strong> — +¥7,950〜¥12,800</li>
       <li><strong>キャラクター追加</strong> — +¥9,500～¥14,400</li>
       <li><strong>商用利用</strong> — +¥10,000〜¥20,000</li>
@@ -93,9 +108,9 @@ hamburger.addEventListener('click', () => {
   </section>
 
   <!-- 納期 -->
-  <section class="fade-in">
+  <section class="mh-panel">
     <h2>納期の目安</h2>
-    <ul class="career-list">
+    <ul class="mh-list">
       <li>最短：<strong>1週間〜（ラフ提出）</strong></li>
       <li>通常：<strong>2〜3週間</strong></li>
       <li>オプション追加時：内容により +1〜2週間</li>
@@ -103,9 +118,9 @@ hamburger.addEventListener('click', () => {
   </section>
 
   <!-- お支払い方法 -->
-  <section class="fade-in">
+  <section class="mh-panel">
     <h2>お支払い方法</h2>
-    <ul class="career-list">
+    <ul class="mh-list">
       <li><strong>銀行振込（円）</strong></li>
       <li><strong>PayPal（円）</strong> ※ご希望の方のみ</li>
       <li>ご依頼確定後、振込先情報をお送りします。</li>
@@ -113,9 +128,9 @@ hamburger.addEventListener('click', () => {
   </section>
 
   <!-- 銀行振込の注意事項 -->
-  <section class="fade-in">
+  <section class="mh-panel">
     <h2>銀行振込の注意事項</h2>
-    <ul class="career-list">
+    <ul class="mh-list">
       <li>振込手数料はご依頼者様のご負担となります。</li>
       <li>入金確認後に制作を開始いたします。</li>
       <li>着手前のキャンセルには柔軟に対応いたします。</li>
@@ -123,9 +138,9 @@ hamburger.addEventListener('click', () => {
   </section>
 
   <!-- 依頼の流れ -->
-  <section class="fade-in">
+  <section class="mh-panel">
     <h2>依頼の流れ</h2>
-    <ul class="career-list">
+    <ul class="mh-list">
       <li>① お問い合わせフォームからご連絡</li>
       <li>② 内容確認・お見積もり</li>
       <li>③ ご依頼確定・お支払い</li>
@@ -135,9 +150,9 @@ hamburger.addEventListener('click', () => {
   </section>
 
   <!-- 利用規約 -->
-  <section class="fade-in">
+  <section class="mh-panel">
     <h2>利用規約</h2>
-    <ul class="career-list">
+    <ul class="mh-list">
       <li>著作権はKohinnに帰属します。</li>
       <li>クレジット表記（@V_Kohinn）をいただければ、SNS等での公開は可能です。</li>
       <li>納品物の公開タイミングは事前にご相談ください。</li>
@@ -147,14 +162,14 @@ hamburger.addEventListener('click', () => {
   </section>
 
   <!-- お問い合わせ -->
-  <section id="contact" class="fade-in">
+  <section id="contact" class="mh-panel">
     <h2>お問い合わせ</h2>
     <p class="contact-intro">
       コミッションに関するご相談・ご質問は、以下のフォームよりお気軽にご連絡ください。
     </p>
   </section>
 
-  <section class="fade-in">
+  <section class="mh-panel">
     <h2>お問い合わせフォーム</h2>
     <div class="form-embed">
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQ0Fs0j9THjt8jAUCnos_mY86-V036Ye3A1SkIiVkhAm8bTA/viewform?embedded=true"
@@ -164,9 +179,9 @@ hamburger.addEventListener('click', () => {
     </div>
   </section>
 
-  <section class="fade-in">
+  <section class="mh-panel">
     <h2>注意事項</h2>
-    <ul class="career-list">
+    <ul class="mh-list">
       <li>返信には通常 1〜3 日ほどいただきます。</li>
       <li>迷惑メールフォルダに入る場合があります。</li>
       <li>送信された個人情報は返信のみに使用します。</li>
@@ -203,7 +218,6 @@ hamburger.addEventListener('click', () => {
 <a href="#" class="back-to-top" id="backToTop" aria-label="トップへ戻る">↑</a>
 
 <script>
-/* Back to top */
 window.addEventListener('scroll', () => {
   const btn = document.getElementById('backToTop');
   if (window.scrollY > 200) btn.classList.add('show');
