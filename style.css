@@ -1003,4 +1003,82 @@ section {
   margin-bottom: 0.4rem;
 }
 
+/* =========================
+   COMMISSION 専用：魔法科公式サイト風レイアウト
+========================= */
+
+.commission-page #commission {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 2rem 1.6rem;
+  margin: 2rem auto;
+  max-width: 1080px;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
+}
+
+/* 見出し（魔法科風） */
+.commission-page #commission h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 0.1em;
+  color: #9fcfff;
+  margin-bottom: 1.8rem;
+  border-bottom: 2px solid #1e90ff;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* セクションタイトル */
+.commission-page .section-title {
+  font-size: 1.3rem;
+  color: #9fcfff;
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
+  border-left: 3px solid #1e90ff;
+  padding-left: 10px;
+}
+
+/* テキスト（読みやすく） */
+.commission-page p {
+  color: #e6e6e6;
+  line-height: 1.9;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* リスト（◆に統一） */
+.commission-page ul {
+  margin-left: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.commission-page li {
+  list-style: "◆ ";
+  color: #dcdcdc;
+  margin-bottom: 0.4rem;
+}
+
+/* 料金表（魔法科風パネル） */
+.commission-page .price-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.6rem;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+  transition: 0.3s ease;
+}
+
+.commission-page .price-box:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.18);
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .commission-page #commission {
+    padding: 1.6rem 1.2rem;
+  }
+}
 
