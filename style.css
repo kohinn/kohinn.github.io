@@ -219,7 +219,7 @@ section {
 /* ホバー時：光が強くなる */
 #illustration .card:hover {
   transform: translateY(-4px) scale(1.02);
-  border-color: rgba(255, 255, 255, 0.45); /* 少し明るく */
+  border-color: rgba(255, 255, 255, 0.18); /* 少し明るく */
   box-shadow: 0 0 14px rgba(255, 255, 255, 0.25);
 }
 
