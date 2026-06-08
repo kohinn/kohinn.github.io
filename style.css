@@ -19,7 +19,7 @@ section {
 }
 
 /* =========================
-   魔法科風ヘッダー（PC＋スマホ安定版）
+   魔法科風ヘッダー（PC＋スマホ統一）
 ========================= */
 .mh-header {
   position: fixed;
@@ -95,80 +95,60 @@ section {
 }
 
 /* =========================
-   PCナビ（常時表示）
+   PC もスマホもハンバーガー開閉式に統一
 ========================= */
-@media (min-width: 769px) {
-  .mh-nav {
-    position: static;
-    background: none;
-    height: auto;
-    padding-top: 0;
-  }
+.mh-nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100vh;
+  background: rgba(10, 15, 26, 0.98);
+  backdrop-filter: blur(10px);
+  padding-top: 100px;
+  transition: left 0.4s ease;
+  z-index: 9998;
+}
 
-  .mh-nav ul {
-    display: flex;
-    gap: 32px;
-    list-style: none; /* ← ドット削除 */
-    margin: 0;
-    padding: 0;
-  }
+.mh-nav.active {
+  left: 0;
+}
 
-  .mh-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    letter-spacing: 0.05em;
-    transition: 0.3s;
-  }
+.mh-nav ul {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  list-style: none;
+  margin-left: 40px;
+  padding: 0;
+}
 
-  .mh-nav a:hover {
-    color: #1e90ff;
-  }
+.mh-nav a {
+  color: #fff;
+  font-size: 1.4rem; /* ← PC もスマホも大きめ */
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 6px;
+  transition: 0.3s;
+}
+
+.mh-nav a:hover {
+  color: #1e90ff;
+  border-bottom: 1px solid #1e90ff;
 }
 
 /* =========================
-   スマホ（左スライド・魔法科風）
+   スマホ専用（さらに文字大きく）
 ========================= */
 @media (max-width: 768px) {
   .mh-nav {
-    position: fixed;
-    top: 0;
-    left: -100%;
     width: 80%;
-    height: 100vh;
-    background: rgba(10, 15, 26, 0.98);
-    backdrop-filter: blur(10px);
-    padding-top: 100px;
-    transition: left 0.4s ease;
-    z-index: 9998;
-  }
-
-  .mh-nav.active {
-    left: 0;
-  }
-
-  .mh-nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 28px;
-    list-style: none; /* ← ドット削除 */
-    margin-left: 40px;
   }
 
   .mh-nav a {
-    color: #fff;
-    font-size: 1.2rem;
-    text-transform: uppercase; /* ← 魔法科風 */
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding-bottom: 4px;
-    transition: 0.3s;
-  }
-
-  .mh-nav a:hover {
-    color: #1e90ff;
-    border-bottom: 1px solid #1e90ff;
+    font-size: 1.7rem; /* ← スマホはさらに大きく */
   }
 }
 
