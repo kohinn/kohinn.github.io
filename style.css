@@ -10,6 +10,7 @@ body {
   background: linear-gradient(180deg, #0b0c1a 0%, #000 100%);
   color: #eaeaea;
   overflow-x: hidden;
+  background: linear-gradient(180deg, #0a0f1a 0%, #000 100%);
 }
 
 section {
