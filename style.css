@@ -247,6 +247,39 @@ section {
 }
 
 /* =========================
+   Illustration（魔法科公式サイト風・ページ限定）
+========================= */
+.illustration-page #illustration .illustration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.illustration-page #illustration .illustration-grid img {
+  width: 100%;
+  display: block;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.illustration-page #illustration .illustration-grid img:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+
+@media (max-width: 768px) {
+  .illustration-page #illustration .illustration-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================
    Modal（魔法科公式サイト風）
 ========================= */
 .modal {
