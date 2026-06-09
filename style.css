@@ -277,6 +277,44 @@ section {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* =========================
+   Illustration（余白つき魔法科風）
+========================= */
+.illustration-page #illustration .illustration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 画像を包むセル（余白を作る） */
+.illustration-page .illustration-cell {
+  padding: 10px; /* ← 魔法科風の余白 */
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* 画像本体 */
+.illustration-page .illustration-cell img {
+  width: 100%;
+  display: block;
+  border-radius: 6px; /* ほんの少し丸めると魔法科っぽい */
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.illustration-page .illustration-cell img:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+
+@media (max-width: 768px) {
+  .illustration-page #illustration .illustration-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 
 /* =========================
