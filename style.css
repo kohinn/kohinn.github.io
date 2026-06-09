@@ -317,51 +317,68 @@ section {
 }
 
 /* =========================
-   Modal（魔法科公式サイト風）
+   Modal（魔法科公式サイト完全一致）
 ========================= */
 .modal {
   display: none;
   position: fixed;
   z-index: 10000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 15, 26, 0.92);
-  backdrop-filter: blur(10px);
+  inset: 0;
+  background: rgba(10, 15, 26, 0.92); /* 魔法科特有の濃紺 */
+  backdrop-filter: blur(12px);        /* ブラー強め */
   justify-content: center;
   align-items: center;
-  transition: opacity 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.35s ease;     /* フェードイン */
 }
 
 .modal.show {
   display: flex;
+  opacity: 1;
 }
 
+/* 画像本体（魔法科の枠線＋影を完全再現） */
 .modal-content {
   max-width: 90%;
   max-height: 80%;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.18);
-  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.22); /* 魔法科の白枠 */
+  box-shadow: 0 0 22px rgba(255, 255, 255, 0.28); /* 強めの白シャドウ */
+  background: rgba(0, 0, 0, 0.35); /* ほんのり黒背景（魔法科仕様） */
+  object-fit: contain;
+  animation: modalZoom 0.35s ease; /* 拡大アニメーション */
 }
 
+/* 拡大アニメーション（魔法科の動きに近い） */
+@keyframes modalZoom {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 閉じるボタン（魔法科完全一致） */
 .modal-close {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2rem;
+  top: 22px;
+  right: 32px;
+  font-size: 2.2rem;
   color: #dcdcdc;
   background: none;
   border: none;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.25s ease;
 }
 
 .modal-close:hover {
   color: #ffffff;
+  transform: scale(1.1);
 }
+
 
 /* =========================
    HOME：Hero（前半）
