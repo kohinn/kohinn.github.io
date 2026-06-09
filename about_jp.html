@@ -37,20 +37,6 @@
   </div>
 </header>
 
-<script>
-  const burger = document.getElementById("burgerBtn");
-  const nav = document.getElementById("navMenu");
-
-  burger.addEventListener("click", () => {
-    nav.classList.toggle("active");
-  });
-
-  nav.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("active");
-    });
-  });
-</script>
 
 <main>
 
