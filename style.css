@@ -328,34 +328,33 @@ section {
 .modal {
   display: none;
   position: fixed;
-  z-index: 10000;
   inset: 0;
-  background: rgba(10, 15, 26, 0.92); /* 魔法科特有の濃紺 */
+  z-index: 10000;
+  background: rgba(10, 15, 26, 0.92); /* 魔法科の濃紺 */
   backdrop-filter: blur(12px);        /* ブラー強め */
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.35s ease;     /* フェードイン */
+  transition: opacity 0.35s ease;
 }
 
 .modal.show {
-  display: flex;
+  display: flex; /* ← これがないと絶対に表示されない */
   opacity: 1;
 }
 
-/* 画像本体（魔法科の枠線＋影を完全再現） */
+/* 画像本体（魔法科の枠線＋影） */
 .modal-content {
   max-width: 90%;
   max-height: 80%;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.22); /* 魔法科の白枠 */
-  box-shadow: 0 0 22px rgba(255, 255, 255, 0.28); /* 強めの白シャドウ */
-  background: rgba(0, 0, 0, 0.35); /* ほんのり黒背景（魔法科仕様） */
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 22px rgba(255, 255, 255, 0.28);
+  background: rgba(0, 0, 0, 0.35);
   object-fit: contain;
-  animation: modalZoom 0.35s ease; /* 拡大アニメーション */
+  animation: modalZoom 0.35s ease;
 }
 
-/* 拡大アニメーション（魔法科の動きに近い） */
 @keyframes modalZoom {
   0% {
     transform: scale(0.92);
@@ -384,7 +383,6 @@ section {
   color: #ffffff;
   transform: scale(1.1);
 }
-
 
 /* =========================
    HOME：Hero（前半）
