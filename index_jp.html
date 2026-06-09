@@ -223,13 +223,12 @@ backToTop.addEventListener('click', (e) => {
 });
 
 /* =========================
-   魔法科公式サイト風ハンバーガー開閉アニメーション（Home 専用）
+   ハンバーガー（全ページ共通・魔法科完全一致）
 ========================= */
 document.addEventListener("DOMContentLoaded", () => {
   const burger = document.getElementById("burgerBtn");
   const nav = document.getElementById("navMenu");
 
-  // 要素が存在するページだけ動作（他ページへの影響ゼロ）
   if (!burger || !nav) return;
 
   burger.addEventListener("click", () => {
@@ -244,6 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
 
 
   const burger = document.querySelector('.mh-burger');
