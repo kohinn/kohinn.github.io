@@ -289,18 +289,18 @@ section {
   overflow: hidden;
 }
 
-/* 魔法科公式サイトと同じ余白量（12px） */
+/* 魔法科と同じ余白・区切り線 */
 .illustration-grid .card {
-  padding: 12px; /* ← 完全一致 */
+  padding: 12px; /* 完全一致 */
   border-right: 1px solid rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* 画像本体 */
+/* 画像本体（角丸も魔法科と同じ） */
 .illustration-grid .card img {
   width: 100%;
   display: block;
-  border-radius: 6px; /* 魔法科の丸みと同じ */
+  border-radius: 6px;
   object-fit: cover;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
