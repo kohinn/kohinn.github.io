@@ -93,7 +93,7 @@
 
 <script>
 /* =========================
-   モーダル（魔法科完全一致）
+   Modal (Mahouka-style)
 ========================= */
 document.querySelectorAll('.card img').forEach(img => {
   img.addEventListener('click', () => {
@@ -110,7 +110,7 @@ document.querySelector('.modal-close').addEventListener('click', () => {
 });
 
 /* =========================
-   画像シャッフル
+   Shuffle Images
 ========================= */
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('illustrationGrid');
@@ -123,13 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* =========================
-   魔法科公式サイト風ハンバーガー開閉アニメーション（Illustration 専用）
+   Hamburger Menu (Mahouka-style)
 ========================= */
 document.addEventListener("DOMContentLoaded", () => {
   const burger = document.getElementById("burgerBtn");
   const nav = document.getElementById("navMenu");
 
-  // 要素が存在するページだけ動作（他ページへの影響ゼロ）
   if (!burger || !nav) return;
 
   burger.addEventListener("click", () => {
@@ -144,17 +143,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-    const burger = document.querySelector('.mh-burger');
-  const nav = document.querySelector('.mh-nav');
-
-  if (burger && nav) {
-    burger.addEventListener('click', () => {
-      burger.classList.toggle('active');
-      nav.classList.toggle('active');
-    });
-  }
 </script>
 
 </body>
 </html>
+
