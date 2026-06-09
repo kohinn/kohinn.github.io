@@ -278,9 +278,9 @@ section {
   }
 }
 /* =========================
-   Illustration（余白つき魔法科風）
+   Illustration（魔法科公式サイト風・余白つき）
 ========================= */
-.illustration-page #illustration .illustration-grid {
+.illustration-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 0;
@@ -289,33 +289,32 @@ section {
   overflow: hidden;
 }
 
-/* 画像を包むセル（余白を作る） */
-.illustration-page .illustration-cell {
-  padding: 10px; /* ← 魔法科風の余白 */
+/* 画像を包むカード（余白を作る） */
+.illustration-grid .card {
+  padding: 12px; /* ← 魔法科公式サイトの余白感に最も近い */
   border-right: 1px solid rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* 画像本体 */
-.illustration-page .illustration-cell img {
+.illustration-grid .card img {
   width: 100%;
   display: block;
-  border-radius: 6px; /* ほんの少し丸めると魔法科っぽい */
+  border-radius: 6px;
   object-fit: cover;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.illustration-page .illustration-cell img:hover {
+.illustration-grid .card img:hover {
   transform: scale(1.02);
   filter: brightness(1.1);
 }
 
 @media (max-width: 768px) {
-  .illustration-page #illustration .illustration-grid {
+  .illustration-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 
 /* =========================
    Modal（魔法科公式サイト風）
