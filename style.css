@@ -206,16 +206,21 @@ section {
   padding: 2rem 1rem;
 }
 
+/* =========================
+   Illustration タイトル（魔法科完全一致）
+========================= */
 #illustration h2 {
   text-align: center;
   font-size: 2rem;
-  letter-spacing: 0.1em;
+  font-weight: 400; /* 魔法科は太すぎない */
+  letter-spacing: 0.12em; /* 文字間隔広め */
   color: #9fcfff;
-  margin-bottom: 2rem;
-  border-bottom: 2px solid #1e90ff;
-  display: inline-block;
+  margin-bottom: 2.4rem;
   padding-bottom: 6px;
+  display: inline-block;
+  border-bottom: 2px solid #1e90ff; /* 魔法科の青ライン */
 }
+
 
 #illustration .illustration-grid {
   display: grid;
