@@ -907,60 +907,44 @@ section {
     padding: 1.6rem 1.2rem;
   }
 }
-/* =========================
-   COMMISSION：表示間隔の最適化（追加）
-   ※ デザインは壊さず、余白だけ改善
-========================= */
-
-.commission-page .mh-panel {
-  margin-bottom: 2.4rem; /* セクション間の余白を統一 */
-  padding: 2rem 1.8rem;  /* 内側の余白を少し広げて読みやすく */
+/* Commissionページ専用調整 */
+.commission-page {
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
-/* 見出しと本文の距離を調整 */
-.commission-page h2 {
-  margin-bottom: 1.6rem !important;
+/* セクション間の余白を統一 */
+.commission-page section {
+  margin-bottom: 2.2rem;
 }
 
-/* リストの行間と余白 */
-.commission-page ul.mh-list li,
-.commission-page .notice-box li {
-  margin-bottom: 0.7rem;
-  line-height: 1.9;
+/* 見出しと本文の距離を近づける */
+.commission-page h2,
+.commission-page h3 {
+  margin-bottom: 0.6rem;
 }
 
-/* STEP ボックスの間隔 */
-.commission-page .step-box {
-  margin-bottom: 1.6rem;
-  padding: 1.6rem 1.8rem;
+/* カードやボックスの上下間隔を調整 */
+.commission-page .card,
+.commission-page .content-box {
+  margin-bottom: 1.4rem;
+  padding: 1.2rem 1rem;
 }
 
-/* 料金表の行間と余白 */
-.commission-page .price-table th,
-.commission-page .price-table td {
-  padding: 16px 20px;
+/* テーブルの行間を少し広げる */
+.commission-page table td {
+  padding: 0.6rem 0.8rem;
 }
 
-/* パネル内の段落の余白 */
-.commission-page p {
-  margin-bottom: 1.2rem;
-}
-
-/* スマホ時の最適化 */
+/* スマホ時のフォントサイズ微調整 */
 @media (max-width: 768px) {
-  .commission-page .mh-panel {
-    padding: 1.6rem 1.4rem;
-    margin-bottom: 2rem;
+  .commission-page {
+    font-size: 0.9rem;
   }
-
-  .commission-page .step-box {
-    padding: 1.4rem 1.4rem;
-  }
-
-  .commission-page .price-table th,
-  .commission-page .price-table td {
-    padding: 14px 16px;
+  .commission-page h2 {
+    font-size: 1.1rem;
   }
 }
+
 
 
