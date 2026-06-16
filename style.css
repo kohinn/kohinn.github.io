@@ -907,33 +907,29 @@ section {
     padding: 1.6rem 1.2rem;
   }
 }
+
+
 /* Commissionページ専用調整 */
 .commission-page {
-  line-height: 1.6;
+  line-height: 1.5;
   font-size: 0.95rem;
 }
 
-/* セクション間の余白を統一 */
+/* セクション間の余白を詰める */
 .commission-page section {
-  margin-bottom: 2.2rem;
+  margin-bottom: 1.6rem;
 }
 
 /* 見出しと本文の距離を近づける */
 .commission-page h2,
 .commission-page h3 {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.4rem;
 }
 
-/* カードやボックスの上下間隔を調整 */
-.commission-page .card,
-.commission-page .content-box {
-  margin-bottom: 1.4rem;
-  padding: 1.2rem 1rem;
-}
-
-/* テーブルの行間を少し広げる */
-.commission-page table td {
-  padding: 0.6rem 0.8rem;
+/* リスト項目の行間を調整 */
+.commission-page ul,
+.commission-page li {
+  margin-bottom: 0.3rem;
 }
 
 /* スマホ時のフォントサイズ微調整 */
@@ -942,9 +938,6 @@ section {
     font-size: 0.9rem;
   }
   .commission-page h2 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 }
-
-
-
