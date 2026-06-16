@@ -907,5 +907,60 @@ section {
     padding: 1.6rem 1.2rem;
   }
 }
+/* =========================
+   COMMISSION：表示間隔の最適化（追加）
+   ※ デザインは壊さず、余白だけ改善
+========================= */
+
+.commission-page .mh-panel {
+  margin-bottom: 2.4rem; /* セクション間の余白を統一 */
+  padding: 2rem 1.8rem;  /* 内側の余白を少し広げて読みやすく */
+}
+
+/* 見出しと本文の距離を調整 */
+.commission-page h2 {
+  margin-bottom: 1.6rem !important;
+}
+
+/* リストの行間と余白 */
+.commission-page ul.mh-list li,
+.commission-page .notice-box li {
+  margin-bottom: 0.7rem;
+  line-height: 1.9;
+}
+
+/* STEP ボックスの間隔 */
+.commission-page .step-box {
+  margin-bottom: 1.6rem;
+  padding: 1.6rem 1.8rem;
+}
+
+/* 料金表の行間と余白 */
+.commission-page .price-table th,
+.commission-page .price-table td {
+  padding: 16px 20px;
+}
+
+/* パネル内の段落の余白 */
+.commission-page p {
+  margin-bottom: 1.2rem;
+}
+
+/* スマホ時の最適化 */
+@media (max-width: 768px) {
+  .commission-page .mh-panel {
+    padding: 1.6rem 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .commission-page .step-box {
+    padding: 1.4rem 1.4rem;
+  }
+
+  .commission-page .price-table th,
+  .commission-page .price-table td {
+    padding: 14px 16px;
+  }
+}
 
 
