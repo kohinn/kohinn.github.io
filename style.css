@@ -733,6 +733,43 @@ section {
   margin-bottom: 0.6rem;
 }
 
+/* =========================
+   ABOUT専用：レイアウト調整（PC・スマホ両対応）
+========================= */
+
+/* PC時：テキスト左・画像右 */
+.about-page .about-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* 画像サイズを以前の形に戻す */
+.about-page .about-image img.thumbnail {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
+}
+
+/* スマホ時：縦並び（中央寄せ） */
+@media (max-width: 768px) {
+  .about-page .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-page .about-image img.thumbnail {
+    max-width: 240px;
+    margin-top: 1rem;
+  }
+}
+
 
 /* =========================
    COMMISSION：メインパネル
