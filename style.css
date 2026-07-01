@@ -700,37 +700,39 @@ section {
 }
 
 /* =========================
-   ABOUT：パネル（経歴・実績）
+   ABOUT専用：画像サイズと左右配置（他ページに影響なし）
 ========================= */
-.about-page .about-panel {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+
+/* PC：テキスト左・画像右 */
+.about-page .about-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* 画像サイズ（以前と同じ） */
+.about-page .about-image img.thumbnail {
+  max-width: 320px !important;
+  width: 100%;
+  height: auto;
   border-radius: 12px;
-  padding: 2rem 1.4rem;
-  margin: 2rem auto;
-  max-width: 1080px;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
 }
 
-.about-page .about-panel h2 {
-  text-align: center;
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  color: #9fcfff;
-  margin-bottom: 1.4rem;
-  border-bottom: 2px solid #1e90ff;
-  display: inline-block;
-  padding-bottom: 4px;
-}
+/* スマホ：縦並び（中央寄せ） */
+@media (max-width: 768px) {
+  .about-page .about-wrapper {
+    flex-direction: column !important;
+    text-align: center;
+  }
 
-.about-page .panel-box ul {
-  margin-left: 1rem;
-}
-
-.about-page .panel-box li {
-  list-style: "◆ ";
-  color: #dcdcdc;
-  margin-bottom: 0.6rem;
+  .about-page .about-image img.thumbnail {
+    max-width: 240px !important;
+  }
 }
 
 /* =========================
