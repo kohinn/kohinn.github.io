@@ -3,27 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>コミッション | Kohinn</title>
-
-  <!-- Google tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-V286NXLCKF');
-  </script>
-
-  <!-- SEO -->
-  <meta name="description" content="Kohinn（コヒン）によるキャラクターイラスト、VTuber風イラスト、オリジナルアバター制作のコミッション案内。料金、オプション、納期、支払い方法、依頼の流れ、利用規約などを掲載。">
-  <meta name="keywords" content="Kohinn, コミッション, イラスト, VTuber, キャラクター, 料金, 銀行振込, PayPal">
-
-  <!-- OGP -->
-  <meta property="og:title" content="コミッション | Kohinn">
-  <meta property="og:description" content="Kohinn（コヒン）のイラストコミッション案内。キャラクターイラスト、VTuber風、アバター制作など。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kohinn.github.io/commission_jp.html">
-  <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
+  <title>お問い合わせ | Kohinn</title>
 
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
@@ -31,9 +11,6 @@
 
 <body class="commission-page">
 
-<!-- =========================
-     魔法科風ヘッダー（統一）
-========================= -->
 <header class="mh-header">
   <div class="mh-container">
 
@@ -46,7 +23,7 @@
     </div>
 
     <div class="language-switch">
-      <a href="commission_jp.html">JP</a> / <a href="commission.html">EN</a>
+      <a href="contact_jp.html">JP</a> / <a href="contact.html">EN</a>
     </div>
 
     <nav class="mh-nav" id="navMenu">
@@ -55,6 +32,7 @@
         <li><a href="illustration_jp.html">Illustration</a></li>
         <li><a href="about_jp.html">About</a></li>
         <li><a href="commission_jp.html">Commission</a></li>
+        <li><a href="contact_jp.html">Contact</a></li>
       </ul>
     </nav>
 
@@ -63,183 +41,38 @@
 
 <main>
 
-  <!-- コミッション概要 -->
-  <section id="commission" class="mh-panel">
-    <h2>コミッション</h2>
-    <p class="contact-intro">
-      ご依頼をご検討いただきありがとうございます。<br>
-      現在の料金表とオプション内容は以下の通りです。
-    </p>
-  </section>
+<section class="mh-panel">
+  <h2>Contact</h2>
+  <p class="contact-intro">
+    イラスト制作に関するご相談・ご依頼は、以下のフォームよりお気軽にお送りください。
+  </p>
 
-  <!-- 基本メニュー（表デザイン） -->
-  <section class="mh-panel">
-    <h2>基本メニュー</h2>
+  <form action="https://formspree.io/f/meebdjlk" method="POST" class="contact-form">
 
-    <table class="price-table">
-      <tr>
-        <th>バストアップ</th>
-        <td>¥9,500〜¥14,400</td>
-      </tr>
-      <tr>
-        <th>全身イラスト</th>
-        <td>¥18,000〜¥28,000</td>
-      </tr>
-      <tr>
-        <th>オリジナルアバター（デザイン込み）</th>
-        <td>¥22,000〜¥32,000</td>
-      </tr>
-    </table>
-  </section>
+    <label>お名前（任意）</label>
+    <input type="text" name="name" placeholder="例：Kohinn">
 
-  <!-- オプション（表デザイン） -->
-  <section class="mh-panel">
-    <h2>オプション</h2>
+    <label>メールアドレス（必須）</label>
+    <input type="email" name="email" required placeholder="例：example@mail.com">
 
-    <table class="price-table">
-      <tr>
-        <th>背景</th>
-        <td>+¥7,950〜¥12,800</td>
-      </tr>
-      <tr>
-        <th>キャラクター追加</th>
-        <td>+¥9,500〜¥14,400</td>
-      </tr>
-      <tr>
-        <th>商用利用</th>
-        <td>+¥10,000〜¥20,000</td>
-      </tr>
-    </table>
-  </section>
+    <label>件名（任意）</label>
+    <input type="text" name="subject" placeholder="例：イラスト依頼">
 
-  <!-- 納期 -->
-  <section class="mh-panel">
-    <h2>納期の目安</h2>
-    <ul class="mh-list">
-      <li>最短：<strong>1週間〜（ラフ提出）</strong></li>
-      <li>通常：<strong>2〜3週間</strong></li>
-      <li>オプション追加時：内容により +1〜2週間</li>
-    </ul>
-  </section>
+    <label>お問い合わせ内容（必須）</label>
+    <textarea name="message" required placeholder="ご相談内容をご記入ください"></textarea>
 
-  <!-- 支払い方法 -->
-  <section class="mh-panel">
-    <h2>お支払い方法</h2>
-    <ul class="mh-list">
-      <li><strong>銀行振込（円）</strong></li>
-      <li><strong>PayPal（円）</strong> ※ご希望の方のみ</li>
-      <li>ご依頼確定後、振込先情報をお送りします。</li>
-    </ul>
-  </section>
+    <button type="submit" class="mh-button">送信する</button>
+  </form>
+</section>
 
-  <!-- 銀行振込の注意事項 -->
-  <section class="mh-panel">
-    <h2>銀行振込の注意事項</h2>
-    <ul class="mh-list">
-      <li>振込手数料はご依頼者様のご負担となります。</li>
-      <li>入金確認後に制作を開始いたします。</li>
-      <li>着手前のキャンセルには柔軟に対応いたします。</li>
-    </ul>
-  </section>
-
-  <!-- 依頼の流れ（STEPパネル） -->
-  <section class="mh-panel">
-    <h2>依頼の流れ</h2>
-
-    <div class="step-box">
-      <div class="step-title">STEP 1 — お問い合わせ</div>
-      <p class="step-desc">フォームよりご依頼内容をご連絡ください。</p>
-    </div>
-
-    <div class="step-box">
-      <div class="step-title">STEP 2 — 内容確認・お見積もり</div>
-      <p class="step-desc">内容を確認し、料金と納期をご案内します。</p>
-    </div>
-
-    <div class="step-box">
-      <div class="step-title">STEP 3 — ご依頼確定・お支払い</div>
-      <p class="step-desc">お支払い確認後、制作を開始します。</p>
-    </div>
-
-    <div class="step-box">
-      <div class="step-title">STEP 4 — ラフ提出</div>
-      <p class="step-desc">修正はこの段階で承ります。</p>
-    </div>
-
-    <div class="step-box">
-      <div class="step-title">STEP 5 — 清書・納品</div>
-      <p class="step-desc">完成データを納品いたします。</p>
-    </div>
-  </section>
-
-  <!-- 利用規約 -->
-  <section class="mh-panel">
-    <h2>利用規約</h2>
-    <ul class="mh-list">
-      <li>著作権はKohinnに帰属します。</li>
-      <li>クレジット表記（@V_Kohinn）をいただければ、SNS等での公開は可能です。</li>
-      <li>納品物の公開タイミングは事前にご相談ください。</li>
-      <li>商用利用には追加料金が必要です。</li>
-      <li>内容によりお断りする場合があります。</li>
-    </ul>
-  </section>
-
-  <!-- お問い合わせ -->
-  <section id="contact" class="mh-panel">
-    <h2>お問い合わせ</h2>
-    <p class="contact-intro">
-      コミッションに関するご相談・ご質問は、以下のフォームよりお気軽にご連絡ください。
-    </p>
-  </section>
-
-  <section class="mh-panel">
-    <h2>お問い合わせフォーム</h2>
-    <div class="form-embed">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQ0Fs0j9THjt8jAUCnos_mY86-V036Ye3A1SkIiVkhAm8bTA/viewform?embedded=true"
-              width="100%" height="1536" frameborder="0" marginheight="0" marginwidth="0">
-        読み込んでいます…
-      </iframe>
-    </div>
-  </section>
-
- <!-- ★★★ ここから下は「FAQ を追加した完全版」 ★★★ -->
-
-<!-- 注意事項（読みやすいパネル） -->
 <section class="mh-panel">
   <h2>注意事項</h2>
   <ul class="notice-box">
-    <li>返信には通常 1〜3 日ほどいただきます。</li>
-    <li>迷惑メールフォルダに入る場合があります。</li>
-    <li>送信された個人情報は返信のみに使用します。</li>
+    <li>返信は通常 2〜3 日以内です。</li>
+    <li>内容が未定の場合でもお気軽にご相談ください。</li>
+    <li>送信された情報は返信のみに使用します。</li>
   </ul>
 </section>
-
-<!-- ★ FAQ（新規追加） -->
-<section class="mh-panel">
-  <h2>FAQ（よくある質問）</h2>
-
-  <div class="step-box">
-    <div class="step-title">Q. 商用利用は可能ですか？</div>
-    <p class="step-desc">はい、可能です。用途に応じて追加料金が発生する場合があります。</p>
-  </div>
-
-  <div class="step-box">
-    <div class="step-title">Q. 修正は何回までできますか？</div>
-    <p class="step-desc">ラフ段階で 2 回まで無料です。それ以降は追加料金となります。</p>
-  </div>
-
-  <div class="step-box">
-    <div class="step-title">Q. キャンセルはできますか？</div>
-    <p class="step-desc">ラフ提出後のキャンセルは不可となります。</p>
-  </div>
-
-  <div class="step-box">
-    <div class="step-title">Q. 納期はどれくらいですか？</div>
-    <p class="step-desc">通常 1〜3 週間ほどです。内容や混雑状況により変動します。</p>
-  </div>
-
-</section>
-
 
 </main>
 
@@ -248,9 +81,10 @@
 
     <nav class="footer-nav">
       <a href="index_jp.html">Home</a>
-      <a href="illustration.html">Illustration</a>
+      <a href="illustration_jp.html">Illustration</a>
       <a href="about_jp.html">About</a>
       <a href="commission_jp.html">Commission</a>
+      <a href="contact_jp.html">Contact</a>
     </nav>
 
     <div class="footer-sns">
@@ -268,23 +102,10 @@
   </div>
 </footer>
 
-<a href="#" class="back-to-top" id="backToTop" aria-label="トップへ戻る">↑</a>
-
 <script>
-window.addEventListener('scroll', () => {
-  const btn = document.getElementById('backToTop');
-  if (window.scrollY > 200) btn.classList.add('show');
-  else btn.classList.remove('show');
-});
-
-/* =========================
-   ハンバーガー（全ページ共通・魔法科完全一致）
-========================= */
 document.addEventListener("DOMContentLoaded", () => {
   const burger = document.getElementById("burgerBtn");
   const nav = document.getElementById("navMenu");
-
-  if (!burger || !nav) return;
 
   burger.addEventListener("click", () => {
     burger.classList.toggle("active");
@@ -298,9 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
 </script>
 
 </body>
 </html>
-
