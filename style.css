@@ -1,34 +1,36 @@
 /* =========================
-   Base（魔法科風トーン）
+   Base（新テーマ：Minimal Light）
 ========================= */
 body {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 15px;
-  line-height: 2.0;
-  letter-spacing: 0.03em;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
   padding-top: 70px;
-  background: linear-gradient(180deg, #0b0c1a 0%, #000 100%);
-  color: #eaeaea;
+  background: #f7f7f7; /* 明るい背景 */
+  color: #333;
   overflow-x: hidden;
-  background: linear-gradient(180deg, #0a0f1a 0%, #000 100%);
 }
 
 section {
-  padding: 1.2rem 0.8rem;
-  margin: 0 auto 1.6rem;
   max-width: 1080px;
+  margin: 2rem auto;
+  padding: 1.6rem 1.4rem;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 /* =========================
-   魔法科風ヘッダー
+   Header（新テーマ）
 ========================= */
 .mh-header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(10, 15, 26, 0.9);
-  backdrop-filter: blur(8px);
-  border-bottom: 2px solid #1e90ff;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
   z-index: 9999;
 }
 
@@ -49,63 +51,26 @@ section {
 }
 
 .mh-logo a {
-  color: #1e90ff;
+  color: #333;
   font-size: 1.4rem;
   font-weight: 600;
   text-decoration: none;
 }
 
-.language-switch {
-  margin-left: auto;
-  color: #9fcfff;
-  font-size: 0.9rem;
-}
-
 .language-switch a {
-  color: #9fcfff;
-  text-decoration: none;
-  margin: 0 0.2rem;
+  color: #666;
 }
 
 .language-switch a:hover {
-  color: #1e90ff;
+  color: #000;
 }
 
-/* =========================
-   ハンバーガー（最終仕様）
-========================= */
-
-/* アイコン */
-.mh-burger {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 10000;
-}
-
+/* ハンバーガー */
 .mh-burger span {
-  width: 28px;
-  height: 3px;
-  background: #fff;
-  border-radius: 3px;
-  transition: all 0.4s ease;
+  background: #333;
 }
 
-/* × アニメーション */
-.mh-burger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.mh-burger.active span:nth-child(2) {
-  opacity: 0;
-}
-.mh-burger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* メニュー本体（最終形） */
+/* メニュー */
 .mh-nav {
   position: fixed;
   top: 0;
@@ -113,8 +78,8 @@ section {
   width: 80%;
   max-width: 360px;
   height: 100vh;
-  background: rgba(10, 15, 26, 0.96);
-  backdrop-filter: blur(10px);
+  background: #ffffff;
+  border-right: 1px solid #e5e5e5;
   transform: translateX(-100%);
   opacity: 0;
   transition: transform 0.45s ease, opacity 0.45s ease;
@@ -127,7 +92,6 @@ section {
   opacity: 1;
 }
 
-/* メニューリスト */
 .mh-nav ul {
   list-style: none;
   padding: 0;
@@ -137,201 +101,97 @@ section {
   gap: 32px;
 }
 
-.mh-nav ul li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 .mh-nav ul li a {
-  color: #fff;
-  font-size: 1.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  color: #333;
+  font-size: 1.6rem;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid #e5e5e5;
   padding-bottom: 6px;
-  transition: 0.3s;
 }
 
 .mh-nav ul li a:hover {
-  color: #1e90ff;
-  border-bottom: 1px solid #1e90ff;
-}
-
-/* スマホ */
-@media (max-width: 768px) {
-  .mh-nav {
-    width: 80%;
-  }
+  color: #000;
+  border-bottom-color: #000;
 }
 
 /* =========================
-   Footer（共通）
+   Footer（新テーマ）
 ========================= */
 .footer-refined {
-  background: #0b0c1a;
-  border-top: 2px solid #1e90ff;
+  background: #fafafa;
+  border-top: 1px solid #e5e5e5;
   padding: 1.6rem 1rem;
   text-align: center;
-  font-size: 0.9rem;
-  line-height: 1.8;
-  margin-top: 2rem;
+  color: #666;
 }
 
 .footer-nav a,
 .footer-sns a {
-  color: #9fcfff;
+  color: #666;
   text-decoration: none;
   margin: 0 0.4rem;
-  transition: 0.3s;
 }
 
 .footer-nav a:hover,
 .footer-sns a:hover {
-  color: #1e90ff;
+  color: #000;
 }
 
 .footer-copy {
-  color: #aaa;
+  color: #999;
   font-size: 0.85rem;
   margin-top: 0.6rem;
 }
 
 /* =========================
-   Illustration（魔法科公式サイト風）
-========================= */
-#illustration {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-/* =========================
-   Illustration タイトル（魔法科完全一致）
+   Illustration（新テーマ）
 ========================= */
 #illustration h2 {
   text-align: center;
-  font-size: 2rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  color: #9fcfff; /* 魔法科の淡い青 */
-  margin-bottom: 2.4rem;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 2rem;
   padding-bottom: 6px;
-  display: inline-block;
-  border-bottom: 2px solid #1e90ff; /* 魔法科のメイン青 */
+  border-bottom: 2px solid #e5e5e5;
 }
 
-
-#illustration .illustration-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 0;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-#illustration .illustration-grid img {
-  width: 100%;
-  display: block;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  object-fit: cover;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-#illustration .illustration-grid img:hover {
-  transform: scale(1.02);
-  filter: brightness(1.1);
-}
-
-@media (max-width: 768px) {
-  #illustration .illustration-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* =========================
-   Illustration（魔法科公式サイト風・ページ限定）
-========================= */
-.illustration-page #illustration .illustration-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 0;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.illustration-page #illustration .illustration-grid img {
-  width: 100%;
-  display: block;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  object-fit: cover;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.illustration-page #illustration .illustration-grid img:hover {
-  transform: scale(1.02);
-  filter: brightness(1.1);
-}
-
-@media (max-width: 768px) {
-  .illustration-page #illustration .illustration-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-/* =========================
-   Illustration（魔法科公式サイト完全一致）
-========================= */
 .illustration-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 0;
-  border: 1px solid rgba(255, 255, 255, 0.25); /* 外枠 */
+  border: 1px solid #e5e5e5;
   border-radius: 8px;
   overflow: hidden;
 }
 
-/* 魔法科と同じ余白・区切り線 */
 .illustration-grid .card {
-  padding: 12px; /* 完全一致 */
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 12px;
+  border-right: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-/* 画像本体（角丸も魔法科と同じ） */
 .illustration-grid .card img {
   width: 100%;
-  display: block;
   border-radius: 6px;
   object-fit: cover;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .illustration-grid .card img:hover {
   transform: scale(1.02);
-  filter: brightness(1.1);
-}
-
-@media (max-width: 768px) {
-  .illustration-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  filter: brightness(1.05);
 }
 
 /* =========================
-   Modal（魔法科公式サイト完全一致）
+   Modal（新テーマ）
 ========================= */
 .modal {
   display: none;
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background: rgba(10, 15, 26, 0.92); /* 魔法科の濃紺 */
-  backdrop-filter: blur(12px);        /* ブラー強め */
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
   justify-content: center;
   align-items: center;
   opacity: 0;
@@ -339,746 +199,60 @@ section {
 }
 
 .modal.show {
-  display: flex; /* ← これがないと絶対に表示されない */
+  display: flex;
   opacity: 1;
 }
 
-/* 画像本体（魔法科の枠線＋影） */
 .modal-content {
   max-width: 90%;
   max-height: 80%;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 0 22px rgba(255, 255, 255, 0.28);
-  background: rgba(0, 0, 0, 0.35);
-  object-fit: contain;
-  animation: modalZoom 0.35s ease;
-}
-
-@keyframes modalZoom {
-  0% {
-    transform: scale(0.92);
-    opacity: 0.4;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* 閉じるボタン（魔法科完全一致） */
-.modal-close {
-  position: absolute;
-  top: 22px;
-  right: 32px;
-  font-size: 2.2rem;
-  color: #dcdcdc;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.modal-close:hover {
-  color: #ffffff;
-  transform: scale(1.1);
-}
-
-
-/* =========================
-   HOME：Hero（前半）
-========================= */
-.home-page .hero-scroll-row {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  padding: 10px 0;
-  scroll-snap-type: x mandatory;
-}
-
-.home-page .hero-img {
-  height: 260px;
-  width: auto;
-  object-fit: cover;
-  border-radius: 10px;
-  flex-shrink: 0;
-  scroll-snap-align: start;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.12);
-  transition: 0.3s ease;
-}
-
-.home-page .hero-img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.25);
-}
-
-@media (max-width: 768px) {
-  .home-page .hero-img {
-    height: 180px;
-  }
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
 /* =========================
-   HOME：プロフィール画像
-========================= */
-.home-page .about-image img.thumbnail {
-  max-width: 320px;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.12);
-}
-
-@media (max-width: 768px) {
-  .home-page .about-image img.thumbnail {
-    max-width: 240px;
-  }
-}
-
-/* =========================
-   HOME：お知らせ（統合版）
-========================= */
-.home-page .updates-section {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
-  padding: 2rem 1.6rem;
-  margin: 2.4rem auto;
-  max-width: 1080px;
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
-}
-
-.home-page .updates-section h2 {
-  text-align: center;
-  font-size: 1.7rem;
-  letter-spacing: 0.1em;
-  color: #9fcfff;
-  margin-bottom: 1.8rem;
-  border-bottom: 2px solid #1e90ff;
-  display: inline-block;
-  padding-bottom: 4px;
-}
-
-.home-page .update-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  padding: 1.2rem 1.4rem;
-  margin-bottom: 1.4rem;
-  transition: 0.3s ease;
-}
-
-.home-page .update-card:hover {
-  border-color: rgba(255, 255, 255, 0.28);
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.18);
-}
-
-.home-page .update-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.6rem;
-}
-
-.home-page .update-label {
-  color: #9fcfff;
-  font-weight: 500;
-}
-
-.home-page .update-date {
-  color: #ccc;
-  font-size: 0.9rem;
-}
-
-/* =========================
-   HOME：ボタン
-========================= */
-.home-page .more-button .button-link {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #9fcfff;
-  font-size: 1rem;
-  letter-spacing: 0.05em;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 10px rgba(30, 144, 255, 0.15);
-  transition: 0.3s ease;
-}
-
-.home-page .more-button .button-link:hover {
-  color: #ffffff;
-  border-color: rgba(30, 144, 255, 0.6);
-  box-shadow: 0 0 18px rgba(30, 144, 255, 0.45);
-  transform: translateY(-2px);
-}
-
-/* =========================
-   HOME：ヒーロー（後半）
-========================= */
-.home-page .hero-scroll {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
-  padding: 1rem;
-  margin: 1.6rem auto;
-  max-width: 1080px;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
-}
-
-.home-page .hero-scroll-row {
-  display: flex;
-  gap: 14px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 6px;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-x: contain;
-}
-
-.home-page .hero-scroll-row::-webkit-scrollbar {
-  display: none;
-}
-
-/* 最終仕様：大きいヒーロー画像 */
-.home-page .hero-img {
-  height: 340px;
-  width: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  flex-shrink: 0;
-  scroll-snap-align: start;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.15);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-.home-page .hero-img:hover {
-  transform: scale(1.05) translateZ(0);
-  box-shadow: 0 0 22px rgba(30, 144, 255, 0.45);
-}
-
-@media (max-width: 768px) {
-  .home-page .hero-img {
-    height: 220px;
-  }
-}
-
-/* =========================
-   HOME：プロフィール（統合版）
-========================= */
-.home-page #about {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
-  padding: 2rem 1.4rem;
-  margin: 2rem auto;
-  max-width: 1080px;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
-}
-
-.home-page #about h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  color: #9fcfff;
-  margin-bottom: 1.6rem;
-  border-bottom: 2px solid #1e90ff;
-  display: inline-block;
-  padding-bottom: 4px;
-}
-
-.home-page .about-wrapper {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.home-page .about-text {
-  flex: 1;
-  color: #eaeaea;
-  line-height: 1.9;
-}
-
-@media (max-width: 768px) {
-  .home-page .about-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-/* =========================
-   ABOUT：プロフィール（完全統合）
-========================= */
-.about-page #about {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
-  padding: 2rem 1.4rem;
-  margin: 2rem auto;
-  max-width: 1080px;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
-}
-
-.about-page #about h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  color: #9fcfff;
-  margin-bottom: 1.6rem;
-  border-bottom: 2px solid #1e90ff;
-  display: inline-block;
-  padding-bottom: 4px;
-}
-
-.about-page .about-wrapper {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.about-page .about-text {
-  flex: 1;
-  color: #eaeaea;
-  line-height: 1.9;
-}
-
-.about-page .about-text p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-.about-page .section-title {
-  font-size: 1.2rem;
-  color: #9fcfff;
-  margin-top: 1.4rem;
-  margin-bottom: 0.6rem;
-  border-left: 3px solid #1e90ff;
-  padding-left: 8px;
-}
-
-.about-page .about-text ul {
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-}
-
-.about-page .about-text li {
-  list-style: "◆ ";
-  color: #dcdcdc;
-  margin-bottom: 0.4rem;
-}
-
-/* 画像（完全統合） */
-.about-page .about-image img.thumbnail {
-  display: block;
-  max-width: 320px;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
-}
-
-@media (max-width: 768px) {
-  .about-page .about-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-page .about-image img.thumbnail {
-    max-width: 240px;
-  }
-}
-
-/* =========================
-   ABOUT専用：画像サイズと左右配置（他ページに影響なし）
-========================= */
-
-/* PC：テキスト左・画像右 */
-.about-page .about-wrapper {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-/* 画像サイズ（以前と同じ） */
-.about-page .about-image img.thumbnail {
-  max-width: 320px !important;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
-}
-
-/* スマホ：縦並び（中央寄せ） */
-@media (max-width: 768px) {
-  .about-page .about-wrapper {
-    flex-direction: column !important;
-    text-align: center;
-  }
-
-  .about-page .about-image img.thumbnail {
-    max-width: 240px !important;
-  }
-}
-
-/* =========================
-   ABOUT専用：レイアウト調整（PC・スマホ両対応）
-========================= */
-
-/* PC時：テキスト左・画像右 */
-.about-page .about-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-/* 画像サイズを以前の形に戻す */
-.about-page .about-image img.thumbnail {
-  max-width: 320px;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
-}
-
-/* スマホ時：縦並び（中央寄せ） */
-@media (max-width: 768px) {
-  .about-page .about-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-page .about-image img.thumbnail {
-    max-width: 240px;
-    margin-top: 1rem;
-  }
-}
-
-
-/* =========================
-   COMMISSION：メインパネル
-========================= */
-.commission-page #commission {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
-  padding: 2rem 1.6rem;
-  margin: 2rem auto;
-  max-width: 1080px;
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
-}
-
-.commission-page #commission h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  color: #9fcfff;
-  margin-bottom: 1.8rem;
-  border-bottom: 2px solid #1e90ff;
-  display: inline-block;
-  padding-bottom: 6px;
-}
-
-/* =========================
-   COMMISSION：セクションタイトル
-========================= */
-.commission-page .section-title {
-  font-size: 1.3rem;
-  color: #9fcfff;
-  margin-top: 1.6rem;
-  margin-bottom: 0.8rem;
-  border-left: 3px solid #1e90ff;
-  padding-left: 10px;
-}
-
-/* =========================
-   COMMISSION：テキスト
-========================= */
-.commission-page p {
-  color: #e6e6e6;
-  line-height: 1.9;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-/* =========================
-   COMMISSION：リスト（◆ 統一）
-========================= */
-.commission-page ul {
-  margin-left: 1rem;
-  margin-bottom: 1.2rem;
-}
-
-.commission-page li {
-  list-style: "◆ ";
-  color: #dcdcdc;
-  margin-bottom: 0.4rem;
-}
-
-/* =========================
-   COMMISSION：料金パネル
-========================= */
-.commission-page .price-box {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  padding: 1.4rem 1.6rem;
-  margin-bottom: 1.6rem;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
-  transition: 0.3s ease;
-}
-
-.commission-page .price-box:hover {
-  border-color: rgba(255, 255, 255, 0.28);
-  box-shadow: 0 0 18px rgba(255, 255, 255, 0.18);
-}
-
-/* =========================
-   COMMISSION：料金表（表デザイン）
-========================= */
-.commission-page .price-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1.6rem;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.commission-page .price-table th,
-.commission-page .price-table td {
-  padding: 14px 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  color: #eaeaea;
-  text-align: left;
-}
-
-.commission-page .price-table th {
-  background: rgba(255, 255, 255, 0.06);
-  color: #9fcfff;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-}
-
-.commission-page .price-table tr:hover {
-  background: rgba(255, 255, 255, 0.06);
-}
-
-/* =========================
-   COMMISSION：STEP（依頼の流れ）
-========================= */
-.commission-page .step-box {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  padding: 1.4rem 1.6rem;
-  margin-bottom: 1.2rem;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
-  transition: 0.3s ease;
-}
-
-.commission-page .step-box:hover {
-  border-color: rgba(255, 255, 255, 0.28);
-  box-shadow: 0 0 18px rgba(255, 255, 255, 0.18);
-}
-
-.commission-page .step-title {
-  font-size: 1.2rem;
-  color: #9fcfff;
-  margin-bottom: 0.4rem;
-  letter-spacing: 0.05em;
-}
-
-.commission-page .step-desc {
-  color: #dcdcdc;
-  line-height: 1.8;
-}
-
-/* =========================
-   COMMISSION：注意事項
-========================= */
-.commission-page .notice-box {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  padding: 1.4rem 1.6rem;
-  margin-bottom: 1.2rem;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
-}
-
-.commission-page .notice-box li {
-  list-style: "◆ ";
-  margin-bottom: 0.5rem;
-  color: #dcdcdc;
-  line-height: 1.9;
-}
-
-/* =========================
-   COMMISSION：ハンバーガーの ◆ を消す
-========================= */
-.commission-page .mh-nav ul li {
-  list-style: none !important;
-}
-
-/* =========================
-   スマホ対応
-========================= */
-@media (max-width: 768px) {
-  .commission-page #commission {
-    padding: 1.6rem 1.2rem;
-  }
-}
-
-
-/* Commissionページ専用調整 */
-.commission-page {
-  line-height: 1.5;
-  font-size: 0.95rem;
-}
-
-/* セクション間の余白を詰める */
-.commission-page section {
-  margin-bottom: 1.6rem;
-}
-
-/* 見出しと本文の距離を近づける */
-.commission-page h2,
-.commission-page h3 {
-  margin-bottom: 0.4rem;
-}
-
-/* リスト項目の行間を調整 */
-.commission-page ul,
-.commission-page li {
-  margin-bottom: 0.3rem;
-}
-
-/* スマホ時のフォントサイズ微調整 */
-@media (max-width: 768px) {
-  .commission-page {
-    font-size: 0.9rem;
-  }
-  .commission-page h2 {
-    font-size: 1.05rem;
-  }
-}
-
-/* =========================
-   CONTACT：フォームパネル
+   Contact（新テーマ）
 ========================= */
 .contact-page section {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
-  padding: 2rem 1.6rem;
-  margin: 2rem auto;
-  max-width: 1080px;
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-/* タイトル */
 .contact-page h2 {
   text-align: center;
   font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  color: #9fcfff;
+  color: #333;
   margin-bottom: 1.8rem;
-  border-bottom: 2px solid #1e90ff;
-  display: inline-block;
+  border-bottom: 2px solid #e5e5e5;
   padding-bottom: 6px;
 }
 
-/* フォーム本体 */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-/* ラベル */
 .contact-form label {
-  color: #9fcfff;
-  font-size: 1rem;
-  letter-spacing: 0.05em;
+  color: #333;
 }
 
-/* 入力欄 */
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.05);
-  color: #eaeaea;
-  font-size: 1rem;
-  outline: none;
-  transition: 0.3s ease;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #333;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #1e90ff;
-  box-shadow: 0 0 12px rgba(30, 144, 255, 0.35);
+  border-color: #888;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
 }
 
-/* テキストエリア */
-.contact-form textarea {
-  min-height: 160px;
-  resize: vertical;
-}
-
-/* 送信ボタン */
 .contact-form button {
-  padding: 12px 24px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #9fcfff;
-  font-size: 1rem;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  transition: 0.3s ease;
+  background: #333;
+  color: #fff;
+  border: none;
 }
 
 .contact-form button:hover {
-  color: #ffffff;
-  border-color: rgba(30, 144, 255, 0.6);
-  box-shadow: 0 0 18px rgba(30, 144, 255, 0.45);
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .contact-page section {
-    padding: 1.6rem 1.2rem;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 0.9rem;
-  }
-
-  .contact-form button {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
+  background: #000;
 }
 
