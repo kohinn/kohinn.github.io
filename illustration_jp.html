@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>イラスト | Kohinn</title>
+  <title>Illustration | Kohinn</title>
+
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="illustration-page">
 
 <header class="mh-header">
   <div class="mh-container">
@@ -18,7 +19,7 @@
     </button>
 
     <div class="mh-logo">
-      <a href="index_jp.html">kohinn</a>
+      <a href="index_jp.html">Kohinn</a>
     </div>
 
     <div class="language-switch">
@@ -30,49 +31,60 @@
         <li><a href="index_jp.html">Home</a></li>
         <li><a href="illustration_jp.html">Illustration</a></li>
         <li><a href="about_jp.html">About</a></li>
-        <li><a href="Contact_jp.html">Contact</a></li>
+        <li><a href="contact_jp.html">Contact</a></li>
       </ul>
     </nav>
 
   </div>
 </header>
 
-
-
 <main>
 
-  <section id="illustration" class="portfolio-section fade-in">
-    <h2>Illustration</h2>
+<section id="illustration">
+  <h2>Illustration</h2>
 
-    <div class="illustration-grid" id="illustrationGrid">
-
-      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki_udekimi_37.webp"></div>
-      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp"></div>
-      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp"></div>
-      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp"></div>
-      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp"></div>
-      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp"></div>
-      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp"></div>
-      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki3 (1).webp"></div>
-      <div class="card"><img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/siba_brlkj.webp"></div>
-
+  <div class="illustration-grid">
+    <!-- ここにカードを追加していく -->
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki_udekimi_37.webp" alt="">
     </div>
-  </section>
+
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp" alt="">
+    </div>
+
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" alt="">
+    </div>
+
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp" alt="">
+    </div>
+
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp" alt="">
+    </div>
+
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp" alt="">
+    </div>
+
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp" alt="">
+    </div>
+  </div>
+</section>
 
 </main>
 
-<div id="modal" class="modal" aria-hidden="true">
-  <button class="modal-close">✕</button>
-  <img id="modal-img" class="modal-content">
-</div>
-
 <footer class="footer-refined">
   <div class="footer-inner">
+
     <nav class="footer-nav">
       <a href="index_jp.html">Home</a>
       <a href="illustration_jp.html">Illustration</a>
       <a href="about_jp.html">About</a>
-      <a href="Contact_jp.html">Contact</a>
+      <a href="contact_jp.html">Contact</a>
     </nav>
 
     <div class="footer-sns">
@@ -83,49 +95,17 @@
       <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
     </div>
 
-    <p class="footer-copy">© 2025–2026 Kohinn All rights reserved.</p>
+    <p class="footer-copy">
+      © 2025–2026 Kohinn. All rights reserved.
+    </p>
+
   </div>
 </footer>
 
 <script>
-/* =========================
-   モーダル（魔法科完全一致）
-========================= */
-document.querySelectorAll('.card img').forEach(img => {
-  img.addEventListener('click', () => {
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-
-    modalImg.src = img.src;
-    modal.classList.add('show');
-  });
-});
-
-document.querySelector('.modal-close').addEventListener('click', () => {
-  document.getElementById('modal').classList.remove('show');
-});
-
-/* =========================
-   画像シャッフル
-========================= */
-document.addEventListener('DOMContentLoaded', () => {
-  const grid = document.getElementById('illustrationGrid');
-  const items = Array.from(grid.children);
-  for (let i = items.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [items[i], items[j]] = [items[j], items[i]];
-  }
-  items.forEach(item => grid.appendChild(item));
-});
-
-/* =========================
-   ハンバーガー（Illustration 専用）
-========================= */
 document.addEventListener("DOMContentLoaded", () => {
   const burger = document.getElementById("burgerBtn");
   const nav = document.getElementById("navMenu");
-
-  if (!burger || !nav) return;
 
   burger.addEventListener("click", () => {
     burger.classList.toggle("active");
