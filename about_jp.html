@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About</title>
+  <title>About | Kohinn</title>
+
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body class="about-page">
@@ -30,57 +31,61 @@
         <li><a href="index_jp.html">Home</a></li>
         <li><a href="illustration_jp.html">Illustration</a></li>
         <li><a href="about_jp.html">About</a></li>
-        <li><a href="Contact_jp.html">Contact</a></li>
+        <li><a href="contact_jp.html">Contact</a></li>
       </ul>
     </nav>
 
   </div>
 </header>
 
-
 <main>
 
-  <!-- プロフィール（Home と完全同じ構造） -->
-  <section id="about">
-    <h2>プロフィール</h2>
+<section id="about">
+  <h2>プロフィール</h2>
 
-    <div class="about-wrapper">
+  <div class="about-wrapper">
+    <div class="about-text">
+      <p>独学でイラストを学び、現在はフルタイムの仕事と両立しながら活動しているイラストレーターです。</p>
+      <p>キャラクターイラスト、キャラクターデザインを中心に制作しています。個人依頼・企業様からのご依頼に対応しています。</p>
 
-      <div class="about-text">
-        <p>独学でイラストを学び、現在はフルタイムの仕事と両立しながら活動しているイラストレーターです。</p>
-        <p>キャラクターイラスト、キャラクターデザインを中心に制作しています。個人依頼・企業様からのご依頼に対応しています。</p>
+      <h3 class="section-title">対応領域</h3>
+      <ul>
+        <li>キャラクターデザイン</li>
+        <li>キャラクターイラスト（立ち絵 / キービジュアル）</li>
+        <li>二次創作 / ファンアート</li>
+      </ul>
 
-        <h3 class="section-title">対応領域</h3>
-        <ul>
-          <li>キャラクターデザイン</li>
-          <li>キャラクターイラスト（立ち絵 / キービジュアル）</li>
-          <li>二次創作 / ファンアート</li>
-        </ul>
+      <h3 class="section-title">使用ソフト</h3>
+      <ul>
+        <li>CLIP STUDIO PAINT</li>
+      </ul>
 
-        <h3 class="section-title">使用ソフト</h3>
-        <ul>
-          <li>CLIP STUDIO PAINT</li>
-        </ul>
-      </div>
-
-     <img class="thumbnail"
-     src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/kohinn_5.webp"
-     alt="Profile Image">
-
-      </div>
-
+      <h3 class="section-title">活動スタイル</h3>
+      <ul>
+        <li>丁寧なヒアリングと迅速なレスポンス</li>
+        <li>海外案件にも対応可能</li>
+        <li>SNSでの発信・作品公開を継続</li>
+      </ul>
     </div>
-  </section>
+
+    <div class="about-image">
+      <img class="thumbnail" loading="lazy"
+        src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/kohinn_5.webp"
+        alt="Kohinnのプロフィール画像">
+    </div>
+  </div>
+</section>
 
 </main>
 
 <footer class="footer-refined">
   <div class="footer-inner">
+
     <nav class="footer-nav">
       <a href="index_jp.html">Home</a>
-      <a href="illustration.html">Illustration</a>
+      <a href="illustration_jp.html">Illustration</a>
       <a href="about_jp.html">About</a>
-      <a href="Contact_jp.html">Contact</a>
+      <a href="contact_jp.html">Contact</a>
     </nav>
 
     <div class="footer-sns">
@@ -91,19 +96,17 @@
       <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
     </div>
 
-    <p class="footer-copy">© 2025–2026 Kohinn All rights reserved.</p>
+    <p class="footer-copy">
+      © 2025–2026 Kohinn. All rights reserved.
+    </p>
+
   </div>
 </footer>
 
 <script>
-/* =========================
-   ハンバーガー（全ページ共通・魔法科完全一致）
-========================= */
 document.addEventListener("DOMContentLoaded", () => {
   const burger = document.getElementById("burgerBtn");
   const nav = document.getElementById("navMenu");
-
-  if (!burger || !nav) return;
 
   burger.addEventListener("click", () => {
     burger.classList.toggle("active");
@@ -117,10 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
 </script>
-
-
 
 </body>
 </html>
+
