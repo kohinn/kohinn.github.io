@@ -291,5 +291,32 @@ section {
     font-size: 0.9rem;
   }
 }
+/* =========================
+   Home：Hero画像（最適サイズ）
+========================= */
+
+.home-page .hero-img {
+  height: 180px;        /* PCでの適切な高さ */
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-page .hero-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* スマホ最適化 */
+@media (max-width: 768px) {
+  .home-page .hero-img {
+    height: 140px;      /* スマホでの最適サイズ */
+  }
+}
 
 
