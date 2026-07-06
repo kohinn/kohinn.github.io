@@ -1065,3 +1065,20 @@ section {
   box-shadow: 0 0 18px rgba(30, 144, 255, 0.45);
   transform: translateY(-2px);
 }
+
+@media (max-width: 768px) {
+  .contact-page section {
+    padding: 1.6rem 1.2rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .contact-form button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
