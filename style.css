@@ -1,5 +1,5 @@
 /* =========================
-   Base（新テーマ：Minimal Light）
+   Base（Minimal Light）
 ========================= */
 body {
   font-family: 'Noto Sans JP', sans-serif;
@@ -7,7 +7,7 @@ body {
   line-height: 1.9;
   letter-spacing: 0.02em;
   padding-top: 70px;
-  background: #f7f7f7; /* 明るい背景 */
+  background: #f7f7f7;
   color: #333;
   overflow-x: hidden;
 }
@@ -22,8 +22,15 @@ section {
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
+@media (max-width: 768px) {
+  section {
+    margin: 1.4rem auto;
+    padding: 1.4rem 1rem;
+  }
+}
+
 /* =========================
-   Header（新テーマ）
+   Header
 ========================= */
 .mh-header {
   position: fixed;
@@ -76,7 +83,7 @@ section {
   top: 0;
   left: 0;
   width: 80%;
-  max-width: 360px;
+  max-width: 320px;
   height: 100vh;
   background: #ffffff;
   border-right: 1px solid #e5e5e5;
@@ -95,15 +102,15 @@ section {
 .mh-nav ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 0 40px;
+  margin: 0 0 0 32px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 }
 
 .mh-nav ul li a {
   color: #333;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-decoration: none;
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 6px;
@@ -115,7 +122,7 @@ section {
 }
 
 /* =========================
-   Footer（新テーマ）
+   Footer
 ========================= */
 .footer-refined {
   background: #fafafa;
@@ -144,7 +151,7 @@ section {
 }
 
 /* =========================
-   Illustration（新テーマ）
+   Illustration
 ========================= */
 #illustration h2 {
   text-align: center;
@@ -158,7 +165,6 @@ section {
 .illustration-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 0;
   border: 1px solid #e5e5e5;
   border-radius: 8px;
   overflow: hidden;
@@ -182,8 +188,14 @@ section {
   filter: brightness(1.05);
 }
 
+@media (max-width: 768px) {
+  .illustration-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* =========================
-   Modal（新テーマ）
+   Modal
 ========================= */
 .modal {
   display: none;
@@ -212,7 +224,7 @@ section {
 }
 
 /* =========================
-   Contact（新テーマ）
+   Contact
 ========================= */
 .contact-page section {
   background: #fff;
@@ -229,8 +241,15 @@ section {
   padding-bottom: 6px;
 }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
 .contact-form label {
   color: #333;
+  font-size: 1rem;
 }
 
 .contact-form input,
@@ -238,6 +257,8 @@ section {
   background: #fff;
   border: 1px solid #ccc;
   color: #333;
+  padding: 12px 14px;
+  border-radius: 8px;
 }
 
 .contact-form input:focus,
@@ -246,13 +267,29 @@ section {
   box-shadow: 0 0 6px rgba(0,0,0,0.1);
 }
 
+.contact-form textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
 .contact-form button {
   background: #333;
   color: #fff;
   border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .contact-form button:hover {
   background: #000;
 }
+
+@media (max-width: 768px) {
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+}
+
 
