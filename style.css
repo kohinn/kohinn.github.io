@@ -100,33 +100,29 @@ section {
 }
 
 /* =========================
-   Footer
+   Footer（中央揃え）
 ========================= */
+
 .footer-refined {
   background: #fafafa;
   border-top: 1px solid #e5e5e5;
   padding: 1.6rem 1rem;
   text-align: center;
-  color: #666;
 }
 
-.footer-nav a,
-.footer-sns a {
-  color: #666;
-  text-decoration: none;
-  margin: 0 0.4rem;
-}
-
-.footer-nav a:hover,
-.footer-sns a:hover {
-  color: #000;
+.footer-nav,
+.footer-sns {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
 }
 
 .footer-copy {
-  color: #999;
-  font-size: 0.85rem;
   margin-top: 0.6rem;
+  color: #999;
 }
+
 
 /* =========================
    Illustration
