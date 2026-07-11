@@ -1019,5 +1019,18 @@ section,
 .mh-burger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
+/* =========================
+   PC横画面レイアウト
+========================= */
+@media (min-width: 1024px) {
+  .mh-nav ul {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    gap: 2rem 4rem;
+  }
+
+  .mh-nav ul li a {
+    font-size: 1.6rem;
+  }
+}
 
 
