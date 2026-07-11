@@ -855,29 +855,41 @@ section,
 }
 
 /* =========================
-   Home：レイアウト中央揃え統一
+   Home：イラスト以降の中央揃え修正
 ========================= */
 
-/* 全体のコンテンツ幅を統一 */
-main {
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-/* イラスト・News・リンクの箱を同じ幅で中央に */
-.hero-main,
+/* News・リンク・Contactなどをイラストと同じ中央軸に */
 .news-list,
-.link-list {
+.link-list,
+.contact-page section {
   max-width: 1080px;
   margin: 2rem auto;
+  text-align: center; /* 中身も中央寄せ */
 }
 
-/* スマホ時は少し余白を詰めて中央感を強くする */
+/* News内のテキストを中央寄せ */
+.news-items li {
+  justify-content: center;
+  text-align: center;
+}
+
+/* 日付と本文の位置を整える */
+.news-date,
+.news-text {
+  display: inline-block;
+  text-align: left; /* テキストは読みやすく左揃え */
+}
+
+/* スマホ最適化 */
 @media (max-width: 768px) {
   .news-list,
-  .link-list {
+  .link-list,
+  .contact-page section {
     margin: 1.6rem auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem;
+  }
+
+  .news-items li {
+    text-align: center;
   }
 }
