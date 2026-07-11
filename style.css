@@ -892,4 +892,8 @@ section,
   .news-items li {
     text-align: center;
   }
+   
+}
+.news-heading {
+  text-align: center;
 }
