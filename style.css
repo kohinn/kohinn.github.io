@@ -48,13 +48,13 @@ section {
   padding: 12px 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* ← 中央寄せではなく左右配置 */
   position: relative;
 }
 
 /* ロゴ中央固定 */
 .mh-logo {
-  position: absolute;
+ position: relative; /* ← absoluteを解除して自然な中央配置に */
   left: 50%;
   transform: translateX(-50%);
 }
