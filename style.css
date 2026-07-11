@@ -811,3 +811,75 @@ section,
     height: auto;
   }
 }
+
+/* =========================
+   Header：ロゴ重なり修正＋高さ揃え
+========================= */
+
+/* コンテナを中央基準に */
+.mh-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* space-between → center */
+  position: relative;
+}
+
+/* ロゴ中央固定 */
+.mh-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 言語切り替えを左上に配置 */
+.language-switch {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+}
+
+.language-switch a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.language-switch a:hover {
+  color: #000;
+}
+
+/* ハンバーガー右上固定 */
+.mh-burger {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* スマホ最適化 */
+@media (max-width: 768px) {
+  .mh-container {
+    padding: 12px 16px;
+  }
+
+  .language-switch {
+    left: 16px;
+    font-size: 0.9rem;
+  }
+
+  .mh-burger {
+    right: 16px;
+  }
+
+  .mh-logo a {
+    font-size: 1.2rem;
+  }
+}
+
