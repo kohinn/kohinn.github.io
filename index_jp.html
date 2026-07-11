@@ -35,7 +35,7 @@
 <body class="home-page">
 
 <!-- =========================
-     魔法科風ヘッダー（About と統一）
+     ヘッダー（完全修正版）
 ========================= -->
 <header class="mh-header">
   <div class="mh-container">
@@ -58,7 +58,7 @@
   </div>
 </header>
 
-<!-- ナビゲーション（ヘッダーの外でOK） -->
+<!-- ナビゲーション -->
 <nav class="mh-nav" id="navMenu">
   <ul>
     <li><a href="index_jp.html">Home</a></li>
@@ -68,14 +68,15 @@
   </ul>
 </nav>
 
+<main>
+
  <!-- メインビジュアル -->
 <section class="hero-main" aria-label="メインイラスト">
   <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki_udekimi_37.webp" 
        alt="メインイラスト" class="hero-main-img" loading="lazy">
 </section>
 
-
-  <!-- Illustration への導線 -->
+<!-- Illustration への導線 -->
 <section class="link-list">
   <ul class="link-items">
     <li>
@@ -87,7 +88,7 @@
   </ul>
 </section>
 
-  <!-- お知らせ -->
+<!-- お知らせ -->
 <section class="news-list">
   <h2 class="news-heading"><span class="news-accent">N</span>ews</h2>
 
@@ -103,11 +104,7 @@
   </ul>
 </section>
 
-
-
-
-
-  <!-- コミッション導線 -->
+<!-- コミッション導線 -->
 <section class="link-list">
   <ul class="link-items">
     <li>
@@ -116,19 +113,18 @@
         <span class="link-icon">→</span>
       </a>
     </li>
+  </ul>
 </section>
-
 
 <footer class="footer-refined">
   <div class="footer-inner">
 
- <nav class="footer-nav">
-  <a href="index_jp.html">Home</a>
-  <a href="illustration_jp.html">Illustration</a>
-  <a href="about_jp.html">About</a>
-  <a href="contact_jp.html">Contact</a>
-</nav>
-
+    <nav class="footer-nav">
+      <a href="index_jp.html">Home</a>
+      <a href="illustration_jp.html">Illustration</a>
+      <a href="about_jp.html">About</a>
+      <a href="contact_jp.html">Contact</a>
+    </nav>
 
     <div class="footer-sns">
       <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
@@ -154,42 +150,6 @@
 <a href="#" class="back-to-top" id="backToTop" aria-label="トップへ戻る">↑</a>
 
 <script>
-/* =========================
-   モーダル
-========================= */
-document.querySelectorAll('.hero-img').forEach(img => {
-  img.addEventListener('click', () => {
-    document.getElementById('modal-img').src = img.src;
-    document.getElementById('modal').classList.add('show');
-    document.getElementById('modal').setAttribute('aria-hidden', 'false');
-  });
-});
-
-document.querySelector('.modal-close').addEventListener('click', () => {
-  document.getElementById('modal').classList.remove('show');
-  document.getElementById('modal').setAttribute('aria-hidden', 'true');
-});
-
-/* =========================
-   Back to top
-========================= */
-window.addEventListener('scroll', () => {
-  const btn = document.getElementById('backToTop');
-  if (window.scrollY > 200) btn.classList.add('show');
-  else btn.classList.remove('show');
-});
-
-backToTop.addEventListener('click', (e) => {
-  e.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
-
-/* =========================
-   ハンバーガー（全ページ共通・魔法科完全一致）
-========================= */
 document.addEventListener("DOMContentLoaded", () => {
   const burger = document.getElementById("burgerBtn");
   const nav = document.getElementById("navMenu");
@@ -210,7 +170,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-
 </body>
 </html>
-
