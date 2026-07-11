@@ -168,6 +168,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+  /* =========================
+   ハンバーガー開閉（リコリス風）
+========================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.getElementById("burgerBtn");
+  const nav = document.getElementById("navMenu");
+
+  if (!burger || !nav) return;
+
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
+  });
+
+  // メニュー内リンクを押したら閉じる
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      burger.classList.remove("active");
+      nav.classList.remove("active");
+    });
+  });
+});
+
 </script>
 
 </body>
