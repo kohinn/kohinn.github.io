@@ -646,3 +646,121 @@ section {
   top: 22px;
   right: 20px;
 }
+
+/* =========================
+   ハンバーガー右側配置＋全画面モーション
+========================= */
+
+/* ハンバーガーアイコン */
+.mh-burger {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  width: 28px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.mh-burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* 開閉アニメーション */
+.mh-burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.mh-burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.mh-burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* メニュー全体を右側からフェードイン */
+.mh-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(6px);
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mh-nav.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* メニュー項目 */
+.mh-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.6rem;
+  text-align: center;
+}
+
+.mh-nav ul li a {
+  color: #333;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mh-nav ul li a:hover {
+  color: #00a8a8;
+}
+
+/* SNSリンク（PC時のみ右側固定） */
+.mh-sns {
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 10000;
+}
+
+.mh-sns a {
+  color: #00a8a8;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.mh-sns a:hover {
+  opacity: 0.7;
+}
+
+/* スマホではSNSリンクをメニュー内に統合 */
+@media (max-width: 768px) {
+  .mh-sns {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1.6rem;
+  }
+}
+
