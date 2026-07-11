@@ -883,3 +883,105 @@ section,
   }
 }
 
+/* =========================
+   ハンバーガー開閉アニメーション（リコリス風）
+========================= */
+
+/* ハンバーガーアイコン */
+.mh-burger {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  width: 28px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.mh-burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* 押したとき「×」に変化 */
+.mh-burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.mh-burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.mh-burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* =========================
+   メニュー全画面展開（スマホ・PC共通）
+========================= */
+
+.mh-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(6px);
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mh-nav.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* メニュー項目（スマホ） */
+.mh-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+  text-align: center;
+}
+
+.mh-nav ul li a {
+  color: #333;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mh-nav ul li a:hover {
+  color: #00a8a8;
+}
+
+/* =========================
+   PC横画面専用レイアウト
+========================= */
+@media (min-width: 1024px) {
+  .mh-nav ul {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    gap: 2rem 4rem;
+  }
+
+  .mh-nav ul li a {
+    font-size: 1.6rem;
+  }
+}
+
+
