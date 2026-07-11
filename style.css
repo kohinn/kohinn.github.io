@@ -854,3 +854,30 @@ section,
   color: #00a8a8;
 }
 
+/* =========================
+   Home：レイアウト中央揃え統一
+========================= */
+
+/* 全体のコンテンツ幅を統一 */
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* イラスト・News・リンクの箱を同じ幅で中央に */
+.hero-main,
+.news-list,
+.link-list {
+  max-width: 1080px;
+  margin: 2rem auto;
+}
+
+/* スマホ時は少し余白を詰めて中央感を強くする */
+@media (max-width: 768px) {
+  .news-list,
+  .link-list {
+    margin: 1.6rem auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
