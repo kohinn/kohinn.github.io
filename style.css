@@ -42,12 +42,12 @@ section {
 }
 
 .mh-container {
-  max-width: 1200px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 12px 20px;
+  padding: 14px 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* 左右配置 */
   position: relative;
 }
 
@@ -55,6 +55,8 @@ section {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  font-weight: 600;
+  font-size: 1.4rem;
 }
 
 .mh-logo a {
@@ -64,8 +66,9 @@ section {
   text-decoration: none;
 }
 
-.language-switch a {
-  color: #666;
+.language-switch {
+  position: relative;
+  left: 0;
 }
 
 .language-switch a:hover {
@@ -75,6 +78,11 @@ section {
 /* ハンバーガー */
 .mh-burger span {
   background: #333;
+}
+
+.mh-burger {
+  position: relative;
+  right: 0;
 }
 
 /* メニュー */
