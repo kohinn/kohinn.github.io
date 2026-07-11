@@ -705,7 +705,10 @@ section {
   color: #00a8a8;
 }
 
-/* SNSリンク（PC時のみ右側固定） */
+/* =========================
+   SNSリンク（PC右固定 / スマホはメニュー内）
+========================= */
+
 .mh-sns {
   position: fixed;
   top: 50%;
@@ -728,8 +731,8 @@ section {
   opacity: 0.7;
 }
 
-/* スマホではSNSリンクをメニュー内に統合 */
-@media (max-width: 768px) {
+/* スマホではメニュー内に移動 */
+@media (max-width: 1023px) {
   .mh-sns {
     position: static;
     flex-direction: row;
