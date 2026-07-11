@@ -622,7 +622,7 @@ section {
 }
 
 /* =========================
-   Home：リンク（Newsと統一＋アイコン）
+   Home：リンク（中央寄せ＋Newsと統一）
 ========================= */
 
 .link-list {
@@ -643,13 +643,15 @@ section {
   border-bottom: 1px solid #e5e5e5;
 }
 
+/* ★ 中央寄せにするポイント ★ */
 .link-text {
-  color: #00a8a8; /* Newsの日付と同じ色で統一 */
+  color: #00a8a8;
   font-size: 1rem;
   text-decoration: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;   /* ← 中央寄せ */
   align-items: center;
+  gap: 8px;                  /* テキストと矢印の間 */
   transition: opacity 0.2s ease;
 }
 
@@ -660,7 +662,6 @@ section {
 .link-icon {
   font-size: 1.2rem;
   color: #00a8a8;
-  margin-left: 8px;
 }
 
 /* スマホ最適化 */
@@ -672,4 +673,3 @@ section {
     font-size: 1.1rem;
   }
 }
-
