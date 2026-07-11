@@ -453,3 +453,46 @@ section {
     font-size: 1.1rem;
   }
 }
+
+/* =========================
+   Home：上に戻るボタン（リコリス風）
+========================= */
+
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background: #00a8a8; /* ティールカラーで統一 */
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 50px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: #008b8b;
+  transform: translateY(-3px);
+}
+
+/* スマホ最適化 */
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 16px;
+    left: 16px;
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+}
