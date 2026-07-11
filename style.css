@@ -121,34 +121,34 @@ section {
   border-bottom-color: #000;
 }
 
-/* =========================
-   Footer
-========================= */
 .footer-refined {
-  background: #fafafa;
+  background: #f9f9f9;
   border-top: 1px solid #e5e5e5;
-  padding: 1.6rem 1rem;
+  padding: 2.4rem 1rem;
   text-align: center;
-  color: #666;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
 }
 
 .footer-nav a,
 .footer-sns a {
-  color: #666;
+  color: #00a8a8;
+  font-weight: 500;
   text-decoration: none;
-  margin: 0 0.4rem;
+  margin: 0 0.6rem;
+  transition: opacity 0.3s ease;
 }
 
 .footer-nav a:hover,
 .footer-sns a:hover {
-  color: #000;
+  opacity: 0.7;
 }
 
 .footer-copy {
+  margin-top: 1rem;
+  font-size: 0.9rem;
   color: #999;
-  font-size: 0.85rem;
-  margin-top: 0.6rem;
 }
+
 
 /* =========================
    Illustration
