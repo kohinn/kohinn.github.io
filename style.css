@@ -899,54 +899,61 @@ section,
 }
 
 /* =========================
-   Header：中央軸揃え修正
+   Header：中央揃え完全修正
 ========================= */
 
-/* コンテナを中央基準に */
 .mh-container {
   max-width: 1080px;
   margin: 0 auto;
   padding: 12px 20px;
   display: flex;
   align-items: center;
-  justify-content: center; /* space-between → center */
+  justify-content: center;
   position: relative;
 }
 
-/* ロゴ中央固定 */
 .mh-logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* 言語切り替えリンクをロゴの左側に自然配置 */
 .language-switch {
   position: absolute;
   left: 20px;
   top: 22px;
 }
 
-/* ハンバーガー右上固定 */
 .mh-burger {
   position: absolute;
   top: 22px;
   right: 20px;
 }
 
-/* スマホ最適化 */
+/* スマホ */
 @media (max-width: 768px) {
-  .mh-container {
-    justify-content: center;
-  }
-
   .language-switch {
     left: 16px;
     top: 18px;
   }
-
   .mh-burger {
     right: 16px;
     top: 18px;
   }
+}
+
+/* =========================
+   イラスト以降の中央揃え
+========================= */
+
+.hero-main,
+.news-list,
+.link-list,
+.contact-page section {
+  max-width: 1080px;
+  margin: 2rem auto;
+}
+
+.news-heading {
+  text-align: center;
 }
