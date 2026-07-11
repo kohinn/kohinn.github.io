@@ -30,95 +30,73 @@ section {
 }
 
 /* =========================
-   Header
+   Header（PC・スマホ統一）
 ========================= */
+
 .mh-header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #ffffff;
+  background: #fff;
   border-bottom: 1px solid #e5e5e5;
   z-index: 9999;
 }
 
 .mh-container {
-  max-width: 1200px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 12px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
 }
 
+/* ロゴ中央固定 */
 .mh-logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.mh-logo a {
-  color: #333;
-  font-size: 1.4rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.language-switch a {
-  color: #666;
-}
-
-.language-switch a:hover {
-  color: #000;
-}
-
-/* ハンバーガー */
-.mh-burger span {
-  background: #333;
-}
-
-/* メニュー */
-.mh-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 80%;
-  max-width: 320px;
-  height: 100vh;
-  background: #ffffff;
-  border-right: 1px solid #e5e5e5;
-  transform: translateX(-100%);
-  opacity: 0;
-  transition: transform 0.45s ease, opacity 0.45s ease;
-  z-index: 9998;
-  padding-top: 100px;
-}
-
-.mh-nav.active {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.mh-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 0 32px;
-  display: flex;
+/* ハンバーガー右上固定（スマホ） */
+.mh-burger {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 28px;
+  height: 22px;
+  display: none;
   flex-direction: column;
-  gap: 24px;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 10000;
 }
 
-.mh-nav ul li a {
-  color: #333;
-  font-size: 1.4rem;
-  text-decoration: none;
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 6px;
+.mh-burger span {
+  height: 3px;
+  width: 100%;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-.mh-nav ul li a:hover {
-  color: #000;
-  border-bottom-color: #000;
+/* 開閉アニメーション */
+.mh-burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.mh-burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.mh-burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* スマホでハンバーガー表示 */
+@media (max-width: 1023px) {
+  .mh-burger {
+    display: flex;
+  }
 }
 
 /* =========================
