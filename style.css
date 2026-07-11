@@ -764,4 +764,58 @@ section {
   }
 }
 
+/* =========================
+   スマホ・PC共通：ヘッダー位置調整
+========================= */
+
+/* ロゴを常に中央 */
+.mh-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ハンバーガーを右上に固定（スマホ・タブレット） */
+@media (max-width: 1023px) {
+  .mh-burger {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    display: flex;
+  }
+}
+
+/* PCではハンバーガー非表示（左固定メニュー優先） */
+@media (min-width: 1024px) {
+  .mh-burger {
+    display: none;
+  }
+}
+
+/* =========================
+   メインコンテンツ中央揃え
+========================= */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* セクションと画像を中央寄せ */
+section,
+.hero-main,
+.hero-main-img {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* スマホのイラストサイズ調整 */
+@media (max-width: 768px) {
+  .hero-main-img {
+    width: 100%;
+    height: auto;
+  }
+}
 
