@@ -788,3 +788,69 @@ section,
     height: auto;
   }
 }
+
+/* =========================
+   Navigation（PC左固定 / スマホ右フェード）
+========================= */
+
+.mh-nav {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  background: #fff;
+  z-index: 9998;
+  transition: 0.4s ease;
+}
+
+/* PC：左固定 */
+@media (min-width: 1024px) {
+  .mh-nav {
+    left: 0;
+    width: 240px;
+    transform: translateX(0);
+    opacity: 1;
+    border-right: 1px solid #e5e5e5;
+  }
+}
+
+/* スマホ：右フェードイン */
+@media (max-width: 1023px) {
+  .mh-nav {
+    right: 0;
+    width: 100%;
+    transform: scale(0.95);
+    opacity: 0;
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mh-nav.active {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* メニュー項目 */
+.mh-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.6rem;
+  text-align: center;
+}
+
+.mh-nav ul li a {
+  color: #333;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mh-nav ul li a:hover {
+  color: #00a8a8;
+}
+
