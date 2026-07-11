@@ -496,3 +496,86 @@ section {
     padding: 8px 12px;
   }
 }
+
+/* =========================
+   ハンバーガーメニュー（PC・スマホ統一）
+========================= */
+
+.mh-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e5e5e5;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 9998;
+  padding-top: 100px;
+}
+
+.mh-nav.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.mh-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mh-nav ul li a {
+  color: #333;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 6px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.mh-nav ul li a:hover {
+  color: #00a8a8; /* ティールカラーで統一 */
+  border-bottom-color: #00a8a8;
+}
+
+/* PCでは常時表示（左固定） */
+@media (min-width: 1024px) {
+  .mh-nav {
+    transform: translateX(0);
+    opacity: 1;
+    width: 240px;
+    max-width: none;
+    position: fixed;
+  }
+
+  .mh-burger {
+    display: none; /* PCではハンバーガー非表示 */
+  }
+
+  .mh-container {
+    justify-content: center;
+  }
+}
+
+/* スマホではスライド式 */
+@media (max-width: 1023px) {
+  .mh-nav {
+    width: 80%;
+    max-width: 320px;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  .mh-nav.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
