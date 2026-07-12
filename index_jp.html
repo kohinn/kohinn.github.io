@@ -15,12 +15,12 @@
   </script>
 
   <!-- SEO -->
-  <meta name="description" content="Kohinn は、キャラクターイラスト・キャラクターデザインを中心に活動するイラストレーターです。個人依頼、企業案件、海外案件など幅広く対応しています。">
-  <meta name="keywords" content="Kohinn, イラスト, キャラクターデザイン, アニメ, 二次創作, ファンアート, VTuber, 個人依頼, ポートフォリオ">
+  <meta name="description" content="Kohinn は、キャラクターイラスト・キャラクターデザインを中心に活動するイラストレーターです。">
+  <meta name="keywords" content="Kohinn, イラスト, キャラクターデザイン, アニメ, VTuber, ポートフォリオ">
 
   <!-- OGP -->
   <meta property="og:title" content="Kohinn | キャラクターイラスト & ポートフォリオ">
-  <meta property="og:description" content="キャラクターイラスト・キャラクターデザインを中心に、個人依頼や企業案件、海外案件にも対応しています。">
+  <meta property="og:description" content="キャラクターイラスト・キャラクターデザインを中心に活動しています。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kohinn.github.io/">
   <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
@@ -35,44 +35,46 @@
 <body class="home-page">
 
 <!-- =========================
-     ヘッダー（完全修正版）
+     ヘッダー（高さ72px）
 ========================= -->
 <header class="mh-header">
   <div class="mh-container">
 
-    <!-- ハンバーガー -->
-    <button class="mh-burger" id="burgerBtn">
-      <span></span><span></span><span></span>
-    </button>
-
-    <!-- ロゴ -->
+    <!-- ロゴ（中央） -->
     <div class="mh-logo">
       <a href="index.html">Kohinn</a>
     </div>
 
-    <!-- 言語切り替え -->
+    <!-- 言語切替（左） -->
     <div class="language-switch">
       <a href="index_jp.html">JP</a> / <a href="index.html">EN</a>
     </div>
 
   </div>
+
+  <!-- ハンバーガー（fixedなのでヘッダー外に置く） -->
+  <button class="mh-burger" id="burgerBtn">
+    <span></span><span></span><span></span>
+  </button>
 </header>
 
-<!-- ナビゲーション -->
+<!-- =========================
+     全画面メニュー（スマホ縦 / PC横）
+========================= -->
 <nav class="mh-nav" id="navMenu">
   <ul>
     <li><a href="index_jp.html">Home</a></li>
     <li><a href="illustration_jp.html">Illustration</a></li>
     <li><a href="about_jp.html">About</a></li>
-    <li><a href="contact_jp.html">Contact</a></li> 
+    <li><a href="contact_jp.html">Contact</a></li>
   </ul>
 </nav>
 
 <main>
 
- <!-- メインビジュアル -->
+<!-- メインビジュアル -->
 <section class="hero-main" aria-label="メインイラスト">
-  <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki_udekimi_37.webp" 
+  <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki_udekimi_37.webp"
        alt="メインイラスト" class="hero-main-img" loading="lazy">
 </section>
 
@@ -95,7 +97,7 @@
   <ul class="news-items">
     <li>
       <span class="news-date">2026.07.07</span>
-      <span class="news-text">現在、お仕事募集しております。個人様・企業様からのご依頼に対応しています。</span>
+      <span class="news-text">現在、お仕事募集しております。</span>
     </li>
     <li>
       <span class="news-date">2026.07.03</span>
@@ -116,6 +118,9 @@
   </ul>
 </section>
 
+<!-- =========================
+     フッター
+========================= -->
 <footer class="footer-refined">
   <div class="footer-inner">
 
@@ -141,21 +146,14 @@
   </div>
 </footer>
 
-<!-- Modal -->
-<div id="modal" class="modal" aria-hidden="true">
-  <button class="modal-close" aria-label="閉じる">✕</button>
-  <img class="modal-content" id="modal-img" alt="">
-</div>
-
-<a href="#" class="back-to-top" id="backToTop" aria-label="トップへ戻る">↑</a>
-
+<!-- =========================
+     JS：ハンバーガー開閉
+========================= -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const burger = document.getElementById("burgerBtn");
   const nav = document.getElementById("navMenu");
 
-  if (!burger || !nav) return;
-
   burger.addEventListener("click", () => {
     burger.classList.toggle("active");
     nav.classList.toggle("active");
@@ -168,30 +166,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-  /* =========================
-   ハンバーガー開閉（リコリス風）
-========================= */
-document.addEventListener("DOMContentLoaded", () => {
-  const burger = document.getElementById("burgerBtn");
-  const nav = document.getElementById("navMenu");
-
-  if (!burger || !nav) return;
-
-  burger.addEventListener("click", () => {
-    burger.classList.toggle("active");
-    nav.classList.toggle("active");
-  });
-
-  // メニュー内リンクを押したら閉じる
-  nav.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      burger.classList.remove("active");
-      nav.classList.remove("active");
-    });
-  });
-});
-
 </script>
 
 </body>
