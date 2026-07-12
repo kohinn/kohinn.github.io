@@ -380,4 +380,24 @@ section {
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
+/* =========================
+   スマホ時の中央軸補正
+========================= */
+@media (max-width: 768px) {
+  section,
+  .link-list,
+  .news-list {
+    margin: 1.4rem auto;
+    padding: 1.4rem 1.4rem; /* ← 左右を同じにする */
+  }
+
+  .hero-main {
+    padding: 0 1.4rem; /* ← イラストも同じ余白に */
+  }
+
+  .hero-main-img {
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+}
 
