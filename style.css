@@ -108,7 +108,7 @@ section {
   width: 100%;
   background: #333;
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.18s ease-out; /* ← 反応速度改善 */
 }
 
 /* × に変化 */
@@ -133,18 +133,26 @@ section {
   height: 100vh;
   background: linear-gradient(180deg, #ffffff 0%, #f2f2f2 100%);
   backdrop-filter: blur(6px);
-  transform: scale(0.95);
+
+  /* 初期状態（軽くする） */
+  transform: scale(0.98); /* ← 0.95 → 0.98 に変更 */
   opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+
+  /* アニメーション高速化 */
+  transition: transform 0.22s ease-out, opacity 0.22s ease-out;
   z-index: 9998;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  pointer-events: none; /* ← クリック判定改善 */
 }
 
 .mh-nav.active {
   transform: scale(1);
   opacity: 1;
+  pointer-events: auto; /* ← 開いたらクリック可能 */
 }
 
 /* スマホ：縦並び */
