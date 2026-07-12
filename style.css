@@ -285,3 +285,80 @@ section {
   color: #999;
   font-size: 0.85rem;
 }
+
+/* =========================
+   レイアウト中央揃え＋リコリス風余白調整
+========================= */
+
+/* イラストを画面いっぱいに */
+.hero-main {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-main-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+/* illustrationページへのリンクを中央揃え */
+.link-list {
+  max-width: 1080px;
+  margin: 2rem auto;
+  text-align: center;
+}
+.link-text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  color: #00a8a8;
+  text-decoration: none;
+  border: 1px solid #00a8a8;
+  border-radius: 50px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+.link-text:hover {
+  background: #00a8a8;
+  color: #fff;
+}
+
+/* Newsセクション中央揃え＋見やすい色 */
+.news-list {
+  max-width: 1080px;
+  margin: 2rem auto;
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.6rem 1.4rem;
+}
+.news-heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #00a8a8;
+  margin-bottom: 1.6rem;
+}
+.news-date {
+  color: #00a8a8;
+  font-weight: 600;
+}
+.news-text {
+  color: #333;
+  line-height: 1.8;
+}
+
+/* 全体の中央軸統一 */
+section {
+  max-width: 1080px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+
