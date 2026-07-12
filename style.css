@@ -361,6 +361,22 @@ section {
   text-align: center;
 }
 
+.hero-main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-main-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
 
 
 
