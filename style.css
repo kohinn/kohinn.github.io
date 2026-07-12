@@ -378,5 +378,14 @@ section {
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
+section,
+.link-list,
+.news-list {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 2rem 0;
+  text-align: center;
+}
 
 
