@@ -5,124 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kohinn | キャラクターイラスト & ポートフォリオ</title>
 
-  <!-- Google tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-V286NXLCKF');
-  </script>
-
-  <!-- SEO -->
   <meta name="description" content="Kohinn は、キャラクターイラスト・キャラクターデザインを中心に活動するイラストレーターです。">
-  <meta name="keywords" content="Kohinn, イラスト, キャラクターデザイン, アニメ, VTuber, ポートフォリオ">
-
-  <!-- OGP -->
   <meta property="og:title" content="Kohinn | キャラクターイラスト & ポートフォリオ">
   <meta property="og:description" content="キャラクターイラスト・キャラクターデザインを中心に活動しています。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kohinn.github.io/">
   <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="home-page">
 
-<!-- =========================
-     ヘッダー（高さ72px）
-========================= -->
-<header class="mh-header">
-  <div class="mh-container">
-
-    <!-- ロゴ（中央） -->
-    <div class="mh-logo">
-      <a href="index.html">Kohinn</a>
-    </div>
-
-    <!-- 言語切替（左） -->
-    <div class="language-switch">
-      <a href="index_jp.html">JP</a> / <a href="index.html">EN</a>
-    </div>
-
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="index_jp.html">Kohinn</a></div>
+    <div class="lang"><a href="index_jp.html">JP</a> / <a href="index.html">EN</a></div>
+    <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
   </div>
-
-  <!-- ハンバーガー（fixedなのでヘッダー外に置く） -->
-  <button class="mh-burger" id="burgerBtn">
-    <span></span><span></span><span></span>
-  </button>
 </header>
 
-<!-- =========================
-     全画面メニュー（スマホ縦 / PC横）
-========================= -->
-<nav class="mh-nav" id="navMenu">
-  <ul>
-    <li><a href="index_jp.html">Home</a></li>
-    <li><a href="illustration_jp.html">Illustration</a></li>
-    <li><a href="about_jp.html">About</a></li>
-    <li><a href="contact_jp.html">Contact</a></li>
-  </ul>
+<nav class="menu" id="navMenu">
+  <div class="menu-inner">
+    <h2 class="menu-title">MENU</h2>
+
+    <ul class="menu-nav">
+      <li><a href="index_jp.html">Home</a></li>
+      <li><a href="illustration_jp.html">Illustration</a></li>
+      <li><a href="about_jp.html">About</a></li>
+      <li><a href="contact_jp.html">Contact</a></li>
+    </ul>
+
+    <hr>
+
+    <ul class="menu-follow">
+      <li><a href="https://twitter.com/V_Kohinn" target="_blank">X ↗</a></li>
+      <li><a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv ↗</a></li>
+      <li><a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram ↗</a></li>
+      <li><a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky ↗</a></li>
+      <li><a href="https://artstation.com/kohinn" target="_blank">ArtStation ↗</a></li>
+    </ul>
+
+    <hr>
+
+    <div class="menu-business">
+      <a href="contact_jp.html">Contact →</a>
+    </div>
+  </div>
 </nav>
 
 <main>
 
-<!-- メインビジュアル -->
-<section class="hero-main" aria-label="メインイラスト">
-  <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki_udekimi_37.webp"
-       alt="メインイラスト" class="hero-main-img" loading="lazy">
-</section>
+  <!-- Hero -->
+  <section class="hero" aria-label="メインイラスト">
+    <img src="img/hero.webp" alt="メインイラスト" class="hero-img">
+    <div class="hero-text">
+      <h1>Kohinn</h1>
+      <p>Character Illustrator</p>
+      <span class="scroll">Scroll</span>
+    </div>
+  </section>
 
-<!-- Illustration への導線 -->
-<section class="link-list">
-  <ul class="link-items">
-    <li>
-      <a href="illustration_jp.html" class="link-text">
-        illustrationページへ
-        <span class="link-icon">→</span>
-      </a>
-    </li>
-  </ul>
-</section>
+  <!-- Illustration -->
+  <section class="section-illustration">
+    <h2>ILLUSTRATION</h2>
+    <p>作品一覧</p>
+    <a href="illustration_jp.html" class="arrow-link">View Gallery →</a>
+  </section>
 
-<!-- お知らせ -->
-<section class="news-list">
-  <h2 class="news-heading"><span class="news-accent">N</span>ews</h2>
+  <!-- About -->
+  <section class="section-about">
+    <h2>ABOUT</h2>
+    <p>キャラクターイラストを中心に活動しています。</p>
+    <a href="about_jp.html" class="arrow-link">Read More →</a>
+  </section>
 
-  <ul class="news-items">
-    <li>
+  <!-- Commission -->
+  <section class="section-commission">
+    <h2>COMMISSION</h2>
+    <p>現在ご依頼受付中です。</p>
+    <a href="contact_jp.html" class="arrow-link">Contact →</a>
+  </section>
+
+  <!-- News -->
+  <section class="section-news">
+    <h2>NEWS</h2>
+    <div class="news-item">
       <span class="news-date">2026.07.07</span>
-      <span class="news-text">現在、お仕事募集しております。</span>
-    </li>
-    <li>
+      <p>現在ご依頼受付中です。</p>
+    </div>
+    <hr>
+    <div class="news-item">
       <span class="news-date">2026.07.03</span>
-      <span class="news-text">illustrationページに新しいイラストを追加しました。</span>
-    </li>
-  </ul>
-</section>
+      <p>作品追加</p>
+    </div>
+  </section>
 
-<!-- コミッション導線 -->
-<section class="link-list">
-  <ul class="link-items">
-    <li>
-      <a href="contact_jp.html" class="link-text">
-        Contactはこちらから
-        <span class="link-icon">→</span>
-      </a>
-    </li>
-  </ul>
-</section>
+</main>
 
-<!-- =========================
-     フッター
-========================= -->
-<footer class="footer-refined">
+<footer class="footer">
   <div class="footer-inner">
+    <div class="footer-logo">Kohinn</div>
 
     <nav class="footer-nav">
       <a href="index_jp.html">Home</a>
@@ -131,42 +114,18 @@
       <a href="contact_jp.html">Contact</a>
     </nav>
 
-    <div class="footer-sns">
+    <div class="footer-follow">
       <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
-      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
       <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
       <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
+      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
       <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
     </div>
 
-    <p class="footer-copy">
-      © 2025–2026 Kohinn. All rights reserved.
-    </p>
-
+    <p class="footer-copy">©2026 Kohinn</p>
   </div>
 </footer>
 
-<!-- =========================
-     JS：ハンバーガー開閉
-========================= -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const burger = document.getElementById("burgerBtn");
-  const nav = document.getElementById("navMenu");
-
-  burger.addEventListener("click", () => {
-    burger.classList.toggle("active");
-    nav.classList.toggle("active");
-  });
-
-  nav.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      burger.classList.remove("active");
-      nav.classList.remove("active");
-    });
-  });
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
