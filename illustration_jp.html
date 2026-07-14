@@ -3,124 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Illustration | Kohinn</title>
-
+  <title>Kohinn | Illustration</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
+<body>
 
-<body class="illustration-page">
-
-<header class="mh-header">
-  <div class="mh-container">
-
-    <button class="mh-burger" id="burgerBtn">
-      <span></span><span></span><span></span>
-    </button>
-
-    <div class="mh-logo">
-      <a href="index_jp.html">Kohinn</a>
-    </div>
-
-    <div class="language-switch">
-      <a href="illustration_jp.html">JP</a> / <a href="illustration.html">EN</a>
-    </div>
-
-    <nav class="mh-nav" id="navMenu">
-      <ul>
-        <li><a href="index_jp.html">Home</a></li>
-        <li><a href="illustration_jp.html">Illustration</a></li>
-        <li><a href="about_jp.html">About</a></li>
-        <li><a href="contact_jp.html">Contact</a></li>
-      </ul>
-    </nav>
-
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="index_jp.html">Kohinn</a></div>
+    <div class="lang"><a href="index_jp.html">JP</a> / <a href="index.html">EN</a></div>
+    <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main>
-
-<section id="illustration">
-  <h2>Illustration</h2>
-
-  <div class="illustration-grid">
-    <!-- ここにカードを追加していく -->
-    <div class="card">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/miyuki_udekimi_37.webp" alt="">
-    </div>
-
-    <div class="card">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト6ddd.webp" alt="">
-    </div>
-
-    <div class="card">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト10jk.webp" alt="">
-    </div>
-
-    <div class="card">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト4dzen.webp" alt="">
-    </div>
-
-    <div class="card">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/sunaffy.webp" alt="">
-    </div>
-
-    <div class="card">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/イラスト98 (1).webp" alt="">
-    </div>
-
-    <div class="card">
-      <img src="https://raw.githubusercontent.com/kohinn/kohinn-images/main/o9klpl (1).webp" alt="">
+<nav class="menu" id="navMenu">
+  <div class="menu-inner">
+    <h2 class="menu-title">MENU</h2>
+    <ul class="menu-nav">
+      <li><a href="index_jp.html">Home</a></li>
+      <li><a href="illustration_jp.html">Illustration</a></li>
+      <li><a href="about_jp.html">About</a></li>
+      <li><a href="contact_jp.html">Contact</a></li>
+    </ul>
+    <hr>
+    <ul class="menu-follow">
+      <li><a href="https://twitter.com/V_Kohinn" target="_blank">X ↗</a></li>
+      <li><a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv ↗</a></li>
+      <li><a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram ↗</a></li>
+      <li><a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky ↗</a></li>
+      <li><a href="https://artstation.com/kohinn" target="_blank">ArtStation ↗</a></li>
+    </ul>
+    <hr>
+    <div class="menu-business">
+      <a href="contact_jp.html">Contact →</a>
     </div>
   </div>
-</section>
+</nav>
+
+<main>
+
+  <section class="section-illustration">
+    <h1>ILLUSTRATION</h1>
+    <p>キャラクターイラストの作品一覧です。</p>
+
+    <!-- ここに作品グリッドを配置 -->
+    <div class="gallery">
+      <!-- 例 -->
+      <!-- <figure class="gallery-item">
+        <img src="img/work_01.webp" alt="作品タイトル">
+        <figcaption>作品タイトル</figcaption>
+      </figure> -->
+    </div>
+  </section>
 
 </main>
 
-<footer class="footer-refined">
+<footer class="footer">
   <div class="footer-inner">
-
+    <div class="footer-logo">Kohinn</div>
     <nav class="footer-nav">
       <a href="index_jp.html">Home</a>
       <a href="illustration_jp.html">Illustration</a>
       <a href="about_jp.html">About</a>
       <a href="contact_jp.html">Contact</a>
     </nav>
-
-    <div class="footer-sns">
+    <div class="footer-follow">
       <a href="https://twitter.com/V_Kohinn" target="_blank">X</a>
-      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
       <a href="https://www.pixiv.net/users/92080067" target="_blank">Pixiv</a>
       <a href="https://instagram.com/kohinn.ver2" target="_blank">Instagram</a>
+      <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank">Bluesky</a>
       <a href="https://artstation.com/kohinn" target="_blank">ArtStation</a>
     </div>
-
-    <p class="footer-copy">
-      © 2025–2026 Kohinn. All rights reserved.
-    </p>
-
+    <p class="footer-copy">©2026 Kohinn</p>
   </div>
 </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const burger = document.getElementById("burgerBtn");
-  const nav = document.getElementById("navMenu");
-
-  burger.addEventListener("click", () => {
-    burger.classList.toggle("active");
-    nav.classList.toggle("active");
-  });
-
-  nav.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      burger.classList.remove("active");
-      nav.classList.remove("active");
-    });
-  });
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
-
