@@ -392,3 +392,56 @@ section h2 {
     font-size: 1.2rem;
   }
 }
+
+/* =========================
+   Work Detail
+========================= */
+.work-detail {
+  max-width: 900px;
+  margin: 4rem auto;
+  text-align: left;
+}
+
+.work-detail h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.work-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+}
+
+.work-meta h3 {
+  font-size: 1.1rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.4rem;
+  color: var(--color-text);
+}
+
+.work-meta p {
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+.color-palette {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.color-palette span {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+}
+
+.work-nav {
+  text-align: center;
+  margin-top: 3rem;
+}
+
