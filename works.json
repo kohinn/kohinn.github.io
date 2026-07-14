@@ -1,12 +1,12 @@
 [
   {
     "id": "miyuki",
-    "title": "enVTuber #03",
+    "title": "fan art #01",
     "image": "https://kohinn.github.io/kohinn-images/miyuki_udekimi_37.webp",
     "series": "enVTuber",
-    "description": "海外VTuberをテーマにしたキャラクターイラスト。淡い色彩と余白で静かな空気感を表現。",
+    "description": "アニメ魔法科高校の劣等生のキャラクターイラスト",
     "media": "配信素材・SNSヘッダー・アバターアート",
-    "tags": ["VTuber", "キャラクターデザイン", "海外", "配信背景"],
+    "tags": ["anime", "キャラクターイラスト", "魔法科高校の劣等生", ],
     "colors": ["#a8d8ea", "#f7aef8", "#fce1e4"],
     "release": "2026年7月"
   }
