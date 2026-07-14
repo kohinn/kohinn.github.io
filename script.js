@@ -77,3 +77,25 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     });
 });
+/* =========================
+   作品一覧ページ（自動生成）
+========================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const gallery = document.getElementById("gallery");
+
+  // 一覧ページでない場合はスキップ
+  if (!gallery) return;
+
+  fetch("works.json")
+    .then(res => res.json())
+    .then(data => {
+      gallery.innerHTML = data.map(work => `
+        <figure class="gallery-item">
+          <a href="work_detail.html?id=${work.id}">
+            <img src="${work.image}" loading="lazy" alt="${work.title}">
+          </a>
+          <figcaption>${work.title}</figcaption>
+        </figure>
+      `).join("");
+    });
+});
