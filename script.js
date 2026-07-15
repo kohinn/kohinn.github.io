@@ -51,17 +51,25 @@ document.getElementById("workDetail").innerHTML = `
 
   <div class="work-meta">
 
+    ${work.description ? `
     <h3>制作概要</h3>
-    <p>${work.description}</p>
+    <p>${work.description}</p>` : ""}
 
+    ${work.tools ? `
     <h3>使用ツール</h3>
-    <p>${work.tools}</p>
+    <p>${work.tools}</p>` : ""}
 
+    ${work.duration ? `
     <h3>制作期間</h3>
-    <p>${work.duration}</p>
+    <p>${work.duration}</p>` : ""}
 
+    ${work.media ? `
+    <h3>使用媒体</h3>
+    <p>${work.media}</p>` : ""}
+
+    ${work.release ? `
     <h3>リリース</h3>
-    <p>${work.release}</p>
+    <p>${work.release}</p>` : ""}
 
   </div>
 
@@ -69,6 +77,7 @@ document.getElementById("workDetail").innerHTML = `
     <a href="illustration_jp.html" class="arrow-link">← 作品一覧へ戻る</a>
   </div>
 `;
+
 
     });
 });
