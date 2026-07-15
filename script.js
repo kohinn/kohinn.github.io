@@ -54,9 +54,6 @@ document.getElementById("workDetail").innerHTML = `
     <h3>制作概要</h3>
     <p>${work.description}</p>
 
-    <h3>制作目的</h3>
-    <p>${work.purpose}</p>
-
     <h3>使用ツール</h3>
     <p>${work.tools}</p>
 
