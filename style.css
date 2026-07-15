@@ -445,3 +445,35 @@ section h2 {
   margin-top: 3rem;
 }
 
+/* =========================
+   ギャラリー（レスポンシブ対応）
+========================= */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr; /* スマホは1列 */
+  gap: 32px;
+  max-width: 900px; /* 中央に収める幅 */
+  margin: 0 auto;   /* 中央揃え */
+  padding: 40px 20px;
+}
+
+/* PC表示（768px以上）で2列に変更 */
+@media (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2列表示 */
+    gap: 40px;
+  }
+}
+
+/* 各作品カード */
+.gallery-item {
+  text-align: center;
+}
+
+.gallery-item img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
