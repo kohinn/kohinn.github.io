@@ -63,10 +63,6 @@ document.getElementById("workDetail").innerHTML = `
     <h3>制作期間</h3>
     <p>${work.duration}</p>` : ""}
 
-    ${work.media ? `
-    <h3>使用媒体</h3>
-    <p>${work.media}</p>` : ""}
-
     ${work.release ? `
     <h3>リリース</h3>
     <p>${work.release}</p>` : ""}
@@ -77,6 +73,7 @@ document.getElementById("workDetail").innerHTML = `
     <a href="illustration_jp.html" class="arrow-link">← 作品一覧へ戻る</a>
   </div>
 `;
+
 
 
     });
