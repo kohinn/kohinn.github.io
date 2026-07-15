@@ -73,9 +73,6 @@ document.getElementById("workDetail").innerHTML = `
     <a href="illustration_jp.html" class="arrow-link">← 作品一覧へ戻る</a>
   </div>
 `;
-
-
-
     });
 });
 
