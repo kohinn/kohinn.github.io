@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!id) return;
 
-  fetch("works.json")
+  fetch("works_en.json")
     .then(res => res.json())
     .then(data => {
       const work = data.find(w => w.id === id);
