@@ -11,6 +11,28 @@
     "release": "July 2026"
   },
   {
+    "id": "Zentreya1",
+    "title": "Her tights… might have suffered a little accident.",
+    "image": "https://kohinn.github.io/kohinn-images/イラスト4dzen.webp",
+    "series": "Vtuber",
+    "description": "Fan art of the EN Vtuber Zentreya.",
+    "purpose": "",
+    "tools": "CLIP STUDIO PAINT",
+    "duration": "Approx. 20 hours",
+    "release": "March 2026"
+  },
+  {
+    "id": "Zentreya2",
+    "title": "I swear this outfit has some kind of spell on me…",
+    "image": "https://kohinn.github.io/kohinn-images/イラスト6ddd.webp",
+    "series": "Vtuber",
+    "description": "Fan art of the EN Vtuber Zentreya.",
+    "purpose": "",
+    "tools": "CLIP STUDIO PAINT",
+    "duration": "Approx. 20 hours",
+    "release": "March 2026"
+  },
+  {
     "id": "sunaffy",
     "title": "Summer vibes with Snuffy!",
     "image": "https://kohinn.github.io/kohinn-images/sunaffy.webp",
@@ -20,5 +42,27 @@
     "tools": "CLIP STUDIO PAINT",
     "duration": "Approx. 20 hours",
     "release": "September 2025"
+  },
+  {
+    "id": "tayuya",
+    "title": "The Irregular at Magic High School – Fan Art",
+    "image": "https://kohinn.github.io/kohinn-images/siba_brlkj.webp",
+    "series": "anime",
+    "description": "Fan art of Tatsuya Shiba from “The Irregular at Magic High School.”",
+    "purpose": "",
+    "tools": "CLIP STUDIO PAINT",
+    "duration": "Approx. 15 hours",
+    "release": "March 2026"
+  },
+  {
+    "id": "miyuki2",
+    "title": "The Irregular at Magic High School – Fan Art",
+    "image": "https://kohinn.github.io/kohinn-images/miyuki3.webp",
+    "series": "anime",
+    "description": "Fan art of Miyuki Shiba from “The Irregular at Magic High School.”",
+    "purpose": "",
+    "tools": "CLIP STUDIO PAINT",
+    "duration": "Approx. 15 hours",
+    "release": "March 2026"
   }
 ]
