@@ -10,14 +10,16 @@
     "colors": ["#a8d8ea", "#f7aef8", "#fce1e4"],
     "release": "2026年7月"
   },
-  {
-    "id": "sunaffy",
-    "title": "sunaffy　ファンアート",
-    "image": "https://kohinn.github.io/kohinn-images/sunaffy.webp",
-    "series": "Vtuber",
-    "description": "ENVtuberのsunaffyファンアート",
-    "media": "壁紙",
-    "tags": ["anime", "キャラクターイラスト", "ENVtuber"],
-    "release": "2026年7月"
-  }
+ {
+  "id": "sunaffy",
+  "title": "sunaffy #ENVtuber",
+  "image": "https://kohinn.github.io/kohinn-images/sunaffy.webp",
+  "series": "Vtuber",
+  "description": "ENVtuberのsunaffyファンアート。",
+  "purpose": "",
+  "tools": "CLIP STUDIO PAINT",
+  "duration": "約20時間",
+  "release": "2025年9月"
+}
+
 ]
