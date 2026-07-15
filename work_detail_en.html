@@ -1,35 +1,32 @@
-fetch("works_en.json")
-  .then(res => res.json())
-  .then(data => {
-    const work = data.find(w => w.id === id);
-    if (!work) return;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kohinn | Work Detail</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    document.getElementById("workDetail").innerHTML = `
-      <h1>${work.title}</h1>
-      <img src="${work.image}" alt="${work.title}" class="work-image">
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="index.html">Kohinn</a></div>
+    <div class="lang"><a href="index_jp.html">JP</a> / <a href="index.html">EN</a></div>
+    <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
+  </div>
+</header>
 
-      <div class="work-meta">
+<main>
+  <section class="work-detail" id="workDetail"></section>
+</main>
 
-        ${work.description ? `
-        <h3>Description</h3>
-        <p>${work.description}</p>` : ""}
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Kohinn</div>
+    <p class="footer-copy">©2026 Kohinn</p>
+  </div>
+</footer>
 
-        ${work.tools ? `
-        <h3>Tools</h3>
-        <p>${work.tools}</p>` : ""}
-
-        ${work.duration ? `
-        <h3>Duration</h3>
-        <p>${work.duration}</p>` : ""}
-
-        ${work.release ? `
-        <h3>Release</h3>
-        <p>${work.release}</p>` : ""}
-
-      </div>
-
-      <div class="work-nav">
-        <a href="illustration_en.html" class="arrow-link">← Back to Gallery</a>
-      </div>
-    `;
-  });
+<script src="script_en.js"></script>
+</body>
+</html>
