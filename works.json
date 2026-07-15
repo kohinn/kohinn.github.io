@@ -1,26 +1,24 @@
 [
-{
-  "id": "miyuki",
-  "title": "魔法科高校の劣等生　ファンアート",
-  "image": "https://kohinn.github.io/kohinn-images/miyuki_udekimi_37.webp",
-  "series": "anime",
-  "description": "アニメ『魔法科高校の劣等生』のファンアート。",
-  "purpose": "",
-  "tools": "CLIP STUDIO PAINT",
-  "duration": "約30時間",
-  "release": "2026年7月"
-}
-
- {
-  "id": "sunaffy",
-  "title": "Summer vibes with Snuffy!",
-  "image": "https://kohinn.github.io/kohinn-images/sunaffy.webp",
-  "series": "Vtuber",
-  "description": "ENVtuberのsunaffyファンアート。",
-  "purpose": "",
-  "tools": "CLIP STUDIO PAINT",
-  "duration": "約20時間",
-  "release": "2025年9月"
-}
-
+  {
+    "id": "miyuki",
+    "title": "魔法科高校の劣等生　ファンアート",
+    "image": "https://kohinn.github.io/kohinn-images/miyuki_udekimi_37.webp",
+    "series": "anime",
+    "description": "アニメ『魔法科高校の劣等生』のファンアート。",
+    "purpose": "",
+    "tools": "CLIP STUDIO PAINT",
+    "duration": "約30時間",
+    "release": "2026年7月"
+  },
+  {
+    "id": "sunaffy",
+    "title": "Summer vibes with Snuffy!",
+    "image": "https://kohinn.github.io/kohinn-images/sunaffy.webp",
+    "series": "Vtuber",
+    "description": "ENVtuberのsunaffyファンアート。",
+    "purpose": "",
+    "tools": "CLIP STUDIO PAINT",
+    "duration": "約20時間",
+    "release": "2025年9月"
+  }
 ]
