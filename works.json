@@ -1,15 +1,16 @@
 [
-  {
-    "id": "miyuki",
-    "title": "魔法科高校の劣等生　ファンアート",
-    "image": "https://kohinn.github.io/kohinn-images/miyuki_udekimi_37.webp",
-    "series": "anime",
-    "description": "アニメ魔法科高校の劣等生のキャラクターイラスト",
-    "media": "壁紙",
-    "tags": ["anime", "キャラクターイラスト", "魔法科高校の劣等生"],
-    "colors": ["#a8d8ea", "#f7aef8", "#fce1e4"],
-    "release": "2026年7月"
-  },
+{
+  "id": "miyuki",
+  "title": "魔法科高校の劣等生　ファンアート",
+  "image": "https://kohinn.github.io/kohinn-images/miyuki_udekimi_37.webp",
+  "series": "anime",
+  "description": "アニメ『魔法科高校の劣等生』のキャラクターをテーマにしたファンアート。",
+  "purpose": "",
+  "tools": "CLIP STUDIO PAINT",
+  "duration": "約30時間",
+  "release": "2026年7月"
+}
+
  {
   "id": "sunaffy",
   "title": "sunaffy #ENVtuber",
