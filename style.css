@@ -517,19 +517,19 @@ section h2 {
 }
 
 
-.section-mini-gallery {
+.section-works {
   text-align: center;
   margin: 4rem 0;
 }
 
-.mini-gallery {
+.works-gallery {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin: 1.5rem 0;
 }
 
-.mini-gallery img {
+.works-gallery img {
   width: 30%;
   border-radius: 8px;
   object-fit: cover;
