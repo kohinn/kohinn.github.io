@@ -477,3 +477,37 @@ section h2 {
   height: auto;
   border-radius: 8px;
 }
+
+.section-about {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  line-height: 1.8;
+}
+
+.section-about h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-about h2 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.section-about p {
+  margin-bottom: 1rem;
+}
+
+.section-about ul,
+.section-about ol {
+  margin-left: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.section-about hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
