@@ -515,3 +515,22 @@ section h2 {
   border: none;
   border-top: 1px solid #ddd;
 }
+
+
+.section-mini-gallery {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.mini-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.mini-gallery img {
+  width: 30%;
+  border-radius: 8px;
+  object-fit: cover;
+}
