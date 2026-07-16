@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!gallery) return;
 
-  fetch("works.json")
+  fetch("works_en.json")
     .then(res => res.json())
     .then(data => {
       gallery.innerHTML = data.map(work => `
