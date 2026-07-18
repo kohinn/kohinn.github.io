@@ -285,7 +285,7 @@ section h2 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.4rem;
-  padding: 0 var(--space-inner);
+   padding: 0 1rem; /* 左右余白を少し狭める */
 }
 
 @media (min-width: 768px) {
@@ -294,18 +294,16 @@ section h2 {
   }
 }
 
-.gallery-item {
-  width: 100%;
-  overflow: hidden;
-}
+  .gallery-item {
+    text-align: center; /* 画像を中央寄せ */
+  }
 
 .gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
+    display: block;
+    margin: 0 auto; /* 中央揃え */
+    max-width: 100%;
+    height: auto;
+  }
 
 .gallery-item:hover img {
   transform: scale(1.03);
