@@ -406,7 +406,7 @@ section h2 {
   text-align: center;
 }
 
-@media (max-width: 768px) {
+
 @media (min-width: 769px) {
   .work-image {
     max-width: 900px;   /* 作品詳細ページの幅に合わせる */
