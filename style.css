@@ -450,9 +450,9 @@ section h2 {
   display: grid;
   grid-template-columns: 1fr; /* スマホは1列 */
   gap: 32px;
-  max-width: 900px; /* 中央に収める幅 */
+  max-width: 100%; /* 中央に収める幅 */
   margin: 0 auto;   /* 中央揃え */
-  padding: 40px 20px;
+  padding: 0 0.6rem; /* 左右余白を減らす */
 }
 
 /* PC表示（768px以上）で2列に変更 */
@@ -470,10 +470,11 @@ section h2 {
 
 .gallery-item img {
   display: block;
+  width: 100%; /* 画像を広げる */
   margin: 0 auto;
-  max-width: 100%;
+  max-width: none; /* 制限を解除 */
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 
