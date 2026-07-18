@@ -406,12 +406,14 @@ section h2 {
   text-align: center;
 }
 
-.work-image {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius);
-  margin-bottom: 2rem;
+@media (max-width: 768px) {
+  .work-image {
+    width: 100%;
+    max-width: none;
+    border-radius: 10px;
+  }
 }
+
 
 .work-meta h3 {
   font-size: 1.1rem;
