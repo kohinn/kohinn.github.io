@@ -6,10 +6,10 @@ function initBurgerMenu() {
   const menu = document.getElementById("navMenu");
 
   if (burger && menu) {
-    burger.addEventListener("click", () => {
+    burger.onclick = () => {
       burger.classList.toggle("active");
       menu.classList.toggle("active");
-    });
+    };
   }
 }
 
@@ -23,14 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const fadeItems = document.querySelectorAll(".fade-in");
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
+      if (entry.isIntersecting) entry.target.classList.add("visible");
     });
   }, { threshold: 0.2 });
   fadeItems.forEach(item => observer.observe(item));
 
-  /* 作品詳細ページ（work_detail.html） */
+  /* 作品詳細ページ */
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
   const workDetail = document.getElementById("workDetail");
@@ -56,13 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         `;
 
-        initBurgerMenu(); // 動的生成後も再初期化
+        initBurgerMenu(); // ← ここが重要（再初期化）
       });
   }
 
-  /* 作品一覧ページ（illustration_jp.html） */
+  /* 作品一覧ページ */
   const gallery = document.getElementById("gallery");
-
   if (gallery) {
     fetch("works.json")
       .then(res => res.json())
