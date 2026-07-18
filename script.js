@@ -56,8 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         `;
 
-        // 動的生成後もハンバーガーを再初期化
-        initBurgerMenu();
+        initBurgerMenu(); // 動的生成後も再初期化
       });
   }
 
