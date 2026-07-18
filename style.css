@@ -470,7 +470,7 @@ section h2 {
 
 .gallery-item img {
   display: block;
-  width: 150%; /* 画像を広げる */
+  width: 100%; /* 画像を広げる */
   margin: 0 auto;
   max-width: none; /* 制限を解除 */
   height: auto;
