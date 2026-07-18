@@ -407,10 +407,13 @@ section h2 {
 }
 
 @media (max-width: 768px) {
+@media (min-width: 769px) {
   .work-image {
+    max-width: 900px;   /* 作品詳細ページの幅に合わせる */
     width: 100%;
-    max-width: none;
-    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
   }
 }
 
