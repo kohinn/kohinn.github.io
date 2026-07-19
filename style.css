@@ -544,10 +544,10 @@ section h2 {
   border-radius: 10px;
 }
 
-.section-contact {
-  margin-top: 1.5rem;
+.section-contact h1 {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
-
 
 /* =========================
   aboutの見た目
