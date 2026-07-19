@@ -11,7 +11,7 @@
 <header class="header">
   <div class="header-inner">
     <div class="logo"><a href="index_jp.html">Kohinn</a></div>
-    <div class="lang"><a href="index_jp.html">JP</a> / <a href="index.html">EN</a></div>
+    <div class="lang"><a href="contact_jp.html">JP</a> / <a href="contact.html">EN</a></div>
     <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -39,24 +39,100 @@
 
 <main>
 
-  <section class="section-contact">
-    <h1>CONTACT</h1>
-    <p>イラストのご依頼・お問い合わせは、以下のフォームまたはSNSからお願いいたします。</p>
+<section class="section-contact fade-in">
+  <h1>CONTACT</h1>
+  <p>
+    イラスト制作のご依頼・ご相談を承っております。<br>
+    個人・企業を問わずお気軽にお問い合わせください。<br>
+    内容が未定のご相談でも問題ありません。
+  </p>
 
-    <p>
-      ・ご希望の内容（用途・点数・サイズ）<br>
-      ・ご予算の目安<br>
-      ・納期のご希望
-    </p>
+  <hr>
 
-    <p>を添えてご連絡いただけるとスムーズです。</p>
+  <!-- Contact Form -->
+  <h2>お問い合わせフォーム</h2>
 
-    <!-- 実際のフォーム or メールリンク -->
-    <p>
-      メール：<a href="mailto:yourmail@example.com">yourmail@example.com</a><br>
-      X：<a href="https://twitter.com/V_Kohinn" target="_blank">@V_Kohinn</a>
-    </p>
-  </section>
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <!-- Web3Forms 必須 -->
+    <input type="hidden" name="access_key" value="1faf647c-2bcd-4228-893e-3fa7fe0c7e55">
+    <input type="hidden" name="redirect" value="https://yourdomain.com/thanks_jp.html">
+
+    <label for="name">お名前（必須）</label>
+    <input type="text" id="name" name="name" required placeholder="お名前を入力してください">
+
+    <label for="email">メールアドレス（必須）</label>
+    <input type="email" id="email" name="email" required placeholder="メールアドレスを入力してください">
+
+    <label for="subject">件名（必須）</label>
+    <input type="text" id="subject" name="subject" required placeholder="件名を入力してください">
+
+    <label for="message">お問い合わせ内容（必須）</label>
+    <textarea id="message" name="message" rows="6" required placeholder="お問い合わせ内容を入力してください"></textarea>
+
+    <button type="submit" class="contact-submit">送信する</button>
+  </form>
+
+  <hr>
+
+  <!-- Available Works -->
+  <h2>対応可能な制作</h2>
+  <ul>
+    <li>キャラクターイラスト</li>
+    <li>一枚絵</li>
+    <li>SNS用イラスト</li>
+    <li>アイコン</li>
+    <li>ヘッダー</li>
+    <li>サムネイル用イラスト</li>
+  </ul>
+  <p>掲載内容以外につきましても、お気軽にご相談ください。</p>
+
+  <hr>
+
+  <!-- Workflow -->
+  <h2>制作の流れ</h2>
+  <ol>
+    <li>お問い合わせ</li>
+    <li>内容のヒアリング</li>
+    <li>お見積り</li>
+    <li>制作開始</li>
+    <li>ラフ確認</li>
+    <li>清書</li>
+    <li>最終確認</li>
+    <li>納品</li>
+  </ol>
+
+  <hr>
+
+  <!-- Required Info -->
+  <h2>お問い合わせ時に教えていただきたい内容</h2>
+  <ul>
+    <li>ご依頼内容</li>
+    <li>用途</li>
+    <li>サイズ</li>
+    <li>納期</li>
+    <li>ご予算</li>
+    <li>参考資料（ございましたら）</li>
+  </ul>
+
+  <hr>
+
+  <!-- Other Inquiries -->
+  <h2>その他のお問い合わせ</h2>
+  <p>
+    イラスト制作以外のお仕事のご相談や企業様からのお問い合わせも歓迎しております。<br>
+    内容が決まっていない場合でも、お気軽にご連絡ください。
+  </p>
+
+  <hr>
+
+  <!-- Email & SNS -->
+  <h2>メール・SNS</h2>
+  <ul>
+    <li><a href="mailto:xxxx@example.com">メールで問い合わせる</a></li>
+    <li><a href="https://twitter.com/V_Kohinn" target="_blank">X（旧Twitter）↗</a></li>
+  </ul>
+
+</section>
 
 </main>
 
