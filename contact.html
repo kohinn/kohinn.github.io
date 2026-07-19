@@ -11,7 +11,7 @@
 <header class="header">
   <div class="header-inner">
     <div class="logo"><a href="index.html">Kohinn</a></div>
-    <div class="lang"><a href="index_jp.html">JP</a> / <a href="index.html">EN</a></div>
+    <div class="lang"><a href="contact_jp.html">JP</a> / <a href="contact.html">EN</a></div>
     <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -39,23 +39,100 @@
 
 <main>
 
-  <section class="section-contact">
-    <h1>CONTACT</h1>
-    <p>Please feel free to contact me for illustration commissions or inquiries.</p>
+<section class="section-contact fade-in">
+  <h1>CONTACT</h1>
+  <p>
+    I accept illustration commissions and project inquiries.<br>
+    Both individuals and companies are welcome.<br>
+    Even if your project details are undecided, feel free to reach out.
+  </p>
 
-    <p>
-      ・Project details (usage, number of illustrations, size)<br>
-      ・Budget<br>
-      ・Preferred deadline
-    </p>
+  <hr>
 
-    <p>Including these details will help the process go smoothly.</p>
+  <!-- Contact Form -->
+  <h2>Contact Form</h2>
 
-    <p>
-      Email: <a href="mailto:yourmail@example.com">yourmail@example.com</a><br>
-      X: <a href="https://twitter.com/V_Kohinn" target="_blank">@V_Kohinn</a>
-    </p>
-  </section>
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <!-- Web3Forms Required -->
+    <input type="hidden" name="access_key" value="1faf647c-2bcd-4228-893e-3fa7fe0c7e55">
+    <input type="hidden" name="redirect" value="https://yourdomain.com/thanks_en.html">
+
+    <label for="name">Name (Required)</label>
+    <input type="text" id="name" name="name" required placeholder="Your name">
+
+    <label for="email">Email (Required)</label>
+    <input type="email" id="email" name="email" required placeholder="example@mail.com">
+
+    <label for="subject">Subject (Required)</label>
+    <input type="text" id="subject" name="subject" required placeholder="Subject">
+
+    <label for="message">Message (Required)</label>
+    <textarea id="message" name="message" rows="6" required placeholder="Please write your message here"></textarea>
+
+    <button type="submit" class="contact-submit">Send</button>
+  </form>
+
+  <hr>
+
+  <!-- Available Works -->
+  <h2>Available Works</h2>
+  <ul>
+    <li>Character illustrations</li>
+    <li>Single-piece artworks</li>
+    <li>Social media illustrations</li>
+    <li>Icons</li>
+    <li>Header graphics</li>
+    <li>Thumbnail illustrations</li>
+  </ul>
+  <p>For requests not listed above, feel free to contact me.</p>
+
+  <hr>
+
+  <!-- Workflow -->
+  <h2>Workflow</h2>
+  <ol>
+    <li>Inquiry</li>
+    <li>Discussion / Hearing</li>
+    <li>Quotation</li>
+    <li>Project confirmation & payment</li>
+    <li>Rough sketch</li>
+    <li>Linework / Coloring</li>
+    <li>Final check</li>
+    <li>Delivery</li>
+  </ol>
+
+  <hr>
+
+  <!-- Required Info -->
+  <h2>Information to Provide</h2>
+  <ul>
+    <li>Project details</li>
+    <li>Usage</li>
+    <li>Size</li>
+    <li>Deadline</li>
+    <li>Budget</li>
+    <li>Reference materials (if available)</li>
+  </ul>
+
+  <hr>
+
+  <!-- Other Inquiries -->
+  <h2>Other Inquiries</h2>
+  <p>
+    I also welcome non-illustration-related work inquiries and business collaborations.<br>
+    Even if your project details are undecided, feel free to reach out.
+  </p>
+
+  <hr>
+
+  <!-- Email & SNS -->
+  <h2>Email & SNS</h2>
+  <ul>
+    <li><a href="mailto:xxxx@example.com">Email</a></li>
+    <li><a href="https://twitter.com/V_Kohinn" target="_blank">X (Twitter) ↗</a></li>
+  </ul>
+
+</section>
 
 </main>
 
@@ -79,6 +156,7 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="script_en.js"></script>
 </body>
 </html>
+
