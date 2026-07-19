@@ -349,59 +349,36 @@ section h2 {
 }
 
 /* =========================
-   Home Hero Illustration（画面いっぱい表示）
+   Home Works Gallery（横スクロール＋大きめ）
 ========================= */
 .section-works {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* ← 画面いっぱい */
+  text-align: left;
   overflow: hidden;
-  text-align: center;
 }
 
-.section-works .works-gallery {
+.works-gallery {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
   gap: 1.6rem;
-  overflow-x: auto;
+  overflow-x: auto; /* 横スクロールを有効化 */
   scroll-snap-type: x mandatory;
-  padding: 1rem;
+  padding: 1rem 0;
+  justify-content: flex-start;
 }
 
-.section-works .works-gallery img {
+.works-gallery img {
   flex: 0 0 auto;
-  width: 90vw; /* ← 画面幅の90%で大きく表示 */
-  max-width: 1080px;
+  width: 380px;   /* ← 以前より少し大きく */
   height: auto;
   border-radius: 12px;
   object-fit: cover;
   scroll-snap-align: center;
 }
 
-/* スマホ版は少し小さく */
+/* スマホ版も同じく横スクロール */
 @media (max-width: 768px) {
-  .section-works .works-gallery img {
-    width: 95vw;
+  .works-gallery img {
+    width: 320px;
   }
-}
-
-/* スクロール誘導矢印 */
-.scroll-arrow {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.2rem;
-  color: var(--accent);
-  opacity: 0.8;
-  animation: bounce 1.6s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, -8px); }
 }
 
 /* =========================
