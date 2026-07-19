@@ -406,17 +406,16 @@ section h2 {
 .gallery-item img {
   display: block;
   margin: 0 auto;
-  width: 100%;
+  width: 320%;
   height: auto;
   border-radius: 10px;
+  object-fit: cover;
 }
 
-/* スマホ版だけ画像サイズを抑える */
+/* スマホ版も同じく調整 */
 @media (max-width: 768px) {
   .gallery-item img {
-    max-width: 480px;
-    width: 100%;
-    object-fit: contain;
+    width: 280px;
   }
 }
 
