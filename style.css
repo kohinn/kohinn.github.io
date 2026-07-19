@@ -349,7 +349,7 @@ section h2 {
 }
 
 /* =========================
-   Home Works Gallery（制作一覧）
+   Home Works Gallery（横スクロール対応）
 ========================= */
 .section-works {
   text-align: left; /* flexを効かせるために必須 */
@@ -357,32 +357,25 @@ section h2 {
 
 .works-gallery {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   gap: 1.6rem;
-  margin: 2rem 0;
-  flex-wrap: wrap;
+  overflow-x: auto; /* ← 横スクロールを有効化 */
+  scroll-snap-type: x mandatory; /* スクロールが気持ちよく止まる */
+  padding: 1rem 0;
 }
 
-/* PC版：3枚横並びで大きく表示 */
-@media (min-width: 769px) {
-  .works-gallery img {
-    flex: 1 1 30%;
-    max-width: 340px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-  }
+.works-gallery img {
+  flex: 0 0 auto; /* ← 横並び固定 */
+  width: 320px;   /* ← 今の「ぴったり」サイズ */
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  scroll-snap-align: center;
 }
 
-/* スマホ版：2列表示で見やすく */
+/* スマホ版も同じサイズで横スクロール */
 @media (max-width: 768px) {
   .works-gallery img {
-    flex: 1 1 45%;
-    max-width: 260px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
+    width: 280px;
   }
 }
 
