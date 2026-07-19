@@ -382,12 +382,13 @@ section h2 {
 }
 
 /* =========================
-   Gallery（Illustrationページ）
+   Illustrationページの中央揃え修正
 ========================= */
 .gallery {
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: center; /* ← 画像を中央揃え */
+  justify-items: center; /* ← 中央揃え */
+  align-items: center;
   gap: 2.4rem;
   padding: 0 1rem;
 }
@@ -395,28 +396,28 @@ section h2 {
 @media (min-width: 768px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
-    justify-items: center; /* ← PCでも中央揃え */
+    justify-items: center;
     gap: 40px;
   }
 }
 
-.gallery-item {
-  text-align: center;
-}
-
-.gallery-item img {
-  width: 380px;   /* ← ホームと同じ大きさに統一 */
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-/* スマホ版も同じく調整 */
+/* スマホ版の余白と中央位置を微調整 */
 @media (max-width: 768px) {
+  .gallery-item {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* ← 画像を中央に配置 */
+  }
+
   .gallery-item img {
-    width: 280px;
+    margin: 0 auto; /* ← 中央寄せ */
+    width: 90%;     /* ← 画面幅に合わせて少し広げる */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
   }
 }
+
 
 /* =========================
    About / Contact セクション
