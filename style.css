@@ -352,30 +352,37 @@ section h2 {
    Home Works Gallery（制作一覧）
 ========================= */
 .section-works {
-  text-align: left; /* ← これが最重要！ */
+  text-align: left; /* flexを効かせるために必須 */
 }
 
 .works-gallery {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   gap: 1.6rem;
   margin: 2rem 0;
-  flex-wrap: wrap; /* スマホで折り返し */
+  flex-wrap: wrap;
 }
 
-.works-gallery img {
-  width: 32%;
-  max-width: 360px;   /* PCで巨大化しない */
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
+/* PC版：3枚横並びで大きく表示 */
+@media (min-width: 769px) {
+  .works-gallery img {
+    flex: 1 1 30%;
+    max-width: 340px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
 }
 
-/* スマホ版は画像を少し小さく */
+/* スマホ版：2列表示で見やすく */
 @media (max-width: 768px) {
   .works-gallery img {
-    width: 48%;
-    max-width: 280px;
+    flex: 1 1 45%;
+    max-width: 260px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
   }
 }
 
