@@ -418,6 +418,30 @@ section h2 {
   }
 }
 
+/* =========================
+   Illustrationページの説明文位置修正
+========================= */
+.gallery-item {
+  display: flex;
+  flex-direction: column; /* ← 縦並びにする */
+  align-items: center;    /* ← 中央揃え */
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 380px;   /* ← ホームと同じサイズ */
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 0.8rem; /* ← 画像と説明文の間に余白 */
+}
+
+.gallery-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
 
 /* =========================
    About / Contact セクション
