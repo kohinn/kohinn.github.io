@@ -385,10 +385,9 @@ section h2 {
    Gallery（Illustrationページ）
 ========================= */
 .gallery {
-  max-width: 1080px;
-  margin: 4rem auto;
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center; /* ← 画像を中央揃え */
   gap: 2.4rem;
   padding: 0 1rem;
 }
@@ -396,6 +395,7 @@ section h2 {
 @media (min-width: 768px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
+    justify-items: center; /* ← PCでも中央揃え */
     gap: 40px;
   }
 }
@@ -405,9 +405,7 @@ section h2 {
 }
 
 .gallery-item img {
-  display: block;
-  margin: 0 auto;
-  width: 320%;
+  width: 380px;   /* ← ホームと同じ大きさに統一 */
   height: auto;
   border-radius: 10px;
   object-fit: cover;
