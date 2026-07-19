@@ -555,59 +555,60 @@ section h2 {
 }
 
 /* =========================
-  aboutの見た目
+  aboutの見た目（改良版）
 ========================= */
 .section-about {
   max-width: 760px;
   margin: 0 auto;
-  padding: 0 1rem;
-  line-height: 1.8;
+  padding: 0 1.2rem;
+  line-height: 1.9;
   text-align: left;
+  color: var(--color-text);
 }
 
 .section-about h1 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.6rem;
+  letter-spacing: 0.05em;
 }
 
 .section-about h2 {
-  font-size: 1.3rem;
-  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2.4rem;
   margin-bottom: 0.8rem;
+  color: var(--color-text);
 }
 
 .section-about p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+  color: var(--color-muted);
 }
 
-.section-about ul,
-.section-about ol {
+.section-about ul {
   margin-left: 1.2rem;
   margin-bottom: 1.2rem;
+  color: var(--color-muted);
 }
 
 .section-about hr {
-  margin: 2rem 0;
+  margin: 2.4rem 0;
   border: none;
   border-top: 1px solid #ddd;
+  opacity: 0.6;
 }
 
-
-.section-works {
-  text-align: center;
-  margin: 4rem 0;
+.section-about a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
 }
 
-.works-gallery {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1.5rem 0;
+.section-about a:hover {
+  opacity: 0.7;
 }
-
-.works-gallery img {
-  width: 30%;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
