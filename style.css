@@ -233,7 +233,7 @@ section h2 {
 }
 
 /* =========================
-   Homeセクション（Illustration / About / Commission / News）
+   Homeセクション
 ========================= */
 .section-illustration,
 .section-about,
@@ -277,7 +277,7 @@ section h2 {
 }
 
 /* =========================
-   Contact Form（お問い合わせフォーム）
+   Contact Form
 ========================= */
 .contact-form {
   max-width: 760px;
@@ -362,7 +362,7 @@ section h2 {
 /* スマホ版だけ画像サイズを抑える */
 @media (max-width: 768px) {
   .gallery-item img {
-    max-width: 480px;   /* ← スマホでの最大幅を制限 */
+    max-width: 480px;
     width: 100%;
     object-fit: contain;
   }
@@ -458,10 +458,9 @@ section h2 {
   text-align: center;
 }
 
-
 @media (min-width: 769px) {
   .work-image {
-    max-width: 900px;   /* 作品詳細ページの幅に合わせる */
+    max-width: 900px;
     width: 100%;
     margin: 0 auto;
     display: block;
@@ -469,7 +468,6 @@ section h2 {
   }
 }
 
-/* スマホ版の制作概要ページ画像（見やすいサイズ） */
 @media (max-width: 768px) {
   .work-image {
     max-width: 100%;
@@ -477,8 +475,6 @@ section h2 {
     object-fit: contain;
   }
 }
-
-
 
 .work-meta h3 {
   font-size: 1.1rem;
@@ -510,12 +506,10 @@ section h2 {
   margin-top: 3rem;
 }
 
-
-.section-contact h1 {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
+/* =========================
+   About / Contact タイトル即時表示
+========================= */
+.section-contact h1,
 .section-about h1 {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -579,3 +573,4 @@ section h2 {
 .section-about a:hover {
   opacity: 0.7;
 }
+
