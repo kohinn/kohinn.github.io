@@ -463,6 +463,13 @@ section h2 {
   }
 }
 
+/* 動画を画像と同じサイズにする */
+.gallery video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 /* =========================
    About / Contact セクション
 ========================= */
