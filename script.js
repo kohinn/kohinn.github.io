@@ -40,9 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const work = data.find(w => w.id === id);
         if (!work) return;
 
+        // 画像か動画か判定
+        const media = work.video
+          ? `<video src="${work.video}" autoplay loop muted playsinline class="work-image"></video>`
+          : `<img src="${work.image}" alt="${work.title}" class="work-image">`;
+
         workDetail.innerHTML = `
           <h1>${work.title}</h1>
-          <img src="${work.image}" alt="${work.title}" class="work-image">
+          ${media}
           <div class="work-meta">
             ${work.description ? `<h3>制作概要</h3><p>${work.description}</p>` : ""}
             ${work.tools ? `<h3>使用ツール</h3><p>${work.tools}</p>` : ""}
@@ -54,29 +59,30 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         `;
 
-        initBurgerMenu(); // ← ここが重要（再初期化）
+        initBurgerMenu(); // 再初期化
       });
   }
 
-/* 作品一覧ページ */
-const gallery = document.getElementById("gallery");
-if (gallery) {
-  fetch("works.json")
-    .then(res => res.json())
-    .then(data => {
-      gallery.innerHTML = data.map(work => {
-        // 動画がある場合は <video> タグを使う
-        if (work.video) {
-          return `
-            <figure class="gallery-item">
-              <a href="work_detail.html?id=${work.id}">
-                <video src="${work.video}" autoplay loop muted playsinline></video>
-              </a>
-              <figcaption>${work.title}</figcaption>
-            </figure>
-          `;
-        } else {
-          // 通常の画像表示
+  /* 作品一覧ページ */
+  const gallery = document.getElementById("gallery");
+  if (gallery) {
+    fetch("works.json")
+      .then(res => res.json())
+      .then(data => {
+        gallery.innerHTML = data.map(work => {
+          // 動画対応
+          if (work.video) {
+            return `
+              <figure class="gallery-item">
+                <a href="work_detail.html?id=${work.id}">
+                  <video src="${work.video}" autoplay loop muted playsinline></video>
+                </a>
+                <figcaption>${work.title}</figcaption>
+              </figure>
+            `;
+          }
+
+          // 画像
           return `
             <figure class="gallery-item">
               <a href="work_detail.html?id=${work.id}">
@@ -85,9 +91,8 @@ if (gallery) {
               <figcaption>${work.title}</figcaption>
             </figure>
           `;
-        }
-      }).join("");
-    });
-}
+        }).join("");
+      });
+  }
 
-});
+}); // ← これが正しい閉じカッコ位置
