@@ -58,20 +58,36 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  /* 作品一覧ページ */
-  const gallery = document.getElementById("gallery");
-  if (gallery) {
-    fetch("works.json")
-      .then(res => res.json())
-      .then(data => {
-        gallery.innerHTML = data.map(work => `
-          <figure class="gallery-item">
-            <a href="work_detail.html?id=${work.id}">
-              <img src="${work.image}" loading="lazy" alt="${work.title}">
-            </a>
-            <figcaption>${work.title}</figcaption>
-          </figure>
-        `).join("");
-      });
-  }
+/* 作品一覧ページ */
+const gallery = document.getElementById("gallery");
+if (gallery) {
+  fetch("works.json")
+    .then(res => res.json())
+    .then(data => {
+      gallery.innerHTML = data.map(work => {
+        // 動画がある場合は <video> タグを使う
+        if (work.video) {
+          return `
+            <figure class="gallery-item">
+              <a href="work_detail.html?id=${work.id}">
+                <video src="${work.video}" autoplay loop muted playsinline></video>
+              </a>
+              <figcaption>${work.title}</figcaption>
+            </figure>
+          `;
+        } else {
+          // 通常の画像表示
+          return `
+            <figure class="gallery-item">
+              <a href="work_detail.html?id=${work.id}">
+                <img src="${work.image}" loading="lazy" alt="${work.title}">
+              </a>
+              <figcaption>${work.title}</figcaption>
+            </figure>
+          `;
+        }
+      }).join("");
+    });
+}
+
 });
