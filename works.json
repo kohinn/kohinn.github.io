@@ -1,5 +1,15 @@
 [
  {
+  "id": "blink_hair",
+  "title": "Blink & Hair Animation",
+  "video": "https://kohinn.github.io/kohinn-videos/TISATO_TAKINA_9.mp4.mp4",
+  "series": "animation",
+  "description": "瞬きと髪の動きを組み合わせたアニメーション作品。",
+  "tools": "CLIP STUDIO PAINT",
+  "duration": "約10秒",
+  "release": "2026年8月"
+}
+ {
     "id": "miyuki",
     "title": "魔法科高校の劣等生　ファンアート",
     "image": "https://kohinn.github.io/kohinn-images/miyuki_udekimi_37.webp",
