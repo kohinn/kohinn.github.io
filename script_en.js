@@ -28,21 +28,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.2 });
   fadeItems.forEach(item => observer.observe(item));
 
-  /* Work Detail Page (EN) */
+  /* Work Detail Page */
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
   const workDetail = document.getElementById("workDetail");
 
   if (id && workDetail) {
-    fetch("works_en.json") // ← EN版のJSONに変更
+    fetch("works_en.json")
       .then(res => res.json())
       .then(data => {
         const work = data.find(w => w.id === id);
         if (!work) return;
 
+        // Detect image or video
+        const media = work.video
+          ? `<video src="${work.video}" autoplay loop muted playsinline class="work-image"></video>`
+          : `<img src="${work.image}" alt="${work.title}" class="work-image">`;
+
         workDetail.innerHTML = `
           <h1>${work.title}</h1>
-          <img src="${work.image}" alt="${work.title}" class="work-image">
+          ${media}
           <div class="work-meta">
             ${work.description ? `<h3>Description</h3><p>${work.description}</p>` : ""}
             ${work.tools ? `<h3>Tools Used</h3><p>${work.tools}</p>` : ""}
@@ -54,24 +59,41 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         `;
 
-        initBurgerMenu(); // Re-init after dynamic content
+        initBurgerMenu(); // Reinitialize
       });
   }
 
-  /* Illustration Gallery (EN) */
+  /* Work Gallery Page */
   const gallery = document.getElementById("gallery");
   if (gallery) {
-    fetch("works_en.json") // ← EN版のJSONに変更
+    fetch("works_en.json")
       .then(res => res.json())
       .then(data => {
-        gallery.innerHTML = data.map(work => `
-          <figure class="gallery-item">
-            <a href="work_detail_en.html?id=${work.id}">
-              <img src="${work.image}" loading="lazy" alt="${work.title}">
-            </a>
-            <figcaption>${work.title}</figcaption>
-          </figure>
-        `).join("");
+        gallery.innerHTML = data.map(work => {
+          // Video support
+          if (work.video) {
+            return `
+              <figure class="gallery-item">
+                <a href="work_detail_en.html?id=${work.id}">
+                  <video src="${work.video}" autoplay loop muted playsinline></video>
+                </a>
+                <figcaption>${work.title}</figcaption>
+              </figure>
+            `;
+          }
+
+          // Image
+          return `
+            <figure class="gallery-item">
+              <a href="work_detail_en.html?id=${work.id}">
+                <img src="${work.image}" loading="lazy" alt="${work.title}">
+              </a>
+              <figcaption>${work.title}</figcaption>
+            </figure>
+          `;
+        }).join("");
       });
   }
-});
+
+}); // Correct closing bracket
+
