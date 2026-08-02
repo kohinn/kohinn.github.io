@@ -381,6 +381,17 @@ section h2 {
   }
 }
 
+.works-gallery video {
+  flex: 0 0 auto;
+  width: 380px;        /* ← 画像と同じ幅にする */
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;   /* ← 画像と同じ見た目に揃える */
+  scroll-snap-align: center;
+  display: block;
+}
+
+
 /* =========================
    Illustrationページの中央揃え修正
 ========================= */
