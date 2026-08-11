@@ -1,4 +1,14 @@
 [
+   {
+    "id": "original",
+    "title": "オリジナルキャラクターの立ち絵",
+    "video": "https://kohinn.github.io/kohinn-images/jk_1s.webp",
+    "series": "original",
+    "description": "今後のイラスト・アニメーション制作に幅広く使用することを想定し、キャラクターデザインから制作しました。全身のシルエットや衣装、髪型などの基本デザインを整理し、さまざまなポーズやシチュエーションへ展開できるよう、汎用性を意識して設計しています。",
+    "tools": "CLIP STUDIO PAINT PRO",
+    "duration": "約2週間",
+    "release": "2026年8月"
+  },
   {
     "id": "blink_hair",
     "title": "『リコリス・リコイル』ファンアニメーション",
