@@ -1,6 +1,6 @@
 [
    {
-    "id": "original",
+    "id": "original-cover",
     "title": "オリジナルキャラクター　架空ライトノベルの表紙ポーズ",
     "image": "https://kohinn.github.io/kohinn-images/ranobe_1_6.webp",
     "series": "original",
@@ -11,7 +11,7 @@
   },
    
    {
-    "id": "original",
+    "id": "original-standing",
     "title": "オリジナルキャラクターの立ち絵",
     "image": "https://kohinn.github.io/kohinn-images/jk_1s.webp",
     "series": "original",
