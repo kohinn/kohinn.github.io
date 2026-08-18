@@ -12,7 +12,7 @@
    
    {
     "id": "original-standing",
-    "title": "オリジナルキャラクター　<br>立ち絵",
+    "title": "オリジナルキャラクター<br>立ち絵",
     "image": "https://kohinn.github.io/kohinn-images/jk_1s.webp",
     "series": "original",
     "description": "さまざまなイラストやアニメーションに展開することを想定し、オリジナルキャラクターを創作しました。<br><br>キャラクターの個性が伝わるデザインと、さまざまなポーズやシチュエーションに対応できる汎用性を意識した設計しています。",
@@ -43,7 +43,7 @@
   },
   {
     "id": "Zentreya1",
-    "title": "ENVTuber　<br>「Zentreya」ファンアート",
+    "title": "ENVTuber<br>「Zentreya」ファンアート",
     "image": "https://kohinn.github.io/kohinn-images/イラスト4dzen.webp",
     "series": "Vtuber",
     "description": "タイツが破れてしまい、驚いているキャラクターの表情を印象的に描くことを意識しました。<br><br>表情とタイツの破れた部分が自然と目に入るよう、画面全体の視線誘導を考えて構図を設計しています。",
@@ -76,7 +76,7 @@
   },
   {
     "id": "tayuya",
-    "title": "『魔法科高校の劣等生』 <br>「司波達也」ファンアート",
+    "title": "『魔法科高校の劣等生』<br>「司波達也」ファンアート",
     "image": "https://kohinn.github.io/kohinn-images/siba_brlkj.webp",
     "series": "anime",
     "description": "キャラクターの雰囲気を崩さず、参考元の印象に寄せることを意識して制作しました。<br><br>単色の背景によってキャラクターそのものに目が向くよう、シンプルな構成を意識しています。",
