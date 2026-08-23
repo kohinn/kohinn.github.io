@@ -375,16 +375,6 @@ section h2 {
   scroll-snap-align: center;
 }
 
-/* スマホ版も同じく横スクロール */
-@media (max-width: 768px) {
-  .works-gallery img,
-  .works-gallery video {
-    width: 260px;
-    height: 400px;       /* ← 高さを固定 */
-    object-fit: cover;   /* ← はみ出た部分を自動でトリミング */
-  }
-}
-
 .works-gallery video {
   flex: 0 0 auto;
   width: 380px;        /* ← 画像と同じ幅にする */
@@ -395,6 +385,16 @@ section h2 {
   display: block;
 }
 
+
+/* スマホ版も同じく横スクロール */
+@media (max-width: 768px) {
+  .works-gallery img,
+  .works-gallery video {
+    width: 260px;
+    height: 400px;       /* ← 高さを固定 */
+    object-fit: cover;   /* ← はみ出た部分を自動でトリミング */
+  }
+}
 
 /* =========================
    Illustrationページの中央揃え修正
