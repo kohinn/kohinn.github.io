@@ -380,8 +380,9 @@ section h2 {
 
 /* スマホ版も同じく横スクロール */
 @media (max-width: 768px) {
-  .works-gallery img {
-    width: 320px;
+  .works-gallery img,
+  .works-gallery video {
+    width: 260px;   /* 320px → 260px に変更 */
   }
 }
 
