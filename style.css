@@ -2,6 +2,9 @@
    Base & Variables（Quiet / Clean / Editorial）
 ========================= */
 :root {
+*, *::before, *::after {
+  box-sizing: border-box;
+   
   --color-bg: #ffffff;
   --color-bg-soft: #f7f7f7;
   --color-text: #333;
@@ -323,6 +326,7 @@ section h2 {
   font-size: 1rem;
   color: var(--color-text);
   transition: border-color 0.2s ease;
+  box-sizing: border-box; 
 }
 
 .contact-form input:focus,
