@@ -380,7 +380,7 @@ section h2 {
   .works-gallery img,
   .works-gallery video {
     width: 260px;
-    height: 340px;       /* ← 高さを固定 */
+    height: 400px;       /* ← 高さを固定 */
     object-fit: cover;   /* ← はみ出た部分を自動でトリミング */
   }
 }
