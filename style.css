@@ -1,25 +1,22 @@
 /* =========================
    Base & Variables（Quiet / Clean / Editorial）
 ========================= */
-:root {
 *, *::before, *::after {
   box-sizing: border-box;
-   
+}
+
+:root {
   --color-bg: #ffffff;
   --color-bg-soft: #f7f7f7;
   --color-text: #333;
   --color-muted: #666;
   --color-border: #e5e5e5;
   --accent: #00a8a8;
-
   --font-base: 'Noto Sans JP', sans-serif;
-
   --space-section: 4rem;
   --space-inner: 1.6rem;
-
   --radius: 12px;
 }
-
 body {
   font-family: var(--font-base);
   font-size: 15px;
