@@ -546,10 +546,12 @@ section h2 {
 ========================= */
 @media (max-width: 768px) {
   section {
-    margin: 2.4rem auto;
-    padding: 0 1.4rem;
+    margin: 2rem auto;  /* 4rem → 2rem に縮小(スマホのみ) */
   }
-
+  .arrow-link {
+    margin-top: 0.4rem; /* 0.8rem → 0.4rem */
+  }
+}
   .hero-text {
     bottom: 1.4rem;
     left: 1.4rem;
