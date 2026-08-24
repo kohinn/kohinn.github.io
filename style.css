@@ -396,8 +396,8 @@ section h2 {
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
-  gap: 1rem;
-  padding: 0 1rem;
+  gap: 0.6rem;        /* 1rem → 0.6rem に縮小 */
+  padding: 0 0.8rem;  /* 1rem → 0.8rem に縮小(画面端の余白も少し詰める) */
 }
 
 @media (min-width: 768px) {
