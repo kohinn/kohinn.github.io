@@ -77,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <a href="work_detail.html?id=${work.id}">
                   <video src="${work.video}" autoplay loop muted playsinline></video>
                 </a>
-                <figcaption>${work.title}</figcaption>
               </figure>
             `;
           }
@@ -88,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
               <a href="work_detail.html?id=${work.id}">
                 <img src="${work.image}" loading="lazy" alt="${work.title}">
               </a>
-              <figcaption>${work.title}</figcaption>
             </figure>
           `;
         }).join("");
