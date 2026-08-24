@@ -468,11 +468,10 @@ section h2 {
 }
 
 /* スマホ版は画面幅に合わせて縮小 */
-@media (max-width: 768px) {
-  .gallery-item img {
-    width: 90%;      /* ← 画面幅の90%に収める */
-    max-width: none; /* ← 固定上限を解除 */
-  }
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 3 / 4;      /* 縦横比を統一 */
+  object-fit: cover;         /* はみ出た部分は自動トリミング */
 }
 
 /* 動画を画像と同じサイズにする */
