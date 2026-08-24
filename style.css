@@ -401,10 +401,10 @@ section h2 {
 ========================= */
 .gallery {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);  /* 1fr → repeat(2, 1fr) に変更(スマホでも2列に) */
   justify-items: center; /* ← 中央揃え */
   align-items: center;
-  gap: 2.4rem;
+  gap: 1rem;
   padding: 0 1rem;
 }
 
