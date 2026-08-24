@@ -417,7 +417,8 @@ section h2 {
   margin: 0;   /* ← この1行を追加 */
 }
 
-.gallery-item img {
+.gallery-item img,
+.gallery-item video {
   display: block;
   width: 100%;
   aspect-ratio: 3 / 4;
@@ -427,7 +428,8 @@ section h2 {
 }
 
 @media (min-width: 769px) {
-  .gallery-item img {
+  .gallery-item img,
+  .gallery-item video {
     max-width: 380px;
   }
 }
