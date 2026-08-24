@@ -425,11 +425,8 @@ section h2 {
   }
 
   .gallery-item img {
-    margin: 0 auto; /* ← 中央寄せ */
-    width: 90%;     /* ← 画面幅に合わせて少し広げる */
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
+    width: 100%;      /* 90% → 100%(グリッドセル内いっぱいに表示) */
+    max-width: none;
   }
 }
 
