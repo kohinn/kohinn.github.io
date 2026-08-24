@@ -17,6 +17,7 @@
   --space-inner: 1.6rem;
   --radius: 12px;
 }
+
 body {
   font-family: var(--font-base);
   font-size: 15px;
@@ -202,20 +203,13 @@ section h2 {
 }
 
 .hero-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border-radius: var(--radius);
-}
-
-.hero-img {
   max-width: 1080px;
   width: 100%;
   height: auto;
-  object-fit: contain; /* cover → contain に変更 */
+  object-fit: contain;
   margin: 0 auto;
   border-radius: var(--radius);
+  display: block;
 }
 
 @media (max-width: 768px) {
@@ -227,7 +221,6 @@ section h2 {
     margin: 0 auto;
   }
 }
-
 
 .hero-text {
   position: absolute;
@@ -323,7 +316,7 @@ section h2 {
   font-size: 1rem;
   color: var(--color-text);
   transition: border-color 0.2s ease;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 .contact-form input:focus,
@@ -360,7 +353,7 @@ section h2 {
 .works-gallery {
   display: flex;
   gap: 1.6rem;
-  overflow-x: auto; /* 横スクロールを有効化 */
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding: 1rem 0;
   justify-content: flex-start;
@@ -368,7 +361,7 @@ section h2 {
 
 .works-gallery img {
   flex: 0 0 auto;
-  width: 380px;   /* ← 以前より少し大きく */
+  width: 380px;
   height: auto;
   border-radius: 12px;
   object-fit: cover;
@@ -377,32 +370,31 @@ section h2 {
 
 .works-gallery video {
   flex: 0 0 auto;
-  width: 380px;        /* ← 画像と同じ幅にする */
+  width: 380px;
   height: auto;
   border-radius: 12px;
-  object-fit: cover;   /* ← 画像と同じ見た目に揃える */
+  object-fit: cover;
   scroll-snap-align: center;
   display: block;
 }
-
 
 /* スマホ版も同じく横スクロール */
 @media (max-width: 768px) {
   .works-gallery img,
   .works-gallery video {
     width: 260px;
-    height: 400px;       /* ← 高さを固定 */
-    object-fit: cover;   /* ← はみ出た部分を自動でトリミング */
+    height: 400px;
+    object-fit: cover;
   }
 }
 
 /* =========================
-   Illustrationページの中央揃え修正
+   Illustrationページ：一覧グリッド
 ========================= */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);  /* 1fr → repeat(2, 1fr) に変更(スマホでも2列に) */
-  justify-items: center; /* ← 中央揃え */
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
   align-items: center;
   gap: 1rem;
   padding: 0 1rem;
@@ -416,62 +408,37 @@ section h2 {
   }
 }
 
-/* スマホ版の余白と中央位置を微調整 */
-@media (max-width: 768px) {
-  .gallery-item {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* ← 画像を中央に配置 */
-  }
-
-  .gallery-item img {
-    width: 100%;      /* 90% → 100%(グリッドセル内いっぱいに表示) */
-    max-width: none;
-  }
-}
-
-/* =========================
-   Illustrationページの説明文位置修正
-========================= */
 .gallery-item {
   display: flex;
-  flex-direction: column; /* ← 縦並びにする */
-  align-items: center;    /* ← 中央揃え */
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  width: 100%;
 }
 
 .gallery-item img {
-  width: 380px;   /* ← ホームと同じサイズ */
-  height: auto;
-  border-radius: 10px;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
-  margin-bottom: 0.8rem; /* ← 画像と説明文の間に余白 */
+  border-radius: 10px;
+  margin: 0 auto 0.8rem;
+}
+
+@media (min-width: 769px) {
+  .gallery-item img {
+    max-width: 380px;
+  }
 }
 
 .gallery-item p {
   margin: 0;
   font-size: 0.95rem;
   color: var(--color-muted);
-}
-
-/* =========================
-   Illustrationページの画像サイズ調整（崩れ防止）
-========================= */
-.gallery-item img {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 380px; /* ← PCではこの上限まで拡大 */
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-/* スマホ版は画面幅に合わせて縮小 */
-.gallery-item img {
-  width: 100%;
-  aspect-ratio: 3 / 4;      /* 縦横比を統一 */
-  object-fit: cover;         /* はみ出た部分は自動トリミング */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 /* 動画を画像と同じサイズにする */
@@ -538,16 +505,18 @@ section h2 {
 }
 
 /* =========================
-   Responsive
+   Responsive（共通）
 ========================= */
 @media (max-width: 768px) {
   section {
-    margin: 2rem auto;  /* 4rem → 2rem に縮小(スマホのみ) */
+    margin: 2rem auto;
+    padding: 0 1.4rem;
   }
+
   .arrow-link {
-    margin-top: 0.4rem; /* 0.8rem → 0.4rem */
+    margin-top: 0.4rem;
   }
-}
+
   .hero-text {
     bottom: 1.4rem;
     left: 1.4rem;
@@ -632,7 +601,7 @@ section h2 {
 }
 
 /* =========================
-  aboutの見た目（改良版）
+   Aboutページの見た目（改良版）
 ========================= */
 .section-about {
   max-width: 760px;
@@ -689,4 +658,3 @@ section h2 {
 .section-about a:hover {
   opacity: 0.7;
 }
-
