@@ -414,6 +414,7 @@ section h2 {
   align-items: center;
   text-align: center;
   width: 100%;
+  margin: 0;   /* ← この1行を追加 */
 }
 
 .gallery-item img {
