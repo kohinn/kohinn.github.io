@@ -366,7 +366,7 @@ section h2 {
 .works-gallery img {
   flex: 0 0 auto;
   width: 380px;
-  height: auto;
+  height: 420px;
   border-radius: 12px;
   object-fit: cover;
   scroll-snap-align: center;
@@ -375,11 +375,17 @@ section h2 {
 .works-gallery video {
   flex: 0 0 auto;
   width: 380px;
-  height: auto;
+  height: 420px;
   border-radius: 12px;
   object-fit: cover;
   scroll-snap-align: center;
   display: block;
+}
+
+/* 横長作品は、横幅を広げる */
+.works-gallery img.wide,
+.works-gallery video.wide {
+  width: 620px;          /* 横長分の幅を確保 */
 }
 
 /* スマホ版も同じく横スクロール */
@@ -387,7 +393,7 @@ section h2 {
   .works-gallery img,
   .works-gallery video {
     width: 260px;
-    height: 400px;
+    height: 420px;
     object-fit: cover;
   }
 }
