@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(res => res.json())
       .then(data => {
         gallery.innerHTML = data.map(work => {
+           const wideClass = work.wide ? " gallery-item-wide" : "";  // ← 追加
           // 動画対応
           if (work.video) {
             return `
