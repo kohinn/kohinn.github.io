@@ -69,28 +69,27 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("works.json")
       .then(res => res.json())
       .then(data => {
-        gallery.innerHTML = data.map(work => {
-           const wideClass = work.wide ? " gallery-item-wide" : "";  // ← 追加
-          // 動画対応
-          if (work.video) {
-            return `
-              <figure class="gallery-item">
-                <a href="work_detail.html?id=${work.id}">
-                  <video src="${work.video}" autoplay loop muted playsinline></video>
-                </a>
-              </figure>
-            `;
-          }
-
-          // 画像
-          return `
-            <figure class="gallery-item">
-              <a href="work_detail.html?id=${work.id}">
-                <img src="${work.image}" loading="lazy" alt="${work.title}">
-              </a>
-            </figure>
-          `;
-        }).join("");
+gallery.innerHTML = data.map(work => {
+  const wideClass = work.wide ? " gallery-item-wide" : "";
+  // 動画対応
+  if (work.video) {
+    return `
+      <figure class="gallery-item${wideClass}">
+        <a href="work_detail.html?id=${work.id}">
+          <video src="${work.video}" autoplay loop muted playsinline></video>
+        </a>
+      </figure>
+    `;
+  }
+  // 画像
+  return `
+    <figure class="gallery-item${wideClass}">
+      <a href="work_detail.html?id=${work.id}">
+        <img src="${work.image}" loading="lazy" alt="${work.title}">
+      </a>
+    </figure>
+  `;
+}).join("");
       });
   }
 
