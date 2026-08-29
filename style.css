@@ -425,8 +425,7 @@ section h2 {
 .gallery-item video {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  height: auto;        /* aspect-ratio と object-fit: cover を削除し、これに変更 */
   border-radius: 10px;
   margin: 0 auto 0.8rem;
 }
