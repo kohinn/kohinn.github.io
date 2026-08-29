@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* 作品一覧ページ */
   const gallery = document.getElementById("gallery");
   if (gallery) {
+     gallery.innerHTML = "<p style='text-align:center;'>読み込み中...</p>";  // ← 追加
     fetch("works.json")
       .then(res => res.json())
       .then(data => {
