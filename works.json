@@ -1,5 +1,16 @@
 [
    {
+    "id": "original-cover2",
+    "title": "オリジナルキャラクター",
+    "image": "https://kohinn.github.io/kohinn-images/No.1_16.webp",
+    "series": "original",
+    "description": "",
+    "tools": "CLIP STUDIO PAINT PRO",
+    "duration": "５日間",
+    "release": "2026年8月"
+  },
+
+   {
     "id": "original-cover",
     "title": "オリジナルキャラクター<br>架空ライトノベルの表紙ポーズ",
     "image": "https://kohinn.github.io/kohinn-images/ranobe_1_6.webp",
