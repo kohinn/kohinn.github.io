@@ -455,6 +455,14 @@ section h2 {
   display: block;
 }
 
+.gallery-item-wide {
+  grid-column: span 2;  /* 2列分の幅を使う */
+}
+
+.gallery-item-wide img,
+.gallery-item-wide video {
+  max-width: 100%;       /* 380pxの上限を解除して、2列分いっぱいに広げる */
+}
 /* =========================
    About / Contact セクション
 ========================= */
