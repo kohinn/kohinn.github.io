@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
   return `
     <figure class="gallery-item${wideClass}">
       <a href="work_detail.html?id=${work.id}">
-        <img src="${work.image}" loading="lazy" alt="${work.title}">
+        <img src="${work.image}" loading="lazy" decoding="async" alt="${work.title}">
       </a>
     </figure>
   `;
