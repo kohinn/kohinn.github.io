@@ -21,17 +21,6 @@
     "duration": "3日間",
     "release": "2026年8月"
   },
-   
-   {
-    "id": "original-standing",
-    "title": "オリジナルキャラクター<br>立ち絵",
-    "image": "https://kohinn.github.io/kohinn-images/jk_1s.webp",
-    "series": "original",
-    "description": "さまざまなイラストやアニメーションに展開することを想定し、オリジナルキャラクターを創作しました。<br><br>キャラクターの個性が伝わるデザインと、さまざまなポーズやシチュエーションに対応できる汎用性を意識した設計しています。",
-    "tools": "CLIP STUDIO PAINT PRO",
-    "duration": "約2週間",
-    "release": "2026年8月"
-  },
   {
     "id": "blink_hair",
     "title": "『リコリス・リコイル』<br>アニメーション",
