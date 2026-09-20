@@ -823,3 +823,12 @@ section h2 {
   background: #008c8c;
   transform: translateY(-2px);
 }
+
+@media (max-width: 480px) {
+  .footer-follow {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0 0.4rem;
+  }
+}
