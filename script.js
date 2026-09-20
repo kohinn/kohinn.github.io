@@ -66,32 +66,57 @@ document.addEventListener("DOMContentLoaded", () => {
   /* 作品一覧ページ */
   const gallery = document.getElementById("gallery");
   if (gallery) {
-     gallery.innerHTML = "<p style='text-align:center;'>読み込み中...</p>";  // ← 追加
+    gallery.innerHTML = "<p style='text-align:center;'>読み込み中...</p>";
+
     fetch("works.json")
       .then(res => res.json())
       .then(data => {
-gallery.innerHTML = data.map(work => {
-  const wideClass = work.wide ? " gallery-item-wide" : "";
-  // 動画対応
-  if (work.video) {
-    return `
-      <figure class="gallery-item${wideClass}">
-        <a href="work_detail.html?id=${work.id}">
-          <video src="${work.video}" autoplay loop muted playsinline></video>
-        </a>
-      </figure>
-    `;
-  }
-  // 画像
-  return `
-    <figure class="gallery-item${wideClass}">
-      <a href="work_detail.html?id=${work.id}">
-        <img src="${work.image}" loading="lazy" decoding="async" alt="${work.title}">
-      </a>
-    </figure>
-  `;
-}).join("");
+
+        // 作品カードを描画する関数(フィルタ済みデータを受け取る)
+        function renderGallery(items) {
+          if (items.length === 0) {
+            gallery.innerHTML = "<p style='text-align:center;'>準備中です。</p>";
+            return;
+          }
+          gallery.innerHTML = items.map(work => {
+            const wideClass = work.wide ? " gallery-item-wide" : "";
+            if (work.video) {
+              return `
+                <figure class="gallery-item${wideClass}">
+                  <a href="work_detail.html?id=${work.id}">
+                    <video src="${work.video}" autoplay loop muted playsinline></video>
+                  </a>
+                </figure>
+              `;
+            }
+            return `
+              <figure class="gallery-item${wideClass}">
+                <a href="work_detail.html?id=${work.id}">
+                  <img src="${work.image}" loading="lazy" decoding="async" alt="${work.title}">
+                </a>
+              </figure>
+            `;
+          }).join("");
+        }
+
+        // 初期表示:originalのみ
+        renderGallery(data.filter(w => w.series === "original"));
+
+        // タブのクリックイベント
+        const tabs = document.querySelectorAll(".filter-tabs button");
+        tabs.forEach(btn => {
+          btn.addEventListener("click", () => {
+            const filter = btn.dataset.filter;
+            const filtered = filter === "all"
+              ? data
+              : data.filter(w => w.series === filter);
+
+            renderGallery(filtered);
+
+            tabs.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+          });
+        });
+
       });
   }
-
-}); // ← これが正しい閉じカッコ位置
