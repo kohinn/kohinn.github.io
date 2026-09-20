@@ -180,18 +180,34 @@ section h2 {
 }
 
 .menu-nav li a,
+.menu-follow {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 .menu-follow li a {
-  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.1rem;
   color: var(--color-text);
   text-decoration: none;
+  transition: color 0.25s ease;
 }
 
-.menu-business a {
-  font-size: 1.1rem;
+.menu-follow li a:hover {
   color: var(--accent);
-  text-decoration: none;
 }
 
+.menu-follow .icon {
+  width: 20px;
+  height: 20px;
+}
 /* =========================
    Hero（Homeのみ）
 ========================= */
