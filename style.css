@@ -396,6 +396,16 @@ section h2 {
     height: 420px;
     object-fit: cover;
   }
+
+  /* 横長作品だけ、切れずに全体が見えるように */
+  .works-gallery img.wide,
+  .works-gallery video.wide {
+    width: 88vw;
+    height: 220px;
+    object-fit: contain;
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-border);
+  }
 }
 
 /* =========================
