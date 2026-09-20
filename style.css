@@ -761,12 +761,16 @@ section h2 {
 }
 .flow-steps {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 0.6rem;
   margin-bottom: 0.8rem;
+  padding-bottom: 0.4rem;
+  scroll-snap-type: x proximity;
 }
 
 .flow-steps span {
+  flex: 0 0 auto;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: 999px;
@@ -774,6 +778,13 @@ section h2 {
   font-size: 0.82rem;
   color: var(--color-muted);
   white-space: nowrap;
+  scroll-snap-align: start;
+}
+
+.flow-steps span:not(:last-child)::after {
+  content: "→";
+  margin-left: 0.6rem;
+  color: var(--color-border);
 }
 .mail-button {
   display: inline-block;
