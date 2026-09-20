@@ -823,7 +823,6 @@ section h2 {
   background: #008c8c;
   transform: translateY(-2px);
 }
-
 /* =========================
    Illustrationページ：フィルタタブ
 ========================= */
@@ -858,3 +857,4 @@ section h2 {
   border-color: var(--accent);
   color: #fff;
 }
+
