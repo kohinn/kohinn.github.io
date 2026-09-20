@@ -388,7 +388,6 @@ section h2 {
   width: 620px;          /* 横長分の幅を確保 */
 }
 
-/* スマホ版も同じく横スクロール */
 @media (max-width: 768px) {
   .works-gallery img,
   .works-gallery video {
@@ -397,11 +396,12 @@ section h2 {
     object-fit: cover;
   }
 
-  /* 横長作品だけ、切れずに全体が見えるように */
+  /* 横長作品:高さは通常と揃え、幅だけ比率に応じて伸ばす */
   .works-gallery img.wide,
   .works-gallery video.wide {
-    width: 88vw;
-    height: 220px;
+    width: auto;
+    height: 420px;
+    max-width: 85vw;
     object-fit: contain;
     background: var(--color-bg-soft);
     border: 1px solid var(--color-border);
