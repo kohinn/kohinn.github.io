@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const work = data.find(w => w.id === id);
         if (!work) return;
 
-        // 画像か動画か判定
         const media = work.video
           ? `<video src="${work.video}" autoplay loop muted playsinline class="work-image"></video>`
           : `<img src="${work.image}" alt="${work.title}" class="work-image">`;
@@ -59,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         `;
 
-        initBurgerMenu(); // 再初期化
+        initBurgerMenu();
       });
   }
 
@@ -72,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(res => res.json())
       .then(data => {
 
-        // 作品カードを描画する関数(フィルタ済みデータを受け取る)
         function renderGallery(items) {
           if (items.length === 0) {
             gallery.innerHTML = "<p style='text-align:center;'>準備中です。</p>";
@@ -99,10 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
           }).join("");
         }
 
-        // 初期表示:originalのみ
         renderGallery(data.filter(w => w.series === "original"));
 
-        // タブのクリックイベント
         const tabs = document.querySelectorAll(".filter-tabs button");
         tabs.forEach(btn => {
           btn.addEventListener("click", () => {
@@ -120,3 +116,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
       });
   }
+
+});
