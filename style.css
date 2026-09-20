@@ -893,3 +893,46 @@ section h2 {
     flex-direction: column;
   }
 }
+
+.footer-nav a:not(:last-child)::after {
+  content: "・";
+  margin-left: 0.6rem;
+  color: var(--color-border);
+}
+
+.footer-follow {
+  gap: 0.4rem;
+}
+
+.footer-follow a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.6rem;
+  color: var(--color-muted);
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-follow a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+.icon-x          { mask-image: url('https://cdn.simpleicons.org/x'); -webkit-mask-image: url('https://cdn.simpleicons.org/x'); }
+.icon-pixiv      { mask-image: url('https://cdn.simpleicons.org/pixiv'); -webkit-mask-image: url('https://cdn.simpleicons.org/pixiv'); }
+.icon-instagram  { mask-image: url('https://cdn.simpleicons.org/instagram'); -webkit-mask-image: url('https://cdn.simpleicons.org/instagram'); }
+.icon-bluesky    { mask-image: url('https://cdn.simpleicons.org/bluesky'); -webkit-mask-image: url('https://cdn.simpleicons.org/bluesky'); }
+.icon-artstation { mask-image: url('https://cdn.simpleicons.org/artstation'); -webkit-mask-image: url('https://cdn.simpleicons.org/artstation'); }
