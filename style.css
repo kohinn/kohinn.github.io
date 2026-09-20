@@ -759,3 +759,75 @@ section h2 {
     gap: 0;
   }
 }
+/* =========================
+   Contactページの見た目（コンパクト版）
+========================= */
+.section-contact {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+  line-height: 1.8;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.section-contact h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.6rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.section-contact > p {
+  text-align: center;
+}
+
+.section-contact h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  text-align: left;
+}
+
+.section-contact p,
+.section-contact li {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-bottom: 0.6rem;
+}
+
+.section-contact ul,
+.section-contact ol {
+  margin-left: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.section-contact .note {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.section-contact hr {
+  margin: 1.6rem 0;
+  border: none;
+  border-top: 1px solid #ddd;
+  opacity: 0.6;
+}
+
+/* 短い情報ブロックを2カラムに並べてスクロール量を圧縮 */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2rem;
+}
+
+@media (max-width: 600px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
