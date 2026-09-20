@@ -19,6 +19,16 @@ function initBurgerMenu() {
 document.addEventListener("DOMContentLoaded", () => {
   initBurgerMenu();
 
+  /* メールアドレス組み立て(直接記載を避ける) */
+  const mailBtn = document.getElementById("mailButton");
+  if (mailBtn) {
+    mailBtn.addEventListener("click", () => {
+      const user = "kohinn.ver2";
+      const domain = "gmail.com";
+      window.location.href = `mailto:${user}@${domain}`;
+    });
+  }
+
   /* Scroll Fade */
   const fadeItems = document.querySelectorAll(".fade-in");
   const observer = new IntersectionObserver(entries => {
