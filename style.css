@@ -497,27 +497,31 @@ section h2 {
   margin-bottom: 0.8rem;
 }
 
-.footer-nav a:not(:last-child),
-.footer-follow a:not(:last-child) {
-  border-right: 1px solid var(--color-border);
-}
-
-.footer-follow a {
-  color: var(--color-muted);
-  text-decoration: none;
-  font-size: 0.85rem;
-  padding: 0.3rem 0.8rem;
-  line-height: 1;
-}
-
-
 .footer-nav,
 .footer-follow {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0;
+  row-gap: 0.6rem;
+  column-gap: 0;
+}
+
+.footer-nav a,
+.footer-follow a {
+  color: var(--color-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.6rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-nav a:not(:last-child)::after,
+.footer-follow a:not(:last-child)::after {
+  content: "・";
+  margin-left: 0.6rem;
+  color: var(--color-border);
 }
 
 .footer-copy {
@@ -526,6 +530,15 @@ section h2 {
   font-size: 0.85rem;
 }
 
+/* スマホ:ArtStationが孤立して折り返すのを防ぐ */
+@media (max-width: 480px) {
+  .footer-follow {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0 0.4rem;
+  }
+}
 /* =========================
    Scroll Fade（静かな演出）
 ========================= */
