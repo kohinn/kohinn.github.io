@@ -500,16 +500,20 @@ section h2 {
 .footer-nav a,
 .footer-follow a {
   color: var(--color-muted);
-  margin: 0 0.4rem;
   text-decoration: none;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+  line-height: 1;
 }
+
 
 .footer-nav,
 .footer-follow {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem 1.2rem;   /* 縦の間隔・横の間隔 */
+  align-items: center;
+  gap: 0;
 }
 
 .footer-copy {
