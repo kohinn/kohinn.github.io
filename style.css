@@ -172,11 +172,11 @@ section h2 {
 .menu-nav {
   list-style: none;
   padding: 0;
-  margin: 2rem 0;
+  margin: 1.6rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.6rem;
+  gap: 0.9rem;
 }
 
 .menu-nav li a {
