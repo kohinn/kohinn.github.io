@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,7 @@
 
 <header class="header">
   <div class="header-inner">
-    <div class="logo"><a href="index.html">Kohinn</a></div>
+    <div class="logo"><a href="index_jp.html">Kohinn</a></div>
     <div class="lang"><a href="contact_jp.html">JP</a> / <a href="contact.html">EN</a></div>
     <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
   </div>
@@ -29,18 +29,18 @@
   <div class="menu-inner">
     <h2 class="menu-title">MENU</h2>
     <ul class="menu-nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="illustration.html">Illustration</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index_jp.html">Home</a></li>
+      <li><a href="illustration_jp.html">Illustration</a></li>
+      <li><a href="about_jp.html">About</a></li>
+      <li><a href="contact_jp.html">Contact</a></li>
     </ul>
     <hr>
     <ul class="menu-follow">
-      <li><a href="https://twitter.com/V_Kohinn" target="_blank"><span class="icon icon-x"></span></a></li>
-      <li><a href="https://www.pixiv.net/users/92080067" target="_blank"><span class="icon icon-pixiv"></span></a></li>
-      <li><a href="https://instagram.com/kohinn.ver2" target="_blank"><span class="icon icon-instagram"></span></a></li>
-      <li><a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank"><span class="icon icon-bluesky"></span></a></li>
-      <li><a href="https://artstation.com/kohinn" target="_blank"><span class="icon icon-artstation"></span></a></li>
+      <li><a href="https://twitter.com/V_Kohinn" target="_blank"><span class="icon icon-x"></span>X</a></li>
+      <li><a href="https://www.pixiv.net/users/92080067" target="_blank"><span class="icon icon-pixiv"></span>Pixiv</a></li>
+      <li><a href="https://instagram.com/kohinn.ver2" target="_blank"><span class="icon icon-instagram"></span>Instagram</a></li>
+      <li><a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank"><span class="icon icon-bluesky"></span>Bluesky</a></li>
+      <li><a href="https://artstation.com/kohinn" target="_blank"><span class="icon icon-artstation"></span>ArtStation</a></li>
     </ul>
     <hr>
   </div>
@@ -50,94 +50,92 @@
 
 <section class="section-contact fade-in">
   <h1>CONTACT</h1>
-
   <!-- Pricing Guide -->
-  <h2>Pricing Guide</h2>
-  <p>Below are estimates for common request types. Formats not listed (headers, SNS post illustrations, light-novel cover compositions, etc.) are also welcome — please feel free to ask.</p>
+  <h2>料金の目安</h2>
+  <p>下記は代表的な制作内容の目安です。記載のない形式(ヘッダー・SNS投稿用イラスト・ラノベ表紙構図など)もご相談いただけます。</p>
   <ul>
-    <li>SNS icon / bust-up:from $100</li>
-    <li>Full illustration (full body, with background):from $200</li>
-    <li>Expression / outfit variant (per additional piece):+$20</li>
+    <li>SNS用アイコン・バストアップ:15,000円〜</li>
+    <li>一枚絵(全身・背景あり):30,000円〜</li>
+    <li>表情差分・衣装差分(1点追加につき):+3,000円〜</li>
   </ul>
   <p class="note">
-    ※ These are estimates only. Final pricing may vary depending on usage, deadline, and number of revisions — details will be confirmed in your quote.<br>
-    ※ Major changes or direction changes after the rough draft has been approved may incur an additional fee (1–2 minor revisions are included at no extra cost).
+    ※上記は目安です。用途・納期・修正回数等により変動しますので、詳細はお見積りにてご案内いたします。<br>
+    ※ラフ確認後の大幅な修正・方向性変更については追加料金が発生する場合があります(軽微な修正は1〜2回まで無料)。
   </p>
 
   <hr>
 
   <div class="contact-grid">
     <div>
-      <h2>Usage Scope</h2>
+      <h2>ご利用範囲について</h2>
       <ul>
-        <li>Personal use for streaming / SNS: included in the base price</li>
-        <li>Merchandise, commercial use, or redistribution: please inquire separately</li>
+        <li>個人での配信・SNSでの使用:基本料金内で対応可能です</li>
+        <li>グッズ化・商用利用・二次配布を伴うご利用:別途ご相談ください</li>
       </ul>
     </div>
 
     <div>
-      <h2>Content I Can't Take On</h2>
+      <h2>対応が難しい内容</h2>
       <ul>
-        <li>Excessive violence or sexual content</li>
-        <li>Fan art depicting specific real individuals</li>
-        <li>Anything otherwise against public decency</li>
+        <li>過度な暴力表現・性的表現</li>
+        <li>特定の実在の方を対象とした二次創作</li>
+        <li>その他、公序良俗に反する内容</li>
       </ul>
     </div>
   </div>
 
   <hr>
-
+  
   <!-- Contact Form -->
-  <h2>Contact Form</h2>
+  <h2>お問い合わせフォーム</h2>
 
   <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-    <!-- Web3Forms required -->
+    <!-- Web3Forms 必須 -->
     <input type="hidden" name="access_key" value="1faf647c-2bcd-4228-893e-3fa7fe0c7e55">
 
-    <label for="name">Name (required)</label>
-    <input type="text" id="name" name="name" required placeholder="Enter your name">
+    <label for="name">お名前（必須）</label>
+    <input type="text" id="name" name="name" required placeholder="お名前を入力してください">
 
-    <label for="email">Email (required)</label>
-    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+    <label for="email">メールアドレス（必須）</label>
+    <input type="email" id="email" name="email" required placeholder="メールアドレスを入力してください">
 
-    <label for="subject">Subject (required)</label>
-    <input type="text" id="subject" name="subject" required placeholder="Enter a subject">
+    <label for="subject">件名（必須）</label>
+    <input type="text" id="subject" name="subject" required placeholder="件名を入力してください">
 
-    <label for="message">Message (required)</label>
-    <textarea id="message" name="message" rows="7" required placeholder="e.g. request details, intended use, size, deadline, budget, and any reference material — whatever you can share"></textarea>
-
-    <button type="submit" class="contact-submit">Send</button>
+<label for="message">お問い合わせ内容（必須）</label>
+<textarea id="message" name="message" rows="7" required placeholder="例）依頼内容、用途、サイズ、納期、ご予算、参考資料の有無など、分かる範囲でご記入ください"></textarea>
+    <button type="submit" class="contact-submit">送信する</button>
   </form>
 
   <hr>
 
   <!-- Workflow -->
-  <h2>Process</h2>
+  <h2>制作の流れ</h2>
   <div class="flow-steps">
-    <span>①Inquiry</span>
-    <span>②Hearing</span>
-    <span>③Quote</span>
-    <span>④Start</span>
-    <span>⑤Rough Draft</span>
-    <span>⑥Line Art</span>
-    <span>⑦Final Check</span>
-    <span>⑧Delivery</span>
+    <span>①お問い合わせ</span>
+    <span>②ヒアリング</span>
+    <span>③お見積り</span>
+    <span>④制作開始</span>
+    <span>⑤ラフ確認</span>
+    <span>⑥清書</span>
+    <span>⑦最終確認</span>
+    <span>⑧納品</span>
   </div>
 
   <hr>
 
   <!-- Other Inquiries -->
-  <h2>Other Inquiries</h2>
+  <h2>その他のお問い合わせ</h2>
   <p>
-    I also welcome inquiries about other kinds of work, as well as inquiries from companies.<br>
-    Feel free to reach out even if the details aren't finalized yet.
+    イラスト制作以外のお仕事のご相談や企業様からのお問い合わせも歓迎しております。<br>
+    内容が決まっていない場合でも、お気軽にご連絡ください。
   </p>
 
   <hr>
 
-  <!-- Email -->
-  <h2>Email</h2>
-  <button type="button" class="mail-button" id="mailButton">✉ Contact by Email</button>
+  <!-- Email & SNS -->
+  <h2>メールでのお問い合わせ</h2>
+  <button type="button" class="mail-button" id="mailButton">✉ メールで問い合わせる</button>
 </section>
 
 </main>
@@ -147,10 +145,10 @@
     <div class="footer-logo">Kohinn</div>
 
     <nav class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="illustration.html">Illustration</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="index_jp.html">Home</a>
+      <a href="illustration_jp.html">Illustration</a>
+      <a href="about_jp.html">About</a>
+      <a href="contact_jp.html">Contact</a>
     </nav>
 
     <div class="footer-follow">
@@ -160,11 +158,11 @@
       <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank" aria-label="Bluesky"><span class="icon icon-bluesky"></span></a>
       <a href="https://artstation.com/kohinn" target="_blank" aria-label="ArtStation"><span class="icon icon-artstation"></span></a>
     </div>
-
+    
     <p class="footer-copy">©2026 Kohinn</p>
   </div>
 </footer>
 
-<script src="script_en.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
