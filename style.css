@@ -69,7 +69,6 @@ section h2 {
   position: relative;
 }
 
-/* ロゴ中央 */
 .logo {
   position: absolute;
   left: 50%;
@@ -83,7 +82,6 @@ section h2 {
   text-decoration: none;
 }
 
-/* 言語切替（左） */
 .lang {
   position: absolute;
   left: 24px;
@@ -124,7 +122,6 @@ section h2 {
   transition: all 0.25s ease;
 }
 
-/* × に変化 */
 .burger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -179,11 +176,18 @@ section h2 {
   margin: 2rem 0;
 }
 
-.menu-nav li a,
-.menu-follow {
-  list-style: none;
-  padding: 0;
+.menu-nav li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   margin: 2rem 0;
+  font-size: 1.4rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.menu-follow {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -208,70 +212,15 @@ section h2 {
   width: 20px;
   height: 20px;
 }
-/* =========================
-   Hero（Homeのみ）
-========================= */
-.hero {
-  max-width: 1080px;
-  margin: 0 auto var(--space-section);
-  position: relative;
-  padding: 0;
-}
-
-.hero-img {
-  max-width: 1080px;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  margin: 0 auto;
-  border-radius: var(--radius);
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .hero-img {
-    max-width: 480px;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    margin: 0 auto;
-  }
-}
-
-.hero-text {
-  position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  color: var(--color-bg);
-}
-
-.hero-text h1 {
-  font-size: 2.4rem;
-  font-weight: 700;
-}
-
-.hero-text p {
-  font-size: 1.1rem;
-}
-
-.scroll {
-  display: inline-block;
-  margin-top: 0.8rem;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
 
 /* =========================
    Homeセクション
 ========================= */
 .section-illustration,
-.section-about-teaser,
-.section-commission,
 .section-news {
   text-align: center;
 }
 
-/* 矢印リンク */
 .arrow-link {
   display: inline-flex;
   align-items: center;
@@ -398,10 +347,9 @@ section h2 {
   display: block;
 }
 
-/* 横長作品は、横幅を広げる */
 .works-gallery img.wide,
 .works-gallery video.wide {
-  width: 620px;          /* 横長分の幅を確保 */
+  width: 620px;
 }
 
 @media (max-width: 768px) {
@@ -422,6 +370,7 @@ section h2 {
     background: none;
   }
 }
+
 /* =========================
    Illustrationページ：一覧グリッド
 ========================= */
@@ -430,8 +379,8 @@ section h2 {
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
-  gap: 0.7rem;        /* 1rem → 0.6rem に縮小 */
-  padding: 0 0.8rem;  /* 1rem → 0.8rem に縮小(画面端の余白も少し詰める) */
+  gap: 0.7rem;
+  padding: 0 0.8rem;
 }
 
 @media (min-width: 768px) {
@@ -448,14 +397,14 @@ section h2 {
   align-items: center;
   text-align: center;
   width: 100%;
-  margin: 0;   /* ← この1行を追加 */
+  margin: 0;
 }
 
 .gallery-item img,
 .gallery-item video {
   display: block;
   width: 100%;
-  height: auto;        /* aspect-ratio と object-fit: cover を削除し、これに変更 */
+  height: auto;
   border-radius: 10px;
   margin: 0 auto 0.8rem;
 }
@@ -467,32 +416,81 @@ section h2 {
   }
 }
 
-.gallery-item p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--color-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-
-/* 動画を画像と同じサイズにする */
-.gallery video {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  display: block;
-}
-
 .gallery-item-wide {
-  grid-column: span 2;  /* 2列分の幅を使う */
+  grid-column: span 2;
 }
 
 .gallery-item-wide img,
 .gallery-item-wide video {
-  max-width: 100%;       /* 380pxの上限を解除して、2列分いっぱいに広げる */
+  max-width: 100%;
 }
+
+/* =========================
+   Illustrationページ：フィルタタブ
+========================= */
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1.6rem 0 2.4rem;
+}
+
+.filter-tabs button {
+  font-family: var(--font-base);
+  padding: 0.5rem 1.2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-bg);
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.filter-tabs button:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-tabs button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* =========================
+   About / Commissionカード
+========================= */
+.section-info {
+  display: flex;
+  gap: 2rem;
+}
+
+.info-card {
+  flex: 1;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2rem 1.6rem;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ecc71;
+  margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+  .section-info {
+    flex-direction: column;
+  }
+}
+
 /* =========================
    About / Contact セクション
 ========================= */
@@ -521,7 +519,6 @@ section h2 {
   margin-bottom: 0.8rem;
 }
 
-/* HOME〜Contact：横並び */
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
@@ -546,7 +543,6 @@ section h2 {
   color: var(--color-border);
 }
 
-/* SNSアイコン */
 .footer-follow {
   display: flex;
   flex-wrap: wrap;
@@ -570,11 +566,31 @@ section h2 {
   transform: translateY(-3px);
 }
 
+.icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+.icon-x          { mask-image: url('https://cdn.simpleicons.org/x'); -webkit-mask-image: url('https://cdn.simpleicons.org/x'); }
+.icon-pixiv      { mask-image: url('https://cdn.simpleicons.org/pixiv'); -webkit-mask-image: url('https://cdn.simpleicons.org/pixiv'); }
+.icon-instagram  { mask-image: url('https://cdn.simpleicons.org/instagram'); -webkit-mask-image: url('https://cdn.simpleicons.org/instagram'); }
+.icon-bluesky    { mask-image: url('https://cdn.simpleicons.org/bluesky'); -webkit-mask-image: url('https://cdn.simpleicons.org/bluesky'); }
+.icon-artstation { mask-image: url('https://cdn.simpleicons.org/artstation'); -webkit-mask-image: url('https://cdn.simpleicons.org/artstation'); }
+
 .footer-copy {
   margin-top: 1rem;
   color: #999;
   font-size: 0.85rem;
 }
+
 /* =========================
    Scroll Fade（静かな演出）
 ========================= */
@@ -600,11 +616,6 @@ section h2 {
 
   .arrow-link {
     margin-top: 0.4rem;
-  }
-
-  .hero-text {
-    bottom: 1.4rem;
-    left: 1.4rem;
   }
 
   .menu-nav li a,
@@ -686,7 +697,7 @@ section h2 {
 }
 
 /* =========================
-   Aboutページの見た目（改良版）
+   Aboutページの見た目
 ========================= */
 .section-about {
   max-width: 760px;
@@ -803,7 +814,6 @@ section h2 {
   opacity: 0.6;
 }
 
-/* 短い情報ブロックを2カラムに並べてスクロール量を圧縮 */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -816,6 +826,7 @@ section h2 {
     gap: 0;
   }
 }
+
 .flow-steps {
   display: flex;
   flex-wrap: nowrap;
@@ -843,6 +854,7 @@ section h2 {
   margin-left: 0.6rem;
   color: var(--color-border);
 }
+
 .mail-button {
   display: inline-block;
   padding: 0.8rem 1.6rem;
@@ -852,6 +864,8 @@ section h2 {
   text-decoration: none;
   font-size: 0.95rem;
   border-bottom: none !important;
+  cursor: pointer;
+  border: none;
   transition: background 0.25s ease, transform 0.25s ease;
 }
 
@@ -859,108 +873,3 @@ section h2 {
   background: #008c8c;
   transform: translateY(-2px);
 }
-/* =========================
-   Illustrationページ：フィルタタブ
-========================= */
-.filter-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.6rem;
-  margin: 1.6rem 0 2.4rem;
-}
-
-.filter-tabs button {
-  font-family: var(--font-base);
-  padding: 0.5rem 1.2rem;
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  background: var(--color-bg);
-  color: var(--color-muted);
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
-}
-
-.filter-tabs button:hover {
-  transform: translateY(-2px);
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.filter-tabs button.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-.section-info {
-  display: flex;
-  gap: 2rem;
-}
-
-.info-card {
-  flex: 1;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: 2rem 1.6rem;
-}
-
-.status-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #2ecc71;
-  margin-right: 6px;
-}
-
-@media (max-width: 768px) {
-  .section-info {
-    flex-direction: column;
-  }
-}
-
-.footer-nav a:not(:last-child)::after {
-  content: "・";
-  margin-left: 0.6rem;
-  color: var(--color-border);
-}
-
-.footer-follow {
-  gap: 0.4rem;
-  margin-top: 1rem;
-}
-
-.footer-follow a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.4rem 0.6rem;
-  color: var(--color-muted);
-  transition: color 0.25s ease, transform 0.25s ease;
-}
-
-.footer-follow a:hover {
-  color: var(--accent);
-  transform: translateY(-3px);
-}
-
-.icon {
-  display: block;
-  width: 18px;
-  height: 18px;
-  background-color: currentColor;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: contain;
-}
-
-.icon-x          { mask-image: url('https://cdn.simpleicons.org/x'); -webkit-mask-image: url('https://cdn.simpleicons.org/x'); }
-.icon-pixiv      { mask-image: url('https://cdn.simpleicons.org/pixiv'); -webkit-mask-image: url('https://cdn.simpleicons.org/pixiv'); }
-.icon-instagram  { mask-image: url('https://cdn.simpleicons.org/instagram'); -webkit-mask-image: url('https://cdn.simpleicons.org/instagram'); }
-.icon-bluesky    { mask-image: url('https://cdn.simpleicons.org/bluesky'); -webkit-mask-image: url('https://cdn.simpleicons.org/bluesky'); }
-.icon-artstation { mask-image: url('https://cdn.simpleicons.org/artstation'); -webkit-mask-image: url('https://cdn.simpleicons.org/artstation'); }
