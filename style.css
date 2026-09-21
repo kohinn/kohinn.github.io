@@ -412,15 +412,14 @@ section h2 {
     object-fit: cover;
   }
 
-  /* 横長作品:高さは通常と揃え、幅だけ比率に応じて伸ばす */
   .works-gallery img.wide,
   .works-gallery video.wide {
-    width: auto;
-    height: 420px;
-    max-width: 85vw;
-    object-fit: contain;
-    background: var(--color-bg-soft);
-    border: 1px solid var(--color-border);
+    width: 92vw;
+    height: auto;
+    max-height: 420px;
+    object-fit: cover;
+    border: none;
+    background: none;
   }
 }
 /* =========================
