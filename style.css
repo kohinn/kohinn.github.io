@@ -169,22 +169,31 @@ section h2 {
   margin-bottom: 2rem;
 }
 
-.menu-nav,
-.menu-follow {
+.menu-nav {
   list-style: none;
   padding: 0;
   margin: 2rem 0;
-}
-
-.menu-nav li a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin: 2rem 0;
-  font-size: 1.4rem;
+  gap: 1.6rem;
+}
+
+.menu-nav li a {
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 600;
   color: var(--color-text);
   text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.menu-nav li a:hover,
+.menu-nav li a:active {
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .menu-follow {
