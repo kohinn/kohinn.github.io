@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const work = data.find(w => w.id === id);
         if (!work) return;
 
-        // Detect image or video
         const media = work.video
           ? `<video src="${work.video}" autoplay loop muted playsinline class="work-image"></video>`
           : `<img src="${work.image}" alt="${work.title}" class="work-image">`;
@@ -59,40 +58,63 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         `;
 
-        initBurgerMenu(); // Reinitialize
+        initBurgerMenu();
       });
   }
 
   /* Work Gallery Page */
   const gallery = document.getElementById("gallery");
   if (gallery) {
-      gallery.innerHTML = "<p style='text-align:center;'>Loading...</p>";  // ← 追加
+    gallery.innerHTML = "<p style='text-align:center;'>Loading...</p>";
+
     fetch("works_en.json")
       .then(res => res.json())
       .then(data => {
-        gallery.innerHTML = data.map(work => {
-  const wideClass = work.wide ? " gallery-item-wide" : "";
-  // 動画対応
-  if (work.video) {
-    return `
-      <figure class="gallery-item${wideClass}">
-        <a href="work_detail.html?id=${work.id}">
-          <video src="${work.video}" autoplay loop muted playsinline></video>
-        </a>
-      </figure>
-    `;
-  }
-  // 画像
-  return `
-    <figure class="gallery-item${wideClass}">
-      <a href="work_detail.html?id=${work.id}">
-        <img src="${work.image}" loading="lazy" decoding="async" alt="${work.title}">
-      </a>
-    </figure>
-  `;
-}).join("");
+
+        function renderGallery(items) {
+          if (items.length === 0) {
+            gallery.innerHTML = "<p style='text-align:center;'>Coming soon.</p>";
+            return;
+          }
+          gallery.innerHTML = items.map(work => {
+            const wideClass = work.wide ? " gallery-item-wide" : "";
+            if (work.video) {
+              return `
+                <figure class="gallery-item${wideClass}">
+                  <a href="work_detail.html?id=${work.id}">
+                    <video src="${work.video}" autoplay loop muted playsinline></video>
+                  </a>
+                </figure>
+              `;
+            }
+            return `
+              <figure class="gallery-item${wideClass}">
+                <a href="work_detail.html?id=${work.id}">
+                  <img src="${work.image}" loading="lazy" decoding="async" alt="${work.title}">
+                </a>
+              </figure>
+            `;
+          }).join("");
+        }
+
+        renderGallery(data.filter(w => w.series === "original"));
+
+        const tabs = document.querySelectorAll(".filter-tabs button");
+        tabs.forEach(btn => {
+          btn.addEventListener("click", () => {
+            const filter = btn.dataset.filter;
+            const filtered = filter === "all"
+              ? data
+              : data.filter(w => w.series === filter);
+
+            renderGallery(filtered);
+
+            tabs.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+          });
+        });
+
       });
   }
 
-}); // Correct closing bracket
-
+});
