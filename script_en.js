@@ -19,6 +19,16 @@ function initBurgerMenu() {
 document.addEventListener("DOMContentLoaded", () => {
   initBurgerMenu();
 
+  /* Email button (address assembled here to avoid listing it directly) */
+  const mailBtn = document.getElementById("mailButton");
+  if (mailBtn) {
+    mailBtn.addEventListener("click", () => {
+      const user = "kohinn.ver2";
+      const domain = "gmail.com";
+      window.location.href = `mailto:${user}@${domain}`;
+    });
+  }
+
   /* Scroll Fade */
   const fadeItems = document.querySelectorAll(".fade-in");
   const observer = new IntersectionObserver(entries => {
@@ -81,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (work.video) {
               return `
                 <figure class="gallery-item${wideClass}">
-                  <a href="work_detail.html?id=${work.id}">
+                  <a href="work_detail_en.html?id=${work.id}">
                     <video src="${work.video}" autoplay loop muted playsinline></video>
                   </a>
                 </figure>
@@ -89,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             return `
               <figure class="gallery-item${wideClass}">
-                <a href="work_detail.html?id=${work.id}">
+                <a href="work_detail_en.html?id=${work.id}">
                   <img src="${work.image}" loading="lazy" decoding="async" alt="${work.title}">
                 </a>
               </figure>
@@ -103,19 +113,23 @@ document.addEventListener("DOMContentLoaded", () => {
         tabs.forEach(btn => {
           btn.addEventListener("click", () => {
             const filter = btn.dataset.filter;
-                           const filtered = filter === "all"
+            const filtered = filter === "all"
               ? data
               : filter === "fanart"
                 ? data.filter(w => w.series !== "original")
                 : data.filter(w => w.series === filter);
 
-            renderGallery(data);
+            renderGallery(filtered);
 
             tabs.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
           });
         });
 
+      })
+      .catch(err => {
+        console.error(err);
+        gallery.innerHTML = "<p style='text-align:center;'>Failed to load.</p>";
       });
   }
 
