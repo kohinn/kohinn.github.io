@@ -105,7 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const filter = btn.dataset.filter;
             const filtered = filter === "all"
               ? data
-              : data.filter(w => w.series === filter);
+              : filter === "fanart"
+                ? data.filter(w => w.series !== "original")
+                : data.filter(w => w.series === filter);
 
             renderGallery(data);
 
