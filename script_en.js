@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ? data
               : data.filter(w => w.series === filter);
 
-            renderGallery(filtered);
+            renderGallery(data);
 
             tabs.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
