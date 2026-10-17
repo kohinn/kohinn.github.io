@@ -929,3 +929,20 @@ section h2 {
     margin-left: 0.3rem;
   }
 }
+
+/* Home:横長イラストを切らずに表示 */
+.works-gallery img.wide {
+  width: auto;
+  height: 420px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .works-gallery img.wide {
+    width: 92vw;
+    height: auto;
+    max-height: none;
+    align-self: center;
+    object-fit: contain;
+  }
+}
