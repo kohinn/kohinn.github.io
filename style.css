@@ -913,3 +913,19 @@ section h2 {
   width: 26px;
   height: 26px;
 }
+
+/* スマホ:フッターのナビを1行に収める */
+@media (max-width: 480px) {
+  .footer-nav {
+    flex-wrap: nowrap;
+  }
+
+  .footer-nav a {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.3rem;
+  }
+
+  .footer-nav a:not(:last-child)::after {
+    margin-left: 0.3rem;
+  }
+}
