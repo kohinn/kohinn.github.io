@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }).join("");
         }
 
-        renderGallery(data.filter(w => w.series === "original"));
+        renderGallery(data);
 
         const tabs = document.querySelectorAll(".filter-tabs button");
         tabs.forEach(btn => {
