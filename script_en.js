@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tabs.forEach(btn => {
           btn.addEventListener("click", () => {
             const filter = btn.dataset.filter;
-            const filtered = filter === "all"
+               const filtered = filter === "all"
               ? data
               : filter === "fanart"
                 ? data.filter(w => w.series !== "original")
