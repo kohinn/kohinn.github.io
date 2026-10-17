@@ -893,3 +893,23 @@ section h2 {
 }
 
 .works-gallery img { object-position: center 15%; }
+
+/* メニュー内のSNS:「・」を消して、アイコンを横並びにする */
+.menu-follow {
+  list-style: none;
+  padding: 0;
+  margin: 1.6rem 0;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.4rem;
+}
+
+.menu-follow li a {
+  font-size: 0;
+  gap: 0;
+}
+
+.menu-follow .icon {
+  width: 26px;
+  height: 26px;
+}
