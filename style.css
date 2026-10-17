@@ -884,3 +884,10 @@ section h2 {
   background: #008c8c;
   transform: translateY(-2px);
 }
+
+.section-contact p a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
