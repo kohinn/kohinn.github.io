@@ -1,4 +1,15 @@
 [
+    {
+    "id": "original-tatie",
+    "title": "オリジナルキャラクター",
+    "image": "https://kohinn.github.io/kohinn-images/ori_15.webp",
+    "series": "original",
+    "wide": true,
+    "description": "",
+    "tools": "CLIP STUDIO PAINT PRO",
+    "duration": "５日間",
+    "release": "2026年10月"
+  },
   {
     "id": "tatuya",
     "title": "『魔法科高校の劣等生』<br>「司波達也」ファンアート",
