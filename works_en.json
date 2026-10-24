@@ -1,4 +1,15 @@
 [
+    {
+    "id": "original-cover2",
+    "title": "Original Character",
+    "image": "https://kohinn.github.io/kohinn-images/ori_15.webp",
+    "series": "original",
+    "wide": true,
+    "description": "",
+    "tools": "CLIP STUDIO PAINT PRO",
+    "duration": "5 days",
+    "release": "October 2026"
+  },
    {
     "id": "tatuya",
     "title": "The Irregular at Magic High School – Tatsuya Shiba Fan Art",
