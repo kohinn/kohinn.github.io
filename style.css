@@ -1011,3 +1011,182 @@ section h2 {
     grid-template-columns: 1fr;
   }
 }
+/* =========================
+   Contactページをコンパクトに
+========================= */
+
+/* 全体の余白を少し詰める */
+.section-contact {
+  max-width: 760px;
+  margin: 0 auto 3rem;          /* 下の余白を少し減らす */
+  padding: 0 1.2rem;
+  line-height: 1.7;             /* 1.8 → 1.7 に */
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* 見出しのサイズと余白を調整 */
+.section-contact h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;        /* 少し詰める */
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.section-contact h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.6rem;        /* 詰める */
+  text-align: left;
+}
+
+/* 本文・リストを少し小さく・詰める */
+.section-contact p,
+.section-contact li {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  margin-bottom: 0.45rem;       /* 詰める */
+  line-height: 1.65;
+}
+
+.section-contact ul,
+.section-contact ol {
+  margin-left: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+/* 注釈をさらに小さく */
+.section-contact .note {
+  font-size: 0.78rem;
+  color: #999;
+  line-height: 1.55;
+  margin-bottom: 0.4rem;
+}
+
+/* 区切り線の余白を減らす */
+.section-contact hr {
+  margin: 1.2rem 0;             /* 1.6rem → 1.2rem */
+  border: none;
+  border-top: 1px solid #ddd;
+  opacity: 0.6;
+}
+
+/* 料金カードを少しコンパクトに */
+.price-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;                  /* 少し詰める */
+  margin: 1.4rem 0 1.1rem;
+  text-align: center;
+}
+
+.price-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.1rem 0.9rem;       /* 少し小さく */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.price-label {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-bottom: 0.25rem;
+}
+
+.price-amount {
+  font-size: 1.25rem;           /* 少し小さく */
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.price-desc {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.price-meta {
+  margin: 0.8rem 0 0.5rem;
+  font-size: 0.86rem;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+/* デスクトップでは4列 */
+@media (min-width: 700px) {
+  .price-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* フォームの余白も少し詰める */
+.contact-form {
+  max-width: 760px;
+  margin: 1.4rem auto 0;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 1rem;             /* 1.2rem → 1rem */
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;      /* 少し小さく */
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.contact-submit {
+  margin-top: 1.3rem;
+  padding: 0.75rem 1.8rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+/* 制作の流れも少しコンパクトに */
+.flow-steps {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 0.5rem;
+  margin: 1rem 0 0.6rem;
+  padding-bottom: 0.3rem;
+  scroll-snap-type: x proximity;
+}
+
+.flow-steps span {
+  flex: 0 0 auto;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  white-space: nowrap;
+  scroll-snap-align: start;
+}
