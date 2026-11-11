@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kohinn | Contact</title>
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
@@ -48,20 +48,38 @@
 
 <main>
 
-<section class="section-contact fade-in">
+<section class="section-contact">
   <h1>CONTACT</h1>
 
   <!-- Pricing Guide -->
   <h2>Pricing Guide</h2>
   <p>Below are estimates for common request types. Formats not listed (headers, SNS post illustrations, light-novel cover compositions, etc.) are also welcome — please feel free to ask.</p>
-  <ul>
-     <li>bust-up: from $35</li>
-    <li>Full illustration (full body, simple background): from $55</li>
-    <li>Full illustration (full body, detailed background): from $100</li>
-    <li>Expression / outfit variant (per additional piece): +$15</li>
-  </ul>
-  <p>Typical turnaround: 2–3 weeks / Payment: upfront before work begins (method confirmed in your quote)</p>
-  <p><a href="illustration.html">View my work →</a></p>
+
+  <div class="price-cards">
+    <div class="price-card">
+      <div class="price-label">Bust-up</div>
+      <div class="price-amount">from $35</div>
+      <p class="price-desc">Single character, no background</p>
+    </div>
+    <div class="price-card">
+      <div class="price-label">Full body (simple bg)</div>
+      <div class="price-amount">from $55</div>
+      <p class="price-desc">Full body + simple background</p>
+    </div>
+    <div class="price-card">
+      <div class="price-label">Full body (detailed bg)</div>
+      <div class="price-amount">from $100</div>
+      <p class="price-desc">Full body + detailed background</p>
+    </div>
+    <div class="price-card">
+      <div class="price-label">Expression / Outfit</div>
+      <div class="price-amount">+$15</div>
+      <p class="price-desc">Per additional piece</p>
+    </div>
+  </div>
+
+  <p class="price-meta">Typical turnaround: 2–3 weeks　／　Payment: upfront before work begins (method confirmed in your quote)</p>
+  <p><a href="illustration.html" class="arrow-link">View my work →</a></p>
   <p class="note">
     ※ These are estimates only. Final pricing may vary depending on usage, deadline, and number of revisions — details will be confirmed in your quote.<br>
     ※ Major changes or direction changes after the rough draft has been approved may incur an additional fee (1–2 minor revisions are included at no extra cost).
@@ -81,7 +99,7 @@
     <div>
       <h2>Content I Can't Take On</h2>
       <ul>
-                <li>Excessive violence</li>
+        <li>Excessive violence</li>
         <li>R-18 content (explicit nudity or sexual acts)</li>
         <li>Fan art depicting specific real individuals</li>
         <li>Anything otherwise against public decency</li>
@@ -92,12 +110,11 @@
   </div>
 
   <hr>
-
+  
   <!-- Contact Form -->
   <h2>Contact Form</h2>
 
   <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-    <!-- Web3Forms required -->
     <input type="hidden" name="access_key" value="1faf647c-2bcd-4228-893e-3fa7fe0c7e55">
 
     <label for="name">Name (required)</label>
