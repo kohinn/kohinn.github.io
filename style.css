@@ -948,3 +948,34 @@ section h2 {
     margin-left: 0.3rem;
   }
 }
+/* ボタンを中央寄せ */
+.contact-form {
+  text-align: center;
+}
+
+.contact-form label,
+.contact-form input,
+.contact-form textarea {
+  text-align: left;
+}
+
+.contact-submit {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* つなぐ・メールボタンも中央寄せ */
+.section-contact .mail-button {
+  display: inline-block;
+  margin: 0.5rem auto;
+}
+
+.section-contact h2 + p + div {
+  text-align: center;
+}
+
+.section-contact h2 + button.mail-button {
+  display: block;
+  margin: 0.8rem auto 0;
+}
