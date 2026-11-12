@@ -979,3 +979,54 @@ section h2 {
   display: block;
   margin: 0.8rem auto 0;
 }
+/* =========================
+   Home: Intro + CTA
+========================= */
+.section-intro {
+  max-width: 680px;
+  margin: 3rem auto 4rem;
+  padding: 0 1.6rem;
+  text-align: center;
+}
+
+.section-intro h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.section-intro p {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+  margin-bottom: 1.8rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.cta-button:hover {
+  background: #008c8c;
+  transform: translateY(-2px);
+}
+
+/* ギャラリー下の余白調整 */
+.section-works {
+  margin-bottom: 1rem;
+}
+
+.section-works .arrow-link {
+  display: block;
+  text-align: center;
+  margin-top: 1.2rem;
+}
