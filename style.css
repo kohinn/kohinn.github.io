@@ -1190,3 +1190,44 @@ section h2 {
   white-space: nowrap;
   scroll-snap-align: start;
 }
+/* 料金カード内の画像 */
+.price-image {
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  background: #f0f0f0;
+}
+
+.price-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.price-card:hover .price-image img {
+  transform: scale(1.04);
+}
+
+/* カード全体の調整（画像入り用） */
+.price-card {
+  padding: 1rem 0.9rem 1.2rem;
+}
+
+.price-label {
+  font-size: 0.82rem;
+  margin-bottom: 0.2rem;
+}
+
+.price-amount {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.price-desc {
+  font-size: 0.76rem;
+}
