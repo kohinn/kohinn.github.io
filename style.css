@@ -382,17 +382,13 @@ section h2 {
 ========================= */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   justify-items: center;
-  align-items: center;
-  gap: 0.7rem;
-  padding: 0 0.8rem;
-}
-
-@media (min-width: 768px) {
-  .gallery {
-    gap: 40px;
-  }
+  align-items: start;
+  gap: 1.4rem;
+  padding: 0 1rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .gallery-item {
@@ -401,6 +397,7 @@ section h2 {
   align-items: center;
   text-align: center;
   width: 100%;
+  max-width: 380px;
 }
 
 .gallery-item img,
@@ -412,15 +409,10 @@ section h2 {
   margin: 0 auto 0.8rem;
 }
 
-@media (min-width: 769px) {
-  .gallery-item img,
-  .gallery-item video {
-    max-width: 380px;
-  }
-}
-
+/* wide指定がある場合は少し大きく */
 .gallery-item-wide {
-  grid-column: span 2;
+  max-width: 100%;
+  grid-column: 1 / -1; /* 全幅に広げる場合 */
 }
 
 .gallery-item-wide img,
