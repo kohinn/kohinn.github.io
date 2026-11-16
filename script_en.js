@@ -1,5 +1,5 @@
 /* =========================
-   Hamburger Menu (Function)
+   ハンバーガーメニュー（関数化）
 ========================= */
 function initBurgerMenu() {
   const burger = document.getElementById("burgerBtn");
@@ -14,12 +14,12 @@ function initBurgerMenu() {
 }
 
 /* =========================
-   Execute on DOM Load
+   DOM読み込み時に実行
 ========================= */
 document.addEventListener("DOMContentLoaded", () => {
   initBurgerMenu();
 
-  /* Email button (address assembled here to avoid listing it directly) */
+  /* メールアドレス組み立て(直接記載を避ける) */
   const mailBtn = document.getElementById("mailButton");
   if (mailBtn) {
     mailBtn.addEventListener("click", () => {
@@ -38,13 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.2 });
   fadeItems.forEach(item => observer.observe(item));
 
-  /* Work Detail Page */
+  /* 作品詳細ページ */
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
   const workDetail = document.getElementById("workDetail");
 
   if (id && workDetail) {
-    fetch("works_en.json")
+    fetch("works.json")
       .then(res => res.json())
       .then(data => {
         const work = data.find(w => w.id === id);
@@ -58,13 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
           <h1>${work.title}</h1>
           ${media}
           <div class="work-meta">
-            ${work.description ? `<h3>Description</h3><p>${work.description}</p>` : ""}
-            ${work.tools ? `<h3>Tools Used</h3><p>${work.tools}</p>` : ""}
-            ${work.duration ? `<h3>Production Time</h3><p>${work.duration}</p>` : ""}
-            ${work.release ? `<h3>Release</h3><p>${work.release}</p>` : ""}
+            ${work.description ? `<h3>制作概要</h3><p>${work.description}</p>` : ""}
+            ${work.tools ? `<h3>使用ツール</h3><p>${work.tools}</p>` : ""}
+            ${work.duration ? `<h3>制作期間</h3><p>${work.duration}</p>` : ""}
+            ${work.release ? `<h3>リリース</h3><p>${work.release}</p>` : ""}
           </div>
           <div class="work-nav">
-            <a href="illustration.html" class="arrow-link">← Back to Gallery</a>
+            <a href="illustration_jp.html" class="arrow-link">← 作品一覧へ戻る</a>
           </div>
         `;
 
@@ -72,18 +72,29 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  /* Work Gallery Page */
+  /* 作品一覧ページ */
   const gallery = document.getElementById("gallery");
   if (gallery) {
-    gallery.innerHTML = "<p style='text-align:center;'>Loading...</p>";
+    gallery.innerHTML = "<p style='text-align:center;'>読み込み中...</p>";
 
-    fetch("works_en.json")
+    fetch("works.json")
       .then(res => res.json())
       .then(data => {
 
+        // release（例: "2026年11月"）を新しい順に並べる
+        const sortedData = [...data].sort((a, b) => {
+          const parseRelease = (str) => {
+            if (!str) return 0;
+            const match = str.match(/(\d{4})年(\d{1,2})月/);
+            if (!match) return 0;
+            return parseInt(match[1]) * 100 + parseInt(match[2]);
+          };
+          return parseRelease(b.release) - parseRelease(a.release);
+        });
+
         function renderGallery(items) {
           if (items.length === 0) {
-            gallery.innerHTML = "<p style='text-align:center;'>Coming soon.</p>";
+            gallery.innerHTML = "<p style='text-align:center;'>準備中です。</p>";
             return;
           }
           gallery.innerHTML = items.map(work => {
@@ -91,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (work.video) {
               return `
                 <figure class="gallery-item${wideClass}">
-                  <a href="work_detail_en.html?id=${work.id}">
+                  <a href="work_detail.html?id=${work.id}">
                     <video src="${work.video}" autoplay loop muted playsinline></video>
                   </a>
                 </figure>
@@ -99,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             return `
               <figure class="gallery-item${wideClass}">
-                <a href="work_detail_en.html?id=${work.id}">
+                <a href="work_detail.html?id=${work.id}">
                   <img src="${work.image}" loading="lazy" decoding="async" alt="${work.title}">
                 </a>
               </figure>
@@ -107,17 +118,17 @@ document.addEventListener("DOMContentLoaded", () => {
           }).join("");
         }
 
-        renderGallery(data);
+        renderGallery(sortedData);
 
         const tabs = document.querySelectorAll(".filter-tabs button");
         tabs.forEach(btn => {
           btn.addEventListener("click", () => {
             const filter = btn.dataset.filter;
             const filtered = filter === "all"
-              ? data
+              ? sortedData
               : filter === "fanart"
-                ? data.filter(w => w.series !== "original")
-                : data.filter(w => w.series === filter);
+                ? sortedData.filter(w => w.series !== "original")
+                : sortedData.filter(w => w.series === filter);
 
             renderGallery(filtered);
 
@@ -126,10 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         });
 
-      })
-      .catch(err => {
-        console.error(err);
-        gallery.innerHTML = "<p style='text-align:center;'>Failed to load.</p>";
       });
   }
 
