@@ -81,6 +81,17 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(res => res.json())
       .then(data => {
 
+        // release（例: "2026年11月"）を新しい順に並べる
+        const sortedData = [...data].sort((a, b) => {
+          const parseRelease = (str) => {
+            if (!str) return 0;
+            const match = str.match(/(\d{4})年(\d{1,2})月/);
+            if (!match) return 0;
+            return parseInt(match[1]) * 100 + parseInt(match[2]);
+          };
+          return parseRelease(b.release) - parseRelease(a.release);
+        });
+
         function renderGallery(items) {
           if (items.length === 0) {
             gallery.innerHTML = "<p style='text-align:center;'>準備中です。</p>";
@@ -107,17 +118,17 @@ document.addEventListener("DOMContentLoaded", () => {
           }).join("");
         }
 
-        renderGallery(data);
+        renderGallery(sortedData);
 
         const tabs = document.querySelectorAll(".filter-tabs button");
         tabs.forEach(btn => {
           btn.addEventListener("click", () => {
             const filter = btn.dataset.filter;
-                        const filtered = filter === "all"
-              ? data
+            const filtered = filter === "all"
+              ? sortedData
               : filter === "fanart"
-                ? data.filter(w => w.series !== "original")
-                : data.filter(w => w.series === filter);
+                ? sortedData.filter(w => w.series !== "original")
+                : sortedData.filter(w => w.series === filter);
 
             renderGallery(filtered);
 
@@ -128,5 +139,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
       });
   }
-
-});
