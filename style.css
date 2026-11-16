@@ -412,13 +412,20 @@ section h2 {
   width: 100%;
   height: auto;
   vertical-align: top;
-  border-radius: 0;
   background: #f5f5f5;
 }
 
-/* wide指定は使わない（隙間の原因になるため） */
+/* 横長イラストは1列（全幅）で表示 */
 .gallery-item-wide {
-  /* 何も指定しない */
+  grid-column: 1 / -1;
+}
+
+.gallery-item-wide img,
+.gallery-item-wide video {
+  width: 100%;
+  max-height: 70vh;          /* 必要に応じて調整 */
+  object-fit: contain;       /* はみ出さず全体を見せる */
+  background: #f5f5f5;
 }
 
 /* タブレット〜PC */
@@ -429,7 +436,7 @@ section h2 {
   }
 }
 
-/* スマホ（狭い画面でも2列を維持） */
+/* スマホ */
 @media (max-width: 480px) {
   .gallery {
     gap: 8px;
