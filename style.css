@@ -382,11 +382,9 @@ section h2 {
 ========================= */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  justify-items: center;
-  align-items: start;
-  gap: 1.4rem;
-  padding: 0 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 0 12px;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -397,7 +395,6 @@ section h2 {
   align-items: center;
   text-align: center;
   width: 100%;
-  max-width: 380px;
 }
 
 .gallery-item img,
@@ -406,20 +403,21 @@ section h2 {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  margin: 0 auto 0.8rem;
+  background: #fff; /* 背景なしイラストを少し目立たせる */
 }
 
-/* wide指定がある場合は少し大きく */
+/* wide指定は一旦無効化（隙間の原因になるため） */
 .gallery-item-wide {
-  max-width: 100%;
-  grid-column: 1 / -1; /* 全幅に広げる場合 */
+  /* grid-column: 1 / -1;  ← これを使わない */
 }
 
-.gallery-item-wide img,
-.gallery-item-wide video {
-  max-width: 100%;
+/* スマホでも2列を維持 */
+@media (max-width: 480px) {
+  .gallery {
+    gap: 8px;
+    padding: 0 8px;
+  }
 }
-
 /* フィルタタブ */
 .filter-tabs {
   display: flex;
