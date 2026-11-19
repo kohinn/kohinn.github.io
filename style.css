@@ -1080,6 +1080,7 @@ section h2 {
 .v2 .header-inner {
   max-width: 1160px;
   justify-content: flex-start;
+  align-items: center;
   gap: 32px;
 }
 
@@ -1087,6 +1088,19 @@ section h2 {
 .v2 .lang {
   position: static;
   transform: none;
+}
+
+/* ナビとJP/ENで、フォント・大きさ・行の高さをそろえる（高さのずれ対策） */
+.v2 .header-nav a,
+.v2 .lang {
+  font-family: var(--font-en);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.v2 .lang a {
+  display: inline-block;
+  padding: 0.5rem 0;
 }
 
 .v2 .logo a {
@@ -1097,16 +1111,16 @@ section h2 {
 
 .v2 .header-nav {
   display: flex;
+  align-items: center;
   gap: 28px;
   margin-left: auto;
 }
 
 .v2 .header-nav a {
-  font-family: var(--font-en);
-  font-size: 0.9rem;
   color: var(--color-text);
   text-decoration: none;
-  padding: 0.3rem 0;
+  padding: 0.5rem 0;
+  border-top: 2px solid transparent;      /* 上下の枠をそろえ、文字を中央に保つ */
   border-bottom: 2px solid transparent;
   transition: color 0.25s ease, border-color 0.25s ease;
 }
@@ -1174,10 +1188,10 @@ section h2 {
 .v2 .hero {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 64px 24px 96px;
+  padding: 48px 24px 56px;
   display: grid;
   grid-template-columns: 1.05fr 1fr;
-  gap: 64px;
+  gap: 48px;
   align-items: center;
   text-align: left;
 }
@@ -1255,11 +1269,11 @@ section h2 {
 .v2 .home-price {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: 48px 24px;
 }
 
 .v2 .section-head {
-  margin-bottom: 48px;
+  margin-bottom: 28px;
   text-align: center;
 }
 
@@ -1278,7 +1292,7 @@ section h2 {
 }
 
 .v2 .section-link {
-  margin: 40px 0 0;
+  margin: 24px 0 0;
   text-align: center;
 }
 
@@ -1318,7 +1332,7 @@ section h2 {
 }
 
 .v2 .trust-card {
-  padding: 32px 24px;
+  padding: 24px 20px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -1368,7 +1382,7 @@ section h2 {
   justify-content: space-between;
   align-items: baseline;
   gap: 16px;
-  padding: 20px 28px;
+  padding: 16px 24px;
 }
 
 .v2 .price-list li + li {
@@ -1413,8 +1427,8 @@ section h2 {
 @media (max-width: 768px) {
   .v2 .hero {
     grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 40px 20px 64px;
+    gap: 24px;
+    padding: 24px 20px 40px;
   }
 
   .v2 .hero-visual {
@@ -1426,11 +1440,11 @@ section h2 {
   .v2 .home-works,
   .v2 .trust,
   .v2 .home-price {
-    padding: 56px 20px;
+    padding: 36px 20px;
   }
 
   .v2 .section-head {
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
 
   .v2 .works-grid {
