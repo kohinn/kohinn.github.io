@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://kohinn.github.io/">
   <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <!-- Google tag (gtag.js) -->
@@ -24,13 +24,21 @@
     gtag('config', 'G-V286NXLCKF');
   </script>
 </head>
-<body class="home-page">
+<body class="home-page v2">
 
 <header class="header">
   <div class="header-inner">
     <div class="logo"><a href="index_jp.html">Kohinn</a></div>
+
+    <!-- PC: 常時表示のナビ / スマホ: ハンバーガーに切り替え -->
+    <nav class="header-nav" aria-label="メインメニュー">
+      <a href="illustration_jp.html">Illustration</a>
+      <a href="about_jp.html">About</a>
+      <a href="contact_jp.html">Contact</a>
+    </nav>
+
     <div class="lang"><a href="index_jp.html">JP</a> / <a href="index.html">EN</a></div>
-    <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
+    <button class="burger" id="burgerBtn" aria-label="メニューを開く"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -61,26 +69,92 @@
 
 <main>
 
-  <!-- Works Gallery -->
-  <section class="section-works">
-    <div class="works-gallery">
-      <img src="https://kohinn.github.io/kohinn-images/Oumiya Emma_12.webp" alt="Work 1" loading="lazy">
-      <img src="https://kohinn.github.io/kohinn-images/zen82jk.webp" alt="Work 2" loading="lazy">
-      <img src="https://kohinn.github.io/kohinn-images/sunaffy3.webp" alt="Work 3" loading="lazy">
-      <img src="https://kohinn.github.io/kohinn-images/tatuya.webp" alt="Work 4" class="wide" loading="lazy">
+  <!-- ① ヒーロー：左に文字、右に絵 -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Character Illustrator</p>
+      <h1 class="hero-title">その子らしさが伝わる、<br>キャラクターイラスト。</h1>
+      <p class="hero-lead">
+        VTuber・オリジナルキャラクターのイラストを制作しています。<br>
+        表情や仕草、ポーズで、キャラクターの個性を引き出します。
+      </p>
+
+      <!-- 受付状況：枠数を出す場合は「ご依頼受付中（12月・残り2枠）」のように書き換える -->
+      <p class="status-badge"><span class="status-dot"></span>ご依頼受付中</p>
+
+      <div class="hero-actions">
+        <a href="contact_jp.html" class="btn btn-primary">料金・ご依頼はこちら</a>
+        <a href="illustration_jp.html" class="btn btn-ghost">作品を見る</a>
+      </div>
     </div>
-    
-    <a href="illustration_jp.html" class="arrow-link">View Gallery →</a>
+
+    <div class="hero-visual">
+      <img src="https://kohinn.github.io/kohinn-images/Oumiya%20Emma_12.webp" alt="キャラクターイラストの作品" fetchpriority="high">
+    </div>
   </section>
 
-  <!-- Intro + CTA -->
-  <section class="section-intro">
-    <h2>キャラクターイラスト</h2>
-    <p>VTuber・オリジナルキャラクターなどのイラストを制作しています。<br>
-    現在、ご依頼を受付中です。</p>
-    <a href="contact_jp.html" class="cta-button">料金・ご依頼はこちら</a>
+  <!-- ② 作品グリッド -->
+  <section class="home-works">
+    <header class="section-head">
+      <h2 class="section-title">WORKS</h2>
+      <p class="section-sub">作品</p>
+    </header>
+
+    <div class="works-grid">
+      <a href="work_detail.html?id=Zentreya5" class="works-item"><img src="https://kohinn.github.io/kohinn-images/zen82jk.webp" alt="Zentreya ファンアート" loading="lazy"></a>
+      <a href="work_detail.html?id=sunaffy" class="works-item"><img src="https://kohinn.github.io/kohinn-images/sunaffy3.webp" alt="VTuber ファンアート" loading="lazy"></a>
+      <a href="work_detail.html?id=Zentreya4" class="works-item"><img src="https://kohinn.github.io/kohinn-images/zen7.webp" alt="Zentreya ファンアート" loading="lazy"></a>
+      <a href="work_detail.html?id=original-tatie" class="works-item"><img src="https://kohinn.github.io/kohinn-images/ori_15.webp" alt="オリジナルキャラクター" loading="lazy"></a>
+      <a href="work_detail.html?id=Zentreya3" class="works-item"><img src="https://kohinn.github.io/kohinn-images/zen3.webp" alt="Zentreya ファンアート" loading="lazy"></a>
+      <a href="work_detail.html?id=Zentreya2" class="works-item"><img src="https://kohinn.github.io/kohinn-images/zentrya0.webp" alt="Zentreya ファンアート" loading="lazy"></a>
+    </div>
+
+    <p class="section-link"><a href="illustration_jp.html" class="arrow-link">作品をすべて見る →</a></p>
   </section>
-  
+
+  <!-- ③ ご依頼の安心ポイント -->
+  <section class="trust">
+    <header class="section-head">
+      <h2 class="section-title">FOR CLIENTS</h2>
+      <p class="section-sub">ご依頼の前に</p>
+    </header>
+
+    <div class="trust-cards">
+      <div class="trust-card">
+        <p class="trust-label">返信の目安</p>
+        <p class="trust-main">3日以内</p>
+        <p class="trust-desc">お問い合わせには、3日以内にお返事します。</p>
+      </div>
+      <div class="trust-card">
+        <p class="trust-label">修正について</p>
+        <p class="trust-main">1〜2回まで無料</p>
+        <p class="trust-desc">ラフ確認のあと、軽微な修正は無料で対応します。</p>
+      </div>
+      <div class="trust-card">
+        <p class="trust-label">制作の流れ</p>
+        <p class="trust-main">段階ごとに確認</p>
+        <p class="trust-desc">ヒアリング・お見積り・ラフ・最終確認と、一緒に進めます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ 料金の目安と導線 -->
+  <section class="home-price">
+    <header class="section-head">
+      <h2 class="section-title">PRICE</h2>
+      <p class="section-sub">料金の目安</p>
+    </header>
+
+    <ul class="price-list">
+      <li><span class="price-name">バストアップ</span><span class="price-value">5,000円〜</span></li>
+      <li><span class="price-name">全身（背景なし）</span><span class="price-value">8,000円〜</span></li>
+      <li><span class="price-name">全身（背景あり）</span><span class="price-value">15,000円〜</span></li>
+    </ul>
+    <p class="price-note">納期の目安：2〜3週間　／　お支払い：制作開始前の先払い</p>
+
+    <a href="contact_jp.html" class="btn btn-primary">詳しい料金・ご依頼の流れを見る</a>
+  </section>
+
 </main>
 
 <footer class="footer">
@@ -101,7 +175,7 @@
       <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank" aria-label="Bluesky"><span class="icon icon-bluesky"></span></a>
       <a href="https://artstation.com/kohinn" target="_blank" aria-label="ArtStation"><span class="icon icon-artstation"></span></a>
     </div>
-    
+
     <p class="footer-copy">©2026 Kohinn</p>
   </div>
 </footer>
