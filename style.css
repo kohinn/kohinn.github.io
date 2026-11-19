@@ -1043,3 +1043,408 @@ section h2 {
   text-align: center;
   margin-top: 1.2rem;
 }
+
+/* =========================================================
+   v2 レイアウト
+   <body class="v2"> のページだけに適用されます。
+   （他のページは、body に v2 を付けるまで今のままです）
+========================================================= */
+.v2 {
+  /* 既存の変数を、新しい配色に差し替える */
+  --color-bg: #ffffff;
+  --color-bg-soft: #faf9f7;
+  --color-text: #2b2b2b;
+  --color-muted: #5f5f5f;
+  --color-border: #e8e6e1;
+  --accent: #007c80;        /* 白背景でも読みやすい濃さ */
+  --accent-hover: #006a6e;
+
+  /* 新しい変数 */
+  --line: #e8e6e1;
+  --surface: #ffffff;
+  --font-en: 'Poppins', 'Noto Sans JP', sans-serif;
+
+  margin: 0;   /* ブラウザ標準の8px余白を消し、ヘッダーと本文の左右位置をそろえる */
+  background: var(--color-bg-soft);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ---------- ヘッダー：PCはナビを常に表示 ---------- */
+.v2 .header {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.v2 .header-inner {
+  max-width: 1160px;
+  justify-content: flex-start;
+  gap: 32px;
+}
+
+.v2 .logo,
+.v2 .lang {
+  position: static;
+  transform: none;
+}
+
+.v2 .logo a {
+  font-family: var(--font-en);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.v2 .header-nav {
+  display: flex;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.v2 .header-nav a {
+  font-family: var(--font-en);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.v2 .header-nav a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.v2 .burger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .v2 .header-nav {
+    display: none;
+  }
+
+  .v2 .lang {
+    margin-left: auto;
+    margin-right: 48px;   /* ハンバーガーと重ならない余白 */
+  }
+
+  .v2 .burger {
+    display: flex;
+  }
+}
+
+/* ---------- ボタン ---------- */
+.v2 .btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease,
+              border-color 0.25s ease, transform 0.25s ease;
+}
+
+.v2 .btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.v2 .btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.v2 .btn-ghost {
+  background: transparent;
+  color: var(--color-text);
+  border-color: #cfcbc3;
+}
+
+.v2 .btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------- ① ヒーロー（左：文字 / 右：絵） ---------- */
+.v2 .hero {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 64px 24px 96px;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 64px;
+  align-items: center;
+  text-align: left;
+}
+
+.v2 .hero-eyebrow {
+  margin: 0 0 16px;
+  font-family: var(--font-en);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.v2 .hero-title {
+  margin: 0 0 24px;
+  font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.v2 .hero-lead {
+  margin: 0 0 24px;
+  color: var(--color-muted);
+}
+
+.v2 .status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 32px;
+  padding: 6px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.v2 .status-badge .status-dot {
+  margin-right: 0;
+}
+
+.v2 .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.v2 .hero-visual {
+  aspect-ratio: 4 / 5;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #eceae5;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+.v2 .hero-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+/* ---------- セクション共通 ---------- */
+.v2 .home-works,
+.v2 .trust,
+.v2 .home-price {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.v2 .section-head {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.v2 .section-title {
+  margin: 0;
+  font-family: var(--font-en);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.v2 .section-sub {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.v2 .section-link {
+  margin: 40px 0 0;
+  text-align: center;
+}
+
+/* ---------- ② 作品グリッド ---------- */
+.v2 .works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.v2 .works-item {
+  display: block;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #eceae5;
+}
+
+.v2 .works-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  transition: transform 0.4s ease;
+}
+
+.v2 .works-item:hover img {
+  transform: scale(1.04);
+}
+
+/* ---------- ③ ご依頼の安心ポイント ---------- */
+.v2 .trust-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.v2 .trust-card {
+  padding: 32px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.v2 .trust-label {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+}
+
+.v2 .trust-main {
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--accent);
+}
+
+.v2 .trust-desc {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--color-muted);
+}
+
+/* ---------- ④ 料金の目安 ---------- */
+.v2 .home-price {
+  max-width: 720px;
+  text-align: center;
+}
+
+.v2 .price-list {
+  margin: 0 auto 16px;
+  padding: 0;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  text-align: left;
+}
+
+.v2 .price-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 20px 28px;
+}
+
+.v2 .price-list li + li {
+  border-top: 1px solid var(--line);
+}
+
+.v2 .price-name {
+  font-weight: 500;
+}
+
+.v2 .price-value {
+  font-family: var(--font-en);
+  font-size: 1.2rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.v2 .price-note {
+  margin: 0 0 32px;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* ---------- フッター ---------- */
+.v2 .footer-copy {
+  color: #767676;   /* 薄すぎて読みにくかったグレーを少し濃く */
+}
+
+/* ---------- スマホ ---------- */
+@media (max-width: 768px) {
+  .v2 .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 20px 64px;
+  }
+
+  .v2 .hero-visual {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* 狭い画面では、手動の改行をやめて自然に折り返す */
+  .v2 .hero-lead br {
+    display: none;
+  }
+
+  .v2 .home-works,
+  .v2 .trust,
+  .v2 .home-price {
+    padding: 56px 20px;
+  }
+
+  .v2 .section-head {
+    margin-bottom: 32px;
+  }
+
+  .v2 .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .v2 .trust-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .v2 .price-list li {
+    padding: 16px 20px;
+  }
+}
+
+/* 動きを減らす設定の人には、拡大などの動きを止める */
+@media (prefers-reduced-motion: reduce) {
+  .v2 .works-item img,
+  .v2 .btn {
+    transition: none;
+  }
+
+  .v2 .works-item:hover img {
+    transform: none;
+  }
+}
