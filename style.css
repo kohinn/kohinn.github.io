@@ -1576,6 +1576,340 @@ section h2 {
   row-gap: 0.5rem;
 }
 
+/* =========================================================
+   Illustration（作品一覧）
+========================================================= */
+.v2 .illust-page {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.v2 .filter-tabs {
+  margin: 0 0 32px;
+}
+
+/* 一覧は、そろったサイズのサムネイルに。顔まわりが見えるよう上寄せで切り抜く */
+.v2 .gallery {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 0;
+  max-width: none;
+}
+
+.v2 .gallery-item {
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  box-shadow: none;
+  background: #eceae5;
+}
+
+.v2 .gallery-item a {
+  height: 100%;
+}
+
+.v2 .gallery-item img,
+.v2 .gallery-item video {
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  transition: transform 0.4s ease;
+}
+
+.v2 .gallery-item:hover img,
+.v2 .gallery-item:hover video {
+  transform: scale(1.04);
+}
+
+/* 横長の作品は、1行ぶんを使って全体を見せる */
+.v2 .gallery-item-wide {
+  aspect-ratio: auto;
+}
+
+.v2 .gallery-item-wide a {
+  height: auto;
+}
+
+.v2 .gallery-item-wide img,
+.v2 .gallery-item-wide video {
+  height: auto;
+  object-fit: contain;
+}
+
+.v2 .gallery-item-wide:hover img,
+.v2 .gallery-item-wide:hover video {
+  transform: none;
+}
+
+@media (max-width: 1023px) {
+  .v2 .gallery {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .v2 .illust-page {
+    padding: 36px 20px;
+  }
+
+  .v2 .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+/* 一覧・Aboutの最後に置く「ご依頼はこちら」 */
+.v2 .about-cta {
+  margin-top: 56px;
+  padding: 32px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.v2 .about-cta-text {
+  margin: 0 0 16px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   About
+========================================================= */
+.v2 .about {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  text-align: left;   /* 本文は左ぞろえ（見出しとカード内は個別に中央） */
+}
+
+.v2 .about .section-head,
+.v2 .about .about-cta {
+  text-align: center;
+}
+
+/* ① プロフィール（左：絵 / 右：文章） */
+.v2 .about-intro {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.v2 .about-visual {
+  aspect-ratio: 4 / 5;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #eceae5;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+.v2 .about-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.v2 .about-role {
+  margin: 0 0 4px;
+  font-family: var(--font-en);
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.v2 .about-name {
+  margin: 0 0 16px;
+  font-family: var(--font-en);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.v2 .about-text p {
+  color: var(--color-muted);
+  word-break: auto-phrase;
+}
+
+.v2 .about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.v2 .about-tags li {
+  padding: 4px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* ②〜⑤ 各ブロック */
+.v2 .about-block {
+  margin-top: 64px;
+}
+
+.v2 .about-h2 {
+  margin: 0 0 20px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.v2 .about-lead {
+  margin: 0 0 12px;
+  color: var(--color-muted);
+}
+
+.v2 .about-note {
+  margin: 16px 0 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.v2 .about-note a {
+  color: var(--accent);
+}
+
+/* 依頼の進め方：番号つきの4ステップ */
+.v2 .about-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.v2 .about-steps li {
+  position: relative;
+  padding: 20px 20px 20px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  counter-increment: step;
+}
+
+.v2 .about-steps li::before {
+  content: counter(step);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-en);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.v2 .step-title {
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.v2 .step-desc {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--color-muted);
+}
+
+/* お待ちしているご依頼 */
+.v2 .about-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.v2 .about-list li {
+  position: relative;
+  padding: 10px 0 10px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.v2 .about-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1.2em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* SNSリンク */
+.v2 .about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.v2 .about-links a {
+  display: inline-block;
+  padding: 6px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.v2 .about-links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 1023px) {
+  .v2 .about-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .v2 .about {
+    padding: 36px 20px;
+  }
+
+  .v2 .about-intro {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .v2 .about-visual {
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .v2 .about-block {
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .v2 .about-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* 小型スマホ（幅360px未満）：見出しが1行に収まるよう少し小さく */
 @media (max-width: 359px) {
   .v2 .hero-title {
