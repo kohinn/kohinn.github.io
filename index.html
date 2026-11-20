@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kohinn | Character Illustration & Portfolio</title>
+  <title>Kohinn | Character Illustration &amp; Portfolio</title>
 
   <meta name="description" content="Kohinn is an illustrator specializing in character illustration and character design.">
-  <meta property="og:title" content="Kohinn | Character Illustration & Portfolio">
-  <meta property="og:description" content="Creating character illustrations and character designs.">
+  <meta property="og:title" content="Kohinn | Character Illustration &amp; Portfolio">
+  <meta property="og:description" content="Specializing in character illustration and character design.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kohinn.github.io/">
   <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <!-- Google tag (gtag.js) -->
@@ -24,13 +24,21 @@
     gtag('config', 'G-V286NXLCKF');
   </script>
 </head>
-<body class="home-page">
+<body class="home-page v2">
 
 <header class="header">
   <div class="header-inner">
     <div class="logo"><a href="index.html">Kohinn</a></div>
+
+    <!-- PC: Always visible nav / Mobile: Hamburger menu -->
+    <nav class="header-nav" aria-label="Main menu">
+      <a href="illustration.html">Illustration</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
     <div class="lang"><a href="index_jp.html">JP</a> / <a href="index.html">EN</a></div>
-    <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
+    <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -61,26 +69,88 @@
 
 <main>
 
-  <!-- Works Gallery -->
-  <section class="section-works">
-    <div class="works-gallery">
-      <img src="https://kohinn.github.io/kohinn-images/Oumiya Emma_12.webp" alt="Work 1" loading="lazy">
-      <img src="https://kohinn.github.io/kohinn-images/zen82jk.webp" alt="Work 2" loading="lazy">
-      <img src="https://kohinn.github.io/kohinn-images/sunaffy3.webp" alt="Work 3" loading="lazy">
-      <img src="https://kohinn.github.io/kohinn-images/tatuya.webp" alt="Work 4" class="wide" loading="lazy">
+  <!-- ① Hero: Text on left, illustration on right -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Character Illustrator</p>
+      <h1 class="hero-title">Character Illustrations<br>Full of Personality.</h1>
+      <p class="hero-lead">I create illustrations for VTubers and original characters.<br>Bringing out each character's unique charm through expressions, gestures, and poses.</p>
+
+      <!-- Status badge: e.g., "Commissions Open (2 slots left for Dec)" -->
+      <p class="status-badge"><span class="status-dot"></span>Commissions Open</p>
+
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary">Pricing &amp; Commissions</a>
+        <a href="illustration.html" class="btn btn-ghost">View Gallery</a>
+      </div>
     </div>
-    
-    <a href="illustration.html" class="arrow-link">View Gallery →</a>
+
+    <div class="hero-visual">
+      <img src="https://kohinn.github.io/kohinn-images/Oumiya%20Emma_12.webp" alt="Character illustration artwork" fetchpriority="high">
+    </div>
   </section>
 
-  <!-- Intro + CTA -->
-  <section class="section-intro">
-    <h2>Character Illustration</h2>
-    <p>I create illustrations for VTubers, original characters, and more.<br>
-    Currently accepting commissions.</p>
-    <a href="contact.html" class="cta-button">Pricing & Commission</a>
+  <!-- ② Works Grid -->
+  <section class="home-works">
+    <header class="section-head">
+      <h2 class="section-title">WORKS</h2>
+      <p class="section-sub">Selected Works</p>
+    </header>
+
+    <div class="works-grid">
+      <a href="work_detail.html?id=Zentreya5" class="works-item"><img src="https://kohinn.github.io/kohinn-images/zen82jk.webp" alt="Zentreya fan art" loading="lazy"></a>
+      <a href="work_detail.html?id=sunaffy" class="works-item"><img src="https://kohinn.github.io/kohinn-images/sunaffy3.webp" alt="VTuber fan art" loading="lazy"></a>
+      <a href="work_detail.html?id=Zentreya4" class="works-item"><img src="https://kohinn.github.io/kohinn-images/zen7.webp" alt="Zentreya fan art" loading="lazy"></a>
+      <a href="work_detail.html?id=original-tatie" class="works-item"><img src="https://kohinn.github.io/kohinn-images/ori_15.webp" alt="Original character" loading="lazy"></a>
+      <a href="work_detail.html?id=Zentreya3" class="works-item"><img src="https://kohinn.github.io/kohinn-images/zen3.webp" alt="Zentreya fan art" loading="lazy"></a>
+      <a href="work_detail.html?id=Zentreya2" class="works-item"><img src="https://kohinn.github.io/kohinn-images/zentrya0.webp" alt="Zentreya fan art" loading="lazy"></a>
+    </div>
+
+    <p class="section-link"><a href="illustration.html" class="arrow-link">View All Works →</a></p>
   </section>
-  
+
+  <!-- ③ Client Reassurance Points -->
+  <section class="trust">
+    <header class="section-head">
+      <h2 class="section-title">FOR CLIENTS</h2>
+      <p class="section-sub">Before You Commission</p>
+    </header>
+
+    <div class="trust-cards">
+      <div class="trust-card">
+        <p class="trust-label">Response Time</p>
+        <p class="trust-main">Within 3 Days</p>
+        <p class="trust-desc">I reply to all inquiries within 3 business days.</p>
+      </div>
+      <div class="trust-card">
+        <p class="trust-label">Revisions</p>
+        <p class="trust-main">1–2 Free Revisions</p>
+        <p class="trust-desc">Minor adjustments after the rough draft check are included at no extra cost.</p>
+      </div>
+      <div class="trust-card">
+        <p class="trust-label">Workflow</p>
+        <p class="trust-main">Step-by-Step Updates</p>
+        <p class="trust-desc">We proceed together through consultation, quote, rough draft, and final review.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ Pricing Guide & CTA -->
+  <section class="home-price">
+    <header class="section-head">
+      <h2 class="section-title">PRICE</h2>
+      <p class="section-sub">Pricing Guide</p>
+    </header>
+
+    <ul class="price-list">
+      <li><span class="price-name">Bust-up</span><span class="price-value">$35~</span></li>
+      <li><span class="price-name">Full Body</span><span class="price-value">$55~</span></li>
+    </ul>
+    <p class="price-note">Backgrounds, R-18/NSFW, and rush delivery are available as add-on options.<br>Estimated Turnaround: 2–3 weeks &nbsp;/&nbsp; Payment: Upfront before production begins</p>
+
+    <a href="contact.html" class="btn btn-primary">View Full Pricing &amp; Commission Process</a>
+  </section>
+
 </main>
 
 <footer class="footer">
@@ -101,7 +171,7 @@
       <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank" aria-label="Bluesky"><span class="icon icon-bluesky"></span></a>
       <a href="https://artstation.com/kohinn" target="_blank" aria-label="ArtStation"><span class="icon icon-artstation"></span></a>
     </div>
-    
+
     <p class="footer-copy">©2026 Kohinn</p>
   </div>
 </footer>
@@ -109,3 +179,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
