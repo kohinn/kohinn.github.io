@@ -33,13 +33,17 @@ function initBurgerMenu() {
 }
 
 /* =========================
-   Sort Works (Newest release first; same month keeps works.json order)
+   Sort Works (Newest release first; same month keeps works_en.json order)
 ========================= */
 function parseRelease(str) {
   if (!str) return 0;
-  const match = str.match(/(\d{4})年(\d{1,2})月/);
-  if (!match) return 0;
-  return parseInt(match[1], 10) * 100 + parseInt(match[2], 10);
+  const months = {
+    Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun: 6,
+    Jul: 7, Aug: 8, Sep: 9, Oct: 10, Nov: 11, Dec: 12
+  };
+  const match = str.match(/([A-Za-z]{3})\s+(\d{4})/);
+  if (!match || !months[match[1]]) return 0;
+  return parseInt(match[2], 10) * 100 + months[match[1]];
 }
 
 function sortWorks(data) {
@@ -97,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!id) {
       notFound();
     } else {
-      fetch("works.json")
+      fetch("works_en.json")
         .then(res => res.json())
         .then(data => {
           const sorted = sortWorks(data);
@@ -160,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (gallery) {
     gallery.innerHTML = "<p style='text-align:center;'>Loading...</p>";
 
-    fetch("works.json")
+    fetch("works_en.json")
       .then(res => res.json())
       .then(data => {
 
@@ -185,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return `
               <figure class="gallery-item${wideClass}">
                 <a href="work_detail.html?id=${work.id}">
-                  <img src="${work.image}" loading="lazy" decoding="async" alt="${work.title}">
+                  <img src="${work.image}" loading="lazy" decoding="async" alt="${plainTitle(work.title)}">
                 </a>
               </figure>
             `;
