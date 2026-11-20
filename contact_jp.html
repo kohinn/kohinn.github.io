@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kohinn | Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <!-- Google tag (gtag.js) -->
@@ -15,11 +16,18 @@
     gtag('config', 'G-V286NXLCKF');
   </script>
 </head>
-<body>
+<body class="v2">
 
 <header class="header">
   <div class="header-inner">
     <div class="logo"><a href="index_jp.html">Kohinn</a></div>
+    <!-- PC: 常時表示のナビ / スマホ: ハンバーガーに切り替え -->
+    <nav class="header-nav" aria-label="メインメニュー">
+      <a href="illustration_jp.html">Illustration</a>
+      <a href="about_jp.html">About</a>
+      <a href="contact_jp.html">Contact</a>
+    </nav>
+
     <div class="lang"><a href="contact_jp.html">JP</a> / <a href="contact.html">EN</a></div>
     <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
   </div>
@@ -53,8 +61,9 @@
 
   <!-- Pricing Guide -->
   <h2>料金の目安</h2>
-  <p>下記は代表的な制作内容の目安です。記載のない形式（ヘッダー・SNS投稿用イラストなど）もご相談いただけます。</p>
+  <p>基本料金に、ご希望のオプションを足してお見積りします。記載のない形式（ヘッダー・SNS投稿用イラストなど）もご相談いただけます。</p>
 
+  <h3 class="price-subtitle">基本料金</h3>
   <div class="price-cards">
     <div class="price-card">
       <div class="price-image">
@@ -62,27 +71,42 @@
       </div>
       <div class="price-label">バストアップ</div>
       <div class="price-amount">5,000円〜</div>
-      <p class="price-desc">キャラクター1人・上半身中心</p>
+      <p class="price-desc">キャラクター1人・上半身中心・背景なし</p>
     </div>
 
     <div class="price-card">
       <div class="price-image">
-        <img src="https://kohinn.github.io/kohinn-images/ori_15.webp" alt="全身（背景なし）例">
+        <img src="https://kohinn.github.io/kohinn-images/ori_15.webp" alt="全身例">
       </div>
-      <div class="price-label">全身（背景なし）</div>
+      <div class="price-label">全身</div>
       <div class="price-amount">8,000円〜</div>
-      <p class="price-desc">全身立ち絵・背景なし</p>
-    </div>
-
-    <div class="price-card">
-      <div class="price-image">
-        <img src="https://kohinn.github.io/kohinn-images/sunaffy3.webp" alt="全身（背景あり）例">
-      </div>
-      <div class="price-label">全身（背景あり）</div>
-      <div class="price-amount">15,000円〜</div>
-      <p class="price-desc">全身＋背景付き</p>
+      <p class="price-desc">キャラクター1人・全身立ち絵・背景なし</p>
     </div>
   </div>
+
+  <h3 class="price-subtitle">オプション</h3>
+  <ul class="option-list">
+    <li>
+      <span class="option-name">簡単な背景<span class="option-desc">単色・グラデーション・簡単な模様など</span></span>
+      <span class="option-value">＋3,000円</span>
+    </li>
+    <li>
+      <span class="option-name">書き込みありの背景<span class="option-desc">場所や雰囲気を描き込んだ背景</span></span>
+      <span class="option-value">＋7,000円〜</span>
+    </li>
+    <li>
+      <span class="option-name">R-18<span class="option-desc">成人キャラクターのみ。描写の範囲は事前にご相談ください</span></span>
+      <span class="option-value">＋3,000円〜</span>
+    </li>
+    <li>
+      <span class="option-name">短納期<span class="option-desc">通常（2〜3週間）より早い納品。受付状況により、お受けできない場合があります</span></span>
+      <span class="option-value">基本料金の＋50%〜</span>
+    </li>
+    <li>
+      <span class="option-name">商用利用<span class="option-desc">グッズ化・広告・二次配布など</span></span>
+      <span class="option-value">ご相談</span>
+    </li>
+  </ul>
 
   <p class="price-meta">納期の目安：2〜3週間　／　お支払い：制作開始前の先払い（方法はお見積り時にご案内します）</p>
   <p><a href="illustration_jp.html" class="arrow-link">制作実績を見る →</a></p>
@@ -97,8 +121,16 @@
     <div>
       <h2>ご利用範囲について</h2>
       <ul>
-        <li>個人での配信・SNSでの使用:基本料金内で対応可能です</li>
-        <li>グッズ化・商用利用・二次配布を伴うご利用:別途ご相談ください</li>
+        <li>個人での配信・SNSでの使用（収益化した配信を含む）:基本料金内で対応可能です</li>
+        <li>グッズ化・広告・二次配布を伴うご利用:別途ご相談ください</li>
+      </ul>
+
+      <h2>R-18のご依頼について</h2>
+      <ul>
+        <li>オプションとして対応します（料金は上記をご覧ください）</li>
+        <li>18歳以上の方のご依頼に限ります</li>
+        <li>成人のキャラクターに限ります</li>
+        <li>作例は掲載していません。お問い合わせの後にご案内します</li>
       </ul>
     </div>
 
@@ -106,7 +138,7 @@
       <h2>対応が難しい内容</h2>
       <ul>
         <li>過度な暴力表現</li>
-        <li>R-18(性器・性行為の描写)</li>
+        <li>未成年に見えるキャラクターのR-18表現</li>
         <li>特定の実在の方を対象とした二次創作</li>
         <li>その他、公序良俗に反する内容</li>
       </ul>

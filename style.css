@@ -1080,6 +1080,7 @@ section h2 {
 .v2 .header-inner {
   max-width: 1160px;
   justify-content: flex-start;
+  align-items: center;
   gap: 32px;
 }
 
@@ -1087,6 +1088,19 @@ section h2 {
 .v2 .lang {
   position: static;
   transform: none;
+}
+
+/* ナビとJP/ENで、フォント・大きさ・行の高さをそろえる（高さのずれ対策） */
+.v2 .header-nav a,
+.v2 .lang {
+  font-family: var(--font-en);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.v2 .lang a {
+  display: inline-block;
+  padding: 0.5rem 0;
 }
 
 .v2 .logo a {
@@ -1097,16 +1111,16 @@ section h2 {
 
 .v2 .header-nav {
   display: flex;
+  align-items: center;
   gap: 28px;
   margin-left: auto;
 }
 
 .v2 .header-nav a {
-  font-family: var(--font-en);
-  font-size: 0.9rem;
   color: var(--color-text);
   text-decoration: none;
-  padding: 0.3rem 0;
+  padding: 0.5rem 0;
+  border-top: 2px solid transparent;      /* 上下の枠をそろえ、文字を中央に保つ */
   border-bottom: 2px solid transparent;
   transition: color 0.25s ease, border-color 0.25s ease;
 }
@@ -1138,7 +1152,7 @@ section h2 {
 /* ---------- ボタン ---------- */
 .v2 .btn {
   display: inline-block;
-  padding: 14px 32px;
+  padding: 14px 28px;
   border: 1px solid transparent;
   border-radius: 999px;
   font-size: 0.95rem;
@@ -1174,10 +1188,10 @@ section h2 {
 .v2 .hero {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 64px 24px 96px;
+  padding: 48px 24px 56px;
   display: grid;
   grid-template-columns: 1.05fr 1fr;
-  gap: 64px;
+  gap: 48px;
   align-items: center;
   text-align: left;
 }
@@ -1198,11 +1212,15 @@ section h2 {
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: 0.02em;
+  /* 日本語を、単語（文節）の区切りで折り返す */
+  word-break: auto-phrase;
+  text-wrap: balance;
 }
 
 .v2 .hero-lead {
   margin: 0 0 24px;
   color: var(--color-muted);
+  word-break: auto-phrase;
 }
 
 .v2 .status-badge {
@@ -1251,11 +1269,11 @@ section h2 {
 .v2 .home-price {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: 48px 24px;
 }
 
 .v2 .section-head {
-  margin-bottom: 48px;
+  margin-bottom: 28px;
   text-align: center;
 }
 
@@ -1274,7 +1292,7 @@ section h2 {
 }
 
 .v2 .section-link {
-  margin: 40px 0 0;
+  margin: 24px 0 0;
   text-align: center;
 }
 
@@ -1314,7 +1332,7 @@ section h2 {
 }
 
 .v2 .trust-card {
-  padding: 32px 24px;
+  padding: 24px 20px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -1364,7 +1382,7 @@ section h2 {
   justify-content: space-between;
   align-items: baseline;
   gap: 16px;
-  padding: 20px 28px;
+  padding: 16px 24px;
 }
 
 .v2 .price-list li + li {
@@ -1393,12 +1411,24 @@ section h2 {
   color: #767676;   /* 薄すぎて読みにくかったグレーを少し濃く */
 }
 
+/* ---------- タブレット：文字の列を確保するため、すき間を狭める ---------- */
+@media (max-width: 1023px) {
+  .v2 .hero {
+    gap: 40px;
+  }
+
+  /* 手動の改行をやめて、自然に折り返す */
+  .v2 .hero-lead br {
+    display: none;
+  }
+}
+
 /* ---------- スマホ ---------- */
 @media (max-width: 768px) {
   .v2 .hero {
     grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 40px 20px 64px;
+    gap: 24px;
+    padding: 24px 20px 40px;
   }
 
   .v2 .hero-visual {
@@ -1407,19 +1437,14 @@ section h2 {
     margin: 0 auto;
   }
 
-  /* 狭い画面では、手動の改行をやめて自然に折り返す */
-  .v2 .hero-lead br {
-    display: none;
-  }
-
   .v2 .home-works,
   .v2 .trust,
   .v2 .home-price {
-    padding: 56px 20px;
+    padding: 36px 20px;
   }
 
   .v2 .section-head {
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
 
   .v2 .works-grid {
@@ -1434,6 +1459,127 @@ section h2 {
 
   .v2 .price-list li {
     padding: 16px 20px;
+  }
+}
+
+/* ---------- Contact：料金カードと制作の流れ（レスポンシブ調整） ---------- */
+/* 基本料金のカードは2枚（バストアップ・全身）。PC・タブレットは2列にする */
+@media (min-width: 601px) {
+  .v2 .price-cards {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* 「基本料金」「オプション」の小見出し */
+.v2 .price-subtitle {
+  margin: 32px 0 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* オプション一覧：左に名前と説明、右に金額 */
+.v2 .option-list {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.v2 .option-list li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 16px;
+  padding: 16px 24px;
+}
+
+.v2 .option-list li + li {
+  border-top: 1px solid var(--line);
+}
+
+.v2 .option-name {
+  flex: 1 1 14rem;
+  font-weight: 500;
+}
+
+.v2 .option-desc {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+.v2 .option-value {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .v2 .option-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 16px;
+  }
+
+  .v2 .option-name {
+    flex: 0 0 auto;
+  }
+}
+
+/* スマホは「左に画像・右に文字」の横並びにして、縦に長くなりすぎないようにする */
+@media (max-width: 600px) {
+  .v2 .price-cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .v2 .price-card {
+    display: grid;
+    grid-template-columns: 104px 1fr;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    text-align: left;
+  }
+
+  .v2 .price-image {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    margin-bottom: 0;
+    padding-bottom: 125%;
+  }
+
+  .v2 .price-label,
+  .v2 .price-amount,
+  .v2 .price-desc {
+    grid-column: 2;
+  }
+
+  .v2 .price-card:hover {
+    transform: none;
+  }
+}
+
+/* 制作の流れは、横スクロールではなく折り返して全部見えるようにする */
+.v2 .flow-steps {
+  flex-wrap: wrap;
+  overflow: visible;
+  row-gap: 0.5rem;
+}
+
+/* 小型スマホ（幅360px未満）：見出しが1行に収まるよう少し小さく */
+@media (max-width: 359px) {
+  .v2 .hero-title {
+    font-size: 1.5rem;
   }
 }
 

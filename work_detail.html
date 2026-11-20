@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kohinn | 作品詳細</title>
-    <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
@@ -15,11 +16,18 @@
     gtag('config', 'G-V286NXLCKF');
   </script>
 </head>
-<body>
+<body class="v2">
 
 <header class="header">
   <div class="header-inner">
     <div class="logo"><a href="index_jp.html">Kohinn</a></div>
+    <!-- PC: 常時表示のナビ / スマホ: ハンバーガーに切り替え -->
+    <nav class="header-nav" aria-label="メインメニュー">
+      <a href="illustration_jp.html">Illustration</a>
+      <a href="about_jp.html">About</a>
+      <a href="contact_jp.html">Contact</a>
+    </nav>
+
     <div class="lang"><a href="index_jp.html">JP</a> / <a href="index.html">EN</a></div>
     <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
   </div>
