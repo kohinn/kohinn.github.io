@@ -5,12 +5,31 @@ function initBurgerMenu() {
   const burger = document.getElementById("burgerBtn");
   const menu = document.getElementById("navMenu");
 
-  if (burger && menu) {
-    burger.onclick = () => {
-      burger.classList.toggle("active");
-      menu.classList.toggle("active");
-    };
-  }
+  if (!burger || !menu) return;
+  if (burger.dataset.ready) return;   // 二重に登録しない
+  burger.dataset.ready = "1";
+
+  const setOpen = (open) => {
+    burger.classList.toggle("active", open);
+    menu.classList.toggle("active", open);
+    document.body.classList.toggle("menu-open", open);
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  };
+
+  burger.setAttribute("aria-controls", "navMenu");
+  burger.setAttribute("aria-expanded", "false");
+
+  burger.onclick = () => setOpen(!menu.classList.contains("active"));
+
+  // Escキーで閉じる
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setOpen(false);
+  });
+
+  // 画面を広げてPC表示になったら、開いたままにしない
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) setOpen(false);
+  });
 }
 
 /* =========================

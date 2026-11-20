@@ -103,9 +103,12 @@ section h2 {
 ========================= */
 .burger {
   position: absolute;
-  right: 24px;
-  width: 28px;
-  height: 22px;
+  right: 18px;
+  /* 指で押しやすいよう、押せる範囲を44px角にしている（線そのものは中央の22px幅） */
+  box-sizing: border-box;
+  width: 44px;
+  height: 44px;
+  padding: 11px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -113,6 +116,7 @@ section h2 {
   background: none;
   border: none;
   z-index: 10001;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .burger span {
@@ -120,17 +124,18 @@ section h2 {
   width: 100%;
   background: var(--color-text);
   border-radius: 2px;
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
+/* ×の形：線の間隔（9.5px）ぶん動かしてから回すので、中心で交差する */
 .burger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: translateY(9.5px) rotate(45deg);
 }
 .burger.active span:nth-child(2) {
   opacity: 0;
 }
 .burger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: translateY(-9.5px) rotate(-45deg);
 }
 
 /* =========================
@@ -142,6 +147,7 @@ section h2 {
   left: 0;
   width: 100%;
   height: 100vh;
+  height: 100dvh;   /* スマホのアドレスバーを除いた高さ（対応していないブラウザは上の100vh） */
   background: linear-gradient(180deg, #ffffff 0%, #f2f2f2 100%);
   backdrop-filter: blur(6px);
   transform: scale(0.98);
@@ -163,6 +169,35 @@ section h2 {
 .menu-inner {
   text-align: center;
   padding: 0 1.6rem;
+}
+
+/* メニューを開いている間：ヘッダーの帯・ロゴ・言語切替を隠し、×だけを残す */
+.header {
+  transition: background 0.22s ease, border-color 0.22s ease;
+}
+
+.logo,
+.lang,
+.header-nav {
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+body.menu-open {
+  overflow: hidden;   /* メニューの裏の画面が動かないように */
+}
+
+body.menu-open .header {
+  background: transparent;
+  border-bottom-color: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+body.menu-open .logo,
+body.menu-open .lang,
+body.menu-open .header-nav {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .menu-title {
@@ -1674,6 +1709,178 @@ section h2 {
 }
 
 /* =========================================================
+   作品詳細ページ
+   PC：左に絵（全体を見せる）／右に情報カード。スマホ：絵 → 情報の順
+========================================================= */
+.v2 .work-detail {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 56px;
+  text-align: left;
+}
+
+.v2 .back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.v2 .back-link:hover {
+  color: var(--accent);
+}
+
+.v2 .work-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.v2 .work-media {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #eceae5;
+}
+
+/* 詳細では切り抜かず、全体を見せる */
+.v2 .work-image {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+}
+
+.v2 .work-info {
+  position: sticky;
+  top: 96px;   /* ヘッダー(72px)の下に張りつく */
+  padding: 28px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.v2 .work-tag {
+  display: inline-block;
+  margin: 0;
+  padding: 2px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-family: var(--font-en);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.v2 .work-title {
+  margin: 12px 0 16px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: left;
+  word-break: auto-phrase;
+}
+
+.v2 .work-desc {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--color-muted);
+}
+
+.v2 .work-spec {
+  margin: 0 0 24px;
+}
+
+.v2 .work-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.v2 .work-row dt {
+  color: var(--color-muted);
+}
+
+.v2 .work-row dd {
+  margin: 0;
+  font-weight: 500;
+  text-align: right;
+}
+
+.v2 .work-info .btn {
+  display: block;
+  text-align: center;
+}
+
+/* 横長の作品：絵を全幅にして、情報は下に */
+.v2 .work-layout.is-wide {
+  grid-template-columns: 1fr;
+}
+
+.v2 .work-layout.is-wide .work-info {
+  position: static;
+}
+
+/* 前後の作品 */
+.v2 .work-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.v2 .pager-link {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid #cfcbc3;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.v2 .pager-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.v2 .work-empty {
+  margin: 40px 0;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+@media (max-width: 768px) {
+  .v2 .work-detail {
+    margin: 0 auto;
+    padding: 20px 20px 40px;
+  }
+
+  .v2 .work-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .v2 .work-info {
+    position: static;
+    padding: 20px;
+  }
+
+  .v2 .work-pager {
+    margin-top: 28px;
+  }
+}
+
+/* =========================================================
    About
 ========================================================= */
 .v2 .about {
@@ -1888,6 +2095,23 @@ section h2 {
     padding: 36px 20px;
   }
 
+  .v2 .about-block {
+    margin-top: 48px;
+  }
+
+  /* タブレット幅でも「左に絵・右に文章」を保つ（少しコンパクトに） */
+  .v2 .about-intro {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 28px;
+  }
+
+  .v2 .about-name {
+    font-size: 1.6rem;
+  }
+}
+
+/* スマホ幅だけ、絵 → 文章の縦並びにする */
+@media (max-width: 600px) {
   .v2 .about-intro {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -1899,8 +2123,8 @@ section h2 {
     margin: 0 auto;
   }
 
-  .v2 .about-block {
-    margin-top: 48px;
+  .v2 .about-name {
+    font-size: 2rem;
   }
 }
 
