@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
+    <loc>https://kohinn.github.io/</loc>
+  </url>
+  <url>
     <loc>https://kohinn.github.io/index.html</loc>
   </url>
   <url>
@@ -23,10 +26,10 @@
   </url>
 
   <url>
-    <loc>https://kohinn.github.io/commission.html</loc>
+    <loc>https://github.io</loc>
   </url>
   <url>
-    <loc>https://kohinn.github.io/commission_jp.html</loc>
+    <loc>https://github.io</loc>
   </url>
 
 </urlset>
