@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kohinn | Work Detail</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Kohinn | Artwork Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
@@ -15,17 +16,24 @@
     gtag('config', 'G-V286NXLCKF');
   </script>
 </head>
-<body>
+<body class="v2">
 
 <header class="header">
   <div class="header-inner">
     <div class="logo"><a href="index.html">Kohinn</a></div>
+    <!-- PC: Always visible nav / Mobile: Hamburger menu -->
+    <nav class="header-nav" aria-label="Main menu">
+      <a href="illustration.html">Illustration</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
     <div class="lang"><a href="index_jp.html">JP</a> / <a href="index.html">EN</a></div>
     <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-  <nav class="menu" id="navMenu">
+<nav class="menu" id="navMenu">
   <div class="menu-inner">
     <h2 class="menu-title">MENU</h2>
 
@@ -38,7 +46,7 @@
 
     <hr>
 
-         <ul class="menu-follow">
+    <ul class="menu-follow">
       <li><a href="https://twitter.com/V_Kohinn" target="_blank"><span class="icon icon-x"></span>X</a></li>
       <li><a href="https://www.pixiv.net/users/92080067" target="_blank"><span class="icon icon-pixiv"></span>Pixiv</a></li>
       <li><a href="https://instagram.com/kohinn.ver2" target="_blank"><span class="icon icon-instagram"></span>Instagram</a></li>
@@ -47,15 +55,14 @@
     </ul>
 
     <hr>
+
   </div>
 </nav>
 
-
 <main>
-  <section class="work-detail" id="workDetail"></section>
-  <p style="text-align:center; margin:40px 0;">
-    <a href="contact.html" class="arrow-link">Request a commission →</a>
-  </p>
+  <section class="work-detail" id="workDetail">
+    <p class="work-empty">Loading...</p>
+  </section>
 </main>
 
 <footer class="footer">
