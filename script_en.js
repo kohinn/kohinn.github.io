@@ -42,8 +42,11 @@ function parseRelease(str) {
     Jul: 7, Aug: 8, Sep: 9, Oct: 10, Nov: 11, Dec: 12
   };
   const match = str.match(/([A-Za-z]{3})\s+(\d{4})/);
-  if (!match || !months[match[1]]) return 0;
-  return parseInt(match[2], 10) * 100 + months[match[1]];
+  if (!match) return 0;
+  const month = months[match[1]];
+  const year = parseInt(match[2], 10);
+  if (!month || isNaN(year)) return 0;
+  return year * 100 + month;
 }
 
 function sortWorks(data) {
@@ -130,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
           // Previous / Next works (same order as gallery)
           const prev = sorted[index - 1];
           const next = sorted[index + 1];
-          const link = (w) => `work_detail.html?id=${encodeURIComponent(w.id)}`;
+          const link = (w) => `work_detail_en.html?id=${encodeURIComponent(w.id)}`;
           const pager = (prev || next) ? `
             <nav class="work-pager" aria-label="Previous and next artworks">
               ${prev ? `<a href="${link(prev)}" class="pager-link">← Previous</a>` : "<span></span>"}
@@ -180,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (work.video) {
               return `
                 <figure class="gallery-item${wideClass}">
-                  <a href="work_detail.html?id=${work.id}">
+                  <a href="work_detail_en.html?id=${work.id}">
                     <video src="${work.video}" autoplay loop muted playsinline></video>
                   </a>
                 </figure>
@@ -188,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             return `
               <figure class="gallery-item${wideClass}">
-                <a href="work_detail.html?id=${work.id}">
+                <a href="work_detail_en.html?id=${work.id}">
                   <img src="${work.image}" loading="lazy" decoding="async" alt="${plainTitle(work.title)}">
                 </a>
               </figure>
@@ -216,10 +219,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
       });
-  }
-
-});
-
   }
 
 });
