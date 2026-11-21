@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kohinn | Illustration</title>
   <meta name="description" content="Kohinn のイラスト作品一覧ページ。キャラクターイラスト・VTuber・ファンアートなどの制作実績を紹介。">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400..700&family=Poppins:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="works.json" as="fetch" crossorigin>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
@@ -30,7 +33,7 @@
     </nav>
 
     <div class="lang"><a href="illustration_jp.html">JP</a> / <a href="illustration.html">EN</a></div>
-    <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
+    <button class="burger" id="burgerBtn" aria-label="メニューを開く"><span></span><span></span><span></span></button>
   </div>
 </header>
 
