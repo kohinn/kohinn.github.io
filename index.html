@@ -3,16 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kohinn | Character Illustration & Portfolio</title>
+  <title>Kohinn | Character Illustration &amp; Portfolio</title>
 
-  <meta name="description" content="Kohinn is an illustrator specializing in character illustration and character design.">
-  <meta property="og:title" content="Kohinn | Character Illustration & Portfolio">
-  <meta property="og:description" content="Creating character illustrations and character designs.">
+  <meta name="description" content="Kohinn is a character illustrator specializing in VTuber art, original characters, and character design.">
+
+  <!-- OGP & hreflang -->
+  <meta property="og:title" content="Kohinn | Character Illustration &amp; Portfolio">
+  <meta property="og:description" content="Creating illustrations for VTubers and original characters. Commissions are currently open.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kohinn.github.io/">
+  <meta property="og:url" content="https://kohinn.github.io/index.html">
   <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://kohinn.github.io/index.html">
+  <link rel="alternate" hreflang="ja" href="https://kohinn.github.io/index_jp.html">
+  <link rel="alternate" hreflang="x-default" href="https://kohinn.github.io/index.html">
 
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+  <link rel="preload" as="image" href="thumbs/oumiya-emma1-m.webp" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
 
   <!-- Google tag (gtag.js) -->
@@ -24,13 +33,21 @@
     gtag('config', 'G-V286NXLCKF');
   </script>
 </head>
-<body class="home-page">
+<body class="home-page v2">
 
 <header class="header">
   <div class="header-inner">
     <div class="logo"><a href="index.html">Kohinn</a></div>
+
+    <!-- PC: Always visible nav / Mobile: Hamburger menu -->
+    <nav class="header-nav" aria-label="Main menu">
+      <a href="illustration.html">Illustration</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
     <div class="lang"><a href="index_jp.html">JP</a> / <a href="index.html">EN</a></div>
-    <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
+    <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -48,11 +65,11 @@
     <hr>
 
     <ul class="menu-follow">
-      <li><a href="https://twitter.com/V_Kohinn" target="_blank"><span class="icon icon-x"></span></a></li>
-      <li><a href="https://www.pixiv.net/users/92080067" target="_blank"><span class="icon icon-pixiv"></span></a></li>
-      <li><a href="https://instagram.com/kohinn.ver2" target="_blank"><span class="icon icon-instagram"></span></a></li>
-      <li><a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank"><span class="icon icon-bluesky"></span></a></li>
-      <li><a href="https://artstation.com/kohinn" target="_blank"><span class="icon icon-artstation"></span></a></li>
+      <li><a href="https://twitter.com/V_Kohinn" target="_blank" rel="noopener"><span class="icon icon-x"></span></a></li>
+      <li><a href="https://www.pixiv.net/users/92080067" target="_blank" rel="noopener"><span class="icon icon-pixiv"></span></a></li>
+      <li><a href="https://instagram.com/kohinn.ver2" target="_blank" rel="noopener"><span class="icon icon-instagram"></span></a></li>
+      <li><a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank" rel="noopener"><span class="icon icon-bluesky"></span></a></li>
+      <li><a href="https://artstation.com/kohinn" target="_blank" rel="noopener"><span class="icon icon-artstation"></span></a></li>
     </ul>
 
     <hr>
@@ -61,26 +78,88 @@
 
 <main>
 
-  <!-- Works Gallery -->
-  <section class="section-works">
-    <div class="works-gallery">
-      <img src="https://kohinn.github.io/kohinn-images/Oumiya Emma_12.webp" alt="Work 1" loading="lazy">
-      <img src="https://kohinn.github.io/kohinn-images/zen82jk.webp" alt="Work 2" loading="lazy">
-      <img src="https://kohinn.github.io/kohinn-images/sunaffy3.webp" alt="Work 3" loading="lazy">
-      <img src="https://kohinn.github.io/kohinn-images/tatuya.webp" alt="Work 4" class="wide" loading="lazy">
+  <!-- ① Hero: Text on left, Artwork on right -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Character Illustrator</p>
+      <h1 class="hero-title">Character illustrations<br>that capture their true charm.</h1>
+      <p class="hero-lead">I create illustrations for VTubers and original characters.<br>Through expressive faces, gestures, and poses, I bring out each character's unique personality.</p>
+
+      <!-- Status: To show remaining slots, change to e.g. "Commissions Open (Dec: 2 slots left)" -->
+      <p class="status-badge"><span class="status-dot"></span>Commissions Open</p>
+
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary">Pricing &amp; Commissions</a>
+        <a href="illustration.html" class="btn btn-ghost">View Works</a>
+      </div>
     </div>
-    
-    <a href="illustration.html" class="arrow-link">View Gallery →</a>
+
+    <div class="hero-visual">
+      <img src="thumbs/oumiya-emma1-m.webp" alt="Character illustration artwork" fetchpriority="high">
+    </div>
   </section>
 
-  <!-- Intro + CTA -->
-  <section class="section-intro">
-    <h2>Character Illustration</h2>
-    <p>I create illustrations for VTubers, original characters, and more.<br>
-    Currently accepting commissions.</p>
-    <a href="contact.html" class="cta-button">Pricing & Commission</a>
+  <!-- ② Works Grid -->
+  <section class="home-works">
+    <header class="section-head">
+      <h2 class="section-title">WORKS</h2>
+      <p class="section-sub">Selected Artworks</p>
+    </header>
+
+    <div class="works-grid">
+      <a href="work_detail_en.html?id=Zentreya5" class="works-item"><img src="thumbs/zentreya5-t.webp" alt="Zentreya Fan Art" loading="lazy"></a>
+      <a href="work_detail_en.html?id=sunaffy" class="works-item"><img src="thumbs/sunaffy-t.webp" alt="VTuber Fan Art" loading="lazy"></a>
+      <a href="work_detail_en.html?id=Zentreya4" class="works-item"><img src="thumbs/zentreya4-t.webp" alt="Zentreya Fan Art" loading="lazy"></a>
+      <a href="work_detail_en.html?id=original-tatie" class="works-item"><img src="thumbs/original-tatie-t.webp" alt="Original Character" loading="lazy"></a>
+      <a href="work_detail_en.html?id=Zentreya3" class="works-item"><img src="thumbs/zentreya3-t.webp" alt="Zentreya Fan Art" loading="lazy"></a>
+      <a href="work_detail_en.html?id=Zentreya2" class="works-item"><img src="thumbs/zentreya2-t.webp" alt="Zentreya Fan Art" loading="lazy"></a>
+    </div>
+
+    <p class="section-link"><a href="illustration.html" class="arrow-link">View All Works →</a></p>
   </section>
-  
+
+  <!-- ③ Reassurance Points for Clients -->
+  <section class="trust">
+    <header class="section-head">
+      <h2 class="section-title">FOR CLIENTS</h2>
+      <p class="section-sub">Before You Order</p>
+    </header>
+
+    <div class="trust-cards">
+      <div class="trust-card">
+        <p class="trust-label">Response Time</p>
+        <p class="trust-main">Within 3 Days</p>
+        <p class="trust-desc">I will reply to your inquiry within 3 days.</p>
+      </div>
+      <div class="trust-card">
+        <p class="trust-label">Revisions</p>
+        <p class="trust-main">1–2 Free Revisions</p>
+        <p class="trust-desc">Minor adjustments are free after the rough sketch check.</p>
+      </div>
+      <div class="trust-card">
+        <p class="trust-label">Workflow</p>
+        <p class="trust-main">Step-by-Step Updates</p>
+        <p class="trust-desc">We proceed together through consultation, quote, rough sketch, and final check.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ Pricing Guide & CTA -->
+  <section class="home-price">
+    <header class="section-head">
+      <h2 class="section-title">PRICE</h2>
+      <p class="section-sub">Estimated Rates</p>
+    </header>
+
+    <ul class="price-list">
+      <li><span class="price-name">Bust-up</span><span class="price-value">From $35 USD</span></li>
+      <li><span class="price-name">Full Body</span><span class="price-value">From $55 USD</span></li>
+    </ul>
+    <p class="price-note">Add-ons such as backgrounds, NSFW (R-18), and rush delivery are available.<br>Turnaround: 2–3 weeks &nbsp;/&nbsp; Payment: Upfront before production starts</p>
+
+    <a href="contact.html" class="btn btn-primary">View Full Pricing &amp; Process</a>
+  </section>
+
 </main>
 
 <footer class="footer">
@@ -101,7 +180,7 @@
       <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank" aria-label="Bluesky"><span class="icon icon-bluesky"></span></a>
       <a href="https://artstation.com/kohinn" target="_blank" aria-label="ArtStation"><span class="icon icon-artstation"></span></a>
     </div>
-    
+
     <p class="footer-copy">©2026 Kohinn</p>
   </div>
 </footer>
@@ -109,3 +188,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+

@@ -4,8 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kohinn | Illustration</title>
-  <meta name="description" content="Illustration portfolio of Kohinn. Character illustration, VTuber fan art, and original works.">
-   <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Kohinn's illustration portfolio featuring original character art, VTuber designs, and fan art.">
+
+  <!-- OGP & hreflang -->
+  <meta property="og:title" content="Kohinn | Illustration Gallery">
+  <meta property="og:description" content="Illustration portfolio featuring original characters, VTubers, and fan art.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kohinn.github.io/illustration.html">
+  <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://kohinn.github.io/illustration.html">
+  <link rel="alternate" hreflang="ja" href="https://kohinn.github.io/illustration_jp.html">
+  <link rel="alternate" hreflang="x-default" href="https://kohinn.github.io/illustration.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+  <link rel="preload" href="works_en.json" as="fetch" crossorigin>
+  <link rel="stylesheet" href="style.css">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
@@ -16,13 +32,20 @@
     gtag('config', 'G-V286NXLCKF');
   </script>
 </head>
-<body>
+<body class="v2">
 
 <header class="header">
   <div class="header-inner">
     <div class="logo"><a href="index.html">Kohinn</a></div>
+    <!-- PC: Always visible nav / Mobile: Hamburger menu -->
+    <nav class="header-nav" aria-label="Main menu">
+      <a href="illustration.html">Illustration</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
     <div class="lang"><a href="illustration_jp.html">JP</a> / <a href="illustration.html">EN</a></div>
-    <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
+    <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -37,11 +60,11 @@
     </ul>
     <hr>
     <ul class="menu-follow">
-      <li><a href="https://twitter.com/V_Kohinn" target="_blank"><span class="icon icon-x"></span></a></li>
-      <li><a href="https://www.pixiv.net/users/92080067" target="_blank"><span class="icon icon-pixiv"></span></a></li>
-      <li><a href="https://instagram.com/kohinn.ver2" target="_blank"><span class="icon icon-instagram"></span></a></li>
-      <li><a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank"><span class="icon icon-bluesky"></span></a></li>
-      <li><a href="https://artstation.com/kohinn" target="_blank"><span class="icon icon-artstation"></span></a></li>
+      <li><a href="https://twitter.com/V_Kohinn" target="_blank" rel="noopener"><span class="icon icon-x"></span>X</a></li>
+      <li><a href="https://www.pixiv.net/users/92080067" target="_blank" rel="noopener"><span class="icon icon-pixiv"></span>Pixiv</a></li>
+      <li><a href="https://instagram.com/kohinn.ver2" target="_blank" rel="noopener"><span class="icon icon-instagram"></span>Instagram</a></li>
+      <li><a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank" rel="noopener"><span class="icon icon-bluesky"></span>Bluesky</a></li>
+      <li><a href="https://artstation.com/kohinn" target="_blank" rel="noopener"><span class="icon icon-artstation"></span>ArtStation</a></li>
     </ul>
     <hr>
   </div>
@@ -50,20 +73,27 @@
 <main>
 
   <!-- =========================
-       Work list (auto-generated)
+       Gallery (Auto-generated)
   ========================== -->
-  <section class="section-illustration">
-    <h1>ILLUSTRATION</h1>
-    <p>A collection of character illustrations.</p>
+  <section class="illust-page">
+    <header class="section-head">
+      <h1 class="section-title">ILLUSTRATION</h1>
+      <p class="section-sub">Gallery</p>
+    </header>
 
-<div class="filter-tabs">
-  <button data-filter="all" class="active">All</button>
-  <button data-filter="original">Original</button>
-  <button data-filter="fanart">Fan Art</button>
-</div>
-
+    <div class="filter-tabs">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="original">Original</button>
+      <button data-filter="fanart">Fan Art</button>
+    </div>
 
     <div class="gallery" id="gallery"></div>
+
+    <!-- CTA after viewing gallery -->
+    <div class="about-cta">
+      <p class="about-cta-text">Interested in commissioning an illustration? Feel free to reach out.</p>
+      <a href="contact.html" class="btn btn-primary">Pricing &amp; Commissions</a>
+    </div>
   </section>
 
 </main>
@@ -86,11 +116,12 @@
       <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank" aria-label="Bluesky"><span class="icon icon-bluesky"></span></a>
       <a href="https://artstation.com/kohinn" target="_blank" aria-label="ArtStation"><span class="icon icon-artstation"></span></a>
     </div>
-
+    
     <p class="footer-copy">©2026 Kohinn</p>
   </div>
 </footer>
 
-<script src="script_en.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
+

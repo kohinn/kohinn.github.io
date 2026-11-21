@@ -4,6 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kohinn | Contact</title>
+  <meta name="description" content="Commission pricing, terms and inquiry form for illustrator Kohinn.">
+
+  <!-- OGP & hreflang -->
+  <meta property="og:title" content="Kohinn | Pricing &amp; Contact">
+  <meta property="og:description" content="Commission pricing guide, terms of service, and inquiry form.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kohinn.github.io/contact.html">
+  <meta property="og:image" content="https://kohinn.github.io/img/og_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://kohinn.github.io/contact.html">
+  <link rel="alternate" hreflang="ja" href="https://kohinn.github.io/contact_jp.html">
+  <link rel="alternate" hreflang="x-default" href="https://kohinn.github.io/contact.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
 
   <!-- Google tag (gtag.js) -->
@@ -15,13 +31,20 @@
     gtag('config', 'G-V286NXLCKF');
   </script>
 </head>
-<body>
+<body class="v2">
 
 <header class="header">
   <div class="header-inner">
     <div class="logo"><a href="index.html">Kohinn</a></div>
+    <!-- PC: Always visible nav / Mobile: Hamburger menu -->
+    <nav class="header-nav" aria-label="Main menu">
+      <a href="illustration.html">Illustration</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
     <div class="lang"><a href="contact_jp.html">JP</a> / <a href="contact.html">EN</a></div>
-    <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
+    <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -36,11 +59,11 @@
     </ul>
     <hr>
     <ul class="menu-follow">
-      <li><a href="https://twitter.com/V_Kohinn" target="_blank"><span class="icon icon-x"></span></a></li>
-      <li><a href="https://www.pixiv.net/users/92080067" target="_blank"><span class="icon icon-pixiv"></span></a></li>
-      <li><a href="https://instagram.com/kohinn.ver2" target="_blank"><span class="icon icon-instagram"></span></a></li>
-      <li><a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank"><span class="icon icon-bluesky"></span></a></li>
-      <li><a href="https://artstation.com/kohinn" target="_blank"><span class="icon icon-artstation"></span></a></li>
+      <li><a href="https://twitter.com/V_Kohinn" target="_blank" rel="noopener"><span class="icon icon-x"></span></a></li>
+      <li><a href="https://www.pixiv.net/users/92080067" target="_blank" rel="noopener"><span class="icon icon-pixiv"></span></a></li>
+      <li><a href="https://instagram.com/kohinn.ver2" target="_blank" rel="noopener"><span class="icon icon-instagram"></span></a></li>
+      <li><a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank" rel="noopener"><span class="icon icon-bluesky"></span></a></li>
+      <li><a href="https://artstation.com/kohinn" target="_blank" rel="noopener"><span class="icon icon-artstation"></span></a></li>
     </ul>
     <hr>
   </div>
@@ -53,42 +76,58 @@
 
   <!-- Pricing Guide -->
   <h2>Pricing Guide</h2>
-  <p>Below are estimates for common request types. Formats not listed (headers, SNS post illustrations, etc.) are also welcome — please feel free to ask.</p>
+  <p>Quotes are calculated by adding your desired options to the base price. Other formats not listed below (such as headers or social media illustrations) are also available upon request.</p>
 
+  <h3 class="price-subtitle">Base Price</h3>
   <div class="price-cards">
     <div class="price-card">
       <div class="price-image">
-        <img src="https://kohinn.github.io/kohinn-images/zen7.webp" alt="Bust-up example">
+        <img src="thumbs/zentreya4-t.webp" alt="Bust-up example" loading="lazy" decoding="async">
       </div>
       <div class="price-label">Bust-up</div>
-      <div class="price-amount">from $35</div>
-      <p class="price-desc">Single character, upper body focus</p>
+      <div class="price-amount">$35~</div>
+      <p class="price-desc">1 character, upper body focus, no background</p>
     </div>
 
     <div class="price-card">
       <div class="price-image">
-        <img src="https://kohinn.github.io/kohinn-images/ori_15.webp" alt="Full body (no background) example">
+        <img src="thumbs/original-tatie-t.webp" alt="Full body example" loading="lazy" decoding="async">
       </div>
-      <div class="price-label">Full body (no background)</div>
-      <div class="price-amount">from $55</div>
-      <p class="price-desc">Full body standing pose, no background</p>
-    </div>
-
-    <div class="price-card">
-      <div class="price-image">
-        <img src="https://kohinn.github.io/kohinn-images/sunaffy3.webp" alt="Full body with background example">
-      </div>
-      <div class="price-label">Full body (with background)</div>
-      <div class="price-amount">from $100</div>
-      <p class="price-desc">Full body + background</p>
+      <div class="price-label">Full Body</div>
+      <div class="price-amount">$55~</div>
+      <p class="price-desc">1 character, full-body standing pose, no background</p>
     </div>
   </div>
 
-  <p class="price-meta">Typical turnaround: 2–3 weeks　／　Payment: upfront before work begins (method confirmed in your quote)</p>
-  <p><a href="illustration.html" class="arrow-link">View my work →</a></p>
+  <h3 class="price-subtitle">Options</h3>
+  <ul class="option-list">
+    <li>
+      <span class="option-name">Simple Background<span class="option-desc">Solid color, gradient, simple patterns, etc.</span></span>
+      <span class="option-value">+$20</span>
+    </li>
+    <li>
+      <span class="option-name">Detailed Background<span class="option-desc">Scenery or atmospheric background with detailed rendering</span></span>
+      <span class="option-value">+$45~</span>
+    </li>
+    <li>
+      <span class="option-name">R-18 / NSFW<span class="option-desc">Adult characters only. Please consult in advance regarding the scope of depiction</span></span>
+      <span class="option-value">+$20~</span>
+    </li>
+    <li>
+      <span class="option-name">Rush Delivery<span class="option-desc">Faster delivery than standard (2–3 weeks). Availability depends on current schedule</span></span>
+      <span class="option-value">+50%~ of base price</span>
+    </li>
+    <li>
+      <span class="option-name">Commercial Use<span class="option-desc">Merchandise, advertisements, redistribution, etc.</span></span>
+      <span class="option-value">Contact for quote</span>
+    </li>
+  </ul>
+
+  <p class="price-meta">Estimated Turnaround: 2–3 weeks &nbsp;/&nbsp; Payment: Upfront before work begins (payment methods will be confirmed in your quote)</p>
+  <p><a href="illustration.html" class="arrow-link">View Portfolio →</a></p>
   <p class="note">
-    ※ These are estimates only. Final pricing may vary depending on usage, deadline, and number of revisions — details will be confirmed in your quote.<br>
-    ※ Major changes or direction changes after the rough draft has been approved may incur an additional fee (1–2 minor revisions are included at no extra cost).
+    * Prices above are estimates and may vary depending on usage, deadline, and number of revisions. Exact details will be provided in your quote.<br>
+    * Major revisions or changes in direction after rough draft approval may incur additional fees (1–2 minor revisions are included at no extra cost).
   </p>
 
   <hr>
@@ -97,21 +136,29 @@
     <div>
       <h2>Usage Scope</h2>
       <ul>
-        <li>Personal use for streaming / SNS: included in the base price</li>
-        <li>Merchandise, commercial use, or redistribution: please inquire separately</li>
+        <li>Personal streaming &amp; social media use (including monetized streams): Covered within the base price</li>
+        <li>Merchandise, advertisements, or redistribution: Please inquire separately</li>
+      </ul>
+
+      <h2>R-18 / NSFW Commissions</h2>
+      <ul>
+        <li>Available as an add-on option (see pricing above)</li>
+        <li>Clients must be 18 years of age or older</li>
+        <li>Characters depicted must be adults</li>
+        <li>Samples are not publicly displayed; they can be shared upon inquiry</li>
       </ul>
     </div>
 
     <div>
-      <h2>Content I Can't Take On</h2>
+      <h2>Content I Cannot Accept</h2>
       <ul>
-        <li>Excessive violence</li>
-        <li>R-18 content (explicit nudity or sexual acts)</li>
-        <li>Fan art depicting specific real individuals</li>
-        <li>Anything otherwise against public decency</li>
+        <li>Excessive violence or gore</li>
+        <li>R-18 / NSFW depictions of characters who appear underage</li>
+        <li>Fan art or derivatives based on specific real-life individuals</li>
+        <li>Any other content offensive to public order and morals</li>
       </ul>
-      <p class="note">Swimsuits, costumes, and poses that show off the character's figure are fine as long as they stay all-ages. Please feel free to ask.</p>
-      <p class="note">We accept requests for fan works based on existing works and characters only to the extent permitted by the respective rights holders' guidelines.</p>
+      <p class="note">Mildly suggestive or all-ages themes—such as swimsuits, stylish outfits, or poses emphasizing body lines—are open for discussion.</p>
+      <p class="note">Fan art commissions of existing works or characters are accepted only within the scope permitted by the respective rights holders' guidelines.</p>
     </div>
   </div>
 
@@ -122,20 +169,21 @@
 
   <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="1faf647c-2bcd-4228-893e-3fa7fe0c7e55">
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-    <label for="name">Name (required)</label>
+    <label for="name">Name (Required)</label>
     <input type="text" id="name" name="name" required placeholder="Enter your name">
 
-    <label for="email">Email (required)</label>
+    <label for="email">Email Address (Required)</label>
     <input type="email" id="email" name="email" required placeholder="Enter your email address">
 
-    <label for="subject">Subject (required)</label>
+    <label for="subject">Subject (Required)</label>
     <input type="text" id="subject" name="subject" required placeholder="Enter a subject">
 
-    <label for="message">Message (required)</label>
-    <textarea id="message" name="message" rows="7" required placeholder="e.g. request details, intended use, size, deadline, budget, and any reference material — whatever you can share"></textarea>
+    <label for="message">Message (Required)</label>
+    <textarea id="message" name="message" rows="7" required placeholder="e.g., Request details, intended use, size, deadline, budget, and any reference material — whatever you can share"></textarea>
 
-    <button type="submit" class="contact-submit">Send</button>
+    <button type="submit" class="contact-submit">Send Message</button>
   </form>
 
   <hr>
@@ -143,20 +191,20 @@
   <!-- Workflow -->
   <h2>Process</h2>
   <div class="flow-steps">
-    <span>①Inquiry</span>
-    <span>②Hearing</span>
-    <span>③Quote</span>
-    <span>④Start</span>
-    <span>⑤Rough Draft</span>
-    <span>⑥Line Art</span>
-    <span>⑦Final Check</span>
-    <span>⑧Delivery</span>
+    <span>① Inquiry</span>
+    <span>② Consultation</span>
+    <span>③ Quote</span>
+    <span>④ Production</span>
+    <span>⑤ Rough Draft</span>
+    <span>⑥ Final Rendering</span>
+    <span>⑦ Final Check</span>
+    <span>⑧ Delivery</span>
   </div>
 
   <hr>
 
   <!-- Email -->
-  <h2>Email</h2>
+  <h2>Contact by Email</h2>
   <button type="button" class="mail-button" id="mailButton">✉ Contact by Email</button>
 </section>
 
@@ -180,11 +228,12 @@
       <a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank" aria-label="Bluesky"><span class="icon icon-bluesky"></span></a>
       <a href="https://artstation.com/kohinn" target="_blank" aria-label="ArtStation"><span class="icon icon-artstation"></span></a>
     </div>
-
+    
     <p class="footer-copy">©2026 Kohinn</p>
   </div>
 </footer>
 
-<script src="script_en.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
+
