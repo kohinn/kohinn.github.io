@@ -1,94 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://sitemaps.org">
-
-  <!-- Main Pages -->
-  <url>
-    <loc>https://github.io</loc>
-  </url>
-  <url>
-    <loc>https://github.ioindex.html</loc>
-  </url>
-  <url>
-    <loc>https://github.ioindex_jp.html</loc>
-  </url>
-
-  <url>
-    <loc>https://github.ioillustration.html</loc>
-  </url>
-  <url>
-    <loc>https://github.ioillustration_jp.html</loc>
-  </url>
-
-  <url>
-    <loc>https://github.ioabout.html</loc>
-  </url>
-  <url>
-    <loc>https://github.ioabout_jp.html</loc>
-  </url>
-
-  <url>
-    <loc>https://github.iocontact.html</loc>
-  </url>
-  <url>
-    <loc>https://github.iocontact_jp.html</loc>
-  </url>
-
-  <!-- Work Details (English) -->
-  <url>
-    <loc>https://github.iowork_detail_en.html?id=Oumiya%20Emma1</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail_en.html?id=Zentreya5</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail_en.html?id=Zentreya4</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail_en.html?id=Zentreya3</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail_en.html?id=original-tatie</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail_en.html?id=tatuya</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail_en.html?id=Zentreya1</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail_en.html?id=Zentreya2</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail_en.html?id=sunaffy</loc>
-  </url>
-
-  <!-- Work Details (Japanese) -->
-  <url>
-    <loc>https://github.iowork_detail.html?id=Oumiya%20Emma1</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail.html?id=Zentreya5</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail.html?id=Zentreya4</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail.html?id=Zentreya3</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail.html?id=original-tatie</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail.html?id=tatuya</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail.html?id=Zentreya1</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail.html?id=Zentreya2</loc>
-  </url>
-  <url>
-    <loc>https://github.iowork_detail.html?id=sunaffy</loc>
-  </url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://kohinn.github.io/</loc></url>
+  <url><loc>https://kohinn.github.io/index.html</loc></url>
+  <url><loc>https://kohinn.github.io/index_jp.html</loc></url>
+  <url><loc>https://kohinn.github.io/illustration.html</loc></url>
+  <url><loc>https://kohinn.github.io/illustration_jp.html</loc></url>
+  <url><loc>https://kohinn.github.io/about.html</loc></url>
+  <url><loc>https://kohinn.github.io/about_jp.html</loc></url>
+  <url><loc>https://kohinn.github.io/contact.html</loc></url>
+  <url><loc>https://kohinn.github.io/contact_jp.html</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail_en.html?id=Oumiya%20Emma1</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail_en.html?id=Zentreya5</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail_en.html?id=Zentreya4</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail_en.html?id=Zentreya3</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail_en.html?id=original-tatie</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail_en.html?id=tatuya</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail_en.html?id=Zentreya1</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail_en.html?id=Zentreya2</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail_en.html?id=sunaffy</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail.html?id=Oumiya%20Emma1</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail.html?id=Zentreya5</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail.html?id=Zentreya4</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail.html?id=Zentreya3</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail.html?id=original-tatie</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail.html?id=tatuya</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail.html?id=Zentreya1</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail.html?id=Zentreya2</loc></url>
+  <url><loc>https://kohinn.github.io/work_detail.html?id=sunaffy</loc></url>
 </urlset>

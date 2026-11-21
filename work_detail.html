@@ -4,20 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kohinn | 作品詳細</title>
-
-  <!-- OGP & hreflang -->
-  <meta property="og:title" content="Kohinn | 作品詳細">
-  <meta property="og:description" content="キャラクターイラストレーター Kohinn のイラスト作品詳細・制作メモ。">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://github.io">
-  <meta property="og:image" content="https://github.io">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="alternate" hreflang="en" href="https://github.io">
-  <link rel="alternate" hreflang="ja" href="https://github.io">
-  <link rel="alternate" hreflang="x-default" href="https://github.io">
-
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400..700&family=Poppins:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="works.json" as="fetch" crossorigin>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V286NXLCKF"></script>
@@ -41,11 +32,11 @@
     </nav>
 
     <div class="lang"><a href="index_jp.html">JP</a> / <a href="index.html">EN</a></div>
-    <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
+    <button class="burger" id="burgerBtn" aria-label="メニューを開く"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<nav class="menu" id="navMenu">
+  <nav class="menu" id="navMenu">
   <div class="menu-inner">
     <h2 class="menu-title">MENU</h2>
 
@@ -58,12 +49,12 @@
 
     <hr>
 
-    <ul class="menu-follow">
-      <li><a href="https://twitter.com/V_Kohinn" target="_blank"><span class="icon icon-x"></span>X</a></li>
-      <li><a href="https://www.pixiv.net/users/92080067" target="_blank"><span class="icon icon-pixiv"></span>Pixiv</a></li>
-      <li><a href="https://instagram.com/kohinn.ver2" target="_blank"><span class="icon icon-instagram"></span>Instagram</a></li>
-      <li><a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank"><span class="icon icon-bluesky"></span>Bluesky</a></li>
-      <li><a href="https://artstation.com/kohinn" target="_blank"><span class="icon icon-artstation"></span>ArtStation</a></li>
+         <ul class="menu-follow">
+      <li><a href="https://twitter.com/V_Kohinn" target="_blank" rel="noopener"><span class="icon icon-x"></span>X</a></li>
+      <li><a href="https://www.pixiv.net/users/92080067" target="_blank" rel="noopener"><span class="icon icon-pixiv"></span>Pixiv</a></li>
+      <li><a href="https://instagram.com/kohinn.ver2" target="_blank" rel="noopener"><span class="icon icon-instagram"></span>Instagram</a></li>
+      <li><a href="https://bsky.app/profile/kohinnver2.bsky.social" target="_blank" rel="noopener"><span class="icon icon-bluesky"></span>Bluesky</a></li>
+      <li><a href="https://artstation.com/kohinn" target="_blank" rel="noopener"><span class="icon icon-artstation"></span>ArtStation</a></li>
     </ul>
 
     <hr>
