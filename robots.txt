@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kohinn.github.io/sitemap.xml
+Sitemap: https://studio.kohinn-art.workers.dev/sitemap.xml
